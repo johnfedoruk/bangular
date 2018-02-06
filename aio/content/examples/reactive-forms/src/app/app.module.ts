@@ -1,9 +1,9 @@
 // #docplaster
 // #docregion
 // #docregion v1
-import { NgModule }            from '@angular/core';
-import { BrowserModule }       from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';  // <-- #1 import module
+import { NgModule }            from '@bangular/core';
+import { BrowserModule }       from '@bangular/platform-browser';
+import { ReactiveFormsModule } from '@bangular/forms';  // <-- #1 import module
 
 import { AppComponent }        from './app.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component'; // <-- #1 import component

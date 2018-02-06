@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@bangular/core';
 
 @Component({
   selector: 'app-customer-dashboard',

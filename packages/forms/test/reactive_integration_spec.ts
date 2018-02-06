@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, Input, Type, forwardRef} from '@angular/core';
-import {ComponentFixture, TestBed, fakeAsync, tick} from '@angular/core/testing';
-import {AbstractControl, AsyncValidator, AsyncValidatorFn, COMPOSITION_BUFFER_MODE, FormArray, FormControl, FormGroup, FormGroupDirective, FormsModule, NG_ASYNC_VALIDATORS, NG_VALIDATORS, ReactiveFormsModule, Validators} from '@angular/forms';
-import {By} from '@angular/platform-browser/src/dom/debug/by';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {dispatchEvent} from '@angular/platform-browser/testing/src/browser_util';
+import {Component, Directive, Input, Type, forwardRef} from '@bangular/core';
+import {ComponentFixture, TestBed, fakeAsync, tick} from '@bangular/core/testing';
+import {AbstractControl, AsyncValidator, AsyncValidatorFn, COMPOSITION_BUFFER_MODE, FormArray, FormControl, FormGroup, FormGroupDirective, FormsModule, NG_ASYNC_VALIDATORS, NG_VALIDATORS, ReactiveFormsModule, Validators} from '@bangular/forms';
+import {By} from '@bangular/platform-browser/src/dom/debug/by';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {dispatchEvent} from '@bangular/platform-browser/testing/src/browser_util';
 import {merge} from 'rxjs/observable/merge';
 import {timer} from 'rxjs/observable/timer';
 import {_do} from 'rxjs/operator/do';

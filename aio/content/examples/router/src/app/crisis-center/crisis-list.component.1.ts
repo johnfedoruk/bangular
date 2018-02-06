@@ -1,7 +1,7 @@
 
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit }        from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit }        from '@bangular/core';
+import { ActivatedRoute, ParamMap } from '@bangular/router';
 
 import { Crisis, CrisisService } from './crisis.service';
 import { Observable }            from 'rxjs/Observable';

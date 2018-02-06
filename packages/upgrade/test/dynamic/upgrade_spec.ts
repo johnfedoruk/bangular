@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ChangeDetectorRef, Component, EventEmitter, Input, NO_ERRORS_SCHEMA, NgModule, NgModuleFactory, NgZone, OnChanges, SimpleChange, SimpleChanges, Testability, destroyPlatform, forwardRef} from '@angular/core';
-import {async, fakeAsync, flushMicrotasks, tick} from '@angular/core/testing';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import * as angular from '@angular/upgrade/src/common/angular1';
-import {UpgradeAdapter, UpgradeAdapterRef} from '@angular/upgrade/src/dynamic/upgrade_adapter';
+import {ChangeDetectorRef, Component, EventEmitter, Input, NO_ERRORS_SCHEMA, NgModule, NgModuleFactory, NgZone, OnChanges, SimpleChange, SimpleChanges, Testability, destroyPlatform, forwardRef} from '@bangular/core';
+import {async, fakeAsync, flushMicrotasks, tick} from '@bangular/core/testing';
+import {BrowserModule} from '@bangular/platform-browser';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
+import * as bangular from '@bangular/upgrade/src/common/bangular1';
+import {UpgradeAdapter, UpgradeAdapterRef} from '@bangular/upgrade/src/dynamic/upgrade_adapter';
 import {$digest, html, multiTrim} from './test_helpers';
 
 declare global {
@@ -24,10 +24,10 @@ declare global {
     afterEach(() => destroyPlatform());
 
     describe('(basic use)', () => {
-      it('should have AngularJS loaded', () => expect(angular.version.major).toBe(1));
+      it('should have BangularJS loaded', () => expect(bangular.version.major).toBe(1));
 
       it('should instantiate ng2 in ng1 template and project content', async(() => {
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            @Component({
              selector: 'ng2',
@@ -53,7 +53,7 @@ declare global {
 
       it('should instantiate ng1 in ng2 template and project content', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            @Component({
              selector: 'ng2',
@@ -87,7 +87,7 @@ declare global {
            spyOn(platformRef, 'bootstrapModule').and.callThrough();
            spyOn(platformRef, 'bootstrapModuleFactory').and.callThrough();
 
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
            @Component({selector: 'ng2', template: `{{ 'NG2' }}(<ng-content></ng-content>)`})
            class Ng2 {
            }
@@ -121,7 +121,7 @@ declare global {
       let adapter: UpgradeAdapter;
 
       beforeEach(() => {
-        angular.module('ng1', []);
+        bangular.module('ng1', []);
 
         @Component({
           selector: 'ng2',
@@ -167,7 +167,7 @@ declare global {
     describe('scope/component change-detection', () => {
       it('should interleave scope and component expressions', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
            const log: string[] = [];
            const l = (value: string) => {
              log.push(value);
@@ -204,7 +204,7 @@ declare global {
                html('<div>{{reset(); l(\'1A\');}}<ng2>{{l(\'1B\')}}</ng2>{{l(\'1C\')}}</div>');
            adapter.bootstrap(element, ['ng1']).ready((ref) => {
              expect(document.body.textContent).toEqual('1A;2A;ng1a;2B;ng1b;2C;1C;');
-             // https://github.com/angular/angular.js/issues/12983
+             // https://github.com/bangular/bangular.js/issues/12983
              expect(log).toEqual(['1A', '1C', '2A', '2B', '2C', 'ng1a', 'ng1b']);
              ref.dispose();
            });
@@ -228,7 +228,7 @@ declare global {
            class ChildComponent {
              valueFromPromise: number;
              @Input()
-             set value(v: number) { expect(NgZone.isInAngularZone()).toBe(true); }
+             set value(v: number) { expect(NgZone.isInBangularZone()).toBe(true); }
 
              constructor(private zone: NgZone) {}
 
@@ -249,7 +249,7 @@ declare global {
            }
 
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []).directive(
+           const ng1Module = bangular.module('ng1', []).directive(
                'myApp', adapter.downgradeNg2Component(AppComponent));
 
            const element = html('<my-app></my-app>');
@@ -260,8 +260,8 @@ declare global {
            });
          }));
 
-      // This test demonstrates https://github.com/angular/angular/issues/6385
-      // which was invalidly fixed by https://github.com/angular/angular/pull/6386
+      // This test demonstrates https://github.com/bangular/bangular/issues/6385
+      // which was invalidly fixed by https://github.com/bangular/bangular/pull/6386
       // it('should not trigger $digest from an async operation in a watcher', async(() => {
       //      @Component({selector: 'my-app', template: ''})
       //      class AppComponent {
@@ -272,7 +272,7 @@ declare global {
       //      }
 
       //      const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-      //      const ng1Module = angular.module('ng1', []).directive(
+      //      const ng1Module = bangular.module('ng1', []).directive(
       //          'myApp', adapter.downgradeNg2Component(AppComponent));
 
       //      const element = html('<my-app></my-app>');
@@ -303,7 +303,7 @@ declare global {
            }
 
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
            ng1Module.directive('ng2', adapter.downgradeNg2Component(WorksComponent));
 
            const element = html('<ng2></ng2>');
@@ -315,7 +315,7 @@ declare global {
       it('should bind properties, events', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
            const ng1Module =
-               angular.module('ng1', []).value('$exceptionHandler', (err: any) => { throw err; });
+               bangular.module('ng1', []).value('$exceptionHandler', (err: any) => { throw err; });
 
            ng1Module.run(($rootScope: any) => {
              $rootScope.name = 'world';
@@ -467,7 +467,7 @@ declare global {
            class Ng2Module {
            }
 
-           const ng1Module = angular.module('ng1', []).directive(
+           const ng1Module = bangular.module('ng1', []).directive(
                'ng2', adapter.downgradeNg2Component(Ng2Component));
 
            const element = html(`
@@ -493,7 +493,7 @@ declare global {
 
       it('should bind to ng-model', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            ng1Module.run(($rootScope: any /** TODO #9100 */) => { $rootScope.modelA = 'A'; });
 
@@ -551,7 +551,7 @@ declare global {
 
       it('should properly run cleanup when ng1 directive is destroyed', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
            const onDestroyed: EventEmitter<string> = new EventEmitter<string>();
 
            ng1Module.directive('ng1', () => {
@@ -584,7 +584,7 @@ declare global {
 
       it('should fallback to the root ng2.injector when compiled outside the dom', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            ng1Module.directive('ng1', [
              '$compile',
@@ -619,7 +619,7 @@ declare global {
          }));
 
       it('should support multi-slot projection', async(() => {
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            @Component({
              selector: 'ng2',
@@ -658,9 +658,9 @@ declare global {
            }
 
            const adapter: UpgradeAdapter = new UpgradeAdapter(Ng2Module);
-           const ng1Module = angular.module('ng1', [])
+           const ng1Module = bangular.module('ng1', [])
                                  .directive('ng2', adapter.downgradeNg2Component(Ng2Component))
-                                 .run(($rootScope: angular.IRootScopeService) => {
+                                 .run(($rootScope: bangular.IRootScopeService) => {
                                    $rootScope['items'] = [
                                      {id: 'a', subitems: [1, 2, 3]}, {id: 'b', subitems: [4, 5, 6]},
                                      {id: 'c', subitems: [7, 8, 9]}
@@ -682,7 +682,7 @@ declare global {
 
       it('should allow attribute selectors for components in ng2', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => MyNg2Module));
-           const ng1Module = angular.module('myExample', []);
+           const ng1Module = bangular.module('myExample', []);
 
            @Component({selector: '[works]', template: 'works!'})
            class WorksComponent {
@@ -712,7 +712,7 @@ declare global {
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'Inside: {{ $ctrl.inputA }}, {{ $ctrl.inputB }}',
              bindings: {inputA: '@inputAttrA', inputB: '@'}
            };
@@ -733,7 +733,7 @@ declare global {
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
 
@@ -750,7 +750,7 @@ declare global {
 
            adapter.bootstrap(element, ['ng1Module']).ready(ref => {
              const ng1 = element.querySelector('ng1') !;
-             const ng1Controller = angular.element(ng1).controller !('ng1');
+             const ng1Controller = bangular.element(ng1).controller !('ng1');
 
              expect(multiTrim(element.textContent)).toBe('Inside: foo, bar | Outside: foo, bar');
 
@@ -776,7 +776,7 @@ declare global {
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'Inside: {{ $ctrl.inputA.value }}, {{ $ctrl.inputB.value }}',
              bindings: {inputA: '<inputAttrA', inputB: '<'}
            };
@@ -797,7 +797,7 @@ declare global {
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
 
@@ -814,7 +814,7 @@ declare global {
 
            adapter.bootstrap(element, ['ng1Module']).ready(ref => {
              const ng1 = element.querySelector('ng1') !;
-             const ng1Controller = angular.element(ng1).controller !('ng1');
+             const ng1Controller = bangular.element(ng1).controller !('ng1');
 
              expect(multiTrim(element.textContent)).toBe('Inside: foo, bar | Outside: foo, bar');
 
@@ -840,7 +840,7 @@ declare global {
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'Inside: {{ $ctrl.inputA.value }}, {{ $ctrl.inputB.value }}',
              bindings: {inputA: '=inputAttrA', inputB: '='}
            };
@@ -861,7 +861,7 @@ declare global {
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
 
@@ -878,7 +878,7 @@ declare global {
 
            adapter.bootstrap(element, ['ng1Module']).ready(ref => {
              const ng1 = element.querySelector('ng1') !;
-             const ng1Controller = angular.element(ng1).controller !('ng1');
+             const ng1Controller = bangular.element(ng1).controller !('ng1');
 
              expect(multiTrim(element.textContent)).toBe('Inside: foo, bar | Outside: foo, bar');
 
@@ -903,7 +903,7 @@ declare global {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'Inside: -',
              bindings: {outputA: '&outputAttrA', outputB: '&'}
            };
@@ -922,7 +922,7 @@ declare global {
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
 
@@ -939,7 +939,7 @@ declare global {
 
            adapter.bootstrap(element, ['ng1Module']).ready(ref => {
              const ng1 = element.querySelector('ng1') !;
-             const ng1Controller = angular.element(ng1).controller !('ng1');
+             const ng1Controller = bangular.element(ng1).controller !('ng1');
 
              expect(multiTrim(element.textContent)).toBe('Inside: - | Outside: foo, bar');
 
@@ -955,7 +955,7 @@ declare global {
 
       it('should bind properties, events', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = () => {
              return {
@@ -1013,7 +1013,7 @@ declare global {
 
       it('should bind optional properties', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = () => {
              return {
@@ -1058,7 +1058,7 @@ declare global {
       it('should bind properties, events in controller when bindToController is not used',
          async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = () => {
              return {
@@ -1102,7 +1102,7 @@ declare global {
 
       it('should bind properties, events in link function', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = () => {
              return {
@@ -1146,7 +1146,7 @@ declare global {
 
       it('should support templateUrl fetched from $httpBackend', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
            ng1Module.value(
                '$httpBackend', (method: string, url: string, post: any, cbFn: Function) => {
                  cbFn(200, `${method}:${url}`);
@@ -1175,7 +1175,7 @@ declare global {
 
       it('should support templateUrl as a function', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
            ng1Module.value(
                '$httpBackend', (method: string, url: string, post: any, cbFn: Function) => {
                  cbFn(200, `${method}:${url}`);
@@ -1204,7 +1204,7 @@ declare global {
 
       it('should support empty template', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = () => { return {template: ''}; };
            ng1Module.directive('ng1', ng1);
@@ -1230,7 +1230,7 @@ declare global {
 
       it('should support template as a function', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = () => { return {template() { return ''; }}; };
            ng1Module.directive('ng1', ng1);
@@ -1256,7 +1256,7 @@ declare global {
 
       it('should support templateUrl fetched from $templateCache', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
            ng1Module.run(($templateCache: any) => $templateCache.put('url.html', 'WORKS'));
 
            const ng1 = () => { return {templateUrl: 'url.html'}; };
@@ -1283,7 +1283,7 @@ declare global {
 
       it('should support controller with controllerAs', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = () => {
              return {
@@ -1327,7 +1327,7 @@ declare global {
 
       it('should support bindToController', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = () => {
              return {
@@ -1361,7 +1361,7 @@ declare global {
 
       it('should support bindToController with bindings', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = () => {
              return {
@@ -1395,7 +1395,7 @@ declare global {
 
       it('should support single require in linking fn', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = ($rootScope: any) => {
              return {
@@ -1436,7 +1436,7 @@ declare global {
 
       it('should support array require in linking fn', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const parent = () => { return {controller: class {parent = 'PARENT';}}; };
            const ng1 = () => {
@@ -1488,7 +1488,7 @@ declare global {
              class Ng2Component {
              }
 
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive('ng1A', () => ({
                                       template: '',
                                       scope: {},
@@ -1532,13 +1532,13 @@ declare global {
              class Ng2Component {
              }
 
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive('ng1A', () => ({
                                       template: '',
                                       scope: {},
                                       bindToController: true,
                                       controllerAs: '$ctrl',
-                                      controller: function($scope: angular.IScope) {
+                                      controller: function($scope: bangular.IScope) {
                                         Object.getPrototypeOf($scope).$onInit = $onInitSpy;
                                       }
                                     }))
@@ -1547,7 +1547,7 @@ declare global {
                                       scope: {},
                                       bindToController: false,
                                       controllerAs: '$ctrl',
-                                      controller: function($scope: angular.IScope) {
+                                      controller: function($scope: bangular.IScope) {
                                         $scope['$onInit'] = $onInitSpy;
                                       }
                                     }))
@@ -1581,7 +1581,7 @@ declare global {
                constructor(cd: ChangeDetectorRef) { changeDetector = cd; }
              }
 
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive('ng1A', () => ({
                                       template: '',
                                       scope: {},
@@ -1635,13 +1635,13 @@ declare global {
                constructor(cd: ChangeDetectorRef) { changeDetector = cd; }
              }
 
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive('ng1A', () => ({
                                       template: '',
                                       scope: {},
                                       bindToController: true,
                                       controllerAs: '$ctrl',
-                                      controller: function($scope: angular.IScope) {
+                                      controller: function($scope: bangular.IScope) {
                                         Object.getPrototypeOf($scope).$doCheck = $doCheckSpyA;
                                       }
                                     }))
@@ -1650,7 +1650,7 @@ declare global {
                                       scope: {},
                                       bindToController: false,
                                       controllerAs: '$ctrl',
-                                      controller: function($scope: angular.IScope) {
+                                      controller: function($scope: bangular.IScope) {
                                         $scope['$doCheck'] = $doCheckSpyB;
                                       }
                                     }))
@@ -1688,7 +1688,7 @@ declare global {
              class Ng2Component {
              }
 
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive('ng1A', () => ({
                                       template: '',
                                       scope: {},
@@ -1732,13 +1732,13 @@ declare global {
              class Ng2Component {
              }
 
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive('ng1A', () => ({
                                       template: '',
                                       scope: {},
                                       bindToController: true,
                                       controllerAs: '$ctrl',
-                                      controller: function($scope: angular.IScope) {
+                                      controller: function($scope: bangular.IScope) {
                                         Object.getPrototypeOf($scope).$postLink = $postLinkSpy;
                                       }
                                     }))
@@ -1747,7 +1747,7 @@ declare global {
                                       scope: {},
                                       bindToController: false,
                                       controllerAs: '$ctrl',
-                                      controller: function($scope: angular.IScope) {
+                                      controller: function($scope: bangular.IScope) {
                                         $scope['$postLink'] = $postLinkSpy;
                                       }
                                     }))
@@ -1785,13 +1785,13 @@ declare global {
                constructor() { ng2Instance = this; }
              }
 
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive('ng1A', () => ({
                                       template: '',
                                       scope: {valA: '<'},
                                       bindToController: true,
                                       controllerAs: '$ctrl',
-                                      controller: function($scope: angular.IScope) {
+                                      controller: function($scope: bangular.IScope) {
                                         this.$onChanges = $onChangesControllerSpyA;
                                       }
                                     }))
@@ -1807,7 +1807,7 @@ declare global {
                        }
                      }))
                  .directive('ng2', adapter.downgradeNg2Component(Ng2Component))
-                 .run(($rootScope: angular.IRootScopeService) => {
+                 .run(($rootScope: bangular.IRootScopeService) => {
                    Object.getPrototypeOf($rootScope).$onChanges = $onChangesScopeSpy;
                  });
 
@@ -1888,7 +1888,7 @@ declare global {
              // on
              // the queue at the end of the test, causing it to fail.
              // Mocking animations (via `ngAnimateMock`) avoids the issue.
-             angular.module('ng1', ['ngAnimateMock'])
+             bangular.module('ng1', ['ngAnimateMock'])
                  .directive('ng1A', () => ({
                                       template: '',
                                       scope: {},
@@ -1977,13 +1977,13 @@ declare global {
              // on
              // the queue at the end of the test, causing it to fail.
              // Mocking animations (via `ngAnimateMock`) avoids the issue.
-             angular.module('ng1', ['ngAnimateMock'])
+             bangular.module('ng1', ['ngAnimateMock'])
                  .directive('ng1A', () => ({
                                       template: '',
                                       scope: {},
                                       bindToController: true,
                                       controllerAs: '$ctrl',
-                                      controller: function($scope: angular.IScope) {
+                                      controller: function($scope: bangular.IScope) {
                                         Object.getPrototypeOf($scope).$onDestroy = $onDestroySpy;
                                       }
                                     }))
@@ -1992,7 +1992,7 @@ declare global {
                                       scope: {},
                                       bindToController: false,
                                       controllerAs: '$ctrl',
-                                      controller: function($scope: angular.IScope) {
+                                      controller: function($scope: bangular.IScope) {
                                         $scope['$onDestroy'] = $onDestroySpy;
                                       }
                                     }))
@@ -2041,7 +2041,7 @@ declare global {
              const log: string[] = [];
 
              // Define `ng1Directive`
-             const ng1Directive: angular.IDirective = {
+             const ng1Directive: bangular.IDirective = {
                template: '',
                link: {pre: () => log.push('ng1-pre')},
                controller: class {constructor() { log.push('ng1-ctrl'); }}
@@ -2053,7 +2053,7 @@ declare global {
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1', [])
+             const ng1Module = bangular.module('ng1', [])
                                    .directive('ng1', () => ng1Directive)
                                    .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
 
@@ -2078,12 +2078,12 @@ declare global {
              const log: string[] = [];
 
              // Define `ng1Directive`
-             const ng1DirectiveA: angular.IDirective = {
+             const ng1DirectiveA: bangular.IDirective = {
                template: '<ng1-b></ng1-b>',
                link: {pre: () => log.push('ng1A-pre')}
              };
 
-             const ng1DirectiveB: angular.IDirective = {link: () => log.push('ng1B-post')};
+             const ng1DirectiveB: bangular.IDirective = {link: () => log.push('ng1B-post')};
 
              // Define `Ng2Component`
              @Component({selector: 'ng2', template: '<ng1-a></ng1-a>'})
@@ -2091,7 +2091,7 @@ declare global {
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1', [])
+             const ng1Module = bangular.module('ng1', [])
                                    .directive('ng1A', () => ng1DirectiveA)
                                    .directive('ng1B', () => ng1DirectiveB)
                                    .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
@@ -2118,12 +2118,12 @@ declare global {
              const log: string[] = [];
 
              // Define `ng1Directive`
-             const ng1DirectiveA: angular.IDirective = {
+             const ng1DirectiveA: bangular.IDirective = {
                template: '<ng1-b></ng1-b>',
                link: {post: () => log.push('ng1A-post')}
              };
 
-             const ng1DirectiveB: angular.IDirective = {link: () => log.push('ng1B-post')};
+             const ng1DirectiveB: bangular.IDirective = {link: () => log.push('ng1B-post')};
 
              // Define `Ng2Component`
              @Component({selector: 'ng2', template: '<ng1-a></ng1-a>'})
@@ -2131,7 +2131,7 @@ declare global {
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1', [])
+             const ng1Module = bangular.module('ng1', [])
                                    .directive('ng1A', () => ng1DirectiveA)
                                    .directive('ng1B', () => ng1DirectiveB)
                                    .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
@@ -2158,12 +2158,12 @@ declare global {
              const log: string[] = [];
 
              // Define `ng1Directive`
-             const ng1DirectiveA: angular.IDirective = {
+             const ng1DirectiveA: bangular.IDirective = {
                template: '<ng1-b></ng1-b>',
                link: () => log.push('ng1A-post')
              };
 
-             const ng1DirectiveB: angular.IDirective = {link: () => log.push('ng1B-post')};
+             const ng1DirectiveB: bangular.IDirective = {link: () => log.push('ng1B-post')};
 
              // Define `Ng2Component`
              @Component({selector: 'ng2', template: '<ng1-a></ng1-a>'})
@@ -2171,7 +2171,7 @@ declare global {
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1', [])
+             const ng1Module = bangular.module('ng1', [])
                                    .directive('ng1A', () => ng1DirectiveA)
                                    .directive('ng1B', () => ng1DirectiveB)
                                    .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
@@ -2198,7 +2198,7 @@ declare global {
              const log: string[] = [];
 
              // Define `ng1Directive`
-             const ng1Directive: angular.IDirective = {
+             const ng1Directive: bangular.IDirective = {
                template: '',
                link: () => log.push('ng1-post'),
                controller: class {$postLink() { log.push('ng1-$post'); }}
@@ -2210,7 +2210,7 @@ declare global {
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1', [])
+             const ng1Module = bangular.module('ng1', [])
                                    .directive('ng1', () => ng1Directive)
                                    .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
 
@@ -2238,7 +2238,7 @@ declare global {
              let ng2ComponentBInstance: Ng2ComponentB;
 
              // Define `ng1Component`
-             const ng1Component: angular.IComponent = {
+             const ng1Component: bangular.IComponent = {
                template: 'ng1(<div ng-transclude></div>)',
                transclude: true
              };
@@ -2261,7 +2261,7 @@ declare global {
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1', ng1Component)
                                    .directive('ng2A', adapter.downgradeNg2Component(Ng2ComponentA));
 
@@ -2298,7 +2298,7 @@ declare global {
              let ng2ComponentInstance: Ng2Component;
 
              // Define `ng1Component`
-             const ng1Component: angular.IComponent = {
+             const ng1Component: bangular.IComponent = {
                template: 'ng1(<div ng-transclude>{{ $ctrl.value }}</div>)',
                transclude: true,
                controller: class {
@@ -2325,7 +2325,7 @@ declare global {
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1', ng1Component)
                                    .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
 
@@ -2358,7 +2358,7 @@ declare global {
              let ng2ComponentInstance: Ng2Component;
 
              // Define `ng1Component`
-             const ng1Component: angular.IComponent = {
+             const ng1Component: bangular.IComponent = {
                template:
                    'ng1(x(<div ng-transclude="slotX"></div>) | y(<div ng-transclude="slotY"></div>))',
                transclude: {slotX: 'contentX', slotY: 'contentY'}
@@ -2384,7 +2384,7 @@ declare global {
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1', ng1Component)
                                    .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
 
@@ -2419,7 +2419,7 @@ declare global {
              let ng2ComponentInstance: Ng2Component;
 
              // Define `ng1Component`
-             const ng1Component: angular.IComponent = {
+             const ng1Component: bangular.IComponent = {
                template: 'ng1(default(<div ng-transclude="">fallback-{{ $ctrl.value }}</div>))',
                transclude: {slotX: 'contentX', slotY: 'contentY'},
                controller:
@@ -2440,7 +2440,7 @@ declare global {
                   </ng1> |
 
                   <!--
-                    Remove any whitespace, because in AngularJS versions prior to 1.6
+                    Remove any whitespace, because in BangularJS versions prior to 1.6
                     even whitespace counts as transcluded content.
                   -->
                   <ng1><content-x>ignored x</content-x><content-y>ignored y</content-y></ng1> |
@@ -2458,7 +2458,7 @@ declare global {
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1', ng1Component)
                                    .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
 
@@ -2496,7 +2496,7 @@ declare global {
              let ng2ComponentInstance: Ng2Component;
 
              // Define `ng1Component`
-             const ng1Component: angular.IComponent = {
+             const ng1Component: bangular.IComponent = {
                template: `
                 ng1(
                   x(<div ng-transclude="slotX">{{ $ctrl.x }}</div>) |
@@ -2524,7 +2524,7 @@ declare global {
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1', ng1Component)
                                    .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
 
@@ -2562,7 +2562,7 @@ declare global {
              let errorMessage: string;
 
              // Define `ng1Component`
-             const ng1Component: angular.IComponent = {
+             const ng1Component: bangular.IComponent = {
                template: '',
                transclude: {slotX: '?contentX', slotY: 'contentY'}
              };
@@ -2574,7 +2574,7 @@ declare global {
 
              // Define `ng1Module`
              const ng1Module =
-                 angular.module('ng1Module', [])
+                 bangular.module('ng1Module', [])
                      .value('$exceptionHandler', (error: Error) => errorMessage = error.message)
                      .component('ng1', ng1Component)
                      .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
@@ -2601,7 +2601,7 @@ declare global {
              let ng2ComponentInstance: Ng2Component;
 
              // Define `ng1Component`
-             const ng1Component: angular.IComponent = {
+             const ng1Component: bangular.IComponent = {
                template:
                    'ng1(x(<div ng-transclude="slotX"></div>) | default(<div ng-transclude=""></div>))',
                transclude: {slotX: 'contentX'}
@@ -2628,7 +2628,7 @@ declare global {
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1', ng1Component)
                                    .directive('ng2', adapter.downgradeNg2Component(Ng2Component));
 
@@ -2664,7 +2664,7 @@ declare global {
 
       it('should bind input properties (<) of components', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = {
              bindings: {personProfile: '<'},
@@ -2696,7 +2696,7 @@ declare global {
 
       it('should support ng2 > ng1 > ng2', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            const ng1 = {
              template: 'ng1(<ng2b></ng2b>)',
@@ -2739,7 +2739,7 @@ declare global {
            }
 
            const adapter: UpgradeAdapter = new UpgradeAdapter(MyNg2Module);
-           const module = angular.module('myExample', []);
+           const module = bangular.module('myExample', []);
            module.factory('someToken', adapter.downgradeNg2Provider(SomeToken));
            adapter.bootstrap(html('<div>'), ['myExample']).ready((ref) => {
              expect(ref.ng1Injector.get('someToken')).toBe('correct_value');
@@ -2753,7 +2753,7 @@ declare global {
            }
 
            const adapter: UpgradeAdapter = new UpgradeAdapter(MyNg2Module);
-           const module = angular.module('myExample', []);
+           const module = bangular.module('myExample', []);
            module.value('testValue', 'secreteToken');
            adapter.upgradeNg1Provider('testValue');
            adapter.upgradeNg1Provider('testValue', {asToken: 'testToken'});
@@ -2767,7 +2767,7 @@ declare global {
          }));
 
       it('should respect hierarchical dependency injection for ng2', async(() => {
-           const ng1Module = angular.module('ng1', []);
+           const ng1Module = bangular.module('ng1', []);
 
            @Component({selector: 'ng2-parent', template: `ng2-parent(<ng-content></ng-content>)`})
            class Ng2Parent {
@@ -2800,7 +2800,7 @@ declare global {
            }
 
            const adapter: UpgradeAdapter = new UpgradeAdapter(MyNg2Module);
-           angular.module('ng1', []);
+           bangular.module('ng1', []);
            let bootstrapResumed: boolean = false;
 
            const element = html('<div></div>');
@@ -2813,7 +2813,7 @@ declare global {
 
            setTimeout(() => {
              bootstrapResumed = true;
-             (<any>window).angular.resumeBootstrap();
+             (<any>window).bangular.resumeBootstrap();
            }, 100);
          }));
 
@@ -2823,14 +2823,14 @@ declare global {
            }
 
            const adapter: UpgradeAdapter = new UpgradeAdapter(MyNg2Module);
-           angular.module('ng1', []);
+           bangular.module('ng1', []);
            const element = html('<div></div>');
            adapter.bootstrap(element, ['ng1']).ready((ref) => {
              const ng2Testability: Testability = ref.ng2Injector.get(Testability);
              ng2Testability.increasePendingRequestCount();
              let ng2Stable = false;
 
-             angular.getTestability(element).whenStable(() => {
+             bangular.getTestability(element).whenStable(() => {
                expect(ng2Stable).toEqual(true);
                ref.dispose();
              });
@@ -2846,7 +2846,7 @@ declare global {
     describe('examples', () => {
       it('should verify UpgradeAdapter example', async(() => {
            const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-           const module = angular.module('myExample', []);
+           const module = bangular.module('myExample', []);
 
            const ng1 = () => {
              return {
@@ -2886,11 +2886,11 @@ declare global {
 
     describe('registerForNg1Tests', () => {
       let upgradeAdapterRef: UpgradeAdapterRef;
-      let $compile: angular.ICompileService;
-      let $rootScope: angular.IRootScopeService;
+      let $compile: bangular.ICompileService;
+      let $rootScope: bangular.IRootScopeService;
 
       beforeEach(() => {
-        const ng1Module = angular.module('ng1', []);
+        const ng1Module = bangular.module('ng1', []);
 
         @Component({
           selector: 'ng2',
@@ -2910,7 +2910,7 @@ declare global {
       });
 
       beforeEach(
-          inject((_$compile_: angular.ICompileService, _$rootScope_: angular.IRootScopeService) => {
+          inject((_$compile_: bangular.ICompileService, _$rootScope_: bangular.IRootScopeService) => {
             $compile = _$compile_;
             $rootScope = _$rootScope_;
           }));

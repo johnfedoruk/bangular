@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {StaticProvider} from '@angular/core';
-import {AsyncTestCompleter, beforeEach, describe, expect, inject, it} from '@angular/core/testing/src/testing_internal';
+import {StaticProvider} from '@bangular/core';
+import {AsyncTestCompleter, beforeEach, describe, expect, inject, it} from '@bangular/core/testing/src/testing_internal';
 
 import {Injector, Metric, Options, PerfLogEvent, PerfLogFeatures, PerflogMetric, WebDriverExtension} from '../../index';
 import {TraceEventFactory} from '../trace_event_factory';

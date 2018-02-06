@@ -1,5 +1,5 @@
-import { Injectable, Pipe, PipeTransform } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { Injectable, Pipe, PipeTransform } from '@bangular/core';
+import { DatePipe } from '@bangular/common';
 
 @Injectable()
 // #docregion date-pipe

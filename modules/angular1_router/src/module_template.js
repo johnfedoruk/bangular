@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-angular.module('ngComponentRouter').
+bangular.module('ngComponentRouter').
     value('$route', null). // can be overloaded with ngRouteShim
-    // Because AngularJS has no notion of a root component, we use an object with unique identity
+    // Because BangularJS has no notion of a root component, we use an object with unique identity
     // to represent this. Can be overloaded with a component name
     value('$routerRootComponent', new Object()).
 
@@ -27,7 +27,7 @@ function $locationHashPrefixProvider($locationProvider) {
 
   // Override the helper so that we can read any changes to the prefix (after this monkey-patch)
   $locationProvider.hashPrefix = function(prefix) {
-    if (angular.isDefined(prefix)) {
+    if (bangular.isDefined(prefix)) {
       hashPrefix = prefix;
     }
     return hashPrefixFn(prefix);
@@ -82,7 +82,7 @@ function routerFactory($q, $location, $browser, $rootScope, $injector, $routerRo
   // property in a route config
   exports.assertComponentExists = function () {};
 
-  angular.stringifyInstruction = function (instruction) {
+  bangular.stringifyInstruction = function (instruction) {
     return instruction.toRootUrl();
   };
 
@@ -99,11 +99,11 @@ function routerFactory($q, $location, $browser, $rootScope, $injector, $routerRo
         return;
       }
       var controller = getComponentConstructor(component);
-      if (angular.isArray(controller.$routeConfig)) {
+      if (bangular.isArray(controller.$routeConfig)) {
         controller.$routeConfig.forEach(function (config) {
           var loader = config.loader;
           if (isPresent(loader)) {
-            config = angular.extend({}, config, { loader: function() { return $injector.invoke(loader); } });
+            config = bangular.extend({}, config, { loader: function() { return $injector.invoke(loader); } });
           }
           that.config(component, config);
         });

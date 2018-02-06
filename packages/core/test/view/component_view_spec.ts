@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {SecurityContext} from '@angular/core';
-import {ArgumentType, BindingFlags, NodeCheckFn, NodeFlags, Services, ViewData, ViewFlags, ViewState, asElementData, directiveDef, elementDef, rootRenderNodes} from '@angular/core/src/view/index';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
+import {SecurityContext} from '@bangular/core';
+import {ArgumentType, BindingFlags, NodeCheckFn, NodeFlags, Services, ViewData, ViewFlags, ViewState, asElementData, directiveDef, elementDef, rootRenderNodes} from '@bangular/core/src/view/index';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
 
 import {callMostRecentEventListenerHandler, compViewDef, createAndGetRootNodes, createRootView, isBrowser, recordNodeToRemove} from './helper';
 
@@ -135,7 +135,7 @@ const addEventListener = '__zone_symbol__addEventListener';
                 `ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked. Previous value: 'a: v1'. Current value: 'a: v2'.`);
       });
 
-      // fixes https://github.com/angular/angular/issues/21788
+      // fixes https://github.com/bangular/bangular/issues/21788
       it('report the binding name when an expression changes after it has been checked', () => {
         let value: any;
         class AComp {}

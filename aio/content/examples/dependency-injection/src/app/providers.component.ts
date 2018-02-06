@@ -2,7 +2,7 @@
  * A collection of demo components showing different ways to provide services
  * in @Component metadata
  */
-import { Component, Inject, Injectable, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, OnInit } from '@bangular/core';
 
 import {
   APP_CONFIG,
@@ -234,7 +234,7 @@ export class Provider9Component implements OnInit {
 // Sample providers 1 to 7 illustrate a required logger dependency.
 // Optional logger, can be null
 // #docregion import-optional
-import { Optional } from '@angular/core';
+import { Optional } from '@bangular/core';
 // #enddocregion import-optional
 
 let some_message = 'Hello from the injected logger';

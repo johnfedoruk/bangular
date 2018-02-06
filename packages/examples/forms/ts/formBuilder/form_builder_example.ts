@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 // #docregion Component
-import {Component, Inject} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Component, Inject} from '@bangular/core';
+import {FormBuilder, FormGroup, Validators} from '@bangular/forms';
 
 @Component({
   selector: 'example-app',

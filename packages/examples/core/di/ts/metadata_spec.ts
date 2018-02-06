@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, Host, Inject, Injectable, Optional, ReflectiveInjector, Self, SkipSelf} from '@angular/core';
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {Component, Directive, Host, Inject, Injectable, Optional, ReflectiveInjector, Self, SkipSelf} from '@bangular/core';
+import {ComponentFixture, TestBed} from '@bangular/core/testing';
 
 {
   describe('di metadata examples', () => {

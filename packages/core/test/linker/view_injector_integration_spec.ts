@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ComponentFactoryResolver, DebugElement, Directive, ElementRef, Host, Inject, InjectionToken, Injector, Input, NgModule, Optional, Pipe, PipeTransform, Provider, Self, SkipSelf, TemplateRef, Type, ViewContainerRef} from '@angular/core';
-import {ComponentFixture, TestBed, fakeAsync} from '@angular/core/testing';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {Attribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, ComponentFactoryResolver, DebugElement, Directive, ElementRef, Host, Inject, InjectionToken, Injector, Input, NgModule, Optional, Pipe, PipeTransform, Provider, Self, SkipSelf, TemplateRef, Type, ViewContainerRef} from '@bangular/core';
+import {ComponentFixture, TestBed, fakeAsync} from '@bangular/core/testing';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 @Directive({selector: '[simpleDirective]'})
 class SimpleDirective {

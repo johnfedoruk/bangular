@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {DeprecatedDatePipe} from '@angular/common';
-import {PipeResolver} from '@angular/compiler/src/pipe_resolver';
-import {JitReflector} from '@angular/platform-browser-dynamic/src/compiler_reflector';
-import {browserDetection} from '@angular/platform-browser/testing/src/browser_util';
+import {DeprecatedDatePipe} from '@bangular/common';
+import {PipeResolver} from '@bangular/compiler/src/pipe_resolver';
+import {JitReflector} from '@bangular/platform-browser-dynamic/src/compiler_reflector';
+import {browserDetection} from '@bangular/platform-browser/testing/src/browser_util';
 
 {
   xdescribe('DeprecatedDatePipe', () => {
@@ -28,7 +28,7 @@ import {browserDetection} from '@angular/platform-browser/testing/src/browser_ut
     // instead of the device timezone. Same symptoms as
     // https://bugs.chromium.org/p/chromium/issues/detail?id=406382
     // This happens locally and in SauceLabs, so some checks are disabled to avoid failures.
-    // Tracking issue: https://github.com/angular/angular/issues/11187
+    // Tracking issue: https://github.com/bangular/bangular/issues/11187
 
     beforeEach(() => {
       date = new Date(2015, 5, 15, 9, 3, 1);

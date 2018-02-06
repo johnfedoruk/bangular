@@ -1,7 +1,7 @@
 // #docplaster
 // #docregion orders-routing-module
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@bangular/core';
+import { Routes, RouterModule } from '@bangular/router';
 
 // #docregion orders-routing-module-detail
 import { OrderListComponent } from './order-list/order-list.component';

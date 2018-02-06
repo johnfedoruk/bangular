@@ -1,11 +1,11 @@
 // #docregion
 // #docregion activatedroute
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@bangular/router';
 
 // #enddocregion activatedroute
 import { Observable } from 'rxjs/Observable';
 
-import { async, TestBed } from '@angular/core/testing';
+import { async, TestBed } from '@bangular/core/testing';
 
 import { PhoneDetailComponent } from './phone-detail.component';
 import { Phone, PhoneData } from '../core/phone/phone.service';

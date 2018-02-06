@@ -1,5 +1,5 @@
 // Utilities for processing HTML element attributes
-import { ElementRef } from '@angular/core';
+import { ElementRef } from '@bangular/core';
 
 interface StringMap { [index: string]: string; }
 

@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {EventEmitter} from '@angular/core';
-import {fakeAsync, tick} from '@angular/core/testing';
-import {AsyncTestCompleter, beforeEach, describe, inject, it} from '@angular/core/testing/src/testing_internal';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {EventEmitter} from '@bangular/core';
+import {fakeAsync, tick} from '@bangular/core/testing';
+import {AsyncTestCompleter, beforeEach, describe, inject, it} from '@bangular/core/testing/src/testing_internal';
+import {FormControl, FormGroup, Validators} from '@bangular/forms';
 
-import {FormArray} from '@angular/forms/src/model';
+import {FormArray} from '@bangular/forms/src/model';
 
 (function() {
   function asyncValidator(expected: string, timeouts = {}) {

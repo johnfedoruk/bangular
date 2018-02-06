@@ -29,7 +29,7 @@ if (process.argv.indexOf('--watch-only') === -1) {
   console.log('Skip the full doc-gen by running: `yarn docs-watch --watch-only`');
   console.log('================================================================');
   const {Dgeni} = require('dgeni');
-  const dgeni = new Dgeni([require('../angular.io-package')]);
+  const dgeni = new Dgeni([require('../bangular.io-package')]);
 
   // Turn off all the potential failures for this doc-gen one-off run.
   // This enables authors to run `docs-watch` while the docs are still in an unstable state.

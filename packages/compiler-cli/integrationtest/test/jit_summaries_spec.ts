@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component} from '@angular/core';
-import {TestBed} from '@angular/core/testing';
-import {ServerTestingModule, platformServerTesting} from '@angular/platform-server/testing';
+import {Component} from '@bangular/core';
+import {TestBed} from '@bangular/core/testing';
+import {ServerTestingModule, platformServerTesting} from '@bangular/platform-server/testing';
 
 import {SomeDep, SomeDirective, SomeModule, SomePipe, SomePrivateComponent, SomeService, expectInstanceCreated} from '../src/jit_summaries';
 import {SomeModuleNgSummary} from '../src/jit_summaries.ngsummary';

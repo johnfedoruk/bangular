@@ -1,7 +1,7 @@
 /* tslint:disable:member-ordering */
 // #docplaster
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router }   from '@angular/router';
+import { Component, Input, OnInit } from '@bangular/core';
+import { ActivatedRoute, Router }   from '@bangular/router';
 import 'rxjs/add/operator/map';
 
 import { Hero }              from '../model/hero';

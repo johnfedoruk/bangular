@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import 'rxjs/add/operator/map';
 
-import {Component} from '@angular/core';
-import {Http, Response} from '@angular/http';
+import {Component} from '@bangular/core';
+import {Http, Response} from '@bangular/http';
 
 @Component({
   selector: 'http-app',

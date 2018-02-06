@@ -6,12 +6,12 @@
     "rootDir": "../",
     "paths": {
       "rxjs/*": ["../../../node_modules/rxjs/*"],
-      "@angular/common": ["../../../dist/packages/common"],
-      "@angular/core": ["../../../dist/packages/core"],
-      "@angular/core/testing": ["../../../dist/packages/core/testing"],
-      "@angular/animations": ["../../../dist/packages/animations"],
-      "@angular/animations/browser": ["../../../dist/packages/animations/browser"],
-      "@angular/platform-browser": ["../../../dist/packages/platform-browser"]
+      "@bangular/common": ["../../../dist/packages/common"],
+      "@bangular/core": ["../../../dist/packages/core"],
+      "@bangular/core/testing": ["../../../dist/packages/core/testing"],
+      "@bangular/animations": ["../../../dist/packages/animations"],
+      "@bangular/animations/browser": ["../../../dist/packages/animations/browser"],
+      "@bangular/platform-browser": ["../../../dist/packages/platform-browser"]
     },
     "outDir": "../../../dist/packages/platform-browser"
   },
@@ -22,11 +22,11 @@
     "../../system.d.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "animations.js",
-    "flatModuleId": "@angular/platform-browser/animations"
+    "flatModuleId": "@bangular/platform-browser/animations"
   }
 }

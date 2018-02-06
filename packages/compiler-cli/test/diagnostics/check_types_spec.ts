@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import * as ng from '@angular/compiler-cli';
+import * as ng from '@bangular/compiler-cli';
 import * as fs from 'fs';
 import * as os from 'os';
 import * as path from 'path';
@@ -84,7 +84,7 @@ describe('ng type checker', () => {
   });
 
   describe('type narrowing', () => {
-    const a = (files: MockFiles, options: ng.AngularCompilerOptions = {}) => {
+    const a = (files: MockFiles, options: ng.BangularCompilerOptions = {}) => {
       accept(files, {fullTemplateTypeCheck: true, ...options});
     };
 
@@ -93,7 +93,7 @@ describe('ng type checker', () => {
         'src/app.component.ts': '',
         'src/lib.ts': '',
         'src/app.module.ts': `
-        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@angular/core';
+        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@bangular/core';
 
         export interface Person {
           name: string;
@@ -134,7 +134,7 @@ describe('ng type checker', () => {
         'src/app.component.ts': '',
         'src/lib.ts': '',
         'src/app.module.ts': `
-        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@angular/core';
+        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@bangular/core';
 
         export interface Person {
           name: string;
@@ -175,7 +175,7 @@ describe('ng type checker', () => {
         'src/app.component.ts': '',
         'src/lib.ts': '',
         'src/app.module.ts': `
-        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@angular/core';
+        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@bangular/core';
 
         export interface Address {
           street: string;
@@ -222,7 +222,7 @@ describe('ng type checker', () => {
         'src/app.component.ts': '',
         'src/lib.ts': '',
         'src/app.module.ts': `
-        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@angular/core';
+        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@bangular/core';
 
         export interface Person {
           name: string;
@@ -263,7 +263,7 @@ describe('ng type checker', () => {
         'src/app.component.ts': '',
         'src/lib.ts': '',
         'src/app.module.ts': `
-        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@angular/core';
+        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@bangular/core';
 
         export interface Person {
           name: string;
@@ -304,7 +304,7 @@ describe('ng type checker', () => {
         'src/app.component.ts': '',
         'src/lib.ts': '',
         'src/app.module.ts': `
-        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@angular/core';
+        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@bangular/core';
 
         export interface Address {
           street: string;
@@ -351,7 +351,7 @@ describe('ng type checker', () => {
         'src/app.component.ts': '',
         'src/lib.ts': '',
         'src/app.module.ts': `
-        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@angular/core';
+        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@bangular/core';
 
         export interface Address {
           street: string;
@@ -397,7 +397,7 @@ describe('ng type checker', () => {
         'src/app.component.ts': '',
         'src/lib.ts': '',
         'src/app.module.ts': `
-        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@angular/core';
+        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@bangular/core';
 
         export interface Person {
           name: string;
@@ -438,7 +438,7 @@ describe('ng type checker', () => {
         'src/app.component.ts': '',
         'src/lib.ts': '',
         'src/app.module.ts': `
-        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@angular/core';
+        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@bangular/core';
 
         export interface Person {
           name: string;
@@ -479,7 +479,7 @@ describe('ng type checker', () => {
         'src/app.component.ts': '',
         'src/lib.ts': '',
         'src/app.module.ts': `
-        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@angular/core';
+        import {NgModule, Component, Directive, HostListener, TemplateRef, Input} from '@bangular/core';
 
         export interface Person {
           name: string;
@@ -517,7 +517,7 @@ describe('ng type checker', () => {
   });
 
   describe('casting $any', () => {
-    const a = (files: MockFiles, options: ng.AngularCompilerOptions = {}) => {
+    const a = (files: MockFiles, options: ng.BangularCompilerOptions = {}) => {
       accept(
           {'src/app.component.ts': '', 'src/lib.ts': '', ...files},
           {fullTemplateTypeCheck: true, ...options});
@@ -525,7 +525,7 @@ describe('ng type checker', () => {
 
     const r =
         (message: string | RegExp, location: RegExp | null, files: MockFiles,
-         options: ng.AngularCompilerOptions = {}) => {
+         options: ng.BangularCompilerOptions = {}) => {
           reject(
               message, location, {'src/app.component.ts': '', 'src/lib.ts': '', ...files},
               {fullTemplateTypeCheck: true, ...options});
@@ -534,7 +534,7 @@ describe('ng type checker', () => {
     it('should allow member access of an expression', () => {
       a({
         'src/app.module.ts': `
-        import {NgModule, Component} from '@angular/core';
+        import {NgModule, Component} from '@bangular/core';
 
         export interface Person {
           name: string;
@@ -559,7 +559,7 @@ describe('ng type checker', () => {
     it('should allow invalid this.member access', () => {
       a({
         'src/app.module.ts': `
-        import {NgModule, Component} from '@angular/core';
+        import {NgModule, Component} from '@bangular/core';
 
         @Component({
           selector: 'comp',
@@ -578,7 +578,7 @@ describe('ng type checker', () => {
     it('should reject too few parameters to $any', () => {
       r(/Invalid call to \$any, expected 1 argument but received none/, null, {
         'src/app.module.ts': `
-        import {NgModule, Component} from '@angular/core';
+        import {NgModule, Component} from '@bangular/core';
 
         @Component({
           selector: 'comp',
@@ -597,7 +597,7 @@ describe('ng type checker', () => {
     it('should reject too many parameters to $any', () => {
       r(/Invalid call to \$any, expected 1 argument but received 2/, null, {
         'src/app.module.ts': `
-        import {NgModule, Component} from '@angular/core';
+        import {NgModule, Component} from '@bangular/core';
 
         export interface Person {
           name: string;
@@ -621,7 +621,7 @@ describe('ng type checker', () => {
   });
 
   describe('regressions ', () => {
-    const a = (files: MockFiles, options: ng.AngularCompilerOptions = {}) => {
+    const a = (files: MockFiles, options: ng.BangularCompilerOptions = {}) => {
       accept(files, {fullTemplateTypeCheck: true, ...options});
     };
 
@@ -631,7 +631,7 @@ describe('ng type checker', () => {
         'src/app.component.ts': '',
         'src/lib.ts': '',
         'src/app.module.ts': `
-        import {NgModule, Component, Directive, HostListener} from '@angular/core';
+        import {NgModule, Component, Directive, HostListener} from '@bangular/core';
 
         @Component({
           selector: 'comp',
@@ -761,7 +761,7 @@ describe('ng type checker', () => {
 
 function appComponentSource(): string {
   return `
-    import {Component, Pipe, Directive} from '@angular/core';
+    import {Component, Pipe, Directive} from '@bangular/core';
 
     export interface Person {
       name: string;
@@ -779,7 +779,7 @@ function appComponentSource(): string {
       templateUrl: './app.component.html'
     })
     export class AppComponent {
-      name = 'Angular';
+      name = 'Bangular';
       person: Person;
       people: Person[];
       maybePerson?: Person;
@@ -810,7 +810,7 @@ const QUICKSTART = {
   'src/app.component.ts': appComponentSource(),
   'src/app.component.html': '<h1>Hello {{name}}</h1>',
   'src/lib.ts': `
-    import {Pipe, Directive} from '@angular/core';
+    import {Pipe, Directive} from '@bangular/core';
 
     @Pipe({ name: 'libPipe' })
     export class LibPipe {
@@ -826,8 +826,8 @@ const QUICKSTART = {
     }
   `,
   'src/app.module.ts': `
-    import { NgModule }      from '@angular/core';
-    import { CommonModule }  from '@angular/common';
+    import { NgModule }      from '@bangular/core';
+    import { CommonModule }  from '@bangular/common';
     import { AppComponent, APipe, ADirective }  from './app.component';
     import { LibDirective, LibPipe } from './lib';
 
@@ -850,7 +850,7 @@ const LOWERING_QUICKSTART = {
   'src/app.component.ts': appComponentSource(),
   'src/app.component.html': '<h1>Hello {{name}}</h1>',
   'src/app.module.ts': `
-    import { NgModule, Component }      from '@angular/core';
+    import { NgModule, Component }      from '@bangular/core';
 
     import { AppComponent, APipe, ADirective }  from './app.component';
 

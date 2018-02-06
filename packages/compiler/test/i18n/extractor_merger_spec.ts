@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {DEFAULT_INTERPOLATION_CONFIG, HtmlParser} from '@angular/compiler';
-import {MissingTranslationStrategy} from '@angular/core';
+import {DEFAULT_INTERPOLATION_CONFIG, HtmlParser} from '@bangular/compiler';
+import {MissingTranslationStrategy} from '@bangular/core';
 
 import {digest, serializeNodes as serializeI18nNodes} from '../../src/i18n/digest';
 import {extractMessages, mergeTranslations} from '../../src/i18n/extractor_merger';
@@ -556,7 +556,7 @@ function extract(
   }
 
   // clang-format off
-  // https://github.com/angular/clang-format/issues/35
+  // https://github.com/bangular/clang-format/issues/35
   return result.messages.map(
     message => [serializeI18nNodes(message.nodes), message.meaning, message.description, message.id]) as [string[], string, string][];
   // clang-format on

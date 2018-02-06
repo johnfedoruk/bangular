@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {SummaryResolver} from '../summary_resolver';
@@ -24,7 +24,7 @@ export class ResolvedStaticSymbol {
 export interface StaticSymbolResolverHost {
   /**
    * Return a ModuleMetadata for the given module.
-   * Angular CLI will produce this metadata for a module whenever a .d.ts files is
+   * Bangular CLI will produce this metadata for a module whenever a .d.ts files is
    * produced and the module has exported variables or classes with decorators. Module metadata can
    * also be produced directly from TypeScript sources by using MetadataCollector in tools/metadata.
    *
@@ -369,7 +369,7 @@ export class StaticSymbolResolver {
   private createResolvedSymbol(
       sourceSymbol: StaticSymbol, topLevelPath: string, topLevelSymbolNames: Set<string>,
       metadata: any): ResolvedStaticSymbol {
-    // For classes that don't have Angular summaries / metadata,
+    // For classes that don't have Bangular summaries / metadata,
     // we only keep their arity, but nothing else
     // (e.g. their constructor parameters).
     // We do this to prevent introducing deep imports

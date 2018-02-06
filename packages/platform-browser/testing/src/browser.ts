@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {APP_ID, NgModule, NgZone, PLATFORM_INITIALIZER, PlatformRef, StaticProvider, createPlatformFactory, platformCore} from '@angular/core';
-import {BrowserModule, ɵBrowserDomAdapter as BrowserDomAdapter, ɵELEMENT_PROBE_PROVIDERS as ELEMENT_PROBE_PROVIDERS} from '@angular/platform-browser';
+import {APP_ID, NgModule, NgZone, PLATFORM_INITIALIZER, PlatformRef, StaticProvider, createPlatformFactory, platformCore} from '@bangular/core';
+import {BrowserModule, ɵBrowserDomAdapter as BrowserDomAdapter, ɵELEMENT_PROBE_PROVIDERS as ELEMENT_PROBE_PROVIDERS} from '@bangular/platform-browser';
 import {BrowserDetection, createNgZone} from './browser_util';
 
 function initBrowserTests() {

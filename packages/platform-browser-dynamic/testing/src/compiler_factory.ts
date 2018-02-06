@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CompileReflector, DirectiveResolver, ERROR_COMPONENT_TYPE, NgModuleResolver, PipeResolver} from '@angular/compiler';
-import {MockDirectiveResolver, MockNgModuleResolver, MockPipeResolver} from '@angular/compiler/testing';
-import {Compiler, CompilerFactory, CompilerOptions, Component, ComponentFactory, Directive, Injectable, Injector, ModuleWithComponentFactories, NgModule, NgModuleFactory, Pipe, PlatformRef, StaticProvider, Type, createPlatformFactory, ɵstringify} from '@angular/core';
-import {MetadataOverride, ɵTestingCompiler as TestingCompiler, ɵTestingCompilerFactory as TestingCompilerFactory} from '@angular/core/testing';
-import {ɵCompilerImpl as CompilerImpl, ɵplatformCoreDynamic as platformCoreDynamic} from '@angular/platform-browser-dynamic';
+import {CompileReflector, DirectiveResolver, ERROR_COMPONENT_TYPE, NgModuleResolver, PipeResolver} from '@bangular/compiler';
+import {MockDirectiveResolver, MockNgModuleResolver, MockPipeResolver} from '@bangular/compiler/testing';
+import {Compiler, CompilerFactory, CompilerOptions, Component, ComponentFactory, Directive, Injectable, Injector, ModuleWithComponentFactories, NgModule, NgModuleFactory, Pipe, PlatformRef, StaticProvider, Type, createPlatformFactory, ɵstringify} from '@bangular/core';
+import {MetadataOverride, ɵTestingCompiler as TestingCompiler, ɵTestingCompilerFactory as TestingCompilerFactory} from '@bangular/core/testing';
+import {ɵCompilerImpl as CompilerImpl, ɵplatformCoreDynamic as platformCoreDynamic} from '@bangular/platform-browser-dynamic';
 
 import {MetadataOverrider} from './metadata_overrider';
 

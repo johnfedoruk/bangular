@@ -1,5 +1,5 @@
 // #docregion
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';

@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CssRule, ShadowCss, processRules} from '@angular/compiler/src/shadow_css';
-import {normalizeCSS} from '@angular/platform-browser/testing/src/browser_util';
+import {CssRule, ShadowCss, processRules} from '@bangular/compiler/src/shadow_css';
+import {normalizeCSS} from '@bangular/platform-browser/testing/src/browser_util';
 
 {
   describe('ShadowCss', function() {

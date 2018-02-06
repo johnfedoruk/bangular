@@ -15,7 +15,7 @@
  * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  *
  * This is a slightly simplified, trimmed-down version of
- * [tools/check-environment.js](https://github.com/gkalpak/angular/blob/3896c60be/tools/check-environment.js).
+ * [tools/check-environment.js](https://github.com/gkalpak/bangular/blob/3896c60be/tools/check-environment.js).
  * We use a different file, because some of the tests and error messages are not relevant for `aio/`.
  */
 
@@ -34,7 +34,7 @@ try {
   console.error(
       'Your environment doesn\'t provide the prerequisite dependencies.\n' +
       'Please fix the issues listed above and then rerun the command.\n' +
-      'Check out https://github.com/angular/angular/blob/master/aio/README.md for more info.');
+      'Check out https://github.com/bangular/bangular/blob/master/aio/README.md for more info.');
   process.exit(1);
 }
 

@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {runBenchmark, verifyNoBrowserErrors} from '@angular/testing/src/perf_util';
+import {runBenchmark, verifyNoBrowserErrors} from '@bangular/testing/src/perf_util';
 
 describe('ng-dart1.x naive infinite scroll benchmark', function() {
 
@@ -33,7 +33,7 @@ describe('ng-dart1.x naive infinite scroll benchmark', function() {
           {name: 'iterationCount', value: 20, scale: 'linear'},
           {name: 'scrollIncrement', value: 40}
         ],
-        waitForAngular2: false
+        waitForBangular2: false
       }).then(done, done.fail);
     });
   });

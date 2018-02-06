@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgModuleRef} from '@angular/core';
-import {ComponentFixture} from '@angular/core/testing';
-import {platformServerTesting} from '@angular/platform-server/testing';
+import {NgModuleRef} from '@bangular/core';
+import {ComponentFixture} from '@bangular/core/testing';
+import {platformServerTesting} from '@bangular/platform-server/testing';
 
 import {MainModule} from '../src/module';
 import {MainModuleNgFactory} from '../src/module.ngfactory';

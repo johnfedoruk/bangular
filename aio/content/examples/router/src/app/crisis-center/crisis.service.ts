@@ -16,7 +16,7 @@ const CRISES = [
 ];
 // #enddocregion mock-crises
 
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 
 @Injectable()
 export class CrisisService {

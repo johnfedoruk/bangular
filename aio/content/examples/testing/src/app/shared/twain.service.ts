@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 
 const quotes = [
 'Always do right. This will gratify some people and astonish the rest.',

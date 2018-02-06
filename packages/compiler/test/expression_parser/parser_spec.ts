@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ASTWithSource, BindingPipe, Interpolation, ParserError, TemplateBinding} from '@angular/compiler/src/expression_parser/ast';
-import {Lexer} from '@angular/compiler/src/expression_parser/lexer';
-import {Parser, SplitInterpolation, TemplateBindingParseResult} from '@angular/compiler/src/expression_parser/parser';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {ASTWithSource, BindingPipe, Interpolation, ParserError, TemplateBinding} from '@bangular/compiler/src/expression_parser/ast';
+import {Lexer} from '@bangular/compiler/src/expression_parser/lexer';
+import {Parser, SplitInterpolation, TemplateBindingParseResult} from '@bangular/compiler/src/expression_parser/parser';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 
 import {unparse} from './unparser';

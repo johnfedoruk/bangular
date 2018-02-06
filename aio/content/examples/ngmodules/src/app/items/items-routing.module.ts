@@ -1,6 +1,6 @@
-import { NgModule }            from '@angular/core';
+import { NgModule }            from '@bangular/core';
 import { Routes,
-         RouterModule }        from '@angular/router';
+         RouterModule }        from '@bangular/router';
 
 import { ItemsListComponent }    from './items-list.component';
 import { ItemsDetailComponent }  from './items-detail.component';

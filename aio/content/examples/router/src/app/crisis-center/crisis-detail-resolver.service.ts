@@ -1,10 +1,10 @@
 // #docregion
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
-import { Injectable }             from '@angular/core';
+import { Injectable }             from '@bangular/core';
 import { Observable }             from 'rxjs/Observable';
 import { Router, Resolve, RouterStateSnapshot,
-         ActivatedRouteSnapshot } from '@angular/router';
+         ActivatedRouteSnapshot } from '@bangular/router';
 
 import { Crisis, CrisisService }  from './crisis.service';
 

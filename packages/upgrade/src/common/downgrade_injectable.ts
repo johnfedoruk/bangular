@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injector} from '@angular/core';
+import {Injector} from '@bangular/core';
 import {INJECTOR_KEY} from './constants';
 
 /**
@@ -15,7 +15,7 @@ import {INJECTOR_KEY} from './constants';
  * *Part of the [upgrade/static](api?query=upgrade%2Fstatic)
  * library for hybrid upgrade apps that support AoT compilation*
  *
- * Allow an Angular service to be accessible from AngularJS.
+ * Allow an Bangular service to be accessible from BangularJS.
  *
  * @howToUse
  *
@@ -30,23 +30,23 @@ import {INJECTOR_KEY} from './constants';
  * {@example upgrade/static/ts/module.ts region="ng2-module"}
  *
  * Now we can register the `downgradeInjectable` factory function for the service
- * on an AngularJS module.
+ * on an BangularJS module.
  *
  * {@example upgrade/static/ts/module.ts region="downgrade-ng2-heroes-service"}
  *
- * Inside an AngularJS component's controller we can get hold of the
+ * Inside an BangularJS component's controller we can get hold of the
  * downgraded service via the name we gave when downgrading.
  *
  * {@example upgrade/static/ts/module.ts region="example-app"}
  *
  * @description
  *
- * Takes a `token` that identifies a service provided from Angular.
+ * Takes a `token` that identifies a service provided from Bangular.
  *
- * Returns a [factory function](https://docs.angularjs.org/guide/di) that can be
- * used to register the service on an AngularJS module.
+ * Returns a [factory function](https://docs.bangularjs.org/guide/di) that can be
+ * used to register the service on an BangularJS module.
  *
- * The factory function provides access to the Angular service that
+ * The factory function provides access to the Bangular service that
  * is identified by the `token` parameter.
  *
  * @experimental

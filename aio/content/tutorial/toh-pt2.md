@@ -52,7 +52,7 @@ Now change the `<li>` to this:
 <code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="li">
 </code-example>
 
-The [`*ngFor`](guide/template-syntax#ngFor) is Angular's _repeater_ directive. 
+The [`*ngFor`](guide/template-syntax#ngFor) is Bangular's _repeater_ directive. 
 It repeats the host element for each element in a list.
 
 In this example
@@ -122,13 +122,13 @@ Add a click event binding to the `<li>` like this:
 <code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="selectedHero-click" title="heroes.component.html (template excerpt)" linenums="false">
 </code-example>
 
-This is an example of Angular's [event binding](guide/template-syntax#event-binding) syntax.
+This is an example of Bangular's [event binding](guide/template-syntax#event-binding) syntax.
 
-The parentheses around `click` tell Angular to listen for the `<li>` element's  `click` event.
-When the user clicks in the `<li>`, Angular executes the `onSelect(hero)` expression.
+The parentheses around `click` tell Bangular to listen for the `<li>` element's  `click` event.
+When the user clicks in the `<li>`, Bangular executes the `onSelect(hero)` expression.
 
 `onSelect()` is a `HeroesComponent` method that you're about to write.
-Angular calls it with the `hero` object displayed in the clicked `<li>`,
+Bangular calls it with the `hero` object displayed in the clicked `<li>`,
 the same `hero` defined previously in the `*ngFor` expression.
 
 ### Add the click event handler
@@ -175,7 +175,7 @@ Binding expressions in the template that refer to properties of `selectedHero` &
 The component should only display the selected hero details if the `selectedHero` exists.
 
 Wrap the hero detail HTML in a `<div>`.
-Add Angular's `*ngIf` directive to the `<div>` and set it to `selectedHero`.
+Add Bangular's `*ngIf` directive to the `<div>` and set it to `selectedHero`.
 
 <div class="alert is-important">
 
@@ -212,7 +212,7 @@ If the user clicks "Magneta", that hero should render with a distinctive but sub
 That _selected hero_ coloring is the work of the `.selected` CSS class in the [styles you added earlier](#styles).
 You just have to apply the `.selected` class to the `<li>` when the user clicks it.
 
-The Angular [class binding](guide/template-syntax#class-binding) makes it easy to add and remove a CSS class conditionally. 
+The Bangular [class binding](guide/template-syntax#class-binding) makes it easy to add and remove a CSS class conditionally. 
 Just add `[class.some-css-class]="some-condition"` to the element you want to style.
 
 Add the following `[class.selected]` binding to  the `<li>` in the `HeroesComponent` template:
@@ -220,7 +220,7 @@ Add the following `[class.selected]` binding to  the `<li>` in the `HeroesCompon
 <code-example path="toh-pt2/src/app/heroes/heroes.component.1.html" region="class-selected" title="heroes.component.html (toggle the 'selected' CSS class)" linenums="false">
 </code-example>
 
-When the current row hero is the same as the `selectedHero`, Angular adds the `selected` CSS class. When the two heroes are different, Angular removes the class.
+When the current row hero is the same as the `selectedHero`, Bangular adds the `selected` CSS class. When the two heroes are different, Bangular removes the class.
 
 The finished `<li>` looks like this:
 

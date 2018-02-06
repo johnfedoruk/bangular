@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {InjectionToken} from '@angular/core';
+import {InjectionToken} from '@bangular/core';
 /**
  * This class should not be used directly by an application developer. Instead, use
  * {@link Location}.
@@ -14,8 +14,8 @@ import {InjectionToken} from '@angular/core';
  * `PlatformLocation` encapsulates all calls to DOM apis, which allows the Router to be platform
  * agnostic.
  * This means that we can have different implementation of `PlatformLocation` for the different
- * platforms that angular supports. For example, `@angular/platform-browser` provides an
- * implementation specific to the browser environment, while `@angular/platform-webworker` provides
+ * platforms that bangular supports. For example, `@bangular/platform-browser` provides an
+ * implementation specific to the browser environment, while `@bangular/platform-webworker` provides
  * one suitable for use with web workers.
  *
  * The `PlatformLocation` class is used directly by all implementations of {@link LocationStrategy}

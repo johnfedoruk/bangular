@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CommonModule} from '@angular/common';
-import {Component, ContentChild, NgModule, TemplateRef, Type, ViewChild, ViewContainerRef} from '@angular/core';
-import {ComponentFixture, TestBed, fakeAsync, tick} from '@angular/core/testing';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {Router} from '@angular/router';
-import {RouterTestingModule} from '@angular/router/testing';
+import {CommonModule} from '@bangular/common';
+import {Component, ContentChild, NgModule, TemplateRef, Type, ViewChild, ViewContainerRef} from '@bangular/core';
+import {ComponentFixture, TestBed, fakeAsync, tick} from '@bangular/core/testing';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {Router} from '@bangular/router';
+import {RouterTestingModule} from '@bangular/router/testing';
 
 describe('Integration', () => {
 

@@ -3,17 +3,17 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ComponentRef} from '@angular/core';
+import {ComponentRef} from '@bangular/core';
 import {exportNgVar} from '../../dom/util';
-import {AngularProfiler} from './common_tools';
+import {BangularProfiler} from './common_tools';
 
 const PROFILER_GLOBAL_NAME = 'profiler';
 
 /**
- * Enabled Angular debug tools that are accessible via your browser's
+ * Enabled Bangular debug tools that are accessible via your browser's
  * developer console.
  *
  * Usage:
@@ -26,12 +26,12 @@ const PROFILER_GLOBAL_NAME = 'profiler';
  * @experimental All debugging apis are currently experimental.
  */
 export function enableDebugTools<T>(ref: ComponentRef<T>): ComponentRef<T> {
-  exportNgVar(PROFILER_GLOBAL_NAME, new AngularProfiler(ref));
+  exportNgVar(PROFILER_GLOBAL_NAME, new BangularProfiler(ref));
   return ref;
 }
 
 /**
- * Disables Angular tools.
+ * Disables Bangular tools.
  *
  * @experimental All debugging apis are currently experimental.
  */

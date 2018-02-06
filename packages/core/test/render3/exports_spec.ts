@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {C, E, T, V, a, b, cR, cr, defineComponent, defineDirective, e, k, m, p, t, v} from '../../src/render3/index';

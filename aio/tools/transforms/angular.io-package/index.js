@@ -3,23 +3,23 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 const Package = require('dgeni').Package;
 const gitPackage = require('dgeni-packages/git');
-const apiPackage = require('../angular-api-package');
-const contentPackage = require('../angular-content-package');
+const apiPackage = require('../bangular-api-package');
+const contentPackage = require('../bangular-content-package');
 const { extname, resolve } = require('canonical-path');
 const { existsSync } = require('fs');
 const { SRC_PATH } = require('../config');
 
-module.exports = new Package('angular.io', [gitPackage, apiPackage, contentPackage])
+module.exports = new Package('bangular.io', [gitPackage, apiPackage, contentPackage])
 
   // This processor relies upon the versionInfo. See below...
   .processor(require('./processors/processNavigationMap'))
   .processor(require('./processors/cleanGeneratedFiles'))
 
-  // We don't include this in the angular-base package because the `versionInfo` stuff
+  // We don't include this in the bangular-base package because the `versionInfo` stuff
   // accesses the file system and git, which is slow.
   .config(function(renderDocsProcessor, versionInfo) {
     // Add the version data to the renderer, for use in things like github links

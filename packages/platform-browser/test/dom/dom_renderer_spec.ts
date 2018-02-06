@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {Component, Renderer2, ViewEncapsulation} from '@angular/core';
-import {TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser/src/dom/debug/by';
-import {browserDetection} from '@angular/platform-browser/testing/src/browser_util';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {Component, Renderer2, ViewEncapsulation} from '@bangular/core';
+import {TestBed} from '@bangular/core/testing';
+import {By} from '@bangular/platform-browser/src/dom/debug/by';
+import {browserDetection} from '@bangular/platform-browser/testing/src/browser_util';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 import {NAMESPACE_URIS} from '../../src/dom/dom_renderer';
 
 {

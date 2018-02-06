@@ -1,14 +1,14 @@
 // #docplaster
 // #docregion
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
+import { NgModule }       from '@bangular/core';
+import { BrowserModule }  from '@bangular/platform-browser';
+import { FormsModule }    from '@bangular/forms';
 // #docregion animations-module
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@bangular/platform-browser/animations';
 
 // #enddocregion animations-module
 // #docregion inspect-config
-import { Router } from '@angular/router';
+import { Router } from '@bangular/router';
 
 // #enddocregion inspect-config
 import { AppComponent }            from './app.component';

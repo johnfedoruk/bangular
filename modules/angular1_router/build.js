@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 'use strict';
@@ -34,16 +34,16 @@ var PRELUDE = '(function(){\n';
 var POSTLUDE = '\n}());\n';
 
 function main(modulesDirectory) {
-  var angular1RouterModuleDirectory = modulesDirectory + '/angular1_router';
+  var bangular1RouterModuleDirectory = modulesDirectory + '/bangular1_router';
 
   var facades = fs.readFileSync(
-      angular1RouterModuleDirectory + '/lib/facades.es5', 'utf8');
+      bangular1RouterModuleDirectory + '/lib/facades.es5', 'utf8');
   var directives = fs.readFileSync(
-      angular1RouterModuleDirectory + '/src/ng_outlet.ts', 'utf8');
+      bangular1RouterModuleDirectory + '/src/ng_outlet.ts', 'utf8');
   var moduleTemplate = fs.readFileSync(
-      angular1RouterModuleDirectory + '/src/module_template.js', 'utf8');
+      bangular1RouterModuleDirectory + '/src/module_template.js', 'utf8');
 
-  var dir = modulesDirectory + '/angular2/src/router/';
+  var dir = modulesDirectory + '/bangular2/src/router/';
   var sharedCode = files.reduce(function (prev, file) {
     return prev + transform(fs.readFileSync(dir + file, 'utf8'));
   }, '');
@@ -85,7 +85,7 @@ function transform(contents) {
 
 function isFacadeModule(modulePath) {
   return modulePath.indexOf('facade') > -1 ||
-    modulePath === 'angular2/src/core/reflection/reflection';
+    modulePath === 'bangular2/src/core/reflection/reflection';
 }
 
 module.exports = function(modulesDirectory, outputDirectory) {
@@ -93,7 +93,7 @@ module.exports = function(modulesDirectory, outputDirectory) {
     fs.mkdirSync(outputDirectory);
   }
   fs.writeFileSync(
-      outputDirectory + '/angular_1_router.js', main(modulesDirectory));
+      outputDirectory + '/bangular_1_router.js', main(modulesDirectory));
 };
 
 // CLI entry point

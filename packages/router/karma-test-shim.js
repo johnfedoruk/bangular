@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /*global jasmine, __karma__, window*/
@@ -36,28 +36,28 @@ System.config({
 });
 
 System.config({
-  map: {'rxjs': 'node_modules/rxjs', '@angular': 'dist/all/@angular'},
+  map: {'rxjs': 'node_modules/rxjs', '@bangular': 'dist/all/@bangular'},
   packages: {
-    '@angular/core/testing': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/core': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/compiler/testing': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/compiler': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/common/testing': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/common': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/platform-browser/testing': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/platform-browser': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/platform-browser-dynamic/testing': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/platform-browser-dynamic': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/router/testing': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/router': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/core/testing': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/core': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/compiler/testing': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/compiler': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/common/testing': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/common': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/platform-browser/testing': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/platform-browser': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/platform-browser-dynamic/testing': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/platform-browser-dynamic': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/router/testing': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/router': {main: 'index.js', defaultExtension: 'js'},
     'rxjs': {main: 'Rx.js', defaultExtension: 'js'},
   }
 });
 
 Promise
     .all([
-      System.import('@angular/core/testing'),
-      System.import('@angular/platform-browser-dynamic/testing')
+      System.import('@bangular/core/testing'),
+      System.import('@bangular/platform-browser-dynamic/testing')
     ])
     .then(function(providers) {
       var testing = providers[0];

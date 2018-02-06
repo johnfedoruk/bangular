@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {describe, expect, it} from '@angular/core/testing/src/testing_internal';
-import {URLSearchParams} from '@angular/http/src/url_search_params';
+import {describe, expect, it} from '@bangular/core/testing/src/testing_internal';
+import {URLSearchParams} from '@bangular/http/src/url_search_params';
 
 {
   describe('URLSearchParams', () => {
@@ -76,7 +76,7 @@ import {URLSearchParams} from '@angular/http/src/url_search_params';
                   .replace(/\s/g, ''));
 
 
-      // Original example from https://github.com/angular/angular/issues/9348 for posterity
+      // Original example from https://github.com/bangular/bangular/issues/9348 for posterity
       params = new URLSearchParams();
       params.set('q', 'repo:janbaer/howcani+type:issue');
       params.set('sort', 'created');

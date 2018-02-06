@@ -1,6 +1,6 @@
 /* tslint:disable:forin */
 // #docregion
-import { Component, DoCheck, Input, ViewChild } from '@angular/core';
+import { Component, DoCheck, Input, ViewChild } from '@bangular/core';
 
 class Hero {
   constructor(public name: string) {}

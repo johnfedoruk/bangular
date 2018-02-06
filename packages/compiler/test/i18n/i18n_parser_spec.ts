@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {digest, serializeNodes} from '@angular/compiler/src/i18n/digest';
-import {extractMessages} from '@angular/compiler/src/i18n/extractor_merger';
-import {Message} from '@angular/compiler/src/i18n/i18n_ast';
-import {HtmlParser} from '@angular/compiler/src/ml_parser/html_parser';
-import {DEFAULT_INTERPOLATION_CONFIG} from '@angular/compiler/src/ml_parser/interpolation_config';
+import {digest, serializeNodes} from '@bangular/compiler/src/i18n/digest';
+import {extractMessages} from '@bangular/compiler/src/i18n/extractor_merger';
+import {Message} from '@bangular/compiler/src/i18n/i18n_ast';
+import {HtmlParser} from '@bangular/compiler/src/ml_parser/html_parser';
+import {DEFAULT_INTERPOLATION_CONFIG} from '@bangular/compiler/src/ml_parser/interpolation_config';
 
 {
   describe('I18nParser', () => {
@@ -299,7 +299,7 @@ export function _humanizeMessages(
     html: string, implicitTags: string[] = [],
     implicitAttrs: {[k: string]: string[]} = {}): [string[], string, string][] {
   // clang-format off
-  // https://github.com/angular/clang-format/issues/35
+  // https://github.com/bangular/clang-format/issues/35
   return _extractMessages(html, implicitTags, implicitAttrs).map(
     message => [serializeNodes(message.nodes), message.meaning, message.description, ]) as [string[], string, string][];
   // clang-format on
@@ -309,7 +309,7 @@ function _humanizePlaceholders(
     html: string, implicitTags: string[] = [],
     implicitAttrs: {[k: string]: string[]} = {}): string[] {
   // clang-format off
-  // https://github.com/angular/clang-format/issues/35
+  // https://github.com/bangular/clang-format/issues/35
   return _extractMessages(html, implicitTags, implicitAttrs).map(
     msg => Object.keys(msg.placeholders).map((name) => `${name}=${msg.placeholders[name]}`).join(', '));
   // clang-format on
@@ -319,7 +319,7 @@ function _humanizePlaceholdersToMessage(
     html: string, implicitTags: string[] = [],
     implicitAttrs: {[k: string]: string[]} = {}): string[] {
   // clang-format off
-  // https://github.com/angular/clang-format/issues/35
+  // https://github.com/bangular/clang-format/issues/35
   return _extractMessages(html, implicitTags, implicitAttrs).map(
     msg => Object.keys(msg.placeholderToMessage).map(k => `${k}=${digest(msg.placeholderToMessage[k])}`).join(', '));
   // clang-format on

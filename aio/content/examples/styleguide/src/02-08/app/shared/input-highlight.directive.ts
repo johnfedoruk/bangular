@@ -1,5 +1,5 @@
 // #docregion
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef } from '@bangular/core';
 
 @Directive({ selector: 'input'})
 /** Highlight the attached input text element in blue */

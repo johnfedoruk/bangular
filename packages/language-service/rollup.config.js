@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 const commonjs = require('rollup-plugin-commonjs');
 const sourcemaps = require('rollup-plugin-sourcemaps');
 const path = require('path');
 
-var m = /^\@angular\/((\w|\-)+)(\/(\w|\d|\/|\-)+)?$/;
+var m = /^\@bangular\/((\w|\-)+)(\/(\w|\d|\/|\-)+)?$/;
 var location = normalize('../../dist/packages-dist') + '/';
 var rxjsLocation = normalize('../../node_modules/rxjs');
 var tslibLocation = normalize('../../node_modules/tslib');
@@ -68,7 +68,7 @@ module.exports = {
       // Don't name this module, causes
       // Loading the language service caused the following exception: TypeError:
       // $deferred.modules.map is not a function
-      // id: '@angular/language-service'
+      // id: '@bangular/language-service'
   },
   moduleName: 'ng.language_service',
   exports: 'named',

@@ -11,7 +11,7 @@ ts_library(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/common/http/testing",
+    module_name = "@bangular/common/http/testing",
     deps = [
         "//packages/common/http",
         "//packages/core",

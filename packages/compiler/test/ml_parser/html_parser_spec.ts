@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as html from '../../src/ml_parser/ast';
@@ -186,7 +186,7 @@ import {humanizeDom, humanizeDomSourceSpans, humanizeLineColumn} from './ast_spe
               ]);
         });
 
-        // https://github.com/angular/angular/issues/5967
+        // https://github.com/bangular/bangular/issues/5967
         it('should not add the requiredParent to a template root element', () => {
           expect(humanizeDom(parser.parse('<tr></tr>', 'TestComp'))).toEqual([
             [html.Element, 'tr', 0],

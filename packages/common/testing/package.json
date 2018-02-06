@@ -1,5 +1,5 @@
 {
-  "name": "@angular/common/testing",
+  "name": "@bangular/common/testing",
   "typings": "./testing.d.ts",
   "main": "../bundles/common-testing.umd.js",
   "module": "../esm5/testing.js",

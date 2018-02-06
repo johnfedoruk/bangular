@@ -2,7 +2,7 @@
 
 
 ## Objective
-Whenever a PR job is run on Travis, we want to build `angular.io` and upload the build artifacts to
+Whenever a PR job is run on Travis, we want to build `bangular.io` and upload the build artifacts to
 a publicly accessible server so that collaborators (developers, designers, authors, etc) can preview
 the changes without having to checkout and build the app locally.
 
@@ -10,8 +10,8 @@ the changes without having to checkout and build the app locally.
 ## Source code
 In order to make it easier to administer the server and version-control the setup, we are using
 [docker](https://www.docker.com) to run a container on a VM. The Dockerfile and all other files
-necessary for creating the docker container are stored (and versioned) along with the angular.io
-project's source code (currently part of the angular/angular repo) in the `aio-builds-setup/`
+necessary for creating the docker container are stored (and versioned) along with the bangular.io
+project's source code (currently part of the bangular/bangular repo) in the `aio-builds-setup/`
 directory.
 
 
@@ -34,9 +34,9 @@ container:
 
 ### On CI (Travis)
 - Build job completes successfully.
-- The CI script checks whether the build job was initiated by a PR against the angular/angular
+- The CI script checks whether the build job was initiated by a PR against the bangular/bangular
   master branch.
-- The CI script checks whether the PR has touched any files that might affect the angular.io app
+- The CI script checks whether the PR has touched any files that might affect the bangular.io app
   (currently the `aio/` or `packages/` directories, ignoring spec files).
 - Optionally, the CI script can check whether the PR can be automatically verified (i.e. if the
   author of the PR is a member of one of the whitelisted GitHub teams or the PR has the specified

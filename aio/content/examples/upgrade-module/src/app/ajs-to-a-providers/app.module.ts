@@ -1,8 +1,8 @@
-declare var angular: angular.IAngularStatic;
-import { NgModule } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { BrowserModule } from '@angular/platform-browser';
-import { UpgradeModule, downgradeComponent } from '@angular/upgrade/static';
+declare var bangular: bangular.IBangularStatic;
+import { NgModule } from '@bangular/core';
+import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
+import { BrowserModule } from '@bangular/platform-browser';
+import { UpgradeModule, downgradeComponent } from '@bangular/upgrade/static';
 
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesService } from './heroes.service';
@@ -34,11 +34,11 @@ export class AppModule {
 }
 // #enddocregion register
 
-angular.module('heroApp', [])
+bangular.module('heroApp', [])
   .service('heroes', HeroesService)
   .directive(
     'heroDetail',
-    downgradeComponent({component: HeroDetailComponent}) as angular.IDirectiveFactory
+    downgradeComponent({component: HeroDetailComponent}) as bangular.IDirectiveFactory
   );
 
 platformBrowserDynamic().bootstrapModule(AppModule);

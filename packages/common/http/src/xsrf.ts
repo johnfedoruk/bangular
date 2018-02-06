@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {DOCUMENT, ɵparseCookieValue as parseCookieValue} from '@angular/common';
-import {Inject, Injectable, InjectionToken, PLATFORM_ID} from '@angular/core';
+import {DOCUMENT, ɵparseCookieValue as parseCookieValue} from '@bangular/common';
+import {Inject, Injectable, InjectionToken, PLATFORM_ID} from '@bangular/core';
 import {Observable} from 'rxjs/Observable';
 
 import {HttpHandler} from './backend';

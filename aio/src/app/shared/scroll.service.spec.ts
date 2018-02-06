@@ -1,6 +1,6 @@
-import { ReflectiveInjector } from '@angular/core';
-import { PlatformLocation } from '@angular/common';
-import { DOCUMENT } from '@angular/platform-browser';
+import { ReflectiveInjector } from '@bangular/core';
+import { PlatformLocation } from '@bangular/common';
+import { DOCUMENT } from '@bangular/platform-browser';
 
 import { ScrollService, topMargin } from './scroll.service';
 

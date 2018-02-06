@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {verifyNoBrowserErrors} from 'angular2/src/testing/perf_util';
+import {verifyNoBrowserErrors} from 'bangular2/src/testing/perf_util';
 
 describe('ng2 largetable benchmark', function() {
 

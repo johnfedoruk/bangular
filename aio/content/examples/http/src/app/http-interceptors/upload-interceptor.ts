@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 import {
   HttpEvent, HttpInterceptor, HttpHandler,
   HttpRequest, HttpResponse,
   HttpEventType, HttpProgressEvent
-} from '@angular/common/http';
+} from '@bangular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';

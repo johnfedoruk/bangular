@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-// NOTE: This list shold be in sync with aio/tools/transforms/angular-api-package/index.js
+// NOTE: This list shold be in sync with aio/tools/transforms/bangular-api-package/index.js
 const entrypoints = [
   'dist/packages-dist/animations/animations.d.ts',
   'dist/packages-dist/animations/browser.d.ts',
@@ -16,7 +16,7 @@ const entrypoints = [
   'dist/packages-dist/common/http.d.ts',
   'dist/packages-dist/common/http/testing.d.ts',
   // The API surface of the compiler is currently unstable - all of the important APIs are exposed
-  // via @angular/core, @angular/platform-browser or @angular/platform-browser-dynamic instead.
+  // via @bangular/core, @bangular/platform-browser or @bangular/platform-browser-dynamic instead.
   //'dist/packages-dist/compiler/index.d.ts',
   //'dist/packages-dist/compiler/testing.d.ts',
   'dist/packages-dist/core/core.d.ts',
@@ -53,7 +53,7 @@ const publicApiArgs = [
   '--allowModuleIdentifiers',
   'protractor',
   '--allowModuleIdentifiers',
-  'angular',
+  'bangular',
   '--onStabilityMissing',
   'error',
 ].concat(entrypoints);

@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CompileMetadataResolver, CompileNgModuleMetadata, CompilePipeSummary, CompilerConfig, DomElementSchemaRegistry, HtmlParser, I18NHtmlParser, Lexer, NgAnalyzedModules, Parser, TemplateParser} from '@angular/compiler';
+import {CompileMetadataResolver, CompileNgModuleMetadata, CompilePipeSummary, CompilerConfig, DomElementSchemaRegistry, HtmlParser, I18NHtmlParser, Lexer, NgAnalyzedModules, Parser, TemplateParser} from '@bangular/compiler';
 
 import {AstResult, TemplateInfo} from './common';
 import {getTemplateCompletions} from './completions';
@@ -17,7 +17,7 @@ import {Completions, Definition, Diagnostic, DiagnosticKind, Diagnostics, Hover,
 
 
 /**
- * Create an instance of an Angular `LanguageService`.
+ * Create an instance of an Bangular `LanguageService`.
  *
  * @experimental
  */

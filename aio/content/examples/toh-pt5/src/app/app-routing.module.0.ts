@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@bangular/core';
+import { CommonModule } from '@bangular/common';
 
 @NgModule({
   imports: [

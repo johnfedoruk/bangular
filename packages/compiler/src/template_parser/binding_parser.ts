@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {CompileDirectiveSummary, CompilePipeSummary} from '../compile_metadata';
@@ -219,7 +219,7 @@ export class BindingParser {
       targetMatchableAttrs: string[][], targetProps: BoundProperty[]) {
     // This will occur when a @trigger is not paired with an expression.
     // For animations it is valid to not have an expression since */void
-    // states will be applied by angular when the element is attached/detached
+    // states will be applied by bangular when the element is attached/detached
     const ast = this._parseBinding(expression || 'undefined', false, sourceSpan);
     targetMatchableAttrs.push([name, ast.source !]);
     targetProps.push(new BoundProperty(name, ast, BoundPropertyType.ANIMATION, sourceSpan));

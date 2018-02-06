@@ -53,7 +53,7 @@ example.
 
 ## Appendix: Why not generating stackblitz at runtime?
 
-At AngularJS, all the plunker examples were generated a runtime. The downside was that all the example code had to be 
+At BangularJS, all the plunker examples were generated a runtime. The downside was that all the example code had to be 
 deployed as well and would no longer be useful after the plunker was generated. 
 
 This `StackblitzBuilder` tool takes a few seconds to run, and the end result is only 3mb~.

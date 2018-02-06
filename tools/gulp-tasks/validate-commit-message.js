@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 
@@ -47,7 +47,7 @@ module.exports = (gulp) => () => {
   if (someCommitsInvalid) {
     console.log('Please fix the failing commit messages before continuing...');
     console.log(
-        'Commit message guidelines: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines');
+        'Commit message guidelines: https://github.com/bangular/bangular/blob/master/CONTRIBUTING.md#-commit-message-guidelines');
     process.exit(1);
   }
 };

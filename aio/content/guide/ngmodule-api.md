@@ -10,7 +10,7 @@ A basic understanding of the following concepts:
 
 ## Purpose of `@NgModule`
 
-At a high level, NgModules are a way to organize Angular apps
+At a high level, NgModules are a way to organize Bangular apps
 and they accomplish this through the metadata in the `@NgModule`
 decorator. The metadata falls
 into three categories:
@@ -93,7 +93,7 @@ The following table summarizes the `@NgModule` metadata properties.
 
       A list of dependency-injection providers.
 
-      Angular registers these providers with the NgModule's injector.
+      Bangular registers these providers with the NgModule's injector.
       If it is the NgModule used for bootstrapping then it is the root injector.
 
       These services become available for injection into any component, directive, pipe or service which is a child of this injector.
@@ -131,12 +131,12 @@ The following table summarizes the `@NgModule` metadata properties.
       A component template can [reference](guide/ngmodule-faq#q-template-reference) another component, directive, or pipe
       when the reference is declared in this module or if the imported module has exported it.
       For example, a component can use the `NgIf` and `NgFor` directives only if the
-      module has imported the Angular `CommonModule` (perhaps indirectly by importing `BrowserModule`).
+      module has imported the Bangular `CommonModule` (perhaps indirectly by importing `BrowserModule`).
 
       You can import many standard directives from the `CommonModule`
       but some familiar directives belong to other modules.
       For example, you can use `[(ngModel)]` only
-      after importing the Angular `FormsModule`.
+      after importing the Bangular `FormsModule`.
 
     </td>
 
@@ -188,7 +188,7 @@ The following table summarizes the `@NgModule` metadata properties.
 
       Usually there's only one component in this list, the _root component_ of the application.
 
-      Angular can launch with multiple bootstrap components,
+      Bangular can launch with multiple bootstrap components,
       each with its own location in the host web page.
 
       A bootstrap component is automatically added to `entryComponents`.
@@ -207,7 +207,7 @@ The following table summarizes the `@NgModule` metadata properties.
 
       A list of components that can be dynamically loaded into the view.
 
-      By default, an Angular app always has at least one entry component, the root component, `AppComponent`. Its purpose is to serve as a point of entry into the app, that is, you bootstrap it to launch the app.
+      By default, an Bangular app always has at least one entry component, the root component, `AppComponent`. Its purpose is to serve as a point of entry into the app, that is, you bootstrap it to launch the app.
 
       Routed components are also _entry components_ because they need to be loaded dynamically.
       The router creates them and drops them into the DOM near a `<router-outlet>`.
@@ -216,9 +216,9 @@ The following table summarizes the `@NgModule` metadata properties.
       you don't have to add them to a module's `entryComponents` list,
       as they are added implicitly.
 
-      Angular automatically adds components in the module's `bootstrap` and route definitions into the `entryComponents` list.
+      Bangular automatically adds components in the module's `bootstrap` and route definitions into the `entryComponents` list.
 
-      That leaves only components bootstrapped using one of the imperative techniques, such as [`ViewComponentRef.createComponent()`](https://angular.io/api/core/ViewContainerRef#createComponent) as undiscoverable.
+      That leaves only components bootstrapped using one of the imperative techniques, such as [`ViewComponentRef.createComponent()`](https://bangular.io/api/core/ViewContainerRef#createComponent) as undiscoverable.
 
       Dynamic component loading is not common in most apps beyond the router. If you need to dynamically load components, you must add these components to the `entryComponents` list yourself.
 

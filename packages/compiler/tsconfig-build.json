@@ -12,7 +12,7 @@
     "moduleResolution": "node",
     "outDir": "../../dist/packages/compiler",
     "paths": {
-      "@angular/core": ["../../dist/packages/core"]
+      "@bangular/core": ["../../dist/packages/core"]
     },
     "rootDir": ".",
     "sourceMap": true,
@@ -28,7 +28,7 @@
     "../../node_modules/zone.js/dist/zone.js.d.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "skipMetadataEmit": true,
     "skipTemplateCodegen": true

@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, Input} from '@angular/core';
-import {ComponentFixture, TestBed, async} from '@angular/core/testing';
-import {By} from '@angular/platform-browser/src/dom/debug/by';
-import {browserDetection} from '@angular/platform-browser/testing/src/browser_util';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {Component, Directive, Input} from '@bangular/core';
+import {ComponentFixture, TestBed, async} from '@bangular/core/testing';
+import {By} from '@bangular/platform-browser/src/dom/debug/by';
+import {browserDetection} from '@bangular/platform-browser/testing/src/browser_util';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 {
   describe('integration tests', () => {

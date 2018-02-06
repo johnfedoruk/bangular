@@ -206,13 +206,13 @@ Then reload with `Cmd+r` or `Ctrl+r`, depending on your platform.
 
 ## `forRoot()` and `forChild()`
 
-You might have noticed that the CLI adds `RouterModule.forRoot(routes)` to the `app-routing.module.ts` `imports` array. This lets Angular know that this module,
+You might have noticed that the CLI adds `RouterModule.forRoot(routes)` to the `app-routing.module.ts` `imports` array. This lets Bangular know that this module,
 `AppRoutingModule`, is a routing module and `forRoot()` specifies that this is the root
 routing module. It configures all the
 routes you pass to it, gives you access to the router directives, and registers the `RouterService`.
 Use `forRoot()` in the `AppRoutingModule`&mdash;that is, one time in the app at the root level.
 
-The CLI also adds `RouterModule.forChild(routes)` to feature routing modules. This way, Angular
+The CLI also adds `RouterModule.forChild(routes)` to feature routing modules. This way, Bangular
 knows that the route list is only responsible for providing additional routes and is intended for feature modules. You can use `forChild()` in multiple modules.
 
 `forRoot()` contains injector configuration which is global; such as configuring the Router. `forChild()` has no injector configuration, only directives such as `RouterOutlet` and `RouterLink`.

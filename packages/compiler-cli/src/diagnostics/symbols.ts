@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {StaticSymbol} from '@angular/compiler';
+import {StaticSymbol} from '@bangular/compiler';
 
 /**
  * The range of a span of text in a source file.
@@ -42,13 +42,13 @@ export type Definition = Location[] | undefined;
 
 /**
  * A symbol describing a language element that can be referenced by expressions
- * in an Angular template.
+ * in an Bangular template.
  *
  * @experimental
  */
 export interface Symbol {
   /**
-   * The name of the symbol as it would be referenced in an Angular expression.
+   * The name of the symbol as it would be referenced in an Bangular expression.
    */
   readonly name: string;
 
@@ -59,7 +59,7 @@ export interface Symbol {
 
   /**
    * The language of the source that defines the symbol. (e.g. typescript for TypeScript,
-   * ng-template for an Angular template, etc.)
+   * ng-template for an Bangular template, etc.)
    */
   readonly language: string;
 
@@ -97,7 +97,7 @@ export interface Symbol {
 
   /**
    * A table of the members of the symbol; that is, the members that can appear
-   * after a `.` in an Angular expression.
+   * after a `.` in an Bangular expression.
    */
   members(): SymbolTable;
 
@@ -275,7 +275,7 @@ export interface PipeInfo {
 export type Pipes = PipeInfo[] | undefined;
 
 /**
- * Describes the language context in which an Angular expression is evaluated.
+ * Describes the language context in which an Bangular expression is evaluated.
  *
  * @experimental
  */

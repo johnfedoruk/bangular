@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker';
+import { Injectable } from '@bangular/core';
+import { SwUpdate } from '@bangular/service-worker';
 
 function promptUser(event): boolean {
   return true;

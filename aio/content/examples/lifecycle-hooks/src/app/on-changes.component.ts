@@ -3,7 +3,7 @@
 import {
   Component, Input, OnChanges,
   SimpleChanges, ViewChild
-} from '@angular/core';
+} from '@bangular/core';
 
 class Hero {
   constructor(public name: string) {}

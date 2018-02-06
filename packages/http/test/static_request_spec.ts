@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {describe, expect, it} from '@angular/core/testing/src/testing_internal';
-import {RequestOptions} from '@angular/http/src/base_request_options';
-import {ContentType} from '@angular/http/src/enums';
-import {Headers} from '@angular/http/src/headers';
-import {stringToArrayBuffer, stringToArrayBuffer8} from '@angular/http/src/http_utils';
-import {ArrayBuffer, Request} from '@angular/http/src/static_request';
-import {ɵgetDOM as getDOM} from '@angular/platform-browser';
+import {describe, expect, it} from '@bangular/core/testing/src/testing_internal';
+import {RequestOptions} from '@bangular/http/src/base_request_options';
+import {ContentType} from '@bangular/http/src/enums';
+import {Headers} from '@bangular/http/src/headers';
+import {stringToArrayBuffer, stringToArrayBuffer8} from '@bangular/http/src/http_utils';
+import {ArrayBuffer, Request} from '@bangular/http/src/static_request';
+import {ɵgetDOM as getDOM} from '@bangular/platform-browser';
 
 {
   describe('Request', () => {

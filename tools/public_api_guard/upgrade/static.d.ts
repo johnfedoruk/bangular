@@ -14,16 +14,16 @@ export declare function downgradeInjectable(token: any): Function;
 export declare function downgradeModule<T>(moduleFactoryOrBootstrapFn: NgModuleFactory<T> | ((extraProviders: StaticProvider[]) => Promise<NgModuleRef<T>>)): string;
 
 /** @stable */
-export declare function getAngularJSGlobal(): any;
+export declare function getBangularJSGlobal(): any;
 
 /** @deprecated */
-export declare function getAngularLib(): any;
+export declare function getBangularLib(): any;
 
 /** @stable */
-export declare function setAngularJSGlobal(ng: any): void;
+export declare function setBangularJSGlobal(ng: any): void;
 
 /** @deprecated */
-export declare function setAngularLib(ng: any): void;
+export declare function setBangularLib(ng: any): void;
 
 /** @experimental */
 export declare class UpgradeComponent implements OnInit, OnChanges, DoCheck, OnDestroy {

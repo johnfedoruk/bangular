@@ -1,10 +1,10 @@
 // #docplaster
 // #docregion
 // #docregion example
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule }      from '@bangular/core';
+import { BrowserModule } from '@bangular/platform-browser';
 // #enddocregion example
-import { RouterModule } from '@angular/router';
+import { RouterModule } from '@bangular/router';
 // #docregion example
 
 import { AppComponent }   from './app.component';

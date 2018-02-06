@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Lexer, Token} from '@angular/compiler/src/expression_parser/lexer';
+import {Lexer, Token} from '@bangular/compiler/src/expression_parser/lexer';
 
 function lex(text: string): any[] {
   return new Lexer().tokenize(text);

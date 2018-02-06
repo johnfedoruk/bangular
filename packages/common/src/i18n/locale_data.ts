@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /**
@@ -12,7 +12,7 @@
 export const LOCALE_DATA: {[localeId: string]: any} = {};
 
 /**
- * Register global data to be used internally by Angular. See the
+ * Register global data to be used internally by Bangular. See the
  * {@linkDocs guide/i18n#i18n-pipes "I18n guide"} to know how to import additional locale data.
  *
  * @experimental i18n support is experimental.

@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {SimpleChange} from '@angular/core';
-import {fakeAsync, flushMicrotasks, tick} from '@angular/core/testing';
-import {beforeEach, describe, expect, it} from '@angular/core/testing/src/testing_internal';
-import {AbstractControl, CheckboxControlValueAccessor, ControlValueAccessor, DefaultValueAccessor, FormArray, FormArrayName, FormControl, FormControlDirective, FormControlName, FormGroup, FormGroupDirective, FormGroupName, NgControl, NgForm, NgModel, NgModelGroup, SelectControlValueAccessor, SelectMultipleControlValueAccessor, ValidationErrors, Validator, Validators} from '@angular/forms';
-import {composeValidators, selectValueAccessor} from '@angular/forms/src/directives/shared';
+import {SimpleChange} from '@bangular/core';
+import {fakeAsync, flushMicrotasks, tick} from '@bangular/core/testing';
+import {beforeEach, describe, expect, it} from '@bangular/core/testing/src/testing_internal';
+import {AbstractControl, CheckboxControlValueAccessor, ControlValueAccessor, DefaultValueAccessor, FormArray, FormArrayName, FormControl, FormControlDirective, FormControlName, FormGroup, FormGroupDirective, FormGroupName, NgControl, NgForm, NgModel, NgModelGroup, SelectControlValueAccessor, SelectMultipleControlValueAccessor, ValidationErrors, Validator, Validators} from '@bangular/forms';
+import {composeValidators, selectValueAccessor} from '@bangular/forms/src/directives/shared';
 import {SpyNgControl, SpyValueAccessor} from './spies';
 
 class DummyControlValueAccessor implements ControlValueAccessor {

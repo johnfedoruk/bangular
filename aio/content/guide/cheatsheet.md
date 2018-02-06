@@ -4,7 +4,7 @@
 <table class="is-full-width is-fixed-layout">
 <tbody><tr>
 <th>Bootstrapping</th>
-<th><p><code>import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';</code>
+<th><p><code>import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';</code>
 </p>
 </th>
 </tr>
@@ -18,7 +18,7 @@
 <table class="is-full-width is-fixed-layout">
 <tbody><tr>
 <th>NgModules</th>
-<th><p><code>import { NgModule } from '@angular/core';</code>
+<th><p><code>import { NgModule } from '@bangular/core';</code>
 </p>
 </th>
 </tr>
@@ -119,7 +119,7 @@ is available to <code>declarations</code> of this module.</p>
 <table class="is-full-width is-fixed-layout">
 <tbody><tr>
 <th>Built-in directives</th>
-<th><p><code>import { CommonModule } from '@angular/common';</code>
+<th><p><code>import { CommonModule } from '@bangular/common';</code>
 </p>
 </th>
 </tr>
@@ -145,7 +145,7 @@ is available to <code>declarations</code> of this module.</p>
 <table class="is-full-width is-fixed-layout">
 <tbody><tr>
 <th>Forms</th>
-<th><p><code>import { FormsModule } from '@angular/forms';</code>
+<th><p><code>import { FormsModule } from '@bangular/forms';</code>
 </p>
 </th>
 </tr>
@@ -159,7 +159,7 @@ is available to <code>declarations</code> of this module.</p>
 <table class="is-full-width is-fixed-layout">
 <tbody><tr>
 <th>Class decorators</th>
-<th><p><code>import { Directive, ... } from '@angular/core';</code>
+<th><p><code>import { Directive, ... } from '@bangular/core';</code>
 </p>
 </th>
 </tr>
@@ -233,7 +233,7 @@ so the <code>@Directive</code> configuration applies to components as well</p>
 <table class="is-full-width is-fixed-layout">
 <tbody><tr>
 <th>Class field decorators for directives and components</th>
-<th><p><code>import { Input, ... } from '@angular/core';</code>
+<th><p><code>import { Input, ... } from '@bangular/core';</code>
 </p>
 </th>
 </tr>
@@ -342,7 +342,7 @@ so the <code>@Directive</code> configuration applies to components as well</p>
 <table class="is-full-width is-fixed-layout">
 <tbody><tr>
 <th>Routing and navigation</th>
-<th><p><code>import { Routes, RouterModule, ... } from '@angular/router';</code>
+<th><p><code>import { Routes, RouterModule, ... } from '@bangular/router';</code>
 </p>
 </th>
 </tr>

@@ -1,7 +1,7 @@
 // #docplaster
 // #docregion
 // #docregion imports
-import { Component, Inject } from '@angular/core';
+import { Component, Inject } from '@bangular/core';
 
 import { APP_CONFIG, AppConfig } from './app.config';
 import { UserService } from './user.service';

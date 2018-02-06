@@ -1,7 +1,7 @@
 // #docregion
-import { NgModule }      from '@angular/core';
-import { FormsModule }   from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule }      from '@bangular/core';
+import { FormsModule }   from '@bangular/forms';
+import { BrowserModule } from '@bangular/platform-browser';
 
 import { AppComponent }     from './app.component';
 import { ContentComponent } from './content.component';

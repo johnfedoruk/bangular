@@ -1,7 +1,7 @@
 // #docplaster
 // #docregion routes
-import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule }             from '@bangular/core';
+import { RouterModule, Routes } from '@bangular/router';
 
 import { CrisisCenterHomeComponent } from './crisis-center-home.component';
 import { CrisisListComponent }       from './crisis-list.component';

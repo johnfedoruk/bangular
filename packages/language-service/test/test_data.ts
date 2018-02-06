@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {MockData} from './test_utils';
@@ -11,7 +11,7 @@ import {MockData} from './test_utils';
 export const toh = {
   'foo.ts': `export * from './app/app.component.ts';`,
   app: {
-    'app.component.ts': `import { Component } from '@angular/core';
+    'app.component.ts': `import { Component } from '@bangular/core';
 
 export class Hero {
   id: number;
@@ -39,9 +39,9 @@ export class AppComponent {
   private internal: string;
 }`,
     'main.ts': `
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from '@bangular/core';
+import { CommonModule } from '@bangular/common';
+import { FormsModule } from '@bangular/forms';
 import { AppComponent }   from './app.component';
 import { CaseIncompleteOpen, CaseMissingClosing, CaseUnknown, Pipes, TemplateReference, NoValueAttribute,
          AttributeBinding, StringModel,PropertyBinding, EventBinding, TwoWayBinding, EmptyInterpolation,
@@ -64,7 +64,7 @@ declare function bootstrap(v: any): void;
 bootstrap(AppComponent);
 `,
     'parsing-cases.ts': `
-import {Component, Directive, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Directive, Input, Output, EventEmitter} from '@bangular/core';
 import {Hero} from './app.component';
 
 @Component({template: '<h1>Some <~{incomplete-open-lt}a~{incomplete-open-a} ~{incomplete-open-attr} text</h1>'})
@@ -161,7 +161,7 @@ export class EmptyInterpolation {
 }
 `,
     'expression-cases.ts': `
-import {Component} from '@angular/core';
+import {Component} from '@bangular/core';
 
 export interface Person {
   name: string;
@@ -192,7 +192,7 @@ export class LowercasePipe {
 }
 `,
     'ng-for-cases.ts': `
-import {Component} from '@angular/core';
+import {Component} from '@bangular/core';
 
 export interface Person {
   name: string;
@@ -213,7 +213,7 @@ export class UnknownTrackBy {
 }
 `,
     'ng-if-cases.ts': `
-import {Component} from '@angular/core';
+import {Component} from '@bangular/core';
 
 @Component({template: '<div ~{implicit}*ngIf="show; let l=unknown"~{implicit-end}>Showing now!</div>'})
 export class ShowIf {

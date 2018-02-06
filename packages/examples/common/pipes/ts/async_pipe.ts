@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component} from '@angular/core';
+import {Component} from '@bangular/core';
 import {Observable} from 'rxjs/Observable';
 import {Subscriber} from 'rxjs/Subscriber';
 
@@ -55,7 +55,7 @@ export class AsyncObservablePipeComponent {
 }
 // #enddocregion
 
-// For some reason protractor hangs on setInterval. So we will run outside of angular zone so that
+// For some reason protractor hangs on setInterval. So we will run outside of bangular zone so that
 // protractor will not see us. Also we want to have this outside the docregion so as not to confuse
 // the reader.
 function setInterval(fn: Function, delay: number) {

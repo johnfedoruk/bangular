@@ -17,13 +17,13 @@ describe('site App', function() {
 
   it('should set appropriate window titles', () => {
     page.navigateTo('');
-    expect(browser.getTitle()).toBe('Angular');
+    expect(browser.getTitle()).toBe('Bangular');
 
     page.getTopMenuLink('features').click();
-    expect(browser.getTitle()).toBe('Angular - FEATURES & BENEFITS');
+    expect(browser.getTitle()).toBe('Bangular - FEATURES & BENEFITS');
 
     page.homeLink.click();
-    expect(browser.getTitle()).toBe('Angular');
+    expect(browser.getTitle()).toBe('Bangular');
   });
 
   it('should show the tutorial index page at `/tutorial` after jitterbugging through features', () => {
@@ -58,7 +58,7 @@ describe('site App', function() {
       expect(page.getScrollTop()).toBeGreaterThan(0);
 
       page.getNavItem(/api/i).click();
-      browser.waitForAngular();
+      browser.waitForBangular();
       expect(page.locationPath()).toBe('/api');
       expect(page.getScrollTop()).toBe(0);
     });
@@ -70,7 +70,7 @@ describe('site App', function() {
       expect(page.getScrollTop()).toBeGreaterThan(0);
 
       page.getNavItem(/security/i).click();
-      browser.waitForAngular();
+      browser.waitForBangular();
       expect(page.locationPath()).toBe('/guide/security');
       expect(page.getScrollTop()).toBe(0);
     });

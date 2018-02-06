@@ -1,9 +1,9 @@
 // #docplaster
 // #docregion
-/* Angular Imports */
-import { NgModule }           from '@angular/core';
-import { BrowserModule }      from '@angular/platform-browser';
-import { FormsModule }        from '@angular/forms';
+/* Bangular Imports */
+import { NgModule }           from '@bangular/core';
+import { BrowserModule }      from '@bangular/platform-browser';
+import { FormsModule }        from '@bangular/forms';
 
 /* App Imports */
 // #enddocregion

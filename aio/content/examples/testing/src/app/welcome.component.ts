@@ -1,5 +1,5 @@
 // #docregion
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@bangular/core';
 
 import { UserService }       from './model/user.service';
 

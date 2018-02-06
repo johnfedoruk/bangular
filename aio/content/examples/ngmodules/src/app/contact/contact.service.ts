@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy } from '@bangular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';

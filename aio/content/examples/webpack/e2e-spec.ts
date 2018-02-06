@@ -4,7 +4,7 @@ import { browser, element, by } from 'protractor';
 
 describe('QuickStart E2E Tests', function () {
 
-  let expectedMsg = 'Hello from Angular App with Webpack';
+  let expectedMsg = 'Hello from Bangular App with Webpack';
 
   beforeEach(function () {
     browser.get('');

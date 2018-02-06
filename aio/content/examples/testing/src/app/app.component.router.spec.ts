@@ -1,21 +1,21 @@
 // For more examples:
-//   https://github.com/angular/angular/blob/master/modules/@angular/router/test/integration.spec.ts
+//   https://github.com/bangular/bangular/blob/master/modules/@bangular/router/test/integration.spec.ts
 
 import { async, ComponentFixture, fakeAsync, TestBed, tick,
-} from '@angular/core/testing';
+} from '@bangular/core/testing';
 
-import { RouterTestingModule } from '@angular/router/testing';
-import { SpyLocation }         from '@angular/common/testing';
+import { RouterTestingModule } from '@bangular/router/testing';
+import { SpyLocation }         from '@bangular/common/testing';
 
 import { click }               from '../testing';
 
 // r - for relatively obscure router symbols
-import * as r                         from  '@angular/router';
-import { Router, RouterLinkWithHref } from '@angular/router';
+import * as r                         from  '@bangular/router';
+import { Router, RouterLinkWithHref } from '@bangular/router';
 
-import { By }                 from '@angular/platform-browser';
-import { DebugElement, Type } from '@angular/core';
-import { Location }           from '@angular/common';
+import { By }                 from '@bangular/platform-browser';
+import { DebugElement, Type } from '@bangular/core';
+import { Location }           from '@bangular/common';
 
 import { AppModule }          from './app.module';
 import { AppComponent }       from './app.component';
@@ -75,8 +75,8 @@ describe('AppComponent & RouterTestingModule', () => {
 
 
 ///////////////
-import { NgModuleFactoryLoader }    from '@angular/core';
-import { SpyNgModuleFactoryLoader } from '@angular/router/testing';
+import { NgModuleFactoryLoader }    from '@bangular/core';
+import { SpyNgModuleFactoryLoader } from '@bangular/router/testing';
 
 import { HeroModule }             from './hero/hero.module';  // should be lazy loaded
 import { HeroListComponent }      from './hero/hero-list.component';

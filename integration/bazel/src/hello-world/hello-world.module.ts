@@ -1,5 +1,5 @@
 import {HelloWorldComponent} from './hello-world.component';
-import {NgModule} from '@angular/core';
+import {NgModule} from '@bangular/core';
 
 @NgModule({
   declarations: [HelloWorldComponent],

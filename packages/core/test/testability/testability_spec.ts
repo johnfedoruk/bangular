@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {EventEmitter} from '@angular/core';
-import {Injectable} from '@angular/core/src/di';
-import {Testability, TestabilityRegistry} from '@angular/core/src/testability/testability';
-import {NgZone} from '@angular/core/src/zone/ng_zone';
-import {AsyncTestCompleter, SpyObject, beforeEach, describe, expect, inject, it} from '@angular/core/testing/src/testing_internal';
+import {EventEmitter} from '@bangular/core';
+import {Injectable} from '@bangular/core/src/di';
+import {Testability, TestabilityRegistry} from '@bangular/core/src/testability/testability';
+import {NgZone} from '@bangular/core/src/zone/ng_zone';
+import {AsyncTestCompleter, SpyObject, beforeEach, describe, expect, inject, it} from '@bangular/core/testing/src/testing_internal';
 
 import {scheduleMicroTask} from '../../src/util';
 

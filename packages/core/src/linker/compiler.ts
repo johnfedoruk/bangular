@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {Injectable, InjectionToken, StaticProvider} from '../di';
@@ -32,7 +32,7 @@ function _throwError() {
 }
 
 /**
- * Low-level service for running the angular compiler during runtime
+ * Low-level service for running the bangular compiler during runtime
  * to create {@link ComponentFactory}s, which
  * can later be used to create and render a Component instance.
  *
@@ -90,7 +90,7 @@ export type CompilerOptions = {
   defaultEncapsulation?: ViewEncapsulation,
   providers?: StaticProvider[],
   missingTranslation?: MissingTranslationStrategy,
-  // Whether to support the `<template>` tag and the `template` attribute to define angular
+  // Whether to support the `<template>` tag and the `template` attribute to define bangular
   // templates. They have been deprecated in 4.x, `<ng-template>` should be used instead.
   enableLegacyTemplate?: boolean,
   preserveWhitespaces?: boolean,

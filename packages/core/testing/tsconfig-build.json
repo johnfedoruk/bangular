@@ -6,7 +6,7 @@
     "rootDir": "../",
     "paths": {
       "rxjs/*": ["../../../node_modules/rxjs/*"],
-      "@angular/core": ["../../../dist/packages/core"]
+      "@bangular/core": ["../../../dist/packages/core"]
     },
     "outDir": "../../../dist/packages/core"
   },
@@ -17,10 +17,10 @@
     "../../system.d.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "testing.js",
-    "flatModuleId": "@angular/core/testing"
+    "flatModuleId": "@bangular/core/testing"
   }
 }

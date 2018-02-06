@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {describe, expect, it} from '@angular/core/testing/src/testing_internal';
-import {BaseRequestOptions, RequestOptions} from '@angular/http/src/base_request_options';
-import {RequestMethod} from '@angular/http/src/enums';
-import {Headers} from '@angular/http/src/headers';
+import {describe, expect, it} from '@bangular/core/testing/src/testing_internal';
+import {BaseRequestOptions, RequestOptions} from '@bangular/http/src/base_request_options';
+import {RequestMethod} from '@bangular/http/src/enums';
+import {Headers} from '@bangular/http/src/headers';
 
 {
   describe('BaseRequestOptions', () => {

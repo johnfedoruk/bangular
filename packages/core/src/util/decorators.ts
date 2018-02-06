@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {Type} from '../type';
 
 /**
- * An interface implemented by all Angular type decorators, which allows them to be used as ES7
+ * An interface implemented by all Bangular type decorators, which allows them to be used as ES7
  * decorators as well as
- * Angular DSL syntax.
+ * Bangular DSL syntax.
  *
  * ES7 syntax:
  *
@@ -30,7 +30,7 @@ export interface TypeDecorator {
   // Make TypeDecorator assignable to built-in ParameterDecorator type.
   // ParameterDecorator is declared in lib.d.ts as a `declare type`
   // so we cannot declare this interface as a subtype.
-  // see https://github.com/angular/angular/issues/3379#issuecomment-126169417
+  // see https://github.com/bangular/bangular/issues/3379#issuecomment-126169417
   (target: Object, propertyKey?: string|symbol, parameterIndex?: number): void;
 }
 

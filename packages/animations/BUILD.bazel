@@ -10,7 +10,7 @@ ts_library(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/animations",
+    module_name = "@bangular/animations",
     deps = [
         "//packages/core",
     ],

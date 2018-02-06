@@ -16,7 +16,7 @@
     "ts-loader"
   ],
   "devDependencies": [
-    "@angular/cli",
+    "@bangular/cli",
     "@types/jasminewd2",
     "jasmine-spec-reporter",
     "karma-coverage-istanbul-reporter",

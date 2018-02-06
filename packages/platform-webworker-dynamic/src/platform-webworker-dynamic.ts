@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ɵPLATFORM_WORKER_UI_ID as PLATFORM_WORKER_UI_ID} from '@angular/common';
-import {ResourceLoader} from '@angular/compiler';
-import {COMPILER_OPTIONS, PLATFORM_ID, PlatformRef, StaticProvider, createPlatformFactory} from '@angular/core';
-import {ɵResourceLoaderImpl as ResourceLoaderImpl, ɵplatformCoreDynamic as platformCoreDynamic} from '@angular/platform-browser-dynamic';
+import {ɵPLATFORM_WORKER_UI_ID as PLATFORM_WORKER_UI_ID} from '@bangular/common';
+import {ResourceLoader} from '@bangular/compiler';
+import {COMPILER_OPTIONS, PLATFORM_ID, PlatformRef, StaticProvider, createPlatformFactory} from '@bangular/core';
+import {ɵResourceLoaderImpl as ResourceLoaderImpl, ɵplatformCoreDynamic as platformCoreDynamic} from '@bangular/platform-browser-dynamic';
 
 export {VERSION} from './version';
 

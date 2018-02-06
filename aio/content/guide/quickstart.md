@@ -3,14 +3,14 @@
 Good tools make application development quicker and easier to maintain than
 if you did everything by hand.
 
-The [**Angular CLI**](https://cli.angular.io/) is a **_command line interface_** tool
+The [**Bangular CLI**](https://cli.bangular.io/) is a **_command line interface_** tool
 that can create a project, add files, and perform a variety of ongoing development tasks such
 as testing, bundling, and deployment.
 
-The goal in this guide is to build and run a simple Angular
-application in TypeScript, using the Angular CLI
+The goal in this guide is to build and run a simple Bangular
+application in TypeScript, using the Bangular CLI
 while adhering to the [Style Guide](guide/styleguide) recommendations that
-benefit _every_ Angular project.
+benefit _every_ Bangular project.
 
 By the end of the chapter, you'll have a basic understanding of development with the CLI
 and a foundation for both these documentation samples and for real world applications.
@@ -40,11 +40,11 @@ Older versions produce errors, but newer versions are fine.
 
 
 
-Then **install the [Angular CLI](https://github.com/angular/angular-cli)** globally.
+Then **install the [Bangular CLI](https://github.com/bangular/bangular-cli)** globally.
 
 
 <code-example language="sh" class="code-shell">
-  npm install -g @angular/cli
+  npm install -g @bangular/cli
 
 </code-example>
 
@@ -116,17 +116,17 @@ Your app greets you with a message:
 
 
 <h2 id='first-component'>
-  Step 4: Edit your first Angular component
+  Step 4: Edit your first Bangular component
 </h2>
 
 
 
-The CLI created the first Angular component for you.
+The CLI created the first Bangular component for you.
 This is the _root component_ and it is named `app-root`.
 You can find it in `./src/app/app.component.ts`.
 
 
-Open the component file and change the `title` property from _Welcome to app!!_ to _Welcome to My First Angular App!!_:
+Open the component file and change the `title` property from _Welcome to app!!_ to _Welcome to My First Bangular App!!_:
 
 
 <code-example path="cli-quickstart/src/app/app.component.ts" region="title" title="src/app/app.component.ts" linenums="false"></code-example>
@@ -156,7 +156,7 @@ Looking good!
 That's about all you'd expect to do in a "Hello, World" app.
 
 You're ready to take the [Tour of Heroes Tutorial](tutorial) and build
-a small application that demonstrates the great things you can build with Angular.
+a small application that demonstrates the great things you can build with Bangular.
 
 Or you can stick around a bit longer to learn about the files in your brand new project.
 
@@ -164,13 +164,13 @@ Or you can stick around a bit longer to learn about the files in your brand new 
 
 ## Project file review
 
-An Angular CLI project is the foundation for both quick experiments and enterprise solutions.
+An Bangular CLI project is the foundation for both quick experiments and enterprise solutions.
 
 The first file you should check out is `README.md`.
 It has some basic information on how to use CLI commands.
-Whenever you want to know more about how Angular CLI works make sure to visit
-[the Angular CLI repository](https://github.com/angular/angular-cli) and
-[Wiki](https://github.com/angular/angular-cli/wiki).
+Whenever you want to know more about how Bangular CLI works make sure to visit
+[the Bangular CLI repository](https://github.com/bangular/bangular-cli) and
+[Wiki](https://github.com/bangular/bangular-cli/wiki).
 
 Some of the generated files might be unfamiliar to you.
 
@@ -178,7 +178,7 @@ Some of the generated files might be unfamiliar to you.
 
 ### The `src` folder
 Your app lives in the `src` folder.
-All Angular components, templates, styles, images, and anything else your app needs go here.
+All Bangular components, templates, styles, images, and anything else your app needs go here.
 Any files outside of this folder are meant to support building your app.
 
 
@@ -256,7 +256,7 @@ Any files outside of this folder are meant to support building your app.
     </td>
     <td>
 
-      Defines `AppModule`, the [root module](guide/bootstrapping "AppModule: the root module") that tells Angular how to assemble the application.
+      Defines `AppModule`, the [root module](guide/bootstrapping "AppModule: the root module") that tells Bangular how to assemble the application.
       Right now it declares only the `AppComponent`.
       Soon there will be more components to declare.
 
@@ -302,7 +302,7 @@ Any files outside of this folder are meant to support building your app.
     <td>
 
       Every site wants to look good on the bookmark bar.
-      Get started with your very own Angular icon.
+      Get started with your very own Bangular icon.
 
     </td>
   </tr>
@@ -386,7 +386,7 @@ Any files outside of this folder are meant to support building your app.
     </td>
     <td>
 
-      TypeScript compiler configuration for the Angular app (`tsconfig.app.json`)
+      TypeScript compiler configuration for the Bangular app (`tsconfig.app.json`)
       and for the unit tests (`tsconfig.spec.json`).
 
     </td>
@@ -411,7 +411,7 @@ These files go in the root folder next to `src/`.
     </div>
     <div class="file">node_modules/...</div>
     <div class="file">src/...</div>
-    <div class="file">.angular-cli.json</div>
+    <div class="file">.bangular-cli.json</div>
     <div class="file">.editorconfig</div>
     <div class="file">.gitignore</div>
     <div class="file">karma.conf.js</div>
@@ -472,12 +472,12 @@ These files go in the root folder next to `src/`.
   <tr>
     <td>
 
-      `.angular-cli.json`
+      `.bangular-cli.json`
 
     </td>
     <td>
 
-      Configuration for Angular CLI.
+      Configuration for Bangular CLI.
       In this file you can set several defaults and also configure what files are included
       when your project is built.
       Check out the official documentation if you want to know more.
@@ -596,8 +596,8 @@ These files go in the root folder next to `src/`.
 
 ### Next Step
 
-If you're new to Angular, continue with the
+If you're new to Bangular, continue with the
 [tutorial](tutorial "Tour of Heroes tutorial").
-You can skip the "Setup" step since you're already using the Angular CLI setup.
+You can skip the "Setup" step since you're already using the Bangular CLI setup.
 
 </div>

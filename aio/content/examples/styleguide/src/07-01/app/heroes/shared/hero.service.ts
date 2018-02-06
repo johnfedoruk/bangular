@@ -1,6 +1,6 @@
 // #docregion
-import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Injectable } from '@bangular/core';
+import { Http, Response } from '@bangular/http';
 
 import { Hero } from './hero.model';
 

@@ -1,10 +1,10 @@
 # Component Styles
 
-Angular applications are styled with standard CSS. That means you can apply
+Bangular applications are styled with standard CSS. That means you can apply
 everything you know about CSS stylesheets, selectors, rules, and media queries
-directly to Angular applications.
+directly to Bangular applications.
 
-Additionally, Angular can bundle *component styles*
+Additionally, Bangular can bundle *component styles*
 with components, enabling a more modular design than regular stylesheets.
 
 This page describes how to load and apply these component styles.
@@ -13,7 +13,7 @@ You can run the <live-example></live-example> in Stackblitz and download the cod
 
 ## Using component styles
 
-For every Angular component you write, you may define not only an HTML template,
+For every Bangular component you write, you may define not only an HTML template,
 but also the CSS styles that go with that template,
 specifying any selectors, rules, and media queries that you need.
 
@@ -131,7 +131,7 @@ Emulated is the default and most commonly used view encapsulation. For more info
 <div class="alert is-important">
 
 The shadow-piercing descendant combinator is deprecated and [support is being removed from major browsers](https://www.chromestatus.com/features/6750456638341120) and tools.
-As such we plan to drop support in Angular (for all 3 of `/deep/`, `>>>` and `::ng-deep`).
+As such we plan to drop support in Bangular (for all 3 of `/deep/`, `>>>` and `::ng-deep`).
 Until then `::ng-deep` should be preferred for a broader compatibility with the tools.
 
 </div>
@@ -219,7 +219,7 @@ You can also write `<link>` tags into the component's HTML template.
 The link tag's `href` URL must be relative to the
 _**application root**_, not relative to the component file.
 
-When building with the CLI, be sure to include the linked style file among the assets to be copied to the server as described in the [CLI documentation](https://github.com/angular/angular-cli/wiki/stories-asset-configuration).
+When building with the CLI, be sure to include the linked style file among the assets to be copied to the server as described in the [CLI documentation](https://github.com/bangular/bangular-cli/wiki/stories-asset-configuration).
 
 </div>
 
@@ -236,11 +236,11 @@ In this case, the URL is relative to the CSS file into which you're importing.
 
 ### External and global style files
 
-When building with the CLI, you must configure the `.angular-cli.json` to include _all external assets_, including external style files.
+When building with the CLI, you must configure the `.bangular-cli.json` to include _all external assets_, including external style files.
 
 Register **global** style files in the `styles` section which, by default, is pre-configured with the global `styles.css` file.
 
-See the [CLI documentation](https://github.com/angular/angular-cli/wiki/stories-global-styles) to learn more.
+See the [CLI documentation](https://github.com/bangular/bangular-cli/wiki/stories-global-styles) to learn more.
 
 ### Non-CSS style files
 
@@ -260,7 +260,7 @@ The CLI build process runs the pertinent CSS preprocessor.
 
 When generating a component file with `ng generate component`, the CLI emits an empty CSS styles file (`.css`) by default.
 You can configure the CLI to default to your preferred CSS preprocessor
-as explained in the [CLI documentation](https://github.com/angular/angular-cli/wiki/stories-css-preprocessors
+as explained in the [CLI documentation](https://github.com/bangular/bangular-cli/wiki/stories-css-preprocessors
 "CSS Preprocessor integration").
 
 <div class="alert is-important">
@@ -290,8 +290,8 @@ Choose from the following modes:
   (and renaming) the CSS code to effectively scope the CSS to the component's view.
   For details, see [Appendix 1](guide/component-styles#inspect-generated-css).
 
-* `None` means that Angular does no view encapsulation.
-  Angular adds the CSS to the global styles.
+* `None` means that Bangular does no view encapsulation.
+  Bangular adds the CSS to the global styles.
   The scoping rules, isolations, and protections discussed earlier don't apply.
   This is essentially the same as pasting the component's styles into the HTML.
 
@@ -310,10 +310,10 @@ in most cases.
 
 ## Inspecting generated CSS
 
-When using emulated view encapsulation, Angular preprocesses
+When using emulated view encapsulation, Bangular preprocesses
 all component styles so that they approximate the standard shadow CSS scoping rules.
 
-In the DOM of a running Angular application with emulated view
+In the DOM of a running Bangular application with emulated view
 encapsulation enabled, each DOM element has some extra attributes
 attached to it:
 

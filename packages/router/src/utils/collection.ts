@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgModuleFactory, ɵisObservable as isObservable, ɵisPromise as isPromise} from '@angular/core';
+import {NgModuleFactory, ɵisObservable as isObservable, ɵisPromise as isPromise} from '@bangular/core';
 import {Observable} from 'rxjs/Observable';
 import {fromPromise} from 'rxjs/observable/fromPromise';
 import {of } from 'rxjs/observable/of';
@@ -111,7 +111,7 @@ export function wrapIntoObservable<T>(value: T | NgModuleFactory<T>| Promise<T>|
 
   if (isPromise(value)) {
     // Use `Promise.resolve()` to wrap promise-like instances.
-    // Required ie when a Resolver returns a AngularJS `$q` promise to correctly trigger the
+    // Required ie when a Resolver returns a BangularJS `$q` promise to correctly trigger the
     // change detection.
     return fromPromise(Promise.resolve(value));
   }

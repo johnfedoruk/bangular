@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injector, Pipe} from '@angular/core';
-import {inject} from '@angular/core/testing';
-import {JitReflector} from '@angular/platform-browser-dynamic/src/compiler_reflector';
+import {Injector, Pipe} from '@bangular/core';
+import {inject} from '@bangular/core/testing';
+import {JitReflector} from '@bangular/platform-browser-dynamic/src/compiler_reflector';
 
 import {MockPipeResolver} from '../testing';
 

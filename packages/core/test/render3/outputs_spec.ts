@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {EventEmitter} from '@angular/core';
+import {EventEmitter} from '@bangular/core';
 
 import {C, E, L, T, V, b, cR, cr, defineComponent, defineDirective, e, p, r, v} from '../../src/render3/index';
 
@@ -307,7 +307,7 @@ describe('outputs', () => {
     let counter = 0;
     renderToHtml(Template, {counter, onClick: () => counter++});
 
-    // To match current Angular behavior, the click listener is still
+    // To match current Bangular behavior, the click listener is still
     // set up in addition to any matching outputs.
     const button = containerEl.querySelector('button') !;
     button.click();

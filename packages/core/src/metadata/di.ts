@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {InjectionToken} from '../di/injection_token';
@@ -166,7 +166,7 @@ export interface ContentChildrenDecorator {
    *
    * {@example core/di/ts/contentChildren/content_children_example.ts region='Component'}
    *
-   * **npm package**: `@angular/core`
+   * **npm package**: `@bangular/core`
    *
    * @stable
    * @Annotation
@@ -226,7 +226,7 @@ export interface ContentChildDecorator {
    *
    * {@example core/di/ts/contentChild/content_child_example.ts region='Component'}
    *
-   * **npm package**: `@angular/core`
+   * **npm package**: `@bangular/core`
    *
    * @stable
    * @Annotation
@@ -287,7 +287,7 @@ export interface ViewChildrenDecorator {
    *
    * {@example core/di/ts/viewChildren/view_children_example.ts region='Component'}
    *
-   * **npm package**: `@angular/core`
+   * **npm package**: `@bangular/core`
    *
    * @stable
    * @Annotation
@@ -344,7 +344,7 @@ export interface ViewChildDecorator {
    *
    * {@example core/di/ts/viewChild/view_child_example.ts region='Component'}
    *
-   * **npm package**: `@angular/core`
+   * **npm package**: `@bangular/core`
    *
    * @stable
    * @Annotation

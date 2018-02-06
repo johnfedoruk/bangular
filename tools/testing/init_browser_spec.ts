@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {TestBed} from '@angular/core/testing';
-import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from '@angular/platform-browser-dynamic/testing';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {TestBed} from '@bangular/core/testing';
+import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from '@bangular/platform-browser-dynamic/testing';
+import {NoopAnimationsModule} from '@bangular/platform-browser/animations';
 
 TestBed.initTestEnvironment(
     [BrowserDynamicTestingModule, NoopAnimationsModule], platformBrowserDynamicTesting());

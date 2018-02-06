@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, NgModule, OnInit, TemplateRef, ViewChild} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {Component, NgModule, OnInit, TemplateRef, ViewChild} from '@bangular/core';
+import {BrowserModule} from '@bangular/platform-browser';
 import {Subject} from 'rxjs/Subject';
 
 
@@ -89,7 +89,7 @@ class NgIfAs {
   userObservable = new Subject<{first: string, last: string}>();
   first = ['John', 'Mike', 'Mary', 'Bob'];
   firstIndex = 0;
-  last = ['Smith', 'Novotny', 'Angular'];
+  last = ['Smith', 'Novotny', 'Bangular'];
   lastIndex = 0;
 
   nextUser() {

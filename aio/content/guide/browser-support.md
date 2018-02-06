@@ -1,6 +1,6 @@
 # Browser support
 
-Angular supports most recent browsers. This includes the following specific versions:
+Bangular supports most recent browsers. This includes the following specific versions:
 
 <table>
 
@@ -97,7 +97,7 @@ Angular supports most recent browsers. This includes the following specific vers
 
 <div class="l-sub-section">
 
-Angular's continuous integration process runs unit tests of the framework on all of these browsers for every pull request,
+Bangular's continuous integration process runs unit tests of the framework on all of these browsers for every pull request,
 using <a href="https://saucelabs.com/">SauceLabs</a> and
 <a href="https://www.browserstack.com">Browserstack</a>.
 
@@ -106,7 +106,7 @@ using <a href="https://saucelabs.com/">SauceLabs</a> and
 
 ## Polyfills
 
-Angular is built on the latest standards of the web platform.
+Bangular is built on the latest standards of the web platform.
 Targeting such a wide range of browsers is challenging because they do not support all features of modern browsers.
 
 You compensate by loading polyfill scripts ("polyfills") for the browsers that you must support.
@@ -114,7 +114,7 @@ The [table below](#polyfill-libs) identifies most of the polyfills you might nee
 
 <div class="alert is-important">
 
-The suggested polyfills are the ones that run full Angular applications.
+The suggested polyfills are the ones that run full Bangular applications.
 You may need additional polyfills to support features not covered by this list.
 Note that polyfills cannot magically transform an old, slow browser into a modern, fast one.
 
@@ -122,7 +122,7 @@ Note that polyfills cannot magically transform an old, slow browser into a moder
 
 ## Enabling polyfills
 
-[Angular CLI](https://github.com/angular/angular-cli/wiki) users enable polyfills through the `src/polyfills.ts` file that
+[Bangular CLI](https://github.com/bangular/bangular-cli/wiki) users enable polyfills through the `src/polyfills.ts` file that
 the CLI created with your project.
 
 This file incorporates the mandatory and many of the optional polyfills as JavaScript `import` statements.
@@ -140,7 +140,7 @@ Then open the `polyfills.ts` file and un-comment the corresponding `import` stat
 
 <code-example title="src/polyfills.ts">
   /**
-  * Required to support Web Animations `@angular/platform-browser/animations`.
+  * Required to support Web Animations `@bangular/platform-browser/animations`.
   * Needed for: All but Chrome, Firefox and Opera. http://caniuse.com/#feat=web-animation
   **/
   import 'web-animations-js';  // Run `npm install --save web-animations-js`.
@@ -160,7 +160,7 @@ Non-CLI users should follow the instructions [below](#non-cli).
 {@a polyfill-libs}
 
 ### Mandatory polyfills
-These are the polyfills required to run an Angular application on each supported browser:
+These are the polyfills required to run an Bangular application on each supported browser:
 
 
 <table>
@@ -224,7 +224,7 @@ These are the polyfills required to run an Angular application on each supported
 
 ### Optional browser features to polyfill
 
-Some features of Angular may require additional polyfills.
+Some features of Bangular may require additional polyfills.
 
 For example, the animations library relies on the standard web animation API, which is only available in Chrome and Firefox today. You'll need a polyfill to use animations in other browsers.
 
@@ -266,7 +266,7 @@ Here are the features which may require additional polyfills:
 
     <td>
       All current browsers. Enabled by default.
-      Can remove if you always use AOT and only use Angular decorators.
+      Can remove if you always use AOT and only use Bangular decorators.
     </td>
 
   </tr>
@@ -567,7 +567,7 @@ If you are not using the CLI, you should add your polyfill scripts directly to t
      */
     // __Zone_enable_cross_context_check = true;
   &lt;/script>
-  &lt;!-- zone.js required by Angular -->
+  &lt;!-- zone.js required by Bangular -->
   &lt;script src="node_modules/zone.js/dist/zone.js">&lt;/script>
 
   &lt;!-- application polyfills -->

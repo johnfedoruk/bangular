@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CompileReflector, PipeResolver, core} from '@angular/compiler';
+import {CompileReflector, PipeResolver, core} from '@bangular/compiler';
 
 export class MockPipeResolver extends PipeResolver {
   private _pipes = new Map<core.Type, core.Pipe>();

@@ -3,8 +3,8 @@
 /* avoid */
 
 import { ExceptionService, SpinnerService, ToastService } from '../../core';
-import { Http } from '@angular/http';
-import { Injectable } from '@angular/core';
+import { Http } from '@bangular/http';
+import { Injectable } from '@bangular/core';
 import { Hero } from './hero.model';
 // #enddocregion example
 

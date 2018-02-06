@@ -3,17 +3,17 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ParseLocation, ParseSourceFile} from '@angular/compiler';
-import {StaticSymbol} from '@angular/compiler/src/aot/static_symbol';
-import * as o from '@angular/compiler/src/output/output_ast';
-import {SourceMap} from '@angular/compiler/src/output/source_map';
-import {TypeScriptEmitter} from '@angular/compiler/src/output/ts_emitter';
-import {ParseSourceSpan} from '@angular/compiler/src/parse_util';
+import {ParseLocation, ParseSourceFile} from '@bangular/compiler';
+import {StaticSymbol} from '@bangular/compiler/src/aot/static_symbol';
+import * as o from '@bangular/compiler/src/output/output_ast';
+import {SourceMap} from '@bangular/compiler/src/output/source_map';
+import {TypeScriptEmitter} from '@bangular/compiler/src/output/ts_emitter';
+import {ParseSourceSpan} from '@bangular/compiler/src/parse_util';
 
-import {extractSourceMap, originalPositionFor} from '@angular/compiler/testing/src/output/source_map_util';
+import {extractSourceMap, originalPositionFor} from '@bangular/compiler/testing/src/output/source_map_util';
 
 const someGenFilePath = 'somePackage/someGenFile';
 

@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 // #docregion
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef } from '@bangular/core';
 
 @Directive({
   selector: '[appHighlight]'

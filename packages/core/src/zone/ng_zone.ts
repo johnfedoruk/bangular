@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 // Import zero symbols from zone.js. This causes the zone ambient type to be
@@ -12,23 +12,23 @@ import {} from 'zone.js';
 import {EventEmitter} from '../event_emitter';
 
 /**
- * An injectable service for executing work inside or outside of the Angular zone.
+ * An injectable service for executing work inside or outside of the Bangular zone.
  *
  * The most common use of this service is to optimize performance when starting a work consisting of
  * one or more asynchronous tasks that don't require UI updates or error handling to be handled by
- * Angular. Such tasks can be kicked off via {@link #runOutsideAngular} and if needed, these tasks
- * can reenter the Angular zone via {@link #run}.
+ * Bangular. Such tasks can be kicked off via {@link #runOutsideBangular} and if needed, these tasks
+ * can reenter the Bangular zone via {@link #run}.
  *
  * <!-- TODO: add/fix links to:
- *   - docs explaining zones and the use of zones in Angular and change-detection
- *   - link to runOutsideAngular/run (throughout this file!)
+ *   - docs explaining zones and the use of zones in Bangular and change-detection
+ *   - link to runOutsideBangular/run (throughout this file!)
  *   -->
  *
  * ### Example
  *
  * ```
- * import {Component, NgZone} from '@angular/core';
- * import {NgIf} from '@angular/common';
+ * import {Component, NgZone} from '@bangular/core';
+ * import {NgIf} from '@bangular/common';
  *
  * @Component({
  *   selector: 'ng-zone-demo',
@@ -36,10 +36,10 @@ import {EventEmitter} from '../event_emitter';
  *     <h2>Demo: NgZone</h2>
  *
  *     <p>Progress: {{progress}}%</p>
- *     <p *ngIf="progress >= 100">Done processing {{label}} of Angular zone!</p>
+ *     <p *ngIf="progress >= 100">Done processing {{label}} of Bangular zone!</p>
  *
- *     <button (click)="processWithinAngularZone()">Process within Angular zone</button>
- *     <button (click)="processOutsideOfAngularZone()">Process outside of Angular zone</button>
+ *     <button (click)="processWithinBangularZone()">Process within Bangular zone</button>
+ *     <button (click)="processOutsideOfBangularZone()">Process outside of Bangular zone</button>
  *   `,
  * })
  * export class NgZoneDemo {
@@ -48,22 +48,22 @@ import {EventEmitter} from '../event_emitter';
  *
  *   constructor(private _ngZone: NgZone) {}
  *
- *   // Loop inside the Angular zone
+ *   // Loop inside the Bangular zone
  *   // so the UI DOES refresh after each setTimeout cycle
- *   processWithinAngularZone() {
+ *   processWithinBangularZone() {
  *     this.label = 'inside';
  *     this.progress = 0;
  *     this._increaseProgress(() => console.log('Inside Done!'));
  *   }
  *
- *   // Loop outside of the Angular zone
+ *   // Loop outside of the Bangular zone
  *   // so the UI DOES NOT refresh after each setTimeout cycle
- *   processOutsideOfAngularZone() {
+ *   processOutsideOfBangularZone() {
  *     this.label = 'outside';
  *     this.progress = 0;
- *     this._ngZone.runOutsideAngular(() => {
+ *     this._ngZone.runOutsideBangular(() => {
  *       this._increaseProgress(() => {
- *         // reenter the Angular zone and display done
+ *         // reenter the Bangular zone and display done
  *         this._ngZone.run(() => { console.log('Outside Done!'); });
  *       });
  *     });
@@ -94,13 +94,13 @@ export class NgZone {
   readonly isStable: boolean = true;
 
   /**
-   * Notifies when code enters Angular Zone. This gets fired first on VM Turn.
+   * Notifies when code enters Bangular Zone. This gets fired first on VM Turn.
    */
   readonly onUnstable: EventEmitter<any> = new EventEmitter(false);
 
   /**
    * Notifies when there is no more microtasks enqueued in the current VM Turn.
-   * This is a hint for Angular to do change detection, which may enqueue more microtasks.
+   * This is a hint for Bangular to do change detection, which may enqueue more microtasks.
    * For this reason this event can fire multiple times per VM Turn.
    */
   readonly onMicrotaskEmpty: EventEmitter<any> = new EventEmitter(false);
@@ -119,7 +119,7 @@ export class NgZone {
 
   constructor({enableLongStackTrace = false}) {
     if (typeof Zone == 'undefined') {
-      throw new Error(`In this configuration Angular requires Zone.js`);
+      throw new Error(`In this configuration Bangular requires Zone.js`);
     }
 
     Zone.assertZonePatched();
@@ -136,32 +136,32 @@ export class NgZone {
       self._inner = self._inner.fork((Zone as any)['longStackTraceZoneSpec']);
     }
 
-    forkInnerZoneWithAngularBehavior(self);
+    forkInnerZoneWithBangularBehavior(self);
   }
 
-  static isInAngularZone(): boolean { return Zone.current.get('isAngularZone') === true; }
+  static isInBangularZone(): boolean { return Zone.current.get('isBangularZone') === true; }
 
-  static assertInAngularZone(): void {
-    if (!NgZone.isInAngularZone()) {
-      throw new Error('Expected to be in Angular Zone, but it is not!');
+  static assertInBangularZone(): void {
+    if (!NgZone.isInBangularZone()) {
+      throw new Error('Expected to be in Bangular Zone, but it is not!');
     }
   }
 
-  static assertNotInAngularZone(): void {
-    if (NgZone.isInAngularZone()) {
-      throw new Error('Expected to not be in Angular Zone, but it is!');
+  static assertNotInBangularZone(): void {
+    if (NgZone.isInBangularZone()) {
+      throw new Error('Expected to not be in Bangular Zone, but it is!');
     }
   }
 
   /**
-   * Executes the `fn` function synchronously within the Angular zone and returns value returned by
+   * Executes the `fn` function synchronously within the Bangular zone and returns value returned by
    * the function.
    *
-   * Running functions via `run` allows you to reenter Angular zone from a task that was executed
-   * outside of the Angular zone (typically started via {@link #runOutsideAngular}).
+   * Running functions via `run` allows you to reenter Bangular zone from a task that was executed
+   * outside of the Bangular zone (typically started via {@link #runOutsideBangular}).
    *
    * Any future tasks or microtasks scheduled from within this function will continue executing from
-   * within the Angular zone.
+   * within the Bangular zone.
    *
    * If a synchronous error happens it will be rethrown and not reported via `onError`.
    */
@@ -170,14 +170,14 @@ export class NgZone {
   }
 
   /**
-   * Executes the `fn` function synchronously within the Angular zone as a task and returns value
+   * Executes the `fn` function synchronously within the Bangular zone as a task and returns value
    * returned by the function.
    *
-   * Running functions via `run` allows you to reenter Angular zone from a task that was executed
-   * outside of the Angular zone (typically started via {@link #runOutsideAngular}).
+   * Running functions via `run` allows you to reenter Bangular zone from a task that was executed
+   * outside of the Bangular zone (typically started via {@link #runOutsideBangular}).
    *
    * Any future tasks or microtasks scheduled from within this function will continue executing from
-   * within the Angular zone.
+   * within the Bangular zone.
    *
    * If a synchronous error happens it will be rethrown and not reported via `onError`.
    */
@@ -200,19 +200,19 @@ export class NgZone {
   }
 
   /**
-   * Executes the `fn` function synchronously in Angular's parent zone and returns value returned by
+   * Executes the `fn` function synchronously in Bangular's parent zone and returns value returned by
    * the function.
    *
-   * Running functions via {@link #runOutsideAngular} allows you to escape Angular's zone and do
+   * Running functions via {@link #runOutsideBangular} allows you to escape Bangular's zone and do
    * work that
-   * doesn't trigger Angular change-detection or is subject to Angular's error handling.
+   * doesn't trigger Bangular change-detection or is subject to Bangular's error handling.
    *
    * Any future tasks or microtasks scheduled from within this function will continue executing from
-   * outside of the Angular zone.
+   * outside of the Bangular zone.
    *
-   * Use {@link #run} to reenter the Angular zone and do work that updates the application model.
+   * Use {@link #run} to reenter the Bangular zone and do work that updates the application model.
    */
-  runOutsideAngular<T>(fn: (...args: any[]) => T): T {
+  runOutsideBangular<T>(fn: (...args: any[]) => T): T {
     return (this as any as NgZonePrivate)._outer.run(fn) as T;
   }
 }
@@ -240,7 +240,7 @@ function checkStable(zone: NgZonePrivate) {
       zone._nesting--;
       if (!zone.hasPendingMicrotasks) {
         try {
-          zone.runOutsideAngular(() => zone.onStable.emit(null));
+          zone.runOutsideBangular(() => zone.onStable.emit(null));
         } finally {
           zone.isStable = true;
         }
@@ -249,10 +249,10 @@ function checkStable(zone: NgZonePrivate) {
   }
 }
 
-function forkInnerZoneWithAngularBehavior(zone: NgZonePrivate) {
+function forkInnerZoneWithBangularBehavior(zone: NgZonePrivate) {
   zone._inner = zone._inner.fork({
-    name: 'angular',
-    properties: <any>{'isAngularZone': true},
+    name: 'bangular',
+    properties: <any>{'isBangularZone': true},
     onInvokeTask: (delegate: ZoneDelegate, current: Zone, target: Zone, task: Task, applyThis: any,
                    applyArgs: any): any => {
       try {
@@ -291,7 +291,7 @@ function forkInnerZoneWithAngularBehavior(zone: NgZonePrivate) {
 
     onHandleError: (delegate: ZoneDelegate, current: Zone, target: Zone, error: any): boolean => {
       delegate.handleError(target, error);
-      zone.runOutsideAngular(() => zone.onError.emit(error));
+      zone.runOutsideBangular(() => zone.onError.emit(error));
       return false;
     }
   });
@@ -327,7 +327,7 @@ export class NoopNgZone implements NgZone {
 
   runGuarded(fn: () => any): any { return fn(); }
 
-  runOutsideAngular(fn: () => any): any { return fn(); }
+  runOutsideBangular(fn: () => any): any { return fn(); }
 
   runTask<T>(fn: () => any): any { return fn(); }
 }

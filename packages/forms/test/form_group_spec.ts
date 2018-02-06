@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {EventEmitter} from '@angular/core';
-import {async, fakeAsync, tick} from '@angular/core/testing';
-import {AsyncTestCompleter, beforeEach, describe, inject, it} from '@angular/core/testing/src/testing_internal';
-import {AbstractControl, FormArray, FormControl, FormGroup, ValidationErrors, Validators} from '@angular/forms';
+import {EventEmitter} from '@bangular/core';
+import {async, fakeAsync, tick} from '@bangular/core/testing';
+import {AsyncTestCompleter, beforeEach, describe, inject, it} from '@bangular/core/testing/src/testing_internal';
+import {AbstractControl, FormArray, FormControl, FormGroup, ValidationErrors, Validators} from '@bangular/forms';
 import {of } from 'rxjs/observable/of';
 
 

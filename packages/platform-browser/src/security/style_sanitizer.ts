@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {isDevMode} from '@angular/core';
+import {isDevMode} from '@bangular/core';
 
 import {getDOM} from '../dom/dom_adapter';
 
@@ -50,7 +50,7 @@ const SAFE_STYLE_VALUE = new RegExp(
  * by observing whether scroll bars are displayed, or character ranges used by a font face
  * definition.
  *
- * Angular only allows binding CSS values (as opposed to entire CSS rules), so it is unlikely that
+ * Bangular only allows binding CSS values (as opposed to entire CSS rules), so it is unlikely that
  * binding a URL value without further cooperation from the page will cause an information leak, and
  * if so, it is just a leak, not a full blown XSS vulnerability.
  *

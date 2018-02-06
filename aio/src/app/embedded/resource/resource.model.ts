@@ -18,6 +18,6 @@ export class Resource {
   id: string;          // "-KLI8vJ0ZkvWhqPembZ7"
   desc: string;        // "This books shows all the steps necessary for the development of SPA"
   rev: boolean;        // true (always true in the original)
-  title: string;       // "Practical Angular 2",
-  url: string;         // "https://leanpub.com/practical-angular-2"
+  title: string;       // "Practical Bangular 2",
+  url: string;         // "https://leanpub.com/practical-bangular-2"
 }

@@ -6,9 +6,9 @@
     "rootDir": ".",
     "emitDecoratorMetadata": true,
     "paths": {
-      "@angular/core": ["../../dist/packages/core"],
-      "@angular/common": ["../../dist/packages/common"],
-      "@angular/platform-browser": ["../../dist/packages/platform-browser"]
+      "@bangular/core": ["../../dist/packages/core"],
+      "@bangular/common": ["../../dist/packages/common"],
+      "@bangular/platform-browser": ["../../dist/packages/platform-browser"]
     },
     "outDir": "../../dist/packages/router"
   },
@@ -17,11 +17,11 @@
     "public_api.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "router.js",
-    "flatModuleId": "@angular/router"
+    "flatModuleId": "@bangular/router"
   }
 }

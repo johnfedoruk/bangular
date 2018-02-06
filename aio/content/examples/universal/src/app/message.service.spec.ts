@@ -1,4 +1,4 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, inject } from '@bangular/core/testing';
 
 import { MessageService } from './message.service';
 

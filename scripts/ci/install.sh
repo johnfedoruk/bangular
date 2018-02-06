@@ -52,7 +52,7 @@ if [[ ${TRAVIS} &&
   ${CI_MODE} == "aio_e2e" ||
   ${CI_MODE} == "aio_tools_test"
 ]]; then
-  # angular.io: Install all yarn dependencies according to angular.io/yarn.lock
+  # bangular.io: Install all yarn dependencies according to bangular.io/yarn.lock
   travisFoldStart "yarn-install.aio"
     (
       cd ${PROJECT_ROOT}/aio

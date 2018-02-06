@@ -14,17 +14,17 @@ import {
   ReversePipeComponent, ShellComponent
 } from './bag';
 
-import { By }          from '@angular/platform-browser';
+import { By }          from '@bangular/platform-browser';
 import { Component,
          DebugElement,
-         Injectable }  from '@angular/core';
-import { FormsModule } from '@angular/forms';
+         Injectable }  from '@bangular/core';
+import { FormsModule } from '@bangular/forms';
 
 // Forms symbols imported only for a specific test below
-import { NgModel, NgControl } from '@angular/forms';
+import { NgModel, NgControl } from '@bangular/forms';
 
 import { async, ComponentFixture, fakeAsync, inject, TestBed, tick
-} from '@angular/core/testing';
+} from '@bangular/core/testing';
 
 import { addMatchers, newEvent, click } from '../../testing';
 
@@ -72,7 +72,7 @@ describe('use inject helper in beforeEach', () => {
     );
   }));
 
-  // Must use done. See https://github.com/angular/angular/issues/10127
+  // Must use done. See https://github.com/bangular/bangular/issues/10127
   it('test should wait for FancyService.getObservableDelayValue', (done: DoneFn) => {
     service.getObservableDelayValue().subscribe(value => {
       expect(value).toBe('observable delay value');
@@ -246,7 +246,7 @@ describe('TestBed Component Tests', () => {
       expect(comp.name).toBe(expectedOrigName,
         `comp.name should still be ${expectedOrigName} after value change, before binding happens`);
 
-      // dispatch a DOM event so that Angular learns of input value change.
+      // dispatch a DOM event so that Bangular learns of input value change.
       // then wait while ngModel pushes input.box value to comp.name
       input.dispatchEvent(newEvent('input'));
       return fixture.whenStable();
@@ -284,7 +284,7 @@ describe('TestBed Component Tests', () => {
     expect(comp.name).toBe(expectedOrigName,
       `comp.name should still be ${expectedOrigName} after value change, before binding happens`);
 
-    // dispatch a DOM event so that Angular learns of input value change.
+    // dispatch a DOM event so that Bangular learns of input value change.
     // then wait a tick while ngModel pushes input.box value to comp.name
     input.dispatchEvent(newEvent('input'));
     tick();
@@ -307,9 +307,9 @@ describe('TestBed Component Tests', () => {
     // simulate user entering new name in input
     input.value = inputText;
 
-    // dispatch a DOM event so that Angular learns of input value change.
+    // dispatch a DOM event so that Bangular learns of input value change.
     // then wait a tick while ngModel pushes input.box value to comp.text
-    // and Angular updates the output span
+    // and Bangular updates the output span
     input.dispatchEvent(newEvent('input'));
     tick();
     fixture.detectChanges();

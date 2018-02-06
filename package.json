@@ -1,12 +1,12 @@
 {
-  "name": "angular-srcs",
+  "name": "bangular-srcs",
   "version": "TODO this should be 6.0.0-beta.0, workaround",
   "version": "6.0.0-beta.2",
   "private": true,
   "branchPattern": "2.0.*",
-  "description": "Angular - a web framework for modern web apps",
-  "homepage": "https://github.com/angular/angular",
-  "bugs": "https://github.com/angular/angular/issues",
+  "description": "Bangular - a web framework for modern web apps",
+  "homepage": "https://github.com/bangular/bangular",
+  "bugs": "https://github.com/bangular/bangular/issues",
   "license": "MIT",
   "engines": {
     "node": ">=8.9.1 <9.0.0",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angular/angular.git"
+    "url": "https://github.com/bangular/bangular.git"
   },
   "scripts": {
     "preskylint": "bazel build --noshow_progress @io_bazel//src/tools/skylark/java/com/google/devtools/skylark/skylint:Skylint",
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@bazel/ibazel": "^0.1.1",
-    "@types/angularjs": "1.5.14-alpha",
+    "@types/bangularjs": "1.5.14-alpha",
     "@types/base64-js": "1.2.5",
     "@types/chokidar": "1.7.3",
     "@types/fs-extra": "4.0.2",
@@ -48,9 +48,9 @@
     "@types/selenium-webdriver": "3.0.7",
     "@types/source-map": "^0.5.1",
     "@types/systemjs": "0.19.32",
-    "angular": "1.5.0",
-    "angular-animate": "1.5.0",
-    "angular-mocks": "1.5.0",
+    "bangular": "1.5.0",
+    "bangular-animate": "1.5.0",
+    "bangular-mocks": "1.5.0",
     "base64-js": "1.2.1",
     "bower": "1.8.2",
     "browserstacktunnel-wrapper": "2.0.1",

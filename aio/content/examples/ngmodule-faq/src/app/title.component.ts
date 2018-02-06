@@ -1,7 +1,7 @@
 // #docplaster
 // #docregion
 // #docregion v1
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 // #enddocregion v1
 import { UserService } from './user.service';
 // #docregion v1
@@ -11,7 +11,7 @@ import { UserService } from './user.service';
   templateUrl: './title.component.html'
 })
 export class TitleComponent {
-  title = 'Angular Modules';
+  title = 'Bangular Modules';
 // #enddocregion v1
   user = '';
 

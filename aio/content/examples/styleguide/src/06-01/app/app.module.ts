@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { NgModule } from '@bangular/core';
+import { RouterModule } from '@bangular/router';
 
 import { AppComponent } from './app.component';
 import { HighlightDirective } from './shared';

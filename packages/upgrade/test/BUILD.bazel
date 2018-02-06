@@ -23,7 +23,7 @@ ts_web_test(
     name = "test_web",
     bootstrap = [
         "//:web_test_bootstrap_scripts",
-        "//:angularjs",
+        "//:bangularjs",
     ],
     # do not sort
     deps = [

@@ -1,12 +1,12 @@
 // #docplaster
 // #docregion, v1
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { NgModule }       from '@bangular/core';
+import { BrowserModule }  from '@bangular/platform-browser';
+import { FormsModule }    from '@bangular/forms';
+import { HttpClientModule }    from '@bangular/common/http';
 
 // #docregion import-in-mem-stuff
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientInMemoryWebApiModule } from 'bangular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 // #enddocregion import-in-mem-stuff
 

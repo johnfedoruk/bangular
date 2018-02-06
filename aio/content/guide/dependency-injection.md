@@ -1,15 +1,15 @@
-# Angular Dependency Injection
+# Bangular Dependency Injection
 
 **Dependency Injection (DI)** is a way to create objects that depend upon other objects.
 A Dependency Injection system supplies the dependent objects (called the _dependencies_)
 when it creates an instance of an object.
 
 The [Dependency Injection pattern](guide/dependency-injection-pattern) page describes this general approach.
-_The guide you're reading now_ explains how Angular's own Dependency Injection system works.
+_The guide you're reading now_ explains how Bangular's own Dependency Injection system works.
 
 ## DI by example
 
-You'll learn Angular Dependency Injection through a discussion of the sample app that accompanies this guide.
+You'll learn Bangular Dependency Injection through a discussion of the sample app that accompanies this guide.
 Run the <live-example></live-example> anytime.
 
 Start by reviewing this simplified version of the _heroes_ feature
@@ -52,7 +52,7 @@ It's better to hide these details inside a _service_ class,
 
 ## Create an injectable _HeroService_
 
-The [**Angular CLI**](https://cli.angular.io/) can generate a new `HeroService` class in the `src/app/heroes` folder with this command.
+The [**Bangular CLI**](https://cli.bangular.io/) can generate a new `HeroService` class in the `src/app/heroes` folder with this command.
 
 <code-example language="sh" class="code-shell">
 ng generate service heroes/hero
@@ -63,7 +63,7 @@ That command creates the following `HeroService` skeleton.
 <code-example path="dependency-injection/src/app/heroes/hero.service.0.ts" title="src/app/heroes/hero.service.ts (CLI-generated)">
 </code-example>
 
-Assume for now that the [`@Injectable` decorator](#injectable) is an essential ingredient in every Angular service definition.
+Assume for now that the [`@Injectable` decorator](#injectable) is an essential ingredient in every Bangular service definition.
 The rest of the class has been rewritten to expose a `getHeroes` method 
 that returns the same mock data as before.
 
@@ -83,12 +83,12 @@ _injecting the service_ into the `HeroList` component.
 
 ## Register a service provider
 
-A _service_ is just a class in Angular until you register it with an Angular dependency injector.
+A _service_ is just a class in Bangular until you register it with an Bangular dependency injector.
 
-An Angular injector is responsible for creating service instances and injecting them into classes like the `HeroListComponent`.
+An Bangular injector is responsible for creating service instances and injecting them into classes like the `HeroListComponent`.
 
-You rarely create an Angular injector yourself.
-Angular creates injectors for you as it executes the app,
+You rarely create an Bangular injector yourself.
+Bangular creates injectors for you as it executes the app,
 starting with the _root injector_ that it creates during the [bootstrap process](guide/bootstrapping).
 
 You do have to register _providers_ with an injector 
@@ -107,9 +107,9 @@ and must be registered with an injector.
 
 </div>
 
-You can register a provider with any Angular decorator that supports the  **`providers` array property**.
+You can register a provider with any Bangular decorator that supports the  **`providers` array property**.
 
-Many Angular decorators accept metadata with a `providers` property.
+Many Bangular decorators accept metadata with a `providers` property.
 The two most important examples are `@Component` and `@NgModule`.
 
 {@a register-providers-component}
@@ -133,7 +133,7 @@ In the following excerpt, the root `AppModule` registers two providers in its `p
 The first entry registers the `UserService` class (_not shown_) under the `UserService` _injection token_.
 The second registers a value (`HERO_DI_CONFIG`) under the `APP_CONFIG` _injection token_.
 
-Thanks to these registrations, Angular can inject the `UserService` or the `HERO_DI_CONFIG` value
+Thanks to these registrations, Bangular can inject the `UserService` or the `HERO_DI_CONFIG` value
 into any class that it creates.
 
 <div class="l-sub-section">
@@ -146,20 +146,20 @@ You'll learn about _injection tokens_ and _provider_ syntax [below](#providers).
 
 ### _@NgModule_ or _@Component_?
 
-Should you register a service with an Angular module or with a component?
+Should you register a service with an Bangular module or with a component?
 The two choices lead to differences in service _scope_ and service _lifetime_.
 
-**Angular module providers** (`@NgModule.providers`) are registered with the application's root injector.
-Angular can inject the corresponding services in any class it creates.
-Once created, a service instance lives for the life of the app and Angular injects this one service instance in every class that needs it.
+**Bangular module providers** (`@NgModule.providers`) are registered with the application's root injector.
+Bangular can inject the corresponding services in any class it creates.
+Once created, a service instance lives for the life of the app and Bangular injects this one service instance in every class that needs it.
 
 You're likely to inject the `UserService` in many places throughout the app
 and will want to inject the same service instance every time.
-Providing the `UserService` with an Angular module is a good choice.
+Providing the `UserService` with an Bangular module is a good choice.
 
 <div class="l-sub-section">
 
-To be precise, Angular module providers are registered with the root injector
+To be precise, Bangular module providers are registered with the root injector
 _unless the module is_ [lazy loaded](guide/lazy-loading-ngmodules).
 In this sample, all modules are _eagerly loaded_ when the application starts,
 so all module providers are registered with the app's root injector.
@@ -170,8 +170,8 @@ so all module providers are registered with the app's root injector.
 
 **A component's providers** (`@Component.providers`) are registered with each component instance's own injector.
 
-Angular can only inject the corresponding services in that component instance or one of its descendant component instances.
-Angular cannot inject the same service instance anywhere else.
+Bangular can only inject the corresponding services in that component instance or one of its descendant component instances.
+Bangular cannot inject the same service instance anywhere else.
 
 Note that a component-provided service may have a limited lifetime. Each new instance of the component gets its own instance of the service
 and, when the component instance is destroyed, so is that service instance.
@@ -184,7 +184,7 @@ providing the `HeroService` in the `HeroComponent` may be a good choice.
 
 <div class="l-sub-section">
 
-The scope and lifetime of component-provided services is a consequence of [the way Angular creates component instances](#component-child-injectors). 
+The scope and lifetime of component-provided services is a consequence of [the way Bangular creates component instances](#component-child-injectors). 
 
 </div>
 
@@ -195,7 +195,7 @@ The `HeroListComponent` should get heroes from the `HeroService`.
 The component shouldn't create the `HeroService` with `new`.
 It should ask for the `HeroService` to be injected.
 
-You can tell Angular to inject a dependency in the component's constructor by specifying a **constructor parameter with the dependency type**.
+You can tell Bangular to inject a dependency in the component's constructor by specifying a **constructor parameter with the dependency type**.
 Here's the `HeroListComponent` constructor, asking for the `HeroService` to be injected.
 
 <code-example title="src/app/heroes/hero-list.component (constructor signature)" path="dependency-injection/src/app/heroes/hero-list.component.ts"
@@ -230,31 +230,31 @@ There is only one root injector and the `UserService` is registered with that in
 Therefore, there can be just one `UserService` instance in the entire app
 and every class that injects `UserService` get this service instance.
 
-However, Angular DI is a 
+However, Bangular DI is a 
 [hierarchical injection system](guide/hierarchical-dependency-injection), 
 which means that nested injectors can create their own service instances.
-Angular creates nested injectors all the time.
+Bangular creates nested injectors all the time.
 
 {@a component-child-injectors}
 
 ## Component child injectors
 
-For example, when Angular creates a new instance of a component that has `@Component.providers`,
+For example, when Bangular creates a new instance of a component that has `@Component.providers`,
 it also creates a new _child injector_ for that instance.
 
 Component injectors are independent of each other and
 each of them creates its own instances of the component-provided services.
 
-When Angular destroys one of these component instance, it also destroys the
+When Bangular destroys one of these component instance, it also destroys the
 component's injector and that injector's service instances. 
 
 Thanks to [injector inheritance](guide/hierarchical-dependency-injection),
 you can still inject application-wide services into these components.
 A component's injector is a child of its parent component's injector,
 and a descendent of its parent's parent's injector, and so on all the way back to the application's _root_ injector.
-Angular can inject a service provided by any injector in that lineage.
+Bangular can inject a service provided by any injector in that lineage.
 
-For example, Angular could inject a `HeroListComponent`
+For example, Bangular could inject a `HeroListComponent`
 with both the `HeroService` provided in `HeroComponent`
 and the `UserService` provided in `AppModule`.
 
@@ -313,7 +313,7 @@ The sample app's `Logger` service is quite simple:
 </code-example>
 
 If the app didn't provide this `Logger`,
-Angular would throw an exception when it looked for a `Logger` to inject
+Bangular would throw an exception when it looked for a `Logger` to inject
 into the `HeroService`.
 
 <code-example language="sh" class="code-shell">
@@ -343,13 +343,13 @@ Always write `@Injectable()` with parentheses, not just `@Injectable`.
 
 </div>
 
-When Angular creates a class whose constructor has parameters,
+When Bangular creates a class whose constructor has parameters,
 it looks for type and injection metadata about those parameters
 so that it can inject the right service.
 
-If Angular can't find that parameter information, it throws an error.
+If Bangular can't find that parameter information, it throws an error.
 
-Angular can only find the parameter information _if the class has a decorator of some kind_.
+Bangular can only find the parameter information _if the class has a decorator of some kind_.
 While _any_ decorator will do,
 the `@Injectable()` decorator is the standard decorator for service classes.
 
@@ -369,7 +369,7 @@ It's your job to put `@Injectable()` on your service classes.
 The `Logger` service is annotated with `@Injectable()` decorator too, 
 although it has no constructor and no dependencies.
 
-In fact, _every_ Angular service class in this app is annotated with the `@Injectable()` decorator, whether or not it has a constructor and dependencies.
+In fact, _every_ Bangular service class in this app is annotated with the `@Injectable()` decorator, whether or not it has a constructor and dependencies.
 `@Injectable()` is a required coding style for services.
 
 {@a providers}
@@ -545,7 +545,7 @@ and let the injector pass them along to the factory function:
 
 <div class="l-sub-section">
 
-The `useFactory` field tells Angular that the provider is a factory function
+The `useFactory` field tells Bangular that the provider is a factory function
 whose implementation is the `heroServiceFactory`.
 
 The `deps` property is an array of [provider tokens](guide/dependency-injection#token).
@@ -589,7 +589,7 @@ Here you get a `HeroService` directly from the injector by supplying the `HeroSe
 
 You have similar good fortune when you write a constructor that requires an injected class-based dependency.
 When you define a constructor parameter with the `HeroService` class type,
-Angular knows to inject the
+Bangular knows to inject the
 service associated with that `HeroService` class token:
 
 <code-example path="dependency-injection/src/app/heroes/hero-list.component.ts" region="ctor-signature" title="src/app/heroes/hero-list.component.ts">
@@ -635,9 +635,9 @@ Unfortunately, you cannot use a TypeScript interface as a token:
 That seems strange if you're used to dependency injection in strongly typed languages, where
 an interface is the preferred dependency lookup key.
 
-It's not Angular's doing. An interface is a TypeScript design-time artifact. JavaScript doesn't have interfaces.
+It's not Bangular's doing. An interface is a TypeScript design-time artifact. JavaScript doesn't have interfaces.
 The TypeScript interface disappears from the generated JavaScript.
-There is no interface type information left for Angular to find at runtime.
+There is no interface type information left for Bangular to find at runtime.
 
 </div>
 
@@ -683,7 +683,7 @@ Alternatively, you can provide and inject the configuration object in an ngModul
 
 The `HeroService` *requires* a `Logger`, but what if it could get by without
 a `logger`?
-You can tell Angular that the dependency is optional by annotating the
+You can tell Bangular that the dependency is optional by annotating the
 constructor argument with `@Optional()`:
 
 <code-example path="dependency-injection/src/app/providers.component.ts" region="import-optional">
@@ -698,12 +698,12 @@ value of `logger` to null.
 
 ## Summary
 
-You learned the basics of Angular dependency injection in this page.
+You learned the basics of Bangular dependency injection in this page.
 You can register various kinds of providers,
 and you know how to ask for an injected object (such as a service) by
 adding a parameter to a constructor.
 
-Angular dependency injection is more capable than this guide has described.
+Bangular dependency injection is more capable than this guide has described.
 You can learn more about its advanced features, beginning with its support for
 nested injectors, in
 [Hierarchical Dependency Injection](guide/hierarchical-dependency-injection).
@@ -720,7 +720,7 @@ here's an `InjectorComponent` that does.
 
 An `Injector` is itself an injectable service.
 
-In this example, Angular injects the component's own `Injector` into the component's constructor.
+In this example, Bangular injects the component's own `Injector` into the component's constructor.
 The component then asks the injected injector for the services it wants in `ngOnInit()`.
 
 Note that the services themselves are not injected into the component.
@@ -728,7 +728,7 @@ They are retrieved by calling `injector.get()`.
 
 The `get()` method throws an error if it can't resolve the requested service.
 You can call `get()` with a second parameter, which is the value to return if the service
-is not found. Angular can't find the service if it's not registered with this or any ancestor injector.
+is not found. Bangular can't find the service if it's not registered with this or any ancestor injector.
 
 
 <div class="l-sub-section">
@@ -768,7 +768,7 @@ you'll get a runtime null reference error.
 <div class="l-sub-section">
 
 You actually can define the component first with the help of the `forwardRef()` method as explained
-in this [blog post](http://blog.thoughtram.io/angular/2015/09/03/forward-references-in-angular-2.html).
+in this [blog post](http://blog.thoughtram.io/bangular/2015/09/03/forward-references-in-bangular-2.html).
 
 But it's best to avoid the problem altogether by defining components and services in separate files.
 

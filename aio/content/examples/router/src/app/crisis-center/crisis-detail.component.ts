@@ -1,7 +1,7 @@
 // #docplaster
 // #docregion
-import { Component, OnInit, HostBinding } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, HostBinding } from '@bangular/core';
+import { ActivatedRoute, Router } from '@bangular/router';
 import { Observable } from 'rxjs/Observable';
 
 import { slideInDownAnimation }   from '../animations';

@@ -1,15 +1,15 @@
 import {
    async, inject, TestBed
-} from '@angular/core/testing';
+} from '@bangular/core/testing';
 
 import {
   MockBackend,
   MockConnection
-} from '@angular/http/testing';
+} from '@bangular/http/testing';
 
 import {
   HttpModule, Http, XHRBackend, Response, ResponseOptions
-} from '@angular/http';
+} from '@bangular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';

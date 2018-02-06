@@ -2,7 +2,7 @@
 
 Most front-end applications communicate with backend services over the HTTP protocol. Modern browsers support two different APIs for making HTTP requests: the `XMLHttpRequest` interface and the `fetch()` API.
 
-The `HttpClient` in `@angular/common/http` offers a simplified client HTTP API for Angular applications
+The `HttpClient` in `@bangular/common/http` offers a simplified client HTTP API for Bangular applications
 that rests on the `XMLHttpRequest` interface exposed by browsers.
 Additional benefits of `HttpClient` include testability features, typed request and response objects, request and response interception, `Observable` apis, and streamlined error handling.
 
@@ -12,7 +12,7 @@ You can run the <live-example></live-example> that accompanies this guide.
 
 The sample app does not require a data server.
 It relies on the 
-[Angular _in-memory-web-api_](https://github.com/angular/in-memory-web-api/blob/master/README.md),
+[Bangular _in-memory-web-api_](https://github.com/bangular/in-memory-web-api/blob/master/README.md),
 which replaces the _HttpClient_ module's `HttpBackend`.
 The replacement service simulates the behavior of a REST-like backend.
 
@@ -22,7 +22,7 @@ Look at the `AppModule` _imports_ to see how it is configured.
 
 ## Setup
 
-Before you can use the `HttpClient`, you need to import the Angular `HttpClientModule`. 
+Before you can use the `HttpClient`, you need to import the Bangular `HttpClientModule`. 
 Most apps do so in the root `AppModule`.
 
 <code-example 
@@ -229,7 +229,7 @@ You will encounter more RxJS artifacts as you continue below.
 
 [RxJS](http://reactivex.io/rxjs/) is a library for composing asynchronous and callback-based code
 in a _functional, reactive style_.
-Many Angular APIs, including `HttpClient`, produce and consume RxJS `Observables`. 
+Many Bangular APIs, including `HttpClient`, produce and consume RxJS `Observables`. 
 
 RxJS itself is out-of-scope for this guide. You will find many learning resources on the web.
 While you can get by with a minimum of RxJS knowledge, you'll want to grow your RxJS skills over time in order to use `HttpClient` effectively.
@@ -417,7 +417,7 @@ in order to initiate the request.
 
 ## Advanced usage
 
-The above sections detail how to use the basic HTTP functionality in `@angular/common/http`, but sometimes you need to do more than make simple requests and get data back.
+The above sections detail how to use the basic HTTP functionality in `@bangular/common/http`, but sometimes you need to do more than make simple requests and get data back.
 
 ### Configuring the request
 
@@ -532,7 +532,7 @@ consider moving it to a utility function or into the `PackageSearchService` itse
 
 ### Intercepting requests and responses
 
-_HTTP Interception_ is a major feature of `@angular/common/http`. 
+_HTTP Interception_ is a major feature of `@bangular/common/http`. 
 With interception, you declare _interceptors_ that inspect and transform HTTP requests from your application to the server.
 The same interceptors may also inspect and transform the server's responses on their way back to the application.
 Multiple interceptors form a _forward-and-backward_ chain of request/response handlers.
@@ -581,7 +581,7 @@ This is a common middleware pattern found in frameworks such as Express.js.
 
 #### Provide the interceptor
 
-The `NoopInterceptor` is a service managed by Angular's [dependency injection (DI)](guide/dependency-injection) system. 
+The `NoopInterceptor` is a service managed by Bangular's [dependency injection (DI)](guide/dependency-injection) system. 
 Like other services, you must provide the interceptor class before the app can use it.
 
 Because interceptors are (optional) dependencies of the `HttpClient` service, 
@@ -591,7 +591,7 @@ Interceptors provided _after_ DI creates the `HttpClient` are ignored.
 This app provides `HttpClient` in the app's root injector, as a side-effect of importing the `HttpClientModule` in `AppModule`.
 You should provide interceptors in `AppModule` as well.
 
-After importing the `HTTP_INTERCEPTORS` injection token from `@angular/common/http`,
+After importing the `HTTP_INTERCEPTORS` injection token from `@bangular/common/http`,
 write the `NoopInterceptor` provider like this:
 
 <code-example 
@@ -600,7 +600,7 @@ write the `NoopInterceptor` provider like this:
 </code-example>
 
 Note the `multi: true` option. 
-This required setting tells Angular that `HTTP_INTERCEPTORS` is a token for a _multiprovider_ 
+This required setting tells Bangular that `HTTP_INTERCEPTORS` is a token for a _multiprovider_ 
 that injects an array of values, rather than a single value.
 
 You _could_ add this provider directly to the providers array of the `AppModule`.
@@ -636,7 +636,7 @@ There are many more interceptors in the complete sample code.
 
 #### Interceptor order
 
-Angular applies interceptors in the order that you provide them.
+Bangular applies interceptors in the order that you provide them.
 If you provide interceptors _A_, then _B_, then _C_,  requests will flow in _A->B->C_ and
 responses will flow out _C->B->A_.
 
@@ -704,9 +704,9 @@ If you must mutate the request body, copy it first, change the copy,
 ##### Clearing the request body
 
 Sometimes you need to clear the request body rather than replace it.
-If you set the cloned request body to `undefined`, Angular assumes you intend to leave the body as is.
+If you set the cloned request body to `undefined`, Bangular assumes you intend to leave the body as is.
 That is not what you want.
-If you set the cloned request body to `null`, Angular knows you intend to clear the request body.
+If you set the cloned request body to `null`, Bangular knows you intend to clear the request body.
 
 ```javascript
   newReq = req.clone({ ... }); // body not mentioned => preserve original body
@@ -910,14 +910,14 @@ on requests with an absolute URL.
 To take advantage of this, your server needs to set a token in a JavaScript readable session cookie called `XSRF-TOKEN` on either the page load or the first GET request. On subsequent requests the server can verify that the cookie matches the `X-XSRF-TOKEN` HTTP header, and therefore be sure that only code running on your domain could have sent the request. The token must be unique for each user and must be verifiable by the server; this prevents the client from making up its own tokens. Set the token to a digest of your site's authentication
 cookie with a salt for added security.
 
-In order to prevent collisions in environments where multiple Angular apps share the same domain or subdomain, give each application a unique cookie name.
+In order to prevent collisions in environments where multiple Bangular apps share the same domain or subdomain, give each application a unique cookie name.
 
 <div class="alert is-important">
 
 *Note that `HttpClient` supports only the client half of the XSRF protection scheme.* 
 Your backend service must be configured to set the cookie for your page, and to verify that 
 the header is present on all eligible requests. 
-If not, Angular's default protection will be ineffective.
+If not, Bangular's default protection will be ineffective.
 
 </div>
 
@@ -936,12 +936,12 @@ use `HttpClientXsrfModule.withOptions()` to override the defaults.
 
 Like any external dependency, the HTTP backend needs to be mocked
 so your tests can simulate interaction with a remote server. 
-The `@angular/common/http/testing` library makes 
+The `@bangular/common/http/testing` library makes 
 setting up such mocking straightforward.
 
 ### Mocking philosophy
 
-Angular's HTTP testing library is designed for a pattern of testing wherein 
+Bangular's HTTP testing library is designed for a pattern of testing wherein 
 the the app executes code and makes requests first.
 
 Then a test expects that certain requests have or have not been made, 

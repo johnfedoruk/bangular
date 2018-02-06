@@ -1,8 +1,8 @@
  // export for convenience.
-export { ActivatedRoute, Router, RouterLink, RouterOutlet} from '@angular/router';
+export { ActivatedRoute, Router, RouterLink, RouterOutlet} from '@bangular/router';
 
-import { Component, Directive, Injectable, Input } from '@angular/core';
-import { NavigationExtras } from '@angular/router';
+import { Component, Directive, Injectable, Input } from '@bangular/core';
+import { NavigationExtras } from '@bangular/router';
 
 // #docregion router-link
 @Directive({
@@ -33,7 +33,7 @@ export class RouterStub {
 // Only implements params and part of snapshot.paramMap
 // #docregion activated-route-stub
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { convertToParamMap, ParamMap } from '@angular/router';
+import { convertToParamMap, ParamMap } from '@bangular/router';
 
 @Injectable()
 export class ActivatedRouteStub {

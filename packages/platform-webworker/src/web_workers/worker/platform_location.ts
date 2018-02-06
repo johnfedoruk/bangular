@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {LocationChangeListener, PlatformLocation} from '@angular/common';
-import {EventEmitter, Injectable} from '@angular/core';
+import {LocationChangeListener, PlatformLocation} from '@bangular/common';
+import {EventEmitter, Injectable} from '@bangular/core';
 import {ClientMessageBroker, ClientMessageBrokerFactory, FnArg, UiArguments} from '../shared/client_message_broker';
 import {MessageBus} from '../shared/message_bus';
 import {ROUTER_CHANNEL} from '../shared/messaging_api';

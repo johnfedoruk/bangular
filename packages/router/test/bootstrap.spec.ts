@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {APP_BASE_HREF} from '@angular/common';
-import {ApplicationRef, CUSTOM_ELEMENTS_SCHEMA, Component, NgModule, destroyPlatform} from '@angular/core';
-import {inject} from '@angular/core/testing';
-import {BrowserModule, DOCUMENT, ɵgetDOM as getDOM} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {NavigationEnd, Resolve, Router, RouterModule} from '@angular/router';
+import {APP_BASE_HREF} from '@bangular/common';
+import {ApplicationRef, CUSTOM_ELEMENTS_SCHEMA, Component, NgModule, destroyPlatform} from '@bangular/core';
+import {inject} from '@bangular/core/testing';
+import {BrowserModule, DOCUMENT, ɵgetDOM as getDOM} from '@bangular/platform-browser';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
+import {NavigationEnd, Resolve, Router, RouterModule} from '@bangular/router';
 
 
 describe('bootstrap', () => {

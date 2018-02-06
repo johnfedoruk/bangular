@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as o from '../output/output_ast';
 
-const CORE = '@angular/core';
+const CORE = '@bangular/core';
 
 // Copied from core and must be in sync with the value in the runtime.
 export const enum LifeCycleGuard {ON_INIT = 1, ON_DESTROY = 2, ON_CHANGES = 4}

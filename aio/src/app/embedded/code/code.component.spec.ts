@@ -1,8 +1,8 @@
-import { Component, DebugElement } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatSnackBarModule, MatSnackBar } from '@angular/material';
-import { By } from '@angular/platform-browser';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { Component, DebugElement } from '@bangular/core';
+import { async, ComponentFixture, TestBed } from '@bangular/core/testing';
+import { MatSnackBarModule, MatSnackBar } from '@bangular/material';
+import { By } from '@bangular/platform-browser';
+import { NoopAnimationsModule } from '@bangular/platform-browser/animations';
 
 import { CodeComponent } from './code.component';
 import { CopierService } from 'app/shared//copier.service';

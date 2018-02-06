@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CommonModule} from '@angular/common';
-import {NgComponentOutlet} from '@angular/common/src/directives/ng_component_outlet';
-import {Compiler, Component, ComponentRef, Inject, InjectionToken, Injector, NO_ERRORS_SCHEMA, NgModule, NgModuleFactory, Optional, QueryList, StaticProvider, TemplateRef, Type, ViewChild, ViewChildren, ViewContainerRef} from '@angular/core';
-import {TestBed, async, fakeAsync} from '@angular/core/testing';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {CommonModule} from '@bangular/common';
+import {NgComponentOutlet} from '@bangular/common/src/directives/ng_component_outlet';
+import {Compiler, Component, ComponentRef, Inject, InjectionToken, Injector, NO_ERRORS_SCHEMA, NgModule, NgModuleFactory, Optional, QueryList, StaticProvider, TemplateRef, Type, ViewChild, ViewChildren, ViewContainerRef} from '@bangular/core';
+import {TestBed, async, fakeAsync} from '@bangular/core/testing';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 {
   describe('insert/remove', () => {

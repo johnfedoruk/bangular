@@ -1,5 +1,5 @@
 /**
- * System configuration for Angular samples
+ * System configuration for Bangular samples
  * Adjust as necessary for your application needs.
  */
 (function (global) {
@@ -12,22 +12,22 @@
     map: {
       // our app is within the app folder
       app: 'app',
-      // angular bundles
-      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
-      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
-      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
-      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
-      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
-      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
-      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      // bangular bundles
+      '@bangular/core': 'npm:@bangular/core/bundles/core.umd.js',
+      '@bangular/common': 'npm:@bangular/common/bundles/common.umd.js',
+      '@bangular/compiler': 'npm:@bangular/compiler/bundles/compiler.umd.js',
+      '@bangular/platform-browser': 'npm:@bangular/platform-browser/bundles/platform-browser.umd.js',
+      '@bangular/platform-browser-dynamic': 'npm:@bangular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@bangular/http': 'npm:@bangular/http/bundles/http.umd.js',
+      '@bangular/router': 'npm:@bangular/router/bundles/router.umd.js',
+      '@bangular/forms': 'npm:@bangular/forms/bundles/forms.umd.js',
       // #docregion upgrade-static-umd
-      '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
+      '@bangular/upgrade/static': 'npm:@bangular/upgrade/bundles/upgrade-static.umd.js',
       // #enddocregion upgrade-static-umd
 
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'bangular-in-memory-web-api': 'npm:bangular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

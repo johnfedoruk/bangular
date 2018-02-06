@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {EventEmitter, Injectable, Type, ɵstringify as stringify} from '@angular/core';
+import {EventEmitter, Injectable, Type, ɵstringify as stringify} from '@bangular/core';
 import {MessageBus} from './message_bus';
 import {Serializer, SerializerTypes} from './serializer';
 
 /**
- * @experimental WebWorker support in Angular is experimental.
+ * @experimental WebWorker support in Bangular is experimental.
  */
 @Injectable()
 export class ClientMessageBrokerFactory {
@@ -38,7 +38,7 @@ interface PromiseCompleter {
 }
 
 /**
- * @experimental WebWorker support in Angular is experimental.
+ * @experimental WebWorker support in Bangular is experimental.
  */
 export class ClientMessageBroker {
   private _pending = new Map<string, PromiseCompleter>();
@@ -141,7 +141,7 @@ interface ResponseMessageData {
 }
 
 /**
- * @experimental WebWorker support in Angular is experimental.
+ * @experimental WebWorker support in Bangular is experimental.
  */
 export class FnArg {
   constructor(
@@ -149,7 +149,7 @@ export class FnArg {
 }
 
 /**
- * @experimental WebWorker support in Angular is experimental.
+ * @experimental WebWorker support in Bangular is experimental.
  */
 export class UiArguments {
   constructor(public method: string, public args?: FnArg[]) {}

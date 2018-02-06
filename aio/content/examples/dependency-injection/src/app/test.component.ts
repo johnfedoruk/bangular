@@ -2,7 +2,7 @@
 // Simulate a simple test
 // Reader should look to the testing chapter for the real thing
 
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 
 import { Hero  } from './heroes/hero';
 import { HeroService } from './heroes/hero.service';
@@ -27,7 +27,7 @@ function runTests() {
   const mockService = <HeroService> {getHeroes: () => expectedHeroes }
 
   it('should have heroes when HeroListComponent created', () => {
-    // Pass the mock to the constructor as the Angular injector would
+    // Pass the mock to the constructor as the Bangular injector would
     const component = new HeroListComponent(mockService);
     expect(component.heroes.length).toEqual(expectedHeroes.length);
   });

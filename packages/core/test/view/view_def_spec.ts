@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NodeFlags, QueryValueType, ViewDefinition, ViewFlags, anchorDef, directiveDef, elementDef, textDef, viewDef} from '@angular/core/src/view/index';
-import {filterQueryId} from '@angular/core/src/view/util';
+import {NodeFlags, QueryValueType, ViewDefinition, ViewFlags, anchorDef, directiveDef, elementDef, textDef, viewDef} from '@bangular/core/src/view/index';
+import {filterQueryId} from '@bangular/core/src/view/util';
 
 {
   describe('viewDef', () => {

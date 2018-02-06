@@ -1,7 +1,7 @@
 // #docplaster
 // #docregion
-import { Component }      from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component }      from '@bangular/core';
+import { ActivatedRoute } from '@bangular/router';
 
 import { Phone, PhoneData } from '../core/phone/phone.service';
 

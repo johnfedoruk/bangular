@@ -1,7 +1,7 @@
-Naming Conventions in Angular
+Naming Conventions in Bangular
 ---
 
-In general Angular should follow TypeScript naming conventions.
+In general Bangular should follow TypeScript naming conventions.
 See: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
 
 

@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {Injectable} from '../di';
@@ -24,7 +24,7 @@ export declare interface PublicTestability {
 
 /**
  * The Testability service provides testing hooks that can be accessed from
- * the browser and by services such as Protractor. Each bootstrapped Angular
+ * the browser and by services such as Protractor. Each bootstrapped Bangular
  * application on the page will have an instance of Testability.
  * @experimental
  */
@@ -43,10 +43,10 @@ export class Testability implements PublicTestability {
   _didWork: boolean = false;
   /** @internal */
   _callbacks: Function[] = [];
-  constructor(private _ngZone: NgZone) { this._watchAngularEvents(); }
+  constructor(private _ngZone: NgZone) { this._watchBangularEvents(); }
 
   /** @internal */
-  _watchAngularEvents(): void {
+  _watchBangularEvents(): void {
     this._ngZone.onUnstable.subscribe({
       next: () => {
         this._didWork = true;
@@ -54,10 +54,10 @@ export class Testability implements PublicTestability {
       }
     });
 
-    this._ngZone.runOutsideAngular(() => {
+    this._ngZone.runOutsideBangular(() => {
       this._ngZone.onStable.subscribe({
         next: () => {
-          NgZone.assertNotInAngularZone();
+          NgZone.assertNotInBangularZone();
           scheduleMicroTask(() => {
             this._isZoneStable = true;
             this._runCallbacksIfReady();
@@ -217,7 +217,7 @@ class _NoopGetTestability implements GetTestability {
 }
 
 /**
- * Set the {@link GetTestability} implementation used by the Angular testing framework.
+ * Set the {@link GetTestability} implementation used by the Bangular testing framework.
  * @experimental
  */
 export function setTestabilityGetter(getter: GetTestability): void {

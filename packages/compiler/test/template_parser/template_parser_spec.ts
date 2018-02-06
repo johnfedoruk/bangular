@@ -3,18 +3,18 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {CompileQueryMetadata, CompilerConfig, ProxyClass, StaticSymbol, preserveWhitespacesDefault} from '@angular/compiler';
-import {CompileDiDependencyMetadata, CompileDirectiveMetadata, CompileDirectiveSummary, CompilePipeMetadata, CompilePipeSummary, CompileProviderMetadata, CompileTemplateMetadata, CompileTokenMetadata, CompileTypeMetadata, tokenReference} from '@angular/compiler/src/compile_metadata';
-import {DomElementSchemaRegistry} from '@angular/compiler/src/schema/dom_element_schema_registry';
-import {ElementSchemaRegistry} from '@angular/compiler/src/schema/element_schema_registry';
-import {AttrAst, BoundDirectivePropertyAst, BoundElementPropertyAst, BoundEventAst, BoundTextAst, DirectiveAst, ElementAst, EmbeddedTemplateAst, NgContentAst, PropertyBindingType, ProviderAstType, ReferenceAst, TemplateAst, TemplateAstVisitor, TextAst, VariableAst, templateVisitAll} from '@angular/compiler/src/template_parser/template_ast';
-import {TemplateParser, splitClasses} from '@angular/compiler/src/template_parser/template_parser';
-import {ChangeDetectionStrategy, ComponentFactory, RendererType2, SchemaMetadata, SecurityContext, ViewEncapsulation} from '@angular/core';
-import {Console} from '@angular/core/src/console';
-import {TestBed, inject} from '@angular/core/testing';
-import {JitReflector} from '@angular/platform-browser-dynamic/src/compiler_reflector';
+import {CompileQueryMetadata, CompilerConfig, ProxyClass, StaticSymbol, preserveWhitespacesDefault} from '@bangular/compiler';
+import {CompileDiDependencyMetadata, CompileDirectiveMetadata, CompileDirectiveSummary, CompilePipeMetadata, CompilePipeSummary, CompileProviderMetadata, CompileTemplateMetadata, CompileTokenMetadata, CompileTypeMetadata, tokenReference} from '@bangular/compiler/src/compile_metadata';
+import {DomElementSchemaRegistry} from '@bangular/compiler/src/schema/dom_element_schema_registry';
+import {ElementSchemaRegistry} from '@bangular/compiler/src/schema/element_schema_registry';
+import {AttrAst, BoundDirectivePropertyAst, BoundElementPropertyAst, BoundEventAst, BoundTextAst, DirectiveAst, ElementAst, EmbeddedTemplateAst, NgContentAst, PropertyBindingType, ProviderAstType, ReferenceAst, TemplateAst, TemplateAstVisitor, TextAst, VariableAst, templateVisitAll} from '@bangular/compiler/src/template_parser/template_ast';
+import {TemplateParser, splitClasses} from '@bangular/compiler/src/template_parser/template_parser';
+import {ChangeDetectionStrategy, ComponentFactory, RendererType2, SchemaMetadata, SecurityContext, ViewEncapsulation} from '@bangular/core';
+import {Console} from '@bangular/core/src/console';
+import {TestBed, inject} from '@bangular/core/testing';
+import {JitReflector} from '@bangular/platform-browser-dynamic/src/compiler_reflector';
 
 import {CompileEntryComponentMetadata, CompileStylesheetMetadata} from '../../src/compile_metadata';
 import {Identifiers, createTokenForExternalReference, createTokenForReference} from '../../src/identifiers';
@@ -675,7 +675,7 @@ class ArrayConsole implements Console {
             expect(() => parse('<my-component [invalidProp]="bar"></my-component>', []))
                 .toThrowError(`Template parse errors:
 Can't bind to 'invalidProp' since it isn't a known property of 'my-component'.
-1. If 'my-component' is an Angular component and it has 'invalidProp' input, then verify that it is part of this module.
+1. If 'my-component' is an Bangular component and it has 'invalidProp' input, then verify that it is part of this module.
 2. If 'my-component' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.
 3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. ("<my-component [ERROR ->][invalidProp]="bar"></my-component>"): TestComp@0:14`);
           });
@@ -685,7 +685,7 @@ Can't bind to 'invalidProp' since it isn't a known property of 'my-component'.
                 .toThrowError(
                     `Template parse errors:
 Can't bind to 'invalidProp' since it isn't a known property of 'ng-container'.
-1. If 'invalidProp' is an Angular directive, then add 'CommonModule' to the '@NgModule.imports' of this component.
+1. If 'invalidProp' is an Bangular directive, then add 'CommonModule' to the '@NgModule.imports' of this component.
 2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.` +
                     ` ("<ng-container [ERROR ->][invalidProp]="bar"></ng-container>"): TestComp@0:14`);
           });
@@ -693,14 +693,14 @@ Can't bind to 'invalidProp' since it isn't a known property of 'ng-container'.
           it('should throw error when binding to an unknown element w/o bindings', () => {
             expect(() => parse('<unknown></unknown>', [])).toThrowError(`Template parse errors:
 'unknown' is not a known element:
-1. If 'unknown' is an Angular component, then verify that it is part of this module.
+1. If 'unknown' is an Bangular component, then verify that it is part of this module.
 2. To allow any element add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component. ("[ERROR ->]<unknown></unknown>"): TestComp@0:0`);
           });
 
           it('should throw error when binding to an unknown custom element w/o bindings', () => {
             expect(() => parse('<un-known></un-known>', [])).toThrowError(`Template parse errors:
 'un-known' is not a known element:
-1. If 'un-known' is an Angular component, then verify that it is part of this module.
+1. If 'un-known' is an Bangular component, then verify that it is part of this module.
 2. If 'un-known' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message. ("[ERROR ->]<un-known></un-known>"): TestComp@0:0`);
           });
 
@@ -1686,7 +1686,7 @@ Reference "#a" is defined several times ("<div #a></div><div [ERROR ->]#a></div>
 
           ]);
 
-          // https://github.com/angular/angular/issues/13800
+          // https://github.com/bangular/bangular/issues/13800
           expect(humanizeTplAst(parse('<div *ngIf="-1">', [ngIf]))).toEqual([
             [EmbeddedTemplateAst],
             [DirectiveAst, ngIf],

@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ChangeDetectorRef, ComponentRef, DebugElement, ElementRef, NgZone, RendererFactory2, getDebugNode} from '@angular/core';
+import {ChangeDetectorRef, ComponentRef, DebugElement, ElementRef, NgZone, RendererFactory2, getDebugNode} from '@bangular/core';
 
 
 /**
@@ -64,7 +64,7 @@ export class ComponentFixture<T> {
     if (ngZone) {
       // Create subscriptions outside the NgZone so that the callbacks run oustide
       // of NgZone.
-      ngZone.runOutsideAngular(() => {
+      ngZone.runOutsideBangular(() => {
         this._onUnstableSubscription =
             ngZone.onUnstable.subscribe({next: () => { this._isStable = false; }});
         this._onMicrotaskEmptySubscription = ngZone.onMicrotaskEmpty.subscribe({

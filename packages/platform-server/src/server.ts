@@ -3,17 +3,17 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ɵAnimationEngine} from '@angular/animations/browser';
-import {PlatformLocation, ɵPLATFORM_SERVER_ID as PLATFORM_SERVER_ID} from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
-import {Injectable, InjectionToken, Injector, NgModule, NgZone, Optional, PLATFORM_ID, PLATFORM_INITIALIZER, PlatformRef, Provider, RendererFactory2, RootRenderer, StaticProvider, Testability, createPlatformFactory, isDevMode, platformCore, ɵALLOW_MULTIPLE_PLATFORMS as ALLOW_MULTIPLE_PLATFORMS} from '@angular/core';
-import {HttpModule} from '@angular/http';
-import {BrowserModule, DOCUMENT, ɵSharedStylesHost as SharedStylesHost, ɵTRANSITION_ID, ɵgetDOM as getDOM} from '@angular/platform-browser';
-import {ɵplatformCoreDynamic as platformCoreDynamic} from '@angular/platform-browser-dynamic';
-import {NoopAnimationsModule, ɵAnimationRendererFactory} from '@angular/platform-browser/animations';
+import {ɵAnimationEngine} from '@bangular/animations/browser';
+import {PlatformLocation, ɵPLATFORM_SERVER_ID as PLATFORM_SERVER_ID} from '@bangular/common';
+import {HttpClientModule} from '@bangular/common/http';
+import {Injectable, InjectionToken, Injector, NgModule, NgZone, Optional, PLATFORM_ID, PLATFORM_INITIALIZER, PlatformRef, Provider, RendererFactory2, RootRenderer, StaticProvider, Testability, createPlatformFactory, isDevMode, platformCore, ɵALLOW_MULTIPLE_PLATFORMS as ALLOW_MULTIPLE_PLATFORMS} from '@bangular/core';
+import {HttpModule} from '@bangular/http';
+import {BrowserModule, DOCUMENT, ɵSharedStylesHost as SharedStylesHost, ɵTRANSITION_ID, ɵgetDOM as getDOM} from '@bangular/platform-browser';
+import {ɵplatformCoreDynamic as platformCoreDynamic} from '@bangular/platform-browser-dynamic';
+import {NoopAnimationsModule, ɵAnimationRendererFactory} from '@bangular/platform-browser/animations';
 
 import {DominoAdapter, parseDocument} from './domino_adapter';
 import {SERVER_HTTP_PROVIDERS} from './http';

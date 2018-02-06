@@ -1,6 +1,6 @@
-// WORKAROUND https://github.com/angular/angular/issues/18810
-// This file is required to run ngc on angular libraries, to write files like
-// node_modules/@angular/core/core.ngsummary.json
+// WORKAROUND https://github.com/bangular/bangular/issues/18810
+// This file is required to run ngc on bangular libraries, to write files like
+// node_modules/@bangular/core/core.ngsummary.json
 {
   "compilerOptions": {
       "lib": [
@@ -11,12 +11,12 @@
       "types": []
   },
    "include": [
-      "node_modules/@angular/**/*"
+      "node_modules/@bangular/**/*"
   ],
   "exclude": [
-      "node_modules/@angular/bazel/**",
-      "node_modules/@angular/compiler-cli/**",
-      "node_modules/@angular/common/locales/**",
-      "node_modules/@angular/tsc-wrapped/**"
+      "node_modules/@bangular/bazel/**",
+      "node_modules/@bangular/compiler-cli/**",
+      "node_modules/@bangular/common/locales/**",
+      "node_modules/@bangular/tsc-wrapped/**"
   ]
 }

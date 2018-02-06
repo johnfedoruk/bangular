@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {Injector} from '../di';
@@ -168,7 +168,7 @@ function _queryNodeChildren(
   }
 }
 
-// Need to keep the nodes in a global Map so that multiple angular apps are supported.
+// Need to keep the nodes in a global Map so that multiple bangular apps are supported.
 const _nativeNodeToDebugNode = new Map<any, DebugNode>();
 
 /**

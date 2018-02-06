@@ -1,6 +1,6 @@
-import { ReflectiveInjector } from '@angular/core';
-import { fakeAsync, tick } from '@angular/core/testing';
-import { NgServiceWorker } from '@angular/service-worker';
+import { ReflectiveInjector } from '@bangular/core';
+import { fakeAsync, tick } from '@bangular/core/testing';
+import { NgServiceWorker } from '@bangular/service-worker';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/take';
 

@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable, RenderComponentType, RendererType2, Type, ɵstringify as stringify} from '@angular/core';
+import {Injectable, RenderComponentType, RendererType2, Type, ɵstringify as stringify} from '@bangular/core';
 import {RenderStore} from './render_store';
 
 
 /**
- * @experimental WebWorker support in Angular is currently experimental.
+ * @experimental WebWorker support in Bangular is currently experimental.
  */
 export const enum SerializerTypes {
   // RendererType2

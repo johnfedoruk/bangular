@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -24,7 +24,7 @@ var issues = [];
 
 // coarse Node version check
 if (+process.version[1] < 5) {
-  issues.push('Angular build currently requires Node 5+. Use nvm to update your node version.');
+  issues.push('Bangular build currently requires Node 5+. Use nvm to update your node version.');
 }
 
 try {
@@ -38,7 +38,7 @@ if (issues.length) {
   console.error(
       'Your environment doesn\'t provide the prerequisite dependencies.\n' +
       'Please fix the issues listed above and then rerun the gulp command.\n' +
-      'Check out https://github.com/angular/angular/blob/master/docs/DEVELOPER.md for more info.');
+      'Check out https://github.com/bangular/bangular/blob/master/docs/DEVELOPER.md for more info.');
   process.exit(1);
 }
 
@@ -54,7 +54,7 @@ try {
 }
 
 if (require.main === module) {
-  // we are running this script directly so just run checkEnvironment against the main angular
+  // we are running this script directly so just run checkEnvironment against the main bangular
   // package.json
   var engines = require(__dirname + '/../package.json').engines;
   checkEnvironment({

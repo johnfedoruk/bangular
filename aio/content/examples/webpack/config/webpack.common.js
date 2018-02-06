@@ -32,7 +32,7 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: { configFileName: helpers.root('src', 'tsconfig.json') }
-          } , 'angular2-template-loader'
+          } , 'bangular2-template-loader'
         ]
       },
       {
@@ -59,10 +59,10 @@ module.exports = {
 
   // #docregion plugins
   plugins: [
-    // Workaround for angular/angular#11580
+    // Workaround for bangular/bangular#11580
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)@angular/,
+      /bangular(\\|\/)core(\\|\/)@bangular/,
       helpers.root('./src'), // location of your src
       {} // a map of your routes
     ),

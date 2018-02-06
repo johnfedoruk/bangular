@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {PipeResolver} from '@angular/compiler/src/pipe_resolver';
-import {ɵstringify as stringify} from '@angular/core';
-import {Pipe} from '@angular/core/src/metadata';
-import {JitReflector} from '@angular/platform-browser-dynamic/src/compiler_reflector';
+import {PipeResolver} from '@bangular/compiler/src/pipe_resolver';
+import {ɵstringify as stringify} from '@bangular/core';
+import {Pipe} from '@bangular/core/src/metadata';
+import {JitReflector} from '@bangular/platform-browser-dynamic/src/compiler_reflector';
 
 @Pipe({name: 'somePipe', pure: true})
 class SomePipe {

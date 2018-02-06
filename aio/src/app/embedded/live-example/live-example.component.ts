@@ -1,6 +1,6 @@
 /* tslint:disable component-selector */
-import { Component, ElementRef, HostListener, Input, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, ElementRef, HostListener, Input, OnInit, AfterViewInit, ViewChild } from '@bangular/core';
+import { Location } from '@bangular/common';
 import { CONTENT_URL_PREFIX } from 'app/documents/document.service';
 
 import { boolFromValue, getAttrs, getAttrValue } from 'app/shared/attribute-utils';
@@ -9,7 +9,7 @@ const liveExampleBase = CONTENT_URL_PREFIX + 'live-examples/';
 const zipBase = CONTENT_URL_PREFIX + 'zips/';
 
 /**
-* Angular.io Live Example Embedded Component
+* Bangular.io Live Example Embedded Component
 *
 * Renders a link to a live/host example of the doc page.
 *
@@ -114,7 +114,7 @@ export class LiveExampleComponent implements OnInit {
   ngOnInit() {
     // The `liveExampleContent` property is set by the DocViewer when it builds this component.
     // It is the original innerHTML of the host element.
-    // Angular will sanitize this title when displayed so should be plain text.
+    // Bangular will sanitize this title when displayed so should be plain text.
     const title = this.elementRef.nativeElement.liveExampleContent;
     this.title = (title || this.attrs.title || 'live example').trim();
     this.onResize(window.innerWidth);
@@ -145,7 +145,7 @@ export class EmbeddedStackblitzComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     // DEVELOPMENT TESTING ONLY
-    // this.src = 'https://angular.io/resources/live-examples/quickstart/ts/stackblitz.json';
+    // this.src = 'https://bangular.io/resources/live-examples/quickstart/ts/stackblitz.json';
 
     if (this.iframe) {
       // security: the `src` is always authored by the documentation team

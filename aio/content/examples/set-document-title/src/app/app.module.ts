@@ -1,6 +1,6 @@
 // #docregion
-import { NgModule } from '@angular/core';
-import { BrowserModule, Title }  from '@angular/platform-browser';
+import { NgModule } from '@bangular/core';
+import { BrowserModule, Title }  from '@bangular/platform-browser';
 
 import { AppComponent } from './app.component';
 

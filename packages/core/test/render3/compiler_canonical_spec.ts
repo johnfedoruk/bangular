@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {Component, ContentChild, Directive, Injectable, Input, NgModule, OnDestroy, Optional, Pipe, PipeTransform, QueryList, SimpleChanges, TemplateRef, Type, ViewChild, ViewContainerRef} from '../../src/core';
@@ -744,11 +744,11 @@ xdescribe('NgModule', () => {
   }
 
   function defineInjectable(opts: Injectable): Injectable {
-    // This class should be imported from https://github.com/angular/angular/pull/20850
+    // This class should be imported from https://github.com/bangular/bangular/pull/20850
     return opts;
   }
   function defineInjector(opts: any): any {
-    // This class should be imported from https://github.com/angular/angular/pull/20850
+    // This class should be imported from https://github.com/bangular/bangular/pull/20850
     return opts;
   }
   it('should convert module', () => {

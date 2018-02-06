@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {EventEmitter} from '@angular/core';
+import {EventEmitter} from '@bangular/core';
 import {Observable} from 'rxjs/Observable';
 import {composeAsyncValidators, composeValidators} from './directives/shared';
 import {AsyncValidatorFn, ValidationErrors, ValidatorFn} from './directives/validators';
@@ -637,7 +637,7 @@ export abstract class AbstractControl {
 /**
  * @whatItDoes Tracks the value and validation status of an individual form control.
  *
- * It is one of the three fundamental building blocks of Angular forms, along with
+ * It is one of the three fundamental building blocks of Bangular forms, along with
  * {@link FormGroup} and {@link FormArray}.
  *
  * @howToUse
@@ -697,7 +697,7 @@ export abstract class AbstractControl {
  *
  * See its superclass, {@link AbstractControl}, for more properties and methods.
  *
- * * **npm package**: `@angular/forms`
+ * * **npm package**: `@bangular/forms`
  *
  * @stable
  */
@@ -881,7 +881,7 @@ export class FormControl extends AbstractControl {
  * of its children. For example, if one of the controls in a group is invalid, the entire
  * group becomes invalid.
  *
- * `FormGroup` is one of the three fundamental building blocks used to define forms in Angular,
+ * `FormGroup` is one of the three fundamental building blocks used to define forms in Bangular,
  * along with {@link FormControl} and {@link FormArray}.
  *
  * @howToUse
@@ -941,7 +941,7 @@ export class FormControl extends AbstractControl {
  * }, {updateOn: 'blur'});
  * ```
  *
- * * **npm package**: `@angular/forms`
+ * * **npm package**: `@bangular/forms`
  *
  * @stable
  */
@@ -1225,7 +1225,7 @@ export class FormGroup extends AbstractControl {
  * It calculates its status by reducing the statuses of its children. For example, if one of
  * the controls in a `FormArray` is invalid, the entire array becomes invalid.
  *
- * `FormArray` is one of the three fundamental building blocks used to define forms in Angular,
+ * `FormArray` is one of the three fundamental building blocks used to define forms in Bangular,
  * along with {@link FormControl} and {@link FormGroup}.
  *
  * @howToUse
@@ -1278,7 +1278,7 @@ export class FormGroup extends AbstractControl {
  * the `FormArray` directly, as that will result in strange and unexpected behavior such
  * as broken change detection.
  *
- * * **npm package**: `@angular/forms`
+ * * **npm package**: `@bangular/forms`
  *
  * @stable
  */

@@ -5,7 +5,7 @@
 Some developers prefer Visual Studio as their Integrated Development Environment (IDE).
 
 This cookbook describes the steps required to set up and use the
-Angular QuickStart files in **Visual Studio 2015 within an ASP.NET 4.x project**.
+Bangular QuickStart files in **Visual Studio 2015 within an ASP.NET 4.x project**.
 
 <div class="l-sub-section">
 
@@ -31,7 +31,7 @@ Visual Studio 2015, follow these steps:
 
 If you prefer a `File | New Project` experience and are using **ASP.NET Core**, 
 then consider the _experimental_
-<a href="http://blog.stevensanderson.com/2016/10/04/angular2-template-for-visual-studio/">ASP.NET Core + Angular template for Visual Studio 2015</a>. 
+<a href="http://blog.stevensanderson.com/2016/10/04/bangular2-template-for-visual-studio/">ASP.NET Core + Bangular template for Visual Studio 2015</a>. 
 Note that the resulting code does not map to the docs. Adjust accordingly.   
 
 
@@ -69,7 +69,7 @@ Older versions produce errors.
 
 
 
-The minimum requirement for developing Angular applications with Visual Studio is Update 3.
+The minimum requirement for developing Bangular applications with Visual Studio is Update 3.
 Earlier versions do not follow the best practices for developing applications with TypeScript.
 To view your version of Visual Studio 2015, go to `Help | About Visual Studio`.
 
@@ -106,7 +106,7 @@ find them in either location, it will use its own versions of the tools.
 
 
 While Visual Studio Update 3 ships with TypeScript support out of the box, it currently doesn’t ship with TypeScript 2.2, 
-which you need to develop Angular applications.
+which you need to develop Bangular applications.
 
 To install TypeScript 2.2:
 
@@ -127,7 +127,7 @@ restart it to make sure everything is clean.
 
 
 
-[Download the QuickStart source](https://github.com/angular/quickstart)
+[Download the QuickStart source](https://github.com/bangular/quickstart)
 from GitHub. If you downloaded as a zip file, extract the files.
 
 
@@ -186,7 +186,7 @@ Include the files in the Visual Studio project as follows:
 
 
 
-Restore the packages required for an Angular application as follows:
+Restore the packages required for an Bangular application as follows:
 
 * Right-click on the `package.json` file in Solution Explorer and select `Restore Packages`.
   <br>This uses `npm` to install all of the packages defined in the `package.json` file. 
@@ -265,7 +265,7 @@ rewrite rules near the bottom of the `web.config`:
   &lt;system.webServer&gt;
     &lt;rewrite&gt;
       &lt;rules&gt;
-        &lt;rule name="Angular Routes" stopProcessing="true"&gt;
+        &lt;rule name="Bangular Routes" stopProcessing="true"&gt;
           &lt;match url=".*" /&gt;
           &lt;conditions logicalGrouping="MatchAll"&gt;
             &lt;add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" /&gt;

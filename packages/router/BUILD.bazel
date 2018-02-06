@@ -10,7 +10,7 @@ ts_library(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/router",
+    module_name = "@bangular/router",
     deps = [
         "//packages/common",
         "//packages/core",

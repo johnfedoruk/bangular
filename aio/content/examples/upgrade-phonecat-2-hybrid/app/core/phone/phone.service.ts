@@ -1,11 +1,11 @@
 // #docregion
-import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Injectable } from '@bangular/core';
+import { Http, Response } from '@bangular/http';
 import { Observable } from 'rxjs/Observable';
 
 // #docregion downgrade-injectable
-declare var angular: angular.IAngularStatic;
-import { downgradeInjectable } from '@angular/upgrade/static';
+declare var bangular: bangular.IBangularStatic;
+import { downgradeInjectable } from '@bangular/upgrade/static';
 // #enddocregion downgrade-injectable
 
 import 'rxjs/add/operator/map';
@@ -37,6 +37,6 @@ export class Phone {
 // #enddocregion classdef
 // #enddocregion fullclass
 
-angular.module('core.phone')
+bangular.module('core.phone')
   .factory('phone', downgradeInjectable(Phone));
 // #enddocregion downgrade-injectable

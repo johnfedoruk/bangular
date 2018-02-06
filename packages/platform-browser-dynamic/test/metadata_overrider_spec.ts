@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {MetadataOverrider} from '@angular/platform-browser-dynamic/testing/src/metadata_overrider';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {MetadataOverrider} from '@bangular/platform-browser-dynamic/testing/src/metadata_overrider';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 interface SomeMetadataType {
   plainProp?: string;

@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 exports.config = {
@@ -18,5 +18,5 @@ exports.config = {
   directConnect: true,
   baseUrl: 'http://localhost:9876/',
   framework: 'jasmine',
-  useAllAngular2AppRoots: true
+  useAllBangular2AppRoots: true
 };

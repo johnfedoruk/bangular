@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 var browserProvidersConf = require('../../browser-providers.conf.js');
@@ -42,41 +42,41 @@ module.exports = function(config) {
       // shim
       {pattern: 'packages/router/karma-test-shim.js', included: true, watched: true},
 
-      // Angular modules
-      {pattern: 'dist/all/@angular/core/*.js', included: false, watched: false},
-      {pattern: 'dist/all/@angular/core/src/**/*.js', included: false, watched: false},
-      {pattern: 'dist/all/@angular/core/testing/**/*.js', included: false, watched: false},
+      // Bangular modules
+      {pattern: 'dist/all/@bangular/core/*.js', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/core/src/**/*.js', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/core/testing/**/*.js', included: false, watched: false},
 
-      {pattern: 'dist/all/@angular/common/*.js', included: false, watched: false},
-      {pattern: 'dist/all/@angular/common/src/**/*.js', included: false, watched: false},
-      {pattern: 'dist/all/@angular/common/testing/**/*.js', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/common/*.js', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/common/src/**/*.js', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/common/testing/**/*.js', included: false, watched: false},
 
-      {pattern: 'dist/all/@angular/compiler/*.js', included: false, watched: false},
-      {pattern: 'dist/all/@angular/compiler/src/**/*.js', included: false, watched: false},
-      {pattern: 'dist/all/@angular/compiler/testing/**/*.js', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/compiler/*.js', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/compiler/src/**/*.js', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/compiler/testing/**/*.js', included: false, watched: false},
 
-      {pattern: 'dist/all/@angular/platform-browser/*.js', included: false, watched: false},
-      {pattern: 'dist/all/@angular/platform-browser/src/**/*.js', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/platform-browser/*.js', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/platform-browser/src/**/*.js', included: false, watched: false},
       {
-        pattern: 'dist/all/@angular/platform-browser/testing/**/*.js',
+        pattern: 'dist/all/@bangular/platform-browser/testing/**/*.js',
         included: false,
         watched: false,
       },
 
-      {pattern: 'dist/all/@angular/platform-browser-dynamic/*.js', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/platform-browser-dynamic/*.js', included: false, watched: false},
       {
-        pattern: 'dist/all/@angular/platform-browser-dynamic/src/**/*.js',
+        pattern: 'dist/all/@bangular/platform-browser-dynamic/src/**/*.js',
         included: false,
         watched: false,
       },
       {
-        pattern: 'dist/all/@angular/platform-browser-dynamic/testing/**/*.js',
+        pattern: 'dist/all/@bangular/platform-browser-dynamic/testing/**/*.js',
         included: false,
         watched: false,
       },
 
       // Router
-      {pattern: 'dist/all/@angular/router/**/*.js', included: false, watched: true}
+      {pattern: 'dist/all/@bangular/router/**/*.js', included: false, watched: true}
     ],
 
     customLaunchers: browserProvidersConf.customLaunchers,

@@ -1,10 +1,10 @@
 // #docregion
-import { Injectable }       from '@angular/core';
+import { Injectable }       from '@bangular/core';
 import {
   CanActivate, Router,
   ActivatedRouteSnapshot,
   RouterStateSnapshot
-}                           from '@angular/router';
+}                           from '@bangular/router';
 import { AuthService }      from './auth.service';
 
 @Injectable()

@@ -1,6 +1,6 @@
 import { browser, element, by, promise, ElementFinder, ExpectedConditions } from 'protractor';
 
-const githubRegex = /https:\/\/github.com\/angular\/angular\//;
+const githubRegex = /https:\/\/github.com\/bangular\/bangular\//;
 
 export class SitePage {
 
@@ -29,10 +29,10 @@ export class SitePage {
   locationPath() { return browser.executeScript('return document.location.pathname') as promise.Promise<string>; }
 
   navigateTo(pageUrl) {
-    // Navigate to the page, disable animations, and wait for Angular.
+    // Navigate to the page, disable animations, and wait for Bangular.
     return browser.get('/' + pageUrl)
         .then(() => browser.executeScript('document.body.classList.add(\'no-animations\')'))
-        .then(() => browser.waitForAngular());
+        .then(() => browser.waitForBangular());
   }
 
   getDocViewerText() {
@@ -41,7 +41,7 @@ export class SitePage {
 
   getInnerHtml(element) {
     // `getInnerHtml` was removed from webDriver and this is the workaround.
-    // See https://github.com/angular/protractor/blob/master/CHANGELOG.md#breaking-changes
+    // See https://github.com/bangular/protractor/blob/master/CHANGELOG.md#breaking-changes
     return browser.executeScript('return arguments[0].innerHTML;', element);
   }
 

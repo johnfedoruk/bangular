@@ -1,10 +1,10 @@
-import { NO_ERRORS_SCHEMA, DebugElement } from '@angular/core';
-import { inject, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
-import { Title } from '@angular/platform-browser';
-import { APP_BASE_HREF } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { MatProgressBar, MatSidenav } from '@angular/material';
-import { By } from '@angular/platform-browser';
+import { NO_ERRORS_SCHEMA, DebugElement } from '@bangular/core';
+import { inject, ComponentFixture, TestBed, fakeAsync, tick } from '@bangular/core/testing';
+import { Title } from '@bangular/platform-browser';
+import { APP_BASE_HREF } from '@bangular/common';
+import { HttpClient } from '@bangular/common/http';
+import { MatProgressBar, MatSidenav } from '@bangular/material';
+import { By } from '@bangular/platform-browser';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
@@ -424,7 +424,7 @@ describe('AppComponent', () => {
         spyOn(titleService, 'setTitle');
         locationService.go('guide/pipes');
         fixture.detectChanges();
-        expect(titleService.setTitle).toHaveBeenCalledWith('Angular - Pipes');
+        expect(titleService.setTitle).toHaveBeenCalledWith('Bangular - Pipes');
       });
 
       it('should update the document title, with a default value if the document has no title', () => {
@@ -432,7 +432,7 @@ describe('AppComponent', () => {
         spyOn(titleService, 'setTitle');
         locationService.go('no-title');
         fixture.detectChanges();
-        expect(titleService.setTitle).toHaveBeenCalledWith('Angular');
+        expect(titleService.setTitle).toHaveBeenCalledWith('Bangular');
       });
     });
 
@@ -663,7 +663,7 @@ describe('AppComponent', () => {
         initializeTest();
         fixture.detectChanges();
         const banner: HTMLElement = fixture.debugElement.query(By.css('aio-mode-banner')).nativeElement;
-        expect(banner.textContent).toContain('archived documentation for Angular v4');
+        expect(banner.textContent).toContain('archived documentation for Bangular v4');
       });
 
       it('should show no message if the deployment mode is not "archive"', () => {
@@ -1244,7 +1244,7 @@ class TestHttpClient {
   };
 
   static docVersions: NavigationNode[] = [
-    { title: 'v2', url: 'https://v2.angular.io' }
+    { title: 'v2', url: 'https://v2.bangular.io' }
   ];
 
   // tslint:disable:quotemark
@@ -1262,7 +1262,7 @@ class TestHttpClient {
     "SideNav": [
       {
       "title": "Core",
-      "tooltip": "Learn the core capabilities of Angular",
+      "tooltip": "Learn the core capabilities of Bangular",
       "children": [
           {
             "url": "guide/pipes",
@@ -1279,7 +1279,7 @@ class TestHttpClient {
       {
         "url": "api",
         "title": "API",
-        "tooltip": "Details of the Angular classes and values."
+        "tooltip": "Details of the Bangular classes and values."
       }
     ],
     "docVersions": TestHttpClient.docVersions,

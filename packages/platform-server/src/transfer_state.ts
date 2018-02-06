@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {APP_ID, NgModule} from '@angular/core';
-import {DOCUMENT, TransferState, ɵescapeHtml as escapeHtml} from '@angular/platform-browser';
+import {APP_ID, NgModule} from '@bangular/core';
+import {DOCUMENT, TransferState, ɵescapeHtml as escapeHtml} from '@bangular/platform-browser';
 
 import {BEFORE_APP_SERIALIZED} from './tokens';
 

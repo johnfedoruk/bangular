@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {verifyNoBrowserErrors} from 'e2e_util/e2e_util';
@@ -18,7 +18,7 @@ describe('WebWorkers Kitchen Sink', function() {
   const URL = 'all/playground/src/web_workers/kitchen_sink/index.html';
 
   it('should greet', () => {
-    // This test can't wait for Angular as Testability is not available when using WebWorker
+    // This test can't wait for Bangular as Testability is not available when using WebWorker
     browser.ignoreSynchronization = true;
     browser.get(URL);
 
@@ -30,7 +30,7 @@ describe('WebWorkers Kitchen Sink', function() {
   });
 
   it('should change greeting', () => {
-    // This test can't wait for Angular as Testability is not available when using WebWorker
+    // This test can't wait for Bangular as Testability is not available when using WebWorker
     browser.ignoreSynchronization = true;
     browser.get(URL);
     const changeButtonSelector = 'hello-app .changeButton';
@@ -43,7 +43,7 @@ describe('WebWorkers Kitchen Sink', function() {
   });
 
   it('should display correct key names', () => {
-    // This test can't wait for Angular as Testability is not available when using WebWorker
+    // This test can't wait for Bangular as Testability is not available when using WebWorker
     browser.ignoreSynchronization = true;
     browser.get(URL);
     browser.wait(protractor.until.elementLocated(by.css('.sample-area')), 15000);

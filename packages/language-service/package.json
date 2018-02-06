@@ -1,14 +1,14 @@
 {
-  "name": "@angular/language-service",
+  "name": "@bangular/language-service",
   "version": "0.0.0-PLACEHOLDER",
-  "description": "Angular - language services",
+  "description": "Bangular - language services",
   "main": "./bundles/language-service.umd.js",
   "module": "./esm5/language-service.js",
   "typings": "./language-service.d.ts",
-  "author": "angular",
+  "author": "bangular",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/angular/angular.git"
+    "url": "https://github.com/bangular/bangular.git"
   }
 }

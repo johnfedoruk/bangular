@@ -1,25 +1,25 @@
 {
-  "name": "angular-bazel",
-  "description": "example and integration test for building Angular apps with Bazel",
+  "name": "bangular-bazel",
+  "description": "example and integration test for building Bangular apps with Bazel",
   "version": "0.0.0",
   "license": "MIT",
   "dependencies": {
-    "@angular/animations": "file:../../dist/packages-dist/animations",
-    "@angular/common": "file:../../dist/packages-dist/common",
-    "@angular/compiler": "file:../../dist/packages-dist/compiler",
-    "@angular/core": "file:../../dist/packages-dist/core",
-    "@angular/platform-browser": "file:../../dist/packages-dist/platform-browser",
+    "@bangular/animations": "file:../../dist/packages-dist/animations",
+    "@bangular/common": "file:../../dist/packages-dist/common",
+    "@bangular/compiler": "file:../../dist/packages-dist/compiler",
+    "@bangular/core": "file:../../dist/packages-dist/core",
+    "@bangular/platform-browser": "file:../../dist/packages-dist/platform-browser",
     "rxjs": "file:../../node_modules/rxjs",
     "zone.js": "file:../../node_modules/zone.js"
   },
   "devDependencies": {
-    "@angular/bazel": "file:../../dist/packages-dist/bazel",
-    "@angular/compiler-cli": "file:../../dist/packages-dist/compiler-cli",
+    "@bangular/bazel": "file:../../dist/packages-dist/bazel",
+    "@bangular/compiler-cli": "file:../../dist/packages-dist/compiler-cli",
     "typescript": "file:../../node_modules/typescript",
     "@types/source-map": "0.5.1"
   },
   "scripts": {
-    "postinstall": "ngc -p angular.tsconfig.json",
+    "postinstall": "ngc -p bangular.tsconfig.json",
     "test": "bazel build //... --noshow_progress"
   }
 }

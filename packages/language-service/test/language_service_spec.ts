@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as ts from 'typescript';
@@ -15,9 +15,9 @@ import {TypeScriptServiceHost} from '../src/typescript_host';
 import {toh} from './test_data';
 import {MockTypescriptHost} from './test_utils';
 
-describe('service without angular', () => {
+describe('service without bangular', () => {
   let mockHost = new MockTypescriptHost(['/app/main.ts', '/app/parsing-cases.ts'], toh);
-  mockHost.forgetAngular();
+  mockHost.forgetBangular();
   let service = ts.createLanguageService(mockHost);
   let ngHost = new TypeScriptServiceHost(mockHost, service);
   let ngService = createLanguageService(ngHost);

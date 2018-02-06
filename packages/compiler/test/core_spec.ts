@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {core as compilerCore} from '@angular/compiler';
-import * as core from '@angular/core';
+import {core as compilerCore} from '@bangular/compiler';
+import * as core from '@bangular/core';
 
 {
   describe('compiler core', () => {
@@ -185,7 +185,7 @@ function compareRuntimeShape(a: any, b: any) {
   expect(keys).toEqual(metadataKeys(b));
   keys.forEach(key => { expect(a[key]).toBe(b[key]); });
   // Need to check 'ngMetadataName' separately, as this is
-  // on the prototype in @angular/core, but a regular property in @angular/compiler.
+  // on the prototype in @bangular/core, but a regular property in @bangular/compiler.
   expect(a.ngMetadataName).toBe(b.ngMetadataName);
 }
 

@@ -1,7 +1,7 @@
 // #docregion whole-core-module
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@bangular/core';
 
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@bangular/common';
 
 import { TitleComponent } from './title.component';
 // #docregion user-service

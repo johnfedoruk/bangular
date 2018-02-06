@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 /* tslint:disable:no-console  */
 require('zone.js/dist/zone-node.js');
 
-import {enableProdMode, NgModuleFactory} from '@angular/core';
-import {renderModuleFactory} from '@angular/platform-server';
+import {enableProdMode, NgModuleFactory} from '@bangular/core';
+import {renderModuleFactory} from '@bangular/platform-server';
 import * as express from 'express';
 
 import {HelloWorldServerModuleNgFactory} from './helloworld/app.server.ngfactory';

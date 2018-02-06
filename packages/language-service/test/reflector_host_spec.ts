@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as path from 'path';
@@ -20,7 +20,7 @@ import {MockTypescriptHost} from './test_utils';
 describe('reflector_host_spec', () => {
 
   // Regression #21811
-  it('should be able to find angular under windows', () => {
+  it('should be able to find bangular under windows', () => {
     const originalJoin = path.join;
     let mockHost = new MockTypescriptHost(
         ['/app/main.ts', '/app/parsing-cases.ts'], toh, 'app/node_modules',
@@ -31,7 +31,7 @@ describe('reflector_host_spec', () => {
     const reflectorHost = new ReflectorHost(() => undefined as any, mockHost, {basePath: '\\app'});
 
     spyOn(path, 'join').and.callFake((...args: string[]) => { return path.win32.join(...args); });
-    const result = reflectorHost.moduleNameToFileName('@angular/core');
-    expect(result).not.toBeNull('could not find @angular/core using path.win32');
+    const result = reflectorHost.moduleNameToFileName('@bangular/core');
+    expect(result).not.toBeNull('could not find @bangular/core using path.win32');
   });
 });

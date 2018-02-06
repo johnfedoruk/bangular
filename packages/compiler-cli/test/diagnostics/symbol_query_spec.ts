@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {StaticSymbol} from '@angular/compiler';
-import {CompilerHost} from '@angular/compiler-cli';
-import {EmittingCompilerHost, MockAotCompilerHost, MockCompilerHost, MockData, MockDirectory, MockMetadataBundlerHost, arrayToMockDir, arrayToMockMap, isSource, settings, setup, toMockFileArray} from '@angular/compiler/test/aot/test_util';
-import {ReflectorHost} from '@angular/language-service/src/reflector_host';
+import {StaticSymbol} from '@bangular/compiler';
+import {CompilerHost} from '@bangular/compiler-cli';
+import {EmittingCompilerHost, MockAotCompilerHost, MockCompilerHost, MockData, MockDirectory, MockMetadataBundlerHost, arrayToMockDir, arrayToMockMap, isSource, settings, setup, toMockFileArray} from '@bangular/compiler/test/aot/test_util';
+import {ReflectorHost} from '@bangular/language-service/src/reflector_host';
 import * as ts from 'typescript';
 
 import {Symbol, SymbolQuery, SymbolTable} from '../../src/diagnostics/symbols';
@@ -59,7 +59,7 @@ describe('symbol query', () => {
 
 function appComponentSource(template: string): string {
   return `
-    import {Component} from '@angular/core';
+    import {Component} from '@bangular/core';
 
     export interface Person {
       name: string;
@@ -77,7 +77,7 @@ function appComponentSource(template: string): string {
       template: '${template}'
     })
     export class AppComponent {
-      name = 'Angular';
+      name = 'Bangular';
       person: Person;
       people: Person[];
       maybePerson?: Person;
@@ -94,7 +94,7 @@ const QUICKSTART: Directory = {
     app: {
       'app.component.ts': appComponentSource('<h1>Hello {{name}}</h1>'),
       'app.module.ts': `
-        import { NgModule }      from '@angular/core';
+        import { NgModule }      from '@bangular/core';
         import { toString }      from './utils';
 
         import { AppComponent }  from './app.component';

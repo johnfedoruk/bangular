@@ -1,6 +1,6 @@
 // #docregion
-import { Injectable }     from '@angular/core';
-import { CanActivate }    from '@angular/router';
+import { Injectable }     from '@bangular/core';
+import { CanActivate }    from '@bangular/router';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

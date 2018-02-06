@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {DomElementSchemaRegistry} from '@angular/compiler/src/schema/dom_element_schema_registry';
-import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, SecurityContext} from '@angular/core';
-import {beforeEach, describe, expect, it} from '@angular/core/testing/src/testing_internal';
-import {browserDetection} from '@angular/platform-browser/testing/src/browser_util';
+import {DomElementSchemaRegistry} from '@bangular/compiler/src/schema/dom_element_schema_registry';
+import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, SecurityContext} from '@bangular/core';
+import {beforeEach, describe, expect, it} from '@bangular/core/testing/src/testing_internal';
+import {browserDetection} from '@bangular/platform-browser/testing/src/browser_util';
 
 import {Element} from '../../src/ml_parser/ast';
 import {HtmlParser} from '../../src/ml_parser/html_parser';
@@ -31,7 +31,7 @@ import {extractSchema} from './schema_extractor';
       expect(registry.hasElement('abc', [])).toBeFalsy();
     });
 
-    // https://github.com/angular/angular/issues/11219
+    // https://github.com/bangular/bangular/issues/11219
     it('should detect elements missing from chrome', () => {
       expect(registry.hasElement('data', [])).toBeTruthy();
       expect(registry.hasElement('menuitem', [])).toBeTruthy();
@@ -54,7 +54,7 @@ import {extractSchema} from './schema_extractor';
       expect(registry.hasProperty('div', 'unknown', [])).toBeFalsy();
     });
 
-    // https://github.com/angular/angular/issues/11219
+    // https://github.com/bangular/bangular/issues/11219
     it('should detect properties on elements missing from Chrome', () => {
       expect(registry.hasProperty('data', 'value', [])).toBeTruthy();
 
@@ -172,7 +172,7 @@ If 'onAnything' is a directive input, make sure the directive is imported by the
       expect(registry.securityContext('p', 'formaction', true)).toBe(SecurityContext.URL);
     });
 
-    describe('Angular custom elements', () => {
+    describe('Bangular custom elements', () => {
       it('should support <ng-container>',
          () => { expect(registry.hasProperty('ng-container', 'id', [])).toBeFalsy(); });
 

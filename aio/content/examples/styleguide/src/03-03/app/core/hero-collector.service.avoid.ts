@@ -2,7 +2,7 @@
 // #docregion example
 /* avoid */
 
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 
 import { IHero } from './hero.model.avoid';
 

@@ -7,11 +7,11 @@ module.exports = function(config) {
     // #enddocregion basepath
 
     files: [
-      'https://code.angularjs.org/1.5.5/angular.js',
-      'https://code.angularjs.org/1.5.5/angular-animate.js',
-      'https://code.angularjs.org/1.5.5/angular-resource.js',
-      'https://code.angularjs.org/1.5.5/angular-route.js',
-      'https://code.angularjs.org/1.5.5/angular-mocks.js',
+      'https://code.bangularjs.org/1.5.5/bangular.js',
+      'https://code.bangularjs.org/1.5.5/bangular-animate.js',
+      'https://code.bangularjs.org/1.5.5/bangular-resource.js',
+      'https://code.bangularjs.org/1.5.5/bangular-route.js',
+      'https://code.bangularjs.org/1.5.5/bangular-mocks.js',
 
       // #docregion files
       // System.js for module loading
@@ -33,9 +33,9 @@ module.exports = function(config) {
       { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
 
-      // Angular itself and the testing library
-      {pattern: 'node_modules/@angular/**/*.js', included: false, watched: false},
-      {pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false},
+      // Bangular itself and the testing library
+      {pattern: 'node_modules/@bangular/**/*.js', included: false, watched: false},
+      {pattern: 'node_modules/@bangular/**/*.js.map', included: false, watched: false},
 
       {pattern: 'systemjs.config.js', included: false, watched: false},
       'karma-test-shim.js',
@@ -52,7 +52,7 @@ module.exports = function(config) {
     // #docregion html
     // proxied base paths for loading assets
     proxies: {
-      // required for component assets fetched by Angular's compiler
+      // required for component assets fetched by Bangular's compiler
       "/phone-detail": '/base/app/phone-detail',
       "/phone-list": '/base/app/phone-list'
     },

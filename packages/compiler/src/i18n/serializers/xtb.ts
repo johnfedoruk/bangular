@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as ml from '../../ml_parser/ast';
@@ -31,8 +31,8 @@ export class Xtb extends Serializer {
     const i18nNodesByMsgId: {[msgId: string]: i18n.Node[]} = {};
     const converter = new XmlToI18n();
 
-    // Because we should be able to load xtb files that rely on features not supported by angular,
-    // we need to delay the conversion of html to i18n nodes so that non angular messages are not
+    // Because we should be able to load xtb files that rely on features not supported by bangular,
+    // we need to delay the conversion of html to i18n nodes so that non bangular messages are not
     // converted
     Object.keys(msgIdToHtml).forEach(msgId => {
       const valueFn = function() {
@@ -84,7 +84,7 @@ class XtbParser implements ml.Visitor {
     this._msgIdToHtml = {};
 
     // We can not parse the ICU messages at this point as some messages might not originate
-    // from Angular that could not be lex'd.
+    // from Bangular that could not be lex'd.
     const xml = new XmlParser().parse(xtb, url, false);
 
     this._errors = xml.errors;

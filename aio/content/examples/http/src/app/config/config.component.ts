@@ -1,6 +1,6 @@
 // #docplaster
 // #docregion
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 import { Config, ConfigService } from './config.service';
 import { MessageService } from '../message.service';
 

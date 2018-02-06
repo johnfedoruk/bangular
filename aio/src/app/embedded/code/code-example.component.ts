@@ -1,5 +1,5 @@
 /* tslint:disable component-selector */
-import { Component, ElementRef, HostBinding, OnInit } from '@angular/core';
+import { Component, ElementRef, HostBinding, OnInit } from '@bangular/core';
 import { getBoolFromAttribute } from 'app/shared/attribute-utils';
 
 /**

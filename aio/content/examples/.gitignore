@@ -4,7 +4,7 @@
 **/src/assets/.gitkeep
 **/src/favicon.ico
 **/src/styles.css
-**/src/systemjs-angular-loader.js
+**/src/systemjs-bangular-loader.js
 **/src/systemjs.config.js
 **/src/tsconfig.json
 **/src/favicon.ico
@@ -15,7 +15,7 @@
 **/src/typings.d.ts
 **/e2e/app.po.ts
 **/e2e/tsconfig.e2e.json
-**/.angular-cli.json
+**/.bangular-cli.json
 **/.editorconfig
 **/tsconfig.json
 **/bs-config.e2e.json
@@ -49,7 +49,7 @@ dist/
 !karma-test-shim.*.js
 !copy-dist-files.js
 
-# AngularJS files
+# BangularJS files
 !**/*.ajs.js
 **/app/**/*.ajs.js
 

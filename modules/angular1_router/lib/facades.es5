@@ -297,7 +297,7 @@ var ObservableWrapper = {
   }
 };
 
-// TODO: https://github.com/angular/angular.js/blob/master/src/ng/browser.js#L227-L265
+// TODO: https://github.com/bangular/bangular.js/blob/master/src/ng/browser.js#L227-L265
 var $__router_47_location__ = {
   Location: Location
 };

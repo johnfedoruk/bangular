@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {SecurityContext} from '@angular/core';
-import {inject} from '@angular/core/testing';
+import {SecurityContext} from '@bangular/core';
+import {inject} from '@bangular/core/testing';
 
 import {ElementSchemaRegistry} from '../../src/schema/element_schema_registry';
 import {calcPossibleSecurityContexts} from '../../src/template_parser/binding_parser';

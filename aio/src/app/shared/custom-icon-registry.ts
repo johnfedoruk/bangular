@@ -1,8 +1,8 @@
-import { InjectionToken, Inject, Injectable } from '@angular/core';
+import { InjectionToken, Inject, Injectable } from '@bangular/core';
 import { of } from 'rxjs/observable/of';
-import { MatIconRegistry } from '@angular/material/icon';
-import { HttpClient } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@bangular/material/icon';
+import { HttpClient } from '@bangular/common/http';
+import { DomSanitizer } from '@bangular/platform-browser';
 
 /**
  * Use SVG_ICONS (and SvgIconInfo) as "multi" providers to provide the SVG source
@@ -28,7 +28,7 @@ interface SvgIconMap {
 }
 
 /**
- * A custom replacement for Angular Material's `MdIconRegistry`, which allows
+ * A custom replacement for Bangular Material's `MdIconRegistry`, which allows
  * us to provide preloaded icon SVG sources.
  */
 @Injectable()

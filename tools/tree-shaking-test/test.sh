@@ -26,7 +26,7 @@ do
   TEST_ENTRY_POINT=${TEST_DIR}/test.js
   mkdir -p ${TEST_DIR}
   cp ./tools/tree-shaking-test/rollup.config.js ${TEST_DIR}/
-  echo "import * as x from '@angular/${PACKAGE}'" > ${TEST_ENTRY_POINT}
+  echo "import * as x from '@bangular/${PACKAGE}'" > ${TEST_ENTRY_POINT}
   (
     cd ${TEST_DIR}
     $(npm bin)/rollup --config rollup.config.js --output ${PACKAGE}.bundle.js

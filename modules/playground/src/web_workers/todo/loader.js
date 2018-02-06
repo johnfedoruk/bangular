@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 importScripts(
@@ -18,15 +18,15 @@ System.config({
   map: {'rxjs': '/all/playground/vendor/rxjs'},
 
   packages: {
-    '@angular/core': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/compiler': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/common': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/forms': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/platform-browser': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/platform-browser-dynamic': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/platform-webworker': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/platform-webworker-dynamic': {main: 'index.js', defaultExtension: 'js'},
-    '@angular/router': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/core': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/compiler': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/common': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/forms': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/platform-browser': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/platform-browser-dynamic': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/platform-webworker': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/platform-webworker-dynamic': {main: 'index.js', defaultExtension: 'js'},
+    '@bangular/router': {main: 'index.js', defaultExtension: 'js'},
     'rxjs': {defaultExtension: 'js'},
   },
 

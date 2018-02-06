@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {StaticSymbol} from '@angular/compiler/src/aot/static_symbol';
-import * as o from '@angular/compiler/src/output/output_ast';
-import {TypeScriptEmitter} from '@angular/compiler/src/output/ts_emitter';
-import {ParseLocation, ParseSourceFile, ParseSourceSpan} from '@angular/compiler/src/parse_util';
+import {StaticSymbol} from '@bangular/compiler/src/aot/static_symbol';
+import * as o from '@bangular/compiler/src/output/output_ast';
+import {TypeScriptEmitter} from '@bangular/compiler/src/output/ts_emitter';
+import {ParseLocation, ParseSourceFile, ParseSourceSpan} from '@bangular/compiler/src/parse_util';
 import {stripSourceMapAndNewLine} from './abstract_emitter_spec';
 
 const someGenFilePath = 'somePackage/someGenFile';

@@ -2,7 +2,7 @@
 
 describe('checkmark', () => {
 
-  beforeEach(angular.mock.module('core'));
+  beforeEach(bangular.mock.module('core'));
 
   it('should convert boolean values to unicode checkmark or cross',
     inject(function(checkmarkFilter: (v: boolean) => string) {

@@ -1,7 +1,7 @@
 // #docregion
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { NgModule } from '@bangular/core';
+import { Routes, RouterModule } from '@bangular/router';
+import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@bangular/common';
 
 import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
 import { PhoneListComponent }   from './phone-list/phone-list.component';

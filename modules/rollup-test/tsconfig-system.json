@@ -14,7 +14,7 @@
   },
   "files": [
     "hello_world.ts",
-    "../@angular/typings/es6-collections/es6-collections.d.ts",
-    "../@angular/typings/es6-promise/es6-promise.d.ts"
+    "../@bangular/typings/es6-collections/es6-collections.d.ts",
+    "../@bangular/typings/es6-promise/es6-promise.d.ts"
   ]
 }

@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ResourceLoader} from '@angular/compiler';
-import {CompileMetadataResolver} from '@angular/compiler/src/metadata_resolver';
-import {MockResourceLoader} from '@angular/compiler/testing/src/resource_loader_mock';
-import {Component, Directive, Injectable, NgModule, Pipe, Type} from '@angular/core';
-import {TestBed, async, getTestBed} from '@angular/core/testing';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {ResourceLoader} from '@bangular/compiler';
+import {CompileMetadataResolver} from '@bangular/compiler/src/metadata_resolver';
+import {MockResourceLoader} from '@bangular/compiler/testing/src/resource_loader_mock';
+import {Component, Directive, Injectable, NgModule, Pipe, Type} from '@bangular/core';
+import {TestBed, async, getTestBed} from '@bangular/core/testing';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 {
   describe('Jit Summaries', () => {
@@ -49,7 +49,7 @@ import {expect} from '@angular/platform-browser/testing/src/matchers';
 
     class SomeService extends Base {}
 
-    // Move back into the it which needs it after https://github.com/angular/tsickle/issues/547 is
+    // Move back into the it which needs it after https://github.com/bangular/tsickle/issues/547 is
     // fixed.
     @Component({template: '<div someDir>{{1 | somePipe}}</div>'})
     class TestComp3 {

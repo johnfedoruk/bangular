@@ -1,5 +1,5 @@
-import { Inject, Injectable } from '@angular/core';
-import { DOCUMENT, DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Inject, Injectable } from '@bangular/core';
+import { DOCUMENT, DomSanitizer, SafeHtml } from '@bangular/platform-browser';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { ScrollSpyInfo, ScrollSpyService } from 'app/shared/scroll-spy.service';
 

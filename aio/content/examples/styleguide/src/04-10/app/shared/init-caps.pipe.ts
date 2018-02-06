@@ -1,5 +1,5 @@
 // #docregion
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@bangular/core';
 
 @Pipe({ name: 'initCaps' })
 export class InitCapsPipe implements PipeTransform {

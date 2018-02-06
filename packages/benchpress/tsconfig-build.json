@@ -7,7 +7,7 @@
     "rootDir": ".",
     "sourceRoot": ".",
     "paths": {
-      "@angular/core": ["../../dist/packages/core"]
+      "@bangular/core": ["../../dist/packages/core"]
     },
     "outDir": "../../dist/packages/benchpress"
   },

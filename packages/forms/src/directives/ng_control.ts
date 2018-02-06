@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 
@@ -20,7 +20,7 @@ function unimplemented(): any {
  * A base class that all control directive extend.
  * It binds a {@link FormControl} object to a DOM element.
  *
- * Used internally by Angular forms.
+ * Used internally by Bangular forms.
  *
  * @stable
  */

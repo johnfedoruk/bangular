@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@angular/core": ["../../dist/packages/core"]
+      "@bangular/core": ["../../dist/packages/core"]
     },
     "outDir": "../../dist/packages/animations"
   },
@@ -16,11 +16,11 @@
     "../system.d.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "animations.js",
-    "flatModuleId": "@angular/animations"
+    "flatModuleId": "@bangular/animations"
   }
 }

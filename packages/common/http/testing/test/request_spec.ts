@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ddescribe, describe, iit, it} from '@angular/core/testing/src/testing_internal';
+import {ddescribe, describe, iit, it} from '@bangular/core/testing/src/testing_internal';
 
 import {HttpClient} from '../../src/client';
 import {HttpClientTestingBackend} from '../src/backend';

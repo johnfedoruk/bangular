@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CommonModule, SlicePipe} from '@angular/common';
-import {Component} from '@angular/core';
-import {TestBed, async} from '@angular/core/testing';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {CommonModule, SlicePipe} from '@bangular/common';
+import {Component} from '@bangular/core';
+import {TestBed, async} from '@bangular/core/testing';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 {
   describe('SlicePipe', () => {

@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CssSelector, SelectorMatcher} from '@angular/compiler/src/selector';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {el} from '@angular/platform-browser/testing/src/browser_util';
+import {CssSelector, SelectorMatcher} from '@bangular/compiler/src/selector';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {el} from '@bangular/platform-browser/testing/src/browser_util';
 
 {
   describe('SelectorMatcher', () => {

@@ -28,7 +28,7 @@
     "command": "open",
     "arguments": {
       "file": "$$PWD$$/project/app/app.component.ts",
-      "fileContent": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'my-app',\n  template: `<h1>Hello {{name}}</h1>`,\n})\nexport class AppComponent  { name = 'Angular'; }\n"
+      "fileContent": "import { Component } from '@bangular/core';\n\n@Component({\n  selector: 'my-app',\n  template: `<h1>Hello {{name}}</h1>`,\n})\nexport class AppComponent  { name = 'Bangular'; }\n"
     }
   },
   {

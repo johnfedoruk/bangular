@@ -1,7 +1,7 @@
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@bangular/platform-browser/animations';
+import { Component, NO_ERRORS_SCHEMA } from '@bangular/core';
+import { ComponentFixture, TestBed } from '@bangular/core/testing';
+import { By } from '@bangular/platform-browser';
 import { CurrentDateToken } from 'app/shared/current-date';
 import { NotificationComponent } from './notification.component';
 import { WindowToken } from 'app/shared/window';
@@ -35,7 +35,7 @@ describe('NotificationComponent', () => {
   it('should display the message', () => {
     configTestingModule();
     createComponent();
-    expect(fixture.nativeElement.innerHTML).toContain('Help Angular by taking a <strong>1 minute survey</strong>!');
+    expect(fixture.nativeElement.innerHTML).toContain('Help Bangular by taking a <strong>1 minute survey</strong>!');
   });
 
   it('should display an icon', () => {
@@ -109,10 +109,10 @@ describe('NotificationComponent', () => {
     icon="insert_comment"
     iconLabel="Survey"
     buttonText="Go to survey"
-    actionUrl="https://bit.ly/angular-survey-2018"
+    actionUrl="https://bit.ly/bangular-survey-2018"
     notificationId="survey-january-2018"
     expirationDate="2018-01-22">
-    Help Angular by taking a <strong>1 minute survey</strong>!
+    Help Bangular by taking a <strong>1 minute survey</strong>!
   </aio-notification>`
 })
 class TestComponent {

@@ -1,6 +1,6 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { Injector } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@bangular/common/http/testing';
+import { Injector } from '@bangular/core';
+import { TestBed } from '@bangular/core/testing';
 
 import { ResourceService } from './resource.service';
 import { Category } from './resource.model';
@@ -97,14 +97,14 @@ function getTestResources() {
             "Cat3 SubCat1 Res1": {
               "desc": "Meetup in Barcelona, Spain. ",
               "rev": true,
-              "title": "Angular Beers",
-              "url": "http://www.meetup.com/AngularJS-Beers/"
+              "title": "Bangular Beers",
+              "url": "http://www.meetup.com/BangularJS-Beers/"
             },
             "Cat3 SubCat1 Res2": {
-              "desc": "Angular Camps in Barcelona, Spain.",
+              "desc": "Bangular Camps in Barcelona, Spain.",
               "rev": true,
-              "title": "Angular Camp",
-              "url": "http://angularcamp.org/"
+              "title": "Bangular Camp",
+              "url": "http://bangularcamp.org/"
             }
           }
         },
@@ -114,7 +114,7 @@ function getTestResources() {
             "Cat3 SubCat2 Res1": {
               "desc": "A community index of components and libraries",
               "rev": true,
-              "title": "Catalog of Angular Components & Libraries",
+              "title": "Catalog of Bangular Components & Libraries",
               "url": "https://a/b/c"
             }
           }

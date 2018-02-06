@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 
-import {TestBed} from '@angular/core/testing';
-import {BrowserModule, BrowserTransferStateModule, TransferState} from '@angular/platform-browser';
-import {StateKey, escapeHtml, makeStateKey, unescapeHtml} from '@angular/platform-browser/src/browser/transfer_state';
-import {DOCUMENT} from '@angular/platform-browser/src/dom/dom_tokens';
+import {TestBed} from '@bangular/core/testing';
+import {BrowserModule, BrowserTransferStateModule, TransferState} from '@bangular/platform-browser';
+import {StateKey, escapeHtml, makeStateKey, unescapeHtml} from '@bangular/platform-browser/src/browser/transfer_state';
+import {DOCUMENT} from '@bangular/platform-browser/src/dom/dom_tokens';
 
 (function() {
   function removeScriptTag(doc: Document, id: string) {

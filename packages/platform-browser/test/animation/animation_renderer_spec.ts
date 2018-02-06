@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {AnimationPlayer, AnimationTriggerMetadata, animate, state, style, transition, trigger} from '@angular/animations';
-import {ɵAnimationEngine as AnimationEngine} from '@angular/animations/browser';
-import {Component, Injectable, NgZone, RendererFactory2, RendererType2, ViewChild} from '@angular/core';
-import {TestBed} from '@angular/core/testing';
-import {BrowserAnimationsModule, ɵAnimationRendererFactory as AnimationRendererFactory} from '@angular/platform-browser/animations';
-import {DomRendererFactory2} from '@angular/platform-browser/src/dom/dom_renderer';
+import {AnimationPlayer, AnimationTriggerMetadata, animate, state, style, transition, trigger} from '@bangular/animations';
+import {ɵAnimationEngine as AnimationEngine} from '@bangular/animations/browser';
+import {Component, Injectable, NgZone, RendererFactory2, RendererType2, ViewChild} from '@bangular/core';
+import {TestBed} from '@bangular/core/testing';
+import {BrowserAnimationsModule, ɵAnimationRendererFactory as AnimationRendererFactory} from '@bangular/platform-browser/animations';
+import {DomRendererFactory2} from '@bangular/platform-browser/src/dom/dom_renderer';
 import {InjectableAnimationEngine} from '../../animations/src/providers';
 import {el} from '../../testing/src/browser_util';
 

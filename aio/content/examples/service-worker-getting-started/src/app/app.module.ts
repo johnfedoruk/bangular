@@ -1,9 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@bangular/platform-browser';
+import { NgModule } from '@bangular/core';
 import { AppComponent } from './app.component';
 
 // #docregion sw-import
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { ServiceWorkerModule } from '@bangular/service-worker';
 import { environment } from '../environments/environment';
 // #enddocregion sw-import
 

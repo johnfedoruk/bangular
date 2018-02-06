@@ -1,4 +1,4 @@
-import { ReflectiveInjector } from '@angular/core';
+import { ReflectiveInjector } from '@bangular/core';
 
 import { of } from 'rxjs/observable/of';
 
@@ -69,7 +69,7 @@ describe('ContributorListComponent', () => {
     component.selectGroup('GDE'); // a legit group that isn't the first
 
     component.selectGroup('foo'); // not a legit group name
-    expect(locationService.searchResult['group']).toBe('Angular');
+    expect(locationService.searchResult['group']).toBe('Bangular');
   });
 
   //// Test Helpers ////
@@ -98,7 +98,7 @@ describe('ContributorListComponent', () => {
   function getTestData(): ContributorGroup[] {
     return [
       // Not interested in the contributors data in these tests
-      { name: 'Angular', order: 0, contributors: [] },
+      { name: 'Bangular', order: 0, contributors: [] },
       { name: 'GDE', order: 1, contributors: [] },
     ];
   }

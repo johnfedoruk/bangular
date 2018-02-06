@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {registerLocaleData} from '@angular/common';
-import {Component} from '@angular/core';
+import {registerLocaleData} from '@bangular/common';
+import {Component} from '@bangular/core';
 // we need to import data for the french locale
 import localeFr from './locale-fr';
 

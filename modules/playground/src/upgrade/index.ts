@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, EventEmitter, Input, NgModule, Output, forwardRef} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {UpgradeAdapter} from '@angular/upgrade';
+import {Component, EventEmitter, Input, NgModule, Output, forwardRef} from '@bangular/core';
+import {BrowserModule} from '@bangular/platform-browser';
+import {UpgradeAdapter} from '@bangular/upgrade';
 
-declare const angular: any;
+declare const bangular: any;
 
 
 const styles = [`
@@ -28,7 +28,7 @@ const styles = [`
   `];
 
 const adapter = new UpgradeAdapter(forwardRef(() => Ng2AppModule));
-const ng1module = angular.module('myExample', []);
+const ng1module = bangular.module('myExample', []);
 
 ng1module.controller('Index', function($scope: any) { $scope.name = 'World'; });
 

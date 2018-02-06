@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Injectable, NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {Component, Injectable, NgModule} from '@bangular/core';
+import {FormsModule} from '@bangular/forms';
+import {BrowserModule} from '@bangular/platform-browser';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
 
 /**
- * You can find the AngularJS implementation of this example here:
+ * You can find the BangularJS implementation of this example here:
  * https://github.com/wardbell/ng1DataBinding
  */
 

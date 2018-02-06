@@ -4,7 +4,7 @@ import { Component, ContentChildren, Directive, EventEmitter,
          HostBinding, HostListener,
          OnInit, OnChanges, OnDestroy,
          Pipe, PipeTransform,
-         SimpleChange } from '@angular/core';
+         SimpleChange } from '@bangular/core';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -431,9 +431,9 @@ export const bagProviders = [DependentService, FancyService];
 
 ////////////////////
 ////////////
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
+import { NgModule }      from '@bangular/core';
+import { BrowserModule } from '@bangular/platform-browser';
+import { FormsModule }   from '@bangular/forms';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],

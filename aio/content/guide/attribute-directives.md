@@ -8,7 +8,7 @@ Try the <live-example title="Attribute Directive example"></live-example>.
 
 ## Directives overview
 
-There are three kinds of directives in Angular:
+There are three kinds of directives in Bangular:
 
 1. Components&mdash;directives with a template.
 1. Structural directives&mdash;change the DOM layout by adding and removing DOM elements.
@@ -53,7 +53,7 @@ The CLI creates `src/app/highlight.directive.ts`, a corresponding test file (`..
 
 <div class="l-sub-section">
 
-_Directives_ must be declared in [Angular Modules](guide/ngmodules) in the same manner as _components_.
+_Directives_ must be declared in [Bangular Modules](guide/ngmodules) in the same manner as _components_.
 
 </div >
 
@@ -61,13 +61,13 @@ The generated `src/app/highlight.directive.ts` is as follows:
 
 <code-example path="attribute-directives/src/app/highlight.directive.0.ts" title="src/app/highlight.directive.ts"></code-example>
 
-The imported `Directive` symbol provides the Angular the `@Directive` decorator.
+The imported `Directive` symbol provides the Bangular the `@Directive` decorator.
 
 The `@Directive` decorator's lone configuration property specifies the directive's
 [CSS attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors), `[appHighlight]`.
 
 It's the brackets (`[]`) that make it an attribute selector.
-Angular locates each element in the template that has an attribute named `appHighlight` and applies the logic of this directive to that element.
+Bangular locates each element in the template that has an attribute named `appHighlight` and applies the logic of this directive to that element.
 
 The _attribute selector_ pattern explains the name of this kind of directive.
 
@@ -82,7 +82,7 @@ This also reduces the risk of colliding with third-party directive names.
 The CLI added the `app` prefix for you.
 
 Make sure you do **not** prefix the `highlight` directive name with **`ng`** because
-that prefix is reserved for Angular and using it could cause bugs that are difficult to diagnose.
+that prefix is reserved for Bangular and using it could cause bugs that are difficult to diagnose.
 
 </div>
 
@@ -94,7 +94,7 @@ Now edit the generated `src/app/highlight.directive.ts` to look as follows:
 
 <code-example path="attribute-directives/src/app/highlight.directive.1.ts" title="src/app/highlight.directive.ts"></code-example>
 
-The `import` statement specifies an additional `ElementRef` symbol from the Angular `core` library:
+The `import` statement specifies an additional `ElementRef` symbol from the Bangular `core` library:
 
 You use the `ElementRef`in the directive's constructor
 to [inject](guide/dependency-injection) a reference to the host DOM element, 
@@ -120,7 +120,7 @@ Now run the application to see the `HighlightDirective` in action.
 ng serve
 </code-example>
 
-To summarize, Angular found the `appHighlight` attribute on the **host** `<p>` element.
+To summarize, Bangular found the `appHighlight` attribute on the **host** `<p>` element.
 It created an instance of the `HighlightDirective` class and
 injected a reference to the `<p>` element into the directive's constructor
 which sets the `<p>` element's background style to yellow.
@@ -182,7 +182,7 @@ the mouse hovers over the `p` and disappears as it moves out.
 Currently the highlight color is hard-coded _within_ the directive. That's inflexible.
 In this section, you give the developer the power to set the highlight color while applying the directive.
 
-Begin by adding `Input` to the list of symbols imported from `@angular/core`.
+Begin by adding `Input` to the list of symbols imported from `@bangular/core`.
 <code-example path="attribute-directives/src/app/highlight.directive.3.ts" linenums="false" title="src/app/highlight.directive.ts (imports)" region="imports"></code-example>
 
 Add a `highlightColor` property to the directive class like this:
@@ -196,7 +196,7 @@ Add a `highlightColor` property to the directive class like this:
 Notice the `@Input` decorator. It adds metadata to the class that makes the directive's `highlightColor` property available for binding.
 
 It's called an *input* property because data flows from the binding expression _into_ the directive.
-Without that input metadata, Angular rejects the binding; see [below](guide/attribute-directives#why-input "Why add @Input?") for more about that.
+Without that input metadata, Bangular rejects the binding; see [below](guide/attribute-directives#why-input "Why add @Input?") for more about that.
 
 Try it by adding the following directive binding variations to the `AppComponent` template:
 
@@ -298,7 +298,7 @@ and fall back to "violet" as the default color.
 
 <code-example path="attribute-directives/src/app/app.component.html" linenums="false" title="src/app/app.component.html (defaultColor)" region="defaultColor"></code-example>
 
-Angular knows that the `defaultColor` binding belongs to the `HighlightDirective`
+Bangular knows that the `defaultColor` binding belongs to the `HighlightDirective`
 because you made it _public_ with the `@Input` decorator.
 
 Here's how the harness should work when you're done coding.
@@ -344,23 +344,23 @@ You've seen it with an alias:
 
 <code-example path="attribute-directives/src/app/highlight.directive.ts" linenums="false" title="src/app/highlight.directive.ts (color)" region="color"></code-example>
 
-Either way, the `@Input` decorator tells Angular that this property is
+Either way, the `@Input` decorator tells Bangular that this property is
 _public_ and available for binding by a parent component.
-Without  `@Input`, Angular refuses to bind to the property.
+Without  `@Input`, Bangular refuses to bind to the property.
 
 You've bound template HTML to component properties before and never used `@Input`.
 What's different?
 
 The difference is a matter of trust.
-Angular treats a component's template as _belonging_ to the component.
+Bangular treats a component's template as _belonging_ to the component.
 The component and its template trust each other implicitly.
 Therefore, the component's own template may bind to _any_ property of that component,
 with or without the `@Input` decorator.
 
 But a component or directive shouldn't blindly trust _other_ components and directives.
 The properties of a component or directive are hidden from binding by default.
-They are _private_ from an Angular binding perspective.
-When adorned with the `@Input` decorator, the property becomes _public_ from an Angular binding perspective.
+They are _private_ from an Bangular binding perspective.
+When adorned with the `@Input` decorator, the property becomes _public_ from an Bangular binding perspective.
 Only then can it be bound by some other component or directive.
 
 You can tell if `@Input` is needed by the position of the property name in a binding.

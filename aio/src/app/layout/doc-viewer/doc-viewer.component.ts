@@ -1,5 +1,5 @@
-import { Component, ComponentRef, DoCheck, ElementRef, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { Component, ComponentRef, DoCheck, ElementRef, EventEmitter, Input, OnDestroy, Output } from '@bangular/core';
+import { Title, Meta } from '@bangular/platform-browser';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
@@ -132,7 +132,7 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
         }
       }
 
-      this.titleService.setTitle(title ? `Angular - ${title}` : 'Angular');
+      this.titleService.setTitle(title ? `Bangular - ${title}` : 'Bangular');
     };
   }
 

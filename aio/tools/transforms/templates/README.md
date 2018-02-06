@@ -28,5 +28,5 @@ child. The template extension hierarchy looks like this (with declared blocks in
 
 It is useful to know what properties are available on each doc type when working with the templates.
 The `typescript` Dgeni package is now written in TypeScript and there is a class for each of the types of
-API document. See https://github.com/angular/dgeni-packages/tree/master/typescript/src/api-doc-types.
+API document. See https://github.com/bangular/dgeni-packages/tree/master/typescript/src/api-doc-types.
 This is a good place to go to see what properties you can use in the templates.

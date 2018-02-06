@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CommonModule, Location} from '@angular/common';
-import {SpyLocation} from '@angular/common/testing';
-import {ChangeDetectionStrategy, Component, Injectable, NgModule, NgModuleFactoryLoader, NgModuleRef} from '@angular/core';
-import {ComponentFixture, TestBed, fakeAsync, inject, tick} from '@angular/core/testing';
-import {By} from '@angular/platform-browser/src/dom/debug/by';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
-import {ActivatedRoute, ActivatedRouteSnapshot, ActivationEnd, ActivationStart, CanActivate, CanDeactivate, ChildActivationEnd, ChildActivationStart, DetachedRouteHandle, Event, GuardsCheckEnd, GuardsCheckStart, NavigationCancel, NavigationEnd, NavigationError, NavigationStart, PRIMARY_OUTLET, ParamMap, Params, PreloadAllModules, PreloadingStrategy, Resolve, ResolveEnd, ResolveStart, RouteConfigLoadEnd, RouteConfigLoadStart, RouteReuseStrategy, Router, RouterEvent, RouterModule, RouterPreloader, RouterStateSnapshot, RoutesRecognized, RunGuardsAndResolvers, UrlHandlingStrategy, UrlSegmentGroup, UrlTree} from '@angular/router';
+import {CommonModule, Location} from '@bangular/common';
+import {SpyLocation} from '@bangular/common/testing';
+import {ChangeDetectionStrategy, Component, Injectable, NgModule, NgModuleFactoryLoader, NgModuleRef} from '@bangular/core';
+import {ComponentFixture, TestBed, fakeAsync, inject, tick} from '@bangular/core/testing';
+import {By} from '@bangular/platform-browser/src/dom/debug/by';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
+import {ActivatedRoute, ActivatedRouteSnapshot, ActivationEnd, ActivationStart, CanActivate, CanDeactivate, ChildActivationEnd, ChildActivationStart, DetachedRouteHandle, Event, GuardsCheckEnd, GuardsCheckStart, NavigationCancel, NavigationEnd, NavigationError, NavigationStart, PRIMARY_OUTLET, ParamMap, Params, PreloadAllModules, PreloadingStrategy, Resolve, ResolveEnd, ResolveStart, RouteConfigLoadEnd, RouteConfigLoadStart, RouteReuseStrategy, Router, RouterEvent, RouterModule, RouterPreloader, RouterStateSnapshot, RoutesRecognized, RunGuardsAndResolvers, UrlHandlingStrategy, UrlSegmentGroup, UrlTree} from '@bangular/router';
 import {Observable} from 'rxjs/Observable';
 import {Observer} from 'rxjs/Observer';
 import {of } from 'rxjs/observable/of';
@@ -3157,7 +3157,7 @@ describe('Integration', () => {
              expect(cmInj.get(Child, '-')).toEqual('-');
            })));
 
-    // https://github.com/angular/angular/issues/12889
+    // https://github.com/bangular/bangular/issues/12889
     it('should create a single instance of lazy-loaded modules',
        fakeAsync(inject(
            [Router, Location, NgModuleFactoryLoader],
@@ -3195,7 +3195,7 @@ describe('Integration', () => {
              expect(LoadedModule.instances).toEqual(1);
            })));
 
-    // https://github.com/angular/angular/issues/13870
+    // https://github.com/bangular/bangular/issues/13870
     it('should create a single instance of guards for lazy-loaded modules',
        fakeAsync(inject(
            [Router, Location, NgModuleFactoryLoader],

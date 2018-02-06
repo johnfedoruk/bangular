@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ResourceLoader} from '@angular/compiler';
-import {Component} from '@angular/core';
-import {TestBed, async, fakeAsync, inject, tick} from '@angular/core/testing';
+import {ResourceLoader} from '@bangular/compiler';
+import {Component} from '@bangular/core';
+import {TestBed, async, fakeAsync, inject, tick} from '@bangular/core/testing';
 
 import {ResourceLoaderImpl} from '../src/resource_loader/resource_loader_impl';
 
@@ -35,7 +35,7 @@ class ExternalTemplateComp {
 class BadTemplateUrl {
 }
 
-// Tests for angular/testing bundle specific to the browser environment.
+// Tests for bangular/testing bundle specific to the browser environment.
 // For general tests, see test/testing/testing_public_spec.ts.
 {
   describe('test APIs for the browser', () => {

@@ -1,7 +1,7 @@
 import {
   ComponentFactory, ComponentFactoryResolver, ComponentRef, Inject, Injectable, InjectionToken,
   Injector, NgModuleFactory, NgModuleFactoryLoader, Type
-} from '@angular/core';
+} from '@bangular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';

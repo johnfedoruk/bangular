@@ -13,7 +13,7 @@ which you'll learn about on this page.
 
 This page shows you how to build a simple form from scratch. Along the way you'll learn how to:
 
-* Build an Angular form with a component and template.
+* Build an Bangular form with a component and template.
 * Use `ngModel` to create two-way data bindings for reading and writing input-control values.
 * Track state changes and the validity of form controls.
 * Provide visual feedback using special CSS classes that track the state of the controls.
@@ -26,7 +26,7 @@ You can run the <live-example></live-example> in Stackblitz and download the cod
 
 ## Template-driven forms
 
-You can build forms by writing templates in the Angular [template syntax](guide/template-syntax) with
+You can build forms by writing templates in the Bangular [template syntax](guide/template-syntax) with
 the form-specific directives and techniques described in this page.
 
 <div class="l-sub-section">
@@ -36,11 +36,11 @@ the form-specific directives and techniques described in this page.
 
 </div>
 
-You can build almost any form with an Angular template&mdash;login forms, contact forms, and pretty much any business form.
+You can build almost any form with an Bangular template&mdash;login forms, contact forms, and pretty much any business form.
 You can lay out the controls creatively, bind them to data, specify validation rules and display validation errors,
 conditionally enable or disable specific controls, trigger built-in visual feedback, and much more.
 
-Angular makes the process easy by handling many of the repetitive, boilerplate tasks you'd
+Bangular makes the process easy by handling many of the repetitive, boilerplate tasks you'd
 otherwise wrestle with yourself.
 
 You'll learn to build a template-driven form that looks like this:
@@ -82,11 +82,11 @@ You'll build this form in small steps:
 
 ## Setup
 
-Create a new project named <code>angular-forms</code>:
+Create a new project named <code>bangular-forms</code>:
 
 <code-example language="sh" class="code-shell">
 
-  ng new angular-forms
+  ng new bangular-forms
 
 </code-example>
 
@@ -99,7 +99,7 @@ A model can be as simple as a "property bag" that holds facts about a thing of a
 That describes well the `Hero` class with its three required fields (`id`, `name`, `power`)
 and one optional field (`alterEgo`).
 
-Using the Angular CLI, generate a new class named `Hero`:
+Using the Bangular CLI, generate a new class named `Hero`:
 
 <code-example language="sh" class="code-shell">
 
@@ -128,11 +128,11 @@ You can create a new hero like this:
 
 ## Create a form component
 
-An Angular form has two parts: an HTML-based _template_ and a component _class_
+An Bangular form has two parts: an HTML-based _template_ and a component _class_
 to handle data and user interactions programmatically.
 Begin with the class because it states, in brief, what the hero editor can do.
 
-Using the Angular CLI, generate a new component named `HeroForm`:
+Using the Bangular CLI, generate a new component named `HeroForm`:
 
 <code-example language="sh" class="code-shell">
 
@@ -149,9 +149,9 @@ With this content:
 There’s nothing special about this component, nothing form-specific,
 nothing to distinguish it from any component you've written before.
 
-Understanding this component requires only the Angular concepts covered in previous pages.
+Understanding this component requires only the Bangular concepts covered in previous pages.
 
-* The code imports the Angular core library and the `Hero` model you just created.
+* The code imports the Bangular core library and the `Hero` model you just created.
 * The `@Component` selector value of "hero-form" means you can drop this form in a parent template with a `<hero-form>` tag.
 * The `templateUrl` property points to a separate file for the template HTML.
 * You defined dummy data for `model` and `powers`, as befits a demo.
@@ -232,7 +232,7 @@ the *Alter Ego* `<input>` control does not because `alterEgo` is optional.
 
 You added a *Submit* button at the bottom with some classes on it for styling.
 
-*You're not using Angular yet*. There are no bindings or extra directives, just layout.
+*You're not using Bangular yet*. There are no bindings or extra directives, just layout.
 
 <div class="l-sub-section">
 
@@ -248,11 +248,11 @@ Bootstrap gives the form a little style.
 <div class="callout is-important">
 
   <header>
-    Angular forms don't require a style library
+    Bangular forms don't require a style library
   </header>
 
-  Angular makes no use of the `container`, `form-group`, `form-control`, and `btn` classes or
-  the styles of any external library. Angular apps can use any CSS library or none at all.
+  Bangular makes no use of the `container`, `form-group`, `form-control`, and `btn` classes or
+  the styles of any external library. Bangular apps can use any CSS library or none at all.
 
 </div>
 
@@ -339,7 +339,7 @@ The variable `heroForm` is now a reference to the `NgForm` directive that govern
   What `NgForm` directive?
   You didn't add an [NgForm](api/forms/NgForm) directive.
 
-  Angular did. Angular automatically creates and attaches an `NgForm` directive to the `<form>` tag.
+  Bangular did. Bangular automatically creates and attaches an `NgForm` directive to the `<form>` tag.
 
   The `NgForm` directive supplements the `form` element with additional features.
   It holds the controls you created for the elements with an `ngModel` directive
@@ -376,8 +376,8 @@ Defining a `name` attribute is a requirement when using `[(ngModel)]` in combina
 
 <div class="l-sub-section">
 
-  Internally, Angular creates `FormControl` instances and
-  registers them with an `NgForm` directive that Angular attached to the `<form>` tag.
+  Internally, Bangular creates `FormControl` instances and
+  registers them with an `NgForm` directive that Bangular attached to the `<form>` tag.
   Each `FormControl` is registered under the name you assigned to the `name` attribute.
   Read more in the previous section, [The NgForm directive](guide/forms#ngForm).
 
@@ -398,7 +398,7 @@ After revision, the core of the form should look like this:
 
   * Each input element has an `id` property that is used by the `label` element's `for` attribute
   to match the label to its input control.
-  * Each input element has a `name` property that is required by Angular forms to register the control with the form.
+  * Each input element has a `name` property that is required by Bangular forms to register the control with the form.
 
 </div>
 
@@ -418,7 +418,7 @@ confirms that all of your changes are reflected in the model.
 Using `ngModel` in a form gives you more than just two-way data binding. It also tells
 you if the user touched the control, if the value changed, or if the value became invalid.
 
-The *NgModel* directive doesn't just track state; it updates the control with special Angular CSS classes that reflect the state.
+The *NgModel* directive doesn't just track state; it updates the control with special Bangular CSS classes that reflect the state.
 You can leverage those class names to change the appearance of the control.
 
 <table>
@@ -567,14 +567,14 @@ Here's an example of an error message added to the _name_ input box:
 
 </code-example>
 
-You need a template reference variable to access the input box's Angular control from within the template.
+You need a template reference variable to access the input box's Bangular control from within the template.
 Here you created a variable called `name` and gave it the value "ngModel".
 
 <div class="l-sub-section">
 
   Why "ngModel"?
   A directive's [exportAs](api/core/Directive) property
-  tells Angular how to link the reference variable to the directive.
+  tells Bangular how to link the reference variable to the directive.
   You set `name` to `ngModel` because the `ngModel` directive's `exportAs` property happens to be "ngModel".
 
 </div>
@@ -675,7 +675,7 @@ is duly noted in the error message.
 The *Submit* button is also disabled.
 
 Not impressed?  Think about it for a moment. What would you have to do to
-wire the button's enable/disabled state to the form's validity without Angular's help?
+wire the button's enable/disabled state to the form's validity without Bangular's help?
 
 For you, it was as simple as this:
 
@@ -734,10 +734,10 @@ When you click the *Edit* button, this block disappears and the editable form re
 
 ## Summary
 
-The Angular form discussed in this page takes advantage of the following
+The Bangular form discussed in this page takes advantage of the following
 framework features to provide support for data modification, validation, and more:
 
-* An Angular HTML form template.
+* An Bangular HTML form template.
 * A form component class with a `@Component` decorator.
 * Handling form submission by binding to the `NgForm.ngSubmit` event property.
 * Template-reference variables such as `#heroForm` and `#name`.

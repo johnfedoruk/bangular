@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /**
- * Public Test Library for unit testing Angular applications. Assumes that you are running
+ * Public Test Library for unit testing Bangular applications. Assumes that you are running
  * with Jasmine, Mocha, or a similar framework which exports a beforeEach function and
  * allows tests to be asynchronous by either returning a promise or using a 'done' parameter.
  */

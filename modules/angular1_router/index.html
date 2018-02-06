@@ -8,10 +8,10 @@
 <div ng-app="myApp" ng-controller="MyCtrl">
 
 </div>
-<script src="../../node_modules/angular/angular.js"></script>
-<script src="../../dist/angular_1_router.js"></script>
+<script src="../../node_modules/bangular/bangular.js"></script>
+<script src="../../dist/bangular_1_router.js"></script>
 <script>
-  angular.module('myApp', ['ngComponentRouter'])
+  bangular.module('myApp', ['ngComponentRouter'])
     .controller('MyCtrl', ['$rootRouter', function ($rootRouter) {
       console.log($rootRouter);
       $rootRouter.navigateByUrl('/')

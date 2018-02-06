@@ -1,4 +1,4 @@
-import { ReflectiveInjector } from '@angular/core';
+import { ReflectiveInjector } from '@bangular/core';
 
 import { Car, Engine, Tires } from './car';
 import { Logger }             from '../logger.service';

@@ -1,6 +1,6 @@
 /* tslint:disable use-output-property-decorator directive-class-suffix */
 // #docplaster
-import { Directive, ElementRef, EventEmitter, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, Output } from '@bangular/core';
 
 @Directive({selector: '[myClick]'})
 export class ClickDirective {

@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /**
@@ -11,7 +11,7 @@
  * like `innerHTML` that could cause Cross Site Scripting (XSS) security bugs when improperly
  * handled.
  *
- * See DomSanitizer for more details on security in Angular applications.
+ * See DomSanitizer for more details on security in Bangular applications.
  *
  * @stable
  */

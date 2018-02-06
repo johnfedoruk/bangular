@@ -1,8 +1,8 @@
 // #docplaster
 // #docregion
-/* Angular Imports */
-import { NgModule }           from '@angular/core';
-import { BrowserModule }      from '@angular/platform-browser';
+/* Bangular Imports */
+import { NgModule }           from '@bangular/core';
+import { BrowserModule }      from '@bangular/platform-browser';
 
 /* App Imports */
 // #enddocregion
@@ -18,7 +18,7 @@ import { TitleComponent }     from './title.component';
 import { UserService }        from './user.service';
 
 /* Contact Related Imports */
-import { FormsModule }        from '@angular/forms';
+import { FormsModule }        from '@bangular/forms';
 
 import { AwesomePipe }        from './contact/awesome.pipe';
 import { ContactComponent }   from './contact/contact.component.3';

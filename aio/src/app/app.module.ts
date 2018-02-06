@@ -1,17 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@bangular/platform-browser';
+import { NgModule } from '@bangular/core';
+import { HttpClientModule } from '@bangular/common/http';
+import { BrowserAnimationsModule } from '@bangular/platform-browser/animations';
 
-import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { Location, LocationStrategy, PathLocationStrategy } from '@bangular/common';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@bangular/material/button';
+import { MatIconModule, MatIconRegistry } from '@bangular/material/icon';
+import { MatProgressBarModule } from '@bangular/material/progress-bar';
+import { MatSidenavModule } from '@bangular/material/sidenav';
+import { MatToolbarModule } from '@bangular/material/toolbar';
 
-import { ROUTES } from '@angular/router';
+import { ROUTES } from '@bangular/router';
 
 
 import { AppComponent } from 'app/app.component';
@@ -149,7 +149,7 @@ export const svgIconProviders = [
       } as EmbeddedComponentsMap,
     },
     {
-      // This is currently the only way to get `@angular/cli`
+      // This is currently the only way to get `@bangular/cli`
       // to split `EmbeddedModule` into a separate chunk :(
       provide: ROUTES,
       useValue: [{ path: '/embedded', loadChildren: embeddedModulePath }],

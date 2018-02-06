@@ -2,7 +2,7 @@
 
 import { browser, element, by } from 'protractor';
 
-describe('AngularJS to Angular Quick Reference Tests', function () {
+describe('BangularJS to Bangular Quick Reference Tests', function () {
 
   beforeAll(function () {
     browser.get('');

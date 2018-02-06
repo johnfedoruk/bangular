@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {EmitterVisitorContext} from '@angular/compiler/src/output/abstract_emitter';
-import * as o from '@angular/compiler/src/output/output_ast';
-import {JitEmitterVisitor} from '@angular/compiler/src/output/output_jit';
-import {JitReflector} from '@angular/platform-browser-dynamic/src/compiler_reflector';
+import {EmitterVisitorContext} from '@bangular/compiler/src/output/abstract_emitter';
+import * as o from '@bangular/compiler/src/output/output_ast';
+import {JitEmitterVisitor} from '@bangular/compiler/src/output/output_jit';
+import {JitReflector} from '@bangular/platform-browser-dynamic/src/compiler_reflector';
 
 const anotherModuleUrl = 'somePackage/someOtherPath';
 

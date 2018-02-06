@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {DirectiveResolver, ResourceLoader} from '@angular/compiler';
-import {Compiler, Component, Injector, NgModule, NgModuleFactory, ɵstringify as stringify} from '@angular/core';
-import {TestBed, async, fakeAsync, inject, tick} from '@angular/core/testing';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {DirectiveResolver, ResourceLoader} from '@bangular/compiler';
+import {Compiler, Component, Injector, NgModule, NgModuleFactory, ɵstringify as stringify} from '@bangular/core';
+import {TestBed, async, fakeAsync, inject, tick} from '@bangular/core/testing';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 import {MockDirectiveResolver} from '../testing';
 import {SpyResourceLoader} from './spies';
 

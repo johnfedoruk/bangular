@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AfterViewInit, Directive, EventEmitter, Inject, Input, Optional, Self, forwardRef} from '@angular/core';
+import {AfterViewInit, Directive, EventEmitter, Inject, Input, Optional, Self, forwardRef} from '@bangular/core';
 
 import {AbstractControl, FormControl, FormGroup, FormHooks} from '../model';
 import {NG_ASYNC_VALIDATORS, NG_VALIDATORS} from '../validators';
@@ -57,7 +57,7 @@ const resolvedPromise = Promise.resolve(null);
  *
  * {@example forms/ts/simpleForm/simple_form_example.ts region='Component'}
  *
- * * **npm package**: `@angular/forms`
+ * * **npm package**: `@bangular/forms`
  *
  * * **NgModule**: `FormsModule`
  *

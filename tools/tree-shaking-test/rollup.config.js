@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 class RollupNG2 {
   resolveId(id, from) {
-    if (id.startsWith('@angular/')) {
+    if (id.startsWith('@bangular/')) {
       const packageName = id.split('/')[1];
-      return `${__dirname}/../../packages-dist/${packageName}/@angular/packageName.es5.js`;
+      return `${__dirname}/../../packages-dist/${packageName}/@bangular/packageName.es5.js`;
     }
 
     // if(id.startsWith('rxjs/')){

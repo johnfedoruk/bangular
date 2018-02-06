@@ -1,6 +1,6 @@
 // #docplaster
 // #docregion
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef } from '@bangular/core';
 
 // Highlight the host element in gold
 @Directive({ selector: '[highlight]' })

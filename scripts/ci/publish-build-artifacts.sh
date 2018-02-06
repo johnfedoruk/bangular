@@ -139,10 +139,10 @@ if [ $# -gt 0 ]; then
   fi
 
 elif [[ \
-    "$TRAVIS_REPO_SLUG" == "angular/angular" && \
+    "$TRAVIS_REPO_SLUG" == "bangular/bangular" && \
     "$TRAVIS_PULL_REQUEST" == "false" && \
     "$CI_MODE" == "e2e" ]]; then
-  ORG="angular"
+  ORG="bangular"
   publishPackages "http" dist/packages-dist $CUR_BRANCH
   if [[ -e dist/packages-dist-es2015 ]]; then
     publishPackages "http" dist/packages-dist-es2015 ${CUR_BRANCH}-es2015

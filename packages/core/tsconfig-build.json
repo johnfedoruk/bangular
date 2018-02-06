@@ -6,7 +6,7 @@
     "rootDir": ".",
     "paths": {
       "rxjs/*": ["../../node_modules/rxjs/*"],
-      "@angular/core": ["."]
+      "@bangular/core": ["."]
     },
     "outDir": "../../dist/packages/core"
   },
@@ -17,11 +17,11 @@
     "../system.d.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "core.js",
-    "flatModuleId": "@angular/core"
+    "flatModuleId": "@bangular/core"
   }
 }

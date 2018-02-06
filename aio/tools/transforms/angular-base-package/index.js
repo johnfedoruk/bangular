@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 const path = require('path');
 const Package = require('dgeni').Package;
@@ -18,7 +18,7 @@ const postProcessPackage = require('../post-process-package');
 
 const { PROJECT_ROOT, CONTENTS_PATH, OUTPUT_PATH, DOCS_OUTPUT_PATH, TEMPLATES_PATH, AIO_PATH, requireFolder } = require('../config');
 
-module.exports = new Package('angular-base', [
+module.exports = new Package('bangular-base', [
   jsdocPackage, nunjucksPackage, linksPackage, examplesPackage, targetPackage, remarkPackage, postProcessPackage
 ])
 
@@ -32,7 +32,7 @@ module.exports = new Package('angular-base', [
   .processor(require('./processors/copyContentAssets'))
   .processor(require('./processors/renderLinkInfo'))
 
-  // overrides base packageInfo and returns the one for the 'angular/angular' repo.
+  // overrides base packageInfo and returns the one for the 'bangular/bangular' repo.
   .factory('packageInfo', function() { return require(path.resolve(PROJECT_ROOT, 'package.json')); })
   .factory(require('./readers/json'))
   .factory(require('./services/copyFolder'))
@@ -45,7 +45,7 @@ module.exports = new Package('angular-base', [
 
   .config(function(checkAnchorLinksProcessor) {
     // This is disabled here to prevent false negatives for the `docs-watch` task.
-    // It is re-enabled in the main `angular.io-package`
+    // It is re-enabled in the main `bangular.io-package`
     checkAnchorLinksProcessor.$enabled = false;
   })
 
@@ -92,7 +92,7 @@ module.exports = new Package('angular-base', [
       '${ doc.id }.template.json', '${ doc.docType }.template.json', 'common.template.html'
     ];
 
-    // Nunjucks and Angular conflict in their template bindings so change Nunjucks
+    // Nunjucks and Bangular conflict in their template bindings so change Nunjucks
     templateEngine.config.tags = {variableStart: '{$', variableEnd: '$}'};
 
     templateEngine.filters =

@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Compiler, SystemJsNgModuleLoader} from '@angular/core';
-import {global} from '@angular/core/src/util';
-import {async} from '@angular/core/testing';
-import {afterEach, beforeEach, describe, expect, it} from '@angular/core/testing/src/testing_internal';
+import {Compiler, SystemJsNgModuleLoader} from '@bangular/core';
+import {global} from '@bangular/core/src/util';
+import {async} from '@bangular/core/testing';
+import {afterEach, beforeEach, describe, expect, it} from '@bangular/core/testing/src/testing_internal';
 
 function mockSystem(modules: {[module: string]: any}) {
   return {

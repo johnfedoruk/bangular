@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable} from '@angular/core';
+import {Injectable} from '@bangular/core';
 
 import {AsyncValidatorFn, ValidatorFn} from './directives/validators';
 import {AbstractControl, FormArray, FormControl, FormGroup} from './model';
@@ -25,7 +25,7 @@ import {AbstractControl, FormArray, FormControl, FormGroup} from './model';
  *
  * {@example forms/ts/formBuilder/form_builder_example.ts region='Component'}
  *
- *  * **npm package**: `@angular/forms`
+ *  * **npm package**: `@bangular/forms`
  *
  *  * **NgModule**: {@link ReactiveFormsModule}
  *

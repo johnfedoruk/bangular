@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Location, PlatformLocation } from '@angular/common';
+import { Injectable } from '@bangular/core';
+import { Location, PlatformLocation } from '@bangular/common';
 
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import 'rxjs/add/operator/do';

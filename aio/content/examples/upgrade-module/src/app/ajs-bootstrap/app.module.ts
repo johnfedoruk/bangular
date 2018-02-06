@@ -1,5 +1,5 @@
 // #docregion ng1module
-angular.module('heroApp', [])
+bangular.module('heroApp', [])
   .controller('MainCtrl', function() {
     this.message = 'Hello world';
   });
@@ -7,6 +7,6 @@ angular.module('heroApp', [])
 
 document.addEventListener('DOMContentLoaded', function() {
   // #docregion bootstrap
-  angular.bootstrap(document.body, ['heroApp'], { strictDi: true });
+  bangular.bootstrap(document.body, ['heroApp'], { strictDi: true });
   // #enddocregion bootstrap
 });

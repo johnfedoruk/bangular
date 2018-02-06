@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Directive, ElementRef, Inject, InjectionToken, Optional, Renderer2, forwardRef} from '@angular/core';
-import {ɵgetDOM as getDOM} from '@angular/platform-browser';
+import {Directive, ElementRef, Inject, InjectionToken, Optional, Renderer2, forwardRef} from '@bangular/core';
+import {ɵgetDOM as getDOM} from '@bangular/platform-browser';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from './control_value_accessor';
 
 export const DEFAULT_VALUE_ACCESSOR: any = {
@@ -46,7 +46,7 @@ export const COMPOSITION_BUFFER_MODE = new InjectionToken<boolean>('CompositionE
   selector:
       'input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]',
   // TODO: vsavkin replace the above selector with the one below it once
-  // https://github.com/angular/angular/issues/3011 is implemented
+  // https://github.com/bangular/bangular/issues/3011 is implemented
   // selector: '[ngModel],[formControl],[formControlName]',
   host: {
     '(input)': '$any(this)._handleInput($event.target.value)',

@@ -1,8 +1,8 @@
 // #docplaster
 // #docregion
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit, HostBinding }   from '@angular/core';
-import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { Component, OnInit, HostBinding }   from '@bangular/core';
+import { ActivatedRoute, Router, ParamMap } from '@bangular/router';
 import { Observable }                       from 'rxjs/Observable';
 
 import { slideInDownAnimation }   from '../animations';

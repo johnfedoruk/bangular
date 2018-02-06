@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AotCompilerHost, AotCompilerOptions, AotSummaryResolver, CompileDirectiveMetadata, CompileMetadataResolver, CompilerConfig, DirectiveNormalizer, DirectiveResolver, DomElementSchemaRegistry, HtmlParser, I18NHtmlParser, Lexer, NgModuleResolver, Parser, PipeResolver, StaticReflector, StaticSymbol, StaticSymbolCache, StaticSymbolResolver, TemplateParser, TypeScriptEmitter, analyzeNgModules, createAotUrlResolver} from '@angular/compiler';
-import {ViewEncapsulation} from '@angular/core';
+import {AotCompilerHost, AotCompilerOptions, AotSummaryResolver, CompileDirectiveMetadata, CompileMetadataResolver, CompilerConfig, DirectiveNormalizer, DirectiveResolver, DomElementSchemaRegistry, HtmlParser, I18NHtmlParser, Lexer, NgModuleResolver, Parser, PipeResolver, StaticReflector, StaticSymbol, StaticSymbolCache, StaticSymbolResolver, TemplateParser, TypeScriptEmitter, analyzeNgModules, createAotUrlResolver} from '@bangular/compiler';
+import {ViewEncapsulation} from '@bangular/core';
 import * as ts from 'typescript';
 
 import {ConstantPool} from '../../src/constant_pool';
@@ -17,8 +17,8 @@ import {OutputContext} from '../../src/util';
 import {MockAotCompilerHost, MockCompilerHost, MockData, MockDirectory, arrayToMockDir, settings, setup, toMockFileArray} from '../aot/test_util';
 
 describe('r3_view_compiler', () => {
-  const angularFiles = setup({
-    compileAngular: true,
+  const bangularFiles = setup({
+    compileBangular: true,
     compileAnimations: false,
     compileCommon: true,
   });
@@ -28,7 +28,7 @@ describe('r3_view_compiler', () => {
       const files: MockDirectory = {
         app: {
           'hello.ts': `
-           import {Component, NgModule} from '@angular/core';
+           import {Component, NgModule} from '@bangular/core';
 
            @Component({
              selector: 'hello-world',
@@ -45,7 +45,7 @@ describe('r3_view_compiler', () => {
         `
         }
       };
-      compile(files, angularFiles);
+      compile(files, bangularFiles);
     });
   });
 
@@ -53,8 +53,8 @@ describe('r3_view_compiler', () => {
     const files: MockDirectory = {
       app: {
         'example.ts': `
-        import {Component, OnInit, OnDestroy, ElementRef, Input, NgModule} from '@angular/core';
-        import {CommonModule} from '@angular/common';
+        import {Component, OnInit, OnDestroy, ElementRef, Input, NgModule} from '@bangular/core';
+        import {CommonModule} from '@bangular/common';
 
         @Component({
           selector: 'my-app',
@@ -96,8 +96,8 @@ describe('r3_view_compiler', () => {
         `
       }
     };
-    const result = compile(files, angularFiles);
-    expect(result.source).toContain('@angular/core');
+    const result = compile(files, bangularFiles);
+    expect(result.source).toContain('@bangular/core');
   });
 
   describe('interpolations', () => {
@@ -106,7 +106,7 @@ describe('r3_view_compiler', () => {
       const files: MockDirectory = {
         app: {
           'example.ts': `
-          import {Component, NgModule} from '@angular/core';
+          import {Component, NgModule} from '@bangular/core';
 
           @Component({
             selector: 'my-app',
@@ -124,7 +124,7 @@ describe('r3_view_compiler', () => {
       const bV_call = `IDENT.ɵbV([' ',ctx.list[0],' ',ctx.list[1],' ',ctx.list[2],' ',ctx.list[3],
         ' ',ctx.list[4],' ',ctx.list[5],' ',ctx.list[6],' ',ctx.list[7],' ',ctx.list[8],
         ' '])`;
-      const result = compile(files, angularFiles);
+      const result = compile(files, bangularFiles);
       expectEmit(result.source, bV_call, 'Incorrect bV call');
     });
   });
@@ -138,7 +138,7 @@ describe('r3_view_compiler', () => {
         const files = {
           app: {
             'spec.ts': `
-                import {Component, NgModule} from '@angular/core';
+                import {Component, NgModule} from '@bangular/core';
 
                 @Component({
                   selector: 'my-component',
@@ -173,7 +173,7 @@ describe('r3_view_compiler', () => {
         // The compiler should also emit a const array like this:
         const constants = `const IDENT = ['class', 'my-app', 'title', 'Hello'];`;
 
-        const result = compile(files, angularFiles);
+        const result = compile(files, bangularFiles);
 
         expectEmit(result.source, factory, 'Incorrect factory');
         expectEmit(result.source, template, 'Incorrect template');
@@ -187,7 +187,7 @@ describe('r3_view_compiler', () => {
       const files = {
         app: {
           'spec.ts': `
-            import {Component, Directive, NgModule} from '@angular/core';
+            import {Component, Directive, NgModule} from '@bangular/core';
 
             @Component({selector: 'child', template: 'child-view'})
             export class ChildComponent {}
@@ -250,7 +250,7 @@ describe('r3_view_compiler', () => {
 
       const DirectivesConstant = `const IDENT = [SomeDirective];`;
 
-      const result = compile(files, angularFiles);
+      const result = compile(files, bangularFiles);
       const source = result.source;
 
       expectEmit(source, ChildComponentDefinition, 'Incorrect ChildComponent.ngComponentDef');
@@ -264,7 +264,7 @@ describe('r3_view_compiler', () => {
       const files = {
         app: {
           'spec.ts': `
-            import {Component, Directive, NgModule, TemplateRef} from '@angular/core';
+            import {Component, Directive, NgModule, TemplateRef} from '@bangular/core';
 
             @Directive({selector: '[if]'})
             export class IfDirective {
@@ -320,7 +320,7 @@ describe('r3_view_compiler', () => {
       const locals = `const IDENT = ['foo', ''];`;
       const directives = `const IDENT = [IfDirective];`;
 
-      const result = compile(files, angularFiles);
+      const result = compile(files, bangularFiles);
       const source = result.source;
 
       expectEmit(source, IfDirectiveDefinition, 'Incorrect IfDirective.ngDirectiveDef');
@@ -333,7 +333,7 @@ describe('r3_view_compiler', () => {
       const files = {
         app: {
           'spec.ts': `
-            import {Component, Directive, NgModule, TemplateRef} from '@angular/core';
+            import {Component, Directive, NgModule, TemplateRef} from '@bangular/core';
 
             @Component({selector: 'simple', template: '<div><ng-content></ng-content></div>'})
             export class SimpleComponent {}
@@ -396,7 +396,7 @@ describe('r3_view_compiler', () => {
         const IDENT = [[[['span', 'title', 'tofirst'], null]], [[['span', 'title', 'tosecond'], null]]];
       `;
 
-      const result = compile(files, angularFiles);
+      const result = compile(files, bangularFiles);
       const source = result.source;
 
       expectEmit(result.source, SimpleComponentDefinition, 'Incorrect SimpleComponent definition');
@@ -409,7 +409,7 @@ describe('r3_view_compiler', () => {
       const files = {
         app: {
           'spec.ts': `
-            import {Component, NgModule} from '@angular/core';
+            import {Component, NgModule} from '@bangular/core';
 
             @Component({selector: 'my-component', template: '<input #user>Hello {{user.value}}!'})
             export class MyComponent {}
@@ -439,7 +439,7 @@ describe('r3_view_compiler', () => {
 
       const locals = `const IDENT = ['user', ''];`;
 
-      const result = compile(files, angularFiles);
+      const result = compile(files, bangularFiles);
       const source = result.source;
 
       expectEmit(source, MyComponentDefinition, 'Incorrect MyComponent.ngComponentDef');
@@ -450,7 +450,7 @@ describe('r3_view_compiler', () => {
       const files = {
         app: {
           'spec.ts': `
-            import {Component, Input, NgModule} from '@angular/core';
+            import {Component, Input, NgModule} from '@bangular/core';
 
             let events: string[] = [];
 
@@ -522,7 +522,7 @@ describe('r3_view_compiler', () => {
             }
           });`;
 
-        const result = compile(files, angularFiles);
+        const result = compile(files, bangularFiles);
         const source = result.source;
 
         expectEmit(source, LifecycleCompDefinition, 'Invalid LifecycleComp definition');
@@ -534,7 +534,7 @@ describe('r3_view_compiler', () => {
       const shared = {
         shared: {
           'for_of.ts': `
-            import {Directive, Input, SimpleChanges, TemplateRef, ViewContainerRef} from '@angular/core';
+            import {Directive, Input, SimpleChanges, TemplateRef, ViewContainerRef} from '@bangular/core';
 
             export interface ForOfContext {
               $implicit: any;
@@ -589,7 +589,7 @@ describe('r3_view_compiler', () => {
           app: {
             ...shared,
             'spec.ts': `
-              import {Component, NgModule} from '@angular/core';
+              import {Component, NgModule} from '@bangular/core';
               import {ForOfDirective} from './shared/for_of';
 
               @Component({
@@ -650,7 +650,7 @@ describe('r3_view_compiler', () => {
           });
         `;
 
-        const result = compile(files, angularFiles);
+        const result = compile(files, bangularFiles);
         const source = result.source;
 
         // TODO(chuckj): Enforce this when the directives are specified
@@ -663,7 +663,7 @@ describe('r3_view_compiler', () => {
           app: {
             ...shared,
             'spec.ts': `
-              import {Component, NgModule} from '@angular/core';
+              import {Component, NgModule} from '@bangular/core';
               import {ForOfDirective} from './shared/for_of';
 
               @Component({
@@ -745,7 +745,7 @@ describe('r3_view_compiler', () => {
             }
           });`;
 
-        const result = compile(files, angularFiles);
+        const result = compile(files, bangularFiles);
         const source = result.source;
         expectEmit(source, MyComponentDefinition, 'Invalid component definition');
       });
@@ -838,12 +838,12 @@ function r(...pieces: (string | RegExp)[]): RegExp {
 }
 
 function compile(
-    data: MockDirectory, angularFiles: MockData, options: AotCompilerOptions = {},
+    data: MockDirectory, bangularFiles: MockData, options: AotCompilerOptions = {},
     errorCollector: (error: any, fileName?: string) => void = error => { throw error; }) {
   const testFiles = toMockFileArray(data);
   const scripts = testFiles.map(entry => entry.fileName);
-  const angularFilesArray = toMockFileArray(angularFiles);
-  const files = arrayToMockDir([...testFiles, ...angularFilesArray]);
+  const bangularFilesArray = toMockFileArray(bangularFiles);
+  const files = arrayToMockDir([...testFiles, ...bangularFilesArray]);
   const mockCompilerHost = new MockCompilerHost(scripts, files);
   const compilerHost = new MockAotCompilerHost(mockCompilerHost);
 

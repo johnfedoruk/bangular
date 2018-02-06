@@ -36,7 +36,7 @@ function check {
   expected="Git branch        : master
 Build/deploy mode : next
 Firebase project  : aio-staging
-Deployment URL    : https://next.angular.io/"
+Deployment URL    : https://next.bangular.io/"
   check "$actual" "$expected"
 )
 
@@ -64,8 +64,8 @@ Deployment URL    : https://next.angular.io/"
   )
   expected="Git branch        : 4.3.x
 Build/deploy mode : stable
-Firebase project  : angular-io
-Deployment URL    : https://angular.io/"
+Firebase project  : bangular-io
+Deployment URL    : https://bangular.io/"
   check "$actual" "$expected"
 )
 
@@ -94,8 +94,8 @@ Deployment URL    : https://angular.io/"
   )
   expected="Git branch        : 2.4.x
 Build/deploy mode : archive
-Firebase project  : angular-io-2
-Deployment URL    : https://v2.angular.io/"
+Firebase project  : bangular-io-2
+Deployment URL    : https://v2.bangular.io/"
   check "$actual" "$expected"
 )
 

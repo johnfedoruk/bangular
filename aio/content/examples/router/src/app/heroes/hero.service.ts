@@ -1,7 +1,7 @@
 // #docregion
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 import { Observable } from 'rxjs/Observable';
 
 export class Hero {

@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {DoCheck, ElementRef, EventEmitter, Injector, OnChanges, OnDestroy, OnInit, SimpleChanges, ɵlooseIdentical as looseIdentical} from '@angular/core';
-import * as angular from '../common/angular1';
+import {DoCheck, ElementRef, EventEmitter, Injector, OnChanges, OnDestroy, OnInit, SimpleChanges, ɵlooseIdentical as looseIdentical} from '@bangular/core';
+import * as bangular from '../common/bangular1';
 import {$SCOPE} from '../common/constants';
 import {IBindingDestination, IControllerInstance, UpgradeHelper} from '../common/upgrade_helper';
 import {isFunction} from '../common/util';
@@ -32,17 +32,17 @@ class Bindings {
  * *Part of the [upgrade/static](api?query=upgrade%2Fstatic)
  * library for hybrid upgrade apps that support AoT compilation*
  *
- * Allows an AngularJS component to be used from Angular.
+ * Allows an BangularJS component to be used from Bangular.
  *
  * @howToUse
  *
- * Let's assume that you have an AngularJS component called `ng1Hero` that needs
- * to be made available in Angular templates.
+ * Let's assume that you have an BangularJS component called `ng1Hero` that needs
+ * to be made available in Bangular templates.
  *
  * {@example upgrade/static/ts/module.ts region="ng1-hero"}
  *
- * We must create a {@link Directive} that will make this AngularJS component
- * available inside Angular templates.
+ * We must create a {@link Directive} that will make this BangularJS component
+ * available inside Bangular templates.
  *
  * {@example upgrade/static/ts/module.ts region="ng1-hero-wrapper"}
  *
@@ -53,29 +53,29 @@ class Bindings {
  *
  * Note that we must do the following:
  * * specify the directive's selector (`ng1-hero`)
- * * specify all inputs and outputs that the AngularJS component expects
+ * * specify all inputs and outputs that the BangularJS component expects
  * * derive from `UpgradeComponent`
  * * call the base class from the constructor, passing
- *   * the AngularJS name of the component (`ng1Hero`)
+ *   * the BangularJS name of the component (`ng1Hero`)
  *   * the {@link ElementRef} and {@link Injector} for the component wrapper
  *
  * @description
  *
- * A helper class that should be used as a base class for creating Angular directives
- * that wrap AngularJS components that need to be "upgraded".
+ * A helper class that should be used as a base class for creating Bangular directives
+ * that wrap BangularJS components that need to be "upgraded".
  *
  * @experimental
  */
 export class UpgradeComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
   private helper: UpgradeHelper;
 
-  private $injector: angular.IInjectorService;
+  private $injector: bangular.IInjectorService;
 
   private element: Element;
-  private $element: angular.IAugmentedJQuery;
-  private $componentScope: angular.IScope;
+  private $element: bangular.IAugmentedJQuery;
+  private $componentScope: bangular.IScope;
 
-  private directive: angular.IDirective;
+  private directive: bangular.IDirective;
   private bindings: Bindings;
 
   private controllerInstance: IControllerInstance;
@@ -94,8 +94,8 @@ export class UpgradeComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
    *
    * {@example upgrade/static/ts/module.ts region="ng1-hero-wrapper" }
    *
-   * * The `name` parameter should be the name of the AngularJS directive.
-   * * The `elementRef` and `injector` parameters should be acquired from Angular by dependency
+   * * The `name` parameter should be the name of the BangularJS directive.
+   * * The `elementRef` and `injector` parameters should be acquired from Bangular by dependency
    *   injection into the base class constructor.
    *
    * Note that we must manually implement lifecycle hooks that call through to the super class.
@@ -114,7 +114,7 @@ export class UpgradeComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
     this.directive = this.helper.directive;
     this.bindings = this.initializeBindings(this.directive);
 
-    // We ask for the AngularJS scope from the Angular injector, since
+    // We ask for the BangularJS scope from the Bangular injector, since
     // we will put the new component scope onto the new injector for each component
     const $parentScope = injector.get($SCOPE);
     // QUESTION 1: Should we create an isolated scope if the scope is only true?
@@ -126,7 +126,7 @@ export class UpgradeComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
 
   ngOnInit() {
     // Collect contents, insert and compile template
-    const attachChildNodes: angular.ILinkFn|undefined = this.helper.prepareTransclusion();
+    const attachChildNodes: bangular.ILinkFn|undefined = this.helper.prepareTransclusion();
     const linkFn = this.helper.compileTemplate();
 
     // Instantiate controller
@@ -168,10 +168,10 @@ export class UpgradeComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
 
     // Linking
     const link = this.directive.link;
-    const preLink = (typeof link == 'object') && (link as angular.IDirectivePrePost).pre;
-    const postLink = (typeof link == 'object') ? (link as angular.IDirectivePrePost).post : link;
-    const attrs: angular.IAttributes = NOT_SUPPORTED;
-    const transcludeFn: angular.ITranscludeFunction = NOT_SUPPORTED;
+    const preLink = (typeof link == 'object') && (link as bangular.IDirectivePrePost).pre;
+    const postLink = (typeof link == 'object') ? (link as bangular.IDirectivePrePost).post : link;
+    const attrs: bangular.IAttributes = NOT_SUPPORTED;
+    const transcludeFn: bangular.ITranscludeFunction = NOT_SUPPORTED;
     if (preLink) {
       preLink(this.$componentScope, this.$element, attrs, requiredControllers, transcludeFn);
     }
@@ -225,7 +225,7 @@ export class UpgradeComponent implements OnInit, OnChanges, DoCheck, OnDestroy {
     this.$componentScope.$destroy();
   }
 
-  private initializeBindings(directive: angular.IDirective) {
+  private initializeBindings(directive: bangular.IDirective) {
     const btcIsObject = typeof directive.bindToController === 'object';
     if (btcIsObject && Object.keys(directive.scope !).length) {
       throw new Error(

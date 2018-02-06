@@ -1,6 +1,6 @@
 // #docregion
-import { Component }   from '@angular/core';
-import { Router }      from '@angular/router';
+import { Component }   from '@bangular/core';
+import { Router }      from '@bangular/router';
 import { AuthService } from './auth.service';
 
 @Component({

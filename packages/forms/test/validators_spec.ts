@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {fakeAsync, tick} from '@angular/core/testing';
-import {describe, expect, it} from '@angular/core/testing/src/testing_internal';
-import {AbstractControl, AsyncValidatorFn, FormArray, FormControl, Validators} from '@angular/forms';
-import {normalizeAsyncValidator} from '@angular/forms/src/directives/normalize_validator';
-import {AsyncValidator, ValidationErrors, ValidatorFn} from '@angular/forms/src/directives/validators';
+import {fakeAsync, tick} from '@bangular/core/testing';
+import {describe, expect, it} from '@bangular/core/testing/src/testing_internal';
+import {AbstractControl, AsyncValidatorFn, FormArray, FormControl, Validators} from '@bangular/forms';
+import {normalizeAsyncValidator} from '@bangular/forms/src/directives/normalize_validator';
+import {AsyncValidator, ValidationErrors, ValidatorFn} from '@bangular/forms/src/directives/validators';
 import {Observable} from 'rxjs/Observable';
 import {of } from 'rxjs/observable/of';
 import {timer} from 'rxjs/observable/timer';

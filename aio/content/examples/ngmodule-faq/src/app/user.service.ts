@@ -1,5 +1,5 @@
 // #docregion
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 
 @Injectable()
 /** Dummy version of an authenticated user service */

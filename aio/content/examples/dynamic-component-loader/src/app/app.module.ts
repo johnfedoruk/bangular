@@ -1,6 +1,6 @@
 // #docregion
-import { BrowserModule }        from '@angular/platform-browser';
-import { NgModule }             from '@angular/core';
+import { BrowserModule }        from '@bangular/platform-browser';
+import { NgModule }             from '@bangular/core';
 import { AppComponent }         from './app.component';
 import { HeroJobAdComponent }   from './hero-job-ad.component';
 import { AdBannerComponent }    from './ad-banner.component';

@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Inject, Injectable, InjectionToken, Injector, Optional, Provider, ReflectiveInjector, ReflectiveKey, Self, forwardRef} from '@angular/core';
-import {ReflectiveInjector_} from '@angular/core/src/di/reflective_injector';
-import {ResolvedReflectiveProvider_} from '@angular/core/src/di/reflective_provider';
-import {getOriginalError} from '@angular/core/src/errors';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {Inject, Injectable, InjectionToken, Injector, Optional, Provider, ReflectiveInjector, ReflectiveKey, Self, forwardRef} from '@bangular/core';
+import {ReflectiveInjector_} from '@bangular/core/src/di/reflective_injector';
+import {ResolvedReflectiveProvider_} from '@bangular/core/src/di/reflective_provider';
+import {getOriginalError} from '@bangular/core/src/errors';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 import {stringify} from '../../src/util';
 
 class Engine {}

@@ -1,5 +1,5 @@
 // #docregion
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@bangular/core';
 // #docregion example
 /* avoid */
 

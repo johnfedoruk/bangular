@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as fs from 'fs';
@@ -111,13 +111,13 @@ describe('perform watch', () => {
     const host = new MockWatchHost(config);
 
     const okFileContent = `
-      import {NgModule} from '@angular/core';
+      import {NgModule} from '@bangular/core';
 
       @NgModule()
       export class MyModule {}
     `;
     const errorFileContent = `
-      import {NgModule} from '@angular/core';
+      import {NgModule} from '@bangular/core';
 
       @NgModule((() => (1===1 ? null as any : null as any)) as any)
       export class MyModule {}
@@ -152,7 +152,7 @@ function createModuleAndCompSource(prefix: string, template: string = prefix + '
   const templateEntry =
       template.endsWith('.html') ? `templateUrl: '${template}'` : `template: \`${template}\``;
   return `
-    import {Component, NgModule} from '@angular/core';
+    import {Component, NgModule} from '@bangular/core';
 
     @Component({selector: '${prefix}', ${templateEntry}})
     export class ${prefix}Comp {}

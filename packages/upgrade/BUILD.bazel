@@ -10,7 +10,7 @@ ts_library(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/upgrade",
+    module_name = "@bangular/upgrade",
     deps = [
         "//packages/core",
         "//packages/platform-browser",

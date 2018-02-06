@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {Provider} from '../di';
@@ -29,7 +29,7 @@ export interface SchemaMetadata { name: string; }
 
 /**
  * Defines a schema that will allow:
- * - any non-Angular elements with a `-` in their name,
+ * - any non-Bangular elements with a `-` in their name,
  * - any properties on elements with a `-` in their name which is the common rule for custom
  * elements.
  *
@@ -133,8 +133,8 @@ export interface NgModule {
 
   /**
    * Specifies a list of directives/pipes/modules that can be used within the template
-   * of any component that is part of an Angular module
-   * that imports this Angular module.
+   * of any component that is part of an Bangular module
+   * that imports this Bangular module.
    *
    * ### Example
    *
@@ -150,7 +150,7 @@ export interface NgModule {
 
   /**
    * Specifies a list of components that should be compiled when this module is defined.
-   * For each component listed here, Angular will create a {@link ComponentFactory}
+   * For each component listed here, Bangular will create a {@link ComponentFactory}
    * and store it in the {@link ComponentFactoryResolver}.
    */
   entryComponents?: Array<Type<any>|any[]>;
@@ -163,7 +163,7 @@ export interface NgModule {
   bootstrap?: Array<Type<any>|any[]>;
 
   /**
-   * Elements and properties that are not Angular components nor directives have to be declared in
+   * Elements and properties that are not Bangular components nor directives have to be declared in
    * the schema.
    *
    * Available schemas:

@@ -1,5 +1,5 @@
 // #docregion
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 import { Subject } from 'rxjs/Subject';
 
 export interface SpinnerState {

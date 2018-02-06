@@ -1,5 +1,5 @@
 // Exact copy of contact/highlight.directive except for color and message
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef } from '@bangular/core';
 
 @Directive({ selector: '[highlight], input' })
 // Highlight the host element or any InputElement in gray

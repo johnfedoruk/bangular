@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {AstPath} from '../ast_path';
@@ -16,7 +16,7 @@ import {ParseSourceSpan} from '../parse_util';
 
 
 /**
- * An Abstract Syntax Tree node representing part of a parsed Angular template.
+ * An Abstract Syntax Tree node representing part of a parsed Bangular template.
  */
 export interface TemplateAst {
   /**
@@ -145,7 +145,7 @@ export class ElementAst implements TemplateAst {
 }
 
 /**
- * A `<ng-template>` element included in an Angular template.
+ * A `<ng-template>` element included in an Bangular template.
  */
 export class EmbeddedTemplateAst implements TemplateAst {
   constructor(

@@ -1,8 +1,8 @@
 // #docplaster
 // #docregion
-/* Angular Imports */
-import { NgModule }           from '@angular/core';
-import { BrowserModule }      from '@angular/platform-browser';
+/* Bangular Imports */
+import { NgModule }           from '@bangular/core';
+import { BrowserModule }      from '@bangular/platform-browser';
 
 /* App Imports */
 // #enddocregion

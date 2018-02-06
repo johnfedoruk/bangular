@@ -1,8 +1,8 @@
 // #docplaster
 // #docregion
-// Import the native Angular services.
-import { Component } from '@angular/core';
-import { Title }     from '@angular/platform-browser';
+// Import the native Bangular services.
+import { Component } from '@bangular/core';
+import { Title }     from '@bangular/platform-browser';
 
 @Component({
 selector: 'app-root',

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 
 import { LoggerService }  from '../core/logger.service';
 import { SpinnerService } from '../core/spinner/spinner.service';

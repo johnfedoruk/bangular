@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {AnimationBuilder, AnimationFactory, AnimationMetadata, AnimationOptions, AnimationPlayer, NoopAnimationPlayer, sequence} from '@angular/animations';
-import {Inject, Injectable, RendererFactory2, RendererType2, ViewEncapsulation} from '@angular/core';
-import {DOCUMENT} from '@angular/platform-browser';
+import {AnimationBuilder, AnimationFactory, AnimationMetadata, AnimationOptions, AnimationPlayer, NoopAnimationPlayer, sequence} from '@bangular/animations';
+import {Inject, Injectable, RendererFactory2, RendererType2, ViewEncapsulation} from '@bangular/core';
+import {DOCUMENT} from '@bangular/platform-browser';
 
 import {AnimationRenderer} from './animation_renderer';
 

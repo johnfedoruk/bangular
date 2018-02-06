@@ -10,5 +10,5 @@ ts_library(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/compiler",
+    module_name = "@bangular/compiler",
 )

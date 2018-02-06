@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AnimationEvent} from '@angular/animations';
-import {MockAnimationDriver, MockAnimationPlayer} from '@angular/animations/browser/testing';
+import {AnimationEvent} from '@bangular/animations';
+import {MockAnimationDriver, MockAnimationPlayer} from '@bangular/animations/browser/testing';
 
 import {RendererType2, ViewEncapsulation} from '../../src/core';
 import {E, L, T, b, defineComponent, detectChanges, e, p, r} from '../../src/render3/index';

@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {MessageBus} from '@angular/platform-webworker/src/web_workers/shared/message_bus';
-import {PostMessageBus, PostMessageBusSink, PostMessageBusSource} from '@angular/platform-webworker/src/web_workers/shared/post_message_bus';
+import {MessageBus} from '@bangular/platform-webworker/src/web_workers/shared/message_bus';
+import {PostMessageBus, PostMessageBusSink, PostMessageBusSource} from '@bangular/platform-webworker/src/web_workers/shared/post_message_bus';
 
 
 /*

@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostBinding, HostListener, OnInit,
-         QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+         QueryList, ViewChild, ViewChildren } from '@bangular/core';
+import { MatSidenav } from '@bangular/material/sidenav';
 
 import { CurrentNodes, NavigationService, NavigationNode, VersionInfo } from 'app/navigation/navigation.service';
 import { DocumentService, DocumentContents } from 'app/documents/document.service';
@@ -153,8 +153,8 @@ export class AppComponent implements OnInit {
       .subscribe(([versionInfo, versions]) => {
         // TODO(pbd): consider whether we can lookup the stable and next versions from the internet
         const computedVersions: NavigationNode[] = [
-          { title: 'next', url: 'https://next.angular.io' },
-          { title: 'stable', url: 'https://angular.io' },
+          { title: 'next', url: 'https://next.bangular.io' },
+          { title: 'stable', url: 'https://bangular.io' },
         ];
         if (this.deployment.mode === 'archive') {
           computedVersions.push({ title: `v${versionInfo.major}` });

@@ -1,5 +1,5 @@
 // #docregion
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef } from '@bangular/core';
 
 // Same directive name and selector as
 // HighlightDirective in parent AppRootModule

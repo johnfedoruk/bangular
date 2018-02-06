@@ -12,5 +12,5 @@ exports.config = {
   directConnect: true,
   baseUrl: 'http://localhost:8080/',
   framework: 'jasmine',
-  useAllAngular2AppRoots: true
+  useAllBangular2AppRoots: true
 };

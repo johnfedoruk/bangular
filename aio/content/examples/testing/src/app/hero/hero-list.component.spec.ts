@@ -1,8 +1,8 @@
 import { async, ComponentFixture, fakeAsync, TestBed, tick
-} from '@angular/core/testing';
+} from '@bangular/core/testing';
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { By }           from '@bangular/platform-browser';
+import { DebugElement } from '@bangular/core';
 
 import { addMatchers, newEvent, Router, RouterStub
 } from '../../testing';

@@ -5,7 +5,7 @@ const Dgeni = require('dgeni');
 describe('generateApiListDoc processor', () => {
 
   it('should be available on the injector', () => {
-    const dgeni = new Dgeni([testPackage('angular-api-package')]);
+    const dgeni = new Dgeni([testPackage('bangular-api-package')]);
     const injector = dgeni.configureInjector();
     const processor = injector.get('generateApiListDoc');
     expect(processor.$process).toBeDefined();
@@ -38,28 +38,28 @@ describe('generateApiListDoc processor', () => {
   it('should add an info object to the doc for each module doc', () => {
     const processor = processorFactory();
     const docs = [
-      { docType: 'module', id: '@angular/common/index', exports: [] },
-      { docType: 'module', id: '@angular/core/index', exports: [] },
-      { docType: 'module', id: '@angular/http/index', exports: [] },
+      { docType: 'module', id: '@bangular/common/index', exports: [] },
+      { docType: 'module', id: '@bangular/core/index', exports: [] },
+      { docType: 'module', id: '@bangular/http/index', exports: [] },
     ];
     processor.$process(docs);
     expect(docs[3].data).toEqual([
-      { name: '@angular/common', title: '@angular/common', items: [] },
-      { name: '@angular/core', title: '@angular/core', items: [] },
-      { name: '@angular/http', title: '@angular/http', items: [] },
+      { name: '@bangular/common', title: '@bangular/common', items: [] },
+      { name: '@bangular/core', title: '@bangular/core', items: [] },
+      { name: '@bangular/http', title: '@bangular/http', items: [] },
     ]);
   });
 
   it('should add info about each export on each module', () => {
     const processor = processorFactory();
     const docs = [
-      { docType: 'module', id: '@angular/common/index', exports: [
+      { docType: 'module', id: '@bangular/common/index', exports: [
         { docType: 'directive', name: 'AaaAaa', path: 'aaa' },
         { docType: 'pipe', name: 'BbbBbb', path: 'bbb' },
         { docType: 'decorator', name: 'CccCcc', path: 'ccc' },
         { docType: 'class', name: 'DddDdd', path: 'ddd' }
       ] },
-      { docType: 'module', id: '@angular/core/index', exports: [
+      { docType: 'module', id: '@bangular/core/index', exports: [
         { docType: 'interface', name: 'EeeEee', path: 'eee' },
         { docType: 'function', name: 'FffFff', path: 'fff' },
         { docType: 'enum', name: 'GggGgg', path: 'ggg' },
@@ -86,7 +86,7 @@ describe('generateApiListDoc processor', () => {
   it('should ignore internal and private exports', () => {
     const processor = processorFactory();
     const docs = [
-      { docType: 'module', id: '@angular/common/index', exports: [
+      { docType: 'module', id: '@bangular/common/index', exports: [
         { docType: 'directive', name: 'AaaAaa', path: 'aaa', internal: true },
         { docType: 'class', name: 'XxxXxx', path: 'xxx', privateExport: true },
         { docType: 'pipe', name: 'BbbBbb', path: 'bbb' }
@@ -101,7 +101,7 @@ describe('generateApiListDoc processor', () => {
   it('should convert `let` and `var` docTypes to `const`', () => {
     const processor = processorFactory();
     const docs = [
-      { docType: 'module', id: '@angular/common/index', exports: [
+      { docType: 'module', id: '@bangular/common/index', exports: [
         { docType: 'var', name: 'AaaAaa', path: 'aaa' },
         { docType: 'let', name: 'BbbBbb', path: 'bbb' },
       ]}
@@ -116,7 +116,7 @@ describe('generateApiListDoc processor', () => {
   it('should convert security to a boolean securityRisk', () => {
     const processor = processorFactory();
     const docs = [
-      { docType: 'module', id: '@angular/common/index', exports: [
+      { docType: 'module', id: '@bangular/common/index', exports: [
         { docType: 'class', name: 'AaaAaa', path: 'aaa', security: 'This is a security risk' },
         { docType: 'class', name: 'BbbBbb', path: 'bbb', security: '' },
       ]}
@@ -131,7 +131,7 @@ describe('generateApiListDoc processor', () => {
   it('should convert stability tags to the stable string property', () => {
     const processor = processorFactory();
     const docs = [
-      { docType: 'module', id: '@angular/common/index', exports: [
+      { docType: 'module', id: '@bangular/common/index', exports: [
         { docType: 'class', name: 'AaaAaa', path: 'aaa', stable: undefined },
         { docType: 'class', name: 'BbbBbb', path: 'bbb', experimental: 'Some message' },
         { docType: 'class', name: 'CccCcc', path: 'ccc', deprecated: null },
@@ -150,7 +150,7 @@ describe('generateApiListDoc processor', () => {
   it('should sort items in each group alphabetically', () => {
     const processor = processorFactory();
     const docs = [
-      { docType: 'module', id: '@angular/common/index', exports: [
+      { docType: 'module', id: '@bangular/common/index', exports: [
         { docType: 'class', name: 'DddDdd', path: 'uuu' },
         { docType: 'class', name: 'BbbBbb', path: 'vvv' },
         { docType: 'class', name: 'AaaAaa', path: 'xxx' },

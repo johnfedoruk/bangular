@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker';
+import { Injectable } from '@bangular/core';
+import { SwUpdate } from '@bangular/service-worker';
 
 
 // #docregion sw-check-update

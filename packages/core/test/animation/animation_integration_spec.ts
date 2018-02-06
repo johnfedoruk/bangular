@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {AUTO_STYLE, AnimationEvent, AnimationOptions, animate, animateChild, group, keyframes, query, state, style, transition, trigger, ɵPRE_STYLE as PRE_STYLE} from '@angular/animations';
-import {AnimationDriver, ɵAnimationEngine, ɵNoopAnimationDriver} from '@angular/animations/browser';
-import {MockAnimationDriver, MockAnimationPlayer} from '@angular/animations/browser/testing';
-import {ChangeDetectorRef, Component, HostBinding, HostListener, RendererFactory2, ViewChild} from '@angular/core';
-import {ɵDomRendererFactory2} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
+import {AUTO_STYLE, AnimationEvent, AnimationOptions, animate, animateChild, group, keyframes, query, state, style, transition, trigger, ɵPRE_STYLE as PRE_STYLE} from '@bangular/animations';
+import {AnimationDriver, ɵAnimationEngine, ɵNoopAnimationDriver} from '@bangular/animations/browser';
+import {MockAnimationDriver, MockAnimationPlayer} from '@bangular/animations/browser/testing';
+import {ChangeDetectorRef, Component, HostBinding, HostListener, RendererFactory2, ViewChild} from '@bangular/core';
+import {ɵDomRendererFactory2} from '@bangular/platform-browser';
+import {BrowserAnimationsModule} from '@bangular/platform-browser/animations';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
 
 import {TestBed, fakeAsync, flushMicrotasks} from '../../testing';
 

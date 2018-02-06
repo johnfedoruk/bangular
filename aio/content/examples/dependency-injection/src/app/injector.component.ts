@@ -1,6 +1,6 @@
 // #docplaster
 // #docregion
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@bangular/core';
 
 import { Car, Engine, Tires }   from './car/car';
 import { Hero }                 from './heroes/hero';

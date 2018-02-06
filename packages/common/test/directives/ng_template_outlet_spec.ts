@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CommonModule} from '@angular/common';
-import {Component, ContentChildren, Directive, Injectable, NO_ERRORS_SCHEMA, OnDestroy, QueryList, TemplateRef} from '@angular/core';
-import {ComponentFixture, TestBed, async} from '@angular/core/testing';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {CommonModule} from '@bangular/common';
+import {Component, ContentChildren, Directive, Injectable, NO_ERRORS_SCHEMA, OnDestroy, QueryList, TemplateRef} from '@bangular/core';
+import {ComponentFixture, TestBed, async} from '@bangular/core/testing';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 {
   describe('NgTemplateOutlet', () => {
@@ -32,7 +32,7 @@ import {expect} from '@angular/platform-browser/testing/src/matchers';
       });
     });
 
-    // https://github.com/angular/angular/issues/14778
+    // https://github.com/bangular/bangular/issues/14778
     it('should accept the component as the context', async(() => {
          const template = `<ng-container *ngTemplateOutlet="tpl; context: this"></ng-container>` +
              `<ng-template #tpl>{{context.foo}}</ng-template>`;

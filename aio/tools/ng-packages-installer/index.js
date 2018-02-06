@@ -14,7 +14,7 @@ const ANGULAR_ROOT_DIR = path.resolve(__dirname, '../../..');
 const ANGULAR_DIST_PACKAGES = path.resolve(ANGULAR_ROOT_DIR, 'dist/packages-dist');
 
 /**
- * A tool that can install Angular dependencies for a project from NPM or from the
+ * A tool that can install Bangular dependencies for a project from NPM or from the
  * locally built distributables.
  *
  * This tool is used to change dependencies of the `aio` application and the example
@@ -47,7 +47,7 @@ class NgPackagesInstaller {
 
   /**
    * Check whether the dependencies have been overridden with locally built
-   * Angular packages. This is done by checking for the `_local_.json` marker file.
+   * Bangular packages. This is done by checking for the `_local_.json` marker file.
    * This will emit a warning to the console if the dependencies have been overridden.
    */
   checkDependencies() {
@@ -57,7 +57,7 @@ class NgPackagesInstaller {
   }
 
   /**
-   * Install locally built Angular dependencies, overriding the dependencies in the package.json
+   * Install locally built Bangular dependencies, overriding the dependencies in the package.json
    * This will also write a "marker" file (`_local_.json`), which contains the overridden package.json
    * contents and acts as an indicator that dependencies have been overridden.
    */
@@ -67,7 +67,7 @@ class NgPackagesInstaller {
       const packages = this._getDistPackages();
 
       try {
-        // Overwrite local Angular packages dependencies to other Angular packages with local files.
+        // Overwrite local Bangular packages dependencies to other Bangular packages with local files.
         Object.keys(packages).forEach(key => {
           const pkg = packages[key];
           const tmpConfig = JSON.parse(JSON.stringify(pkg.config));
@@ -75,14 +75,14 @@ class NgPackagesInstaller {
           // Prevent accidental publishing of the package, if something goes wrong.
           tmpConfig.private = true;
 
-          // Overwrite project dependencies/devDependencies to Angular packages with local files.
+          // Overwrite project dependencies/devDependencies to Bangular packages with local files.
           ['dependencies', 'devDependencies'].forEach(prop => {
             const deps = tmpConfig[prop] || {};
             Object.keys(deps).forEach(key2 => {
               const pkg2 = packages[key2];
               if (pkg2) {
-                // point the core Angular packages at the distributable folder
-                deps[key2] = `file:${pkg2.parentDir}/${key2.replace('@angular/', '')}`;
+                // point the core Bangular packages at the distributable folder
+                deps[key2] = `file:${pkg2.parentDir}/${key2.replace('@bangular/', '')}`;
                 this._log(`Overriding dependency of local ${key} with local package: ${key2}: ${deps[key2]}`);
               }
             });
@@ -101,7 +101,7 @@ class NgPackagesInstaller {
         this._assignPeerDependencies(devPeers, dependencies, devDependencies);
 
         const localPackageConfig = Object.assign(Object.create(null), packageConfig, { dependencies, devDependencies });
-        localPackageConfig.__angular = { local: true };
+        localPackageConfig.__bangular = { local: true };
         const localPackageConfigJson = JSON.stringify(localPackageConfig, null, 2);
 
         try {
@@ -114,8 +114,8 @@ class NgPackagesInstaller {
           fs.writeFileSync(pathToPackageConfig, packageConfigFile);
         }
       } finally {
-        // Restore local Angular packages dependencies to other Angular packages.
-        this._log(`Restoring original ${PACKAGE_JSON} for local Angular packages.`);
+        // Restore local Bangular packages dependencies to other Bangular packages.
+        this._log(`Restoring original ${PACKAGE_JSON} for local Bangular packages.`);
         Object.keys(packages).forEach(key => {
           const pkg = packages[key];
           fs.writeFileSync(pkg.packageJsonPath, JSON.stringify(pkg.config));
@@ -154,13 +154,13 @@ class NgPackagesInstaller {
     Object.keys(dependencies).forEach(key => {
       const sourcePackage = packages[key];
       if (sourcePackage) {
-        // point the core Angular packages at the distributable folder
-        mergedDependencies[key] = `file:${sourcePackage.parentDir}/${key.replace('@angular/', '')}`;
+        // point the core Bangular packages at the distributable folder
+        mergedDependencies[key] = `file:${sourcePackage.parentDir}/${key.replace('@bangular/', '')}`;
         this._log(`Overriding dependency with local package: ${key}: ${mergedDependencies[key]}`);
         // grab peer dependencies
         const sourcePackagePeerDeps = sourcePackage.config.peerDependencies || {};
         Object.keys(sourcePackagePeerDeps)
-          // ignore peerDependencies which are already core Angular packages
+          // ignore peerDependencies which are already core Bangular packages
           .filter(key => !packages[key])
           .forEach(key => peerDependencies[key] = sourcePackagePeerDeps[key]);
       }
@@ -169,20 +169,20 @@ class NgPackagesInstaller {
   }
 
   /**
-   * A hash of Angular package configs.
+   * A hash of Bangular package configs.
    * (Detected as directories in '/packages/' that contain a top-level 'package.json' file.)
    */
   _getDistPackages() {
     const packageConfigs = Object.create(null);
 
     [ANGULAR_DIST_PACKAGES].forEach(distDir => {
-      this._log(`Angular distributable directory: ${distDir}.`);
+      this._log(`Bangular distributable directory: ${distDir}.`);
       shelljs
         .find(distDir)
         .map(filePath => filePath.slice(distDir.length + 1))
         .filter(filePath => PACKAGE_JSON_REGEX.test(filePath))
         .forEach(packagePath => {
-          const packageName = `@angular/${packagePath.slice(0, -PACKAGE_JSON.length -1)}`;
+          const packageName = `@bangular/${packagePath.slice(0, -PACKAGE_JSON.length -1)}`;
           if (this.ignorePackages.indexOf(packageName) === -1) {
             const packageConfig = require(path.resolve(distDir, packagePath));
             packageConfigs[packageName] = {
@@ -197,7 +197,7 @@ class NgPackagesInstaller {
 
     });
 
-    this._log('Found the following Angular distributables:', Object.keys(packageConfigs).map(key => `\n - ${key}`));
+    this._log('Found the following Bangular distributables:', Object.keys(packageConfigs).map(key => `\n - ${key}`));
     return packageConfigs;
   }
 
@@ -232,7 +232,7 @@ class NgPackagesInstaller {
       '!!!',
       '!!!  WARNING',
       '!!!',
-      `!!!  The project at "${absoluteProjectDir}" is running against the local Angular build.`,
+      `!!!  The project at "${absoluteProjectDir}" is running against the local Bangular build.`,
       '!!!',
       '!!!  To restore the npm packages run:',
       '!!!',
@@ -264,9 +264,9 @@ function main() {
 
     .option('debug', { describe: 'Print additional debug information.', default: false })
     .option('force', { describe: 'Force the command to execute even if not needed.', default: false })
-    .option('ignore-packages', { describe: 'List of Angular packages that should not be used in local mode.', default: [], array: true })
+    .option('ignore-packages', { describe: 'List of Bangular packages that should not be used in local mode.', default: [], array: true })
 
-    .command('overwrite <projectDir> [--force] [--debug] [--ignore-packages package1 package2]', 'Install dependencies from the locally built Angular distributables.', () => {}, argv => {
+    .command('overwrite <projectDir> [--force] [--debug] [--ignore-packages package1 package2]', 'Install dependencies from the locally built Bangular distributables.', () => {}, argv => {
       const installer = new NgPackagesInstaller(argv.projectDir, argv);
       installer.installLocalDependencies();
     })

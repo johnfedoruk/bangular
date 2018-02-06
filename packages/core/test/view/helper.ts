@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injector, NgModuleRef} from '@angular/core';
-import {ArgumentType, NodeCheckFn, NodeDef, Services, ViewData, ViewDefinition, ViewDefinitionFactory, ViewFlags, ViewUpdateFn, initServicesIfNeeded, rootRenderNodes, viewDef} from '@angular/core/src/view/index';
-import {TestBed} from '@angular/core/testing';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
+import {Injector, NgModuleRef} from '@bangular/core';
+import {ArgumentType, NodeCheckFn, NodeDef, Services, ViewData, ViewDefinition, ViewDefinitionFactory, ViewFlags, ViewUpdateFn, initServicesIfNeeded, rootRenderNodes, viewDef} from '@bangular/core/src/view/index';
+import {TestBed} from '@bangular/core/testing';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
 
 export function isBrowser() {
   return getDOM().supportsDOMEvents();

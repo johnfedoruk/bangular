@@ -1,9 +1,9 @@
 // #docplaster
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 import {
   HttpEvent, HttpHeaders, HttpRequest, HttpResponse,
   HttpInterceptor, HttpHandler
-} from '@angular/common/http';
+} from '@bangular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';

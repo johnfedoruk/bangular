@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AST, AstVisitor, Binary, BindingPipe, Chain, Conditional, FunctionCall, ImplicitReceiver, Interpolation, KeyedRead, KeyedWrite, LiteralArray, LiteralMap, LiteralPrimitive, MethodCall, NonNullAssert, PrefixNot, PropertyRead, PropertyWrite, Quote, SafeMethodCall, SafePropertyRead, visitAstChildren} from '@angular/compiler';
+import {AST, AstVisitor, Binary, BindingPipe, Chain, Conditional, FunctionCall, ImplicitReceiver, Interpolation, KeyedRead, KeyedWrite, LiteralArray, LiteralMap, LiteralPrimitive, MethodCall, NonNullAssert, PrefixNot, PropertyRead, PropertyWrite, Quote, SafeMethodCall, SafePropertyRead, visitAstChildren} from '@bangular/compiler';
 
 import {BuiltinType, Signature, Span, Symbol, SymbolQuery, SymbolTable} from './symbols';
 
@@ -195,7 +195,7 @@ export class AstType implements AstVisitor {
 
   visitFunctionCall(ast: FunctionCall) {
     // The type of a function call is the return type of the selected signature.
-    // The signature is selected based on the types of the arguments. Angular doesn't
+    // The signature is selected based on the types of the arguments. Bangular doesn't
     // support contextual typing of arguments so this is simpler than TypeScript's
     // version.
     const args = ast.args.map(arg => this.getType(arg));

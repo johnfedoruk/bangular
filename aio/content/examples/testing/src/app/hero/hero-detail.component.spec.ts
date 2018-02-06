@@ -1,10 +1,10 @@
 // #docplaster
 import {
   async, ComponentFixture, fakeAsync, inject, TestBed, tick
-} from '@angular/core/testing';
+} from '@bangular/core/testing';
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { By }           from '@bangular/platform-browser';
+import { DebugElement } from '@bangular/core';
 
 import {
   ActivatedRoute, ActivatedRouteStub, click, newEvent, Router, RouterStub
@@ -106,7 +106,7 @@ function overrideSetup() {
     const newName = 'New Name';
 
     page.nameInput.value = newName;
-    page.nameInput.dispatchEvent(newEvent('input')); // tell Angular
+    page.nameInput.dispatchEvent(newEvent('input')); // tell Bangular
 
     expect(comp.hero.name).toBe(newName, 'component hero has new name');
     expect(hdsSpy.testHero.name).toBe(origName, 'service hero unchanged before save');
@@ -198,10 +198,10 @@ function heroModuleSetup() {
       // simulate user entering new name into the input box
       page.nameInput.value = inputName;
 
-      // dispatch a DOM event so that Angular learns of input value change.
+      // dispatch a DOM event so that Bangular learns of input value change.
       page.nameInput.dispatchEvent(newEvent('input'));
 
-      // Tell Angular to update the output span through the title pipe
+      // Tell Bangular to update the output span through the title pipe
       fixture.detectChanges();
 
       expect(page.nameDisplay.textContent).toBe(titleCaseName);
@@ -258,7 +258,7 @@ function heroModuleSetup() {
 }
 
 /////////////////////
-import { FormsModule }         from '@angular/forms';
+import { FormsModule }         from '@bangular/forms';
 import { TitleCasePipe }       from '../shared/title-case.pipe';
 
 function formsModuleSetup() {

@@ -1,14 +1,14 @@
 // #docplaster
 // #docregion
 // #docregion import-async
-import { async } from '@angular/core/testing';
+import { async } from '@bangular/core/testing';
 // #enddocregion import-async
 // #docregion import-ComponentFixtureAutoDetect
-import { ComponentFixtureAutoDetect } from '@angular/core/testing';
+import { ComponentFixtureAutoDetect } from '@bangular/core/testing';
 // #enddocregion import-ComponentFixtureAutoDetect
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By }              from '@angular/platform-browser';
-import { DebugElement }    from '@angular/core';
+import { ComponentFixture, TestBed } from '@bangular/core/testing';
+import { By }              from '@bangular/platform-browser';
+import { DebugElement }    from '@bangular/core';
 
 import { BannerComponent } from './banner.component';
 
@@ -46,7 +46,7 @@ describe('BannerComponent (AutoChangeDetect)', () => {
   it('should still see original title after comp.title change', () => {
     const oldTitle = comp.title;
     comp.title = 'Test Title';
-    // Displayed title is old because Angular didn't hear the change :(
+    // Displayed title is old because Bangular didn't hear the change :(
     expect(el.textContent).toContain(oldTitle);
   });
 

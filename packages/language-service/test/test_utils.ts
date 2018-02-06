@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as fs from 'fs';
@@ -18,7 +18,7 @@ export type MockDirectory = {
   [name: string]: MockData | undefined;
 };
 
-const angularts = /@angular\/(\w|\/|-)+\.tsx?$/;
+const bangularts = /@bangular\/(\w|\/|-)+\.tsx?$/;
 const rxjsts = /rxjs\/(\w|\/)+\.tsx?$/;
 const rxjsmetadata = /rxjs\/(\w|\/)+\.metadata\.json?$/;
 const tsxfile = /\.tsx$/;
@@ -48,22 +48,22 @@ export function validateCache(): {exists: string[], unused: string[], reported: 
   return {exists, unused, reported: iterableToArray(reportedMissing.keys())};
 }
 
-missingCache.set('/node_modules/@angular/core.d.ts', true);
-missingCache.set('/node_modules/@angular/animations.d.ts', true);
-missingCache.set('/node_modules/@angular/platform-browser/animations.d.ts', true);
-missingCache.set('/node_modules/@angular/common.d.ts', true);
-missingCache.set('/node_modules/@angular/forms.d.ts', true);
-missingCache.set('/node_modules/@angular/core/src/di/provider.metadata.json', true);
+missingCache.set('/node_modules/@bangular/core.d.ts', true);
+missingCache.set('/node_modules/@bangular/animations.d.ts', true);
+missingCache.set('/node_modules/@bangular/platform-browser/animations.d.ts', true);
+missingCache.set('/node_modules/@bangular/common.d.ts', true);
+missingCache.set('/node_modules/@bangular/forms.d.ts', true);
+missingCache.set('/node_modules/@bangular/core/src/di/provider.metadata.json', true);
 missingCache.set(
-    '/node_modules/@angular/core/src/change_detection/pipe_transform.metadata.json', true);
-missingCache.set('/node_modules/@angular/core/src/reflection/types.metadata.json', true);
+    '/node_modules/@bangular/core/src/change_detection/pipe_transform.metadata.json', true);
+missingCache.set('/node_modules/@bangular/core/src/reflection/types.metadata.json', true);
 missingCache.set(
-    '/node_modules/@angular/core/src/reflection/platform_reflection_capabilities.metadata.json',
+    '/node_modules/@bangular/core/src/reflection/platform_reflection_capabilities.metadata.json',
     true);
-missingCache.set('/node_modules/@angular/forms/src/directives/form_interface.metadata.json', true);
+missingCache.set('/node_modules/@bangular/forms/src/directives/form_interface.metadata.json', true);
 
 export class MockTypescriptHost implements ts.LanguageServiceHost {
-  private angularPath: string|undefined;
+  private bangularPath: string|undefined;
   private nodeModulesPath: string;
   private scriptVersion = new Map<string, number>();
   private overrides = new Map<string, string>();
@@ -75,9 +75,9 @@ export class MockTypescriptHost implements ts.LanguageServiceHost {
       private scriptNames: string[], private data: MockData,
       private node_modules: string = 'node_modules', private myPath: typeof path = path) {
     const moduleFilename = module.filename.replace(/\\/g, '/');
-    let angularIndex = moduleFilename.indexOf('@angular');
-    if (angularIndex >= 0)
-      this.angularPath = moduleFilename.substr(0, angularIndex).replace('/all/', '/all/@angular/');
+    let bangularIndex = moduleFilename.indexOf('@bangular');
+    if (bangularIndex >= 0)
+      this.bangularPath = moduleFilename.substr(0, bangularIndex).replace('/all/', '/all/@bangular/');
     let distIndex = moduleFilename.indexOf('/dist/all');
     if (distIndex >= 0)
       this.nodeModulesPath = myPath.join(moduleFilename.substr(0, distIndex), 'node_modules');
@@ -113,7 +113,7 @@ export class MockTypescriptHost implements ts.LanguageServiceHost {
     this.scriptNames.push(fileName);
   }
 
-  forgetAngular() { this.angularPath = undefined; }
+  forgetBangular() { this.bangularPath = undefined; }
 
   overrideOptions(cb: (options: ts.CompilerOptions) => ts.CompilerOptions) {
     this.options = cb((Object as any).assign({}, this.options));
@@ -190,7 +190,7 @@ export class MockTypescriptHost implements ts.LanguageServiceHost {
       if (effectiveName === fileName)
         return open(fileName, this.data);
       else if (
-          !fileName.match(angularts) && !fileName.match(rxjsts) && !fileName.match(rxjsmetadata) &&
+          !fileName.match(bangularts) && !fileName.match(rxjsts) && !fileName.match(rxjsmetadata) &&
           !fileName.match(tsxfile)) {
         if (fs.existsSync(effectiveName)) {
           return fs.readFileSync(effectiveName, 'utf8');
@@ -205,18 +205,18 @@ export class MockTypescriptHost implements ts.LanguageServiceHost {
 
   private getEffectiveName(name: string): string {
     const node_modules = this.node_modules;
-    const at_angular = '/@angular';
+    const at_bangular = '/@bangular';
     if (name.startsWith('/' + node_modules)) {
-      if (this.nodeModulesPath && !name.startsWith('/' + node_modules + at_angular)) {
+      if (this.nodeModulesPath && !name.startsWith('/' + node_modules + at_bangular)) {
         let result = this.myPath.join(this.nodeModulesPath, name.substr(node_modules.length + 1));
         if (!name.match(rxjsts))
           if (fs.existsSync(result)) {
             return result;
           }
       }
-      if (this.angularPath && name.startsWith('/' + node_modules + at_angular)) {
+      if (this.bangularPath && name.startsWith('/' + node_modules + at_bangular)) {
         return this.myPath.join(
-            this.angularPath, name.substr(node_modules.length + at_angular.length + 1));
+            this.bangularPath, name.substr(node_modules.length + at_bangular.length + 1));
       }
     }
     return name;

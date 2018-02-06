@@ -1,6 +1,6 @@
-import { DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { DebugElement } from '@bangular/core';
+import { ComponentFixture, TestBed } from '@bangular/core/testing';
+import { By } from '@bangular/platform-browser';
 import { SearchResult } from 'app/search/interfaces';
 import { SearchResultsComponent } from './search-results.component';
 

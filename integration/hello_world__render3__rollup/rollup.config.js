@@ -1,4 +1,4 @@
-import buildOptimizer from 'rollup-plugin-angular-optimizer'
+import buildOptimizer from 'rollup-plugin-bangular-optimizer'
 import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import uglify from 'rollup-plugin-uglify';

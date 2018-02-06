@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@bangular/core/testing';
 import { AppModule } from 'app/app.module';
 import { ComponentsOrModulePath, EMBEDDED_COMPONENTS } from 'app/embed-components/embed-components.service';
 import { embeddedComponents } from 'app/embedded/embedded.module';

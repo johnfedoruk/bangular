@@ -5,7 +5,7 @@
 // and it highlights in blue instead of gold
 
 // #docregion
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef } from '@bangular/core';
 
 // Highlight the host element or any InputElement in blue
 @Directive({ selector: '[highlight], input' })

@@ -3,17 +3,17 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, ComponentRef, Renderer2, RendererFactory2, RendererType2, RootRenderer} from '@angular/core';
-import {TestBed} from '@angular/core/testing';
-import {platformBrowserDynamicTesting} from '@angular/platform-browser-dynamic/testing';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {DomRendererFactory2} from '@angular/platform-browser/src/dom/dom_renderer';
-import {BrowserTestingModule} from '@angular/platform-browser/testing';
-import {browserDetection, dispatchEvent} from '@angular/platform-browser/testing/src/browser_util';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {Component, ComponentRef, Renderer2, RendererFactory2, RendererType2, RootRenderer} from '@bangular/core';
+import {TestBed} from '@bangular/core/testing';
+import {platformBrowserDynamicTesting} from '@bangular/platform-browser-dynamic/testing';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {DomRendererFactory2} from '@bangular/platform-browser/src/dom/dom_renderer';
+import {BrowserTestingModule} from '@bangular/platform-browser/testing';
+import {browserDetection, dispatchEvent} from '@bangular/platform-browser/testing/src/browser_util';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 import {ClientMessageBrokerFactory} from '../../../src/web_workers/shared/client_message_broker';
 import {RenderStore} from '../../../src/web_workers/shared/render_store';

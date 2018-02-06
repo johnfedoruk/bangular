@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive} from '@angular/core';
-import {ElementRef} from '@angular/core/src/linker/element_ref';
-import {ComponentFixture, TestBed, async} from '@angular/core/testing';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {Component, Directive} from '@bangular/core';
+import {ElementRef} from '@bangular/core/src/linker/element_ref';
+import {ComponentFixture, TestBed, async} from '@bangular/core/testing';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 {
   describe('non-bindable', () => {

@@ -4,10 +4,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AotCompiler, AotCompilerHost, AotCompilerOptions, EmitterVisitorContext, FormattedMessageChain, GeneratedFile, MessageBundle, NgAnalyzedFile, NgAnalyzedModules, ParseSourceSpan, PartialModule, Position, Serializer, TypeScriptEmitter, Xliff, Xliff2, Xmb, core, createAotCompiler, getParseErrors, isFormattedError, isSyntaxError} from '@angular/compiler';
+import {AotCompiler, AotCompilerHost, AotCompilerOptions, EmitterVisitorContext, FormattedMessageChain, GeneratedFile, MessageBundle, NgAnalyzedFile, NgAnalyzedModules, ParseSourceSpan, PartialModule, Position, Serializer, TypeScriptEmitter, Xliff, Xliff2, Xmb, core, createAotCompiler, getParseErrors, isFormattedError, isSyntaxError} from '@bangular/compiler';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as ts from 'typescript';
@@ -19,9 +19,9 @@ import {CompilerHost, CompilerOptions, CustomTransformers, DEFAULT_ERROR_CODE, D
 import {CodeGenerator, TsCompilerAotCompilerTypeCheckHostAdapter, getOriginalReferences} from './compiler_host';
 import {LowerMetadataTransform, getExpressionLoweringTransformFactory} from './lower_expressions';
 import {MetadataCache, MetadataTransformer} from './metadata_cache';
-import {getAngularEmitterTransformFactory} from './node_emitter_transform';
+import {getBangularEmitterTransformFactory} from './node_emitter_transform';
 import {PartialModuleMetadataTransformer} from './r3_metadata_transform';
-import {getAngularClassTransformerFactory} from './r3_transform';
+import {getBangularClassTransformerFactory} from './r3_transform';
 import {GENERATED_FILES, StructureIsReused, createMessageDiagnostic, isInRootDir, ngToTsDiagnostic, tsStructureIsReused, userError} from './util';
 
 
@@ -44,7 +44,7 @@ const defaultEmitCallback: TsEmitCallback =
         program.emit(
             targetSourceFile, writeFile, cancellationToken, emitOnlyDtsFiles, customTransformers);
 
-class AngularCompilerProgram implements Program {
+class BangularCompilerProgram implements Program {
   private rootNames: string[];
   private metadataCache: MetadataCache;
   private loweringMetadataTransform: LowerMetadataTransform;
@@ -73,7 +73,7 @@ class AngularCompilerProgram implements Program {
     const [major, minor] = ts.version.split('.');
 
     Number(major) > 2 || (Number(major) === 2 && Number(minor) >= 4) ||
-        userError('The Angular Compiler requires TypeScript >= 2.4.');
+        userError('The Bangular Compiler requires TypeScript >= 2.4.');
 
     this.oldTsProgram = oldProgram ? oldProgram.getTsProgram() : undefined;
     if (oldProgram) {
@@ -187,14 +187,14 @@ class AngularCompilerProgram implements Program {
 
   loadNgStructureAsync(): Promise<void> {
     if (this._analyzedModules) {
-      throw new Error('Angular structure already loaded');
+      throw new Error('Bangular structure already loaded');
     }
     return Promise.resolve()
         .then(() => {
           const {tmpProgram, sourceFiles, rootNames} = this._createProgramWithBasicStubs();
           return this.compiler.loadFilesAsync(sourceFiles).then(analyzedModules => {
             if (this._analyzedModules) {
-              throw new Error('Angular structure loaded both synchronously and asynchronously');
+              throw new Error('Bangular structure loaded both synchronously and asynchronously');
             }
             this._updateProgramWithTypeCheckStubs(tmpProgram, analyzedModules, rootNames);
           });
@@ -469,10 +469,10 @@ class AngularCompilerProgram implements Program {
           getExpressionLoweringTransformFactory(this.loweringMetadataTransform, this.tsProgram));
     }
     if (genFiles) {
-      beforeTs.push(getAngularEmitterTransformFactory(genFiles, this.getTsProgram()));
+      beforeTs.push(getBangularEmitterTransformFactory(genFiles, this.getTsProgram()));
     }
     if (partialModules) {
-      beforeTs.push(getAngularClassTransformerFactory(partialModules));
+      beforeTs.push(getBangularClassTransformerFactory(partialModules));
 
       // If we have partial modules, the cached metadata might be incorrect as it doesn't reflect
       // the partial module transforms.
@@ -624,7 +624,7 @@ class AngularCompilerProgram implements Program {
         return {genFiles: [], genDiags: []};
       }
       // TODO(tbosch): allow generating files that are not in the rootDir
-      // See https://github.com/angular/angular/issues/19337
+      // See https://github.com/bangular/bangular/issues/19337
       let genFiles = this.compiler.emitAllImpls(this.analyzedModules)
                          .filter(genFile => isInRootDir(genFile.genFileUrl, this.options));
       if (this.oldProgramEmittedGeneratedFiles) {
@@ -727,7 +727,7 @@ export function createProgram({rootNames, options, host, oldProgram}: {
   options: CompilerOptions,
   host: CompilerHost, oldProgram?: Program
 }): Program {
-  return new AngularCompilerProgram(rootNames, options, host, oldProgram);
+  return new BangularCompilerProgram(rootNames, options, host, oldProgram);
 }
 
 // Compute the AotCompiler options
@@ -776,7 +776,7 @@ function getNgOptionDiagnostics(options: CompilerOptions): ReadonlyArray<Diagnos
       default:
         return [{
           messageText:
-              'Angular compiler options "annotationsAs" only supports "static fields" and "decorators"',
+              'Bangular compiler options "annotationsAs" only supports "static fields" and "decorators"',
           category: ts.DiagnosticCategory.Error,
           source: SOURCE,
           code: DEFAULT_ERROR_CODE

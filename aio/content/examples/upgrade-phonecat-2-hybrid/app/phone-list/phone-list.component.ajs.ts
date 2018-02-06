@@ -1,5 +1,5 @@
 // #docregion
-declare var angular: angular.IAngularStatic;
+declare var bangular: bangular.IBangularStatic;
 import { Phone, PhoneData } from '../core/phone/phone.service';
 
 class PhoneListController {
@@ -16,7 +16,7 @@ class PhoneListController {
 
 }
 
-angular.
+bangular.
   module('phoneList').
   component('phoneList', {
     templateUrl: 'app/phone-list/phone-list.template.html',

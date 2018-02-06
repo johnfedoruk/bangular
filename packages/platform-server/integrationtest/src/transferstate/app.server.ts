@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgModule} from '@angular/core';
-import {ServerModule, ServerTransferStateModule} from '@angular/platform-server';
+import {NgModule} from '@bangular/core';
+import {ServerModule, ServerTransferStateModule} from '@bangular/platform-server';
 
 import {TransferStateModule} from './app';
 import {TransferStateComponent} from './transfer-state.component';

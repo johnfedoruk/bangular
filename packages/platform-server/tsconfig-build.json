@@ -5,16 +5,16 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@angular/animations": ["../../dist/packages/animations"],
-      "@angular/animations/browser": ["../../dist/packages/animations/browser"],
-      "@angular/core": ["../../dist/packages/core"],
-      "@angular/common": ["../../dist/packages/common"],
-      "@angular/common/http": ["../../dist/packages/common/http"],
-      "@angular/compiler": ["../../dist/packages/compiler"],
-      "@angular/http": ["../../dist/packages/http"],
-      "@angular/platform-browser": ["../../dist/packages/platform-browser"],
-      "@angular/platform-browser/animations": ["../../dist/packages/platform-browser/animations"],
-      "@angular/platform-browser-dynamic": ["../../dist/packages/platform-browser-dynamic"]
+      "@bangular/animations": ["../../dist/packages/animations"],
+      "@bangular/animations/browser": ["../../dist/packages/animations/browser"],
+      "@bangular/core": ["../../dist/packages/core"],
+      "@bangular/common": ["../../dist/packages/common"],
+      "@bangular/common/http": ["../../dist/packages/common/http"],
+      "@bangular/compiler": ["../../dist/packages/compiler"],
+      "@bangular/http": ["../../dist/packages/http"],
+      "@bangular/platform-browser": ["../../dist/packages/platform-browser"],
+      "@bangular/platform-browser/animations": ["../../dist/packages/platform-browser/animations"],
+      "@bangular/platform-browser-dynamic": ["../../dist/packages/platform-browser-dynamic"]
     },
     "outDir": "../../dist/packages/platform-server"
   },
@@ -25,11 +25,11 @@
     "../../node_modules/zone.js/dist/zone.js.d.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "platform-server.js",
-    "flatModuleId": "@angular/platform-server"
+    "flatModuleId": "@bangular/platform-server"
   }
 }

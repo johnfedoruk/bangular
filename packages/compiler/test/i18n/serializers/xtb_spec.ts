@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {escapeRegExp} from '@angular/compiler/src/util';
+import {escapeRegExp} from '@bangular/compiler/src/util';
 import {serializeNodes} from '../../../src/i18n/digest';
 import * as i18n from '../../../src/i18n/i18n_ast';
 import {Xtb} from '../../../src/i18n/serializers/xtb';
@@ -109,11 +109,11 @@ import {Xtb} from '../../../src/i18n/serializers/xtb';
     });
 
     describe('errors', () => {
-      it('should be able to parse non-angular xtb files without error', () => {
+      it('should be able to parse non-bangular xtb files without error', () => {
         const XTB = `<?xml version="1.0" encoding="UTF-8" ?>
 <translationbundle>
-  <translation id="angular">is great</translation>
-  <translation id="non angular">is <invalid>less</invalid> {count, plural, =0 {{GREAT}}}</translation>
+  <translation id="bangular">is great</translation>
+  <translation id="non bangular">is <invalid>less</invalid> {count, plural, =0 {{GREAT}}}</translation>
 </translationbundle>`;
 
         // Invalid messages should not cause the parser to throw
@@ -123,10 +123,10 @@ import {Xtb} from '../../../src/i18n/serializers/xtb';
         }).not.toThrow();
 
         expect(Object.keys(i18nNodesByMsgId).length).toEqual(2);
-        expect(serializeNodes(i18nNodesByMsgId['angular']).join('')).toEqual('is great');
+        expect(serializeNodes(i18nNodesByMsgId['bangular']).join('')).toEqual('is great');
         // Messages that contain unsupported feature should throw on access
         expect(() => {
-          const read = i18nNodesByMsgId['non angular'];
+          const read = i18nNodesByMsgId['non bangular'];
         }).toThrowError(/xtb parse errors/);
       });
 

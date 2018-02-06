@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable} from '@angular/core';
+import {Injectable} from '@bangular/core';
 import {Observable} from 'rxjs/Observable';
 import {Observer} from 'rxjs/Observer';
 
@@ -24,7 +24,7 @@ const JSONP_ERR_WRONG_METHOD = 'JSONP requests must use GET request method.';
 /**
  * Base class for an in-flight JSONP request.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 export class JSONPConnection implements Connection {
   private _id: string;
@@ -137,7 +137,7 @@ export class JSONPConnection implements Connection {
 /**
  * A {@link ConnectionBackend} that uses the JSONP strategy of making requests.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 @Injectable()
 export class JSONPBackend extends ConnectionBackend {

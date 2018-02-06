@@ -1,7 +1,7 @@
 'use strict';
 
 // Define the `phonecatApp` module
-angular.module('phonecatApp', [
+bangular.module('phonecatApp', [
   'ngAnimate',
   'ngRoute',
   'core',

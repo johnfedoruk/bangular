@@ -1,5 +1,5 @@
 /* tslint:disable:member-ordering */
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@bangular/core';
 
 @Directive({
   selector: '[appHighlight]'

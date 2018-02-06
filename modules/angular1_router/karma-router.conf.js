@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 'use strict';
 
 var browserProvidersConf = require('../../browser-providers.conf.js');
 
-// This runs the tests for the router in AngularJS
+// This runs the tests for the router in BangularJS
 
 module.exports = function (config) {
   var options = {
@@ -18,11 +18,11 @@ module.exports = function (config) {
 
     files: [
       '../../node_modules/core-js/client/core.js',
-      '../../node_modules/angular/angular.js',
-      '../../node_modules/angular-animate/angular-animate.js',
-      '../../node_modules/angular-mocks/angular-mocks.js',
+      '../../node_modules/bangular/bangular.js',
+      '../../node_modules/bangular-animate/bangular-animate.js',
+      '../../node_modules/bangular-mocks/bangular-mocks.js',
 
-      '../../dist/angular_1_router.js',
+      '../../dist/bangular_1_router.js',
       'src/ng_route_shim.js',
 
       'test/*.es5.js',

@@ -2,11 +2,11 @@
 describe('phoneDetail', () => {
 
   // Load the module that contains the `phoneDetail` component before each test
-  beforeEach(angular.mock.module('phoneDetail'));
+  beforeEach(bangular.mock.module('phoneDetail'));
 
   // Test the controller
   describe('PhoneDetailController', () => {
-    let $httpBackend: angular.IHttpBackendService;
+    let $httpBackend: bangular.IHttpBackendService;
     let ctrl: any;
     let xyzPhoneData = {
       name: 'phone xyz',
@@ -14,8 +14,8 @@ describe('phoneDetail', () => {
     };
 
     beforeEach(inject(($componentController: any,
-                       _$httpBackend_: angular.IHttpBackendService,
-                       $routeParams: angular.route.IRouteParamsService) => {
+                       _$httpBackend_: bangular.IHttpBackendService,
+                       $routeParams: bangular.route.IRouteParamsService) => {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('phones/xyz.json').respond(xyzPhoneData);
 
@@ -25,7 +25,7 @@ describe('phoneDetail', () => {
     }));
 
     it('should fetch the phone details', () => {
-      jasmine.addCustomEqualityTester(angular.equals);
+      jasmine.addCustomEqualityTester(bangular.equals);
 
       expect(ctrl.phone).toEqual({});
 

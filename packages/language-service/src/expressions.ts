@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AST, ASTWithSource, AstPath as AstPathBase, NullAstVisitor, visitAstChildren} from '@angular/compiler';
-import {AstType} from '@angular/compiler-cli/src/language_services';
+import {AST, ASTWithSource, AstPath as AstPathBase, NullAstVisitor, visitAstChildren} from '@bangular/compiler';
+import {AstType} from '@bangular/compiler-cli/src/language_services';
 
 import {BuiltinType, Span, Symbol, SymbolQuery, SymbolTable} from './types';
 import {inSpan} from './utils';

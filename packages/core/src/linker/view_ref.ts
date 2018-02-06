@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {ApplicationRef} from '../application_ref';
@@ -25,7 +25,7 @@ export abstract class ViewRef extends ChangeDetectorRef {
 }
 
 /**
- * Represents an Angular View.
+ * Represents an Bangular View.
  *
  * <!-- TODO: move the next two paragraphs to the dev guide -->
  * A View is a fundamental building block of the application UI. It is the smallest grouping of

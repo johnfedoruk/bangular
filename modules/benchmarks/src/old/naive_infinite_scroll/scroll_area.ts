@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgFor} from '@angular/common';
-import {Component, Directive} from '@angular/core';
+import {NgFor} from '@bangular/common';
+import {Component, Directive} from '@bangular/core';
 
 import {HEIGHT, ITEMS, ITEM_HEIGHT, Offering, ROW_WIDTH, VIEW_PORT_HEIGHT, VISIBLE_ITEMS} from './common';
 import {generateOfferings} from './random_data';

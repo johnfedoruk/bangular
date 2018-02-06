@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 import {
   HttpClient, HttpEvent, HttpEventType, HttpProgressEvent,
   HttpRequest, HttpResponse, HttpErrorResponse
-} from '@angular/common/http';
+} from '@bangular/common/http';
 
 import { of } from 'rxjs/observable/of';
 import { catchError, last, map, tap } from 'rxjs/operators';

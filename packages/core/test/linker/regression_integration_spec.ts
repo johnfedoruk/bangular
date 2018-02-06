@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ANALYZE_FOR_ENTRY_COMPONENTS, ApplicationRef, Component, ComponentRef, ContentChild, Directive, ErrorHandler, EventEmitter, HostListener, InjectionToken, Injector, Input, NgModule, NgModuleRef, NgZone, Output, Pipe, PipeTransform, Provider, QueryList, Renderer2, SimpleChanges, TemplateRef, ViewChildren, ViewContainerRef, destroyPlatform} from '@angular/core';
-import {TestBed, async, fakeAsync, inject, tick} from '@angular/core/testing';
-import {BrowserModule, By, DOCUMENT} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {ANALYZE_FOR_ENTRY_COMPONENTS, ApplicationRef, Component, ComponentRef, ContentChild, Directive, ErrorHandler, EventEmitter, HostListener, InjectionToken, Injector, Input, NgModule, NgModuleRef, NgZone, Output, Pipe, PipeTransform, Provider, QueryList, Renderer2, SimpleChanges, TemplateRef, ViewChildren, ViewContainerRef, destroyPlatform} from '@bangular/core';
+import {TestBed, async, fakeAsync, inject, tick} from '@bangular/core/testing';
+import {BrowserModule, By, DOCUMENT} from '@bangular/platform-browser';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 {
   describe('jit', () => { declareTests({useJit: true}); });
@@ -432,7 +432,7 @@ function declareTestsUsingBootstrap() {
             this.throwIfNeeded();
           }
           throwIfNeeded() {
-            NgZone.assertInAngularZone();
+            NgZone.assertInBangularZone();
             if (this.thrownValue !== this.value) {
               this.thrownValue = this.value;
               throw new Error(`Error: ${this.value}`);
@@ -459,7 +459,7 @@ function declareTestsUsingBootstrap() {
         }
 
         platformBrowserDynamic().bootstrapModule(TestModule).then((ref) => {
-          NgZone.assertNotInAngularZone();
+          NgZone.assertNotInBangularZone();
           const appRef = ref.injector.get(ApplicationRef) as ApplicationRef;
           const compRef = appRef.components[0] as ComponentRef<ErrorComp>;
           const compEl = compRef.location.nativeElement;

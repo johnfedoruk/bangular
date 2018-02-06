@@ -1,6 +1,6 @@
-Angular
+Bangular
 =======
 
-The sources for this package are in the main [Angular](https://github.com/angular/angular) repo. Please file issues and pull requests against that repo.
+The sources for this package are in the main [Bangular](https://github.com/bangular/bangular) repo. Please file issues and pull requests against that repo.
 
 License: MIT

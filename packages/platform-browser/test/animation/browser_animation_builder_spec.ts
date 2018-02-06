@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {AnimationBuilder, animate, style} from '@angular/animations';
-import {AnimationDriver} from '@angular/animations/browser';
-import {MockAnimationDriver} from '@angular/animations/browser/testing';
-import {Component, ViewChild} from '@angular/core';
-import {TestBed, fakeAsync, flushMicrotasks} from '@angular/core/testing';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {AnimationBuilder, animate, style} from '@bangular/animations';
+import {AnimationDriver} from '@bangular/animations/browser';
+import {MockAnimationDriver} from '@bangular/animations/browser/testing';
+import {Component, ViewChild} from '@bangular/core';
+import {TestBed, fakeAsync, flushMicrotasks} from '@bangular/core/testing';
+import {NoopAnimationsModule} from '@bangular/platform-browser/animations';
 
 import {BrowserAnimationBuilder} from '../../animations/src/animation_builder';
 import {el} from '../../testing/src/browser_util';

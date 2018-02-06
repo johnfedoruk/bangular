@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Directive, ElementRef, Injectable, Injector, Input, OnDestroy, OnInit, Renderer2, forwardRef} from '@angular/core';
+import {Directive, ElementRef, Injectable, Injector, Input, OnDestroy, OnInit, Renderer2, forwardRef} from '@bangular/core';
 
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from './control_value_accessor';
 import {NgControl} from './ng_control';
@@ -18,7 +18,7 @@ export const RADIO_VALUE_ACCESSOR: any = {
 };
 
 /**
- * Internal class used by Angular to uncheck radio buttons with the matching name.
+ * Internal class used by Bangular to uncheck radio buttons with the matching name.
  */
 @Injectable()
 export class RadioControlRegistry {
@@ -79,7 +79,7 @@ export class RadioControlRegistry {
  *
  * {@example forms/ts/reactiveRadioButtons/reactive_radio_button_example.ts region='Reactive'}
  *
- *  * **npm package**: `@angular/forms`
+ *  * **npm package**: `@bangular/forms`
  *
  *  @stable
  */

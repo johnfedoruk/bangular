@@ -1,6 +1,6 @@
 /* tslint:disable */
 // Exact copy of contact/highlight.directive except for color and message
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef } from '@bangular/core';
 
 @Directive({ selector: '[highlight], input' })
 /** Highlight the attached element or an InputElement in gray */

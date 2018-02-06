@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {ChangeDetectionStrategy} from '../change_detection/constants';
@@ -21,13 +21,13 @@ import {ViewEncapsulation} from './view';
  */
 export interface DirectiveDecorator {
   /**
-   * @whatItDoes Marks a class as an Angular directive and collects directive configuration
+   * @whatItDoes Marks a class as an Bangular directive and collects directive configuration
    * metadata.
    *
    * @howToUse
    *
    * ```
-   * import {Directive} from '@angular/core';
+   * import {Directive} from '@bangular/core';
    *
    * @Directive({
    *   selector: 'my-directive',
@@ -38,7 +38,7 @@ export interface DirectiveDecorator {
    *
    * @description
    *
-   * Directive decorator allows you to mark a class as an Angular directive and provide additional
+   * Directive decorator allows you to mark a class as an Bangular directive and provide additional
    * metadata that determines how the directive should be processed, instantiated and used at
    * runtime.
    *
@@ -80,7 +80,7 @@ export interface Directive {
   /**
    * The CSS selector that triggers the instantiation of a directive.
    *
-   * Angular only allows directives to trigger on CSS selectors that do not cross element
+   * Bangular only allows directives to trigger on CSS selectors that do not cross element
    * boundaries.
    *
    * `selector` may be declared as one of the following:
@@ -114,7 +114,7 @@ export interface Directive {
   /**
    * Enumerates the set of data-bound input properties for a directive
    *
-   * Angular automatically updates input properties during change detection.
+   * Bangular automatically updates input properties during change detection.
    *
    * The `inputs` property defines a set of `directiveProperty` to `bindingProperty`
    * configuration:
@@ -141,7 +141,7 @@ export interface Directive {
    *   bankName: string;
    *   id: string;
    *
-   *   // this property is not bound, and won't be automatically updated by Angular
+   *   // this property is not bound, and won't be automatically updated by Bangular
    *   normalizedBankName: string;
    * }
    *
@@ -251,7 +251,7 @@ export interface Directive {
    *
    * Specifies which DOM properties a directive updates.
    *
-   * Angular automatically checks host property bindings during change detection.
+   * Bangular automatically checks host property bindings during change detection.
    * If a binding changes, it will update the host element of the directive.
    *
    * ### Example ([live demo](http://plnkr.co/edit/gNg0ED?p=preview))
@@ -410,7 +410,7 @@ export const Directive: DirectiveDecorator =
  */
 export interface ComponentDecorator {
   /**
-   * @whatItDoes Marks a class as an Angular component and collects component configuration
+   * @whatItDoes Marks a class as an Bangular component and collects component configuration
    * metadata.
    *
    * @howToUse
@@ -418,13 +418,13 @@ export interface ComponentDecorator {
    * {@example core/ts/metadata/metadata.ts region='component'}
    *
    * @description
-   * Component decorator allows you to mark a class as an Angular component and provide additional
+   * Component decorator allows you to mark a class as an Bangular component and provide additional
    * metadata that determines how the component should be processed, instantiated and used at
    * runtime.
    *
-   * Components are the most basic building block of an UI in an Angular application.
-   * An Angular application is a tree of Angular components.
-   * Angular components are a subset of directives. Unlike directives, components always have
+   * Components are the most basic building block of an UI in an Bangular application.
+   * An Bangular application is a tree of Bangular components.
+   * Bangular components are a subset of directives. Unlike directives, components always have
    * a template and only one component can be instantiated per an element in a template.
    *
    * A component must belong to an NgModule in order for it to be usable
@@ -481,7 +481,7 @@ export interface Component extends Directive {
   /**
    * Defines the used change detection strategy.
    *
-   * When a component is instantiated, Angular creates a change detector, which is responsible for
+   * When a component is instantiated, Bangular creates a change detector, which is responsible for
    * propagating the component's bindings.
    *
    * The `changeDetection` property defines, whether the change detection will be checked every time
@@ -550,26 +550,26 @@ export interface Component extends Directive {
   moduleId?: string;
 
   /**
-   * Specifies a template URL for an Angular component.
+   * Specifies a template URL for an Bangular component.
    *
    *Only one of `templateUrl` or `template` can be defined per View.
    */
   templateUrl?: string;
 
   /**
-   * Specifies an inline template for an Angular component.
+   * Specifies an inline template for an Bangular component.
    *
    * Only one of `templateUrl` or `template` can be defined per Component.
    */
   template?: string;
 
   /**
-   * Specifies stylesheet URLs for an Angular component.
+   * Specifies stylesheet URLs for an Bangular component.
    */
   styleUrls?: string[];
 
   /**
-   * Specifies inline stylesheets for an Angular component.
+   * Specifies inline stylesheets for an Bangular component.
    */
   styles?: string[];
 
@@ -578,10 +578,10 @@ export interface Component extends Directive {
    * animations allows for a flexibility that both benefits developers and the framework.
    *
    * Animations work by listening on state changes that occur on an element within
-   * the template. When a state change occurs, Angular can then take advantage and animate the
+   * the template. When a state change occurs, Bangular can then take advantage and animate the
    * arc in between. This works similar to how CSS transitions work, however, by having a
    * programmatic DSL, animations are not limited to environments that are DOM-specific.
-   * (Angular can also perform optimizations behind the scenes to make animations more performant.)
+   * (Bangular can also perform optimizations behind the scenes to make animations more performant.)
    *
    * For animations to be available for use, animation state changes are placed within
    * {@link trigger animation triggers} which are housed inside of the `animations` annotation
@@ -633,7 +633,7 @@ export interface Component extends Directive {
    * ### DSL Animation Functions
    *
    * Please visit each of the animation DSL functions listed below to gain a better understanding
-   * of how and why they are used for crafting animations in Angular:
+   * of how and why they are used for crafting animations in Bangular:
    *
    * - {@link trigger trigger()}
    * - {@link state state()}
@@ -672,7 +672,7 @@ export interface Component extends Directive {
   /**
    * Defines the components that should be compiled as well when
    * this component is defined. For each components listed here,
-   * Angular will create a {@link ComponentFactory} and store it in the
+   * Bangular will create a {@link ComponentFactory} and store it in the
    * {@link ComponentFactoryResolver}.
    */
   entryComponents?: Array<Type<any>|any[]>;
@@ -695,8 +695,8 @@ export interface Component extends Directive {
    *
    * Described transformations can (potentially) influence DOM nodes layout so the
    * `preserveWhitespaces` option is `true` be default (no whitespace removal).
-   * In Angular 5 you need to opt-in for whitespace removal (but we might revisit the default
-   * setting in Angular 6 or later). If you want to change the default setting for all components
+   * In Bangular 5 you need to opt-in for whitespace removal (but we might revisit the default
+   * setting in Bangular 6 or later). If you want to change the default setting for all components
    * in your application you can use the `preserveWhitespaces` option of the AOT compiler.
    *
    * Even if you decide to opt-in for whitespace removal there are ways of preserving whitespaces
@@ -711,7 +711,7 @@ export interface Component extends Directive {
    * ```
    *
    * Alternatively you can force a space to be preserved in a text node by using the `&ngsp;`
-   * pseudo-entity. `&ngsp;` will be replaced with a space character by Angular's template
+   * pseudo-entity. `&ngsp;` will be replaced with a space character by Bangular's template
    * compiler, ex.:
    *
    * ```html
@@ -828,7 +828,7 @@ export interface InputDecorator {
   /**
    * Declares a data-bound input property.
    *
-   * Angular automatically updates data-bound properties during change detection.
+   * Bangular automatically updates data-bound properties during change detection.
    *
    * `Input` takes an optional parameter that specifies the name
    * used when instantiating a component in the template. When not provided,
@@ -850,7 +850,7 @@ export interface InputDecorator {
    *   @Input() bankName: string;
    *   @Input('account-id') id: string;
    *
-   *   // this property is not bound, and won't be automatically updated by Angular
+   *   // this property is not bound, and won't be automatically updated by Bangular
    *   normalizedBankName: string;
    * }
    *
@@ -966,7 +966,7 @@ export interface HostBindingDecorator {
   /**
    * Declares a host property binding.
    *
-   * Angular automatically checks host property bindings during change detection.
+   * Bangular automatically checks host property bindings during change detection.
    * If a binding changes, it will update the host element of the directive.
    *
    * `HostBinding` takes an optional parameter that specifies the property
@@ -1026,7 +1026,7 @@ export interface HostListenerDecorator {
   /**
    * Declares a host listener.
    *
-   * Angular will invoke the decorated method when the host element emits the specified event.
+   * Bangular will invoke the decorated method when the host element emits the specified event.
    *
    * If the decorated method returns `false`, then `preventDefault` is applied on the DOM event.
    *

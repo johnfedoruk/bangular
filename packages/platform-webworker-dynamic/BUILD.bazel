@@ -10,7 +10,7 @@ ts_library(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/platform-webworker-dynamic",
+    module_name = "@bangular/platform-webworker-dynamic",
     deps = [
         "//packages:types",
         "//packages/common",

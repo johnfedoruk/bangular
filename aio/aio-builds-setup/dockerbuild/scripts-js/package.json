@@ -1,9 +1,9 @@
 {
   "name": "aio-scripts-js",
   "version": "1.0.0",
-  "description": "Performing various tasks on PR build artifacts for angular.io.",
-  "repository": "https://github.com/angular/angular.git",
-  "author": "Angular",
+  "description": "Performing various tasks on PR build artifacts for bangular.io.",
+  "repository": "https://github.com/bangular/bangular.git",
+  "author": "Bangular",
   "license": "MIT",
   "scripts": {
     "prebuild": "yarn clean-dist",

@@ -30,7 +30,7 @@ Here, `CoreModule` provides the `UserService`, and because `AppModule`
 imports `CoreModule`, any services that `CoreModule` provides are available
 throughout the app, because it is a root of the injector tree. It will also be a singleton because the injector lifetime of the `AppModule` is for the duration of the application.
 
-Angular registers the `UserService` provider with the app root
+Bangular registers the `UserService` provider with the app root
 injector, making a singleton instance of the `UserService`
 available to any component that needs it,
 whether that component is eagerly or lazily loaded.
@@ -43,7 +43,7 @@ This technique simplifies the root `AppModule` in its
 capacity as orchestrator of the application as a whole.
 
 Now you can inject such services into components as needed. In terms of
-Angular NgModules, you only need to define the services in one `@NgModule`.
+Bangular NgModules, you only need to define the services in one `@NgModule`.
 See [JS Modules vs. NgModules](guide/ngmodule-vs-jsmodule) for
 more information on how to differentiate between the two.
 
@@ -57,7 +57,7 @@ For more detailed information on services, see the [Services](tutorial/toh-pt4) 
 
 ## `forRoot()`
 
-If a module provides both providers and declarations (components, directives, pipes) then loading it in a child injector such as a route, would duplicate the provider instances. The duplication of providers would cause issues as they would shadow the root instances, which are probably meant to be singletons. For this reason Angular provides a way to separate providers out of the module so that same module can be imported into the root module with `providers` and child modules without `providers`.
+If a module provides both providers and declarations (components, directives, pipes) then loading it in a child injector such as a route, would duplicate the provider instances. The duplication of providers would cause issues as they would shadow the root instances, which are probably meant to be singletons. For this reason Bangular provides a way to separate providers out of the module so that same module can be imported into the root module with `providers` and child modules without `providers`.
 
 1. Create a static method `forRoot()` (by convention) on the module.
 2. Place the providers into the `forRoot` method as follows.
@@ -84,7 +84,7 @@ a simple object with the following properties:
 In the <live-example name="ngmodules">live example</live-example>
 the root `AppModule` imports the `CoreModule` and adds the
 `providers` to the `AppModule` providers. Specifically,
-Angular accumulates all imported providers
+Bangular accumulates all imported providers
 before appending the items listed in `@NgModule.providers`.
 This sequence ensures that whatever you add explicitly to
 the `AppModule` providers takes precedence over the providers
@@ -132,8 +132,8 @@ To guard against a lazy-loaded module re-importing `CoreModule`, add the followi
 
 </code-example>
 
-The constructor tells Angular to inject the `CoreModule` into itself.
-The injection would be circular if Angular looked for
+The constructor tells Bangular to inject the `CoreModule` into itself.
+The injection would be circular if Bangular looked for
 `CoreModule` in the _current_ injector. The `@SkipSelf`
 decorator means "look for `CoreModule` in an ancestor
 injector, above me in the injector hierarchy."
@@ -149,9 +149,9 @@ and the constructor concludes uneventfully.
 
 It's a different story if you improperly import `CoreModule` into a lazy-loaded module such as `CustomersModule`.
 
-Angular creates a lazy-loaded module with its own injector,
+Bangular creates a lazy-loaded module with its own injector,
 a _child_ of the root injector.
-`@SkipSelf` causes Angular to look for a `CoreModule` in the parent injector, which this time is the root injector.
+`@SkipSelf` causes Bangular to look for a `CoreModule` in the parent injector, which this time is the root injector.
 Of course it finds the instance imported by the root `AppModule`.
 Now `parentModule` exists and the constructor throws the error.
 

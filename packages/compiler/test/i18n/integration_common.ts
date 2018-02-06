@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgLocalization} from '@angular/common';
-import {Component, DebugElement} from '@angular/core';
-import {ComponentFixture} from '@angular/core/testing';
+import {NgLocalization} from '@bangular/common';
+import {Component, DebugElement} from '@bangular/core';
+import {ComponentFixture} from '@bangular/core/testing';
 
-import {By} from '@angular/platform-browser/src/dom/debug/by';
-import {stringifyElement} from '@angular/platform-browser/testing/src/browser_util';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {By} from '@bangular/platform-browser/src/dom/debug/by';
+import {stringifyElement} from '@bangular/platform-browser/testing/src/browser_util';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 @Component({
   selector: 'i18n-cmp',

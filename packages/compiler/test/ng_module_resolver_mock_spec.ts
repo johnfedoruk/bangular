@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injector, NgModule} from '@angular/core';
-import {beforeEach, describe, expect, inject, it} from '@angular/core/testing/src/testing_internal';
-import {JitReflector} from '@angular/platform-browser-dynamic/src/compiler_reflector';
+import {Injector, NgModule} from '@bangular/core';
+import {beforeEach, describe, expect, inject, it} from '@bangular/core/testing/src/testing_internal';
+import {JitReflector} from '@bangular/platform-browser-dynamic/src/compiler_reflector';
 
 import {MockNgModuleResolver} from '../testing';
 

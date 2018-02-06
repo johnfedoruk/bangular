@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {EventEmitter} from '@angular/core';
+import {EventEmitter} from '@bangular/core';
 
 import {C, E, L, T, V, b, b1, cR, cr, defineComponent, defineDirective, e, m, p, r, t, v} from '../../src/render3/index';
 import {NO_CHANGE} from '../../src/render3/instructions';

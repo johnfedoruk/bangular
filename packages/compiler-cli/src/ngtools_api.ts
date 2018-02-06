@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /**
@@ -15,7 +15,7 @@
 
 /**
  *********************************************************************
- * Changes to this file need to be approved by the Angular CLI team. *
+ * Changes to this file need to be approved by the Bangular CLI team. *
  *********************************************************************
  */
 
@@ -31,7 +31,7 @@ export interface NgTools_InternalApi_NG2_CodeGen_Options {
   program: ts.Program;
   host: ts.CompilerHost;
 
-  angularCompilerOptions: CompilerOptions;
+  bangularCompilerOptions: CompilerOptions;
 
   // i18n options.
   i18nFormat?: string;
@@ -47,7 +47,7 @@ export interface NgTools_InternalApi_NG2_CodeGen_Options {
 export interface NgTools_InternalApi_NG2_ListLazyRoutes_Options {
   program: ts.Program;
   host: ts.CompilerHost;
-  angularCompilerOptions: CompilerOptions;
+  bangularCompilerOptions: CompilerOptions;
   entryModule: string;
 
   // Every new property under this line should be optional.
@@ -60,7 +60,7 @@ export interface NgTools_InternalApi_NG2_ExtractI18n_Options {
   compilerOptions: ts.CompilerOptions;
   program: ts.Program;
   host: ts.CompilerHost;
-  angularCompilerOptions: CompilerOptions;
+  bangularCompilerOptions: CompilerOptions;
   i18nFormat?: string;
   readResource: (fileName: string) => Promise<string>;
   // Every new property under this line should be optional.
@@ -85,11 +85,11 @@ export class NgTools_InternalApi_NG_2 {
    */
   static listLazyRoutes(options: NgTools_InternalApi_NG2_ListLazyRoutes_Options):
       NgTools_InternalApi_NG_2_LazyRouteMap {
-    // TODO(tbosch): Also throwNotSupportedError once Angular CLI 1.5.1 ships,
-    // as we only needed this to support Angular CLI 1.5.0 rc.*
+    // TODO(tbosch): Also throwNotSupportedError once Bangular CLI 1.5.1 ships,
+    // as we only needed this to support Bangular CLI 1.5.0 rc.*
     const ngProgram = createProgram({
       rootNames: options.program.getRootFileNames(),
-      options: {...options.angularCompilerOptions, collectAllErrors: true},
+      options: {...options.bangularCompilerOptions, collectAllErrors: true},
       host: options.host
     });
     const lazyRoutes = ngProgram.listLazyRoutes(options.entryModule);
@@ -129,5 +129,5 @@ export class NgTools_InternalApi_NG_2 {
 }
 
 function throwNotSupportedError() {
-  throw new Error(`Please update @angular/cli. Angular 5+ requires at least Angular CLI 1.5+`);
+  throw new Error(`Please update @bangular/cli. Bangular 5+ requires at least Bangular CLI 1.5+`);
 }

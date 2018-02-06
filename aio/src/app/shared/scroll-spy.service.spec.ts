@@ -1,6 +1,6 @@
-import { Injector, ReflectiveInjector } from '@angular/core';
-import { fakeAsync, tick } from '@angular/core/testing';
-import { DOCUMENT } from '@angular/platform-browser';
+import { Injector, ReflectiveInjector } from '@bangular/core';
+import { fakeAsync, tick } from '@bangular/core/testing';
+import { DOCUMENT } from '@bangular/platform-browser';
 
 import { ScrollService } from 'app/shared/scroll.service';
 import { ScrollItem, ScrollSpiedElement, ScrollSpiedElementGroup, ScrollSpyService } from 'app/shared/scroll-spy.service';

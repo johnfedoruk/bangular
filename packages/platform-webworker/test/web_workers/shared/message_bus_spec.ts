@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgZone} from '@angular/core';
-import {withModule} from '@angular/core/testing/src/test_bed';
-import {AsyncTestCompleter, MockNgZone, beforeEach, describe, expect, inject, it} from '@angular/core/testing/src/testing_internal';
-import {MessageBus} from '@angular/platform-webworker/src/web_workers/shared/message_bus';
+import {NgZone} from '@bangular/core';
+import {withModule} from '@bangular/core/testing/src/test_bed';
+import {AsyncTestCompleter, MockNgZone, beforeEach, describe, expect, inject, it} from '@bangular/core/testing/src/testing_internal';
+import {MessageBus} from '@bangular/platform-webworker/src/web_workers/shared/message_bus';
 
 import {createConnectedMessageBus} from './message_bus_util';
 

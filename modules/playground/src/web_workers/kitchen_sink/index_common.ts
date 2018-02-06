@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, ElementRef, Injectable, Renderer} from '@angular/core';
+import {Component, Directive, ElementRef, Injectable, Renderer} from '@bangular/core';
 
 // A service available to the Injector, used by the HelloCmp component.
 @Injectable()
@@ -25,13 +25,13 @@ export class RedDec {
   }
 }
 
-// Angular supports 2 basic types of directives:
-// - Component - the basic building blocks of Angular apps. Backed by
+// Bangular supports 2 basic types of directives:
+// - Component - the basic building blocks of Bangular apps. Backed by
 //   ShadowDom.(http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/)
 // - Directive - add behavior to existing elements.
 
 @Component({
-  // The Selector prop tells Angular on which elements to instantiate this
+  // The Selector prop tells Bangular on which elements to instantiate this
   // class. The syntax supported is a basic subset of CSS selectors, for example
   // 'element', '[attr]', [attr=foo]', etc.
   selector: 'hello-app',

@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /**
@@ -16,7 +16,7 @@
  * ### Example
  *
  * ```
- * import {Headers} from '@angular/http';
+ * import {Headers} from '@bangular/http';
  *
  * var firstHeaders = new Headers();
  * firstHeaders.append('Content-Type', 'image/jpeg');
@@ -24,15 +24,15 @@
  *
  * // Create headers from Plain Old JavaScript Object
  * var secondHeaders = new Headers({
- *   'X-My-Custom-Header': 'Angular'
+ *   'X-My-Custom-Header': 'Bangular'
  * });
- * console.log(secondHeaders.get('X-My-Custom-Header')); //'Angular'
+ * console.log(secondHeaders.get('X-My-Custom-Header')); //'Bangular'
  *
  * var thirdHeaders = new Headers(secondHeaders);
- * console.log(thirdHeaders.get('X-My-Custom-Header')); //'Angular'
+ * console.log(thirdHeaders.get('X-My-Custom-Header')); //'Bangular'
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 export class Headers {
   /** @internal header names are lower case */

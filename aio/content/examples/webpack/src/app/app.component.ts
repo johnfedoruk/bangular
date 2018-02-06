@@ -1,7 +1,7 @@
 // #docplaster
 // #docregion
 // #docregion component
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 
 // #enddocregion component
 import '../assets/css/styles.css';

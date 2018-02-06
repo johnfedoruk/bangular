@@ -14,7 +14,7 @@ describe('sw-example App', () => {
     expect(page.getParagraphText()).toEqual('Welcome to Service Workers!');
   });
 
-  it('should display the Angular logo', () => {
+  it('should display the Bangular logo', () => {
     let logo = element(by.css('img'));
     page.navigateTo();
     expect(logo.isPresent()).toBe(true);
@@ -28,10 +28,10 @@ describe('sw-example App', () => {
   it('should show a list of links', function () {
       element.all(by.css('ul > li > h2 > a')).then((items) => {
         expect(items.length).toBe(4);
-        expect(items[0].getText()).toBe('Angular Service Worker Intro');
+        expect(items[0].getText()).toBe('Bangular Service Worker Intro');
         expect(items[1].getText()).toBe('Tour of Heroes');
         expect(items[2].getText()).toBe('CLI Documentation');
-        expect(items[3].getText()).toBe('Angular blog');
+        expect(items[3].getText()).toBe('Bangular blog');
       });
   });
    // Check for a rejected promise as the service worker is not enabled

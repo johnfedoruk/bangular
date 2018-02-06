@@ -3,9 +3,9 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {AUTO_STYLE, AnimateChildOptions, AnimateTimings, AnimationMetadataType, AnimationOptions, AnimationQueryOptions, ɵPRE_STYLE as PRE_STYLE, ɵStyleData} from '@angular/animations';
+import {AUTO_STYLE, AnimateChildOptions, AnimateTimings, AnimationMetadataType, AnimationOptions, AnimationQueryOptions, ɵPRE_STYLE as PRE_STYLE, ɵStyleData} from '@bangular/animations';
 
 import {AnimationDriver} from '../render/animation_driver';
 import {copyObj, copyStyles, interpolateParams, iteratorToArray, resolveTiming, resolveTimingValue, visitDslNode} from '../util';
@@ -21,7 +21,7 @@ const LEAVE_TOKEN = ':leave';
 const LEAVE_TOKEN_REGEX = new RegExp(LEAVE_TOKEN, 'g');
 
 /*
- * The code within this file aims to generate web-animations-compatible keyframes from Angular's
+ * The code within this file aims to generate web-animations-compatible keyframes from Bangular's
  * animation DSL code.
  *
  * The code below will be converted from:

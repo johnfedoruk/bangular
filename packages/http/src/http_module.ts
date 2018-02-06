@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /**
@@ -12,7 +12,7 @@
  * The http module provides services to perform http requests. To get started, see the {@link Http}
  * class.
  */
-import {NgModule} from '@angular/core';
+import {NgModule} from '@bangular/core';
 
 import {BrowserJsonp} from './backends/browser_jsonp';
 import {BrowserXhr} from './backends/browser_xhr';
@@ -40,12 +40,12 @@ export function jsonpFactory(jsonpBackend: JSONPBackend, requestOptions: Request
 /**
  * The module that includes http's providers
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 @NgModule({
   providers: [
     // TODO(pascal): use factory type annotations once supported in DI
-    // issue: https://github.com/angular/angular/issues/3183
+    // issue: https://github.com/bangular/bangular/issues/3183
     {provide: Http, useFactory: httpFactory, deps: [XHRBackend, RequestOptions]},
     BrowserXhr,
     {provide: RequestOptions, useClass: BaseRequestOptions},
@@ -60,12 +60,12 @@ export class HttpModule {
 /**
  * The module that includes jsonp's providers
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 @NgModule({
   providers: [
     // TODO(pascal): use factory type annotations once supported in DI
-    // issue: https://github.com/angular/angular/issues/3183
+    // issue: https://github.com/bangular/bangular/issues/3183
     {provide: Jsonp, useFactory: jsonpFactory, deps: [JSONPBackend, RequestOptions]},
     BrowserJsonp,
     {provide: RequestOptions, useClass: BaseRequestOptions},

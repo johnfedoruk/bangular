@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {LocationChangeListener} from '@angular/common';
-import {EventEmitter, Injectable} from '@angular/core';
-import {ɵBrowserPlatformLocation as BrowserPlatformLocation} from '@angular/platform-browser';
+import {LocationChangeListener} from '@bangular/common';
+import {EventEmitter, Injectable} from '@bangular/core';
+import {ɵBrowserPlatformLocation as BrowserPlatformLocation} from '@bangular/platform-browser';
 import {MessageBus} from '../shared/message_bus';
 import {ROUTER_CHANNEL} from '../shared/messaging_api';
 import {LocationType, Serializer, SerializerTypes} from '../shared/serializer';

@@ -1,18 +1,18 @@
 {
-  "name": "@angular/compiler",
+  "name": "@bangular/compiler",
   "version": "0.0.0-PLACEHOLDER",
-  "description": "Angular - the compiler library",
+  "description": "Bangular - the compiler library",
   "main": "./bundles/compiler.umd.js",
   "module": "./esm5/compiler.js",
   "es2015": "./esm2015/compiler.js",
   "typings": "./compiler.d.ts",
-  "author": "angular",
+  "author": "bangular",
   "license": "MIT",
   "dependencies": {
     "tslib": "^1.7.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angular/angular.git"
+    "url": "https://github.com/bangular/bangular.git"
   }
 }

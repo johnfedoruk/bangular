@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, Output, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output, OnInit } from '@bangular/core';
 
 export interface Option {
   title: string;

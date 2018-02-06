@@ -1,6 +1,6 @@
 // #docregion
-import { Component, OnInit }    from '@angular/core';
-import { ActivatedRoute }       from '@angular/router';
+import { Component, OnInit }    from '@bangular/core';
+import { ActivatedRoute }       from '@bangular/router';
 import { Observable }           from 'rxjs/Observable';
 
 import { SelectivePreloadingStrategy } from '../selective-preloading-strategy';

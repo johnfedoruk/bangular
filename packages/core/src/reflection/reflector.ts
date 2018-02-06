@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {Type} from '../type';
@@ -14,7 +14,7 @@ export {PlatformReflectionCapabilities} from './platform_reflection_capabilities
 export {GetterFn, MethodFn, SetterFn} from './types';
 
 /**
- * Provides access to reflection data about symbols. Used internally by Angular
+ * Provides access to reflection data about symbols. Used internally by Bangular
  * to power dependency injection and compilation.
  */
 export class Reflector {

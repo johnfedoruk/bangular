@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ApplicationRef, ComponentRef} from '@angular/core';
+import {ApplicationRef, ComponentRef} from '@bangular/core';
 import {getDOM} from '../../dom/dom_adapter';
 import {window} from './browser';
 
@@ -15,10 +15,10 @@ export class ChangeDetectionPerfRecord {
 }
 
 /**
- * Entry point for all Angular profiling-related debug tools. This object
+ * Entry point for all Bangular profiling-related debug tools. This object
  * corresponds to the `ng.profiler` in the dev console.
  */
-export class AngularProfiler {
+export class BangularProfiler {
   appRef: ApplicationRef;
 
   constructor(ref: ComponentRef<any>) { this.appRef = ref.injector.get(ApplicationRef); }

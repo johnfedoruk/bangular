@@ -1,7 +1,7 @@
 // #docregion
-import { BrowserModule }                from '@angular/platform-browser';
-import { ReactiveFormsModule }          from '@angular/forms';
-import { NgModule }                     from '@angular/core';
+import { BrowserModule }                from '@bangular/platform-browser';
+import { ReactiveFormsModule }          from '@bangular/forms';
+import { NgModule }                     from '@bangular/core';
 
 import { AppComponent }                 from './app.component';
 import { DynamicFormComponent }         from './dynamic-form.component';

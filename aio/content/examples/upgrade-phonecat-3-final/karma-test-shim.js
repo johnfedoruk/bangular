@@ -40,16 +40,16 @@ System.config({
   packages: { 'testing': { main: 'index.js', defaultExtension: 'js' } },
 
   // Assume npm: is set in `paths` in systemjs.config
-  // Map the angular testing umd bundles
+  // Map the bangular testing umd bundles
   map: {
-    '@angular/core/testing': 'npm:@angular/core/bundles/core-testing.umd.js',
-    '@angular/common/testing': 'npm:@angular/common/bundles/common-testing.umd.js',
-    '@angular/compiler/testing': 'npm:@angular/compiler/bundles/compiler-testing.umd.js',
-    '@angular/platform-browser/testing': 'npm:@angular/platform-browser/bundles/platform-browser-testing.umd.js',
-    '@angular/platform-browser-dynamic/testing': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
-    '@angular/http/testing': 'npm:@angular/http/bundles/http-testing.umd.js',
-    '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',
-    '@angular/forms/testing': 'npm:@angular/forms/bundles/forms-testing.umd.js',
+    '@bangular/core/testing': 'npm:@bangular/core/bundles/core-testing.umd.js',
+    '@bangular/common/testing': 'npm:@bangular/common/bundles/common-testing.umd.js',
+    '@bangular/compiler/testing': 'npm:@bangular/compiler/bundles/compiler-testing.umd.js',
+    '@bangular/platform-browser/testing': 'npm:@bangular/platform-browser/bundles/platform-browser-testing.umd.js',
+    '@bangular/platform-browser-dynamic/testing': 'npm:@bangular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
+    '@bangular/http/testing': 'npm:@bangular/http/bundles/http-testing.umd.js',
+    '@bangular/router/testing': 'npm:@bangular/router/bundles/router-testing.umd.js',
+    '@bangular/forms/testing': 'npm:@bangular/forms/bundles/forms-testing.umd.js',
   },
 });
 
@@ -71,8 +71,8 @@ function importSystemJsExtras(){
 
 function initTestBed(){
   return Promise.all([
-    System.import('@angular/core/testing'),
-    System.import('@angular/platform-browser-dynamic/testing')
+    System.import('@bangular/core/testing'),
+    System.import('@bangular/platform-browser-dynamic/testing')
   ])
 
   .then(function (providers) {

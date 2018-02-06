@@ -4,11 +4,11 @@
     "baseUrl": ".",
     "rootDir": "../",
     "paths": {
-      "@angular/common": ["../../../dist/packages/common"],
-      "@angular/core": ["../../../dist/packages/core"],
-      "@angular/platform-browser": ["../../../dist/packages/platform-browser"],
-      "@angular/router": ["../../../dist/packages/router"],
-      "@angular/upgrade/static": ["../../../dist/packages/upgrade/static"]
+      "@bangular/common": ["../../../dist/packages/common"],
+      "@bangular/core": ["../../../dist/packages/core"],
+      "@bangular/platform-browser": ["../../../dist/packages/platform-browser"],
+      "@bangular/router": ["../../../dist/packages/router"],
+      "@bangular/upgrade/static": ["../../../dist/packages/upgrade/static"]
     },
     "outDir": "../../../dist/packages/router"
   },
@@ -17,11 +17,11 @@
     "public_api.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "upgrade.js",
-    "flatModuleId": "@angular/router/upgrade"
+    "flatModuleId": "@bangular/router/upgrade"
   }
 }

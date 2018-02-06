@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 import { DownloaderService } from './downloader.service';
 
 @Component({

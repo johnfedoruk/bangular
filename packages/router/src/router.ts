@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Location} from '@angular/common';
-import {Compiler, Injector, NgModuleFactoryLoader, NgModuleRef, Type, isDevMode} from '@angular/core';
+import {Location} from '@bangular/common';
+import {Compiler, Injector, NgModuleFactoryLoader, NgModuleRef, Type, isDevMode} from '@bangular/core';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
 import {Subject} from 'rxjs/Subject';
@@ -233,7 +233,7 @@ export class Router {
   };
 
   /**
-   * Extracts and merges URLs. Used for AngularJS to Angular migrations.
+   * Extracts and merges URLs. Used for BangularJS to Bangular migrations.
    */
   urlHandlingStrategy: UrlHandlingStrategy = new DefaultUrlHandlingStrategy();
 

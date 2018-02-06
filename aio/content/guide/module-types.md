@@ -92,7 +92,7 @@ typical characteristics, in real world apps, you may see hybrids.
    <td>Service</td>
    <td>
 
-     Service modules provide utility services such as data access and messaging. Ideally, they consist entirely of providers and have no declarations. Angular's `HttpClientModule` is a good example of a service module.
+     Service modules provide utility services such as data access and messaging. Ideally, they consist entirely of providers and have no declarations. Bangular's `HttpClientModule` is a good example of a service module.
 
      The root `AppModule` is the only module that should import service modules.
 
@@ -187,5 +187,5 @@ The following table summarizes the key characteristics of each feature module gr
 ## More on NgModules
 
 You may also be interested in the following:
-* [Lazy Loading Modules with the Angular Router](guide/lazy-loading-ngmodules).
+* [Lazy Loading Modules with the Bangular Router](guide/lazy-loading-ngmodules).
 * [Providers](guide/providers).

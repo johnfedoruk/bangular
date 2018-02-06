@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import * as core from '@angular/core';
+import * as core from '@bangular/core';
 import {exportNgVar} from '../util';
 
 const CORE_TOKENS = {
@@ -19,7 +19,7 @@ const CORE_TOKENS_GLOBAL_NAME = 'coreTokens';
 
 /**
  * Returns a {@link DebugElement} for the given native DOM element, or
- * null if the given native element does not have an Angular view associated
+ * null if the given native element does not have an Bangular view associated
  * with it.
  */
 export function inspectNativeElement(element: any): core.DebugNode|null {
@@ -37,7 +37,7 @@ function _ngProbeTokensToMap(tokens: core.NgProbeToken[]): {[name: string]: any}
 }
 
 /**
- * Providers which support debugging Angular applications (e.g. via `ng.probe`).
+ * Providers which support debugging Bangular applications (e.g. via `ng.probe`).
  */
 export const ELEMENT_PROBE_PROVIDERS: core.Provider[] = [
   {

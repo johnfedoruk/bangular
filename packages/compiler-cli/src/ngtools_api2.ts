@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /**
@@ -17,11 +17,11 @@
 
 /**
  *********************************************************************
- * Changes to this file need to be approved by the Angular CLI team. *
+ * Changes to this file need to be approved by the Bangular CLI team. *
  *********************************************************************
  */
 
-import {ParseSourceSpan} from '@angular/compiler';
+import {ParseSourceSpan} from '@bangular/compiler';
 import * as ts from 'typescript';
 
 import {formatDiagnostics as formatDiagnosticsOrig} from './perform_compile';
@@ -36,7 +36,7 @@ export interface Diagnostic {
   span?: ParseSourceSpan;
   category: ts.DiagnosticCategory;
   code: number;
-  source: 'angular';
+  source: 'bangular';
 }
 
 export interface CompilerOptions extends ts.CompilerOptions {

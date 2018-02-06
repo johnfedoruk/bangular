@@ -3,10 +3,10 @@
 // #docregion rxjs-operator-import
 import 'rxjs/add/operator/switchMap';
 // #enddocregion rxjs-operator-import
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@bangular/core';
 import { Observable } from 'rxjs/Observable';
 // #docregion imports
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@bangular/router';
 // #enddocregion imports
 
 import { Hero, HeroService } from './hero.service';

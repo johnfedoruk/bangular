@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import './init';
-import {QueryList} from '@angular/core';
-import {By} from '@angular/platform-browser';
+import {QueryList} from '@bangular/core';
+import {By} from '@bangular/platform-browser';
 import {CompForChildQuery, CompWithChildQuery} from '../src/queries';
 import {createComponent} from './util';
 

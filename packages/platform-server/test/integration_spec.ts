@@ -3,20 +3,20 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AnimationBuilder, animate, style, transition, trigger} from '@angular/animations';
-import {APP_BASE_HREF, PlatformLocation, isPlatformServer} from '@angular/common';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import {ApplicationRef, CompilerFactory, Component, HostListener, Input, NgModule, NgModuleRef, NgZone, PLATFORM_ID, PlatformRef, ViewEncapsulation, destroyPlatform, getPlatform} from '@angular/core';
-import {TestBed, async, inject} from '@angular/core/testing';
-import {Http, HttpModule, Response, ResponseOptions, XHRBackend} from '@angular/http';
-import {MockBackend, MockConnection} from '@angular/http/testing';
-import {BrowserModule, DOCUMENT, StateKey, Title, TransferState, makeStateKey} from '@angular/platform-browser';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {BEFORE_APP_SERIALIZED, INITIAL_CONFIG, PlatformState, ServerModule, ServerTransferStateModule, platformDynamicServer, renderModule, renderModuleFactory} from '@angular/platform-server';
+import {AnimationBuilder, animate, style, transition, trigger} from '@bangular/animations';
+import {APP_BASE_HREF, PlatformLocation, isPlatformServer} from '@bangular/common';
+import {HttpClient, HttpClientModule} from '@bangular/common/http';
+import {HttpClientTestingModule, HttpTestingController} from '@bangular/common/http/testing';
+import {ApplicationRef, CompilerFactory, Component, HostListener, Input, NgModule, NgModuleRef, NgZone, PLATFORM_ID, PlatformRef, ViewEncapsulation, destroyPlatform, getPlatform} from '@bangular/core';
+import {TestBed, async, inject} from '@bangular/core/testing';
+import {Http, HttpModule, Response, ResponseOptions, XHRBackend} from '@bangular/http';
+import {MockBackend, MockConnection} from '@bangular/http/testing';
+import {BrowserModule, DOCUMENT, StateKey, Title, TransferState, makeStateKey} from '@bangular/platform-browser';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {BEFORE_APP_SERIALIZED, INITIAL_CONFIG, PlatformState, ServerModule, ServerTransferStateModule, platformDynamicServer, renderModule, renderModuleFactory} from '@bangular/platform-server';
 import {Subscription} from 'rxjs/Subscription';
 import {filter} from 'rxjs/operator/filter';
 import {first} from 'rxjs/operator/first';
@@ -593,14 +593,14 @@ class EscapedTransferStoreModule {
              const mock = ref.injector.get(MockBackend);
              const http = ref.injector.get(Http);
              ref.injector.get<NgZone>(NgZone).run(() => {
-               NgZone.assertInAngularZone();
+               NgZone.assertInBangularZone();
                mock.connections.subscribe((mc: MockConnection) => {
-                 NgZone.assertInAngularZone();
+                 NgZone.assertInBangularZone();
                  expect(mc.request.url).toBe('http://localhost/testing');
                  mc.mockRespond(new Response(new ResponseOptions({body: 'success!', status: 200})));
                });
                http.get('http://localhost/testing').subscribe(resp => {
-                 NgZone.assertInAngularZone();
+                 NgZone.assertInBangularZone();
                  expect(resp.text()).toBe('success!');
                });
              });
@@ -614,7 +614,7 @@ class EscapedTransferStoreModule {
              const http = ref.injector.get(Http);
              expect(ref.injector.get<NgZone>(NgZone).hasPendingMacrotasks).toBeFalsy();
              ref.injector.get<NgZone>(NgZone).run(() => {
-               NgZone.assertInAngularZone();
+               NgZone.assertInBangularZone();
                mock.connections.subscribe((mc: MockConnection) => {
                  expect(ref.injector.get<NgZone>(NgZone).hasPendingMacrotasks).toBeTruthy();
                  mc.mockRespond(new Response(new ResponseOptions({body: 'success!', status: 200})));
@@ -633,7 +633,7 @@ class EscapedTransferStoreModule {
              const http = ref.injector.get(Http);
              expect(ref.injector.get<NgZone>(NgZone).hasPendingMacrotasks).toBeFalsy();
              ref.injector.get<NgZone>(NgZone).run(() => {
-               NgZone.assertInAngularZone();
+               NgZone.assertInBangularZone();
                mock.connections.subscribe((mc: MockConnection) => {
                  expect(ref.injector.get<NgZone>(NgZone).hasPendingMacrotasks).toBeTruthy();
                  mc.mockRespond(new Response(new ResponseOptions({body: 'success!', status: 200})));
@@ -652,7 +652,7 @@ class EscapedTransferStoreModule {
              const http = ref.injector.get(Http);
              expect(ref.injector.get<NgZone>(NgZone).hasPendingMacrotasks).toBeFalsy();
              ref.injector.get<NgZone>(NgZone).run(() => {
-               NgZone.assertInAngularZone();
+               NgZone.assertInBangularZone();
                mock.connections.subscribe((mc: MockConnection) => {
                  expect(ref.injector.get<NgZone>(NgZone).hasPendingMacrotasks).toBeTruthy();
                  mc.mockRespond(new Response(new ResponseOptions({body: 'success!', status: 200})));
@@ -690,7 +690,7 @@ class EscapedTransferStoreModule {
              const http = ref.injector.get(HttpClient);
              ref.injector.get<NgZone>(NgZone).run(() => {
                http.get('http://localhost/testing').subscribe(body => {
-                 NgZone.assertInAngularZone();
+                 NgZone.assertInBangularZone();
                  expect(body).toEqual('success!');
                });
                mock.expectOne('http://localhost/testing').flush('success!');

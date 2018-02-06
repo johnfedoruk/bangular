@@ -32,7 +32,7 @@ const IGNORED_EXAMPLES = [ // temporary ignores
  *  --setup run yarn install, copy boilerplate and update webdriver
  *    e.g. --setup
  *
- *  --local to use the locally built Angular packages, rather than versions from npm
+ *  --local to use the locally built Bangular packages, rather than versions from npm
  *    Must be used in conjunction with --setup as this is when the packages are copied.
  *    e.g. --setup --local
  *

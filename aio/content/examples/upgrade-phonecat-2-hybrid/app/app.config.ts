@@ -1,10 +1,10 @@
 'use strict';
 
-angular.
+bangular.
   module('phonecatApp').
   config(['$locationProvider', '$routeProvider',
-    function config($locationProvider: angular.ILocationProvider,
-                    $routeProvider: angular.route.IRouteProvider) {
+    function config($locationProvider: bangular.ILocationProvider,
+                    $routeProvider: bangular.route.IRouteProvider) {
       $locationProvider.hashPrefix('!');
 
       $routeProvider.

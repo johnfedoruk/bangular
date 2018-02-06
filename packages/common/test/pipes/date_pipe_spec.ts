@@ -3,19 +3,19 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {DatePipe, registerLocaleData} from '@angular/common';
-import {PipeResolver} from '@angular/compiler/src/pipe_resolver';
-import {JitReflector} from '@angular/platform-browser-dynamic/src/compiler_reflector';
-import localeEn from '@angular/common/locales/en';
-import localeEnExtra from '@angular/common/locales/extra/en';
-import localeDe from '@angular/common/locales/de';
-import localeHu from '@angular/common/locales/hu';
-import localeSr from '@angular/common/locales/sr';
-import localeTh from '@angular/common/locales/th';
-import localeAr from '@angular/common/locales/ar';
+import {DatePipe, registerLocaleData} from '@bangular/common';
+import {PipeResolver} from '@bangular/compiler/src/pipe_resolver';
+import {JitReflector} from '@bangular/platform-browser-dynamic/src/compiler_reflector';
+import localeEn from '@bangular/common/locales/en';
+import localeEnExtra from '@bangular/common/locales/extra/en';
+import localeDe from '@bangular/common/locales/de';
+import localeHu from '@bangular/common/locales/hu';
+import localeSr from '@bangular/common/locales/sr';
+import localeTh from '@bangular/common/locales/th';
+import localeAr from '@bangular/common/locales/ar';
 
 {
   let date: Date;
@@ -271,13 +271,13 @@ import localeAr from '@angular/common/locales/ar';
          () => expect(pipe.transform('2017-01-20T12:00:00+0000')).toEqual('Jan 20, 2017'));
 
       // test for the following bugs:
-      // https://github.com/angular/angular/issues/9524
-      // https://github.com/angular/angular/issues/9524
+      // https://github.com/bangular/bangular/issues/9524
+      // https://github.com/bangular/bangular/issues/9524
       it('should format correctly with iso strings that contain time',
          () => expect(pipe.transform('2017-05-07T22:14:39', 'dd-MM-yyyy HH:mm'))
                    .toMatch(/07-05-2017 \d{2}:\d{2}/));
 
-      // test for issue https://github.com/angular/angular/issues/21491
+      // test for issue https://github.com/bangular/bangular/issues/21491
       it('should not assume UTC for iso strings in Safari if the timezone is not defined', () => {
         // this test only works if the timezone is not in UTC
         // which is the case for BrowserStack when we test Safari
@@ -288,8 +288,8 @@ import localeAr from '@angular/common/locales/ar';
       });
 
       // test for the following bugs:
-      // https://github.com/angular/angular/issues/16624
-      // https://github.com/angular/angular/issues/17478
+      // https://github.com/bangular/bangular/issues/16624
+      // https://github.com/bangular/bangular/issues/17478
       it('should show the correct time when the timezone is fixed', () => {
         expect(pipe.transform('2017-06-13T10:14:39+0000', 'shortTime', '+0000'))
             .toEqual('10:14 AM');

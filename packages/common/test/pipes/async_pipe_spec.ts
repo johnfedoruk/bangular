@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AsyncPipe} from '@angular/common';
-import {EventEmitter, WrappedValue} from '@angular/core';
-import {AsyncTestCompleter, beforeEach, describe, expect, inject, it} from '@angular/core/testing/src/testing_internal';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {browserDetection} from '@angular/platform-browser/testing/src/browser_util';
+import {AsyncPipe} from '@bangular/common';
+import {EventEmitter, WrappedValue} from '@bangular/core';
+import {AsyncTestCompleter, beforeEach, describe, expect, inject, it} from '@bangular/core/testing/src/testing_internal';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {browserDetection} from '@bangular/platform-browser/testing/src/browser_util';
 
 import {SpyChangeDetectorRef} from '../spies';
 

@@ -1,5 +1,5 @@
 {
-  "description": "Angular Animations",
+  "description": "Bangular Animations",
   "files":[
     "!**/*.d.ts",
     "!**/*.js"

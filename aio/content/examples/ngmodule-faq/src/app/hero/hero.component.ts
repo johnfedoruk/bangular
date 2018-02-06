@@ -1,5 +1,5 @@
 // Exact copy except import UserService from core
-import { Component }   from '@angular/core';
+import { Component }   from '@bangular/core';
 
 import { HeroService } from './hero.service';
 import { UserService } from '../core/user.service';

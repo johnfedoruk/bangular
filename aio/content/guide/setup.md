@@ -2,12 +2,12 @@
 
 {@a develop-locally}
 
-The <live-example name=quickstart>QuickStart live-coding</live-example> example is an Angular _playground_.
+The <live-example name=quickstart>QuickStart live-coding</live-example> example is an Bangular _playground_.
 It's not where you'd develop a real application.
-You [should develop locally](guide/setup#why-locally "Why develop locally") on your own machine ... and that's also how we think you should learn Angular.
+You [should develop locally](guide/setup#why-locally "Why develop locally") on your own machine ... and that's also how we think you should learn Bangular.
 
 Setting up a new project on your machine is quick and easy with the **QuickStart seed**,
-maintained [on github](https://github.com/angular/quickstart "Install the github QuickStart repo").
+maintained [on github](https://github.com/bangular/quickstart "Install the github QuickStart repo").
 
 
 Make sure you have [node and npm installed](guide/setup#install-prerequisites "What if you don't have node and npm?").
@@ -21,7 +21,7 @@ Perform the _clone-to-launch_ steps with these terminal commands.
 
 
 <code-example language="sh" class="code-shell">
-  git clone https://github.com/angular/quickstart.git quickstart
+  git clone https://github.com/bangular/quickstart.git quickstart
   cd quickstart
   npm install
   npm start
@@ -45,7 +45,7 @@ Perform the _clone-to-launch_ steps with these terminal commands.
 
 
 ## Download
-<a href="https://github.com/angular/quickstart/archive/master.zip" title="Download the QuickStart seed repository">Download the QuickStart seed</a>
+<a href="https://github.com/bangular/quickstart/archive/master.zip" title="Download the QuickStart seed repository">Download the QuickStart seed</a>
 and unzip it into your project folder. Then perform the remaining steps with these terminal commands.
 
 
@@ -253,7 +253,7 @@ The following are all in `src/`
     <td>
 
 
-      Defines `AppModule`, the  [root module](guide/bootstrapping "AppModule: the root module") that tells Angular how to assemble the application.
+      Defines `AppModule`, the  [root module](guide/bootstrapping "AppModule: the root module") that tells Bangular how to assemble the application.
       Right now it declares only the `AppComponent`.
       Soon there will be more components to declare.
     </td>
@@ -290,7 +290,7 @@ The following are all in `src/`
 
 ### Next Step
 
-If you're new to Angular, we recommend you follow the [tutorial](tutorial "Tour of Heroes tutorial").
+If you're new to Bangular, we recommend you follow the [tutorial](tutorial "Tour of Heroes tutorial").
 
 
 </div>
@@ -304,7 +304,7 @@ If you're new to Angular, we recommend you follow the [tutorial](tutorial "Tour 
 ## Appendix: node and npm
 
 
-Node.js and npm are essential to modern web development with Angular and other platforms.
+Node.js and npm are essential to modern web development with Bangular and other platforms.
 Node powers client development and build tools.
 The _npm_ package manager, itself a _node_ application, installs JavaScript libraries.
 
@@ -326,14 +326,14 @@ use other versions of node and npm.
 
 ## Appendix: Why develop locally
 
-<live-example title="QuickStart Seed in Stackblitz">Live coding</live-example> in the browser is a great way to explore Angular.
+<live-example title="QuickStart Seed in Stackblitz">Live coding</live-example> in the browser is a great way to explore Bangular.
 
 Links on almost every documentation page open completed samples in the browser.
 You can play with the sample code, share your changes with friends, and download and run the code on your own machine.
 
-The [QuickStart](guide/quickstart "Angular QuickStart Playground") shows just the `AppComponent` file.
+The [QuickStart](guide/quickstart "Bangular QuickStart Playground") shows just the `AppComponent` file.
 It creates the equivalent of `app.module.ts` and `main.ts` internally _for the playground only_.
-so the reader can discover Angular without distraction.
+so the reader can discover Bangular without distraction.
 The other samples are based on the QuickStart seed.
 
 As much fun as this is ...
@@ -346,14 +346,14 @@ As much fun as this is ...
 Use the <live-example title="QuickStart Seed in Stackblitz">live coding</live-example> environment as a _playground_,
 a place to try the documentation samples and experiment on your own.
 It's the perfect place to reproduce a bug when you want to
-<a href="https://github.com/angular/angular/issues/new" title="File a documentation issue">file a documentation issue</a> or
-<a href="https://github.com/angular/angular/issues/new" title="File an Angular issue">file an issue with Angular itself</a>.
+<a href="https://github.com/bangular/bangular/issues/new" title="File a documentation issue">file a documentation issue</a> or
+<a href="https://github.com/bangular/bangular/issues/new" title="File an Bangular issue">file an issue with Bangular itself</a>.
 
 For real development, we strongly recommend [developing locally](guide/setup#develop-locally).
 
 ## Appendix: develop locally with IE
 
-If you develop angular locally with `ng serve`, there will be `websocket` connection being setup automatically between browser and local dev server, so when your code change, browser can automatically refresh.
+If you develop bangular locally with `ng serve`, there will be `websocket` connection being setup automatically between browser and local dev server, so when your code change, browser can automatically refresh.
 
 In windows, by default one application can only have 6 websocket connections, <a href="https://msdn.microsoft.com/library/ee330736%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396#websocket_maxconn" title="MSDN WebSocket settings">MSDN WebSocket Settings</a>.
-So if IE was refreshed manunally or automatically by `ng serve`, sometimes, the websocket will not close properly, when websocket connections exceed limitations, `SecurityError` will be thrown, this error will not affect the angular application, you can just restart IE to clear this error, or modify the windows registry to update the limitations.
+So if IE was refreshed manunally or automatically by `ng serve`, sometimes, the websocket will not close properly, when websocket connections exceed limitations, `SecurityError` will be thrown, this error will not affect the bangular application, you can just restart IE to clear this error, or modify the windows registry to update the limitations.

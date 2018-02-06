@@ -1,6 +1,6 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@bangular/core';
+import { ComponentFixture, TestBed } from '@bangular/core/testing';
+import { By } from '@bangular/platform-browser';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { asap } from 'rxjs/scheduler/asap';
 

@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 const resolve = require('rollup-plugin-node-resolve');
 const sourcemaps = require('rollup-plugin-sourcemaps');
 
 const globals = {
-  '@angular/core': 'ng.core',
-  '@angular/common': 'ng.common',
-  '@angular/animations': 'ng.animations'
+  '@bangular/core': 'ng.core',
+  '@bangular/common': 'ng.common',
+  '@bangular/animations': 'ng.animations'
 };
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
   dest: '../../../dist/packages-dist/animations/bundles/animations-browser.umd.js',
   format: 'umd',
   exports: 'named',
-  amd: {id: '@angular/animations/browser'},
+  amd: {id: '@bangular/animations/browser'},
   moduleName: 'ng.animations.browser',
   plugins: [resolve(), sourcemaps()],
   external: Object.keys(globals),

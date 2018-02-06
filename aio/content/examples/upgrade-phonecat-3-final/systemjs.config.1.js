@@ -1,5 +1,5 @@
 /**
- * System configuration for Angular samples
+ * System configuration for Bangular samples
  * Adjust as necessary for your application needs.
  */
 (function (global) {
@@ -10,25 +10,25 @@
       'npm:': '/node_modules/'
     },
     map: {
-      'ng-loader': '../src/systemjs-angular-loader.js',
+      'ng-loader': '../src/systemjs-bangular-loader.js',
       app: '/app',
       // #enddocregion paths
-      // angular bundles
-      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
-      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
-      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
-      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
-      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
-      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
-      '@angular/router/upgrade': 'npm:@angular/router/bundles/router-upgrade.umd.js',
-      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-      '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
-      '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
+      // bangular bundles
+      '@bangular/core': 'npm:@bangular/core/bundles/core.umd.js',
+      '@bangular/common': 'npm:@bangular/common/bundles/common.umd.js',
+      '@bangular/compiler': 'npm:@bangular/compiler/bundles/compiler.umd.js',
+      '@bangular/platform-browser': 'npm:@bangular/platform-browser/bundles/platform-browser.umd.js',
+      '@bangular/platform-browser-dynamic': 'npm:@bangular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@bangular/http': 'npm:@bangular/http/bundles/http.umd.js',
+      '@bangular/router': 'npm:@bangular/router/bundles/router.umd.js',
+      '@bangular/router/upgrade': 'npm:@bangular/router/bundles/router-upgrade.umd.js',
+      '@bangular/forms': 'npm:@bangular/forms/bundles/forms.umd.js',
+      '@bangular/upgrade': 'npm:@bangular/upgrade/bundles/upgrade.umd.js',
+      '@bangular/upgrade/static': 'npm:@bangular/upgrade/bundles/upgrade-static.umd.js',
 
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
+      'bangular-in-memory-web-api': 'npm:bangular-in-memory-web-api',
       // #docregion paths
     },
     // #enddocregion paths
@@ -46,7 +46,7 @@
       rxjs: {
         defaultExtension: 'js'
       },
-      'angular-in-memory-web-api': {
+      'bangular-in-memory-web-api': {
         main: './index.js',
         defaultExtension: 'js'
       }

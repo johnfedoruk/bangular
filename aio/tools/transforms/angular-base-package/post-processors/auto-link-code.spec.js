@@ -5,7 +5,7 @@ describe('autoLinkCode post-processor', () => {
   let processor, autoLinkCode, aliasMap, filterPipes;
 
   beforeEach(() => {
-    const testPackage = createTestPackage('angular-base-package');
+    const testPackage = createTestPackage('bangular-base-package');
     const dgeni = new Dgeni([testPackage]);
     const injector = dgeni.configureInjector();
     autoLinkCode = injector.get('autoLinkCode');

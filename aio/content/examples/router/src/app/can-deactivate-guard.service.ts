@@ -1,6 +1,6 @@
 // #docregion
-import { Injectable }    from '@angular/core';
-import { CanDeactivate } from '@angular/router';
+import { Injectable }    from '@bangular/core';
+import { CanDeactivate } from '@bangular/router';
 import { Observable }    from 'rxjs/Observable';
 
 export interface CanComponentDeactivate {

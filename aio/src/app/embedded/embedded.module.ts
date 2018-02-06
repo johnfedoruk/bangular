@@ -1,5 +1,5 @@
-import { NgModule, Type } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule, Type } from '@bangular/core';
+import { CommonModule } from '@bangular/common';
 
 import { ContributorService } from './contributor/contributor.service';
 import { CopierService } from 'app/shared/copier.service';
@@ -10,9 +10,9 @@ import { WithEmbeddedComponents } from 'app/embed-components/embed-components.se
 // It is not enough just to import them inside the AppModule
 
 // Reusable components (used inside embedded components)
-import { MatIconModule } from '@angular/material/icon';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@bangular/material/icon';
+import { MatSnackBarModule } from '@bangular/material/snack-bar';
+import { MatTabsModule } from '@bangular/material/tabs';
 import { CodeComponent } from './code/code.component';
 import { SharedModule } from 'app/shared/shared.module';
 

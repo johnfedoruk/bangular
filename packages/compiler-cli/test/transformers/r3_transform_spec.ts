@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {PartialModule} from '@angular/compiler';
-import * as o from '@angular/compiler/src/output/output_ast';
+import {PartialModule} from '@bangular/compiler';
+import * as o from '@bangular/compiler/src/output/output_ast';
 import {MockAotCompilerHost} from 'compiler/test/aot/test_util';
 import {initDomAdapter} from 'platform-browser/src/browser';
 import * as ts from 'typescript';
 
-import {getAngularClassTransformerFactory} from '../../src/transformers/r3_transform';
+import {getBangularClassTransformerFactory} from '../../src/transformers/r3_transform';
 import {Directory, MockAotContext, MockCompilerHost} from '../mocks';
 
 const someGenFilePath = '/somePackage/someGenFile';
@@ -37,12 +37,12 @@ describe('r3_transform_spec', () => {
 
   it('should be able to import a symbol', () => {
     expect(emitStaticMethod(new o.ReturnStatement(
-               o.importExpr(new o.ExternalReference('@angular/core', 'Component')))))
+               o.importExpr(new o.ExternalReference('@bangular/core', 'Component')))))
         .toContain('static someMethod() { return i0.Component; } }');
   });
 
   it('should be able to modify multiple classes in the same module', () => {
-    const result = emit(getAngularClassTransformerFactory([{
+    const result = emit(getBangularClassTransformerFactory([{
       fileName: someGenFileName,
       statements: [
         classMethod(new o.ReturnStatement(o.variable('v')), ['v'], 'someMethod', 'SomeClass'),
@@ -58,7 +58,7 @@ describe('r3_transform_spec', () => {
     context = context.override({
       somePackage: {
         'someGenFile.ts': `
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
 
         @Component({selector: 'some-class', template: 'hello!'})
         export class SomeClass {}
@@ -70,8 +70,8 @@ describe('r3_transform_spec', () => {
     host = new MockCompilerHost(context);
 
     expect(emitStaticMethod(new o.ReturnStatement(
-               o.importExpr(new o.ExternalReference('@angular/core', 'Component')))))
-        .toContain('const core_1 = require("@angular/core"); const i0 = require("@angular/core");');
+               o.importExpr(new o.ExternalReference('@bangular/core', 'Component')))))
+        .toContain('const core_1 = require("@bangular/core"); const i0 = require("@bangular/core");');
   });
 
   function emit(factory: ts.TransformerFactory<ts.SourceFile>): string {
@@ -96,7 +96,7 @@ describe('r3_transform_spec', () => {
       fileName: someGenFileName,
       statements: [classMethod(stmt, parameters, methodName, className)]
     };
-    return emit(getAngularClassTransformerFactory([module]));
+    return emit(getBangularClassTransformerFactory([module]));
   }
 
   function emitStaticField(
@@ -106,7 +106,7 @@ describe('r3_transform_spec', () => {
       fileName: someGenFileName,
       statements: [classField(initializer, fieldName, className)]
     };
-    return emit(getAngularClassTransformerFactory([module]));
+    return emit(getBangularClassTransformerFactory([module]));
   }
 });
 

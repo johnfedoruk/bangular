@@ -1,6 +1,6 @@
 /* tslint:disable use-input-property-decorator use-output-property-decorator */
 // #docplaster
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@bangular/core';
 
 import { Hero } from './hero';
 

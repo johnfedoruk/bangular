@@ -13,11 +13,11 @@ import 'zone.js/dist/proxy.js';
 import 'zone.js/dist/sync-test';
 import 'zone.js/dist/jasmine-patch';
 
-import { getTestBed } from '@angular/core/testing';
+import { getTestBed } from '@bangular/core/testing';
 import {
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting
-} from '@angular/platform-browser-dynamic/testing';
+} from '@bangular/platform-browser-dynamic/testing';
 
 // Spec files to include in the Stackblitz tests
 import './tests.sb.ts';
@@ -37,7 +37,7 @@ function bootstrap () {
     window['jasmineRef'] = jasmine.getEnv();
   }
 
-  // First, initialize the Angular testing environment.
+  // First, initialize the Bangular testing environment.
   getTestBed().initTestEnvironment(
     BrowserDynamicTestingModule,
     platformBrowserDynamicTesting()

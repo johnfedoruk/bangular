@@ -5,7 +5,7 @@ const Dgeni = require('dgeni');
 describe('fixInternalDocumentLinks processor', () => {
 
   it('should be available on the injector', () => {
-    const dgeni = new Dgeni([testPackage('angular-base-package')]);
+    const dgeni = new Dgeni([testPackage('bangular-base-package')]);
     const injector = dgeni.configureInjector();
     const processor = injector.get('fixInternalDocumentLinks');
     expect(processor.$process).toBeDefined();
@@ -27,7 +27,7 @@ describe('fixInternalDocumentLinks processor', () => {
       {
         path: 'some/doc',
         renderedContent: `
-          <a href="http://google.com#q=angular">Google</a>
+          <a href="http://google.com#q=bangular">Google</a>
           <a href="some/relative/path#some-id">Some Id</a>
           <a href="#some-internal-id">Link to heading</a>
           <a class="important" href="#some-internal-id">Link to heading</a>
@@ -40,7 +40,7 @@ describe('fixInternalDocumentLinks processor', () => {
       {
         path: 'some/doc',
         renderedContent: `
-          <a href="http://google.com#q=angular">Google</a>
+          <a href="http://google.com#q=bangular">Google</a>
           <a href="some/relative/path#some-id">Some Id</a>
           <a href="some/doc#some-internal-id">Link to heading</a>
           <a class="important" href="some/doc#some-internal-id">Link to heading</a>

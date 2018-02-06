@@ -3,16 +3,16 @@
 #### Prerequisites
 
 A basic understanding of the following:
-* [Introduction to Angular service workers](guide/service-worker-intro).
+* [Introduction to Bangular service workers](guide/service-worker-intro).
 
 <hr />
 
 
-Beginning in Angular 5.0.0, you can easily enable Angular service worker support in any CLI project. This document explains how to enable Angular service worker support in new and existing projects. It then uses a simple example to show you a service worker in action, demonstrating loading and basic caching.  
+Beginning in Bangular 5.0.0, you can easily enable Bangular service worker support in any CLI project. This document explains how to enable Bangular service worker support in new and existing projects. It then uses a simple example to show you a service worker in action, demonstrating loading and basic caching.  
 
 ## Adding a service worker to a new application
 
-If you're generating a new CLI project, you can use the CLI to set up the Angular service worker as part of creating the project. To do so, add the `--service-worker` flag to the `ng new`  command:
+If you're generating a new CLI project, you can use the CLI to set up the Bangular service worker as part of creating the project. To do so, add the `--service-worker` flag to the `ng new`  command:
 
 ```sh
 ng new my-project --service-worker 
@@ -39,15 +39,15 @@ To add a service worker to an existing app:
 
 ### Step 1: Add the service worker package
 
-Add the package `@angular/service-worker`, using the yarn utility as shown here:
+Add the package `@bangular/service-worker`, using the yarn utility as shown here:
 
 ```sh
-yarn add @angular/service-worker
+yarn add @bangular/service-worker
 ```
 
 ### Step 2: Enable service worker build support in the CLI
 
-To enable the Angular service worker, the CLI must generate an Angular service worker manifest at build time. To cause the CLI to generate the manifest for an existing project, set the `serviceWorker` flag to `true` in the project's `.angular-cli.json` file as shown here:
+To enable the Bangular service worker, the CLI must generate an Bangular service worker manifest at build time. To cause the CLI to generate the manifest for an existing project, set the `serviceWorker` flag to `true` in the project's `.bangular-cli.json` file as shown here:
 
 ```sh
 ng set apps.0.serviceWorker=true
@@ -55,7 +55,7 @@ ng set apps.0.serviceWorker=true
 
 ### Step 3: Import and register the service worker
 
-To import and register the Angular service worker:
+To import and register the Bangular service worker:
 
 At the top of the root module, `src/app/app.module.ts`, import `ServiceWorkerModule` and `environment`.
 
@@ -70,7 +70,7 @@ The file `ngsw-worker.js` is the name of the prebuilt service worker script, whi
 
 ### Step 4: Create the configuration file, `ngsw-config.json`
 
-The Angular CLI needs a service worker configuration file, called `ngsw-config.json`. The configuration file controls how the service worker caches files and data 
+The Bangular CLI needs a service worker configuration file, called `ngsw-config.json`. The configuration file controls how the service worker caches files and data 
 resources.
 
 You can begin with the boilerplate version from the CLI, which configures sensible defaults for most applications.
@@ -87,7 +87,7 @@ Finally, build the project:
 ng build --prod
 ```
 
-The CLI project is now set up to use the Angular service worker.
+The CLI project is now set up to use the Bangular service worker.
 
 
 ## Service worker in action: a tour
@@ -110,7 +110,7 @@ http-server -p 8080
 
 With the server running, you can point your browser at http://localhost:8080/. Your application should load normally.
 
-**Tip:** When testing Angular service workers, it's a good idea to use an incognito or private window in your browser to ensure the service worker doesn't end up reading from a previous leftover state, which can cause unexpected behavior.
+**Tip:** When testing Bangular service workers, it's a good idea to use an incognito or private window in your browser to ensure the service worker doesn't end up reading from a previous leftover state, which can cause unexpected behavior.
 
 ### Simulating a network issue
 
@@ -126,9 +126,9 @@ To simulate a network issue, disable network interaction for your application. I
 
 Now the app has no access to network interaction.
 
-For applications that do not use the Angular service worker, refreshing now would display Chrome's Internet disconnected page that says "There is no Internet connection". 
+For applications that do not use the Bangular service worker, refreshing now would display Chrome's Internet disconnected page that says "There is no Internet connection". 
 
-With the addition of an Angular service worker, the application behavior changes. On a refresh, the page loads normally. 
+With the addition of an Bangular service worker, the application behavior changes. On a refresh, the page loads normally. 
 
 If you look at the Network tab, you can verify that the service worker is active.
 
@@ -183,7 +183,7 @@ Now look at how the browser and service worker handle the updated application.
   <img src="generated/images/guide/service-worker/welcome-msg-en.png" alt="It still says Welcome to Service Workers!">
 </figure>
 
-What went wrong? Nothing, actually. The Angular service worker is doing its job and serving the version of the application that it has **installed**, even though there is an update available. In the interest of speed, the service worker doesn't wait to check for updates before it serves the application that it has cached.
+What went wrong? Nothing, actually. The Bangular service worker is doing its job and serving the version of the application that it has **installed**, even though there is an update available. In the interest of speed, the service worker doesn't wait to check for updates before it serves the application that it has cached.
 
 If you look at the `http-server` logs, you can see the service worker requesting `/ngsw.json`. This is how the service worker checks for updates.
 
@@ -197,7 +197,7 @@ The service worker installed the updated version of your app *in the background*
 
 <hr />
 
-## More on Angular service workers
+## More on Bangular service workers
 
 You may also be interested in the following:
 * [Communicating with service workers](guide/service-worker-communications).

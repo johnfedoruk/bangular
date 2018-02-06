@@ -1,7 +1,7 @@
 /* tslint:disable:class-name component-class-suffix */
 // #docplaster
 // #docregion
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 
 // #docregion key-up-component-1
 @Component({

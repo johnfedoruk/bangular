@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 'use strict';
@@ -164,7 +164,7 @@ describe('ngRoute shim', function () {
     expect($location.path()).toBe('/home');
   }));
 
-  //TODO: this is broken in recognition. un-xit this when https://github.com/angular/angular/issues/4133 is fixed
+  //TODO: this is broken in recognition. un-xit this when https://github.com/bangular/bangular/issues/4133 is fixed
   xit('should adapt "otherwise" routes', inject(function ($location) {
     $routeProvider
       .when('/home', {

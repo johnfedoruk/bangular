@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {Subject} from 'rxjs/Subject';
@@ -57,7 +57,7 @@ import {Subject} from 'rxjs/Subject';
  */
 export class EventEmitter<T> extends Subject<T> {
   // TODO: mark this as internal once all the facades are gone
-  // we can't mark it as internal now because EventEmitter exported via @angular/core would not
+  // we can't mark it as internal now because EventEmitter exported via @bangular/core would not
   // contain this property making it incompatible with all the code that uses EventEmitter via
   // facades, which are local to the code and do not have this property stripped.
   // tslint:disable-next-line

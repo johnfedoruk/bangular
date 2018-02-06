@@ -1,7 +1,7 @@
 /* tslint:disable: member-ordering */
 // #docplaster
 // #docregion
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 
 @Component({
   selector: 'app-hero-form-template',

@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {describe, expect, it} from '@angular/core/testing/src/testing_internal';
+import {describe, expect, it} from '@bangular/core/testing/src/testing_internal';
 
-import {ResponseOptions} from '@angular/http/src/base_response_options';
-import {Response} from '@angular/http/src/static_response';
+import {ResponseOptions} from '@bangular/http/src/base_response_options';
+import {Response} from '@bangular/http/src/static_response';
 
 
 

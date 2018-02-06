@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 
 import { IMovie } from './movie';
 
@@ -29,12 +29,12 @@ export class MovieService {
         approvalRating: .94
       },
       {
-        hero: 'Angular',
+        hero: 'Bangular',
         imageurl: 'assets/images/ng-logo.png',
         movieId: 3,
         mpaa: 'pg-13',
         releaseDate: '2015-12-17T00:00:00',
-        title: 'Angular to the Rescue',
+        title: 'Bangular to the Rescue',
         price: 15.95,
         starRating: 4.98,
         approvalRating: .9995

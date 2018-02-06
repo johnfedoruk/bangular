@@ -1,4 +1,4 @@
-workspace(name = "angular")
+workspace(name = "bangular")
 
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
@@ -31,8 +31,8 @@ local_repository(
 git_repository(
     name = "com_github_bazelbuild_buildtools",
     remote = "https://github.com/bazelbuild/buildtools.git",
-    # Note, this commit matches the version of buildifier in angular/ngcontainer
-    # If you change this, also check if it matches the version in the angular/ngcontainer
+    # Note, this commit matches the version of buildifier in bangular/ngcontainer
+    # If you change this, also check if it matches the version in the bangular/ngcontainer
     # version in /.circleci/config.yml
     commit = "b3b620e8bcff18ed3378cd3f35ebeb7016d71f71",
 )

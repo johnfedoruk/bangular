@@ -1,5 +1,5 @@
-import { ReflectiveInjector } from '@angular/core';
-import { PlatformLocation } from '@angular/common';
+import { ReflectiveInjector } from '@bangular/core';
+import { PlatformLocation } from '@bangular/common';
 
 import { of } from 'rxjs/observable/of';
 

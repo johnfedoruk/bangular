@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, HostBinding, Input, NO_ERRORS_SCHEMA} from '@angular/core';
-import {ComponentFixture, TestBed, getTestBed} from '@angular/core/testing';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {DomSanitizer} from '@angular/platform-browser/src/security/dom_sanitization_service';
+import {Component, Directive, HostBinding, Input, NO_ERRORS_SCHEMA} from '@bangular/core';
+import {ComponentFixture, TestBed, getTestBed} from '@bangular/core/testing';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {DomSanitizer} from '@bangular/platform-browser/src/security/dom_sanitization_service';
 
 {
   describe('jit', () => { declareTests({useJit: true}); });

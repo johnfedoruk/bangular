@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /*
 
 The API from compiler-cli that language-service can see.
 It is important that none the exported modules require anything other than
-Angular modules and Typescript as this will indirectly add a dependency
+Bangular modules and Typescript as this will indirectly add a dependency
 to the language service.
 
 */

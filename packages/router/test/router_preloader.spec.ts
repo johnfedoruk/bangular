@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Compiler, Component, NgModule, NgModuleFactoryLoader, NgModuleRef} from '@angular/core';
-import {TestBed, fakeAsync, inject, tick} from '@angular/core/testing';
+import {Compiler, Component, NgModule, NgModuleFactoryLoader, NgModuleRef} from '@bangular/core';
+import {TestBed, fakeAsync, inject, tick} from '@bangular/core/testing';
 
 import {Route, RouteConfigLoadEnd, RouteConfigLoadStart, Router, RouterModule} from '../index';
 import {LoadedRouterConfig} from '../src/config';

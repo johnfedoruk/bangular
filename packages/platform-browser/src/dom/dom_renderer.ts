@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable, Renderer2, RendererFactory2, RendererStyleFlags2, RendererType2, ViewEncapsulation} from '@angular/core';
+import {Injectable, Renderer2, RendererFactory2, RendererStyleFlags2, RendererType2, ViewEncapsulation} from '@bangular/core';
 
 import {EventManager} from './events/event_manager';
 import {DomSharedStylesHost} from './shared_styles_host';
@@ -193,7 +193,7 @@ class DefaultDomRenderer2 implements Renderer2 {
       el.style.removeProperty(style);
     } else {
       // IE requires '' instead of null
-      // see https://github.com/angular/angular/issues/7916
+      // see https://github.com/bangular/bangular/issues/7916
       el.style[style] = '';
     }
   }

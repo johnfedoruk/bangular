@@ -17,10 +17,10 @@ $(npm bin)/tsc -p ./tsconfig-build.json
 
 mkdir $DIST/vendor/
 
-ln -s ../../../dist/packages-dist/ $DIST/vendor/@angular
+ln -s ../../../dist/packages-dist/ $DIST/vendor/@bangular
 
 for FILE in \
-    ../../../node_modules/angular/angular.js \
+    ../../../node_modules/bangular/bangular.js \
     ../../../node_modules/zone.js/dist/zone.js \
     ../../../node_modules/systemjs/dist/system.js \
     ../../../node_modules/reflect-metadata/Reflect.js \

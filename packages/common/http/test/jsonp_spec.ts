@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.JsonpCallbackContext
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ddescribe, describe, it} from '@angular/core/testing/src/testing_internal';
+import {ddescribe, describe, it} from '@bangular/core/testing/src/testing_internal';
 
 import {JSONP_ERR_NO_CALLBACK, JSONP_ERR_WRONG_METHOD, JSONP_ERR_WRONG_RESPONSE_TYPE, JsonpClientBackend} from '../src/jsonp';
 import {HttpRequest} from '../src/request';

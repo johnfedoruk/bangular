@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Type, ɵstringify as stringify} from '@angular/core';
+import {Type, ɵstringify as stringify} from '@bangular/core';
 
 export function invalidPipeArgumentError(type: Type<any>, value: Object) {
   return Error(`InvalidPipeArgument: '${value}' for pipe '${stringify(type)}'`);

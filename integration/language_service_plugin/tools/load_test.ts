@@ -13,12 +13,12 @@ function recordingRequire(path: string) {
 Module.prototype.require = recordingRequire;
 
 try {
-  const lsf = require('@angular/language-service');
+  const lsf = require('@bangular/language-service');
   const ls = lsf({typescript: ts});
 
-  // Assert that the only module that should have been required are '@angular/langauge-service', 'fs', and 'path'
+  // Assert that the only module that should have been required are '@bangular/langauge-service', 'fs', and 'path'
 
-  const allowedLoads = new Set(["@angular/language-service", "fs", "path"]);
+  const allowedLoads = new Set(["@bangular/language-service", "fs", "path"]);
 
   const invalidModules = recordedRequires.filter(m => !allowedLoads.has(m));
 

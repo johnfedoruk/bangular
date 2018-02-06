@@ -23,7 +23,7 @@ const BOILERPLATE_PATHS = {
     'src/typings.d.ts',
     'e2e/app.po.ts',
     'e2e/tsconfig.e2e.json',
-    '.angular-cli.json',
+    '.bangular-cli.json',
     '.editorconfig',
     'karma.conf.js',
     'package.json',
@@ -32,7 +32,7 @@ const BOILERPLATE_PATHS = {
     'tslint.json'
   ],
   systemjs: [
-    'src/systemjs-angular-loader.js',
+    'src/systemjs-bangular-loader.js',
     'src/systemjs.config.js',
     'src/tsconfig.json',
     'bs-config.json',
@@ -56,13 +56,13 @@ BOILERPLATE_PATHS.i18n = [
 
 BOILERPLATE_PATHS.universal = [
   ...cliRelativePath,
-  '.angular-cli.json',
+  '.bangular-cli.json',
   'package.json'
 ];
 
 BOILERPLATE_PATHS.testing = [
   ...cliRelativePath,
-  '.angular-cli.json'
+  '.bangular-cli.json'
 ];
 
 const EXAMPLE_CONFIG_FILENAME = 'example-config.json';

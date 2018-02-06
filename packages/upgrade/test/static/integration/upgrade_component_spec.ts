@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, ElementRef, ErrorHandler, EventEmitter, Inject, Injector, Input, NO_ERRORS_SCHEMA, NgModule, Output, SimpleChanges, destroyPlatform} from '@angular/core';
-import {async, fakeAsync, tick} from '@angular/core/testing';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import * as angular from '@angular/upgrade/src/common/angular1';
-import {$SCOPE} from '@angular/upgrade/src/common/constants';
-import {UpgradeComponent, UpgradeModule, downgradeComponent} from '@angular/upgrade/static';
+import {Component, Directive, ElementRef, ErrorHandler, EventEmitter, Inject, Injector, Input, NO_ERRORS_SCHEMA, NgModule, Output, SimpleChanges, destroyPlatform} from '@bangular/core';
+import {async, fakeAsync, tick} from '@bangular/core/testing';
+import {BrowserModule} from '@bangular/platform-browser';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
+import * as bangular from '@bangular/upgrade/src/common/bangular1';
+import {$SCOPE} from '@bangular/upgrade/src/common/constants';
+import {UpgradeComponent, UpgradeModule, downgradeComponent} from '@bangular/upgrade/static';
 
 import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
@@ -25,7 +25,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
     describe('template/templateUrl', () => {
       it('should support `template` (string)', async(() => {
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {template: 'Hello, Angular!'};
+           const ng1Component: bangular.IComponent = {template: 'Hello, Bangular!'};
 
            // Define `Ng1ComponentFacade`
            @Directive({selector: 'ng1'})
@@ -41,7 +41,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -59,13 +59,13 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const element = html(`<ng2></ng2>`);
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then((upgrade) => {
-             expect(multiTrim(element.textContent)).toBe('Hello, Angular!');
+             expect(multiTrim(element.textContent)).toBe('Hello, Bangular!');
            });
          }));
 
       it('should support `template` (function)', async(() => {
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {template: () => 'Hello, Angular!'};
+           const ng1Component: bangular.IComponent = {template: () => 'Hello, Bangular!'};
 
            // Define `Ng1ComponentFacade`
            @Directive({selector: 'ng1'})
@@ -81,7 +81,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -99,18 +99,18 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const element = html(`<ng2></ng2>`);
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(() => {
-             expect(multiTrim(element.textContent)).toBe('Hello, Angular!');
+             expect(multiTrim(element.textContent)).toBe('Hello, Bangular!');
            });
          }));
 
       it('should support not pass any arguments to `template` function', async(() => {
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
-             template: ($attrs: angular.IAttributes, $element: angular.IAugmentedJQuery) => {
+           const ng1Component: bangular.IComponent = {
+             template: ($attrs: bangular.IAttributes, $element: bangular.IAugmentedJQuery) => {
                expect($attrs).toBeUndefined();
                expect($element).toBeUndefined();
 
-               return 'Hello, Angular!';
+               return 'Hello, Bangular!';
              }
            };
 
@@ -128,7 +128,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -146,13 +146,13 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const element = html(`<ng2></ng2>`);
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(() => {
-             expect(multiTrim(element.textContent)).toBe('Hello, Angular!');
+             expect(multiTrim(element.textContent)).toBe('Hello, Bangular!');
            });
          }));
 
       it('should support `templateUrl` (string) fetched from `$templateCache`', async(() => {
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {templateUrl: 'ng1.component.html'};
+           const ng1Component: bangular.IComponent = {templateUrl: 'ng1.component.html'};
 
            // Define `Ng1ComponentFacade`
            @Directive({selector: 'ng1'})
@@ -169,12 +169,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            // Define `ng1Module`
            const ng1Module =
-               angular.module('ng1Module', [])
+               bangular.module('ng1Module', [])
                    .component('ng1', ng1Component)
                    .directive('ng2', downgradeComponent({component: Ng2Component}))
                    .run(
-                       ($templateCache: angular.ITemplateCacheService) =>
-                           $templateCache.put('ng1.component.html', 'Hello, Angular!'));
+                       ($templateCache: bangular.ITemplateCacheService) =>
+                           $templateCache.put('ng1.component.html', 'Hello, Bangular!'));
 
            // Define `Ng2Module`
            @NgModule({
@@ -190,13 +190,13 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const element = html(`<ng2></ng2>`);
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(() => {
-             expect(multiTrim(element.textContent)).toBe('Hello, Angular!');
+             expect(multiTrim(element.textContent)).toBe('Hello, Bangular!');
            });
          }));
 
       it('should support `templateUrl` (function) fetched from `$templateCache`', async(() => {
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {templateUrl: () => 'ng1.component.html'};
+           const ng1Component: bangular.IComponent = {templateUrl: () => 'ng1.component.html'};
 
            // Define `Ng1ComponentFacade`
            @Directive({selector: 'ng1'})
@@ -213,12 +213,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            // Define `ng1Module`
            const ng1Module =
-               angular.module('ng1Module', [])
+               bangular.module('ng1Module', [])
                    .component('ng1', ng1Component)
                    .directive('ng2', downgradeComponent({component: Ng2Component}))
                    .run(
-                       ($templateCache: angular.ITemplateCacheService) =>
-                           $templateCache.put('ng1.component.html', 'Hello, Angular!'));
+                       ($templateCache: bangular.ITemplateCacheService) =>
+                           $templateCache.put('ng1.component.html', 'Hello, Bangular!'));
 
            // Define `Ng2Module`
            @NgModule({
@@ -234,14 +234,14 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const element = html(`<ng2></ng2>`);
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(() => {
-             expect(multiTrim(element.textContent)).toBe('Hello, Angular!');
+             expect(multiTrim(element.textContent)).toBe('Hello, Bangular!');
            });
          }));
 
       it('should support not pass any arguments to `templateUrl` function', async(() => {
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
-             templateUrl: ($attrs: angular.IAttributes, $element: angular.IAugmentedJQuery) => {
+           const ng1Component: bangular.IComponent = {
+             templateUrl: ($attrs: bangular.IAttributes, $element: bangular.IAugmentedJQuery) => {
                expect($attrs).toBeUndefined();
                expect($element).toBeUndefined();
 
@@ -264,12 +264,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            // Define `ng1Module`
            const ng1Module =
-               angular.module('ng1Module', [])
+               bangular.module('ng1Module', [])
                    .component('ng1', ng1Component)
                    .directive('ng2', downgradeComponent({component: Ng2Component}))
                    .run(
-                       ($templateCache: angular.ITemplateCacheService) =>
-                           $templateCache.put('ng1.component.html', 'Hello, Angular!'));
+                       ($templateCache: bangular.ITemplateCacheService) =>
+                           $templateCache.put('ng1.component.html', 'Hello, Bangular!'));
 
            // Define `Ng2Module`
            @NgModule({
@@ -285,14 +285,14 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const element = html(`<ng2></ng2>`);
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(() => {
-             expect(multiTrim(element.textContent)).toBe('Hello, Angular!');
+             expect(multiTrim(element.textContent)).toBe('Hello, Bangular!');
            });
          }));
 
       // NOT SUPPORTED YET
       xit('should support `templateUrl` (string) fetched from the server', fakeAsync(() => {
             // Define `ng1Component`
-            const ng1Component: angular.IComponent = {templateUrl: 'ng1.component.html'};
+            const ng1Component: bangular.IComponent = {templateUrl: 'ng1.component.html'};
 
             // Define `Ng1ComponentFacade`
             @Directive({selector: 'ng1'})
@@ -309,7 +309,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
             // Define `ng1Module`
             const ng1Module =
-                angular.module('ng1Module', [])
+                bangular.module('ng1Module', [])
                     .component('ng1', ng1Component)
                     .directive('ng2', downgradeComponent({component: Ng2Component}))
                     .value(
@@ -343,7 +343,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
       // NOT SUPPORTED YET
       xit('should support `templateUrl` (function) fetched from the server', fakeAsync(() => {
             // Define `ng1Component`
-            const ng1Component: angular.IComponent = {templateUrl: () => 'ng1.component.html'};
+            const ng1Component: bangular.IComponent = {templateUrl: () => 'ng1.component.html'};
 
             // Define `Ng1ComponentFacade`
             @Directive({selector: 'ng1'})
@@ -360,7 +360,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
             // Define `ng1Module`
             const ng1Module =
-                angular.module('ng1Module', [])
+                bangular.module('ng1Module', [])
                     .component('ng1', ng1Component)
                     .directive('ng2', downgradeComponent({component: Ng2Component}))
                     .value(
@@ -393,10 +393,10 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
       it('should support empty templates', async(() => {
            // Define `ng1Component`s
-           const ng1ComponentA: angular.IComponent = {template: ''};
-           const ng1ComponentB: angular.IComponent = {template: () => ''};
-           const ng1ComponentC: angular.IComponent = {templateUrl: 'ng1.component.html'};
-           const ng1ComponentD: angular.IComponent = {templateUrl: () => 'ng1.component.html'};
+           const ng1ComponentA: bangular.IComponent = {template: ''};
+           const ng1ComponentB: bangular.IComponent = {template: () => ''};
+           const ng1ComponentC: bangular.IComponent = {templateUrl: 'ng1.component.html'};
+           const ng1ComponentD: bangular.IComponent = {templateUrl: () => 'ng1.component.html'};
 
            // Define `Ng1ComponentFacade`s
            @Directive({selector: 'ng1A'})
@@ -430,14 +430,14 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1A', ng1ComponentA)
                                  .component('ng1B', ng1ComponentB)
                                  .component('ng1C', ng1ComponentC)
                                  .component('ng1D', ng1ComponentD)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}))
                                  .run(
-                                     ($templateCache: angular.ITemplateCacheService) =>
+                                     ($templateCache: bangular.ITemplateCacheService) =>
                                          $templateCache.put('ng1.component.html', ''));
 
            // Define `Ng2Module`
@@ -468,7 +468,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'Inside: {{ $ctrl.inputA }}, {{ $ctrl.inputB }}',
              bindings: {inputA: '@inputAttrA', inputB: '@'}
            };
@@ -500,7 +500,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -519,7 +519,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(adapter => {
              const ng1 = element.querySelector('ng1') !;
-             const ng1Controller = angular.element(ng1).controller !('ng1');
+             const ng1Controller = bangular.element(ng1).controller !('ng1');
 
              expect(multiTrim(element.textContent)).toBe('Inside: foo, bar | Outside: foo, bar');
 
@@ -543,7 +543,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'Inside: {{ $ctrl.inputA.value }}, {{ $ctrl.inputB.value }}',
              bindings: {inputA: '<inputAttrA', inputB: '<'}
            };
@@ -575,7 +575,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -594,7 +594,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(adapter => {
              const ng1 = element.querySelector('ng1') !;
-             const ng1Controller = angular.element(ng1).controller !('ng1');
+             const ng1Controller = bangular.element(ng1).controller !('ng1');
 
              expect(multiTrim(element.textContent)).toBe('Inside: foo, bar | Outside: foo, bar');
 
@@ -618,7 +618,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'Inside: {{ $ctrl.inputA.value }}, {{ $ctrl.inputB.value }}',
              bindings: {inputA: '=inputAttrA', inputB: '='}
            };
@@ -652,7 +652,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -671,7 +671,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(adapter => {
              const ng1 = element.querySelector('ng1') !;
-             const ng1Controller = angular.element(ng1).controller !('ng1');
+             const ng1Controller = bangular.element(ng1).controller !('ng1');
 
              expect(multiTrim(element.textContent)).toBe('Inside: foo, bar | Outside: foo, bar');
 
@@ -693,7 +693,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
       it('should support `&` bindings', fakeAsync(() => {
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'Inside: -',
              bindings: {outputA: '&outputAttrA', outputB: '&'}
            };
@@ -723,7 +723,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -742,7 +742,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(() => {
              const ng1 = element.querySelector('ng1') !;
-             const ng1Controller = angular.element(ng1).controller !('ng1');
+             const ng1Controller = bangular.element(ng1).controller !('ng1');
 
              expect(multiTrim(element.textContent)).toBe('Inside: - | Outside: foo, bar');
 
@@ -756,7 +756,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
       it('should bind properties, events', fakeAsync(() => {
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: `
                Hello {{ $ctrl.fullName }};
                A: {{ $ctrl.modelA }};
@@ -764,7 +764,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
                C: {{ $ctrl.modelC }}
              `,
              bindings: {fullName: '@', modelA: '<dataA', modelB: '=dataB', modelC: '=', event: '&'},
-             controller: function($scope: angular.IScope) {
+             controller: function($scope: bangular.IScope) {
                $scope.$watch('$ctrl.modelB', (v: string) => {
                  if (v === 'Savkin') {
                    this.modelB = 'SAVKIN';
@@ -816,7 +816,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -853,7 +853,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
       it('should bind optional properties', fakeAsync(() => {
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'Inside: {{ $ctrl.inputA.value }}, {{ $ctrl.inputB }}',
              bindings:
                  {inputA: '=?inputAttrA', inputB: '=?', outputA: '&?outputAttrA', outputB: '&?'}
@@ -893,7 +893,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -912,9 +912,9 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(adapter => {
              const ng1s = element.querySelectorAll('ng1') !;
-             const ng1Controller0 = angular.element(ng1s[0]).controller !('ng1');
-             const ng1Controller1 = angular.element(ng1s[1]).controller !('ng1');
-             const ng1Controller2 = angular.element(ng1s[2]).controller !('ng1');
+             const ng1Controller0 = bangular.element(ng1s[0]).controller !('ng1');
+             const ng1Controller1 = bangular.element(ng1s[1]).controller !('ng1');
+             const ng1Controller2 = bangular.element(ng1s[2]).controller !('ng1');
 
              expect(multiTrim(element.textContent))
                  .toBe(
@@ -945,10 +945,10 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
       it('should bind properties, events to scope when bindToController is not used',
          fakeAsync(() => {
            // Define `ng1Directive`
-           const ng1Directive: angular.IDirective = {
+           const ng1Directive: bangular.IDirective = {
              template: '{{ someText }} - Data: {{ inputA }} - Length: {{ inputA.length }}',
              scope: {inputA: '=', outputA: '&'},
-             controller: function($scope: angular.IScope) {
+             controller: function($scope: bangular.IScope) {
                $scope['someText'] = 'ng1';
                this.$scope = $scope;
              }
@@ -980,7 +980,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1', () => ng1Directive)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -999,7 +999,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(adapter => {
              const ng1 = element.querySelector('[ng1]') !;
-             const ng1Controller = angular.element(ng1).controller !('ng1');
+             const ng1Controller = bangular.element(ng1).controller !('ng1');
 
              expect(multiTrim(element.textContent))
                  .toBe('ng1 - Data: [1,2,3] - Length: 3 | ng2 - Data: 1,2,3 - Length: 3');
@@ -1026,8 +1026,8 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let grandParentNodeName: string;
 
            // Define `ng1Component`
-           const ng1ComponentA: angular.IComponent = {template: 'ng1A(<ng1-b></ng1-b>)'};
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1ComponentA: bangular.IComponent = {template: 'ng1A(<ng1-b></ng1-b>)'};
+           const ng1DirectiveB: bangular.IDirective = {
              compile: tElem => {
                grandParentNodeName = tElem.parent !().parent !()[0].nodeName;
                return {};
@@ -1048,7 +1048,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1', [])
+           const ng1Module = bangular.module('ng1', [])
                                  .component('ng1A', ng1ComponentA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2X', downgradeComponent({component: Ng2ComponentX}));
@@ -1077,7 +1077,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const log: string[] = [];
 
            // Define `ng1Directive`
-           const ng1Directive: angular.IDirective = {
+           const ng1Directive: bangular.IDirective = {
              template: '',
              link: {pre: () => log.push('ng1-pre')},
              controller: class {constructor() { log.push('ng1-ctrl'); }}
@@ -1097,7 +1097,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1', [])
+           const ng1Module = bangular.module('ng1', [])
                                  .directive('ng1', () => ng1Directive)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -1123,12 +1123,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const log: string[] = [];
 
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: '<ng1-b></ng1-b>',
              link: {pre: () => log.push('ng1A-pre')}
            };
 
-           const ng1DirectiveB: angular.IDirective = {link: () => log.push('ng1B-post')};
+           const ng1DirectiveB: bangular.IDirective = {link: () => log.push('ng1B-post')};
 
            // Define `Ng1ComponentAFacade`
            @Directive({selector: 'ng1A'})
@@ -1144,7 +1144,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1', [])
+           const ng1Module = bangular.module('ng1', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -1171,12 +1171,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const log: string[] = [];
 
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: '<ng1-b></ng1-b>',
              link: {post: () => log.push('ng1A-post')}
            };
 
-           const ng1DirectiveB: angular.IDirective = {link: () => log.push('ng1B-post')};
+           const ng1DirectiveB: bangular.IDirective = {link: () => log.push('ng1B-post')};
 
            // Define `Ng1ComponentAFacade`
            @Directive({selector: 'ng1A'})
@@ -1192,7 +1192,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1', [])
+           const ng1Module = bangular.module('ng1', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -1219,12 +1219,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const log: string[] = [];
 
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: '<ng1-b></ng1-b>',
              link: () => log.push('ng1A-post')
            };
 
-           const ng1DirectiveB: angular.IDirective = {link: () => log.push('ng1B-post')};
+           const ng1DirectiveB: bangular.IDirective = {link: () => log.push('ng1B-post')};
 
            // Define `Ng1ComponentAFacade`
            @Directive({selector: 'ng1A'})
@@ -1240,7 +1240,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1', [])
+           const ng1Module = bangular.module('ng1', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -1267,7 +1267,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const log: string[] = [];
 
            // Define `ng1Directive`
-           const ng1Directive: angular.IDirective = {
+           const ng1Directive: bangular.IDirective = {
              template: '',
              link: () => log.push('ng1-post'),
              controller: class {$postLink() { log.push('ng1-$post'); }}
@@ -1287,7 +1287,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1', [])
+           const ng1Module = bangular.module('ng1', [])
                                  .directive('ng1', () => ng1Directive)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -1313,7 +1313,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
     describe('controller', () => {
       it('should support `controllerAs`', async(() => {
            // Define `ng1Directive`
-           const ng1Directive: angular.IDirective = {
+           const ng1Directive: bangular.IDirective = {
              template:
                  '{{ vm.scope }}; {{ vm.isClass }}; {{ vm.hasElement }}; {{ vm.isPublished() }}',
              scope: true,
@@ -1321,7 +1321,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              controller: class {
                hasElement: string; isClass: string; scope: string;
 
-               constructor(public $element: angular.IAugmentedJQuery, $scope: angular.IScope) {
+               constructor(public $element: bangular.IAugmentedJQuery, $scope: bangular.IScope) {
                  this.hasElement = $element[0].nodeName;
                  this.scope = $scope.$parent.$parent === $scope.$root ? 'scope' : 'wrong-scope';
 
@@ -1350,7 +1350,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1', () => ng1Directive)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -1374,7 +1374,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
       it('should support `bindToController` (boolean)', async(() => {
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: 'Scope: {{ title }}; Controller: {{ $ctrl.title }}',
              scope: {title: '@'},
              bindToController: false,
@@ -1382,7 +1382,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              controller: class {}
            };
 
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1DirectiveB: bangular.IDirective = {
              template: 'Scope: {{ title }}; Controller: {{ $ctrl.title }}',
              scope: {title: '@'},
              bindToController: true,
@@ -1421,7 +1421,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -1448,7 +1448,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
       it('should support `bindToController` (object)', async(() => {
            // Define `ng1Directive`
-           const ng1Directive: angular.IDirective = {
+           const ng1Directive: bangular.IDirective = {
              template: '{{ $ctrl.title }}',
              scope: {},
              bindToController: {title: '@'},
@@ -1474,7 +1474,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1', () => ng1Directive)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -1498,7 +1498,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
       it('should support `controller` as string', async(() => {
            // Define `ng1Directive`
-           const ng1Directive: angular.IDirective = {
+           const ng1Directive: bangular.IDirective = {
              template: '{{ $ctrl.title }} {{ $ctrl.text }}',
              scope: {title: '@'},
              bindToController: true,
@@ -1521,7 +1521,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .controller('Ng1Controller', class { text = 'GREAT'; })
                                  .directive('ng1', () => ng1Directive)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -1549,12 +1549,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let getCurrentContent: () => string;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'Hello, {{ $ctrl.name }}!',
              controller: class {
                name = 'world';
 
-               constructor($element: angular.IAugmentedJQuery) {
+               constructor($element: bangular.IAugmentedJQuery) {
                  getCurrentContent = () => $element.text !();
                  compiledContent = getCurrentContent();
                }
@@ -1575,7 +1575,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -1604,7 +1604,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
       xdescribe('in pre-/post-link', () => {
         it('should resolve to its own controller if falsy', async(() => {
              // Define `ng1Directive`
-             const ng1Directive: angular.IDirective = {
+             const ng1Directive: bangular.IDirective = {
                template: 'Pre: {{ pre }} | Post: {{ post }}',
                controller: class {value = 'foo';},
                link: {
@@ -1631,7 +1631,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .directive('ng1', () => ng1Directive)
                                    .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -1659,12 +1659,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
       describe('in controller', () => {
         it('should be available to children', async(() => {
              // Define `ng1Component`
-             const ng1ComponentA: angular.IComponent = {
+             const ng1ComponentA: bangular.IComponent = {
                template: '<ng1-b></ng1-b>',
                controller: class {value = 'ng1A';}
              };
 
-             const ng1ComponentB: angular.IComponent = {
+             const ng1ComponentB: bangular.IComponent = {
                template: 'Required: {{ $ctrl.required.value }}',
                require: {required: '^^ng1A'}
              };
@@ -1683,7 +1683,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1A', ng1ComponentA)
                                    .component('ng1B', ng1ComponentB)
                                    .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -1708,9 +1708,9 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
         it('should throw if required controller cannot be found', async(() => {
              // Define `ng1Component`
-             const ng1ComponentA: angular.IComponent = {require: {foo: 'iDoNotExist'}};
-             const ng1ComponentB: angular.IComponent = {require: {foo: '^iDoNotExist'}};
-             const ng1ComponentC: angular.IComponent = {require: {foo: '^^iDoNotExist'}};
+             const ng1ComponentA: bangular.IComponent = {require: {foo: 'iDoNotExist'}};
+             const ng1ComponentB: bangular.IComponent = {require: {foo: '^iDoNotExist'}};
+             const ng1ComponentC: bangular.IComponent = {require: {foo: '^^iDoNotExist'}};
 
              // Define `Ng1ComponentFacade`
              @Directive({selector: 'ng1A'})
@@ -1750,7 +1750,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              // Define `ng1Module`
              const mockExceptionHandler = jasmine.createSpy('$exceptionHandler');
              const ng1Module =
-                 angular.module('ng1Module', [])
+                 bangular.module('ng1Module', [])
                      .component('ng1A', ng1ComponentA)
                      .component('ng1B', ng1ComponentB)
                      .component('ng1C', ng1ComponentC)
@@ -1798,7 +1798,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
         it('should not throw if missing required controller is optional', async(() => {
              // Define `ng1Component`
-             const ng1Component: angular.IComponent = {
+             const ng1Component: bangular.IComponent = {
                require: {
                  foo: '?iDoNotExist',
                  bar: '^?iDoNotExist',
@@ -1821,7 +1821,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
              // Define `ng1Module`
              const mockExceptionHandler = jasmine.createSpy('$exceptionHandler');
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1', ng1Component)
                                    .directive('ng2', downgradeComponent({component: Ng2Component}))
                                    .value('$exceptionHandler', mockExceptionHandler);
@@ -1847,12 +1847,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
         it('should assign resolved values to the controller instance (if `require` is not object)',
            async(() => {
              // Define `ng1Component`
-             const ng1ComponentA: angular.IComponent = {
+             const ng1ComponentA: bangular.IComponent = {
                template: 'ng1A(<div><ng2></ng2></div>)',
                controller: class {value = 'A';}
              };
 
-             const ng1ComponentB: angular.IComponent = {
+             const ng1ComponentB: bangular.IComponent = {
                template: `ng1B({{ $ctrl.getProps() }})`,
                require: '^ng1A',
                controller: class {
@@ -1863,7 +1863,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
                }
              };
 
-             const ng1ComponentC: angular.IComponent = {
+             const ng1ComponentC: bangular.IComponent = {
                template: `ng1C({{ $ctrl.getProps() }})`,
                require: ['?ng1A', '^ng1A', '^^ng1A', 'ng1C', '^ng1C', '?^^ng1C'],
                controller: class {
@@ -1896,7 +1896,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1A', ng1ComponentA)
                                    .component('ng1B', ng1ComponentB)
                                    .component('ng1C', ng1ComponentC)
@@ -1923,12 +1923,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
         it('should assign resolved values to the controller instance (if `require` is object)',
            async(() => {
              // Define `ng1Component`
-             const ng1ComponentA: angular.IComponent = {
+             const ng1ComponentA: bangular.IComponent = {
                template: 'ng1A(<div><ng2></ng2></div>)',
                controller: class {value = 'A';}
              };
 
-             const ng1ComponentB: angular.IComponent = {
+             const ng1ComponentB: bangular.IComponent = {
                template: `ng1B(
                  ng1A: {{ $ctrl.ng1ASelf.value }} |
                  ^ng1A: {{ $ctrl.ng1ASelfUp.value }} |
@@ -1962,7 +1962,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1A', ng1ComponentA)
                                    .component('ng1B', ng1ComponentB)
                                    .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -1989,12 +1989,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
         it('should assign to controller before calling `$onInit()`', async(() => {
              // Define `ng1Component`
-             const ng1ComponentA: angular.IComponent = {
+             const ng1ComponentA: bangular.IComponent = {
                template: '<ng2></ng2>',
                controller: class {value = 'ng1A';}
              };
 
-             const ng1ComponentB: angular.IComponent = {
+             const ng1ComponentB: bangular.IComponent = {
                template: '$onInit: {{ $ctrl.onInitValue }}',
                require: {required: '^^ng1A'},
                controller: class {
@@ -2019,7 +2019,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1A', ng1ComponentA)
                                    .component('ng1B', ng1ComponentB)
                                    .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -2044,15 +2044,15 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
         it('should use the key as name if the required controller name is omitted', async(() => {
              // Define `ng1Component`
-             const ng1ComponentA: angular.IComponent = {
+             const ng1ComponentA: bangular.IComponent = {
                template: '<ng1-b></ng1-b>',
                controller: class {value = 'A';}
              };
 
              const ng1ComponentB:
-                 angular.IComponent = {template: '<ng2></ng2>', controller: class {value = 'B';}};
+                 bangular.IComponent = {template: '<ng2></ng2>', controller: class {value = 'B';}};
 
-             const ng1ComponentC: angular.IComponent = {
+             const ng1ComponentC: bangular.IComponent = {
                template:
                    'ng1A: {{ $ctrl.ng1A.value }} | ng1B: {{ $ctrl.ng1B.value }} | ng1C: {{ $ctrl.ng1C.value }}',
                require: {
@@ -2077,7 +2077,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              }
 
              // Define `ng1Module`
-             const ng1Module = angular.module('ng1Module', [])
+             const ng1Module = bangular.module('ng1Module', [])
                                    .component('ng1A', ng1ComponentA)
                                    .component('ng1B', ng1ComponentB)
                                    .component('ng1C', ng1ComponentC)
@@ -2110,7 +2110,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            // Define `ng1Component`
            const ng1Component:
-               angular.IComponent = {template: 'ng1(<div ng-transclude></div>)', transclude: true};
+               bangular.IComponent = {template: 'ng1(<div ng-transclude></div>)', transclude: true};
 
            // Define `Ng1ComponentFacade`
            @Directive({selector: 'ng1'})
@@ -2138,7 +2138,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2A', downgradeComponent({component: Ng2ComponentA}));
 
@@ -2176,7 +2176,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'ng1(<div ng-transclude>{{ $ctrl.value }}</div>)',
              transclude: true,
              controller:
@@ -2199,7 +2199,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -2231,7 +2231,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template:
                  'ng1(x(<div ng-transclude="slotX"></div>) | y(<div ng-transclude="slotY"></div>))',
              transclude: {slotX: 'contentX', slotY: 'contentY'}
@@ -2265,7 +2265,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -2299,7 +2299,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: 'ng1(default(<div ng-transclude="">fallback-{{ $ctrl.value }}</div>))',
              transclude: {slotX: 'contentX', slotY: 'contentY'},
              controller:
@@ -2327,7 +2327,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
                    <span>({{ y }})</span>
                  </ng1> |
                  <!--
-                   Remove any whitespace, because in AngularJS versions prior to 1.6
+                   Remove any whitespace, because in BangularJS versions prior to 1.6
                    even whitespace counts as transcluded content.
                  -->
                  <ng1><content-x>ignored x</content-x><content-y>ignored y</content-y></ng1>
@@ -2340,7 +2340,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -2377,7 +2377,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: `
                ng1(
                 x(<div ng-transclude="slotX">{{ $ctrl.x }}</div>) |
@@ -2413,7 +2413,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -2452,7 +2452,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let errorMessage: string;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template: '',
              transclude: {slotX: '?contentX', slotY: 'contentY'}
            };
@@ -2472,7 +2472,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            // Define `ng1Module`
            const ng1Module =
-               angular.module('ng1Module', [])
+               bangular.module('ng1Module', [])
                    .value('$exceptionHandler', (error: Error) => errorMessage = error.message)
                    .component('ng1', ng1Component)
                    .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -2500,7 +2500,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              template:
                  'ng1(x(<div ng-transclude="slotX"></div>) | default(<div ng-transclude=""></div>))',
              transclude: {slotX: 'contentX'}
@@ -2535,7 +2535,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -2579,7 +2579,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: '',
              scope: {inputA: '<'},
              bindToController: false,
@@ -2588,7 +2588,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
                  class {$onChanges(changes: SimpleChanges) { controllerOnChangesA(changes); }}
            };
 
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1DirectiveB: bangular.IDirective = {
              template: '',
              scope: {inputB: '<'},
              bindToController: true,
@@ -2628,11 +2628,11 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}))
-                                 .run(($rootScope: angular.IRootScopeService) => {
+                                 .run(($rootScope: bangular.IRootScopeService) => {
                                    Object.getPrototypeOf($rootScope)['$onChanges'] = scopeOnChanges;
                                  });
 
@@ -2724,26 +2724,26 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let ng2ComponentInstance: Ng2Component;
 
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: '',
              scope: {inputA: '<'},
              bindToController: false,
              controllerAs: '$ctrl',
              controller: class {
-               constructor($scope: angular.IScope) {
+               constructor($scope: bangular.IScope) {
                  $scope['$onChanges'] = scopeOnChangesA;
                  (this as any).$onChanges = controllerOnChangesA;
                }
              }
            };
 
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1DirectiveB: bangular.IDirective = {
              template: '',
              scope: {inputB: '<'},
              bindToController: true,
              controllerAs: '$ctrl',
              controller: class {
-               constructor($scope: angular.IScope) {
+               constructor($scope: bangular.IScope) {
                  $scope['$onChanges'] = scopeOnChangesB;
                  (this as any).$onChanges = controllerOnChangesB;
                }
@@ -2781,7 +2781,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -2869,21 +2869,21 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
       it('should call `$onInit()` on controller', async(() => {
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: 'Called: {{ called }}',
              bindToController: false,
              controller: class {
-               constructor(private $scope: angular.IScope) { $scope['called'] = 'no'; }
+               constructor(private $scope: bangular.IScope) { $scope['called'] = 'no'; }
 
                $onInit() { this.$scope['called'] = 'yes'; }
              }
            };
 
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1DirectiveB: bangular.IDirective = {
              template: 'Called: {{ called }}',
              bindToController: true,
              controller: class {
-               constructor($scope: angular.IScope) {
+               constructor($scope: bangular.IScope) {
                  $scope['called'] = 'no';
                  (this as any)['$onInit'] = () => $scope['called'] = 'yes';
                }
@@ -2911,7 +2911,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -2936,11 +2936,11 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
       it('should not call `$onInit()` on scope', async(() => {
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: 'Called: {{ called }}',
              bindToController: false,
              controller: class {
-               constructor($scope: angular.IScope) {
+               constructor($scope: bangular.IScope) {
                  $scope['called'] = 'no';
                  $scope['$onInit'] = () => $scope['called'] = 'yes';
                  Object.getPrototypeOf($scope)['$onInit'] = () => $scope['called'] = 'yes';
@@ -2948,11 +2948,11 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              }
            };
 
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1DirectiveB: bangular.IDirective = {
              template: 'Called: {{ called }}',
              bindToController: true,
              controller: class {
-               constructor($scope: angular.IScope) {
+               constructor($scope: bangular.IScope) {
                  $scope['called'] = 'no';
                  $scope['$onInit'] = () => $scope['called'] = 'yes';
                  Object.getPrototypeOf($scope)['$onInit'] = () => $scope['called'] = 'yes';
@@ -2981,7 +2981,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -3006,21 +3006,21 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
       it('should call `$postLink()` on controller', async(() => {
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: 'Called: {{ called }}',
              bindToController: false,
              controller: class {
-               constructor(private $scope: angular.IScope) { $scope['called'] = 'no'; }
+               constructor(private $scope: bangular.IScope) { $scope['called'] = 'no'; }
 
                $postLink() { this.$scope['called'] = 'yes'; }
              }
            };
 
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1DirectiveB: bangular.IDirective = {
              template: 'Called: {{ called }}',
              bindToController: true,
              controller: class {
-               constructor($scope: angular.IScope) {
+               constructor($scope: bangular.IScope) {
                  $scope['called'] = 'no';
                  (this as any)['$postLink'] = () => $scope['called'] = 'yes';
                }
@@ -3048,7 +3048,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -3073,11 +3073,11 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
       it('should not call `$postLink()` on scope', async(() => {
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: 'Called: {{ called }}',
              bindToController: false,
              controller: class {
-               constructor($scope: angular.IScope) {
+               constructor($scope: bangular.IScope) {
                  $scope['called'] = 'no';
                  $scope['$postLink'] = () => $scope['called'] = 'yes';
                  Object.getPrototypeOf($scope)['$postLink'] = () => $scope['called'] = 'yes';
@@ -3085,11 +3085,11 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              }
            };
 
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1DirectiveB: bangular.IDirective = {
              template: 'Called: {{ called }}',
              bindToController: true,
              controller: class {
-               constructor($scope: angular.IScope) {
+               constructor($scope: bangular.IScope) {
                  $scope['called'] = 'no';
                  $scope['$postLink'] = () => $scope['called'] = 'yes';
                  Object.getPrototypeOf($scope)['$postLink'] = () => $scope['called'] = 'yes';
@@ -3118,7 +3118,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -3147,13 +3147,13 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const controllerDoCheckB = jasmine.createSpy('controllerDoCheckB');
 
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: 'ng1A',
              bindToController: false,
              controller: class {$doCheck() { controllerDoCheckA(); }}
            };
 
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1DirectiveB: bangular.IDirective = {
              template: 'ng1B',
              bindToController: true,
              controller: class {constructor() { (this as any)['$doCheck'] = controllerDoCheckB; }}
@@ -3180,7 +3180,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -3221,19 +3221,19 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const scopeDoCheck = jasmine.createSpy('scopeDoCheck');
 
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: 'ng1A',
              bindToController: false,
              controller: class {
-               constructor(private $scope: angular.IScope) { $scope['$doCheck'] = scopeDoCheck; }
+               constructor(private $scope: bangular.IScope) { $scope['$doCheck'] = scopeDoCheck; }
              }
            };
 
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1DirectiveB: bangular.IDirective = {
              template: 'ng1B',
              bindToController: true,
              controller: class {
-               constructor(private $scope: angular.IScope) { $scope['$doCheck'] = scopeDoCheck; }
+               constructor(private $scope: bangular.IScope) { $scope['$doCheck'] = scopeDoCheck; }
              }
            };
 
@@ -3258,7 +3258,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -3296,7 +3296,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const controllerOnDestroyB = jasmine.createSpy('controllerOnDestroyB');
 
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: 'ng1A',
              scope: {},
              bindToController: false,
@@ -3304,7 +3304,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
              controller: class {$onDestroy() { controllerOnDestroyA(); }}
            };
 
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1DirectiveB: bangular.IDirective = {
              template: 'ng1B',
              scope: {},
              bindToController: true,
@@ -3336,7 +3336,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -3355,7 +3355,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const element = html('<ng2 [show]="!destroyFromNg2" ng-if="!destroyFromNg1"></ng2>');
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(adapter => {
-             const $rootScope = adapter.$injector.get('$rootScope') as angular.IRootScopeService;
+             const $rootScope = adapter.$injector.get('$rootScope') as bangular.IRootScopeService;
 
              expect(multiTrim(document.body.textContent)).toBe('ng1A | ng1B');
              expect(controllerOnDestroyA).not.toHaveBeenCalled();
@@ -3387,26 +3387,26 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const scopeOnDestroy = jasmine.createSpy('scopeOnDestroy');
 
            // Define `ng1Directive`
-           const ng1DirectiveA: angular.IDirective = {
+           const ng1DirectiveA: bangular.IDirective = {
              template: 'ng1A',
              scope: {},
              bindToController: false,
              controllerAs: '$ctrl',
              controller: class {
-               constructor($scope: angular.IScope) {
+               constructor($scope: bangular.IScope) {
                  $scope['$onDestroy'] = scopeOnDestroy;
                  Object.getPrototypeOf($scope)['$onDestroy'] = scopeOnDestroy;
                }
              }
            };
 
-           const ng1DirectiveB: angular.IDirective = {
+           const ng1DirectiveB: bangular.IDirective = {
              template: 'ng1B',
              scope: {},
              bindToController: true,
              controllerAs: '$ctrl',
              controller: class {
-               constructor($scope: angular.IScope) {
+               constructor($scope: bangular.IScope) {
                  $scope['$onDestroy'] = scopeOnDestroy;
                  Object.getPrototypeOf($scope)['$onDestroy'] = scopeOnDestroy;
                }
@@ -3436,7 +3436,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .directive('ng1A', () => ng1DirectiveA)
                                  .directive('ng1B', () => ng1DirectiveB)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
@@ -3455,7 +3455,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            const element = html('<ng2 [show]="!destroyFromNg2" ng-if="!destroyFromNg1"></ng2>');
 
            bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(adapter => {
-             const $rootScope = adapter.$injector.get('$rootScope') as angular.IRootScopeService;
+             const $rootScope = adapter.$injector.get('$rootScope') as bangular.IRootScopeService;
 
              expect(multiTrim(document.body.textContent)).toBe('ng1A | ng1B');
              expect(scopeOnDestroy).not.toHaveBeenCalled();
@@ -3480,7 +3480,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
       it('should be called in order `$onChanges()` > `$onInit()` > `$doCheck()` > `$postLink()`',
          async(() => {
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              // `$doCheck()` will keep getting called as long as the interpolated value keeps
              // changing (by appending `> $doCheck`). Only care about the first 4 values.
              template: '{{ $ctrl.calls.slice(0, 4).join(" > ") }}',
@@ -3514,7 +3514,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -3544,9 +3544,9 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            let ng2ComponentAInstance: Ng2ComponentA;
 
            // Define `ng1Component`
-           const ng1Component: angular.IComponent = {
+           const ng1Component: bangular.IComponent = {
              controller: class {
-               constructor($scope: angular.IScope) { $scope.$on('$destroy', scopeDestroyListener); }
+               constructor($scope: bangular.IScope) { $scope.$on('$destroy', scopeDestroyListener); }
              }
            };
 
@@ -3571,7 +3571,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2A', downgradeComponent({component: Ng2ComponentA}));
 
@@ -3603,7 +3603,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            // Define `ng1Component`
            const ng1Component:
-               angular.IComponent = {template: 'ng1', controller: class {$doCheck() {}}};
+               bangular.IComponent = {template: 'ng1', controller: class {$doCheck() {}}};
 
            // Define `Ng1ComponentFacade`
            @Directive({selector: 'ng1'})
@@ -3617,11 +3617,11 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
            @Component({selector: 'ng2', template: '<ng1 *ngIf="doShow"></ng1>'})
            class Ng2Component {
              doShow: boolean = false;
-             constructor(@Inject($SCOPE) public $scope: angular.IScope) { ng2Component = this; }
+             constructor(@Inject($SCOPE) public $scope: bangular.IScope) { ng2Component = this; }
            }
 
            // Define `ng1Module`
-           const ng1Module = angular.module('ng1Module', [])
+           const ng1Module = bangular.module('ng1Module', [])
                                  .component('ng1', ng1Component)
                                  .directive('ng2', downgradeComponent({component: Ng2Component}));
 
@@ -3665,7 +3665,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
     it('should support ng2 > ng1 > ng2 (no inputs/outputs)', async(() => {
          // Define `ng1Component`
-         const ng1Component: angular.IComponent = {template: 'ng1X(<ng2-b></ng2-b>)'};
+         const ng1Component: bangular.IComponent = {template: 'ng1X(<ng2-b></ng2-b>)'};
 
          // Define `Ng1ComponentFacade`
          @Directive({selector: 'ng1X'})
@@ -3685,7 +3685,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
          }
 
          // Define `ng1Module`
-         const ng1Module = angular.module('ng1', [])
+         const ng1Module = bangular.module('ng1', [])
                                .component('ng1X', ng1Component)
                                .directive('ng2A', downgradeComponent({component: Ng2ComponentA}))
                                .directive('ng2B', downgradeComponent({component: Ng2ComponentB}));
@@ -3722,7 +3722,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
            constructor() { ng1ControllerXInstance = this; }
          }
-         const ng1Component: angular.IComponent = {
+         const ng1Component: bangular.IComponent = {
            template: `
               ng1X({{ $ctrl.ng1XInputA }}, {{ $ctrl.ng1XInputB.value }}, {{ $ctrl.ng1XInputC.value }}) |
               <ng2-b
@@ -3788,7 +3788,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
          }
 
          // Define `ng1Module`
-         const ng1Module = angular.module('ng1', [])
+         const ng1Module = bangular.module('ng1', [])
                                .component('ng1X', ng1Component)
                                .directive('ng2A', downgradeComponent({component: Ng2ComponentA}))
                                .directive('ng2B', downgradeComponent({component: Ng2ComponentB}));
@@ -3895,12 +3895,12 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
 
     it('should support ng2 > ng1 > ng2 > ng1 (with `require`)', async(() => {
          // Define `ng1Component`
-         const ng1ComponentA: angular.IComponent = {
+         const ng1ComponentA: bangular.IComponent = {
            template: 'ng1A(<ng2-b></ng2-b>)',
            controller: class {value = 'ng1A';}
          };
 
-         const ng1ComponentB: angular.IComponent = {
+         const ng1ComponentB: bangular.IComponent = {
            template:
                'ng1B(^^ng1A: {{ $ctrl.ng1A.value }} | ?^^ng1B: {{ $ctrl.ng1B.value }} | ^ng1B: {{ $ctrl.ng1BSelf.value }})',
            require: {ng1A: '^^', ng1B: '?^^', ng1BSelf: '^ng1B'},
@@ -3932,7 +3932,7 @@ import {$digest, bootstrap, html, multiTrim} from '../test_helpers';
          }
 
          // Define `ng1Module`
-         const ng1Module = angular.module('ng1', [])
+         const ng1Module = bangular.module('ng1', [])
                                .component('ng1A', ng1ComponentA)
                                .component('ng1B', ng1ComponentB)
                                .directive('ng2A', downgradeComponent({component: Ng2ComponentA}))

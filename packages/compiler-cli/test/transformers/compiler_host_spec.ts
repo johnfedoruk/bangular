@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import * as compiler from '@angular/compiler';
+import * as compiler from '@bangular/compiler';
 import * as ts from 'typescript';
 
 import {MetadataCollector} from '../../src/metadata/collector';
@@ -61,8 +61,8 @@ describe('NgCompilerHost', () => {
     beforeEach(() => { host = createHost(); });
 
     it('should use a package import when accessing a package from a source file', () => {
-      expect(host.fileNameToModuleName('/tmp/node_modules/@angular/core.d.ts', '/tmp/main.ts'))
-          .toBe('@angular/core');
+      expect(host.fileNameToModuleName('/tmp/node_modules/@bangular/core.d.ts', '/tmp/main.ts'))
+          .toBe('@bangular/core');
     });
 
     it('should use a package import when accessing a package from another package', () => {
@@ -70,9 +70,9 @@ describe('NgCompilerHost', () => {
                  '/tmp/node_modules/mod1/index.d.ts', '/tmp/node_modules/mod2/index.d.ts'))
           .toBe('mod1/index');
       expect(host.fileNameToModuleName(
-                 '/tmp/node_modules/@angular/core/index.d.ts',
-                 '/tmp/node_modules/@angular/common/index.d.ts'))
-          .toBe('@angular/core/index');
+                 '/tmp/node_modules/@bangular/core/index.d.ts',
+                 '/tmp/node_modules/@bangular/common/index.d.ts'))
+          .toBe('@bangular/core/index');
     });
 
     it('should use a relative import when accessing a file in the same package', () => {
@@ -80,8 +80,8 @@ describe('NgCompilerHost', () => {
                  '/tmp/node_modules/mod/a/child.d.ts', '/tmp/node_modules/mod/index.d.ts'))
           .toBe('./a/child');
       expect(host.fileNameToModuleName(
-                 '/tmp/node_modules/@angular/core/src/core.d.ts',
-                 '/tmp/node_modules/@angular/core/index.d.ts'))
+                 '/tmp/node_modules/@bangular/core/src/core.d.ts',
+                 '/tmp/node_modules/@bangular/core/index.d.ts'))
           .toBe('./src/core');
     });
 
@@ -120,10 +120,10 @@ describe('NgCompilerHost', () => {
     it('should error if accessing a source file from a package', () => {
       expect(
           () => host.fileNameToModuleName(
-              '/tmp/src/a/child.ts', '/tmp/node_modules/@angular/core.d.ts'))
+              '/tmp/src/a/child.ts', '/tmp/node_modules/@bangular/core.d.ts'))
           .toThrowError(
               'Trying to import a source file from a node_modules package: ' +
-              'import /tmp/src/a/child.ts from /tmp/node_modules/@angular/core.d.ts');
+              'import /tmp/src/a/child.ts from /tmp/node_modules/@bangular/core.d.ts');
     });
 
     it('should use the provided implementation if any', () => {

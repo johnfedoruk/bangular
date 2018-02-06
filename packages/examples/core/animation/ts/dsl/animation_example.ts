@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 // #docregion Component
-import {animate, state, style, transition, trigger} from '@angular/animations';
-import {Component, NgModule} from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {animate, state, style, transition, trigger} from '@bangular/animations';
+import {Component, NgModule} from '@bangular/core';
+import {BrowserAnimationsModule} from '@bangular/platform-browser/animations';
 
 @Component({
   selector: 'example-app',

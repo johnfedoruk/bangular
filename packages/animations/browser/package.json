@@ -1,5 +1,5 @@
 {
-  "name": "@angular/animations/browser",
+  "name": "@bangular/animations/browser",
   "typings": "./browser.d.ts",
   "main": "../bundles/animations-browser.umd.js",
   "module": "../esm5/browser.js",

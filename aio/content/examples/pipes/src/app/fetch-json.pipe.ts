@@ -1,6 +1,6 @@
 // #docregion
-import { Pipe, PipeTransform } from '@angular/core';
-import { Http }                from '@angular/http';
+import { Pipe, PipeTransform } from '@bangular/core';
+import { Http }                from '@bangular/http';
 
 import 'rxjs/add/operator/map';
 

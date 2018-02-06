@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {EventEmitter, Injectable, NgZone} from '@angular/core';
+import {EventEmitter, Injectable, NgZone} from '@bangular/core';
 
 import {MessageBus, MessageBusSink, MessageBusSource} from './message_bus';
 
@@ -26,7 +26,7 @@ export class PostMessageBusSink implements MessageBusSink {
 
   attachToZone(zone: NgZone): void {
     this._zone = zone;
-    this._zone.runOutsideAngular(
+    this._zone.runOutsideBangular(
         () => { this._zone.onStable.subscribe({next: () => { this._handleOnEventDone(); }}); });
   }
 

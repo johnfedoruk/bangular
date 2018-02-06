@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AotSummaryResolver, AotSummaryResolverHost, CompileSummaryKind, CompileTypeSummary, ResolvedStaticSymbol, StaticSymbol, StaticSymbolCache, StaticSymbolResolver} from '@angular/compiler';
-import {deserializeSummaries, serializeSummaries} from '@angular/compiler/src/aot/summary_serializer';
-import {ConstantPool} from '@angular/compiler/src/constant_pool';
-import * as o from '@angular/compiler/src/output/output_ast';
-import {OutputContext} from '@angular/compiler/src/util';
+import {AotSummaryResolver, AotSummaryResolverHost, CompileSummaryKind, CompileTypeSummary, ResolvedStaticSymbol, StaticSymbol, StaticSymbolCache, StaticSymbolResolver} from '@bangular/compiler';
+import {deserializeSummaries, serializeSummaries} from '@bangular/compiler/src/aot/summary_serializer';
+import {ConstantPool} from '@bangular/compiler/src/constant_pool';
+import * as o from '@bangular/compiler/src/output/output_ast';
+import {OutputContext} from '@bangular/compiler/src/util';
 import * as path from 'path';
 
 import {MockStaticSymbolResolverHost, MockSummaryResolver} from './static_symbol_resolver_spec';

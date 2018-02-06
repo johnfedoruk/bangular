@@ -4,14 +4,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 
 /**
  * Extract i18n messages from source code
  */
-// Must be imported first, because Angular decorators throw on load.
+// Must be imported first, because Bangular decorators throw on load.
 import 'reflect-metadata';
 import * as api from './transformers/api';
 import {ParsedConfiguration} from './perform_compile';

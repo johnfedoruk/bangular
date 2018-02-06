@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ANALYZE_FOR_ENTRY_COMPONENTS, Component, ComponentFactoryResolver} from '@angular/core';
-import {noComponentFactoryError} from '@angular/core/src/linker/component_factory_resolver';
-import {TestBed} from '@angular/core/testing';
+import {ANALYZE_FOR_ENTRY_COMPONENTS, Component, ComponentFactoryResolver} from '@bangular/core';
+import {noComponentFactoryError} from '@bangular/core/src/linker/component_factory_resolver';
+import {TestBed} from '@bangular/core/testing';
 
 import {Console} from '../../src/console';
 

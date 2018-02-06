@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AST, Attribute, BoundDirectivePropertyAst, BoundEventAst, ElementAst, TemplateAst, TemplateAstPath, findNode, tokenReference} from '@angular/compiler';
-import {getExpressionScope} from '@angular/compiler-cli/src/language_services';
+import {AST, Attribute, BoundDirectivePropertyAst, BoundEventAst, ElementAst, TemplateAst, TemplateAstPath, findNode, tokenReference} from '@bangular/compiler';
+import {getExpressionScope} from '@bangular/compiler-cli/src/language_services';
 
 import {TemplateInfo} from './common';
 import {getExpressionSymbol} from './expressions';

@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, ElementRef, Injectable, NgModule, Renderer} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {Component, Directive, ElementRef, Injectable, NgModule, Renderer} from '@bangular/core';
+import {BrowserModule} from '@bangular/platform-browser';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
 
 export function main() {
   platformBrowserDynamic().bootstrapModule(ExampleModule);
@@ -31,13 +31,13 @@ export class RedDec {
   }
 }
 
-// Angular supports 2 basic types of directives:
-// - Component - the basic building blocks of Angular apps. Backed by
+// Bangular supports 2 basic types of directives:
+// - Component - the basic building blocks of Bangular apps. Backed by
 //   ShadowDom.(http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/)
 // - Directive - add behavior to existing elements.
 
 @Component({
-  // The Selector prop tells Angular on which elements to instantiate this
+  // The Selector prop tells Bangular on which elements to instantiate this
   // class. The syntax supported is a basic subset of CSS selectors, for example
   // 'element', '[attr]', [attr=foo]', etc.
   selector: 'hello-app',

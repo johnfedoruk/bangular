@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 export enum TagContentType {
@@ -328,7 +328,7 @@ export const NAMED_ENTITIES: {[k: string]: string} = {
 };
 
 // The &ngsp; pseudo-entity is denoting a space. see:
-// https://github.com/dart-lang/angular/blob/0bb611387d29d65b5af7f9d2515ab571fd3fbee4/_tests/test/compiler/preserve_whitespace_test.dart
+// https://github.com/dart-lang/bangular/blob/0bb611387d29d65b5af7f9d2515ab571fd3fbee4/_tests/test/compiler/preserve_whitespace_test.dart
 export const NGSP_UNICODE = '\uE500';
 
 NAMED_ENTITIES['ngsp'] = NGSP_UNICODE;

@@ -5,7 +5,7 @@ describe('mergeDecoratorDocs processor', () => {
   let processor, moduleDoc, decoratorDoc, metadataDoc, otherDoc;
 
   beforeEach(() => {
-    const dgeni = new Dgeni([testPackage('angular-api-package')]);
+    const dgeni = new Dgeni([testPackage('bangular-api-package')]);
     const injector = dgeni.configureInjector();
     processor = injector.get('mergeDecoratorDocs');
 

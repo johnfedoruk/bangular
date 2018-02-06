@@ -1,20 +1,20 @@
-# Angular Template Compiler
+# Bangular Template Compiler
 
-Angular applications are built with templates, which may be `.html` or `.css` files,
+Bangular applications are built with templates, which may be `.html` or `.css` files,
 or may be inline `template` attributes on Decorators like `@Component`.
 
 These templates are compiled into executable JS at application runtime (except in `interpretation` mode).
 This compilation can occur on the client, but it results in slower bootstrap time, and also
 requires that the compiler be included in the code downloaded to the client.
 
-You can produce smaller, faster applications by running Angular's compiler as a build step,
+You can produce smaller, faster applications by running Bangular's compiler as a build step,
 and then downloading only the executable JS to the client.
 
 ## Install and use
 
 ```
-# First install angular, see https://github.com/angular/angular/blob/master/CHANGELOG.md#200-rc0-2016-05-02
-$ npm install @angular/compiler-cli typescript@next @angular/platform-server @angular/compiler
+# First install bangular, see https://github.com/bangular/bangular/blob/master/CHANGELOG.md#200-rc0-2016-05-02
+$ npm install @bangular/compiler-cli typescript@next @bangular/platform-server @bangular/compiler
 # Optional sanity check, make sure TypeScript can compile.
 $ ./node_modules/.bin/tsc -p path/to/project
 # ngc is a drop-in replacement for tsc.
@@ -29,8 +29,8 @@ generated code:
 ```typescript
 main.module.ts
 -------------
-import {BrowserModule} from '@angular/platform-browser';
-import {Component, NgModule, ApplicationRef} from '@angular/core';
+import {BrowserModule} from '@bangular/platform-browser';
+import {Component, NgModule, ApplicationRef} from '@bangular/core';
 
 @Component(...)
 export class MyComponent {}
@@ -50,7 +50,7 @@ bootstrap.ts
 -------------
 
 import {MainModuleNgFactory} from './main.module.ngfactory';
-import {platformBrowser} from '@angular/platform-browser';
+import {platformBrowser} from '@bangular/platform-browser';
 
 platformBrowser().bootstrapModuleFactory(MainModuleNgFactory);
 ```
@@ -59,7 +59,7 @@ platformBrowser().bootstrapModuleFactory(MainModuleNgFactory);
 
 The `tsconfig.json` file may contain an additional configuration block:
 ```
- "angularCompilerOptions": {
+ "bangularCompilerOptions": {
    "genDir": ".",
    "debug": true
  }
@@ -106,19 +106,19 @@ This program mimics the TypeScript tsc command line. It accepts a `-p` flag whic
 This CLI is intended for demos, prototyping, or for users with simple build systems
 that run bare `tsc`.
 
-Users with a build system should expect an Angular template plugin. Such a plugin would be
+Users with a build system should expect an Bangular template plugin. Such a plugin would be
 based on the `public_api.ts` in this directory, but should share the TypeScript compiler instance
 with the one already used in the plugin for TypeScript typechecking and emit.
 
 ## Design
 At a high level, this program
 - collects static metadata about the sources
-- uses the `OfflineCompiler` from `@angular/compiler` to codegen additional `.ts` files
+- uses the `OfflineCompiler` from `@bangular/compiler` to codegen additional `.ts` files
 - these `.ts` files are written to the `genDir` path, then compiled together with the application.
 
 ## For developers
 ```
-# Build Angular and the compiler
+# Build Bangular and the compiler
 ./build.sh
 
 # Run the test once
@@ -128,9 +128,9 @@ $ ./scripts/ci/offline_compiler_test.sh
 # Keep a package fresh in watch mode
 ./node_modules/.bin/tsc -p packages/compiler/tsconfig-build.json -w
 
-# Recompile @angular/core module (needs to use tsc-ext to keep the metadata)
+# Recompile @bangular/core module (needs to use tsc-ext to keep the metadata)
 $ export NODE_PATH=${NODE_PATH}:$(pwd)/dist/all:$(pwd)/dist/tools
-$ node dist/tools/@angular/compiler-cli/src/main -p packages/core/tsconfig-build.json
+$ node dist/tools/@bangular/compiler-cli/src/main -p packages/core/tsconfig-build.json
 
 # Iterate on the test
 $ cd /tmp/wherever/e2e_test.1464388257/

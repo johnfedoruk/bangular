@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ParseLocation, ParseSourceFile, ParseSourceSpan} from '@angular/compiler';
-import * as o from '@angular/compiler/src/output/output_ast';
+import {ParseLocation, ParseSourceFile, ParseSourceSpan} from '@bangular/compiler';
+import * as o from '@bangular/compiler/src/output/output_ast';
 import {MappingItem, RawSourceMap, SourceMapConsumer} from 'source-map';
 import * as ts from 'typescript';
 

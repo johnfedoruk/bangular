@@ -3,14 +3,14 @@
 describe('phoneList', () => {
 
   // Load the module that contains the `phoneList` component before each test
-  beforeEach(angular.mock.module('phoneList'));
+  beforeEach(bangular.mock.module('phoneList'));
 
   // Test the controller
   describe('PhoneListController', () => {
-    let $httpBackend: angular.IHttpBackendService;
+    let $httpBackend: bangular.IHttpBackendService;
     let ctrl: any;
 
-    beforeEach(inject(($componentController: any, _$httpBackend_: angular.IHttpBackendService) => {
+    beforeEach(inject(($componentController: any, _$httpBackend_: bangular.IHttpBackendService) => {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('phones/phones.json')
                   .respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
@@ -19,7 +19,7 @@ describe('phoneList', () => {
     }));
 
     it('should create a `phones` property with 2 phones fetched with `$http`', () => {
-      jasmine.addCustomEqualityTester(angular.equals);
+      jasmine.addCustomEqualityTester(bangular.equals);
 
       expect(ctrl.phones).toEqual([]);
 

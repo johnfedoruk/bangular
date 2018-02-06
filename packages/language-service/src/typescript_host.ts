@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AotSummaryResolver, CompileMetadataResolver, CompilerConfig, DEFAULT_INTERPOLATION_CONFIG, DirectiveNormalizer, DirectiveResolver, DomElementSchemaRegistry, FormattedError, FormattedMessageChain, HtmlParser, InterpolationConfig, JitSummaryResolver, NgAnalyzedModules, NgModuleResolver, ParseTreeResult, PipeResolver, ResourceLoader, StaticReflector, StaticSymbol, StaticSymbolCache, StaticSymbolResolver, SummaryResolver, analyzeNgModules, createOfflineCompileUrlResolver, isFormattedError} from '@angular/compiler';
-import {CompilerOptions, getClassMembersFromDeclaration, getPipesTable, getSymbolQuery} from '@angular/compiler-cli/src/language_services';
-import {ViewEncapsulation, ɵConsole as Console} from '@angular/core';
+import {AotSummaryResolver, CompileMetadataResolver, CompilerConfig, DEFAULT_INTERPOLATION_CONFIG, DirectiveNormalizer, DirectiveResolver, DomElementSchemaRegistry, FormattedError, FormattedMessageChain, HtmlParser, InterpolationConfig, JitSummaryResolver, NgAnalyzedModules, NgModuleResolver, ParseTreeResult, PipeResolver, ResourceLoader, StaticReflector, StaticSymbol, StaticSymbolCache, StaticSymbolResolver, SummaryResolver, analyzeNgModules, createOfflineCompileUrlResolver, isFormattedError} from '@bangular/compiler';
+import {CompilerOptions, getClassMembersFromDeclaration, getPipesTable, getSymbolQuery} from '@bangular/compiler-cli/src/language_services';
+import {ViewEncapsulation, ɵConsole as Console} from '@bangular/core';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as ts from 'typescript';
@@ -55,7 +55,7 @@ export class DummyResourceLoader extends ResourceLoader {
 /**
  * An implemntation of a `LanguageServiceHost` for a TypeScript project.
  *
- * The `TypeScriptServiceHost` implements the Angular `LanguageServiceHost` using
+ * The `TypeScriptServiceHost` implements the Bangular `LanguageServiceHost` using
  * the TypeScript language services.
  *
  * @experimental
@@ -84,7 +84,7 @@ export class TypeScriptServiceHost implements LanguageServiceHost {
   setSite(service: LanguageService) { this.service = service; }
 
   /**
-   * Angular LanguageServiceHost implementation
+   * Bangular LanguageServiceHost implementation
    */
   get resolver(): CompileMetadataResolver {
     this.validate();
@@ -466,7 +466,7 @@ export class TypeScriptServiceHost implements LanguageServiceHost {
       [undefined, undefined];
 
   /**
-   * Given a template string node, see if it is an Angular template string, and if so return the
+   * Given a template string node, see if it is an Bangular template string, and if so return the
    * containing class.
    */
   private getTemplateClassDeclFromNode(currentToken: ts.Node):

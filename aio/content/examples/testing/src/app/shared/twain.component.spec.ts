@@ -1,7 +1,7 @@
 // #docplaster
-import { async, fakeAsync, ComponentFixture, TestBed, tick } from '@angular/core/testing';
-import { By }                        from '@angular/platform-browser';
-import { DebugElement }              from '@angular/core';
+import { async, fakeAsync, ComponentFixture, TestBed, tick } from '@bangular/core/testing';
+import { By }                        from '@bangular/platform-browser';
+import { DebugElement }              from '@bangular/core';
 
 import { TwainService }   from './twain.service';
 import { TwainComponent } from './twain.component';

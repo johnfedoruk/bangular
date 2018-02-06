@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Type} from '@angular/core';
-import {UiArguments} from '@angular/platform-webworker/src/web_workers/shared/client_message_broker';
-import {MessageBus} from '@angular/platform-webworker/src/web_workers/shared/message_bus';
-import {LocationType, SerializerTypes} from '@angular/platform-webworker/src/web_workers/shared/serializer';
-import {WebWorkerPlatformLocation} from '@angular/platform-webworker/src/web_workers/worker/platform_location';
+import {Type} from '@bangular/core';
+import {UiArguments} from '@bangular/platform-webworker/src/web_workers/shared/client_message_broker';
+import {MessageBus} from '@bangular/platform-webworker/src/web_workers/shared/message_bus';
+import {LocationType, SerializerTypes} from '@bangular/platform-webworker/src/web_workers/shared/serializer';
+import {WebWorkerPlatformLocation} from '@bangular/platform-webworker/src/web_workers/worker/platform_location';
 
 import {MockMessageBrokerFactory, createPairedMessageBuses, expectBrokerCall} from '../shared/web_worker_test_util';
 

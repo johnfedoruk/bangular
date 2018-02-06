@@ -12,7 +12,7 @@ The `HeroDetailsComponent` will present details of a selected hero.
 
 ## Make the `HeroDetailComponent`
 
-Use the Angular CLI to generate a new component named `hero-detail`.
+Use the Bangular CLI to generate a new component named `hero-detail`.
 
 <code-example language="sh" class="code-shell">
   ng generate component hero-detail
@@ -53,7 +53,7 @@ because the _external_ `HeroesComponent` [will bind to it](#heroes-component-tem
 <code-example path="toh-pt3/src/app/heroes/heroes.component.html" region="hero-detail-binding">
 </code-example>
 
-Amend the `@angular/core` import statement to include the `Input` symbol.
+Amend the `@bangular/core` import statement to include the `Input` symbol.
 
 <code-example path="toh-pt3/src/app/hero-detail/hero-detail.component.ts" region="import-input" title="src/app/hero-detail/hero-detail.component.ts (import Input)" linenums="false">
 </code-example>
@@ -93,7 +93,7 @@ Bind the `HeroesComponent.selectedHero` to the element's `hero` property like th
 
 </code-example>
 
-`[hero]="selectedHero"` is an Angular [property binding](guide/template-syntax#property-binding).
+`[hero]="selectedHero"` is an Bangular [property binding](guide/template-syntax#property-binding).
 
 It's a _one way_ data binding from
 the `selectedHero` property of the `HeroComponent` to the `hero` property of the target element, which maps to the `hero` property of the `HeroDetailComponent`.

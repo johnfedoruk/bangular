@@ -1,5 +1,5 @@
-import { ComponentFactory, ComponentFactoryResolver, ComponentRef, NgModuleFactoryLoader } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
+import { ComponentFactory, ComponentFactoryResolver, ComponentRef, NgModuleFactoryLoader } from '@bangular/core';
+import { TestBed } from '@bangular/core/testing';
 
 import {
   MockNgModuleFactoryLoader, TestEmbedComponentsService, TestModule, mockEmbeddedModulePath,

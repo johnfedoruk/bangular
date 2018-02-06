@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {beforeEach, describe, expect, it} from '@angular/core/testing/src/testing_internal';
-import {FormBuilder} from '@angular/forms';
+import {beforeEach, describe, expect, it} from '@bangular/core/testing/src/testing_internal';
+import {FormBuilder} from '@bangular/forms';
 
 (function() {
   function syncValidator(_: any /** TODO #9100 */): any /** TODO #9100 */ { return null; }

@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AnimationOptions, animate, state, style, transition} from '@angular/animations';
-import {AnimationTransitionInstruction} from '@angular/animations/browser/src/dsl/animation_transition_instruction';
-import {AnimationTrigger} from '@angular/animations/browser/src/dsl/animation_trigger';
+import {AnimationOptions, animate, state, style, transition} from '@bangular/animations';
+import {AnimationTransitionInstruction} from '@bangular/animations/browser/src/dsl/animation_transition_instruction';
+import {AnimationTrigger} from '@bangular/animations/browser/src/dsl/animation_trigger';
 
 import {ENTER_CLASSNAME, LEAVE_CLASSNAME} from '../../src/util';
 import {MockAnimationDriver} from '../../testing';
@@ -44,8 +44,8 @@ import {makeTrigger} from '../shared';
 
       it('should throw an error if an animation alias is used that is not yet supported', () => {
         expect(() => {
-          makeTrigger('name', [transition(':angular', animate(3333))]);
-        }).toThrowError(/- The transition alias value ":angular" is not supported/);
+          makeTrigger('name', [transition(':bangular', animate(3333))]);
+        }).toThrowError(/- The transition alias value ":bangular" is not supported/);
       });
     });
 

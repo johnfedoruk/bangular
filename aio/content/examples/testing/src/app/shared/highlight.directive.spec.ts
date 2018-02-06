@@ -1,6 +1,6 @@
-import { Component, DebugElement }   from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { Component, DebugElement }   from '@bangular/core';
+import { ComponentFixture, TestBed } from '@bangular/core/testing';
+import { By } from '@bangular/platform-browser';
 
 import { HighlightDirective } from './highlight.directive';
 import { newEvent }           from '../../testing';
@@ -59,7 +59,7 @@ describe('HighlightDirective', () => {
     const input = des[2].nativeElement as HTMLInputElement;
     expect(input.style.backgroundColor).toBe('cyan', 'initial backgroundColor');
 
-    // dispatch a DOM event so that Angular responds to the input value change.
+    // dispatch a DOM event so that Bangular responds to the input value change.
     input.value = 'green';
     input.dispatchEvent(newEvent('input'));
     fixture.detectChanges();

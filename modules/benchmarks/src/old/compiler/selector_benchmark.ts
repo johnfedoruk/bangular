@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CssSelector, SelectorMatcher} from '@angular/compiler/src/selector';
-import {BrowserDomAdapter} from '@angular/platform-browser/src/browser/browser_adapter';
-import {bindAction, getIntParameter} from '@angular/testing/src/benchmark_util';
+import {CssSelector, SelectorMatcher} from '@bangular/compiler/src/selector';
+import {BrowserDomAdapter} from '@bangular/platform-browser/src/browser/browser_adapter';
+import {bindAction, getIntParameter} from '@bangular/testing/src/benchmark_util';
 
 export function main() {
   BrowserDomAdapter.makeCurrent();

@@ -5,9 +5,9 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@angular/core": ["../../dist/packages/core"],
-      "@angular/platform-browser/animations": ["../../dist/packages/platform-browser/animations"],
-      "@angular/common": ["../../dist/packages/common"]
+      "@bangular/core": ["../../dist/packages/core"],
+      "@bangular/platform-browser/animations": ["../../dist/packages/platform-browser/animations"],
+      "@bangular/common": ["../../dist/packages/common"]
     },
     "outDir": "../../dist/packages/platform-browser"
   },
@@ -19,11 +19,11 @@
     "../goog.d.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "platform-browser.js",
-    "flatModuleId": "@angular/platform-browser"
+    "flatModuleId": "@bangular/platform-browser"
   }
 }

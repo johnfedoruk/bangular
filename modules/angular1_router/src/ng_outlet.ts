@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-///<reference path="../typings/angularjs/angular.d.ts"/>
+///<reference path="../typings/bangularjs/bangular.d.ts"/>
 
 
 
@@ -86,7 +86,7 @@ function ngOutletDirective($animate, $q: ng.IQService, $rootRouter) {
           result = this.currentController.$routerCanReuse(nextInstruction, this.currentInstruction);
         } else {
           result = nextInstruction === this.currentInstruction ||
-                   angular.equals(nextInstruction.params, this.currentInstruction.params);
+                   bangular.equals(nextInstruction.params, this.currentInstruction.params);
         }
         return $q.when(result);
       }
@@ -195,7 +195,7 @@ function routerTriggerDirective($q) {
  * ### Example
  *
  * ```js
- * angular.module('myApp', ['ngComponentRouter'])
+ * bangular.module('myApp', ['ngComponentRouter'])
  *   .controller('AppController', ['$rootRouter', function($rootRouter) {
  *     $rootRouter.config({ path: '/user/:id', component: 'user' });
  *     this.user = { name: 'Brian', id: 123 };
@@ -266,9 +266,9 @@ function dashCase(str: string): string {
 }
 
 /*
- * A module for adding new a routing system AngularJS.
+ * A module for adding new a routing system BangularJS.
  */
-angular.module('ngComponentRouter', [])
+bangular.module('ngComponentRouter', [])
     .directive('ngOutlet', ['$animate', '$q', '$rootRouter', ngOutletDirective])
     .directive('ngOutlet', ['$compile', ngOutletFillContentDirective])
     .directive('ngLink', ['$rootRouter', '$parse', ngLinkDirective])

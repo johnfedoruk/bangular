@@ -3,22 +3,22 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable} from '@angular/core';
-import {AsyncTestCompleter, SpyObject, afterEach, beforeEach, beforeEachProviders, describe, expect, inject, it} from '@angular/core/testing/src/testing_internal';
-import {BrowserXhr} from '@angular/http/src/backends/browser_xhr';
-import {CookieXSRFStrategy, XHRBackend, XHRConnection} from '@angular/http/src/backends/xhr_backend';
-import {BaseRequestOptions, RequestOptions} from '@angular/http/src/base_request_options';
-import {BaseResponseOptions, ResponseOptions} from '@angular/http/src/base_response_options';
-import {ResponseContentType, ResponseType} from '@angular/http/src/enums';
-import {Headers} from '@angular/http/src/headers';
-import {XSRFStrategy} from '@angular/http/src/interfaces';
-import {Request} from '@angular/http/src/static_request';
-import {Response} from '@angular/http/src/static_response';
-import {URLSearchParams} from '@angular/http/src/url_search_params';
-import {ɵgetDOM as getDOM} from '@angular/platform-browser';
+import {Injectable} from '@bangular/core';
+import {AsyncTestCompleter, SpyObject, afterEach, beforeEach, beforeEachProviders, describe, expect, inject, it} from '@bangular/core/testing/src/testing_internal';
+import {BrowserXhr} from '@bangular/http/src/backends/browser_xhr';
+import {CookieXSRFStrategy, XHRBackend, XHRConnection} from '@bangular/http/src/backends/xhr_backend';
+import {BaseRequestOptions, RequestOptions} from '@bangular/http/src/base_request_options';
+import {BaseResponseOptions, ResponseOptions} from '@bangular/http/src/base_response_options';
+import {ResponseContentType, ResponseType} from '@bangular/http/src/enums';
+import {Headers} from '@bangular/http/src/headers';
+import {XSRFStrategy} from '@bangular/http/src/interfaces';
+import {Request} from '@bangular/http/src/static_request';
+import {Response} from '@bangular/http/src/static_response';
+import {URLSearchParams} from '@bangular/http/src/url_search_params';
+import {ɵgetDOM as getDOM} from '@bangular/platform-browser';
 
 let abortSpy: any;
 let sendSpy: any;

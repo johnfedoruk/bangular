@@ -3,23 +3,23 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 import {AnimateTimings, AnimationMetadataType, animate as _animate, group as _group, keyframes as _keyframes, sequence as _sequence, state as _state, style as _style, transition as _transition, trigger as _trigger} from './dsl';
 
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export const AUTO_STYLE = '*';
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export interface AnimationMetadata { type: AnimationMetadataType; }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export interface AnimationTriggerMetadata {
   name: string;
@@ -27,7 +27,7 @@ export interface AnimationTriggerMetadata {
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export interface AnimationStateMetadata extends AnimationMetadata {
   name: string;
@@ -35,7 +35,7 @@ export interface AnimationStateMetadata extends AnimationMetadata {
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export interface AnimationTransitionMetadata extends AnimationMetadata {
   expr: string|((fromState: string, toState: string) => boolean);
@@ -43,14 +43,14 @@ export interface AnimationTransitionMetadata extends AnimationMetadata {
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export interface AnimationKeyframesSequenceMetadata extends AnimationMetadata {
   steps: AnimationStyleMetadata[];
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export interface AnimationStyleMetadata extends AnimationMetadata {
   styles: '*'|{[key: string]: string | number}|Array<{[key: string]: string | number}|'*'>;
@@ -58,7 +58,7 @@ export interface AnimationStyleMetadata extends AnimationMetadata {
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export interface AnimationAnimateMetadata extends AnimationMetadata {
   timings: string|number|AnimateTimings;
@@ -66,24 +66,24 @@ export interface AnimationAnimateMetadata extends AnimationMetadata {
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export interface AnimationSequenceMetadata extends AnimationMetadata { steps: AnimationMetadata[]; }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export interface AnimationGroupMetadata extends AnimationMetadata { steps: AnimationMetadata[]; }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export function trigger(name: string, definitions: AnimationMetadata[]): AnimationTriggerMetadata {
   return _trigger(name, definitions);
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export function animate(
     timings: string | number, styles?: AnimationStyleMetadata |
@@ -92,21 +92,21 @@ export function animate(
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export function group(steps: AnimationMetadata[]): AnimationGroupMetadata {
   return _group(steps);
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export function sequence(steps: AnimationMetadata[]): AnimationSequenceMetadata {
   return _sequence(steps);
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export function style(
     tokens: {[key: string]: string | number} |
@@ -115,21 +115,21 @@ export function style(
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export function state(name: string, styles: AnimationStyleMetadata): AnimationStateMetadata {
   return _state(name, styles);
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export function keyframes(steps: AnimationStyleMetadata[]): AnimationKeyframesSequenceMetadata {
   return _keyframes(steps);
 }
 
 /**
- * @deprecated This symbol has moved. Please Import from @angular/animations instead!
+ * @deprecated This symbol has moved. Please Import from @bangular/animations instead!
  */
 export function transition(stateChangeExpr: string, steps: AnimationMetadata | AnimationMetadata[]):
     AnimationTransitionMetadata {
@@ -137,7 +137,7 @@ export function transition(stateChangeExpr: string, steps: AnimationMetadata | A
 }
 
 /**
- * @deprecated This has been renamed to `AnimationEvent`. Please import it from @angular/animations.
+ * @deprecated This has been renamed to `AnimationEvent`. Please import it from @bangular/animations.
  */
 export interface AnimationTransitionEvent {
   fromState: string;

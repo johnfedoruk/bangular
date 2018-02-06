@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable} from '@angular/core';
+import {Injectable} from '@bangular/core';
 
 import {ResponseType} from './enums';
 import {Headers} from './headers';
@@ -29,7 +29,7 @@ import {ResponseOptionsArgs} from './interfaces';
  * ### Example ([live demo](http://plnkr.co/edit/P9Jkk8e8cz6NVzbcxEsD?p=preview))
  *
  * ```typescript
- * import {ResponseOptions, Response} from '@angular/http';
+ * import {ResponseOptions, Response} from '@bangular/http';
  *
  * var options = new ResponseOptions({
  *   body: '{"name":"Jeff"}'
@@ -39,7 +39,7 @@ import {ResponseOptionsArgs} from './interfaces';
  * console.log('res.json():', res.json()); // Object {name: "Jeff"}
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 export class ResponseOptions {
   // TODO: FormData | Blob
@@ -87,7 +87,7 @@ export class ResponseOptions {
    * ### Example ([live demo](http://plnkr.co/edit/1lXquqFfgduTFBWjNoRE?p=preview))
    *
    * ```typescript
-   * import {ResponseOptions, Response} from '@angular/http';
+   * import {ResponseOptions, Response} from '@bangular/http';
    *
    * var options = new ResponseOptions({
    *   body: {name: 'Jeff'}
@@ -126,10 +126,10 @@ export class ResponseOptions {
  * ### Example ([live demo](http://plnkr.co/edit/qv8DLT?p=preview))
  *
  * ```typescript
- * import {provide} from '@angular/core';
- * import {bootstrap} from '@angular/platform-browser/browser';
+ * import {provide} from '@bangular/core';
+ * import {bootstrap} from '@bangular/platform-browser/browser';
  * import {HTTP_PROVIDERS, Headers, Http, BaseResponseOptions, ResponseOptions} from
- * '@angular/http';
+ * '@bangular/http';
  * import {App} from './myapp';
  *
  * class MyOptions extends BaseResponseOptions {
@@ -145,18 +145,18 @@ export class ResponseOptions {
  * ### Example ([live demo](http://plnkr.co/edit/VngosOWiaExEtbstDoix?p=preview))
  *
  * ```
- * import {BaseResponseOptions, Response} from '@angular/http';
+ * import {BaseResponseOptions, Response} from '@bangular/http';
  *
  * var options = new BaseResponseOptions();
  * var res = new Response(options.merge({
- *   body: 'Angular',
- *   headers: new Headers({framework: 'angular'})
+ *   body: 'Bangular',
+ *   headers: new Headers({framework: 'bangular'})
  * }));
- * console.log('res.headers.get("framework"):', res.headers.get('framework')); // angular
- * console.log('res.text():', res.text()); // Angular;
+ * console.log('res.headers.get("framework"):', res.headers.get('framework')); // bangular
+ * console.log('res.text():', res.text()); // Bangular;
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 @Injectable()
 export class BaseResponseOptions extends ResponseOptions {

@@ -1,7 +1,7 @@
 import {
   Component, ComponentFactoryResolver, ComponentRef, CompilerFactory, ElementRef, NgModule,
   NgModuleFactoryLoader, OnInit, Type, ViewChild, getPlatform
-} from '@angular/core';
+} from '@bangular/core';
 
 import {
   ComponentsOrModulePath, EMBEDDED_COMPONENTS, EmbedComponentsService, EmbeddedComponentFactory,

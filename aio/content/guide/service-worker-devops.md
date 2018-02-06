@@ -1,6 +1,6 @@
 # Service worker in production
 
-This page is a reference for deploying and supporting production apps that use the Angular service worker. It explains how the Angular service worker fits into the larger production environment, the service worker's behavior under various conditions, and available recourses and fail-safes.
+This page is a reference for deploying and supporting production apps that use the Bangular service worker. It explains how the Bangular service worker fits into the larger production environment, the service worker's behavior under various conditions, and available recourses and fail-safes.
 
 #### Prerequisites
 
@@ -11,15 +11,15 @@ A basic understanding of the following:
 
 ## Service worker and caching of app resources
 
-Conceptually, you can imagine the Angular service worker as a forward cache or a CDN edge that is installed in the end user's web browser. The service worker's job is to satisfy requests made by the Angular app for resources or data from a local cache, without needing to wait for the network. Like any cache, it has rules for how content is expired and updated.
+Conceptually, you can imagine the Bangular service worker as a forward cache or a CDN edge that is installed in the end user's web browser. The service worker's job is to satisfy requests made by the Bangular app for resources or data from a local cache, without needing to wait for the network. Like any cache, it has rules for how content is expired and updated.
 
 {@a versions}
 
 ### App versions
 
-In the context of an Angular service worker, a "version" is a collection of resources that represent a specific build of the Angular app. Whenever a new build of the app is deployed, the service worker treats that build as a new version of the app. This is true even if only a single file is updated. At any given time, the service worker may have multiple versions of the app in its cache and it may be serving them simultaneously. For more information, see the [App tabs](guide/service-worker-devops#tabs) section below.
+In the context of an Bangular service worker, a "version" is a collection of resources that represent a specific build of the Bangular app. Whenever a new build of the app is deployed, the service worker treats that build as a new version of the app. This is true even if only a single file is updated. At any given time, the service worker may have multiple versions of the app in its cache and it may be serving them simultaneously. For more information, see the [App tabs](guide/service-worker-devops#tabs) section below.
 
-To preserve app integrity, the Angular service worker groups all files into a version together. The files grouped into a version usually include HTML, JS, and CSS files. Grouping of these files is essential for integrity because HTML, JS, and CSS files frequently refer to each other and depend on specific content. For example, an `index.html` file might have a `<script>` tag that references `bundle.js` and it might attempt to call a function `startApp()` from within that script. Any time this version of `index.html` is served, the corresponding `bundle.js` must be served with it. For example, assume that the `startApp()` function is renamed to `runApp()` in both files. In this scenario, it is not valid to serve the old `index.html`, which calls `startApp()`, along with the new bundle, which defines `runApp()`.
+To preserve app integrity, the Bangular service worker groups all files into a version together. The files grouped into a version usually include HTML, JS, and CSS files. Grouping of these files is essential for integrity because HTML, JS, and CSS files frequently refer to each other and depend on specific content. For example, an `index.html` file might have a `<script>` tag that references `bundle.js` and it might attempt to call a function `startApp()` from within that script. Any time this version of `index.html` is served, the corresponding `bundle.js` must be served with it. For example, assume that the `startApp()` function is renamed to `runApp()` in both files. In this scenario, it is not valid to serve the old `index.html`, which calls `startApp()`, along with the new bundle, which defines `runApp()`.
 
 This file integrity is especially important when lazy loading modules. 
 A JS bundle may reference many lazy chunks, and the filenames of the 
@@ -31,15 +31,15 @@ The version identifier of the app is determined by the contents of all
 resources, and it changes if any of them change. In practice, the version 
 is determined by the contents of the `ngsw.json` file, which includes 
 hashes for all known content. If any of the cached files change, the file's 
-hash will change in `ngsw.json`, causing the Angular service worker to 
+hash will change in `ngsw.json`, causing the Bangular service worker to 
 treat the active set of files as a new version. 
 
-With the versioning behavior of the Angular service worker, an application 
-server can ensure that the Angular app always has a consistent set of files.
+With the versioning behavior of the Bangular service worker, an application 
+server can ensure that the Bangular app always has a consistent set of files.
 
 #### Update checks
 
-Every time the user opens or refreshes the application, the Angular service worker
+Every time the user opens or refreshes the application, the Bangular service worker
 checks for updates to the app by looking for updates to the `ngsw.json` manifest. If
 an update is found, it is downloaded and cached automatically, and will be served
 the next time the application is loaded.
@@ -53,12 +53,12 @@ file. A service worker ignores such constraints and effectively long
 caches the entire app. Consequently, it is essential that the service worker 
 get the correct content.
 
-To ensure resource integrity, the Angular service worker validates 
+To ensure resource integrity, the Bangular service worker validates 
 the hashes of all resources for which it has a hash. Typically for 
 a CLI app, this is everything in the `dist` directory covered by 
 the user's `src/ngsw-config.json` configuration.
 
-If a particular file fails validation, the Angular service worker 
+If a particular file fails validation, the Bangular service worker 
 attempts to re-fetch the content using a "cache-busting" URL 
 parameter to eliminate the effects of browser or intermediate 
 caching. If that content also fails validation, the service worker 
@@ -70,7 +70,7 @@ if the risk of serving invalid, broken, or outdated content is high.
 Hash mismatches can occur for a variety of reasons:
 
 * Caching layers in between the origin server and the end user could serve stale content.
-* A non-atomic deployment could result in the Angular service worker having visibility of partially updated content.
+* A non-atomic deployment could result in the Bangular service worker having visibility of partially updated content.
 * Errors during the build process could result in updated resources without `ngsw.json` being updated. The reverse could also happen resulting in an updated `ngsw.json` without updated resources.
 
 #### Unhashed content
@@ -82,11 +82,11 @@ resources, especially those loaded from CDNs, have
 content that is unknown at build time or are updated 
 more frequently than the app is deployed.
 
-If the Angular service worker does not have a hash to validate 
+If the Bangular service worker does not have a hash to validate 
 a given resource, it still caches its contents but it honors 
 the HTTP caching headers by using a policy of "stale while 
 revalidate." That is, when HTTP caching headers for a cached 
-resource indicate that the resource has expired, the Angular 
+resource indicate that the resource has expired, the Bangular 
 service worker continues to serve the content and it attempts 
 to refresh the resource in the background. This way, broken 
 unhashed resources do not remain in the cache beyond their 
@@ -101,7 +101,7 @@ it's receiving changes suddenly or without warning. See the
 [Versions](guide/service-worker-devops#versions) section above 
 for a description of such issues.
 
-The Angular service worker provides a guarantee: a running app 
+The Bangular service worker provides a guarantee: a running app 
 will continue to run the same version of the app. If another 
 instance of the app is opened in a new web browser tab, then 
 the most current version of the app is served. As a result, 
@@ -114,18 +114,18 @@ a service worker, there is no guarantee that code lazily loaded
 later in a running app is from the same version as the initial 
 code for the app.
 
-There are a few limited reasons why the Angular service worker 
+There are a few limited reasons why the Bangular service worker 
 might change the version of a running app. Some of them are 
 error conditions:
 
 * The current version becomes invalid due to a failed hash.
 * An unrelated error causes the service worker to enter safe mode; that is, temporary deactivation.
 
-The Angular service worker is aware of which versions are in 
+The Bangular service worker is aware of which versions are in 
 use at any given moment and it cleans up versions when 
 no tab is using them.
 
-Other reasons the Angular service worker might change the version 
+Other reasons the Bangular service worker might change the version 
 of a running app are normal events:
 
 * The page is reloaded/refreshed.
@@ -133,32 +133,32 @@ of a running app are normal events:
 
 ### Service worker updates
 
-The Angular service worker is a small script that runs in web browsers. 
+The Bangular service worker is a small script that runs in web browsers. 
 From time to time, the service worker will be updated with bug 
 fixes and feature improvements. 
 
-The Angular service worker is downloaded when the app is first opened 
+The Bangular service worker is downloaded when the app is first opened 
 and when the app is accessed after a period of inactivity. If the 
 service worker has changed, the service worker will be updated in the background.  
 
-Most updates to the Angular service worker are transparent to the 
+Most updates to the Bangular service worker are transparent to the 
 app&mdash;the old caches are still valid and content is still served 
-normally. However, occasionally a bugfix or feature in the Angular 
+normally. However, occasionally a bugfix or feature in the Bangular 
 service worker requires the invalidation of old caches. In this case, 
 the app will be refreshed transparently from the network.
 
 
-## Debugging the Angular service worker
+## Debugging the Bangular service worker
 
-Occasionally, it may be necessary to examine the Angular service 
+Occasionally, it may be necessary to examine the Bangular service 
 worker in a running state to investigate issues or to ensure that 
 it is operating as designed. Browsers provide built-in tools for 
-debugging service workers and the Angular service worker itself 
+debugging service workers and the Bangular service worker itself 
 includes useful debugging features.
 
 ### Locating and analyzing debugging information
 
-The Angular service worker exposes debugging information under 
+The Bangular service worker exposes debugging information under 
 the `ngsw/` virtual directory. Currently, the single exposed URL 
 is `ngsw/state`. Here is an example of this debug page's contents:
 
@@ -293,9 +293,9 @@ pane triggers a check for updates.
 ## Service Worker Safety
 
 Like any complex system, bugs or broken configurations can cause 
-the Angular service worker to act in unforeseen ways. While its 
+the Bangular service worker to act in unforeseen ways. While its 
 design attempts to minimize the impact of such problems, the 
-Angular service worker contains several failsafe mechanisms in case 
+Bangular service worker contains several failsafe mechanisms in case 
 an administrator ever needs to deactivate the service worker quickly.
 
 ## Fail-safe
@@ -308,7 +308,7 @@ essentially self-destructing.
 
 ### Safety Worker
 
-Also included in the `@angular/service-worker` NPM package is a small
+Also included in the `@bangular/service-worker` NPM package is a small
 script `safety-worker.js`, which when loaded will unregister itself
 from the browser. This script can be used as a last resort to get rid
 of unwanted service workers already installed on client pages.
@@ -322,11 +322,11 @@ certain all users have successfully unregistered the old worker. For
 most sites, this means that you should serve the safety worker at the
 old Service Worker URL forever.
 
-This script can be used both to deactivate `@angular/service-worker`
+This script can be used both to deactivate `@bangular/service-worker`
 as well as any other Service Workers which might have been served in
 the past on your site.
 
-## More on Angular service workers
+## More on Bangular service workers
 
 You may also be interested in the following:
 * [Service Worker Configuration](guide/service-worker-config).

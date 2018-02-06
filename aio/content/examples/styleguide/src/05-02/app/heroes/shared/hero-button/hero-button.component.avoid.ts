@@ -1,5 +1,5 @@
 // #docplaster
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 // #docregion example
 /* avoid */
 

@@ -12,7 +12,7 @@
     "paths": {
       "selenium-webdriver": ["../node_modules/@types/selenium-webdriver/index.d.ts"],
       "rxjs/*": ["../node_modules/rxjs/*"],
-      "@angular/*": ["../dist/all/@angular/*"]
+      "@bangular/*": ["../dist/all/@bangular/*"]
     },
     "rootDir": ".",
     "inlineSourceMap": true,
@@ -20,10 +20,10 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "target": "es5",
-    "types": ["angularjs"]
+    "types": ["bangularjs"]
   },
   "exclude": [
-    "angular1_router",
+    "bangular1_router",
     "benchmarks/e2e_test/old",
     "benchmarks/src/old",
     "benchmarks/src/**/index_aot.ts",
@@ -31,7 +31,7 @@
     "payload_tests",
     "rollup-test"
   ],
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "skipTemplateCodegen": true
   }
 }

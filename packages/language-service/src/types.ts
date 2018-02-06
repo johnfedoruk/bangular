@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CompileDirectiveMetadata, CompileMetadataResolver, CompilePipeSummary, NgAnalyzedModules, StaticSymbol} from '@angular/compiler';
-import {BuiltinType, DeclarationKind, Definition, PipeInfo, Pipes, Signature, Span, Symbol, SymbolDeclaration, SymbolQuery, SymbolTable} from '@angular/compiler-cli/src/language_services';
+import {CompileDirectiveMetadata, CompileMetadataResolver, CompilePipeSummary, NgAnalyzedModules, StaticSymbol} from '@bangular/compiler';
+import {BuiltinType, DeclarationKind, Definition, PipeInfo, Pipes, Signature, Span, Symbol, SymbolDeclaration, SymbolQuery, SymbolTable} from '@bangular/compiler-cli/src/language_services';
 
 export {
   BuiltinType,
@@ -192,12 +192,12 @@ export interface LanguageServiceHost {
   getTemplates(fileName: string): TemplateSources;
 
   /**
-   * Returns the Angular declarations in the given file.
+   * Returns the Bangular declarations in the given file.
    */
   getDeclarations(fileName: string): Declarations;
 
   /**
-   * Return a summary of all Angular modules in the project.
+   * Return a summary of all Bangular modules in the project.
    */
   getAnalyzedModules(): NgAnalyzedModules;
 
@@ -340,9 +340,9 @@ export interface Hover {
 }
 
 /**
- * An instance of an Angular language service created by `createLanguageService()`.
+ * An instance of an Bangular language service created by `createLanguageService()`.
  *
- * The language service returns information about Angular templates that are included in a project
+ * The language service returns information about Bangular templates that are included in a project
  * as defined by the `LanguageServiceHost`.
  *
  * When a method expects a `fileName` this file can either be source file in the project that
@@ -353,7 +353,7 @@ export interface Hover {
  * beginning of the file reference by `fileName`.
  *
  * This interface and all interfaces and types marked as `LanguageService` types, describe  a
- * particlar implementation of the Angular language service and is not intented to be
+ * particlar implementation of the Bangular language service and is not intented to be
  * implemented. Adding members to the interface will not be considered a breaking change as
  * defined by SemVer.
  *

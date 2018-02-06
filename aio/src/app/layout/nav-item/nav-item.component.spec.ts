@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed } from '@bangular/core/testing';
+import { By } from '@bangular/platform-browser';
+import { NO_ERRORS_SCHEMA } from '@bangular/core';
 
 import { NavItemComponent } from './nav-item.component';
 import { NavigationNode } from 'app/navigation/navigation.model';
@@ -19,7 +19,7 @@ describe('NavItemComponent', () => {
 
     function initialize(nd: NavigationNode) {
       component.node = nd;
-      onChanges(); // Angular calls when initializing the component
+      onChanges(); // Bangular calls when initializing the component
     }
 
     // Enough to triggers component's ngOnChange method

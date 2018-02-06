@@ -4,9 +4,9 @@
 // #docregion v4
 import {
   ModuleWithProviders, NgModule,
-  Optional, SkipSelf }       from '@angular/core';
+  Optional, SkipSelf }       from '@bangular/core';
 
-import { CommonModule }      from '@angular/common';
+import { CommonModule }      from '@bangular/common';
 
 import { TitleComponent }    from './title.component';
 import { UserService }       from './user.service';

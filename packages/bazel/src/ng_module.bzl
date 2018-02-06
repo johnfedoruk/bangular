@@ -1,7 +1,7 @@
 # Copyright Google Inc. All Rights Reserved.
 #
 # Use of this source code is governed by an MIT-style license that can be
-# found in the LICENSE file at https://angular.io/license
+# found in the LICENSE file at https://bangular.io/license
 """Implementation of the ng_module rule.
 """
 
@@ -70,7 +70,7 @@ def _ngc_tsconfig(ctx, files, srcs, **kwargs):
     expected_outs = outs.closure_js
 
   return dict(tsc_wrapped_tsconfig(ctx, files, srcs, **kwargs), **{
-      "angularCompilerOptions": {
+      "bangularCompilerOptions": {
           "generateCodeForLibraries": False,
           "allowEmptyCodegenFiles": True,
           "enableSummariesForJit": True,
@@ -82,7 +82,7 @@ def _ngc_tsconfig(ctx, files, srcs, **kwargs):
   })
 
 def _collect_summaries_aspect_impl(target, ctx):
-  results = depset(target.angular.summaries if hasattr(target, "angular") else [])
+  results = depset(target.bangular.summaries if hasattr(target, "bangular") else [])
 
   # If we are visiting empty-srcs ts_library, this is a re-export
   srcs = ctx.rule.attr.srcs if hasattr(ctx.rule.attr, "srcs") else []
@@ -90,8 +90,8 @@ def _collect_summaries_aspect_impl(target, ctx):
   # "re-export" rules should expose all the files of their deps
   if not srcs:
     for dep in ctx.rule.attr.deps:
-      if (hasattr(dep, "angular")):
-        results = depset(dep.angular.summaries, transitive = [results])
+      if (hasattr(dep, "bangular")):
+        results = depset(dep.bangular.summaries, transitive = [results])
 
   return struct(collect_summaries_aspect_result = results)
 
@@ -127,13 +127,13 @@ def ngc_compile_action(ctx, label, inputs, outputs, messages_out, tsconfig_file,
     the parameters of the compilation which will be used to replay the ngc action for i18N.
   """
 
-  mnemonic = "AngularTemplateCompile"
-  progress_message = "Compiling Angular templates (ngc) %s" % label
+  mnemonic = "BangularTemplateCompile"
+  progress_message = "Compiling Bangular templates (ngc) %s" % label
 
   if locale:
-    mnemonic = "AngularI18NMerging"
+    mnemonic = "BangularI18NMerging"
     supports_workers = "0"
-    progress_message = ("Recompiling Angular templates (ngc) %s for locale %s" %
+    progress_message = ("Recompiling Bangular templates (ngc) %s for locale %s" %
                         (label, locale))
   else:
     supports_workers = str(int(ctx.attr._supports_workers))
@@ -171,8 +171,8 @@ def ngc_compile_action(ctx, label, inputs, outputs, messages_out, tsconfig_file,
                             # compiler host is configured. So we need to explictily
                             # point to genfiles/ to redirect the output.
                             ["../genfiles/" + messages_out[0].short_path]),
-               progress_message = "Extracting Angular 2 messages (ng_xi18n)",
-               mnemonic = "Angular2MessageExtractor")
+               progress_message = "Extracting Bangular 2 messages (ng_xi18n)",
+               mnemonic = "Bangular2MessageExtractor")
 
   if not locale and not ctx.attr.no_i18n:
     return struct(
@@ -185,7 +185,7 @@ def ngc_compile_action(ctx, label, inputs, outputs, messages_out, tsconfig_file,
   return None
 
 def _compile_action(ctx, inputs, outputs, messages_out, tsconfig_file):
-  # Give the Angular compiler all the user-listed assets
+  # Give the Bangular compiler all the user-listed assets
   file_inputs = list(ctx.files.assets)
 
   # The compiler only needs to see TypeScript sources from the npm dependencies,
@@ -194,7 +194,7 @@ def _compile_action(ctx, inputs, outputs, messages_out, tsconfig_file):
     file_inputs += [f for f in ctx.files.node_modules
                     if f.path.endswith(".ts") or f.path.endswith(".json")]
 
-  # If the user supplies a tsconfig.json file, the Angular compiler needs to read it
+  # If the user supplies a tsconfig.json file, the Bangular compiler needs to read it
   if hasattr(ctx.attr, "tsconfig") and ctx.file.tsconfig:
     file_inputs.append(ctx.file.tsconfig)
 
@@ -243,7 +243,7 @@ def ng_module_impl(ctx, ts_compile_actions):
       outputs = _ts_expected_outs)
 
   outs = _expected_outs(ctx)
-  providers["angular"] = {
+  providers["bangular"] = {
     "summaries": _expected_outs(ctx).summaries
   }
   providers["ngc_messages"] = outs.i18n_messages

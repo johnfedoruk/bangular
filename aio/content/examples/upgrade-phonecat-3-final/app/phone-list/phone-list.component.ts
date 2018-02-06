@@ -1,5 +1,5 @@
 // #docregion
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 
 import { Phone, PhoneData } from '../core/phone/phone.service';
 

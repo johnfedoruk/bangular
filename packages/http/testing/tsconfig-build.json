@@ -5,8 +5,8 @@
     "baseUrl": ".",
     "rootDir": "../",
     "paths": {
-      "@angular/core": ["../../../dist/packages/core"],
-      "@angular/http": ["../../../dist/packages/http"],
+      "@bangular/core": ["../../../dist/packages/core"],
+      "@bangular/http": ["../../../dist/packages/http"],
       "rxjs/*": ["../../../node_modules/rxjs/*"]
     },
     "outDir": "../../../dist/packages/http"
@@ -16,11 +16,11 @@
     "public_api.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "testing.js",
-    "flatModuleId": "@angular/http/testing"
+    "flatModuleId": "@bangular/http/testing"
   }
 }

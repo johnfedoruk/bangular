@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {SimpleChange} from '../change_detection/change_detection_util';
@@ -50,7 +50,7 @@ export interface OnChanges { ngOnChanges(changes: SimpleChanges): void; }
 export interface OnInit { ngOnInit(): void; }
 
 /**
- * @whatItDoes Lifecycle hook that is called when Angular dirty checks a directive.
+ * @whatItDoes Lifecycle hook that is called when Bangular dirty checks a directive.
  * @howToUse
  * {@example core/ts/metadata/lifecycle_hooks_spec.ts region='DoCheck'}
  *

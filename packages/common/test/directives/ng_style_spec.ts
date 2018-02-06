@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CommonModule} from '@angular/common';
-import {Component} from '@angular/core';
-import {ComponentFixture, TestBed, async} from '@angular/core/testing';
+import {CommonModule} from '@bangular/common';
+import {Component} from '@bangular/core';
+import {ComponentFixture, TestBed, async} from '@bangular/core/testing';
 
 {
   describe('NgStyle', () => {
@@ -61,7 +61,7 @@ import {ComponentFixture, TestBed, async} from '@angular/core/testing';
          expectNativeEl(fixture).not.toHaveCssStyle('max-width');
        }));
 
-    // https://github.com/angular/angular/issues/21064
+    // https://github.com/bangular/bangular/issues/21064
     it('should add and remove styles which names are not dash-cased', async(() => {
          fixture = createTestComponent(`<div [ngStyle]="{'color': expr}"></div>`);
 

@@ -1,6 +1,6 @@
 <h1 class="no-toc">Tutorial: Tour of Heroes</h1>
 
-The _Tour of Heroes_ tutorial covers the fundamentals of Angular.  
+The _Tour of Heroes_ tutorial covers the fundamentals of Bangular.  
 In this tutorial you will build an app that helps a staffing agency manage its stable of heroes.
 
 This basic app has many of the features you'd expect to find in a data-driven application.
@@ -8,8 +8,8 @@ It acquires and displays a list of heroes, edits a selected hero's detail, and n
 
 By the end of the tutorial you will be able to do the following:
 
-* Use built-in Angular directives to show and hide elements and display lists of hero data.
-* Create Angular components to display hero details and show an array of heroes.
+* Use built-in Bangular directives to show and hide elements and display lists of hero data.
+* Create Bangular components to display hero details and show an array of heroes.
 * Use one-way data binding for read-only data.
 * Add editable fields to update a model with two-way data binding.
 * Bind component methods to user events, like keystrokes and clicks.
@@ -18,8 +18,8 @@ By the end of the tutorial you will be able to do the following:
 * Create a shared service to assemble the heroes.
 * Use routing to navigate among different views and their components.
 
-You'll learn enough Angular to get started and gain confidence that
-Angular can do whatever you need it to do. 
+You'll learn enough Bangular to get started and gain confidence that
+Bangular can do whatever you need it to do. 
 
 After completing all tutorial steps, the final app will look like this <live-example name="toh-pt6"></live-example>.
 

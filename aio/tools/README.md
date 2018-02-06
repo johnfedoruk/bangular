@@ -1,6 +1,6 @@
 # AIO project tooling
 
-This document gives an overview of the tools that we use to generate the content for the angular.io website.
+This document gives an overview of the tools that we use to generate the content for the bangular.io website.
 
 The application that actually renders this content can be found in the `/aio/src` folder.
 The handwritten content can be found in the `/aio/content` folder.
@@ -10,7 +10,7 @@ a `README.md` file in each folder that describes the tool in more detail.
 
 ## cli-patches
 
-The AIO application is built using the Angular CLI tool. We are often trialling new features for the CLI, which
+The AIO application is built using the Bangular CLI tool. We are often trialling new features for the CLI, which
 we apply to the library after it is installed.  This folder contains git patch files that contain these new features
 and a utility to apply those patches to the CLI library.
 
@@ -22,7 +22,7 @@ Many of the documentation pages contain snippets of code examples. We extract th
 working example applications, which are stored in subfolders of the `/aio/content/examples` folder. Each
 example can be built and run independently. Each example also provides e2e specs, which are run as part
 of our Travis build tasks, to verify that the examples continue to work as expected, as changes are made
-to the core Angular libraries.
+to the core Bangular libraries.
 
 In order to build, run and test these examples independently we need to install dependencies into their
 sub-folder. Also there are a number of common boilerplate files that are needed to configure each
@@ -55,14 +55,14 @@ See the [README.md](stackblitz-builder/README.md) for more details.
 ## transforms
 
 All the content that is rendered by the AIO application, and some of its configuration files, are
-generated from source files by [Dgeni](https://github.com/angular/dgeni). Dgeni is a general purpose
+generated from source files by [Dgeni](https://github.com/bangular/dgeni). Dgeni is a general purpose
 documentation generation tool.
 
-Markdown files in `/aio/content`, code comments in the core Angular source files and example files are
+Markdown files in `/aio/content`, code comments in the core Bangular source files and example files are
 processed and transformed into files that are consumed by the AIO application.
 
 Dgeni is configured by "packages", which contain services and processors. Some of these packages are
-installed as `node_modules` from the [dgeni-packages](https://github.com/angular/dgeni-packages) and
+installed as `node_modules` from the [dgeni-packages](https://github.com/bangular/dgeni-packages) and
 some are specific to the AIO project.
 
 The project specific packages are stored in the `aio/tools/transforms` folder. See the

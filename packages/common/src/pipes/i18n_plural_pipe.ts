@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {LOCALE_ID, Pipe, PipeTransform} from '@angular/core';
+import {LOCALE_ID, Pipe, PipeTransform} from '@bangular/core';
 import {NgLocalization, getPluralCategory} from '../i18n/localization';
 import {invalidPipeArgumentError} from './invalid_pipe_argument_error';
 

@@ -1,7 +1,7 @@
 // #docplaster
 // #docregion , v1
-import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule }             from '@bangular/core';
+import { RouterModule, Routes } from '@bangular/router';
 
 // #enddocregion v1
 // #docregion import-dashboard

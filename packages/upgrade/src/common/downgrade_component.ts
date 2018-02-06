@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ComponentFactory, ComponentFactoryResolver, Injector, NgZone, Type} from '@angular/core';
+import {ComponentFactory, ComponentFactoryResolver, Injector, NgZone, Type} from '@bangular/core';
 
-import * as angular from './angular1';
+import * as bangular from './bangular1';
 import {$COMPILE, $INJECTOR, $PARSE, INJECTOR_KEY, LAZY_MODULE_REF, REQUIRE_INJECTOR, REQUIRE_NG_MODEL} from './constants';
 import {DowngradeComponentAdapter} from './downgrade_component_adapter';
 import {LazyModuleRef, controllerKey, getComponentName, isFunction} from './util';
@@ -24,26 +24,26 @@ interface Thenable<T> {
  * *Part of the [upgrade/static](api?query=upgrade%2Fstatic)
  * library for hybrid upgrade apps that support AoT compilation*
  *
- * Allows an Angular component to be used from AngularJS.
+ * Allows an Bangular component to be used from BangularJS.
  *
  * @howToUse
  *
- * Let's assume that you have an Angular component called `ng2Heroes` that needs
- * to be made available in AngularJS templates.
+ * Let's assume that you have an Bangular component called `ng2Heroes` that needs
+ * to be made available in BangularJS templates.
  *
  * {@example upgrade/static/ts/module.ts region="ng2-heroes"}
  *
- * We must create an AngularJS [directive](https://docs.angularjs.org/guide/directive)
- * that will make this Angular component available inside AngularJS templates.
+ * We must create an BangularJS [directive](https://docs.bangularjs.org/guide/directive)
+ * that will make this Bangular component available inside BangularJS templates.
  * The `downgradeComponent()` function returns a factory function that we
- * can use to define the AngularJS directive that wraps the "downgraded" component.
+ * can use to define the BangularJS directive that wraps the "downgraded" component.
  *
  * {@example upgrade/static/ts/module.ts region="ng2-heroes-wrapper"}
  *
  * @description
  *
  * A helper function that returns a factory function to be used for registering an
- * AngularJS wrapper directive for "downgrading" an Angular component.
+ * BangularJS wrapper directive for "downgrading" an Bangular component.
  *
  * The parameter contains information about the Component that is being downgraded:
  *
@@ -61,17 +61,17 @@ export function downgradeComponent(info: {
   outputs?: string[];
   /** @deprecated since v4. This parameter is no longer used */
   selectors?: string[];
-}): any /* angular.IInjectable */ {
+}): any /* bangular.IInjectable */ {
   const directiveFactory:
-      angular.IAnnotatedFunction = function(
-                                       $compile: angular.ICompileService,
-                                       $injector: angular.IInjectorService,
-                                       $parse: angular.IParseService): angular.IDirective {
-    // When using `UpgradeModule`, we don't need to ensure callbacks to Angular APIs (e.g. change
-    // detection) are run inside the Angular zone, because `$digest()` will be run inside the zone
+      bangular.IAnnotatedFunction = function(
+                                       $compile: bangular.ICompileService,
+                                       $injector: bangular.IInjectorService,
+                                       $parse: bangular.IParseService): bangular.IDirective {
+    // When using `UpgradeModule`, we don't need to ensure callbacks to Bangular APIs (e.g. change
+    // detection) are run inside the Bangular zone, because `$digest()` will be run inside the zone
     // (except if explicitly escaped, in which case we shouldn't force it back in).
     // When using `downgradeModule()` though, we need to ensure such callbacks are run inside the
-    // Angular zone.
+    // Bangular zone.
     let needsNgZone = false;
     let wrapCallback = <T>(cb: () => T) => cb;
     let ngZone: NgZone;
@@ -80,13 +80,13 @@ export function downgradeComponent(info: {
       restrict: 'E',
       terminal: true,
       require: [REQUIRE_INJECTOR, REQUIRE_NG_MODEL],
-      link: (scope: angular.IScope, element: angular.IAugmentedJQuery, attrs: angular.IAttributes,
+      link: (scope: bangular.IScope, element: bangular.IAugmentedJQuery, attrs: bangular.IAttributes,
              required: any[]) => {
         // We might have to compile the contents asynchronously, because this might have been
-        // triggered by `UpgradeNg1ComponentAdapterBuilder`, before the Angular templates have
+        // triggered by `UpgradeNg1ComponentAdapterBuilder`, before the Bangular templates have
         // been compiled.
 
-        const ngModel: angular.INgModelController = required[1];
+        const ngModel: bangular.INgModelController = required[1];
         let parentInjector: Injector|Thenable<Injector>|undefined = required[0];
         let ranAsync = false;
 
@@ -130,7 +130,7 @@ export function downgradeComponent(info: {
           if (!ngZone) {
             ngZone = injector.get(NgZone);
             wrapCallback = <T>(cb: () => T) => () =>
-                NgZone.isInAngularZone() ? cb() : ngZone.run(cb);
+                NgZone.isInBangularZone() ? cb() : ngZone.run(cb);
           }
 
           wrapCallback(() => doDowngrade(injector))();
@@ -154,14 +154,14 @@ export function downgradeComponent(info: {
 
 /**
  * Synchronous promise-like object to wrap parent injectors,
- * to preserve the synchronous nature of Angular 1's $compile.
+ * to preserve the synchronous nature of Bangular 1's $compile.
  */
 class ParentInjectorPromise {
   private injector: Injector;
   private injectorKey: string = controllerKey(INJECTOR_KEY);
   private callbacks: ((injector: Injector) => any)[] = [];
 
-  constructor(private element: angular.IAugmentedJQuery) {
+  constructor(private element: bangular.IAugmentedJQuery) {
     // Store the promise on the element.
     element.data !(this.injectorKey, this);
   }

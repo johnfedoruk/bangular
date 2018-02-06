@@ -1,16 +1,16 @@
 // #docplaster
 // #docregion bare
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@bangular/core';
+import { BrowserModule } from '@bangular/platform-browser';
 // #enddocregion bare
 // #docregion upgrademodule
-import { UpgradeModule } from '@angular/upgrade/static';
+import { UpgradeModule } from '@bangular/upgrade/static';
 // #enddocregion upgrademodule
 // #docregion httpmodule
-import { HttpModule } from '@angular/http';
+import { HttpModule } from '@bangular/http';
 // #enddocregion httpmodule
 // #docregion phonelist
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@bangular/forms';
 // #enddocregion phonelist
 // #docregion phone
 import { Phone } from './core/phone/phone.service';

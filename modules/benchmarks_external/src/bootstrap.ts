@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 
@@ -24,46 +24,46 @@
       System.config({
         map: {
           'index': 'index.js',
-          '@angular/core': '/packages-dist/core/bundles/core.umd.js',
-          '@angular/common': '/packages-dist/common/bundles/common.umd.js',
-          '@angular/forms': '/packages-dist/forms/bundles/forms.umd.js',
-          '@angular/compiler': '/packages-dist/compiler/bundles/compiler.umd.js',
-          '@angular/platform-browser':
+          '@bangular/core': '/packages-dist/core/bundles/core.umd.js',
+          '@bangular/common': '/packages-dist/common/bundles/common.umd.js',
+          '@bangular/forms': '/packages-dist/forms/bundles/forms.umd.js',
+          '@bangular/compiler': '/packages-dist/compiler/bundles/compiler.umd.js',
+          '@bangular/platform-browser':
               '/packages-dist/platform-browser/bundles/platform-browser.umd.js',
-          '@angular/platform-browser-dynamic':
+          '@bangular/platform-browser-dynamic':
               '/packages-dist/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-          '@angular/http': '/packages-dist/http/bundles/http.umd.js',
-          '@angular/upgrade': '/packages-dist/upgrade/bundles/upgrade.umd.js',
-          '@angular/router': '/packages-dist/router/bundles/router.umd.js',
-          '@angular/core/src/facade': '/all/@angular/core/src/facade',
+          '@bangular/http': '/packages-dist/http/bundles/http.umd.js',
+          '@bangular/upgrade': '/packages-dist/upgrade/bundles/upgrade.umd.js',
+          '@bangular/router': '/packages-dist/router/bundles/router.umd.js',
+          '@bangular/core/src/facade': '/all/@bangular/core/src/facade',
           'rxjs': '/all/benchmarks/vendor/rxjs'
         },
         packages: {
           'app': {defaultExtension: 'js'},
-          '@angular/core/src/facade': {defaultExtension: 'js'},
+          '@bangular/core/src/facade': {defaultExtension: 'js'},
           'rxjs': {defaultExtension: 'js'}
         }
       });
     } else {
       console.warn(
-          'Not using the Angular bundles. Don\'t use this configuration for e2e/performance tests!');
+          'Not using the Bangular bundles. Don\'t use this configuration for e2e/performance tests!');
 
       System.config({
         map: {
           'index': 'index.js',
-          '@angular': '/all/@angular',
+          '@bangular': '/all/@bangular',
           'rxjs': '/all/benchmarks/vendor/rxjs'
         },
         packages: {
           'app': {defaultExtension: 'js'},
-          '@angular/core': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/compiler': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/router': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/common': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/forms': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/platform-browser': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/platform-browser-dynamic': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/upgrade': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/core': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/compiler': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/router': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/common': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/forms': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/platform-browser': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/platform-browser-dynamic': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/upgrade': {main: 'index.js', defaultExtension: 'js'},
           'rxjs': {defaultExtension: 'js'}
         }
       });

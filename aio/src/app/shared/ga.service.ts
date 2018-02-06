@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable } from '@bangular/core';
 
 import { environment } from '../../environments/environment';
 import { WindowToken } from 'app/shared/window';

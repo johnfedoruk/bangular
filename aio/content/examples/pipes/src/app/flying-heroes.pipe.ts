@@ -1,7 +1,7 @@
 /* tslint:disable use-pipe-transform-interface */
 // #docregion
 // #docregion pure
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@bangular/core';
 
 import { Flyer } from './heroes';
 

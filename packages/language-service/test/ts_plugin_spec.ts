@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import 'reflect-metadata';
@@ -61,7 +61,7 @@ describe('plugin', () => {
   it('should be able to return h1 attributes',
      () => { contains('app/app.component.ts', 'h1-after-space', 'id', 'dir', 'lang', 'onclick'); });
 
-  it('should be able to find common angular attributes', () => {
+  it('should be able to find common bangular attributes', () => {
     contains('app/app.component.ts', 'div-attributes', '(click)', '[ngClass]', '*ngIf', '*ngFor');
   });
 

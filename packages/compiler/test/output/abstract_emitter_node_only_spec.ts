@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ParseLocation, ParseSourceFile, ParseSourceSpan} from '@angular/compiler';
-import {EmitterVisitorContext} from '@angular/compiler/src/output/abstract_emitter';
-import {SourceMap} from '@angular/compiler/src/output/source_map';
-import {extractSourceMap, originalPositionFor} from '@angular/compiler/testing/src/output/source_map_util';
+import {ParseLocation, ParseSourceFile, ParseSourceSpan} from '@bangular/compiler';
+import {EmitterVisitorContext} from '@bangular/compiler/src/output/abstract_emitter';
+import {SourceMap} from '@bangular/compiler/src/output/source_map';
+import {extractSourceMap, originalPositionFor} from '@bangular/compiler/testing/src/output/source_map_util';
 
 {
   describe('AbstractEmitter', () => {

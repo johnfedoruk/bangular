@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 
 import { MovieService } from './movie.service';
 import { IMovie } from './movie';
@@ -11,7 +11,7 @@ import { IMovie } from './movie';
 })
 export class AppComponent {
 
-  angularDocsUrl = 'https://angular.io/';
+  bangularDocsUrl = 'https://bangular.io/';
   colorPreference = 'red';
   eventType = '<not clicked yet>';
   isActive = true;
@@ -19,7 +19,7 @@ export class AppComponent {
   movie: IMovie = null;
   movies: IMovie[] = [];
   showImage = true;
-  title = 'AngularJS to Angular Quick Ref Cookbook';
+  title = 'BangularJS to Bangular Quick Ref Cookbook';
   toggleImage(event: UIEvent) {
     this.showImage = !this.showImage;
     this.eventType = (event && event.type) || 'not provided';

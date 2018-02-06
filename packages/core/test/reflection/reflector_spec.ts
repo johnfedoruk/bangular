@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Reflector} from '@angular/core/src/reflection/reflection';
-import {DELEGATE_CTOR, ReflectionCapabilities} from '@angular/core/src/reflection/reflection_capabilities';
-import {global} from '@angular/core/src/util';
-import {makeDecorator, makeParamDecorator, makePropDecorator} from '@angular/core/src/util/decorators';
+import {Reflector} from '@bangular/core/src/reflection/reflection';
+import {DELEGATE_CTOR, ReflectionCapabilities} from '@bangular/core/src/reflection/reflection_capabilities';
+import {global} from '@bangular/core/src/util';
+import {makeDecorator, makeParamDecorator, makePropDecorator} from '@bangular/core/src/util/decorators';
 
 interface ClassDecoratorFactory {
   (data: ClassDecorator): any;
@@ -92,7 +92,7 @@ class TestObj {
         expect(p.length).toEqual(2);
       });
 
-      // See https://github.com/angular/tsickle/issues/261
+      // See https://github.com/bangular/tsickle/issues/261
       it('should read forwardRef down-leveled type', () => {
         class Dep {}
         class ForwardLegacy {

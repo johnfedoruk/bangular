@@ -1,7 +1,7 @@
 // #docplaster
 // #docregion
 // #docregion example
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 
 import { Hero } from './hero.model';
 

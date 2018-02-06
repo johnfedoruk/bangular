@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {ApplicationInitStatus} from './application_init';
@@ -28,7 +28,7 @@ export function _localeFactory(locale?: string): string {
 }
 
 /**
- * This module includes the providers of @angular/core that are needed
+ * This module includes the providers of @bangular/core that are needed
  * to bootstrap components via `ApplicationRef`.
  *
  * @experimental

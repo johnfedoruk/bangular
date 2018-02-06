@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgModule} from '@angular/core';
+import {NgModule} from '@bangular/core';
 import {COMMON_DIRECTIVES} from './directives/index';
 import {DEPRECATED_PLURAL_FN, NgLocaleLocalization, NgLocalization, getPluralCase} from './i18n/localization';
 import {COMMON_DEPRECATED_I18N_PIPES} from './pipes/deprecated/index';
@@ -16,7 +16,7 @@ import {COMMON_PIPES} from './pipes/index';
 // Note: This does not contain the location providers,
 // as they need some platform specific implementations to work.
 /**
- * The module that includes all the basic Angular directives like {@link NgIf}, {@link NgForOf}, ...
+ * The module that includes all the basic Bangular directives like {@link NgIf}, {@link NgForOf}, ...
  *
  * @stable
  */

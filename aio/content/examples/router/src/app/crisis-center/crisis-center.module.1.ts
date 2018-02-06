@@ -1,8 +1,8 @@
 // #docplaster
 // #docregion
-import { NgModule }       from '@angular/core';
-import { FormsModule }    from '@angular/forms';
-import { CommonModule }   from '@angular/common';
+import { NgModule }       from '@bangular/core';
+import { FormsModule }    from '@bangular/forms';
+import { CommonModule }   from '@bangular/common';
 
 import { CrisisService }        from './crisis.service';
 

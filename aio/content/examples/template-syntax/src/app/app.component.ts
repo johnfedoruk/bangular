@@ -1,7 +1,7 @@
 /* tslint:disable:forin member-ordering */
 // #docplaster
 
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@bangular/core';
 
 import { Hero } from './hero';
 

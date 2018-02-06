@@ -1,5 +1,5 @@
 // #docregion
-import { NgModule }           from '@angular/core';
+import { NgModule }           from '@bangular/core';
 import { SharedModule }       from '../shared/shared.module';
 
 import { ContactComponent }     from './contact.component';

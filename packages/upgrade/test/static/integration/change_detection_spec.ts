@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, ElementRef, Injector, Input, NgModule, NgZone, SimpleChange, SimpleChanges, destroyPlatform} from '@angular/core';
-import {async} from '@angular/core/testing';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import * as angular from '@angular/upgrade/src/common/angular1';
-import {UpgradeComponent, UpgradeModule, downgradeComponent} from '@angular/upgrade/static';
+import {Component, Directive, ElementRef, Injector, Input, NgModule, NgZone, SimpleChange, SimpleChanges, destroyPlatform} from '@bangular/core';
+import {async} from '@bangular/core/testing';
+import {BrowserModule} from '@bangular/platform-browser';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
+import * as bangular from '@bangular/upgrade/src/common/bangular1';
+import {UpgradeComponent, UpgradeModule, downgradeComponent} from '@bangular/upgrade/static';
 
 import {bootstrap, html} from '../test_helpers';
 
@@ -58,11 +58,11 @@ import {bootstrap, html} from '../test_helpers';
            ngDoBootstrap() {}
          }
 
-         const ng1Module = angular.module('ng1', [])
+         const ng1Module = bangular.module('ng1', [])
                                .directive('ng1a', () => ({template: '{{ l(\'ng1a\') }}'}))
                                .directive('ng1b', () => ({template: '{{ l(\'ng1b\') }}'}))
                                .directive('ng2', downgradeComponent({component: Ng2Component}))
-                               .run(($rootScope: angular.IRootScopeService) => {
+                               .run(($rootScope: bangular.IRootScopeService) => {
                                  $rootScope.l = l;
                                  $rootScope.reset = () => log.length = 0;
                                });
@@ -91,7 +91,7 @@ import {bootstrap, html} from '../test_helpers';
          class ChildComponent {
            valueFromPromise: number;
            @Input()
-           set value(v: number) { expect(NgZone.isInAngularZone()).toBe(true); }
+           set value(v: number) { expect(NgZone.isInBangularZone()).toBe(true); }
 
            constructor(private zone: NgZone) {}
 
@@ -114,7 +114,7 @@ import {bootstrap, html} from '../test_helpers';
            ngDoBootstrap() {}
          }
 
-         const ng1Module = angular.module('ng1', []).directive(
+         const ng1Module = bangular.module('ng1', []).directive(
              'myApp', downgradeComponent({component: AppComponent}));
 
 
@@ -125,8 +125,8 @@ import {bootstrap, html} from '../test_helpers';
          });
        }));
 
-    // This test demonstrates https://github.com/angular/angular/issues/6385
-    // which was invalidly fixed by https://github.com/angular/angular/pull/6386
+    // This test demonstrates https://github.com/bangular/bangular/issues/6385
+    // which was invalidly fixed by https://github.com/bangular/bangular/pull/6386
     // it('should not trigger $digest from an async operation in a watcher', async(() => {
     //      @Component({selector: 'my-app', template: ''})
     //      class AppComponent {
@@ -137,7 +137,7 @@ import {bootstrap, html} from '../test_helpers';
     //      }
 
     //      const adapter: UpgradeAdapter = new UpgradeAdapter(forwardRef(() => Ng2Module));
-    //      const ng1Module = angular.module('ng1', []).directive(
+    //      const ng1Module = bangular.module('ng1', []).directive(
     //          'myApp', adapter.downgradeNg2Component(AppComponent));
 
     //      const element = html('<my-app></my-app>');

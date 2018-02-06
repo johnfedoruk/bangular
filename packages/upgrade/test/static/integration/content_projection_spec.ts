@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, ElementRef, Injector, Input, NgModule, destroyPlatform} from '@angular/core';
-import {async} from '@angular/core/testing';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import * as angular from '@angular/upgrade/src/common/angular1';
-import {UpgradeComponent, UpgradeModule, downgradeComponent} from '@angular/upgrade/static';
+import {Component, Directive, ElementRef, Injector, Input, NgModule, destroyPlatform} from '@bangular/core';
+import {async} from '@bangular/core/testing';
+import {BrowserModule} from '@bangular/platform-browser';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
+import * as bangular from '@bangular/upgrade/src/common/bangular1';
+import {UpgradeComponent, UpgradeModule, downgradeComponent} from '@bangular/upgrade/static';
 
 import {bootstrap, html, multiTrim} from '../test_helpers';
 
@@ -41,11 +41,11 @@ import {bootstrap, html, multiTrim} from '../test_helpers';
          }
 
          // the ng1 app module that will consume the downgraded component
-         const ng1Module = angular
+         const ng1Module = bangular
                                .module('ng1', [])
                                // create an ng1 facade of the ng2 component
                                .directive('ng2', downgradeComponent({component: Ng2Component}))
-                               .run(($rootScope: angular.IRootScopeService) => {
+                               .run(($rootScope: bangular.IRootScopeService) => {
                                  $rootScope['prop'] = 'NG1';
                                  $rootScope['ngContent'] = 'ng1-content';
                                });
@@ -72,9 +72,9 @@ import {bootstrap, html, multiTrim} from '../test_helpers';
            ngDoBootstrap() {}
          }
 
-         const ng1Module = angular.module('ng1', [])
+         const ng1Module = bangular.module('ng1', [])
                                .directive('ng2', downgradeComponent({component: Ng2Component}))
-                               .run(($rootScope: angular.IRootScopeService) => {
+                               .run(($rootScope: bangular.IRootScopeService) => {
                                  $rootScope['items'] = [
                                    {id: 'a', subitems: [1, 2, 3]}, {id: 'b', subitems: [4, 5, 6]},
                                    {id: 'c', subitems: [7, 8, 9]}
@@ -121,13 +121,13 @@ import {bootstrap, html, multiTrim} from '../test_helpers';
          }
 
          const ng1Module =
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive('ng1', () => ({
                                      transclude: true,
                                      template: '{{ prop }}(<ng-transclude></ng-transclude>)'
                                    }))
                  .directive('ng2', downgradeComponent({component: Ng2Component}))
-                 .run(($rootScope: angular.IRootScopeService) => {
+                 .run(($rootScope: bangular.IRootScopeService) => {
                    $rootScope['prop'] = 'ng1';
                    $rootScope['transclude'] = 'ng1-transclude';
                  });
@@ -159,7 +159,7 @@ import {bootstrap, html, multiTrim} from '../test_helpers';
            ngDoBootstrap() {}
          }
 
-         const ng1Module = angular.module('ng1', []).directive(
+         const ng1Module = bangular.module('ng1', []).directive(
              'ng2', downgradeComponent({component: Ng2Component}));
 
          // The ng-if on one of the projected children is here to make sure

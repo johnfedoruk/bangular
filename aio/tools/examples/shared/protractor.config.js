@@ -31,8 +31,8 @@ exports.config = {
   // Framework to use. Jasmine is recommended.
   framework: 'jasmine',
 
-  // For angular tests
-  useAllAngular2AppRoots: true,
+  // For bangular tests
+  useAllBangular2AppRoots: true,
 
   // Base URL for application server
   baseUrl: 'http://localhost:8080',

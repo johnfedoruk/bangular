@@ -12,7 +12,7 @@ They should focus on presenting data and delegate data access to a service.
 
 In this tutorial, you'll create a `HeroService` that all application classes can use to get heroes.
 Instead of creating that service with `new`, 
-you'll rely on Angular [*dependency injection*](guide/dependency-injection) 
+you'll rely on Bangular [*dependency injection*](guide/dependency-injection) 
 to inject it into the `HeroesComponent` constructor.
 
 Services are a great way to share information among classes that _don't know each other_.
@@ -24,7 +24,7 @@ You'll create a `MessageService` and inject it in two places:
 
 ## Create the _HeroService_
 
-Using the Angular CLI, create a service called `hero`.
+Using the Bangular CLI, create a service called `hero`.
 
 <code-example language="sh" class="code-shell">
   ng generate service hero
@@ -39,17 +39,17 @@ The `HeroService` class should look like the below.
 
 ### _@Injectable()_ services
 
-Notice that the new service imports the Angular `Injectable` symbol and annotates
+Notice that the new service imports the Bangular `Injectable` symbol and annotates
 the class with the `@Injectable()` decorator.
 
-The `@Injectable()` decorator tells Angular that this service _might_ itself
+The `@Injectable()` decorator tells Bangular that this service _might_ itself
 have injected dependencies.
 It doesn't have dependencies now but [it will soon](#inject-message-service).
 Whether it does or it doesn't, it's good practice to keep the decorator.
 
 <div class="l-sub-section">
 
-The Angular [style guidelines](guide/styleguide#style-07-04) strongly recommend keeping it
+The Bangular [style guidelines](guide/styleguide#style-07-04) strongly recommend keeping it
 and the linter enforces this rule.
 
 </div>
@@ -77,7 +77,7 @@ Add a `getHeroes` method to return the _mock heroes_.
 ## Provide the `HeroService`
 
 You must _provide_ the `HeroService` in the _dependency injection system_
-before Angular can _inject_ it into the `HeroesComponent`, 
+before Bangular can _inject_ it into the `HeroesComponent`, 
 as you will do [below](#inject).
 
 There are several ways to provide the `HeroService`: 
@@ -100,7 +100,7 @@ Open the `AppModule` class, import the `HeroService`, and add it to the `@NgModu
 <code-example path="toh-pt4/src/app/app.module.ts" linenums="false" title="src/app/app.module.ts (providers)" region="providers">
 </code-example>
 
-The `providers` array tells Angular to create a single, shared instance of `HeroService`
+The `providers` array tells Bangular to create a single, shared instance of `HeroService`
 and inject into any class that asks for it.
 
 The `HeroService` is now ready to plug into the `HeroesComponent`.
@@ -137,7 +137,7 @@ Add a private `heroService` parameter of type `HeroService` to the constructor.
 
 The parameter simultaneously defines a private `heroService` property and identifies it as a `HeroService` injection site.
 
-When Angular creates a `HeroesComponent`, the [Dependency Injection](guide/dependency-injection) system
+When Bangular creates a `HeroesComponent`, the [Dependency Injection](guide/dependency-injection) system
 sets the `heroService` parameter to the singleton instance of `HeroService`. 
 
 ### Add _getHeroes()_
@@ -158,7 +158,7 @@ The constructor shouldn't _do anything_.
 It certainly shouldn't call a function that makes HTTP requests to a remote server as a _real_ data service would.
 
 Instead, call `getHeroes()` inside the [*ngOnInit lifecycle hook*](guide/lifecycle-hooks) and
-let Angular call `ngOnInit` at an appropriate time _after_ constructing a `HeroesComponent` instance.
+let Bangular call `ngOnInit` at an appropriate time _after_ constructing a `HeroesComponent` instance.
 
 <code-example path="toh-pt4/src/app/heroes/heroes.component.ts" region="ng-on-init">
 </code-example>
@@ -192,14 +192,14 @@ and the browser will not block while the service waits.
 It can take a callback. It could return a `Promise`. It could return an `Observable`.
 
 In this tutorial, `HeroService.getHeroes()` will return an `Observable`
-in part because it will eventually use the Angular `HttpClient.get` method to fetch the heroes
+in part because it will eventually use the Bangular `HttpClient.get` method to fetch the heroes
 and [`HttpClient.get()` returns an `Observable`](guide/http).
 
 ### Observable _HeroService_
 
 `Observable` is one of the key classes in the [RxJS library](http://reactivex.io/rxjs/).
 
-In a [later tutorial on HTTP](tutorial/toh-pt6), you'll learn that Angular's `HttpClient` methods return RxJS `Observable`s.
+In a [later tutorial on HTTP](tutorial/toh-pt6), you'll learn that Bangular's `HttpClient` methods return RxJS `Observable`s.
 In this tutorial, you'll simulate getting data from the server with the RxJS `of()` function.
 
 Open the `HeroService` file and import the `Observable` and `of` symbols from RxJS.
@@ -315,7 +315,7 @@ Re-open the `HeroService` and import the `MessageService`.
 </code-example>
 
 Modify the constructor with a parameter that declares a private `messageService` property.
-Angular will inject the singleton `MessageService` into that property 
+Bangular will inject the singleton `MessageService` into that property 
 when it creates the `HeroService`.
 
 <code-example
@@ -349,7 +349,7 @@ Open `MessagesComponent` and import the `MessageService`.
 </code-example>
 
 Modify the constructor with a parameter that declares a **public** `messageService` property.
-Angular will inject the singleton `MessageService` into that property 
+Bangular will inject the singleton `MessageService` into that property 
 when it creates the `HeroService`.
 
 <code-example
@@ -360,7 +360,7 @@ The `messageService` property **must be public** because you're about to bind to
 
 <div class="alert is-important">
 
-Angular only binds to _public_ component properties.
+Bangular only binds to _public_ component properties.
 
 </div>
 
@@ -381,7 +381,7 @@ This template binds directly to the component's `messageService`.
 * An `*ngFor` presents the list of messages in repeated `<div>` elements.
 
 
-* An Angular [event binding](guide/template-syntax#event-binding) binds the button's click event
+* An Bangular [event binding](guide/template-syntax#event-binding) binds the button's click event
 to `MessageService.clear()`.
 
 The messages will look better when you add the private CSS styles to `messages.component.css`
@@ -433,7 +433,7 @@ Here are the code files discussed on this page and your app should look like thi
 
 * You refactored data access to the `HeroService` class.
 * You _provided_ the `HeroService` in the root `AppModule` so that it can be injected anywhere.
-* You used [Angular Dependency Injection](guide/dependency-injection) to inject it into a component.
+* You used [Bangular Dependency Injection](guide/dependency-injection) to inject it into a component.
 * You gave the `HeroService` _get data_ method an asynchronous signature.
 * You discovered `Observable` and the RxJS _Observable_ library.
 * You used RxJS `of()` to return an _Observable_ of mock heroes (`Observable<Hero[]>`).

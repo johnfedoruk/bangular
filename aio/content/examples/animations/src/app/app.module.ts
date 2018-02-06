@@ -1,8 +1,8 @@
 // #docplaster
-import { NgModule } from '@angular/core';
+import { NgModule } from '@bangular/core';
 // #docregion animations-module
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@bangular/platform-browser';
+import { BrowserAnimationsModule } from '@bangular/platform-browser/animations';
 // #enddocregion animations-module
 
 import { HeroTeamBuilderComponent } from './hero-team-builder.component';

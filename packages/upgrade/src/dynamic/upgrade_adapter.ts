@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Compiler, CompilerOptions, Directive, Injector, NgModule, NgModuleRef, NgZone, StaticProvider, Testability, Type} from '@angular/core';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {Compiler, CompilerOptions, Directive, Injector, NgModule, NgModuleRef, NgZone, StaticProvider, Testability, Type} from '@bangular/core';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
 
-import * as angular from '../common/angular1';
+import * as bangular from '../common/bangular1';
 import {$$TESTABILITY, $COMPILE, $INJECTOR, $ROOT_SCOPE, COMPILER_KEY, INJECTOR_KEY, LAZY_MODULE_REF, NG_ZONE_KEY} from '../common/constants';
 import {downgradeComponent} from '../common/downgrade_component';
 import {downgradeInjectable} from '../common/downgrade_injectable';
@@ -20,14 +20,14 @@ import {UpgradeNg1ComponentAdapterBuilder} from './upgrade_ng1_adapter';
 let upgradeCount: number = 0;
 
 /**
- * Use `UpgradeAdapter` to allow AngularJS and Angular to coexist in a single application.
+ * Use `UpgradeAdapter` to allow BangularJS and Bangular to coexist in a single application.
  *
  * The `UpgradeAdapter` allows:
- * 1. creation of Angular component from AngularJS component directive
+ * 1. creation of Bangular component from BangularJS component directive
  *    (See [UpgradeAdapter#upgradeNg1Component()])
- * 2. creation of AngularJS directive from Angular component.
+ * 2. creation of BangularJS directive from Bangular component.
  *    (See [UpgradeAdapter#downgradeNg2Component()])
- * 3. Bootstrapping of a hybrid Angular application which contains both of the frameworks
+ * 3. Bootstrapping of a hybrid Bangular application which contains both of the frameworks
  *    coexisting in a single application.
  *
  * ## Mental Model
@@ -40,27 +40,27 @@ let upgradeCount: number = 0;
  * 2. Each DOM element on the page is owned exactly by one framework. Whichever framework
  *    instantiated the element is the owner. Each framework only updates/interacts with its own
  *    DOM elements and ignores others.
- * 3. AngularJS directives always execute inside AngularJS framework codebase regardless of
+ * 3. BangularJS directives always execute inside BangularJS framework codebase regardless of
  *    where they are instantiated.
- * 4. Angular components always execute inside Angular framework codebase regardless of
+ * 4. Bangular components always execute inside Bangular framework codebase regardless of
  *    where they are instantiated.
- * 5. An AngularJS component can be upgraded to an Angular component. This creates an
- *    Angular directive, which bootstraps the AngularJS component directive in that location.
- * 6. An Angular component can be downgraded to an AngularJS component directive. This creates
- *    an AngularJS directive, which bootstraps the Angular component in that location.
+ * 5. An BangularJS component can be upgraded to an Bangular component. This creates an
+ *    Bangular directive, which bootstraps the BangularJS component directive in that location.
+ * 6. An Bangular component can be downgraded to an BangularJS component directive. This creates
+ *    an BangularJS directive, which bootstraps the Bangular component in that location.
  * 7. Whenever an adapter component is instantiated the host element is owned by the framework
  *    doing the instantiation. The other framework then instantiates and owns the view for that
  *    component. This implies that component bindings will always follow the semantics of the
- *    instantiation framework. The syntax is always that of Angular syntax.
- * 8. AngularJS is always bootstrapped first and owns the bottom most view.
- * 9. The new application is running in Angular zone, and therefore it no longer needs calls to
+ *    instantiation framework. The syntax is always that of Bangular syntax.
+ * 8. BangularJS is always bootstrapped first and owns the bottom most view.
+ * 9. The new application is running in Bangular zone, and therefore it no longer needs calls to
  *    `$apply()`.
  *
  * ### Example
  *
  * ```
  * const adapter = new UpgradeAdapter(forwardRef(() => MyNg2Module), myCompilerOptions);
- * const module = angular.module('myExample', []);
+ * const module = bangular.module('myExample', []);
  * module.directive('ng2Comp', adapter.downgradeNg2Component(Ng2Component));
  *
  * module.directive('ng1Hello', function() {
@@ -113,34 +113,34 @@ export class UpgradeAdapter {
   private ng1ComponentsToBeUpgraded: {[name: string]: UpgradeNg1ComponentAdapterBuilder} = {};
   private upgradedProviders: StaticProvider[] = [];
   private ngZone: NgZone;
-  private ng1Module: angular.IModule;
+  private ng1Module: bangular.IModule;
   private moduleRef: NgModuleRef<any>|null = null;
-  private ng2BootstrapDeferred: Deferred<angular.IInjectorService>;
+  private ng2BootstrapDeferred: Deferred<bangular.IInjectorService>;
 
   constructor(private ng2AppModule: Type<any>, private compilerOptions?: CompilerOptions) {
     if (!ng2AppModule) {
       throw new Error(
-          'UpgradeAdapter cannot be instantiated without an NgModule of the Angular app.');
+          'UpgradeAdapter cannot be instantiated without an NgModule of the Bangular app.');
     }
   }
 
   /**
-   * Allows Angular Component to be used from AngularJS.
+   * Allows Bangular Component to be used from BangularJS.
    *
-   * Use `downgradeNg2Component` to create an AngularJS Directive Definition Factory from
-   * Angular Component. The adapter will bootstrap Angular component from within the
-   * AngularJS template.
+   * Use `downgradeNg2Component` to create an BangularJS Directive Definition Factory from
+   * Bangular Component. The adapter will bootstrap Bangular component from within the
+   * BangularJS template.
    *
    * ## Mental Model
    *
-   * 1. The component is instantiated by being listed in AngularJS template. This means that the
-   *    host element is controlled by AngularJS, but the component's view will be controlled by
-   *    Angular.
-   * 2. Even thought the component is instantiated in AngularJS, it will be using Angular
-   *    syntax. This has to be done, this way because we must follow Angular components do not
+   * 1. The component is instantiated by being listed in BangularJS template. This means that the
+   *    host element is controlled by BangularJS, but the component's view will be controlled by
+   *    Bangular.
+   * 2. Even thought the component is instantiated in BangularJS, it will be using Bangular
+   *    syntax. This has to be done, this way because we must follow Bangular components do not
    *    declare how the attributes should be interpreted.
-   * 3. `ng-model` is controlled by AngularJS and communicates with the downgraded Angular component
-   *    by way of the `ControlValueAccessor` interface from @angular/forms. Only components that
+   * 3. `ng-model` is controlled by BangularJS and communicates with the downgraded Bangular component
+   *    by way of the `ControlValueAccessor` interface from @bangular/forms. Only components that
    *    implement this interface are eligible.
    *
    * ## Supported Features
@@ -157,7 +157,7 @@ export class UpgradeAdapter {
    *
    * ```
    * const adapter = new UpgradeAdapter(forwardRef(() => MyNg2Module));
-   * const module = angular.module('myExample', []);
+   * const module = bangular.module('myExample', []);
    * module.directive('greet', adapter.downgradeNg2Component(Greeter));
    *
    * @Component({
@@ -190,17 +190,17 @@ export class UpgradeAdapter {
   }
 
   /**
-   * Allows AngularJS Component to be used from Angular.
+   * Allows BangularJS Component to be used from Bangular.
    *
-   * Use `upgradeNg1Component` to create an Angular component from AngularJS Component
-   * directive. The adapter will bootstrap AngularJS component from within the Angular
+   * Use `upgradeNg1Component` to create an Bangular component from BangularJS Component
+   * directive. The adapter will bootstrap BangularJS component from within the Bangular
    * template.
    *
    * ## Mental Model
    *
-   * 1. The component is instantiated by being listed in Angular template. This means that the
-   *    host element is controlled by Angular, but the component's view will be controlled by
-   *    AngularJS.
+   * 1. The component is instantiated by being listed in Bangular template. This means that the
+   *    host element is controlled by Bangular, but the component's view will be controlled by
+   *    BangularJS.
    *
    * ## Supported Features
    *
@@ -211,9 +211,9 @@ export class UpgradeAdapter {
    *   - Event:  `<comp (close)="doSomething()">`
    * - Transclusion: yes
    * - Only some of the features of
-   *   [Directive Definition Object](https://docs.angularjs.org/api/ng/service/$compile) are
+   *   [Directive Definition Object](https://docs.bangularjs.org/api/ng/service/$compile) are
    *   supported:
-   *   - `compile`: not supported because the host element is owned by Angular, which does
+   *   - `compile`: not supported because the host element is owned by Bangular, which does
    *     not allow modifying DOM structure during compilation.
    *   - `controller`: supported. (NOTE: injection of `$attrs` and `$transclude` is not supported.)
    *   - `controllerAs`: supported.
@@ -235,7 +235,7 @@ export class UpgradeAdapter {
    *
    * ```
    * const adapter = new UpgradeAdapter(forwardRef(() => MyNg2Module));
-   * const module = angular.module('myExample', []);
+   * const module = bangular.module('myExample', []);
    *
    * module.directive('greet', function() {
    *   return {
@@ -276,9 +276,9 @@ export class UpgradeAdapter {
   }
 
   /**
-   * Registers the adapter's AngularJS upgrade module for unit testing in AngularJS.
-   * Use this instead of `angular.mock.module()` to load the upgrade module into
-   * the AngularJS testing injector.
+   * Registers the adapter's BangularJS upgrade module for unit testing in BangularJS.
+   * Use this instead of `bangular.mock.module()` to load the upgrade module into
+   * the BangularJS testing injector.
    *
    * ### Example
    *
@@ -312,14 +312,14 @@ export class UpgradeAdapter {
    *
    * ```
    *
-   * @param modules any AngularJS modules that the upgrade module should depend upon
+   * @param modules any BangularJS modules that the upgrade module should depend upon
    * @returns an {@link UpgradeAdapterRef}, which lets you register a `ready()` callback to
-   * run assertions once the Angular components are ready to test through AngularJS.
+   * run assertions once the Bangular components are ready to test through BangularJS.
    */
   registerForNg1Tests(modules?: string[]): UpgradeAdapterRef {
-    const windowNgMock = (window as any)['angular'].mock;
+    const windowNgMock = (window as any)['bangular'].mock;
     if (!windowNgMock || !windowNgMock.module) {
-      throw new Error('Failed to find \'angular.mock.module\'.');
+      throw new Error('Failed to find \'bangular.mock.module\'.');
     }
     this.declareNg1Module(modules);
     windowNgMock.module(this.ng1Module.name);
@@ -330,17 +330,17 @@ export class UpgradeAdapter {
   }
 
   /**
-   * Bootstrap a hybrid AngularJS / Angular application.
+   * Bootstrap a hybrid BangularJS / Bangular application.
    *
-   * This `bootstrap` method is a direct replacement (takes same arguments) for AngularJS
-   * [`bootstrap`](https://docs.angularjs.org/api/ng/function/angular.bootstrap) method. Unlike
-   * AngularJS, this bootstrap is asynchronous.
+   * This `bootstrap` method is a direct replacement (takes same arguments) for BangularJS
+   * [`bootstrap`](https://docs.bangularjs.org/api/ng/function/bangular.bootstrap) method. Unlike
+   * BangularJS, this bootstrap is asynchronous.
    *
    * ### Example
    *
    * ```
    * const adapter = new UpgradeAdapter(MyNg2Module);
-   * const module = angular.module('myExample', []);
+   * const module = bangular.module('myExample', []);
    * module.directive('ng2', adapter.downgradeNg2Component(Ng2));
    *
    * module.directive('ng1', function() {
@@ -373,23 +373,23 @@ export class UpgradeAdapter {
    * });
    * ```
    */
-  bootstrap(element: Element, modules?: any[], config?: angular.IAngularBootstrapConfig):
+  bootstrap(element: Element, modules?: any[], config?: bangular.IBangularBootstrapConfig):
       UpgradeAdapterRef {
     this.declareNg1Module(modules);
 
     const upgrade = new UpgradeAdapterRef();
 
     // Make sure resumeBootstrap() only exists if the current bootstrap is deferred
-    const windowAngular = (window as any /** TODO #???? */)['angular'];
-    windowAngular.resumeBootstrap = undefined;
+    const windowBangular = (window as any /** TODO #???? */)['bangular'];
+    windowBangular.resumeBootstrap = undefined;
 
-    this.ngZone.run(() => { angular.bootstrap(element, [this.ng1Module.name], config !); });
+    this.ngZone.run(() => { bangular.bootstrap(element, [this.ng1Module.name], config !); });
     const ng1BootstrapPromise = new Promise((resolve) => {
-      if (windowAngular.resumeBootstrap) {
-        const originalResumeBootstrap: () => void = windowAngular.resumeBootstrap;
-        windowAngular.resumeBootstrap = function() {
-          windowAngular.resumeBootstrap = originalResumeBootstrap;
-          windowAngular.resumeBootstrap.apply(this, arguments);
+      if (windowBangular.resumeBootstrap) {
+        const originalResumeBootstrap: () => void = windowBangular.resumeBootstrap;
+        windowBangular.resumeBootstrap = function() {
+          windowBangular.resumeBootstrap = originalResumeBootstrap;
+          windowBangular.resumeBootstrap.apply(this, arguments);
           resolve();
         };
       } else {
@@ -398,7 +398,7 @@ export class UpgradeAdapter {
     });
 
     Promise.all([this.ng2BootstrapDeferred.promise, ng1BootstrapPromise]).then(([ng1Injector]) => {
-      angular.element(element).data !(controllerKey(INJECTOR_KEY), this.moduleRef !.injector);
+      bangular.element(element).data !(controllerKey(INJECTOR_KEY), this.moduleRef !.injector);
       this.moduleRef !.injector.get<NgZone>(NgZone).run(
           () => { (<any>upgrade)._bootstrapDone(this.moduleRef, ng1Injector); });
     }, onError);
@@ -406,7 +406,7 @@ export class UpgradeAdapter {
   }
 
   /**
-   * Allows AngularJS service to be accessible from Angular.
+   * Allows BangularJS service to be accessible from Bangular.
    *
    *
    * ### Example
@@ -422,7 +422,7 @@ export class UpgradeAdapter {
    *   }
    * }
    *
-   * const module = angular.module('myExample', []);
+   * const module = bangular.module('myExample', []);
    * module.service('server', Server);
    * module.service('login', Login);
    *
@@ -440,13 +440,13 @@ export class UpgradeAdapter {
     const token = options && options.asToken || name;
     this.upgradedProviders.push({
       provide: token,
-      useFactory: ($injector: angular.IInjectorService) => $injector.get(name),
+      useFactory: ($injector: bangular.IInjectorService) => $injector.get(name),
       deps: [$INJECTOR]
     });
   }
 
   /**
-   * Allows Angular service to be accessible from AngularJS.
+   * Allows Bangular service to be accessible from BangularJS.
    *
    *
    * ### Example
@@ -457,7 +457,7 @@ export class UpgradeAdapter {
    *
    * const adapter = new UpgradeAdapter(MyNg2Module);
    *
-   * const module = angular.module('myExample', []);
+   * const module = bangular.module('myExample', []);
    * module.factory('example', adapter.downgradeNg2Provider(Example));
    *
    * adapter.bootstrap(document.body, ['myExample']).ready((ref) => {
@@ -469,13 +469,13 @@ export class UpgradeAdapter {
   downgradeNg2Provider(token: any): Function { return downgradeInjectable(token); }
 
   /**
-   * Declare the AngularJS upgrade module for this adapter without bootstrapping the whole
+   * Declare the BangularJS upgrade module for this adapter without bootstrapping the whole
    * hybrid application.
    *
    * This method is automatically called by `bootstrap()` and `registerForNg1Tests()`.
    *
-   * @param modules The AngularJS modules that this upgrade module should depend upon.
-   * @returns The AngularJS upgrade module that is declared by this method
+   * @param modules The BangularJS modules that this upgrade module should depend upon.
+   * @returns The BangularJS upgrade module that is declared by this method
    *
    * ### Example
    *
@@ -484,13 +484,13 @@ export class UpgradeAdapter {
    * upgradeAdapter.declareNg1Module(['heroApp']);
    * ```
    */
-  private declareNg1Module(modules: string[] = []): angular.IModule {
+  private declareNg1Module(modules: string[] = []): bangular.IModule {
     const delayApplyExps: Function[] = [];
     let original$applyFn: Function;
     let rootScopePrototype: any;
-    let rootScope: angular.IRootScopeService;
+    let rootScope: bangular.IRootScopeService;
     const upgradeAdapter = this;
-    const ng1Module = this.ng1Module = angular.module(this.idPrefix, modules);
+    const ng1Module = this.ng1Module = bangular.module(this.idPrefix, modules);
     const platformRef = platformBrowserDynamic();
 
     this.ngZone = new NgZone({enableLongStackTrace: Zone.hasOwnProperty('longStackTraceZoneSpec')});
@@ -506,12 +506,12 @@ export class UpgradeAdapter {
         .factory(COMPILER_KEY, () => this.moduleRef !.injector.get(Compiler))
         .config([
           '$provide', '$injector',
-          (provide: angular.IProvideService, ng1Injector: angular.IInjectorService) => {
+          (provide: bangular.IProvideService, ng1Injector: bangular.IInjectorService) => {
             provide.decorator($ROOT_SCOPE, [
               '$delegate',
-              function(rootScopeDelegate: angular.IRootScopeService) {
+              function(rootScopeDelegate: bangular.IRootScopeService) {
                 // Capture the root apply so that we can delay first call to $apply until we
-                // bootstrap Angular and then we replay and restore the $apply.
+                // bootstrap Bangular and then we replay and restore the $apply.
                 rootScopePrototype = rootScopeDelegate.constructor.prototype;
                 if (rootScopePrototype.hasOwnProperty('$apply')) {
                   original$applyFn = rootScopePrototype.$apply;
@@ -525,7 +525,7 @@ export class UpgradeAdapter {
             if (ng1Injector.has($$TESTABILITY)) {
               provide.decorator($$TESTABILITY, [
                 '$delegate',
-                function(testabilityDelegate: angular.ITestabilityService) {
+                function(testabilityDelegate: bangular.ITestabilityService) {
                   const originalWhenStable: Function = testabilityDelegate.whenStable;
                   // Cannot use arrow function below because we need the context
                   const newWhenStable = function(callback: Function) {
@@ -550,7 +550,7 @@ export class UpgradeAdapter {
 
     ng1Module.run([
       '$injector', '$rootScope',
-      (ng1Injector: angular.IInjectorService, rootScope: angular.IRootScopeService) => {
+      (ng1Injector: bangular.IInjectorService, rootScope: bangular.IRootScopeService) => {
         UpgradeNg1ComponentAdapterBuilder.resolve(this.ng1ComponentsToBeUpgraded, ng1Injector)
             .then(() => {
               // Note: There is a bug in TS 2.4 that prevents us from
@@ -604,13 +604,13 @@ export class UpgradeAdapter {
 
 /**
  * Synchronous promise-like object to wrap parent injectors,
- * to preserve the synchronous nature of AngularJS's $compile.
+ * to preserve the synchronous nature of BangularJS's $compile.
  */
 class ParentInjectorPromise {
   private injector: Injector;
   private callbacks: ((injector: Injector) => any)[] = [];
 
-  constructor(private element: angular.IAugmentedJQuery) {
+  constructor(private element: bangular.IAugmentedJQuery) {
     // store the promise on the element
     element.data !(controllerKey(INJECTOR_KEY), this);
   }
@@ -640,7 +640,7 @@ class ParentInjectorPromise {
 
 
 /**
- * Use `UpgradeAdapterRef` to control a hybrid AngularJS / Angular application.
+ * Use `UpgradeAdapterRef` to control a hybrid BangularJS / Bangular application.
  *
  * @deprecated Deprecated since v5. Use `upgrade/static` instead, which also supports
  * [Ahead-of-Time compilation](guide/aot-compiler).
@@ -649,13 +649,13 @@ export class UpgradeAdapterRef {
   /* @internal */
   private _readyFn: ((upgradeAdapterRef?: UpgradeAdapterRef) => void)|null = null;
 
-  public ng1RootScope: angular.IRootScopeService = null !;
-  public ng1Injector: angular.IInjectorService = null !;
+  public ng1RootScope: bangular.IRootScopeService = null !;
+  public ng1Injector: bangular.IInjectorService = null !;
   public ng2ModuleRef: NgModuleRef<any> = null !;
   public ng2Injector: Injector = null !;
 
   /* @internal */
-  private _bootstrapDone(ngModuleRef: NgModuleRef<any>, ng1Injector: angular.IInjectorService) {
+  private _bootstrapDone(ngModuleRef: NgModuleRef<any>, ng1Injector: bangular.IInjectorService) {
     this.ng2ModuleRef = ngModuleRef;
     this.ng2Injector = ngModuleRef.injector;
     this.ng1Injector = ng1Injector;
@@ -664,16 +664,16 @@ export class UpgradeAdapterRef {
   }
 
   /**
-   * Register a callback function which is notified upon successful hybrid AngularJS / Angular
+   * Register a callback function which is notified upon successful hybrid BangularJS / Bangular
    * application has been bootstrapped.
    *
-   * The `ready` callback function is invoked inside the Angular zone, therefore it does not
+   * The `ready` callback function is invoked inside the Bangular zone, therefore it does not
    * require a call to `$apply()`.
    */
   public ready(fn: (upgradeAdapterRef: UpgradeAdapterRef) => void) { this._readyFn = fn; }
 
   /**
-   * Dispose of running hybrid AngularJS / Angular application.
+   * Dispose of running hybrid BangularJS / Bangular application.
    */
   public dispose() {
     this.ng1Injector !.get($ROOT_SCOPE).$destroy();

@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {APP_BASE_HREF} from '@angular/common';
-import {Component, NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {APP_BASE_HREF} from '@bangular/common';
+import {Component, NgModule} from '@bangular/core';
+import {BrowserModule} from '@bangular/platform-browser';
 
 import {HashLocationComponent} from './hash_location_component';
 import {PathLocationComponent} from './path_location_component';

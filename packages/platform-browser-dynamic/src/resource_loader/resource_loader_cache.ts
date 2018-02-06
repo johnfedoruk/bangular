@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ResourceLoader} from '@angular/compiler';
-import {ɵglobal as global} from '@angular/core';
+import {ResourceLoader} from '@bangular/compiler';
+import {ɵglobal as global} from '@bangular/core';
 
 /**
  * An implementation of ResourceLoader that uses a template cache to avoid doing an actual

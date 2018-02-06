@@ -25,10 +25,10 @@ travisFoldStart "test.unit.node"
 travisFoldEnd "test.unit.node"
 
 
-# rebuild to revert files in @angular/compiler/test
+# rebuild to revert files in @bangular/compiler/test
 # TODO(tbosch): remove this and teach karma to serve the right files
 travisFoldStart "test.unit.rebuildHack"
-  node dist/tools/@angular/compiler-cli/src/main -p packages/tsconfig-metadata.json
+  node dist/tools/@bangular/compiler-cli/src/main -p packages/tsconfig-metadata.json
 travisFoldStart "test.unit.rebuildHack"
 
 

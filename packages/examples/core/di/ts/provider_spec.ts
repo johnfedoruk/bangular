@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable, InjectionToken, Injector, Optional, ReflectiveInjector} from '@angular/core';
+import {Injectable, InjectionToken, Injector, Optional, ReflectiveInjector} from '@bangular/core';
 
 {
   describe('Provider examples', () => {
@@ -173,7 +173,7 @@ import {Injectable, InjectionToken, Injector, Optional, ReflectiveInjector} from
         const Hash = new InjectionToken('hash');
 
         const injector = Injector.create([
-          {provide: Location, useValue: 'http://angular.io/#someLocation'}, {
+          {provide: Location, useValue: 'http://bangular.io/#someLocation'}, {
             provide: Hash,
             useFactory: (location: string) => location.split('#')[1],
             deps: [Location]

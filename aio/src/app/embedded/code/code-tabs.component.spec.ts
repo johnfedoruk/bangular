@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
-import { Component, DebugElement, Input, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatTabGroup, MatTabsModule } from '@angular/material';
-import { By } from '@angular/platform-browser';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@bangular/common';
+import { Component, DebugElement, Input, NO_ERRORS_SCHEMA } from '@bangular/core';
+import { ComponentFixture, TestBed } from '@bangular/core/testing';
+import { MatTabGroup, MatTabsModule } from '@bangular/material';
+import { By } from '@bangular/platform-browser';
+import { NoopAnimationsModule } from '@bangular/platform-browser/animations';
 
 import { CodeTabsComponent } from './code-tabs.component';
 

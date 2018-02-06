@@ -3,17 +3,17 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 
-import {ɵglobal as global} from '@angular/core';
-import {ɵgetDOM as getDOM} from '@angular/platform-browser';
+import {ɵglobal as global} from '@bangular/core';
+import {ɵgetDOM as getDOM} from '@bangular/platform-browser';
 
 
 
 /**
- * Jasmine matchers that check Angular specific conditions.
+ * Jasmine matchers that check Bangular specific conditions.
  */
 export interface NgMatchers extends jasmine.Matchers {
   /**
@@ -88,7 +88,7 @@ export interface NgMatchers extends jasmine.Matchers {
 const _global = <any>(typeof window === 'undefined' ? global : window);
 
 /**
- * Jasmine matching function with Angular matchers mixed in.
+ * Jasmine matching function with Bangular matchers mixed in.
  *
  * ## Example
  *

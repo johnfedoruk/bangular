@@ -1,11 +1,11 @@
 // #docregion downgrade-component
-declare var angular: angular.IAngularStatic;
-import { downgradeComponent } from '@angular/upgrade/static';
+declare var bangular: bangular.IBangularStatic;
+import { downgradeComponent } from '@bangular/upgrade/static';
 
 // #enddocregion downgrade-component
 
 // #docregion initialclass
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 import { Phone, PhoneData } from '../core/phone/phone.service';
 
 // #docregion downgrade-component
@@ -64,9 +64,9 @@ export class PhoneListComponent {
 }
 // #enddocregion initialclass
 
-angular.module('phoneList')
+bangular.module('phoneList')
   .directive(
     'phoneList',
-    downgradeComponent({component: PhoneListComponent}) as angular.IDirectiveFactory
+    downgradeComponent({component: PhoneListComponent}) as bangular.IDirectiveFactory
   );
 // #enddocregion downgrade-component

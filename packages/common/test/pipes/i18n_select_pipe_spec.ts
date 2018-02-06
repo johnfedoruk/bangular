@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {I18nSelectPipe} from '@angular/common';
-import {PipeResolver} from '@angular/compiler/src/pipe_resolver';
-import {JitReflector} from '@angular/platform-browser-dynamic/src/compiler_reflector';
+import {I18nSelectPipe} from '@bangular/common';
+import {PipeResolver} from '@bangular/compiler/src/pipe_resolver';
+import {JitReflector} from '@bangular/platform-browser-dynamic/src/compiler_reflector';
 
 {
   describe('I18nSelectPipe', () => {

@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { ServerModule } from '@angular/platform-server';
+import { NgModule } from '@bangular/core';
+import { ServerModule } from '@bangular/platform-server';
 import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
 
 import { AppModule } from './app.module';

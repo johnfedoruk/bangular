@@ -1,20 +1,20 @@
 {
-  "name": "@angular/platform-server",
+  "name": "@bangular/platform-server",
   "version": "0.0.0-PLACEHOLDER",
-  "description": "Angular - library for using Angular in Node.js",
+  "description": "Bangular - library for using Bangular in Node.js",
   "main": "./bundles/platform-server.umd.js",
   "module": "./esm5/platform-server.js",
   "es2015": "./esm2015/platform-server.js",
   "typings": "./platform-server.d.ts",
-  "author": "angular",
+  "author": "bangular",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/animations": "0.0.0-PLACEHOLDER",
-    "@angular/core": "0.0.0-PLACEHOLDER",
-    "@angular/common": "0.0.0-PLACEHOLDER",
-    "@angular/compiler": "0.0.0-PLACEHOLDER",
-    "@angular/platform-browser": "0.0.0-PLACEHOLDER",
-    "@angular/platform-browser-dynamic": "0.0.0-PLACEHOLDER"
+    "@bangular/animations": "0.0.0-PLACEHOLDER",
+    "@bangular/core": "0.0.0-PLACEHOLDER",
+    "@bangular/common": "0.0.0-PLACEHOLDER",
+    "@bangular/compiler": "0.0.0-PLACEHOLDER",
+    "@bangular/platform-browser": "0.0.0-PLACEHOLDER",
+    "@bangular/platform-browser-dynamic": "0.0.0-PLACEHOLDER"
   },
   "dependencies": {
     "tslib": "^1.7.1",
@@ -23,6 +23,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angular/angular.git"
+    "url": "https://github.com/bangular/bangular.git"
   }
 }

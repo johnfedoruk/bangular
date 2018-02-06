@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {beforeEach, describe, expect, it} from '@angular/core/testing/src/testing_internal';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {el, stringifyElement} from '@angular/platform-browser/testing/src/browser_util';
+import {beforeEach, describe, expect, it} from '@bangular/core/testing/src/testing_internal';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {el, stringifyElement} from '@bangular/platform-browser/testing/src/browser_util';
 
 {
   describe('dom adapter', () => {

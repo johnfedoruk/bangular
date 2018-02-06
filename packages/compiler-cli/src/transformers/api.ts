@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {GeneratedFile, ParseSourceSpan, Position} from '@angular/compiler';
+import {GeneratedFile, ParseSourceSpan, Position} from '@bangular/compiler';
 import * as ts from 'typescript';
 
 export const DEFAULT_ERROR_CODE = 100;
 export const UNKNOWN_ERROR_CODE = 500;
-export const SOURCE = 'angular' as 'angular';
+export const SOURCE = 'bangular' as 'bangular';
 
 export interface DiagnosticMessageChain {
   messageText: string;
@@ -26,15 +26,15 @@ export interface Diagnostic {
   chain?: DiagnosticMessageChain;
   category: ts.DiagnosticCategory;
   code: number;
-  source: 'angular';
+  source: 'bangular';
 }
 
 export function isTsDiagnostic(diagnostic: any): diagnostic is ts.Diagnostic {
-  return diagnostic != null && diagnostic.source !== 'angular';
+  return diagnostic != null && diagnostic.source !== 'bangular';
 }
 
 export function isNgDiagnostic(diagnostic: any): diagnostic is Diagnostic {
-  return diagnostic != null && diagnostic.source === 'angular';
+  return diagnostic != null && diagnostic.source === 'bangular';
 }
 
 export interface CompilerOptions extends ts.CompilerOptions {
@@ -66,13 +66,13 @@ export interface CompilerOptions extends ts.CompilerOptions {
   // be determined. When this value option is not provided or is `false`, constructor
   // parameters of classes marked with `@Injectable` whose type cannot be resolved will
   // produce a warning. With this option `true`, they produce an error. When this option is
-  // not provided is treated as if it were `false`. In Angular 6.0, if this option is not
+  // not provided is treated as if it were `false`. In Bangular 6.0, if this option is not
   // provided, it will be treated as `true`.
   strictInjectionParameters?: boolean;
 
   // Whether to generate a flat module index of the given name and the corresponding
   // flat module metadata. This option is intended to be used when creating flat
-  // modules similar to how `@angular/core` and `@angular/common` are packaged.
+  // modules similar to how `@bangular/core` and `@bangular/common` are packaged.
   // When this option is used the `package.json` for the library should refered to the
   // generated flat module index instead of the library index file. When using this
   // option only one .metadata.json file is produced that contains all the metadata
@@ -105,13 +105,13 @@ export interface CompilerOptions extends ts.CompilerOptions {
   generateCodeForLibraries?: boolean;
 
   // Whether to enable all type checks for templates.
-  // This will be true be default in Angular 6.
+  // This will be true be default in Bangular 6.
   fullTemplateTypeCheck?: boolean;
 
   // Insert JSDoc type annotations needed by Closure Compiler
   annotateForClosureCompiler?: boolean;
 
-  // Modify how angular annotations are emitted to improve tree-shaking.
+  // Modify how bangular annotations are emitted to improve tree-shaking.
   // Default is static fields.
   // decorators: Leave the Decorators in-place. This makes compilation faster.
   //             TypeScript will emit calls to the __decorate helper.
@@ -149,7 +149,7 @@ export interface CompilerOptions extends ts.CompilerOptions {
   i18nInMissingTranslations?: 'error'|'warning'|'ignore';
 
   // Whether to remove blank text nodes from compiled templates. It is `true` by default
-  // in Angular 5 and will be re-visited in Angular 6.
+  // in Bangular 5 and will be re-visited in Bangular 6.
   preserveWhitespaces?: boolean;
 
   /** generate all possible generated files  */
@@ -270,40 +270,40 @@ export interface Program {
   /**
    * Retrieve the TypeScript program used to produce semantic diagnostics and emit the sources.
    *
-   * Angular structural information is required to produce the program.
+   * Bangular structural information is required to produce the program.
    */
   getTsProgram(): ts.Program;
 
   /**
    * Retrieve options diagnostics for the TypeScript options used to create the program. This is
    * faster than calling `getTsProgram().getOptionsDiagnostics()` since it does not need to
-   * collect Angular structural information to produce the errors.
+   * collect Bangular structural information to produce the errors.
    */
   getTsOptionDiagnostics(cancellationToken?: ts.CancellationToken): ReadonlyArray<ts.Diagnostic>;
 
   /**
-   * Retrieve options diagnostics for the Angular options used to create the program.
+   * Retrieve options diagnostics for the Bangular options used to create the program.
    */
   getNgOptionDiagnostics(cancellationToken?: ts.CancellationToken): ReadonlyArray<Diagnostic>;
 
   /**
    * Retrieve the syntax diagnostics from TypeScript. This is faster than calling
-   * `getTsProgram().getSyntacticDiagnostics()` since it does not need to collect Angular structural
+   * `getTsProgram().getSyntacticDiagnostics()` since it does not need to collect Bangular structural
    * information to produce the errors.
    */
   getTsSyntacticDiagnostics(sourceFile?: ts.SourceFile, cancellationToken?: ts.CancellationToken):
       ReadonlyArray<ts.Diagnostic>;
 
   /**
-   * Retrieve the diagnostics for the structure of an Angular application is correctly formed.
-   * This includes validating Angular annotations and the syntax of referenced and imbedded HTML
+   * Retrieve the diagnostics for the structure of an Bangular application is correctly formed.
+   * This includes validating Bangular annotations and the syntax of referenced and imbedded HTML
    * and CSS.
    *
-   * Note it is important to displaying TypeScript semantic diagnostics along with Angular
+   * Note it is important to displaying TypeScript semantic diagnostics along with Bangular
    * structural diagnostics as an error in the program strucutre might cause errors detected in
    * semantic analysis and a semantic error might cause errors in specifying the program structure.
    *
-   * Angular structural information is required to produce these diagnostics.
+   * Bangular structural information is required to produce these diagnostics.
    */
   getNgStructuralDiagnostics(cancellationToken?: ts.CancellationToken): ReadonlyArray<Diagnostic>;
 
@@ -315,17 +315,17 @@ export interface Program {
       ReadonlyArray<ts.Diagnostic>;
 
   /**
-   * Retrieve the Angular semantic diagnostics.
+   * Retrieve the Bangular semantic diagnostics.
    *
-   * Angular structural information is required to produce these diagnostics.
+   * Bangular structural information is required to produce these diagnostics.
    */
   getNgSemanticDiagnostics(fileName?: string, cancellationToken?: ts.CancellationToken):
       ReadonlyArray<Diagnostic>;
 
   /**
-   * Load Angular structural information asynchronously. If this method is not called then the
-   * Angular structural information, including referenced HTML and CSS files, are loaded
-   * synchronously. If the supplied Angular compiler host returns a promise from `loadResource()`
+   * Load Bangular structural information asynchronously. If this method is not called then the
+   * Bangular structural information, including referenced HTML and CSS files, are loaded
+   * synchronously. If the supplied Bangular compiler host returns a promise from `loadResource()`
    * will produce a diagnostic error message or, `getTsProgram()` or `emit` to throw.
    */
   loadNgStructureAsync(): Promise<void>;
@@ -341,7 +341,7 @@ export interface Program {
   /**
    * Emit the files requested by emitFlags implied by the program.
    *
-   * Angular structural information is required to emit files.
+   * Bangular structural information is required to emit files.
    */
   emit({emitFlags, cancellationToken, customTransformers, emitCallback}?: {
     emitFlags?: EmitFlags,

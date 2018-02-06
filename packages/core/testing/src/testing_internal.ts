@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ɵisPromise as isPromise} from '@angular/core';
-import {global} from '@angular/core/src/util';
+import {ɵisPromise as isPromise} from '@bangular/core';
+import {global} from '@bangular/core/src/util';
 
 import {AsyncTestCompleter} from './async_test_completer';
 import {getTestBed, inject} from './test_bed';
@@ -40,7 +40,7 @@ const globalTimeOut = jasmine.DEFAULT_TIMEOUT_INTERVAL;
 const testBed = getTestBed();
 
 /**
- * Mechanism to run `beforeEach()` functions of Angular tests.
+ * Mechanism to run `beforeEach()` functions of Bangular tests.
  *
  * Note: Jasmine own `beforeEach` is used by this library to handle DI providers.
  */

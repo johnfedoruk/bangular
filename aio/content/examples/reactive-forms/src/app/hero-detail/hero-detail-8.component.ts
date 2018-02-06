@@ -1,7 +1,7 @@
 /* tslint:disable:component-class-suffix */
 // #docregion imports
-import { Component, Input, OnChanges }                   from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnChanges }                   from '@bangular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@bangular/forms';
 
 import { Address, Hero, states } from '../data-model';
 // #enddocregion imports

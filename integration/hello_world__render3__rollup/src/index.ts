@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ɵdefineComponent as defineComponent, ɵdetectChanges as detectChanges, ɵrenderComponent as renderComponent, ɵT as T, ɵt as t, ɵE as E, ɵe as e, ɵp as p, ɵL as L, ɵb as b, ɵb1 as b1} from '@angular/core';
-import {ComponentDef} from '@angular/core/src/render3/interfaces/definition';
+import {ɵdefineComponent as defineComponent, ɵdetectChanges as detectChanges, ɵrenderComponent as renderComponent, ɵT as T, ɵt as t, ɵE as E, ɵe as e, ɵp as p, ɵL as L, ɵb as b, ɵb1 as b1} from '@bangular/core';
+import {ComponentDef} from '@bangular/core/src/render3/interfaces/definition';
 
 export class HelloWorld {
   name: string = "world";

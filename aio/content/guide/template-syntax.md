@@ -6,13 +6,13 @@
   h4 .syntax { font-size: 100%; }
 </style>
 
-The Angular application manages what the user sees and can do, achieving this through the interaction of a
+The Bangular application manages what the user sees and can do, achieving this through the interaction of a
 component class instance (the *component*) and its user-facing template.
 
 You may be familiar with the component/template duality from your experience with model-view-controller (MVC) or model-view-viewmodel (MVVM).
-In Angular, the component plays the part of the controller/viewmodel, and the template represents the view.
+In Bangular, the component plays the part of the controller/viewmodel, and the template represents the view.
 
-This page is a comprehensive technical reference to the Angular template language.
+This page is a comprehensive technical reference to the Bangular template language.
 It explains basic principles of the template language and describes most of the syntax that you'll encounter elsewhere in the documentation.
 
 Many code snippets illustrate the points and concepts, all of them available
@@ -22,7 +22,7 @@ in the <live-example title="Template Syntax Live Code"></live-example>.
 {@a html}
 ## HTML in templates
 
-HTML is the language of the Angular template.
+HTML is the language of the Bangular template.
 Almost all HTML syntax is valid template syntax.
 The `<script>` element is a notable exception;
 it is forbidden, eliminating the risk of script injection attacks.
@@ -44,7 +44,7 @@ Begin with the first form of data binding&mdash;interpolation&mdash;to see how m
 
 ## Interpolation ( <span class="syntax">{&#xfeff;{...}}</span> )
 
-You met the double-curly braces of interpolation, `{{` and `}}`, early in your Angular education.
+You met the double-curly braces of interpolation, `{{` and `}}`, early in your Bangular education.
 
 <code-example path="template-syntax/src/app/app.component.html" region="first-interpolation" title="src/app/app.component.html" linenums="false">
 </code-example>
@@ -54,11 +54,11 @@ You use interpolation to weave calculated strings into the text between HTML ele
 <code-example path="template-syntax/src/app/app.component.html" region="title+image" title="src/app/app.component.html" linenums="false">
 </code-example>
 
-The text between the braces is often the name of a component property. Angular replaces that name with the
-string value of the corresponding component property. In the example above, Angular evaluates the `title` and `heroImageUrl` properties
+The text between the braces is often the name of a component property. Bangular replaces that name with the
+string value of the corresponding component property. In the example above, Bangular evaluates the `title` and `heroImageUrl` properties
 and "fills in the blanks", first displaying a bold application title and then a heroic image.
 
-More generally, the text between the braces is a **template expression** that Angular first **evaluates**
+More generally, the text between the braces is a **template expression** that Bangular first **evaluates**
 and then **converts to a string**. The following interpolation illustrates the point by adding the two numbers:
 
 <code-example path="template-syntax/src/app/app.component.html" region="sum-1" title="src/app/app.component.html" linenums="false">
@@ -69,13 +69,13 @@ The expression can invoke methods of the host component such as `getVal()`, seen
 <code-example path="template-syntax/src/app/app.component.html" region="sum-2" title="src/app/app.component.html" linenums="false">
 </code-example>
 
-Angular evaluates all expressions in double curly braces,
+Bangular evaluates all expressions in double curly braces,
 converts the expression results to strings, and links them with neighboring literal strings. Finally,
 it assigns this composite interpolated result to an **element or directive property**.
 
 You appear to be inserting the result between element tags and assigning it to attributes.
 It's convenient to think so, and you rarely suffer for this mistake.
-Though this is not exactly true. Interpolation is a special syntax that Angular converts into a
+Though this is not exactly true. Interpolation is a special syntax that Bangular converts into a
 [property binding](guide/template-syntax#property-binding), as is explained [below](guide/template-syntax#property-binding-or-interpolation).
 
 But first, let's take a closer look at template expressions and statements.
@@ -89,7 +89,7 @@ But first, let's take a closer look at template expressions and statements.
 ## Template expressions
 
 A template **expression** produces a value.
-Angular executes the expression and assigns it to a property of a binding target;
+Bangular executes the expression and assigns it to a property of a binding target;
 the target might be an HTML element, a component, or a directive.
 
 The interpolation braces in `{{1 + 1}}` surround the template expression `1 + 1`.
@@ -168,13 +168,13 @@ The only exceptions to these guidelines should be in specific circumstances that
 A template expression should not change any application state other than the value of the
 target property.
 
-This rule is essential to Angular's "unidirectional data flow" policy.
+This rule is essential to Bangular's "unidirectional data flow" policy.
 You should never worry that reading a component value might change some other displayed value.
 The view should be stable throughout a single rendering pass.
 
 #### Quick execution
 
-Angular executes template expressions after every change detection cycle.
+Bangular executes template expressions after every change detection cycle.
 Change detection cycles are triggered by many asynchronous activities such as
 promise resolutions, http results, timer events, keypresses and mouse moves.
 
@@ -193,9 +193,9 @@ where it will be easier to develop and test.
 #### Idempotence
 
 An [idempotent](https://en.wikipedia.org/wiki/Idempotence) expression is ideal because
-it is free of side effects and improves Angular's change detection performance.
+it is free of side effects and improves Bangular's change detection performance.
 
-In Angular terms, an idempotent expression always returns *exactly the same thing* until
+In Bangular terms, an idempotent expression always returns *exactly the same thing* until
 one of its dependent values changes.
 
 Dependent values should not change during a single turn of the event loop.
@@ -222,7 +222,7 @@ A template statement *has a side effect*.
 That's the whole point of an event.
 It's how you update application state from user action.
 
-Responding to events is the other side of Angular's "unidirectional data flow".
+Responding to events is the other side of Bangular's "unidirectional data flow".
 You're free to change anything, anywhere, during this turn of the event loop.
 
 Like template expressions, template *statements* use a language that looks like JavaScript.
@@ -286,8 +286,8 @@ While you could push values to and pull values from HTML,
 the application is easier to write, read, and maintain if you turn these chores over to a binding framework.
 You simply declare bindings between binding sources and target HTML elements and let the framework do the work.
 
-Angular provides many kinds of data binding.
-This guide covers most of them, after a high-level view of Angular data binding and its syntax.
+Bangular provides many kinds of data binding.
+This guide covers most of them, after a high-level view of Bangular data binding and its syntax.
 
 Binding types can be grouped into three categories distinguished by the direction of data flow:
 from the _source-to-view_, from _view-to-source_, and in the two-way sequence: _view-to-source-to-view_:
@@ -387,7 +387,7 @@ you modify those elements by setting element attributes with string constants.
 <code-example path="template-syntax/src/app/app.component.html" region="img+button" title="src/app/app.component.html" linenums="false">
 </code-example>
 
-You still create a structure and initialize attribute values this way in Angular templates.
+You still create a structure and initialize attribute values this way in Bangular templates.
 
 Then you learn to create new elements with components that encapsulate HTML
 and drop them into templates as if they were native HTML elements.
@@ -414,7 +414,7 @@ You are setting the *properties* of DOM elements, components, and directives.
 
 ### HTML attribute vs. DOM property
 
-The distinction between an HTML attribute and a DOM property is crucial to understanding how Angular binding works.
+The distinction between an HTML attribute and a DOM property is crucial to understanding how Bangular binding works.
 
 **Attributes are defined by HTML. Properties are defined by the DOM (Document Object Model).**
 
@@ -448,7 +448,7 @@ so the button is disabled.
 Adding and removing the `disabled` *attribute* disables and enables the button. The value of the *attribute* is irrelevant,
 which is why you cannot enable a button by writing `<button disabled="false">Still Disabled</button>`.
 
-Setting the button's `disabled` *property*  (say, with an Angular binding) disables or enables the button.
+Setting the button's `disabled` *property*  (say, with an Bangular binding) disables or enables the button.
 The value of the *property* matters.
 
 **The HTML attribute and the DOM property are not the same thing, even when they have the same name.**
@@ -464,7 +464,7 @@ This fact bears repeating:
   A world without attributes
 </header>
 
-In the world of Angular, the only role of attributes is to initialize element and directive state.
+In the world of Bangular, the only role of attributes is to initialize element and directive state.
 When you write a data binding, you're dealing exclusively with properties and events of the target object.
 HTML attributes effectively disappear.
 
@@ -653,7 +653,7 @@ The target name is always the name of a property, even when it appears to be the
 You see `src` and may think it's the name of an attribute. No. It's the name of an image element property.
 
 Element properties may be the more common targets,
-but Angular looks first to see if the name is a property of a known directive,
+but Bangular looks first to see if the name is a property of a known directive,
 as it is in the following example:
 
 <code-example path="template-syntax/src/app/app.component.html" region="property-binding-3" title="src/app/app.component.html" linenums="false">
@@ -661,13 +661,13 @@ as it is in the following example:
 
 <div class="l-sub-section">
 
-Technically, Angular is matching the name to a directive [input](guide/template-syntax#inputs-outputs),
+Technically, Bangular is matching the name to a directive [input](guide/template-syntax#inputs-outputs),
 one of the property names listed in the directive's `inputs` array or a property decorated with `@Input()`.
 Such inputs map to the directive's own properties.
 
 </div>
 
-If the name fails to match a property of a known directive or element, Angular reports an “unknown directive” error.
+If the name fails to match a property of a known directive or element, Bangular reports an “unknown directive” error.
 
 ### Avoid side effects
 
@@ -676,11 +676,11 @@ The expression language itself does its part to keep you safe.
 You can't assign a value to anything in a property binding expression nor use the increment and decrement operators.
 
 Of course, the expression might invoke a property or method that has side effects.
-Angular has no way of knowing that or stopping you.
+Bangular has no way of knowing that or stopping you.
 
 The expression could call something like `getFoo()`. Only you know what `getFoo()` does.
 If `getFoo()` changes something and you happen to be binding to that something, you risk an unpleasant experience.
-Angular may or may not display the changed value. Angular may detect the change and throw a warning error.
+Bangular may or may not display the changed value. Bangular may detect the change and throw a warning error.
 In general, stick to data properties and to methods that return values and do no more.
 
 ### Return the proper type
@@ -697,8 +697,8 @@ The `hero` property of the `HeroDetail` component expects a `Hero` object, which
 
 ### Remember the brackets
 
-The brackets tell Angular to evaluate the template expression.
-If you omit the brackets, Angular treats the string as a constant
+The brackets tell Bangular to evaluate the template expression.
+If you omit the brackets, Bangular treats the string as a constant
 and *initializes the target property* with that string.
 It does *not* evaluate the string!
 
@@ -720,7 +720,7 @@ You *should* omit the brackets when all of the following are true:
 You routinely initialize attributes this way in standard HTML, and it works
 just as well for directive and component property initialization.
 The following example initializes the `prefix` property of the `HeroDetailComponent` to a fixed string,
-not a template expression. Angular sets it and forgets about it.
+not a template expression. Bangular sets it and forgets about it.
 
 <code-example path="template-syntax/src/app/app.component.html" region="property-binding-7" title="src/app/app.component.html" linenums="false">
 </code-example>
@@ -753,7 +753,7 @@ Imagine the following *malicious content*.
 <code-example path="template-syntax/src/app/app.component.ts" region="evil-title" title="src/app/app.component.ts" linenums="false">
 </code-example>
 
-Fortunately, Angular data binding is on alert for dangerous HTML.
+Fortunately, Bangular data binding is on alert for dangerous HTML.
 It [*sanitizes*](guide/security#sanitization-and-security-contexts) the values before displaying them.
 It **will not** allow HTML with script tags to leak into the browser, neither with interpolation
 nor property binding.
@@ -790,7 +790,7 @@ This is the only binding that creates and sets an attribute.
 </div>
 
 This guide stresses repeatedly that setting an element property with a property binding
-is always preferred to setting the attribute with a string. Why does Angular offer attribute binding?
+is always preferred to setting the attribute with a string. Why does Bangular offer attribute binding?
 
 **You must use attribute binding when there is no element property to bind.**
 
@@ -866,7 +866,7 @@ You can replace that with a binding to a string of the desired class names; this
 </code-example>
 
 Finally, you can bind to a specific class name.
-Angular adds the class when the template expression evaluates to truthy.
+Bangular adds the class when the template expression evaluates to truthy.
 It removes the class when the expression is falsy.
 
 <code-example path="template-syntax/src/app/app.component.html" region="class-binding-3" title="src/app/app.component.html" linenums="false">
@@ -928,7 +928,7 @@ They click buttons. Such user actions may result in a flow of data in the opposi
 
 The only way to know about a user action is to listen for certain events such as
 keystrokes, mouse movements, clicks, and touches.
-You declare your interest in user actions through Angular event binding.
+You declare your interest in user actions through Bangular event binding.
 
 Event binding syntax consists of a **target event** name
 within parentheses on the left of an equal sign, and a quoted
@@ -952,7 +952,7 @@ Some people prefer the `on-` prefix alternative, known as the **canonical form**
 <code-example path="template-syntax/src/app/app.component.html" region="event-binding-2" title="src/app/app.component.html" linenums="false">
 </code-example>
 
-Element events may be the more common targets, but Angular looks first to see if the name matches an event property
+Element events may be the more common targets, but Bangular looks first to see if the name matches an event property
 of a known directive, as it does in the following example:
 
 <code-example path="template-syntax/src/app/app.component.html" region="event-binding-3" title="src/app/app.component.html" linenums="false">
@@ -966,11 +966,11 @@ on [aliasing input/output properties](guide/template-syntax#aliasing-io).
 </div>
 
 If the name fails to match an element event or an output property of a known directive,
-Angular reports an “unknown directive” error.
+Bangular reports an “unknown directive” error.
 
 ### *$event* and event handling statements
 
-In an event binding, Angular sets up an event handler for the target event.
+In an event binding, Bangular sets up an event handler for the target event.
 
 When the event is raised, the handler executes the template statement.
 The template statement typically involves a receiver, which performs an action
@@ -1006,7 +1006,7 @@ If the event belongs to a directive (recall that components are directives),
 
 ### Custom events with <span class="syntax">EventEmitter</span>
 
-Directives typically raise custom events with an Angular [EventEmitter](api/core/EventEmitter).
+Directives typically raise custom events with an Bangular [EventEmitter](api/core/EventEmitter).
 The directive creates an `EventEmitter` and exposes it as a property.
 The directive calls `EventEmitter.emit(payload)` to fire an event, passing in a message payload, which can be anything.
 Parent directives listen for the event by binding to this property and accessing the payload through the `$event` object.
@@ -1032,7 +1032,7 @@ Now imagine a hosting parent component that binds to the `HeroDetailComponent`'s
 <code-example path="template-syntax/src/app/app.component.html" linenums="false" title="src/app/app.component.html (event-binding-to-component)" region="event-binding-to-component">
 </code-example>
 
-When the `deleteRequest` event fires, Angular calls the parent component's `deleteHero` method,
+When the `deleteRequest` event fires, Bangular calls the parent component's `deleteHero` method,
 passing the *hero-to-delete* (emitted by `HeroDetail`) in the `$event` variable.
 
 ### Template statements have side effects
@@ -1056,7 +1056,7 @@ You often want to both display a data property and update that property when the
 On the element side that takes a combination of setting a specific element property
 and listening for an element change event.
 
-Angular offers a special _two-way data binding_ syntax for this purpose, **`[(x)]`**.
+Bangular offers a special _two-way data binding_ syntax for this purpose, **`[(x)]`**.
 The `[(x)]` syntax combines the brackets
 of _property binding_, `[x]`, with the parentheses of _event binding_, `(x)`.
 
@@ -1093,20 +1093,20 @@ The revised `AppComponent.fontSizePx` value flows through to the _style_ binding
 making the displayed text bigger or smaller.
 
 The two-way binding syntax is really just syntactic sugar for a _property_ binding and an _event_ binding.
-Angular _desugars_ the `SizerComponent` binding into this:
+Bangular _desugars_ the `SizerComponent` binding into this:
 
 <code-example path="template-syntax/src/app/app.component.html" linenums="false" title="src/app/app.component.html (two-way-2)" region="two-way-2">
 </code-example>
 
 The `$event` variable contains the payload of the `SizerComponent.sizeChange` event.
-Angular assigns the `$event` value to the `AppComponent.fontSizePx` when the user clicks the buttons.
+Bangular assigns the `$event` value to the `AppComponent.fontSizePx` when the user clicks the buttons.
 
 Clearly the two-way binding syntax is a great convenience compared to separate property and event bindings.
 
 It would be convenient to use two-way binding with HTML form elements like `<input>` and `<select>`.
 However, no native HTML element follows the `x` value and `xChange` event pattern.
 
-Fortunately, the Angular [_NgModel_](guide/template-syntax#ngModel) directive is a bridge that enables two-way binding to form elements.
+Fortunately, the Bangular [_NgModel_](guide/template-syntax#ngModel) directive is a bridge that enables two-way binding to form elements.
 
 
 <hr/>
@@ -1115,19 +1115,19 @@ Fortunately, the Angular [_NgModel_](guide/template-syntax#ngModel) directive is
 
 ## Built-in directives
 
-Earlier versions of Angular included over seventy built-in directives.
+Earlier versions of Bangular included over seventy built-in directives.
 The community contributed many more, and countless private directives
 have been created for internal applications.
 
-You don't need many of those directives in Angular.
-You can often achieve the same results with the more capable and expressive Angular binding system.
+You don't need many of those directives in Bangular.
+You can often achieve the same results with the more capable and expressive Bangular binding system.
 Why create a directive to handle a click when you can write a simple binding such as this?
 
 <code-example path="template-syntax/src/app/app.component.html" region="event-binding-1" title="src/app/app.component.html" linenums="false">
 </code-example>
 
 You still benefit from directives that simplify complex tasks.
-Angular still ships with built-in directives; just not as many.
+Bangular still ships with built-in directives; just not as many.
 You'll write your own directives, just not as many.
 
 This segment reviews some of the most frequently used built-in directives,
@@ -1282,23 +1282,23 @@ The details are specific to each kind of element and therefore the `NgModel` dir
 supported by a [ControlValueAccessor](api/forms/ControlValueAccessor)
 that adapts an element to this protocol.
 The `<input>` box is one of those elements.
-Angular provides *value accessors* for all of the basic HTML form elements and the
+Bangular provides *value accessors* for all of the basic HTML form elements and the
 [_Forms_](guide/forms) guide shows how to bind to them.
 
 You can't apply `[(ngModel)]` to a non-form native element or a third-party custom component
 until you write a suitable *value accessor*,
 a technique that is beyond the scope of this guide.
 
-You don't need a _value accessor_ for an Angular component that you write because you
+You don't need a _value accessor_ for an Bangular component that you write because you
 can name the value and event properties
-to suit Angular's basic [two-way binding syntax](guide/template-syntax#two-way) and skip `NgModel` altogether.
+to suit Bangular's basic [two-way binding syntax](guide/template-syntax#two-way) and skip `NgModel` altogether.
 The [`sizer` shown above](guide/template-syntax#two-way) is an example of this technique.
 
 </div>
 
 Separate `ngModel` bindings is an improvement over binding to the element's native properties. You can do better.
 
-You shouldn't have to mention the data property twice. Angular should be able to capture
+You shouldn't have to mention the data property twice. Bangular should be able to capture
 the component's data property and set it
 with a single declaration, which it can with the `[(ngModel)]` syntax:
 
@@ -1383,11 +1383,11 @@ Hiding an element is quite different from removing an element with `NgIf`.
 
 When you hide an element, that element and all of its descendents remain in the DOM.
 All components for those elements stay in memory and
-Angular may continue to check for changes.
+Bangular may continue to check for changes.
 You could be holding onto considerable computing resources and degrading performance,
 for something the user can't see.
 
-When `NgIf` is `false`, Angular removes the element and its descendents from the DOM.
+When `NgIf` is `false`, Bangular removes the element and its descendents from the DOM.
 It destroys their components, potentially freeing up substantial resources,
 resulting in a more responsive user experience.
 
@@ -1398,7 +1398,7 @@ You should be wary when hiding large component trees; `NgIf` may be the safer ch
 
 The `ngIf` directive is often used to guard against null.
 Show/hide is useless as a guard.
-Angular will throw an error if a nested expression tries to access a property of `null`.
+Bangular will throw an error if a nested expression tries to access a property of `null`.
 
 Here we see `NgIf` guarding two `<div>`s.
 The `currentHero` name will appear only when there is a `currentHero`.
@@ -1424,7 +1424,7 @@ described below.
 
 `NgForOf` is a _repeater_ directive &mdash; a way to present a list of items.
 You define a block of HTML that defines how a single item should be displayed.
-You tell Angular to use that block as a template for rendering each item in the list.
+You tell Bangular to use that block as a template for rendering each item in the list.
 
 Here is an example of `NgForOf` applied to a simple `<div>`:
 
@@ -1449,13 +1449,13 @@ The text assigned to `*ngFor` is the instruction that guides the repeater proces
 #### *ngFor microsyntax
 
 The string assigned to `*ngFor` is not a [template expression](guide/template-syntax#template-expressions).
-It's a *microsyntax* &mdash; a little language of its own that Angular interprets.
+It's a *microsyntax* &mdash; a little language of its own that Bangular interprets.
 The string `"let hero of heroes"` means:
 
 > *Take each hero in the `heroes` array, store it in the local `hero` looping variable, and
 make it available to the templated HTML for each iteration.*
 
-Angular translates this instruction into a `<ng-template>` around the host element,
+Bangular translates this instruction into a `<ng-template>` around the host element,
 then uses this template repeatedly to create a new set of elements and bindings for each `hero`
 in the list.
 
@@ -1510,10 +1510,10 @@ For example, re-querying the server could reset the list with all new hero objec
 
 Most, if not all, are previously displayed heroes.
 *You* know this because the `id` of each hero hasn't changed.
-But Angular sees only a fresh list of new object references.
+But Bangular sees only a fresh list of new object references.
 It has no choice but to tear down the old DOM elements and insert all new DOM elements.
 
-Angular can avoid this churn with `trackBy`.
+Bangular can avoid this churn with `trackBy`.
 Add a method to the component that returns the value `NgForOf` _should_ track.
 In this case, that value is the hero's `id`.
 
@@ -1545,7 +1545,7 @@ Here is an illustration of the _trackBy_ effect.
 
 *NgSwitch* is like the JavaScript `switch` statement.
 It can display _one_ element from among several possible elements, based on a _switch condition_.
-Angular puts only the *selected* element into the DOM.
+Bangular puts only the *selected* element into the DOM.
 
 *NgSwitch* is actually a set of three, cooperating directives:
 `NgSwitch`, `NgSwitchCase`, and `NgSwitchDefault` as seen in this example.
@@ -1594,7 +1594,7 @@ For example, you could replace the `<confused-hero>` switch case with the follow
 ## Template reference variables ( <span class="syntax">#var</span> )
 
 A **template reference variable** is often a reference to a DOM element within a template.
-It can also be a reference to an Angular component or directive or a
+It can also be a reference to an Bangular component or directive or a
 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" title="MDN: Web Components">web component</a>.
 
 Use the hash symbol (#) to declare a reference variable.
@@ -1612,7 +1612,7 @@ consumed in a `<button>` on the other side of the template
 
 <h3 class="no-toc">How a reference variable gets its value</h3>
 
-In most cases, Angular sets the reference variable's value to the element on which it was declared.
+In most cases, Bangular sets the reference variable's value to the element on which it was declared.
 In the previous example, `phone` refers to the _phone number_ `<input>` box.
 The phone button click handler passes the _input_ value to the component's `callPhone` method.
 But a directive can change that behavior and set the value to something else, such as itself.
@@ -1627,9 +1627,9 @@ A template reference variable, `heroForm`, appears three times in this example, 
 by a large amount of HTML.
 What is the value of `heroForm`?
 
-If Angular hadn't taken it over when you imported the `FormsModule`,
+If Bangular hadn't taken it over when you imported the `FormsModule`,
 it would be the [HTMLFormElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement).
-The `heroForm` is actually a reference to an Angular [NgForm](api/forms/NgForm "API: NgForm")
+The `heroForm` is actually a reference to an Bangular [NgForm](api/forms/NgForm "API: NgForm")
 directive with the ability to track the value and validity of every control in the form.
 
 The native `<form>` element doesn't have a `form` property.
@@ -1664,7 +1664,7 @@ An _Input_ property is a _settable_ property annotated with an `@Input` decorato
 Values flow _into_ the property when it is data bound with a [property binding](#property-binding)
 
 An _Output_ property is an _observable_ property annotated with an `@Output` decorator.
-The property almost always returns an Angular [`EventEmitter`](api/core/EventEmitter).
+The property almost always returns an Bangular [`EventEmitter`](api/core/EventEmitter).
 Values flow _out_ of the component as events bound with an [event binding](#event-binding).
 
 You can only bind to _another_ component or directive through its _Input_ and _Output_ properties.
@@ -1687,7 +1687,7 @@ In such binding expressions, the component's property or method is to the _right
 
 The `iconUrl` and `onSave` are members of the `AppComponent` class.
 They are _not_ decorated with `@Input()` or `@Output`.
-Angular does not object.
+Bangular does not object.
 
 **You can always bind to a public property of a component in its own template.**
 It doesn't have to be an _Input_ or _Output_ property
@@ -1707,7 +1707,7 @@ In the following example, the `AppComponent` template binds `AppComponent` class
 <code-example path="template-syntax/src/app/app.component.html" region="io-2" title="src/app/app.component.html" linenums="false">
 </code-example>
 
-The Angular compiler _may_ reject these bindings with errors like this one:
+The Bangular compiler _may_ reject these bindings with errors like this one:
 
 <code-example language="sh" class="code-shell">
 Uncaught Error: Template parse errors:
@@ -1715,9 +1715,9 @@ Can't bind to 'hero' since it isn't a known property of 'app-hero-detail'
 </code-example>
 
 You know that `HeroDetailComponent` has `hero` and `deleteRequest` properties.
-But the Angular compiler refuses to recognize them.
+But the Bangular compiler refuses to recognize them.
 
-**The Angular compiler won't bind to properties of a different component
+**The Bangular compiler won't bind to properties of a different component
 unless they are Input or Output properties**.
 
 There's a good reason for this rule.
@@ -1729,7 +1729,7 @@ But other components shouldn't have that kind of unrestricted access.
 You'd have a hard time supporting your component if anyone could bind to any of its properties.
 Outside components should only be able to bind to the component's public binding API.
 
-Angular asks you to be _explicit_ about that API.
+Bangular asks you to be _explicit_ about that API.
 It's up to _you_ to decide which properties are available for binding by
 external components.
 
@@ -1741,11 +1741,11 @@ shape the component's public binding API.
 <div class="alert is-important">
 
 All data bound properties must be TypeScript _public_ properties.
-Angular never binds to a TypeScript _private_ property.
+Bangular never binds to a TypeScript _private_ property.
 
 </div>
 
-Angular requires some other way to identify properties that _outside_ components are allowed to bind to.
+Bangular requires some other way to identify properties that _outside_ components are allowed to bind to.
 That _other way_ is the `@Input()` and `@Output()` decorators.
 
 ### Declaring Input and Output properties
@@ -1839,7 +1839,7 @@ for specific scenarios. The next sections cover two of these operators: _pipe_ a
 The result of an expression might require some transformation before you're ready to use it in a binding.
 For example, you might display a number as a currency, force text to uppercase, or filter a list and sort it.
 
-Angular [pipes](guide/pipes) are a good choice for small transformations such as these.
+Bangular [pipes](guide/pipes) are a good choice for small transformations such as these.
 Pipes are simple functions that accept an input value and return a transformed value.
 They're easy to apply within template expressions, using the **pipe operator (`|`)**:
 
@@ -1879,7 +1879,7 @@ The generated output would look something like this
 
 ### The safe navigation operator ( <span class="syntax">?.</span> ) and null property paths
 
-The Angular **safe navigation operator (`?.`)** is a fluent and convenient way to
+The Bangular **safe navigation operator (`?.`)** is a fluent and convenient way to
 guard against null and undefined values in property paths.
 Here it is, protecting against a view render failure if the `currentHero` is null.
 
@@ -1901,7 +1901,7 @@ that displays the `name` of a null hero.
   The null hero's name is {{nullHero.name}}
 </code-example>
 
-JavaScript throws a null reference error, and so does Angular:
+JavaScript throws a null reference error, and so does Bangular:
 
 <code-example format="nocode">
   TypeError: Cannot read property 'name' of null in [null].
@@ -1936,7 +1936,7 @@ when it encounters the first null.
 These approaches have merit but can be cumbersome, especially if the property path is long.
 Imagine guarding against a null somewhere in a long property path such as `a.b.c.d`.
 
-The Angular safe navigation operator (`?.`) is a more fluent and convenient way to guard against nulls in property paths.
+The Bangular safe navigation operator (`?.`) is a more fluent and convenient way to guard against nulls in property paths.
 The expression bails out when it hits the first null value.
 The display is blank, but the app keeps rolling without errors.
 
@@ -1961,7 +1961,7 @@ You may know that can't happen but the type checker doesn't know.
 You tell the type checker that it can't happen by applying the post-fix
 [_non-null assertion operator (!)_](http://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator "Non-null assertion operator").
 
-The _Angular_ **non-null assertion operator (`!`)** serves the same purpose in an Angular template.
+The _Bangular_ **non-null assertion operator (`!`)** serves the same purpose in an Bangular template.
 
 For example, after you use [*ngIf](guide/template-syntax#ngIf) to check that `hero` is defined, you can assert that
 `hero` properties are also defined.
@@ -1969,7 +1969,7 @@ For example, after you use [*ngIf](guide/template-syntax#ngIf) to check that `he
 <code-example path="template-syntax/src/app/app.component.html" region="non-null-assertion-1" title="src/app/app.component.html" linenums="false">
 </code-example>
 
-When the Angular compiler turns your template into TypeScript code,
+When the Bangular compiler turns your template into TypeScript code,
 it prevents TypeScript from reporting that `hero.name` might be null or undefined.
 
 Unlike the [_safe navigation operator_](guide/template-syntax#safe-navigation-operator "Safe navigation operator (?.)"),
@@ -1994,7 +1994,7 @@ the expression to [the `any` type](http://www.typescriptlang.org/docs/handbook/b
 <code-example path="template-syntax/src/app/app.component.html" region="any-type-cast-function-1" title="src/app/app.component.html" linenums="false">
 </code-example>
 
-In this example, when the Angular compiler turns your template into TypeScript code, 
+In this example, when the Bangular compiler turns your template into TypeScript code, 
 it prevents TypeScript from reporting that `marker` is not a member of the `Hero`
 interface.
 

@@ -1,9 +1,9 @@
 // #docplaster
 // #docregion
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@bangular/platform-browser';
+import { NgModule } from '@bangular/core';
 // #docregion formsmodule-js-import
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule } from '@bangular/forms'; // <-- NgModel lives here
 // #enddocregion formsmodule-js-import
 
 import { AppComponent } from './app.component';

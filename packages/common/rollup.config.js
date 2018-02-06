@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 const resolve = require('rollup-plugin-node-resolve');
 const sourcemaps = require('rollup-plugin-sourcemaps');
 
 const globals = {
-  '@angular/core': 'ng.core',
+  '@bangular/core': 'ng.core',
   'rxjs/Observable': 'Rx',
   'rxjs/Observer': 'Rx',
   'rxjs/Subject': 'Rx',
@@ -23,7 +23,7 @@ module.exports = {
   format: 'umd',
   exports: 'named',
   moduleName: 'ng.common',
-  amd: {id: '@angular/common'},
+  amd: {id: '@bangular/common'},
   plugins: [resolve(), sourcemaps()],
   external: Object.keys(globals),
   globals: globals

@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {APP_ID, Injectable, NgModule} from '@angular/core';
+import {APP_ID, Injectable, NgModule} from '@bangular/core';
 import {DOCUMENT} from '../dom/dom_tokens';
 
 export function escapeHtml(text: string): string {
@@ -137,7 +137,7 @@ export class TransferState {
 
 export function initTransferState(doc: Document, appId: string) {
   // Locate the script tag with the JSON data transferred from the server.
-  // The id of the script tag is set to the Angular appId + 'state'.
+  // The id of the script tag is set to the Bangular appId + 'state'.
   const script = doc.getElementById(appId + '-state');
   let initialState = {};
   if (script && script.textContent) {

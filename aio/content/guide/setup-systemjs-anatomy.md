@@ -47,9 +47,9 @@ If you do, this page can help you understand their purpose.
     <td>
 
 
-      Angular application files go here.
+      Bangular application files go here.
 
-      Ships with the "Hello Angular" sample's
+      Ships with the "Hello Bangular" sample's
       `AppComponent`, `AppModule`, a component unit test (`app.component.spec.ts`), and
       the bootstrap file, `main.ts`.
 
@@ -71,10 +71,10 @@ If you do, this page can help you understand their purpose.
 
       _End-to-end_ (e2e) tests of the application,
       written in Jasmine and run by the
-      <a href="http://www.protractortest.org/" title="Protractor: end-to-end testing for Angular">protractor</a>
+      <a href="http://www.protractortest.org/" title="Protractor: end-to-end testing for Bangular">protractor</a>
       e2e test runner.
 
-      Initialized with an e2e test for the "Hello Angular" sample.
+      Initialized with an e2e test for the "Hello Bangular" sample.
     </td>
 
   </tr>
@@ -234,8 +234,8 @@ If you do, this page can help you understand their purpose.
 
       Contains command scripts for running the application,
       running tests, and more. Enter `npm run` for a listing.
-      <a href="https://github.com/angular/quickstart/blob/master/README.md#npm-scripts"
-         title="npm scripts for Angular documentation samples">Read more</a> about them.
+      <a href="https://github.com/bangular/quickstart/blob/master/README.md#npm-scripts"
+         title="npm scripts for Bangular documentation samples">Read more</a> about them.
     </td>
 
   </tr>
@@ -250,7 +250,7 @@ If you do, this page can help you understand their purpose.
 
 
       Configuration for the
-      <a href="http://www.protractortest.org/" title="Protractor: end-to-end testing for Angular">protractor</a>
+      <a href="http://www.protractortest.org/" title="Protractor: end-to-end testing for Bangular">protractor</a>
       _end-to-end_ (e2e) test runner.
     </td>
 
@@ -298,7 +298,7 @@ If you do, this page can help you understand their purpose.
       Tells the **SystemJS** module loader where to find modules
       referenced in JavaScript `import` statements. For example:
       <code-example language="ts">
-        import { Component } from '@angular/core;
+        import { Component } from '@bangular/core;
       </code-example>
 
 
@@ -351,7 +351,7 @@ If you do, this page can help you understand their purpose.
       and complains when you violate one of its rules.
 
       This file defines linting rules favored by the
-      [Angular style guide](guide/styleguide) and by the authors of the documentation.
+      [Bangular style guide](guide/styleguide) and by the authors of the documentation.
     </td>
 
   </tr>

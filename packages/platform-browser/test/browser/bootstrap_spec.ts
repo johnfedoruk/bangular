@@ -3,21 +3,21 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {isPlatformBrowser} from '@angular/common';
-import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, Compiler, Component, Directive, ErrorHandler, Inject, Input, LOCALE_ID, NgModule, OnDestroy, PLATFORM_ID, PLATFORM_INITIALIZER, Pipe, Provider, StaticProvider, Type, VERSION, createPlatformFactory} from '@angular/core';
-import {ApplicationRef, destroyPlatform} from '@angular/core/src/application_ref';
-import {Console} from '@angular/core/src/console';
-import {ComponentRef} from '@angular/core/src/linker/component_factory';
-import {Testability, TestabilityRegistry} from '@angular/core/src/testability/testability';
-import {AsyncTestCompleter, Log, afterEach, beforeEach, beforeEachProviders, describe, iit, inject, it} from '@angular/core/testing/src/testing_internal';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {DOCUMENT} from '@angular/platform-browser/src/dom/dom_tokens';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {isPlatformBrowser} from '@bangular/common';
+import {APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, Compiler, Component, Directive, ErrorHandler, Inject, Input, LOCALE_ID, NgModule, OnDestroy, PLATFORM_ID, PLATFORM_INITIALIZER, Pipe, Provider, StaticProvider, Type, VERSION, createPlatformFactory} from '@bangular/core';
+import {ApplicationRef, destroyPlatform} from '@bangular/core/src/application_ref';
+import {Console} from '@bangular/core/src/console';
+import {ComponentRef} from '@bangular/core/src/linker/component_factory';
+import {Testability, TestabilityRegistry} from '@bangular/core/src/testability/testability';
+import {AsyncTestCompleter, Log, afterEach, beforeEach, beforeEachProviders, describe, iit, inject, it} from '@bangular/core/testing/src/testing_internal';
+import {BrowserModule} from '@bangular/platform-browser';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {DOCUMENT} from '@bangular/platform-browser/src/dom/dom_tokens';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 @Component({selector: 'non-existent', template: ''})
 class NonExistentComp {

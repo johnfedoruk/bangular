@@ -3,18 +3,18 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ApplicationRef, Component, DoCheck, Inject, Injector, Input, NgModule, NgZone, OnChanges, OnDestroy, OnInit, StaticProvider, ViewRef, destroyPlatform} from '@angular/core';
-import {async, fakeAsync, tick} from '@angular/core/testing';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {browserDetection} from '@angular/platform-browser/testing/src/browser_util';
-import * as angular from '@angular/upgrade/src/common/angular1';
-import {$ROOT_SCOPE, INJECTOR_KEY, LAZY_MODULE_REF} from '@angular/upgrade/src/common/constants';
-import {LazyModuleRef} from '@angular/upgrade/src/common/util';
-import {downgradeComponent, downgradeModule} from '@angular/upgrade/static';
+import {AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ApplicationRef, Component, DoCheck, Inject, Injector, Input, NgModule, NgZone, OnChanges, OnDestroy, OnInit, StaticProvider, ViewRef, destroyPlatform} from '@bangular/core';
+import {async, fakeAsync, tick} from '@bangular/core/testing';
+import {BrowserModule} from '@bangular/platform-browser';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
+import {browserDetection} from '@bangular/platform-browser/testing/src/browser_util';
+import * as bangular from '@bangular/upgrade/src/common/bangular1';
+import {$ROOT_SCOPE, INJECTOR_KEY, LAZY_MODULE_REF} from '@bangular/upgrade/src/common/constants';
+import {LazyModuleRef} from '@bangular/upgrade/src/common/util';
+import {downgradeComponent, downgradeModule} from '@bangular/upgrade/static';
 
 import {html, multiTrim} from '../test_helpers';
 
@@ -50,14 +50,14 @@ import {html, multiTrim} from '../test_helpers';
                platformBrowserDynamic(extraProviders).bootstrapModule(Ng2Module);
            const lazyModuleName = downgradeModule<Ng2Module>(bootstrapFn);
            const ng1Module =
-               angular.module('ng1', [lazyModuleName])
+               bangular.module('ng1', [lazyModuleName])
                    .directive(
                        'ng2', downgradeComponent({component: Ng2AComponent, propagateDigest}))
-                   .run(($rootScope: angular.IRootScopeService) => $rootScope.value = 0);
+                   .run(($rootScope: bangular.IRootScopeService) => $rootScope.value = 0);
 
            const element = html('<div><ng2 [value]="value" ng-if="loadNg2"></ng2></div>');
-           const $injector = angular.bootstrap(element, [ng1Module.name]);
-           const $rootScope = $injector.get($ROOT_SCOPE) as angular.IRootScopeService;
+           const $injector = bangular.bootstrap(element, [ng1Module.name]);
+           const $rootScope = $injector.get($ROOT_SCOPE) as bangular.IRootScopeService;
 
            expect(element.textContent).toBe('');
            expect(() => $injector.get(INJECTOR_KEY)).toThrowError();
@@ -99,7 +99,7 @@ import {html, multiTrim} from '../test_helpers';
                Ng2Service,
                {
                  provide: 'ng1Value',
-                 useFactory: (i: angular.IInjectorService) => i.get('ng1Value'),
+                 useFactory: (i: bangular.IInjectorService) => i.get('ng1Value'),
                  deps: ['$injector'],
                },
              ],
@@ -112,13 +112,13 @@ import {html, multiTrim} from '../test_helpers';
                platformBrowserDynamic(extraProviders).bootstrapModule(Ng2Module);
            const lazyModuleName = downgradeModule<Ng2Module>(bootstrapFn);
            const ng1Module =
-               angular.module('ng1', [lazyModuleName])
+               bangular.module('ng1', [lazyModuleName])
                    .directive('ng2', downgradeComponent({component: Ng2Component, propagateDigest}))
                    .value('ng1Value', 'foo');
 
            const element = html('<div><ng2 ng-if="loadNg2"></ng2></div>');
-           const $injector = angular.bootstrap(element, [ng1Module.name]);
-           const $rootScope = $injector.get($ROOT_SCOPE) as angular.IRootScopeService;
+           const $injector = bangular.bootstrap(element, [ng1Module.name]);
+           const $rootScope = $injector.get($ROOT_SCOPE) as bangular.IRootScopeService;
 
            expect(element.textContent).toBe('');
            expect(() => $injector.get(INJECTOR_KEY)).toThrowError();
@@ -136,11 +136,11 @@ import {html, multiTrim} from '../test_helpers';
            });
          }));
 
-      it('should create components inside the Angular zone', async(() => {
+      it('should create components inside the Bangular zone', async(() => {
            @Component({selector: 'ng2', template: 'In the zone: {{ inTheZone }}'})
            class Ng2Component {
              private inTheZone = false;
-             constructor() { this.inTheZone = NgZone.isInAngularZone(); }
+             constructor() { this.inTheZone = NgZone.isInBangularZone(); }
            }
 
            @NgModule({
@@ -156,12 +156,12 @@ import {html, multiTrim} from '../test_helpers';
                platformBrowserDynamic(extraProviders).bootstrapModule(Ng2Module);
            const lazyModuleName = downgradeModule<Ng2Module>(bootstrapFn);
            const ng1Module =
-               angular.module('ng1', [lazyModuleName])
+               bangular.module('ng1', [lazyModuleName])
                    .directive(
                        'ng2', downgradeComponent({component: Ng2Component, propagateDigest}));
 
            const element = html('<ng2></ng2>');
-           angular.bootstrap(element, [ng1Module.name]);
+           bangular.bootstrap(element, [ng1Module.name]);
 
            // Wait for the module to be bootstrapped.
            setTimeout(() => {
@@ -170,12 +170,12 @@ import {html, multiTrim} from '../test_helpers';
            });
          }));
 
-      it('should destroy components inside the Angular zone', async(() => {
+      it('should destroy components inside the Bangular zone', async(() => {
            let destroyedInTheZone = false;
 
            @Component({selector: 'ng2', template: ''})
            class Ng2Component implements OnDestroy {
-             ngOnDestroy() { destroyedInTheZone = NgZone.isInAngularZone(); }
+             ngOnDestroy() { destroyedInTheZone = NgZone.isInBangularZone(); }
            }
 
            @NgModule({
@@ -191,13 +191,13 @@ import {html, multiTrim} from '../test_helpers';
                platformBrowserDynamic(extraProviders).bootstrapModule(Ng2Module);
            const lazyModuleName = downgradeModule<Ng2Module>(bootstrapFn);
            const ng1Module =
-               angular.module('ng1', [lazyModuleName])
+               bangular.module('ng1', [lazyModuleName])
                    .directive(
                        'ng2', downgradeComponent({component: Ng2Component, propagateDigest}));
 
            const element = html('<ng2 ng-if="!hideNg2"></ng2>');
-           const $injector = angular.bootstrap(element, [ng1Module.name]);
-           const $rootScope = $injector.get($ROOT_SCOPE) as angular.IRootScopeService;
+           const $injector = bangular.bootstrap(element, [ng1Module.name]);
+           const $rootScope = $injector.get($ROOT_SCOPE) as bangular.IRootScopeService;
 
            // Wait for the module to be bootstrapped.
            setTimeout(() => {
@@ -206,7 +206,7 @@ import {html, multiTrim} from '../test_helpers';
            });
          }));
 
-      it('should propagate input changes inside the Angular zone', async(() => {
+      it('should propagate input changes inside the Bangular zone', async(() => {
            let ng2Component: Ng2Component;
 
            @Component({selector: 'ng2', template: ''})
@@ -231,20 +231,20 @@ import {html, multiTrim} from '../test_helpers';
                platformBrowserDynamic(extraProviders).bootstrapModule(Ng2Module);
            const lazyModuleName = downgradeModule<Ng2Module>(bootstrapFn);
            const ng1Module =
-               angular.module('ng1', [lazyModuleName])
+               bangular.module('ng1', [lazyModuleName])
                    .directive('ng2', downgradeComponent({component: Ng2Component, propagateDigest}))
-                   .run(($rootScope: angular.IRootScopeService) => {
+                   .run(($rootScope: bangular.IRootScopeService) => {
                      $rootScope.attrVal = 'bar';
                      $rootScope.propVal = 'bar';
                    });
 
            const element = html('<ng2 attr-input="{{ attrVal }}" [prop-input]="propVal"></ng2>');
-           const $injector = angular.bootstrap(element, [ng1Module.name]);
-           const $rootScope = $injector.get($ROOT_SCOPE) as angular.IRootScopeService;
+           const $injector = bangular.bootstrap(element, [ng1Module.name]);
+           const $rootScope = $injector.get($ROOT_SCOPE) as bangular.IRootScopeService;
 
            setTimeout(() => {    // Wait for the module to be bootstrapped.
              setTimeout(() => {  // Wait for `$evalAsync()` to propagate inputs.
-               const expectToBeInNgZone = () => expect(NgZone.isInAngularZone()).toBe(true);
+               const expectToBeInNgZone = () => expect(NgZone.isInBangularZone()).toBe(true);
                const changesSpy =
                    spyOn(ng2Component, 'ngOnChanges').and.callFake(expectToBeInNgZone);
 
@@ -285,12 +285,12 @@ import {html, multiTrim} from '../test_helpers';
                platformBrowserDynamic(extraProviders).bootstrapModule(Ng2Module);
            const lazyModuleName = downgradeModule<Ng2Module>(bootstrapFn);
            const ng1Module =
-               angular.module('ng1', [lazyModuleName])
+               bangular.module('ng1', [lazyModuleName])
                    .directive(
                        'ng2', downgradeComponent({component: Ng2Component, propagateDigest}));
 
            const element = html('<ng2></ng2>');
-           angular.bootstrap(element, [ng1Module.name]);
+           bangular.bootstrap(element, [ng1Module.name]);
 
            setTimeout(() => {    // Wait for the module to be bootstrapped.
              setTimeout(() => {  // Wait for `$evalAsync()` to propagate inputs.
@@ -308,7 +308,7 @@ import {html, multiTrim} from '../test_helpers';
 
       it('should run the lifecycle hooks in the correct order', async(() => {
            const logs: string[] = [];
-           let rootScope: angular.IRootScopeService;
+           let rootScope: bangular.IRootScopeService;
 
            @Component({
              selector: 'ng2',
@@ -348,16 +348,16 @@ import {html, multiTrim} from '../test_helpers';
                platformBrowserDynamic(extraProviders).bootstrapModule(Ng2Module);
            const lazyModuleName = downgradeModule<Ng2Module>(bootstrapFn);
            const ng1Module =
-               angular.module('ng1', [lazyModuleName])
+               bangular.module('ng1', [lazyModuleName])
                    .directive('ng2', downgradeComponent({component: Ng2Component, propagateDigest}))
-                   .run(($rootScope: angular.IRootScopeService) => {
+                   .run(($rootScope: bangular.IRootScopeService) => {
                      rootScope = $rootScope;
                      rootScope.value = 'bar';
                    });
 
            const element =
                html('<div><ng2 value="{{ value }}" ng-if="!hideNg2">Content</ng2></div>');
-           angular.bootstrap(element, [ng1Module.name]);
+           bangular.bootstrap(element, [ng1Module.name]);
 
            setTimeout(() => {    // Wait for the module to be bootstrapped.
              setTimeout(() => {  // Wait for `$evalAsync()` to propagate inputs.
@@ -487,13 +487,13 @@ import {html, multiTrim} from '../test_helpers';
                platformBrowserDynamic(extraProviders).bootstrapModule(Ng2Module);
            const lazyModuleName = downgradeModule<Ng2Module>(bootstrapFn);
            const ng1Module =
-               angular.module('ng1', [lazyModuleName])
+               bangular.module('ng1', [lazyModuleName])
                    .directive(
                        'ng2', downgradeComponent({component: Ng2Component, propagateDigest}));
 
            const element = html('<ng2 ng-if="!hideNg2"></ng2>');
-           const $injector = angular.bootstrap(element, [ng1Module.name]);
-           const $rootScope = $injector.get($ROOT_SCOPE) as angular.IRootScopeService;
+           const $injector = bangular.bootstrap(element, [ng1Module.name]);
+           const $rootScope = $injector.get($ROOT_SCOPE) as bangular.IRootScopeService;
 
            setTimeout(() => {    // Wait for the module to be bootstrapped.
              setTimeout(() => {  // Wait for the hostView to be attached (during the `$digest`).
@@ -510,7 +510,7 @@ import {html, multiTrim} from '../test_helpers';
            });
          }));
 
-      it('should only retrieve the Angular zone once (and cache it for later use)',
+      it('should only retrieve the Bangular zone once (and cache it for later use)',
          fakeAsync(() => {
            let count = 0;
            let getNgZoneCount = 0;
@@ -520,7 +520,7 @@ import {html, multiTrim} from '../test_helpers';
            class Ng2Component {
              private count = ++count;
              private inTheZone = false;
-             constructor() { this.inTheZone = NgZone.isInAngularZone(); }
+             constructor() { this.inTheZone = NgZone.isInBangularZone(); }
            }
 
            @NgModule({
@@ -544,13 +544,13 @@ import {html, multiTrim} from '../test_helpers';
                platformBrowserDynamic(extraProviders).bootstrapModule(Ng2Module);
            const lazyModuleName = downgradeModule<Ng2Module>(bootstrapFn);
            const ng1Module =
-               angular.module('ng1', [lazyModuleName])
+               bangular.module('ng1', [lazyModuleName])
                    .directive(
                        'ng2', downgradeComponent({component: Ng2Component, propagateDigest}));
 
            const element = html('<div><ng2 ng-if="showNg2"></ng2></div>');
-           const $injector = angular.bootstrap(element, [ng1Module.name]);
-           const $rootScope = $injector.get($ROOT_SCOPE) as angular.IRootScopeService;
+           const $injector = bangular.bootstrap(element, [ng1Module.name]);
+           const $rootScope = $injector.get($ROOT_SCOPE) as bangular.IRootScopeService;
 
            $rootScope.$apply('showNg2 = true');
            tick(tickDelay);  // Wait for the module to be bootstrapped and `$evalAsync()` to
@@ -575,8 +575,8 @@ import {html, multiTrim} from '../test_helpers';
            $rootScope.$destroy();
          }));
 
-      it('should give access to both injectors in the Angular module\'s constructor', async(() => {
-           let $injectorFromNg2: angular.IInjectorService|null = null;
+      it('should give access to both injectors in the Bangular module\'s constructor', async(() => {
+           let $injectorFromNg2: bangular.IInjectorService|null = null;
 
            @Component({selector: 'ng2', template: ''})
            class Ng2Component {
@@ -589,7 +589,7 @@ import {html, multiTrim} from '../test_helpers';
            })
            class Ng2Module {
              constructor(injector: Injector) {
-               $injectorFromNg2 = injector.get<angular.IInjectorService>('$injector' as any);
+               $injectorFromNg2 = injector.get<bangular.IInjectorService>('$injector' as any);
              }
 
              ngDoBootstrap() {}
@@ -599,12 +599,12 @@ import {html, multiTrim} from '../test_helpers';
                platformBrowserDynamic(extraProviders).bootstrapModule(Ng2Module);
            const lazyModuleName = downgradeModule<Ng2Module>(bootstrapFn);
            const ng1Module =
-               angular.module('ng1', [lazyModuleName])
+               bangular.module('ng1', [lazyModuleName])
                    .directive(
                        'ng2', downgradeComponent({component: Ng2Component, propagateDigest}));
 
            const element = html('<ng2></ng2>');
-           const $injectorFromNg1 = angular.bootstrap(element, [ng1Module.name]);
+           const $injectorFromNg1 = bangular.bootstrap(element, [ng1Module.name]);
 
            // Wait for the module to be bootstrapped.
            setTimeout(() => expect($injectorFromNg2).toBe($injectorFromNg1));

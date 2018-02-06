@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 // Unique place to configure the browsers which are used in the different CI jobs in Sauce Labs (SL)
@@ -17,7 +17,7 @@ var CIconfiguration = {
   'ChromeBeta': {unitTest: {target: 'SL', required: true}, e2e: {target: null, required: false}},
   'ChromeDev': {unitTest: {target: 'SL', required: false}, e2e: {target: null, required: true}},
   // FirefoxBeta and FirefoxDev should be target:'BS' or target:'SL', and required:true
-  // Currently deactivated due to https://github.com/angular/angular/issues/7560
+  // Currently deactivated due to https://github.com/bangular/bangular/issues/7560
   'FirefoxBeta': {unitTest: {target: null, required: true}, e2e: {target: null, required: false}},
   'FirefoxDev': {unitTest: {target: null, required: true}, e2e: {target: null, required: true}},
   'IE9': {unitTest: {target: 'SL', required: false}, e2e: {target: null, required: true}},

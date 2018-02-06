@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as ts from 'typescript';
@@ -40,7 +40,7 @@ describe('references', () => {
 
   it('should be able to get template references for an invalid project', () => {
     const moduleCode = `
-      import {NgModule} from '@angular/core';
+      import {NgModule} from '@bangular/core';
       import {NewClass} from './test.component';
 
       @NgModule({declarations: [NewClass]}) export class TestModule {}`;

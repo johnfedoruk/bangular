@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CommonModule, NgForOf} from '@angular/common';
-import {Component, Directive} from '@angular/core';
-import {ComponentFixture, TestBed, async} from '@angular/core/testing';
-import {By} from '@angular/platform-browser/src/dom/debug/by';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {CommonModule, NgForOf} from '@bangular/common';
+import {Component, Directive} from '@bangular/core';
+import {ComponentFixture, TestBed, async} from '@bangular/core/testing';
+import {By} from '@bangular/platform-browser/src/dom/debug/by';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 let thisArg: any;
 

@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 
-import {EventEmitter, Injectable, NO_ERRORS_SCHEMA} from '@angular/core';
-import {Component, Directive, Input} from '@angular/core/src/metadata';
-import {ComponentFixture, TestBed, async} from '@angular/core/testing';
-import {By} from '@angular/platform-browser/src/dom/debug/by';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {EventEmitter, Injectable, NO_ERRORS_SCHEMA} from '@bangular/core';
+import {Component, Directive, Input} from '@bangular/core/src/metadata';
+import {ComponentFixture, TestBed, async} from '@bangular/core/testing';
+import {By} from '@bangular/platform-browser/src/dom/debug/by';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 @Injectable()
 class Logger {

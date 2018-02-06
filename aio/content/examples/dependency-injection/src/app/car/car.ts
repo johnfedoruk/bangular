@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 
 export class Engine {
   public cylinders = 4;

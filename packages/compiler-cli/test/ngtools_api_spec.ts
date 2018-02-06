@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as path from 'path';
@@ -29,8 +29,8 @@ describe('ngtools_api (deprecated)', () => {
   function writeSomeRoutes() {
     testSupport.writeFiles({
       'src/main.ts': `
-        import {NgModule, Component} from '@angular/core';
-        import {RouterModule} from '@angular/router';
+        import {NgModule, Component} from '@bangular/core';
+        import {RouterModule} from '@bangular/router';
 
         // Component with metadata errors.
         @Component(() => {if (1==1) return null as any;})
@@ -43,8 +43,8 @@ describe('ngtools_api (deprecated)', () => {
         export class MainModule {}
       `,
       'src/child.ts': `
-        import {NgModule} from '@angular/core';
-        import {RouterModule} from '@angular/router';
+        import {NgModule} from '@bangular/core';
+        import {RouterModule} from '@bangular/router';
 
         @NgModule({
           imports: [RouterModule.forChild([{loadChildren: './child2#ChildModule2'}])]
@@ -52,7 +52,7 @@ describe('ngtools_api (deprecated)', () => {
         export class ChildModule {}
       `,
       'src/child2.ts': `
-        import {NgModule} from '@angular/core';
+        import {NgModule} from '@bangular/core';
 
         @NgModule()
         export class ChildModule2 {}
@@ -66,7 +66,7 @@ describe('ngtools_api (deprecated)', () => {
     const routes = NgTools_InternalApi_NG_2.listLazyRoutes({
       program,
       host,
-      angularCompilerOptions: options,
+      bangularCompilerOptions: options,
       entryModule: 'src/main#MainModule',
     });
     expect(routes).toEqual({
@@ -81,7 +81,7 @@ describe('ngtools_api (deprecated)', () => {
     NgTools_InternalApi_NG_2.listLazyRoutes({
       program,
       host,
-      angularCompilerOptions: options,
+      bangularCompilerOptions: options,
       entryModule: 'src/main#MainModule',
     });
     program.emit();

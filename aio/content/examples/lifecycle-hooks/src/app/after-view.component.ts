@@ -1,6 +1,6 @@
 // #docplaster
 // #docregion
-import { AfterViewChecked, AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ViewChild } from '@bangular/core';
 
 import { LoggerService }  from './logger.service';
 

@@ -1,8 +1,8 @@
-declare var angular: angular.IAngularStatic;
-import { NgModule } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { BrowserModule } from '@angular/platform-browser';
-import { UpgradeModule, downgradeComponent } from '@angular/upgrade/static';
+declare var bangular: bangular.IBangularStatic;
+import { NgModule } from '@bangular/core';
+import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
+import { BrowserModule } from '@bangular/platform-browser';
+import { UpgradeModule, downgradeComponent } from '@bangular/upgrade/static';
 
 import { MainController } from './main.controller';
 import { HeroDetailComponent } from './hero-detail.component';
@@ -26,11 +26,11 @@ export class AppModule {
   }
 }
 
-angular.module('heroApp', [])
+bangular.module('heroApp', [])
   .controller('MainController', MainController)
   .directive('heroDetail', downgradeComponent({
     component: HeroDetailComponent,
     inputs: ['hero']
-  }) as angular.IDirectiveFactory);
+  }) as bangular.IDirectiveFactory);
 
 platformBrowserDynamic().bootstrapModule(AppModule);

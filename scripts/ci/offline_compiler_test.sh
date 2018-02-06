@@ -4,7 +4,7 @@ set -u -e -o pipefail
 
 # npm 5 symlinks from local file installations rather than copying files, but
 # webpack will not follow the symlinks.
-# We prefer to emulate how a user will install angular, so we `npm pack` the
+# We prefer to emulate how a user will install bangular, so we `npm pack` the
 # packages, then install them from the resulting .tgz files later.
 ANGULAR_PKGS=$(npm pack dist/packages-dist/{common,forms,core,compiler,compiler-cli,platform-{browser,server},platform-browser-dynamic,router,http,animations} | awk "{ printf \"$PWD/\"; print }")
 
@@ -17,7 +17,7 @@ PKGS=(
   jasmine@2.4.1
   webpack@2.1.0-beta.21
   source-map-loader@0.2.0
-  @angular/{material,cdk}@2.0.0-beta.10
+  @bangular/{material,cdk}@2.0.0-beta.10
 )
 
 TMPDIR=${TMPDIR:-.}
@@ -25,7 +25,7 @@ readonly TMP=$TMPDIR/e2e_test.$(date +%s)
 mkdir -p $TMP
 cp -R -v packages/compiler-cli/integrationtest/* $TMP
 cp -R -v modules/benchmarks $TMP
-# Try to use the same versions as angular, in particular, this will
+# Try to use the same versions as bangular, in particular, this will
 # cause us to install the same rxjs version.
 cp -v package.json $TMP
 

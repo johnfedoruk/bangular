@@ -1,7 +1,7 @@
 // #docregion
-import { NgModule }            from '@angular/core';
-import { CommonModule }        from '@angular/common';
-import { FormsModule }         from '@angular/forms';
+import { NgModule }            from '@bangular/core';
+import { CommonModule }        from '@bangular/common';
+import { FormsModule }         from '@bangular/forms';
 
 import { AwesomePipe }         from './awesome.pipe';
 import { HighlightDirective }  from './highlight.directive';

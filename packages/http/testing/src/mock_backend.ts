@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable} from '@angular/core';
-import {Connection, ConnectionBackend, ReadyState, Request, Response} from '@angular/http';
+import {Injectable} from '@bangular/core';
+import {Connection, ConnectionBackend, ReadyState, Request, Response} from '@bangular/http';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
 import {Subject} from 'rxjs/Subject';
 import {take} from 'rxjs/operator/take';
@@ -17,7 +17,7 @@ import {take} from 'rxjs/operator/take';
  *
  * Mock Connection to represent a {@link Connection} for tests.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 export class MockConnection implements Connection {
   // TODO Name `readyState` should change to be more generic, and states could be made to be more
@@ -114,11 +114,11 @@ export class MockConnection implements Connection {
  * ### Example
  *
  * ```
- * import {Injectable, Injector} from '@angular/core';
- * import {async, fakeAsync, tick} from '@angular/core/testing';
- * import {BaseRequestOptions, ConnectionBackend, Http, RequestOptions} from '@angular/http';
- * import {Response, ResponseOptions} from '@angular/http';
- * import {MockBackend, MockConnection} from '@angular/http/testing';
+ * import {Injectable, Injector} from '@bangular/core';
+ * import {async, fakeAsync, tick} from '@bangular/core/testing';
+ * import {BaseRequestOptions, ConnectionBackend, Http, RequestOptions} from '@bangular/http';
+ * import {Response, ResponseOptions} from '@bangular/http';
+ * import {MockBackend, MockConnection} from '@bangular/http/testing';
  *
  * const HERO_ONE = 'HeroNrOne';
  * const HERO_TWO = 'WillBeAlwaysTheSecond';
@@ -190,7 +190,7 @@ export class MockConnection implements Connection {
  *
  * This method only exists in the mock implementation, not in real Backends.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 @Injectable()
 export class MockBackend implements ConnectionBackend {
@@ -202,11 +202,11 @@ export class MockBackend implements ConnectionBackend {
    * ### Example
    *
    * ```
-   * import {Injector} from '@angular/core';
-   * import {fakeAsync, tick} from '@angular/core/testing';
-   * import {BaseRequestOptions, ConnectionBackend, Http, RequestOptions} from '@angular/http';
-   * import {Response, ResponseOptions} from '@angular/http';
-   * import {MockBackend, MockConnection} from '@angular/http/testing';
+   * import {Injector} from '@bangular/core';
+   * import {fakeAsync, tick} from '@bangular/core/testing';
+   * import {BaseRequestOptions, ConnectionBackend, Http, RequestOptions} from '@bangular/http';
+   * import {Response, ResponseOptions} from '@bangular/http';
+   * import {MockBackend, MockConnection} from '@bangular/http/testing';
    *
    * it('should get a response', fakeAsync(() => {
    *      let connection:

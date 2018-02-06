@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {InjectionToken} from '@angular/core';
+import {InjectionToken} from '@bangular/core';
 import {LocationChangeListener} from './platform_location';
 
 /**
  * `LocationStrategy` is responsible for representing and reading route state
- * from the browser's URL. Angular provides two strategies:
+ * from the browser's URL. Bangular provides two strategies:
  * {@link HashLocationStrategy} and {@link PathLocationStrategy}.
  *
  * This is used under the hood of the {@link Location} service.
@@ -50,8 +50,8 @@ export abstract class LocationStrategy {
  * ### Example
  *
  * ```typescript
- * import {Component, NgModule} from '@angular/core';
- * import {APP_BASE_HREF} from '@angular/common';
+ * import {Component, NgModule} from '@bangular/core';
+ * import {APP_BASE_HREF} from '@bangular/common';
  *
  * @NgModule({
  *   providers: [{provide: APP_BASE_HREF, useValue: '/my/app'}]

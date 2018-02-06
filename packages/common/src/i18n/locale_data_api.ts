@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {CURRENCIES} from './currencies';
@@ -405,7 +405,7 @@ export function getLocalePluralCase(locale: string): (value: number) => Plural {
 function checkFullData(data: any) {
   if (!data[LocaleDataIndex.ExtraData]) {
     throw new Error(
-        `Missing extra locale data for the locale "${data[LocaleDataIndex.LocaleId]}". Use "registerLocaleData" to load new data. See the "I18n guide" on angular.io to know more.`);
+        `Missing extra locale data for the locale "${data[LocaleDataIndex.LocaleId]}". Use "registerLocaleData" to load new data. See the "I18n guide" on bangular.io to know more.`);
   }
 }
 

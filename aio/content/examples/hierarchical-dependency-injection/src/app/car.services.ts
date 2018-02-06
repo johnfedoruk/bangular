@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 
 /// Model ///
 export class Car {

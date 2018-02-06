@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {AUTO_STYLE, AnimationPlayer, animate, animateChild, group, query, sequence, stagger, state, style, transition, trigger, ɵAnimationGroupPlayer as AnimationGroupPlayer} from '@angular/animations';
-import {AnimationDriver, ɵAnimationEngine} from '@angular/animations/browser';
-import {matchesElement} from '@angular/animations/browser/src/render/shared';
-import {ENTER_CLASSNAME, LEAVE_CLASSNAME} from '@angular/animations/browser/src/util';
-import {MockAnimationDriver, MockAnimationPlayer} from '@angular/animations/browser/testing';
-import {CommonModule} from '@angular/common';
-import {Component, HostBinding, ViewChild} from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AUTO_STYLE, AnimationPlayer, animate, animateChild, group, query, sequence, stagger, state, style, transition, trigger, ɵAnimationGroupPlayer as AnimationGroupPlayer} from '@bangular/animations';
+import {AnimationDriver, ɵAnimationEngine} from '@bangular/animations/browser';
+import {matchesElement} from '@bangular/animations/browser/src/render/shared';
+import {ENTER_CLASSNAME, LEAVE_CLASSNAME} from '@bangular/animations/browser/src/util';
+import {MockAnimationDriver, MockAnimationPlayer} from '@bangular/animations/browser/testing';
+import {CommonModule} from '@bangular/common';
+import {Component, HostBinding, ViewChild} from '@bangular/core';
+import {BrowserAnimationsModule} from '@bangular/platform-browser/animations';
 
 import {HostListener} from '../../src/metadata/directives';
 import {TestBed} from '../../testing';

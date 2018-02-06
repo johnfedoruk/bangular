@@ -52,7 +52,7 @@ class StackblitzBuilder {
   _buildCopyrightStrings() {
     var copyright = 'Copyright 2017-2018 Google Inc. All Rights Reserved.\n'
       + 'Use of this source code is governed by an MIT-style license that\n'
-      + 'can be found in the LICENSE file at http://angular.io/license';
+      + 'can be found in the LICENSE file at http://bangular.io/license';
     var pad = '\n\n';
     this.copyrights.jsCss = `${pad}/*\n${copyright}\n*/`;
     this.copyrights.html = `${pad}<!-- \n${copyright}\n-->`;
@@ -122,7 +122,7 @@ class StackblitzBuilder {
     if (config.file) {
       file = `?file=${config.file}`;
     }
-    var action = `https://run.stackblitz.com/api/angular/v1${file}`;
+    var action = `https://run.stackblitz.com/api/bangular/v1${file}`;
     var html = `<!DOCTYPE html><html lang="en"><body>
     <form id="mainForm" method="post" action="${action}" target="_self"></form>
     <script>
@@ -194,12 +194,12 @@ class StackblitzBuilder {
       postData[`files[${relativeFileName}]`] = content;
     });
 
-    var tags = ['angular', 'example'].concat(config.tags || []);
+    var tags = ['bangular', 'example'].concat(config.tags || []);
     tags.forEach(function(tag,ix) {
       postData['tags[' + ix + ']'] = tag;
     });
 
-    postData.description = "Angular Example - " + config.description;
+    postData.description = "Bangular Example - " + config.description;
 
     return postData;
   }
@@ -251,7 +251,7 @@ class StackblitzBuilder {
     }
 
     var defaultIncludes = ['**/*.ts', '**/*.js', '**/*.css', '**/*.html', '**/*.md', '**/*.json', '**/*.png'];
-    var boilerplateIncludes = ['src/environments/*.*', '.angular-cli.json', 'src/polyfills.ts'];
+    var boilerplateIncludes = ['src/environments/*.*', '.bangular-cli.json', 'src/polyfills.ts'];
     if (config.files) {
       if (config.files.length > 0) {
         if (config.files[0].substr(0, 1) == '!') {

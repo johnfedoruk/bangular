@@ -4,14 +4,14 @@
 import {
   Component,
   Input
-} from '@angular/core';
+} from '@bangular/core';
 import {
   trigger,
   state,
   style,
   animate,
   transition
-} from '@angular/animations';
+} from '@bangular/animations';
 // #enddocregion imports
 
 import { Hero } from './hero.service';

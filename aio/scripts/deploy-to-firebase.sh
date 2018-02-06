@@ -58,17 +58,17 @@ fi
 case $deployEnv in
   next)
     readonly projectId=aio-staging
-    readonly deployedUrl=https://next.angular.io/
+    readonly deployedUrl=https://next.bangular.io/
     readonly firebaseToken=$FIREBASE_TOKEN
     ;;
   stable)
-    readonly projectId=angular-io
-    readonly deployedUrl=https://angular.io/
+    readonly projectId=bangular-io
+    readonly deployedUrl=https://bangular.io/
     readonly firebaseToken=$FIREBASE_TOKEN
     ;;
   archive)
-    readonly projectId=angular-io-${majorVersion}
-    readonly deployedUrl=https://v${majorVersion}.angular.io/
+    readonly projectId=bangular-io-${majorVersion}
+    readonly deployedUrl=https://v${majorVersion}.bangular.io/
     readonly firebaseToken=$FIREBASE_TOKEN
     ;;
 esac

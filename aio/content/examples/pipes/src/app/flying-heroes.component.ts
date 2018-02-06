@@ -1,6 +1,6 @@
 // #docplaster
 // #docregion
-import { Component }              from '@angular/core';
+import { Component }              from '@bangular/core';
 
 import { HEROES }                 from './heroes';
 

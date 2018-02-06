@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {extractStyleUrls, isStyleUrlResolvable} from '@angular/compiler/src/style_url_resolver';
-import {UrlResolver} from '@angular/compiler/src/url_resolver';
+import {extractStyleUrls, isStyleUrlResolvable} from '@bangular/compiler/src/style_url_resolver';
+import {UrlResolver} from '@bangular/compiler/src/url_resolver';
 
 {
   describe('extractStyleUrls', () => {

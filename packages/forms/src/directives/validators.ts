@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Directive, Input, OnChanges, SimpleChanges, StaticProvider, forwardRef} from '@angular/core';
+import {Directive, Input, OnChanges, SimpleChanges, StaticProvider, forwardRef} from '@bangular/core';
 import {Observable} from 'rxjs/Observable';
 
 import {AbstractControl} from '../model';

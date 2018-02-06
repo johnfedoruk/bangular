@@ -1,6 +1,6 @@
 # Displaying Data
 
-You can display data by binding controls in an HTML template to properties of an Angular component.
+You can display data by binding controls in an HTML template to properties of an Bangular component.
 
 In this page, you'll create a component with a list of heroes.
 You'll display the list of hero names and
@@ -74,8 +74,8 @@ HTML more readable.
 
 
 
-Angular automatically pulls the value of the `title` and `myHero` properties from the component and
-inserts those values into the browser. Angular updates the display
+Bangular automatically pulls the value of the `title` and `myHero` properties from the component and
+inserts those values into the browser. Bangular updates the display
 when these properties change.
 
 
@@ -92,7 +92,7 @@ the view, such as a keystroke, a timer completion, or a response to an HTTP requ
 
 
 Notice that you don't call **new** to create an instance of the `AppComponent` class.
-Angular is creating an instance for you. How?
+Bangular is creating an instance for you. How?
 
 The CSS `selector` in the `@Component` decorator specifies an element named `<app-root>`.
 That element is a placeholder in the body of your `index.html` file:
@@ -104,7 +104,7 @@ That element is a placeholder in the body of your `index.html` file:
 
 
 
-When you bootstrap with the `AppComponent` class (in <code>main.ts</code>), Angular looks for a `<app-root>`
+When you bootstrap with the `AppComponent` class (in <code>main.ts</code>), Bangular looks for a `<app-root>`
 in the `index.html`, finds it, instantiates an instance of `AppComponent`, and renders it
 inside the `<app-root>` tag.
 
@@ -135,7 +135,7 @@ In either style, the template data bindings have the same access to the componen
 
 <div class="alert is-helpful">
   
-  By default, the Angular CLI generates components with a template file. You can override that with:
+  By default, the Bangular CLI generates components with a template file. You can override that with:
 
   <code-example hideCopy language="sh" class="code-shell">
     ng generate component hero -it
@@ -170,7 +170,7 @@ To display a list of heroes, begin by adding an array of hero names to the compo
 
 
 
-Now use the Angular `ngFor` directive in the template to display
+Now use the Bangular `ngFor` directive in the template to display
 each item in the `heroes` list.
 
 
@@ -181,7 +181,7 @@ each item in the `heroes` list.
 
 
 This UI uses the HTML unordered list with `<ul>` and `<li>` tags. The `*ngFor`
-in the `<li>` element is the Angular "repeater" directive.
+in the `<li>` element is the Bangular "repeater" directive.
 It marks that `<li>` element (and its children) as the "repeater template":
 
 
@@ -208,8 +208,8 @@ it is an example of a template input variable. Read
 more about template input variables in the [microsyntax](guide/template-syntax#microsyntax) section of
 the [Template Syntax](guide/template-syntax) page.
 
-Angular duplicates the `<li>` for each item in the list, setting the `hero` variable
-to the item (the hero) in the current iteration. Angular uses that variable as the
+Bangular duplicates the `<li>` for each item in the list, setting the `hero` variable
+to the item (the hero) in the current iteration. Bangular uses that variable as the
 context for the interpolation in the double curly braces.
 
 
@@ -313,7 +313,7 @@ Sometimes an app needs to display a view or a portion of a view only under speci
 
 Let's change the example to display a message if there are more than three heroes.
 
-The Angular `ngIf` directive inserts or removes an element based on a _truthy/falsy_ condition.
+The Bangular `ngIf` directive inserts or removes an element based on a _truthy/falsy_ condition.
 To see it in action, add the following paragraph at the bottom of the template:
 
 
@@ -337,8 +337,8 @@ Read more about `ngIf` and `*` in the [ngIf section](guide/template-syntax#ngIf)
 
 The template expression inside the double quotes,
 `*ngIf="heroes.length > 3"`, looks and behaves much like TypeScript.
-When the component's list of heroes has more than three items, Angular adds the paragraph
-to the DOM and the message appears. If there are three or fewer items, Angular omits the
+When the component's list of heroes has more than three items, Bangular adds the paragraph
+to the DOM and the message appears. If there are three or fewer items, Bangular omits the
 paragraph, so no message appears. For more information,
 see the [template expressions](guide/template-syntax#template-expressions) section of the
 [Template Syntax](guide/template-syntax) page.
@@ -348,7 +348,7 @@ see the [template expressions](guide/template-syntax#template-expressions) secti
 
 
 
-Angular isn't showing and hiding the message. It is adding and removing the paragraph element from the DOM. That improves performance, especially in larger projects when conditionally including or excluding
+Bangular isn't showing and hiding the message. It is adding and removing the paragraph element from the DOM. That improves performance, especially in larger projects when conditionally including or excluding
 big chunks of HTML with many data bindings.
 
 

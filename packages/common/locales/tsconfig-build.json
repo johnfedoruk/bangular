@@ -8,8 +8,8 @@
     "moduleResolution": "node",
     "outDir": "../../../dist/packages/common/locales",
     "paths": {
-      "@angular/common": ["../../../dist/packages/common"],
-      "@angular/core": ["../../../dist/packages/core"]
+      "@bangular/common": ["../../../dist/packages/common"],
+      "@bangular/core": ["../../../dist/packages/core"]
     },
     "sourceMap": true,
     "inlineSources": true,
@@ -20,7 +20,7 @@
   "exclude": [
     "./closure-locale.ts"
   ],
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "skipTemplateCodegen": true,
     "skipMetadataEmit": true
   }

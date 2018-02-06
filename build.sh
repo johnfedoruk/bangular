@@ -330,7 +330,7 @@ echo "====== BUILDING: Version ${VERSION}"
 N="
 "
 TSC=`pwd`/node_modules/.bin/tsc
-NGC="node --max-old-space-size=3000 `pwd`/dist/tools/@angular/compiler-cli/src/main"
+NGC="node --max-old-space-size=3000 `pwd`/dist/tools/@bangular/compiler-cli/src/main"
 UGLIFYJS=`pwd`/node_modules/.bin/uglifyjs
 TSCONFIG=./tools/tsconfig.json
 ROLLUP=`pwd`/node_modules/.bin/rollup
@@ -368,7 +368,7 @@ if [[ ${BUILD_ALL} == true && ${TYPECHECK_ALL} == true ]]; then
       ln -s ../../../../node_modules/base64-js .
       ln -s ../../../../node_modules/reflect-metadata/Reflect.js .
       ln -s ../../../../node_modules/rxjs .
-      ln -s ../../../../node_modules/angular/angular.js .
+      ln -s ../../../../node_modules/bangular/bangular.js .
       ln -s ../../../../node_modules/hammerjs/hammer.js .
     )
 
@@ -384,7 +384,7 @@ if [[ ${BUILD_ALL} == true && ${TYPECHECK_ALL} == true ]]; then
       ln -s ../../../../node_modules/systemjs/dist/system.src.js .
       ln -s ../../../../node_modules/reflect-metadata/Reflect.js .
       ln -s ../../../../node_modules/rxjs .
-      ln -s ../../../../node_modules/angular/angular.js .
+      ln -s ../../../../node_modules/bangular/bangular.js .
       ln -s ../../../../bower_components/polymer .
       ln -s ../../../../node_modules/incremental-dom/dist/incremental-dom-cjs.js
     )
@@ -416,13 +416,13 @@ if [[ ${BUILD_TOOLS} == true || ${BUILD_ALL} == true ]]; then
 
   mkdir -p ./dist/packages-dist
   rsync -a packages/bazel/ ./dist/packages-dist/bazel
-  echo "workspace(name=\"angular\")" > ./dist/packages-dist/bazel/WORKSPACE
+  echo "workspace(name=\"bangular\")" > ./dist/packages-dist/bazel/WORKSPACE
   # Remove BEGIN-INTERNAL...END-INTERAL blocks
   # https://stackoverflow.com/questions/24175271/how-can-i-match-multi-line-patterns-in-the-command-line-with-perl-style-regex
   perl -0777 -n -i -e "s/(?m)^.*BEGIN-INTERNAL[\w\W]*END-INTERNAL.*\n//g; print" $(grep -ril BEGIN-INTERNAL dist/packages-dist/bazel) < /dev/null 2> /dev/null
   # Re-host //packages/bazel/ which is just // in the public distro
   perl -0777 -n -i -e "s#//packages/bazel/#//#g; print" $(grep -ril packages/bazel dist/packages-dist/bazel) < /dev/null 2> /dev/null
-  perl -0777 -n -i -e "s#angular/packages/bazel/#angular/#g; print" $(grep -ril packages/bazel dist/packages-dist/bazel) < /dev/null 2> /dev/null
+  perl -0777 -n -i -e "s#bangular/packages/bazel/#bangular/#g; print" $(grep -ril packages/bazel dist/packages-dist/bazel) < /dev/null 2> /dev/null
   updateVersionReferences dist/packages-dist/bazel
 fi
 

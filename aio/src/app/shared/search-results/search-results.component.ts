@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@bangular/core';
 import { SearchResult, SearchResults, SearchArea } from 'app/search/interfaces';
 
 /**

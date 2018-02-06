@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, EventEmitter, Input, Output, Type} from '@angular/core';
-import {ComponentFixture, TestBed, async, fakeAsync, tick} from '@angular/core/testing';
-import {AbstractControl, ControlValueAccessor, FormControl, FormGroup, FormsModule, NG_VALIDATORS, NG_VALUE_ACCESSOR, NgControl, NgForm, NgModel, ReactiveFormsModule, Validators} from '@angular/forms';
-import {By} from '@angular/platform-browser/src/dom/debug/by';
-import {dispatchEvent} from '@angular/platform-browser/testing/src/browser_util';
+import {Component, Directive, EventEmitter, Input, Output, Type} from '@bangular/core';
+import {ComponentFixture, TestBed, async, fakeAsync, tick} from '@bangular/core/testing';
+import {AbstractControl, ControlValueAccessor, FormControl, FormGroup, FormsModule, NG_VALIDATORS, NG_VALUE_ACCESSOR, NgControl, NgForm, NgModel, ReactiveFormsModule, Validators} from '@bangular/forms';
+import {By} from '@bangular/platform-browser/src/dom/debug/by';
+import {dispatchEvent} from '@bangular/platform-browser/testing/src/browser_util';
 
 {
   describe('value accessors', () => {

@@ -7,7 +7,7 @@ A basic understanding of the following concepts:
 
 <hr />
 
-An entry component is any component that Angular loads imperatively, (which means you’re not referencing it in the template), by type. You specify an entry component by bootstrapping it in an NgModule, or including it in a routing definition.
+An entry component is any component that Bangular loads imperatively, (which means you’re not referencing it in the template), by type. You specify an entry component by bootstrapping it in an NgModule, or including it in a routing definition.
 
 <div class="alert is-helpful">
 
@@ -45,10 +45,10 @@ The following is an example of specifying a bootstrapped component,
 ```
 
 A bootstrapped component is an entry component
-that Angular loads into the DOM during the bootstrap process (application launch).
+that Bangular loads into the DOM during the bootstrap process (application launch).
 Other entry components are loaded dynamically by other means, such as with the router.
 
-Angular loads a root `AppComponent` dynamically because it's listed by type in `@NgModule.bootstrap`.
+Bangular loads a root `AppComponent` dynamically because it's listed by type in `@NgModule.bootstrap`.
 
 <div class="alert is-helpful">
 
@@ -84,14 +84,14 @@ All router components must be entry components. Because this would require you t
 ## The `entryComponents` array
 
 Though the `@NgModule` decorator has an `entryComponents` array, most of the time
-you won't have to explicitly set any entry components because Angular adds components listed in `@NgModule.bootstrap` and those in route definitions to entry components automatically. Though these two mechanisms account for most entry components, if your app happens to bootstrap or dynamically load a component by type imperatively,
+you won't have to explicitly set any entry components because Bangular adds components listed in `@NgModule.bootstrap` and those in route definitions to entry components automatically. Though these two mechanisms account for most entry components, if your app happens to bootstrap or dynamically load a component by type imperatively,
 you must add it to `entryComponents` explicitly.
 
 ### `entryComponents` and the compiler
 
 For production apps you want to load the smallest code possible.
 The code should contain only the classes that you actually need and
-exclude components that are never used. For this reason, the Angular compiler only generates code for components which are reachable from the `entryComponents`; This means that adding more references to `@NgModule.declarations` does not imply that they will necessarily be included in the final bundle.
+exclude components that are never used. For this reason, the Bangular compiler only generates code for components which are reachable from the `entryComponents`; This means that adding more references to `@NgModule.declarations` does not imply that they will necessarily be included in the final bundle.
 
 In fact, many libraries declare and export components you'll never use.
 For example, a material design library will export all components because it doesn’t know which ones you will use. However, it is unlikely that you will use them all.
@@ -104,10 +104,10 @@ as trim as possible.
 
 <hr />
 
-## More on Angular modules
+## More on Bangular modules
 
 You may also be interested in the following:
 * [Types of NgModules](guide/module-types)
-* [Lazy Loading Modules with the Angular Router](guide/lazy-loading-ngmodules).
+* [Lazy Loading Modules with the Bangular Router](guide/lazy-loading-ngmodules).
 * [Providers](guide/providers).
 * [NgModules FAQ](guide/ngmodule-faq).

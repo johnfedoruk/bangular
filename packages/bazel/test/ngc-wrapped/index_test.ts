@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as fs from 'fs';
@@ -17,7 +17,7 @@ describe('ngc_wrapped', () => {
     const {read, write, runOneBuild, writeConfig, shouldExist, basePath} = setup();
 
     write('some_project/index.ts', `
-      import {Component} from '@angular/core';
+      import {Component} from '@bangular/core';
       console.log('works: ', Component);
     `);
 

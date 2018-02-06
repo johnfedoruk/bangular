@@ -2,7 +2,7 @@
 import {
   Component, Input,
   OnChanges, SimpleChanges,
-} from '@angular/core';
+} from '@bangular/core';
 
 import { LoggerService }  from './logger.service';
 

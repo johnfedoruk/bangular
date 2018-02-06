@@ -1,6 +1,6 @@
-import { Injectable, Inject } from '@angular/core';
-import { PlatformLocation } from '@angular/common';
-import { DOCUMENT } from '@angular/platform-browser';
+import { Injectable, Inject } from '@bangular/core';
+import { PlatformLocation } from '@bangular/common';
+import { DOCUMENT } from '@bangular/platform-browser';
 import {fromEvent} from 'rxjs/observable/fromEvent';
 
 export const topMargin = 16;

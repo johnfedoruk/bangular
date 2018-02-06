@@ -1,5 +1,5 @@
-import { ReflectiveInjector, NgZone } from '@angular/core';
-import { fakeAsync, tick } from '@angular/core/testing';
+import { ReflectiveInjector, NgZone } from '@bangular/core';
+import { fakeAsync, tick } from '@bangular/core/testing';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import { SearchService } from './search.service';

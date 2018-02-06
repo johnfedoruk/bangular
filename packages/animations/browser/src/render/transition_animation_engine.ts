@@ -3,9 +3,9 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {AUTO_STYLE, AnimationOptions, AnimationPlayer, NoopAnimationPlayer, ɵAnimationGroupPlayer as AnimationGroupPlayer, ɵPRE_STYLE as PRE_STYLE, ɵStyleData} from '@angular/animations';
+import {AUTO_STYLE, AnimationOptions, AnimationPlayer, NoopAnimationPlayer, ɵAnimationGroupPlayer as AnimationGroupPlayer, ɵPRE_STYLE as PRE_STYLE, ɵStyleData} from '@bangular/animations';
 
 import {AnimationTimelineInstruction} from '../dsl/animation_timeline_instruction';
 import {AnimationTransitionFactory} from '../dsl/animation_transition_factory';
@@ -1320,7 +1320,7 @@ export class TransitionAnimationEngine {
               .filter(p => {
                 // the `element` is not apart of the AnimationPlayer definition, but
                 // Mock/WebAnimations
-                // use the element within their implementation. This will be added in Angular5 to
+                // use the element within their implementation. This will be added in Bangular5 to
                 // AnimationPlayer
                 const pp = p as any;
                 return pp.element ? pp.element === element : false;
@@ -1565,7 +1565,7 @@ function cloakAndComputeStyles(
 }
 
 /*
-Since the Angular renderer code will return a collection of inserted
+Since the Bangular renderer code will return a collection of inserted
 nodes in all areas of a DOM tree, it's up to this algorithm to figure
 out which nodes are roots for each animation @trigger.
 

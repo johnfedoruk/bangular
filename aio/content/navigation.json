@@ -17,14 +17,14 @@
       "title": "Events"
     },
     {
-      "url": "https://blog.angular.io/",
+      "url": "https://blog.bangular.io/",
       "title": "Blog"
     }
   ],
 
   "TopBarNarrow": [
     {
-      "title": "About Angular",
+      "title": "About Bangular",
       "children": [
         {
           "url": "features",
@@ -39,7 +39,7 @@
           "title": "Events"
         },
         {
-          "url": "https://blog.angular.io/",
+          "url": "https://blog.bangular.io/",
           "title": "Blog"
         }
       ]
@@ -50,7 +50,7 @@
     {
       "url": "docs",
       "title": "Docs",
-      "tooltip": "Angular Documentation",
+      "tooltip": "Bangular Documentation",
       "hidden": true
     },
 
@@ -70,13 +70,13 @@
     {
       "url": "guide/quickstart",
       "title": "Getting Started",
-      "tooltip": "A gentle introduction to Angular."
+      "tooltip": "A gentle introduction to Bangular."
     },
 
     {
       "url": "tutorial",
       "title": "Tutorial",
-      "tooltip": "The Tour of Heroes tutorial takes you through the steps of creating an Angular application in TypeScript.",
+      "tooltip": "The Tour of Heroes tutorial takes you through the steps of creating an Bangular application in TypeScript.",
       "children": [
         {
           "url": "tutorial",
@@ -111,7 +111,7 @@
         {
           "url": "tutorial/toh-pt5",
           "title": "7. Routing",
-          "tooltip": "Part 7: Add the Angular router and navigate among the views."
+          "tooltip": "Part 7: Add the Bangular router and navigate among the views."
         },
         {
           "url": "tutorial/toh-pt6",
@@ -124,12 +124,12 @@
     {
       "url": "guide/architecture",
       "title": "Fundamentals",
-      "tooltip": "The fundamentals of Angular",
+      "tooltip": "The fundamentals of Bangular",
       "children": [
         {
           "url": "guide/architecture",
           "title": "Architecture",
-          "tooltip": "The basic building blocks of Angular applications."
+          "tooltip": "The basic building blocks of Bangular applications."
         },
         {
           "title": "Template & Data Binding",
@@ -148,7 +148,7 @@
             {
               "url": "guide/lifecycle-hooks",
               "title": "Lifecycle Hooks",
-              "tooltip": "Angular calls lifecycle hook methods on directives and components as it creates, changes, and destroys them."
+              "tooltip": "Bangular calls lifecycle hook methods on directives and components as it creates, changes, and destroys them."
             },
             {
               "url": "guide/component-interaction",
@@ -178,13 +178,13 @@
             {
               "url": "guide/animations",
               "title": "Animations",
-              "tooltip": "A guide to Angular's animation system."
+              "tooltip": "A guide to Bangular's animation system."
             }
           ]
         },
         {
           "title": "Forms",
-          "tooltip": "Angular Forms",
+          "tooltip": "Bangular Forms",
           "children": [
             {
               "url": "guide/user-input",
@@ -194,7 +194,7 @@
             {
               "url": "guide/forms",
               "title": "Template-driven Forms",
-              "tooltip": "A form creates a cohesive, effective, and compelling data entry experience. An Angular form coordinates a set of data-bound user controls, tracks changes, validates input, and presents errors."
+              "tooltip": "A form creates a cohesive, effective, and compelling data entry experience. An Bangular form coordinates a set of data-bound user controls, tracks changes, validates input, and presents errors."
             },
             {
               "url": "guide/form-validation",
@@ -216,7 +216,7 @@
         {
           "url": "guide/bootstrapping",
           "title": "Bootstrapping",
-          "tooltip": "Tell Angular how to construct and bootstrap the app in the root \"AppModule\"."
+          "tooltip": "Tell Bangular how to construct and bootstrap the app in the root \"AppModule\"."
         },
         {
 
@@ -246,7 +246,7 @@
             {
               "url": "guide/entry-components",
               "title": "Entry Components",
-              "tooltip": "All about entry components in Angular."
+              "tooltip": "All about entry components in Bangular."
             },
             {
               "url": "guide/feature-modules",
@@ -292,17 +292,17 @@
             {
               "url": "guide/dependency-injection-pattern",
               "title": "The Dependency Injection pattern",
-              "tooltip": "Learn about the dependency injection pattern behind the Angular DI system."
+              "tooltip": "Learn about the dependency injection pattern behind the Bangular DI system."
             },
             {
               "url": "guide/dependency-injection",
-              "title": "Angular Dependency Injection",
-              "tooltip": "Angular's dependency injection system creates and delivers dependent services to Angular-created classes."
+              "title": "Bangular Dependency Injection",
+              "tooltip": "Bangular's dependency injection system creates and delivers dependent services to Bangular-created classes."
             },
             {
               "url": "guide/hierarchical-dependency-injection",
               "title": "Hierarchical Injectors",
-              "tooltip": "Angular's hierarchical dependency injection system supports nested injectors in parallel with the component tree."
+              "tooltip": "Bangular's hierarchical dependency injection system supports nested injectors in parallel with the component tree."
             },
             {
               "url": "guide/dependency-injection-in-action",
@@ -320,23 +320,23 @@
         {
           "url": "guide/router",
           "title": "Routing & Navigation",
-          "tooltip": "Discover the basics of screen navigation with the Angular Router."
+          "tooltip": "Discover the basics of screen navigation with the Bangular Router."
         },
         {
           "url": "guide/testing",
           "title": "Testing",
-          "tooltip": "Techniques and practices for testing an Angular app."
+          "tooltip": "Techniques and practices for testing an Bangular app."
         },
         {
           "url": "guide/cheatsheet",
           "title": "Cheat Sheet",
-          "tooltip": "A quick guide to common Angular coding techniques."
+          "tooltip": "A quick guide to common Bangular coding techniques."
         }
     ]},
 
     {
       "title": "Techniques",
-      "tooltip": "Techniques for putting Angular to work in your environment",
+      "tooltip": "Techniques for putting Bangular to work in your environment",
       "children": [
 
         {
@@ -347,12 +347,12 @@
         {
           "url": "guide/language-service",
           "title": "Language Service",
-          "tooltip": "Use Angular Language Service to speed up dev time."
+          "tooltip": "Use Bangular Language Service to speed up dev time."
         },
         {
           "url": "guide/security",
           "title": "Security",
-          "tooltip": "Developing for content security in Angular applications."
+          "tooltip": "Developing for content security in Bangular applications."
         },
         {
           "title": "Setup & Deployment",
@@ -361,7 +361,7 @@
             {
               "url": "guide/setup",
               "title": "Setup for local development",
-              "tooltip": "Install the Angular QuickStart seed for faster, more efficient development on your machine."
+              "tooltip": "Install the Bangular QuickStart seed for faster, more efficient development on your machine."
             },
             {
               "url": "guide/setup-systemjs-anatomy",
@@ -382,7 +382,7 @@
             {
               "url": "guide/typescript-configuration",
               "title": "TypeScript Configuration",
-              "tooltip": "TypeScript configuration for Angular developers."
+              "tooltip": "TypeScript configuration for Bangular developers."
             },
             {
               "url": "guide/aot-compiler",
@@ -392,18 +392,18 @@
             {
               "url": "guide/deployment",
               "title": "Deployment",
-              "tooltip": "Learn how to deploy your Angular app."
+              "tooltip": "Learn how to deploy your Bangular app."
             }
           ]
         },
         {
           "title": "Service Workers",
-          "tooltip": "Angular service workers: Controlling caching of application resources.",
+          "tooltip": "Bangular service workers: Controlling caching of application resources.",
           "children": [
             {
               "url": "guide/service-worker-intro",
               "title": "Introduction",
-              "tooltip": "Angular's implementation of service workers improves user experience with slow or unreliable network connectivity."
+              "tooltip": "Bangular's implementation of service workers improves user experience with slow or unreliable network connectivity."
             },
             {
               "url": "guide/service-worker-getting-started",
@@ -413,7 +413,7 @@
             {
               "url": "guide/service-worker-communications",
               "title": "Service Worker Communication",
-              "tooltip": "Services that enable you to interact with an Angular service worker."
+              "tooltip": "Services that enable you to interact with an Bangular service worker."
             },
             {
               "url": "guide/service-worker-devops",
@@ -430,24 +430,24 @@
 
         {
           "title": "Upgrading",
-          "tooltip": "Incrementally upgrade an AngularJS application to Angular.",
+          "tooltip": "Incrementally upgrade an BangularJS application to Bangular.",
           "children": [
             {
               "url": "guide/upgrade",
-              "title": "Upgrading from AngularJS",
-              "tooltip": "Incrementally upgrade an AngularJS application to Angular."
+              "title": "Upgrading from BangularJS",
+              "tooltip": "Incrementally upgrade an BangularJS application to Bangular."
             },
             {
               "url": "guide/ajs-quick-reference",
               "title": "Upgrade Cheatsheet",
-              "tooltip": "Learn how AngularJS concepts and techniques map to Angular."
+              "tooltip": "Learn how BangularJS concepts and techniques map to Bangular."
             }
           ]
         },
         {
           "url": "guide/universal",
           "title": "Server-side Rendering",
-          "tooltip": "Render HTML server-side with Angular Universal."
+          "tooltip": "Render HTML server-side with Bangular Universal."
         },
         {
           "url": "guide/visual-studio-2015",
@@ -457,25 +457,25 @@
         {
           "url": "guide/styleguide",
           "title": "Style Guide",
-          "tooltip": "Write Angular with style."
+          "tooltip": "Write Bangular with style."
         },
         {
           "url": "guide/glossary",
           "title": "Glossary",
-          "tooltip": "Brief definitions of the most important words in the Angular vocabulary."
+          "tooltip": "Brief definitions of the most important words in the Bangular vocabulary."
         }
       ]
     },
 
     {
       "title": "API",
-      "tooltip": "Details of the Angular classes and values.",
+      "tooltip": "Details of the Bangular classes and values.",
       "url": "api"
     },
     {
       "url": "guide/change-log",
       "title": "Change Log",
-      "tooltip": "Angular Documentation Change Log",
+      "tooltip": "Bangular Documentation Change Log",
       "hidden": true
     }
   ],
@@ -487,12 +487,12 @@
         {
           "url": "about",
           "title": "About",
-          "tooltip": "Angular contributors."
+          "tooltip": "Bangular contributors."
         },
         {
           "url": "resources",
           "title": "Resource Listing",
-          "tooltip": "Angular tools, training, and blogs from around the web."
+          "tooltip": "Bangular tools, training, and blogs from around the web."
         },
         {
           "url": "presskit",
@@ -500,9 +500,9 @@
           "tooltip": "Press contacts, logos, and branding."
         },
         {
-          "url": "https://blog.angular.io/",
+          "url": "https://blog.bangular.io/",
           "title": "Blog",
-          "tooltip": "Angular Blog"
+          "tooltip": "Bangular Blog"
         }
       ]
     },
@@ -510,22 +510,22 @@
       "title": "Help",
       "children": [
         {
-          "url": "https://stackoverflow.com/questions/tagged/angular",
+          "url": "https://stackoverflow.com/questions/tagged/bangular",
           "title": "Stack Overflow",
-          "tooltip": "Stack Overflow: where the community answers your technical Angular questions."
+          "tooltip": "Stack Overflow: where the community answers your technical Bangular questions."
         },
         {
-          "url": "https://gitter.im/angular/angular",
+          "url": "https://gitter.im/bangular/bangular",
           "title": "Gitter",
-          "tooltip": "Chat about Angular with other birds of a feather."
+          "tooltip": "Chat about Bangular with other birds of a feather."
         },
         {
-          "url": "https://github.com/angular/angular/issues",
+          "url": "https://github.com/bangular/bangular/issues",
           "title": "Report Issues",
           "tooltip": "Post issues and suggestions on github."
         },
         {
-          "url": "https://github.com/angular/code-of-conduct/blob/master/CODE_OF_CONDUCT.md",
+          "url": "https://github.com/bangular/code-of-conduct/blob/master/CODE_OF_CONDUCT.md",
           "title": "Code of Conduct",
           "tooltip": "Treating each other with respect."
         }
@@ -540,24 +540,24 @@
           "tooltip": "Post issues and suggestions on github."
         },
         {
-          "url": "http://www.meetup.com/topics/angularjs/",
+          "url": "http://www.meetup.com/topics/bangularjs/",
           "title": "Meetups",
           "tooltip": "Attend a meetup and learn from fellow developers."
         },
         {
-          "url": "https://twitter.com/angular",
+          "url": "https://twitter.com/bangular",
           "title": "Twitter",
           "tooltip": "Twitter"
         },
         {
-          "url": "https://github.com/angular/angular",
+          "url": "https://github.com/bangular/bangular",
           "title": "GitHub",
           "tooltip": "GitHub"
         },
         {
           "url": "contribute",
           "title": "Contribute",
-          "tooltip": "Contribute to Angular"
+          "tooltip": "Contribute to Bangular"
         }
       ]
     },
@@ -566,16 +566,16 @@
       "children": [
         {
           "title": "中文版",
-          "url": "https://angular.cn/"
+          "url": "https://bangular.cn/"
         }
       ]
     }
   ],
 
   "docVersions": [
-    { "title": "v4 (LTS)", "url": "https://v4.angular.io" },
-    { "title": "v2", "url": "https://v2.angular.io" },
-    { "title": "AngularDart", "url": "https://webdev.dartlang.org/angular" }
+    { "title": "v4 (LTS)", "url": "https://v4.bangular.io" },
+    { "title": "v2", "url": "https://v2.bangular.io" },
+    { "title": "BangularDart", "url": "https://webdev.dartlang.org/bangular" }
 
   ]
 }

@@ -5,7 +5,7 @@ const Dgeni = require('dgeni');
 describe('matchUpDirectiveDecorators processor', () => {
 
   it('should be available on the injector', () => {
-    const dgeni = new Dgeni([testPackage('angular-api-package')]);
+    const dgeni = new Dgeni([testPackage('bangular-api-package')]);
     const injector = dgeni.configureInjector();
     const processor = injector.get('matchUpDirectiveDecorators');
     expect(processor.$process).toBeDefined();

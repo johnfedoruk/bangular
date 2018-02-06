@@ -7,7 +7,7 @@ export class FakeFancyService extends FancyService {
 }
 ////////////////////////
 // #docregion FancyService
-// Straight Jasmine - no imports from Angular test libraries
+// Straight Jasmine - no imports from Bangular test libraries
 
 describe('FancyService without the TestBed', () => {
   let service: FancyService;

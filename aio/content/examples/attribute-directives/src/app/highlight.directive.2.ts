@@ -1,9 +1,9 @@
 /* tslint:disable:no-unused-variable member-ordering */
 // #docplaster
 // #docregion imports,
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@bangular/core';
 // #enddocregion imports,
-import { Input } from '@angular/core';
+import { Input } from '@bangular/core';
 // #docregion
 
 @Directive({

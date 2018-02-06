@@ -1,8 +1,8 @@
-declare var angular: angular.IAngularStatic;
-import { NgModule } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { BrowserModule } from '@angular/platform-browser';
-import { UpgradeModule } from '@angular/upgrade/static';
+declare var bangular: bangular.IBangularStatic;
+import { NgModule } from '@bangular/core';
+import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
+import { BrowserModule } from '@bangular/platform-browser';
+import { UpgradeModule } from '@bangular/upgrade/static';
 
 import { heroDetailComponent } from './hero-detail.component';
 
@@ -25,9 +25,9 @@ export class AppModule {
 }
 // #enddocregion ngmodule
 // #docregion register
-import { downgradeInjectable } from '@angular/upgrade/static';
+import { downgradeInjectable } from '@bangular/upgrade/static';
 
-angular.module('heroApp', [])
+bangular.module('heroApp', [])
   .factory('heroes', downgradeInjectable(Heroes))
   .component('heroDetail', heroDetailComponent);
 // #enddocregion register

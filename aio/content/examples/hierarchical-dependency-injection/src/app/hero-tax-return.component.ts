@@ -1,5 +1,5 @@
 // #docregion
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@bangular/core';
 import { HeroTaxReturn }        from './hero';
 import { HeroTaxReturnService } from './hero-tax-return.service';
 

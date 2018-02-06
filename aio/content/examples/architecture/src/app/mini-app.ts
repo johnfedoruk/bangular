@@ -1,6 +1,6 @@
 // #docplaster
 // A mini-application
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 
 @Injectable()
 export class Logger {
@@ -8,12 +8,12 @@ export class Logger {
 }
 
 // #docregion import-core-component
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 // #enddocregion import-core-component
 
 @Component({
  selector: 'my-app',
- template: 'Welcome to Angular'
+ template: 'Welcome to Bangular'
 })
 export class AppComponent {
   constructor(logger: Logger) {
@@ -22,9 +22,9 @@ export class AppComponent {
 }
 
 // #docregion module
-import { NgModule }      from '@angular/core';
+import { NgModule }      from '@bangular/core';
 // #docregion import-browser-module
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule } from '@bangular/platform-browser';
 // #enddocregion import-browser-module
 @NgModule({
 // #docregion ngmodule-imports
@@ -40,6 +40,6 @@ export class AppModule { }
 // #enddocregion export
 // #enddocregion module
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
 
 platformBrowserDynamic().bootstrapModule(AppModule);

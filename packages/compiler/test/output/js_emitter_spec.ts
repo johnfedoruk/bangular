@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {StaticSymbol} from '@angular/compiler/src/aot/static_symbol';
-import {JavaScriptEmitter} from '@angular/compiler/src/output/js_emitter';
-import * as o from '@angular/compiler/src/output/output_ast';
+import {StaticSymbol} from '@bangular/compiler/src/aot/static_symbol';
+import {JavaScriptEmitter} from '@bangular/compiler/src/output/js_emitter';
+import * as o from '@bangular/compiler/src/output/output_ast';
 
 import {stripSourceMapAndNewLine} from './abstract_emitter_spec';
 

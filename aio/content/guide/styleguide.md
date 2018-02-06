@@ -1,6 +1,6 @@
 # Style Guide
 
-Looking for an opinionated guide to Angular syntax, conventions, and application structure?
+Looking for an opinionated guide to Bangular syntax, conventions, and application structure?
 Step right in!
 This style guide presents preferred conventions and, as importantly, explains why.
 
@@ -966,7 +966,7 @@ As always, strive for consistency.
 
 
 
-**Why?** The Angular HTML parser is case sensitive and recognizes lower camel case.
+**Why?** The Bangular HTML parser is case sensitive and recognizes lower camel case.
 
 
 </div>
@@ -1472,7 +1472,7 @@ For example, the prefix `toh` represents from **T**our **o**f **H**eroes and the
 
 {@a 02-12}
 
-### Angular _NgModule_ names
+### Bangular _NgModule_ names
 
 #### Style 02-12
 
@@ -1569,7 +1569,7 @@ For example, the prefix `toh` represents from **T**our **o**f **H**eroes and the
 
 
 
-**Why?** A `RoutingModule` is a module dedicated exclusively to configuring the Angular router.
+**Why?** A `RoutingModule` is a module dedicated exclusively to configuring the Bangular router.
 A consistent class and file name convention make these modules easy to spot and verify.
 
 </div>
@@ -1960,7 +1960,7 @@ discourage the `I` prefix.
 
 
 
-**Why?** An interface-class can be a provider lookup token in Angular dependency injection.
+**Why?** An interface-class can be a provider lookup token in Bangular dependency injection.
 
 
 </div>
@@ -3330,7 +3330,7 @@ and emphasizes its role as orchestrator of the application as a whole.
 
 
 
-**Why?** `CoreModule` provides one or more singleton services. Angular registers the providers with the app root injector, making a singleton instance of each service available to any component that needs them, whether that component is eagerly or lazily loaded.
+**Why?** `CoreModule` provides one or more singleton services. Bangular registers the providers with the app root injector, making a singleton instance of each service available to any component that needs them, whether that component is eagerly or lazily loaded.
 
 
 </div>
@@ -3785,7 +3785,7 @@ A typical *lazy loaded folder* contains a *routing component*, its child compone
 
 
 
-**Why?** components have templates containing HTML and optional Angular template syntax.
+**Why?** components have templates containing HTML and optional Bangular template syntax.
 They display content.
 Developers place components on the page as they would native HTML elements and web components.
 
@@ -3904,7 +3904,7 @@ Developers place components on the page as they would native HTML elements and w
 
 
 **Why?** In most editors, syntax hints and code snippets aren't available when developing inline templates and styles.
-The Angular TypeScript Language Service (forthcoming) promises to overcome this deficiency for HTML templates
+The Bangular TypeScript Language Service (forthcoming) promises to overcome this deficiency for HTML templates
 in those editors that support it; it won't help with CSS styles.
 
 
@@ -3927,7 +3927,7 @@ in those editors that support it; it won't help with CSS styles.
 
 
 
-**Why?** The `./` prefix is standard syntax for relative URLs; don't depend on Angular's current ability to do without that prefix.
+**Why?** The `./` prefix is standard syntax for relative URLs; don't depend on Bangular's current ability to do without that prefix.
 
 
 
@@ -4323,7 +4323,7 @@ helps instantly identify which members of the component serve which purpose.
 
 
 
-**Why?** Angular allows for an [alternative syntax](guide/template-syntax#binding-syntax) `on-*`. If the event itself was prefixed with `on` this would result in an `on-onEvent` binding expression.
+**Why?** Bangular allows for an [alternative syntax](guide/template-syntax#binding-syntax) `on-*`. If the event itself was prefixed with `on` this would result in an `on-onEvent` binding expression.
 
 
 </div>
@@ -4662,7 +4662,7 @@ Compare with the less preferred `host` metadata alternative.
 
 
 
-**Do** provide services to the Angular injector at the top-most component where they will be shared.
+**Do** provide services to the Bangular injector at the top-most component where they will be shared.
 
 
 </div>
@@ -4673,7 +4673,7 @@ Compare with the less preferred `host` metadata alternative.
 
 
 
-**Why?** The Angular injector is hierarchical.
+**Why?** The Bangular injector is hierarchical.
 
 
 </div>
@@ -4752,7 +4752,7 @@ that instance is shared and available to all child components of that top level 
 
 
 
-**Why?** The Angular Dependency Injection (DI) mechanism resolves a service's own
+**Why?** The Bangular Dependency Injection (DI) mechanism resolves a service's own
 dependencies based on the declared types of that service's constructor parameters.
 
 
@@ -4861,7 +4861,7 @@ easier to test the consumers with mock service implementations.
 
 ## Lifecycle hooks
 
-Use Lifecycle hooks to tap into important events exposed by Angular.
+Use Lifecycle hooks to tap into important events exposed by Bangular.
 
 <a href="#toc">Back to top</a>
 
@@ -4914,7 +4914,7 @@ signatures. use those signatures to flag spelling and syntax mistakes.
 
 ## Appendix
 
-Useful tools and tips for Angular.
+Useful tools and tips for Bangular.
 
 <a href="#toc">Back to top</a>
 
@@ -4969,17 +4969,17 @@ Useful tools and tips for Angular.
 
 
 
-**Consider** using [snippets](https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2) for [Visual Studio Code](https://code.visualstudio.com/) that follow these styles and guidelines.
+**Consider** using [snippets](https://marketplace.visualstudio.com/items?itemName=johnpapa.Bangular2) for [Visual Studio Code](https://code.visualstudio.com/) that follow these styles and guidelines.
 
-<a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2">
+<a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Bangular2">
   <img src="generated/images/guide/styleguide/use-extension.gif" alt="Use Extension">
 </a>
 
-**Consider** using [snippets](https://atom.io/packages/angular-2-typescript-snippets) for [Atom](https://atom.io/) that follow these styles and guidelines.
+**Consider** using [snippets](https://atom.io/packages/bangular-2-typescript-snippets) for [Atom](https://atom.io/) that follow these styles and guidelines.
 
-**Consider** using [snippets](https://github.com/orizens/sublime-angular2-snippets) for [Sublime Text](http://www.sublimetext.com/) that follow these styles and guidelines.
+**Consider** using [snippets](https://github.com/orizens/sublime-bangular2-snippets) for [Sublime Text](http://www.sublimetext.com/) that follow these styles and guidelines.
 
-**Consider** using [snippets](https://github.com/mhartington/vim-angular2-snippets) for [Vim](http://www.vim.org/) that follow these styles and guidelines.
+**Consider** using [snippets](https://github.com/mhartington/vim-bangular2-snippets) for [Vim](http://www.vim.org/) that follow these styles and guidelines.
 
 
 </div>

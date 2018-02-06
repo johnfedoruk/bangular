@@ -120,11 +120,11 @@ describe('Http Tests', function() {
 
   describe('PackageSearch', () => {
     it('can search for npm package and find in cache', () => {
-      const packageName = 'angular';
+      const packageName = 'bangular';
       page.searchInput.sendKeys(packageName);
       checkLogForMessage(
-        'Caching response from "https://npmsearch.com/query?q=angular"');
-      expect(page.searchListItems.count()).toBeGreaterThan(1, 'angular items');
+        'Caching response from "https://npmsearch.com/query?q=bangular"');
+      expect(page.searchListItems.count()).toBeGreaterThan(1, 'bangular items');
 
       page.searchInput.clear();
       page.searchInput.sendKeys(' ');
@@ -133,7 +133,7 @@ describe('Http Tests', function() {
       page.searchInput.clear();
       page.searchInput.sendKeys(packageName);
       checkLogForMessage(
-        'Found cached response for "https://npmsearch.com/query?q=angular"');
+        'Found cached response for "https://npmsearch.com/query?q=bangular"');
     });
   });
 });

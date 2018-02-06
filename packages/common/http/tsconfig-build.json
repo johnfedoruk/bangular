@@ -5,8 +5,8 @@
     "baseUrl": ".",
     "rootDir": "../",
     "paths": {
-      "@angular/common": ["../../../dist/packages/common"],
-      "@angular/core": ["../../../dist/packages/core"]
+      "@bangular/common": ["../../../dist/packages/common"],
+      "@bangular/core": ["../../../dist/packages/core"]
     },
     "outDir": "../../../dist/packages/common"
   },
@@ -15,11 +15,11 @@
     "public_api.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "http.js",
-    "flatModuleId": "@angular/common/http"
+    "flatModuleId": "@bangular/common/http"
   }
 }

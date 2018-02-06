@@ -1,7 +1,7 @@
 // NEVER USED. For docs only. Should compile though
 // #docplaster
-import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule }             from '@bangular/core';
+import { RouterModule, Routes } from '@bangular/router';
 
 import { HeroListComponent }      from './hero-list.component';
 import { CrisisListComponent }    from './crisis-list.component';

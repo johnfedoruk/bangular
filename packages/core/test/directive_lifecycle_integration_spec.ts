@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, DoCheck, OnChanges, OnInit} from '@angular/core';
-import {Component, Directive} from '@angular/core/src/metadata';
-import {TestBed, inject} from '@angular/core/testing';
-import {Log} from '@angular/core/testing/src/testing_internal';
+import {AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, DoCheck, OnChanges, OnInit} from '@bangular/core';
+import {Component, Directive} from '@bangular/core/src/metadata';
+import {TestBed, inject} from '@bangular/core/testing';
+import {Log} from '@bangular/core/testing/src/testing_internal';
 
 {
   describe('directive lifecycle integration spec', () => {

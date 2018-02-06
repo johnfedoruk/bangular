@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ResourceLoader} from '@angular/compiler';
-import {SourceMap} from '@angular/compiler/src/output/source_map';
-import {extractSourceMap, originalPositionFor} from '@angular/compiler/testing/src/output/source_map_util';
-import {MockResourceLoader} from '@angular/compiler/testing/src/resource_loader_mock';
-import {Attribute, Component, Directive, ErrorHandler, ɵglobal} from '@angular/core';
-import {getErrorLogger} from '@angular/core/src/errors';
-import {ComponentFixture, TestBed, fakeAsync, tick} from '@angular/core/testing';
+import {ResourceLoader} from '@bangular/compiler';
+import {SourceMap} from '@bangular/compiler/src/output/source_map';
+import {extractSourceMap, originalPositionFor} from '@bangular/compiler/testing/src/output/source_map_util';
+import {MockResourceLoader} from '@bangular/compiler/testing/src/resource_loader_mock';
+import {Attribute, Component, Directive, ErrorHandler, ɵglobal} from '@bangular/core';
+import {getErrorLogger} from '@bangular/core/src/errors';
+import {ComponentFixture, TestBed, fakeAsync, tick} from '@bangular/core/testing';
 
 {
   describe('jit source mapping', () => {

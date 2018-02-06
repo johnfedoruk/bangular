@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ElementRef, QueryList, TemplateRef, ViewContainerRef} from '@angular/core';
-import {getDebugContext} from '@angular/core/src/errors';
-import {NodeDef, NodeFlags, QueryBindingType, QueryValueType, Services, anchorDef, asElementData, asProviderData, attachEmbeddedView, detachEmbeddedView, directiveDef, elementDef, queryDef} from '@angular/core/src/view/index';
+import {ElementRef, QueryList, TemplateRef, ViewContainerRef} from '@bangular/core';
+import {getDebugContext} from '@bangular/core/src/errors';
+import {NodeDef, NodeFlags, QueryBindingType, QueryValueType, Services, anchorDef, asElementData, asProviderData, attachEmbeddedView, detachEmbeddedView, directiveDef, elementDef, queryDef} from '@bangular/core/src/view/index';
 
 import {compViewDef, compViewDefFactory, createAndGetRootNodes, createEmbeddedView} from './helper';
 

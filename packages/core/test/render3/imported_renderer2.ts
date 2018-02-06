@@ -3,18 +3,18 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ɵAnimationEngine, ɵNoopAnimationStyleNormalizer} from '@angular/animations/browser';
-import {MockAnimationDriver} from '@angular/animations/browser/testing';
-import {EventEmitter, NgZone, RendererFactory2} from '@angular/core';
-import {EventManager, ɵDomEventsPlugin, ɵDomRendererFactory2, ɵDomSharedStylesHost} from '@angular/platform-browser';
-import {ɵAnimationRendererFactory} from '@angular/platform-browser/animations';
+import {ɵAnimationEngine, ɵNoopAnimationStyleNormalizer} from '@bangular/animations/browser';
+import {MockAnimationDriver} from '@bangular/animations/browser/testing';
+import {EventEmitter, NgZone, RendererFactory2} from '@bangular/core';
+import {EventManager, ɵDomEventsPlugin, ɵDomRendererFactory2, ɵDomSharedStylesHost} from '@bangular/platform-browser';
+import {ɵAnimationRendererFactory} from '@bangular/platform-browser/animations';
 
 
 // Adapted renderer: it creates a Renderer2 instance and adapts it to Renderer3
-// TODO: remove once this code is in angular/angular
+// TODO: remove once this code is in bangular/bangular
 export class NoopNgZone implements NgZone {
   readonly hasPendingMicrotasks: boolean = false;
   readonly hasPendingMacrotasks: boolean = false;
@@ -28,12 +28,12 @@ export class NoopNgZone implements NgZone {
 
   runGuarded(fn: () => any): any { return fn(); }
 
-  runOutsideAngular(fn: () => any): any { return fn(); }
+  runOutsideBangular(fn: () => any): any { return fn(); }
 
   runTask<T>(fn: () => any): T { return fn(); }
 }
 
-// TODO: remove once this code is in angular/angular
+// TODO: remove once this code is in bangular/bangular
 export class SimpleDomEventsPlugin extends ɵDomEventsPlugin {
   constructor(doc: any, ngZone: NgZone) { super(doc, ngZone); }
 

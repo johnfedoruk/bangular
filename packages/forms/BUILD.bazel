@@ -10,7 +10,7 @@ ng_module(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/forms",
+    module_name = "@bangular/forms",
     deps = [
         "//packages/core",
         "//packages/platform-browser",

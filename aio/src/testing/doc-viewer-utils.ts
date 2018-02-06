@@ -1,5 +1,5 @@
-import { Component, ComponentRef, NgModule, ViewChild } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { Component, ComponentRef, NgModule, ViewChild } from '@bangular/core';
+import { Title, Meta } from '@bangular/platform-browser';
 
 import { Observable } from 'rxjs/Observable';
 

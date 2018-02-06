@@ -6,7 +6,7 @@ describe('autolink-headings postprocessor', () => {
   let processor;
 
   beforeEach(() => {
-    const dgeni = new Dgeni([testPackage('angular-base-package')]);
+    const dgeni = new Dgeni([testPackage('bangular-base-package')]);
     const injector = dgeni.configureInjector();
     processor = injector.get('postProcessHtml');
     processor.docTypes = ['a'];

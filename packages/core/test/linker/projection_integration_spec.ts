@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, ElementRef, TemplateRef, ViewContainerRef, ViewEncapsulation} from '@angular/core';
-import {TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser/src/dom/debug/by';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {Component, Directive, ElementRef, TemplateRef, ViewContainerRef, ViewEncapsulation} from '@bangular/core';
+import {TestBed} from '@bangular/core/testing';
+import {By} from '@bangular/platform-browser/src/dom/debug/by';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 {
   describe('projection', () => {
@@ -210,7 +210,7 @@ import {expect} from '@angular/platform-browser/testing/src/matchers';
       expect(main.nativeElement).toHaveText('(, BC)');
     });
 
-    // GH-2095 - https://github.com/angular/angular/issues/2095
+    // GH-2095 - https://github.com/bangular/bangular/issues/2095
     // important as we are removing the ng-content element during compilation,
     // which could skrew up text node indices.
     it('should support text nodes after content tags', () => {

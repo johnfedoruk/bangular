@@ -1,11 +1,11 @@
 // #docregion
-// Angular
-import '@angular/platform-browser';
-import '@angular/platform-browser-dynamic';
-import '@angular/core';
-import '@angular/common';
-import '@angular/http';
-import '@angular/router';
+// Bangular
+import '@bangular/platform-browser';
+import '@bangular/platform-browser-dynamic';
+import '@bangular/core';
+import '@bangular/common';
+import '@bangular/http';
+import '@bangular/router';
 
 // RxJS
 import 'rxjs';

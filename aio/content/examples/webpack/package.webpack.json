@@ -1,7 +1,7 @@
 {
-  "name": "angular2-webpack",
+  "name": "bangular2-webpack",
   "version": "1.0.0",
-  "description": "A webpack starter for Angular",
+  "description": "A webpack starter for Bangular",
   "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8080",
     "test": "karma start",
@@ -9,14 +9,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@angular/common": "~4.2.0",
-    "@angular/compiler": "~4.2.0",
-    "@angular/core": "~4.2.0",
-    "@angular/forms": "~4.2.0",
-    "@angular/http": "~4.2.0",
-    "@angular/platform-browser": "~4.2.0",
-    "@angular/platform-browser-dynamic": "~4.2.0",
-    "@angular/router": "~4.2.0",
+    "@bangular/common": "~4.2.0",
+    "@bangular/compiler": "~4.2.0",
+    "@bangular/core": "~4.2.0",
+    "@bangular/forms": "~4.2.0",
+    "@bangular/http": "~4.2.0",
+    "@bangular/platform-browser": "~4.2.0",
+    "@bangular/platform-browser-dynamic": "~4.2.0",
+    "@bangular/router": "~4.2.0",
     "core-js": "^2.4.1",
     "rxjs": "5.0.1",
     "zone.js": "^0.8.4"
@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/node": "^6.0.45",
     "@types/jasmine": "2.5.36",
-    "angular2-template-loader": "^0.6.0",
+    "bangular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^3.0.4",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "2.0.0-beta.5",

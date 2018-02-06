@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ɵlooseIdentical as looseIdentical} from '@angular/core';
+import {ɵlooseIdentical as looseIdentical} from '@bangular/core';
 import {FormArray, FormControl, FormGroup} from '../model';
 import {Validators} from '../validators';
 import {AbstractControlDirective} from './abstract_control_directive';
@@ -180,7 +180,7 @@ export function syncPendingControls(form: FormGroup, directives: NgControl[]): v
   });
 }
 
-// TODO: vsavkin remove it once https://github.com/angular/angular/issues/3011 is implemented
+// TODO: vsavkin remove it once https://github.com/bangular/bangular/issues/3011 is implemented
 export function selectValueAccessor(
     dir: NgControl, valueAccessors: ControlValueAccessor[]): ControlValueAccessor|null {
   if (!valueAccessors) return null;

@@ -8,8 +8,8 @@ import {
   OnDestroy,
   OnInit,
   SimpleChanges
-} from '@angular/core';
-import { Component, Input } from '@angular/core';
+} from '@bangular/core';
+import { Component, Input } from '@bangular/core';
 import { LoggerService }    from './logger.service';
 
 let nextId = 1;

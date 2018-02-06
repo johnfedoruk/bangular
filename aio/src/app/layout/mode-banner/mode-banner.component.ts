@@ -1,12 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input } from '@bangular/core';
 import { VersionInfo } from 'app/navigation/navigation.service';
 
 @Component({
   selector: 'aio-mode-banner',
   template: `
   <div *ngIf="mode == 'archive'" class="mode-banner">
-    This is the <strong>archived documentation for Angular v{{version?.major}}.</strong>
-    Please visit <a href="https://angular.io/">angular.io</a> to see documentation for the current version of Angular.
+    This is the <strong>archived documentation for Bangular v{{version?.major}}.</strong>
+    Please visit <a href="https://bangular.io/">bangular.io</a> to see documentation for the current version of Bangular.
   </div>
   `
 })

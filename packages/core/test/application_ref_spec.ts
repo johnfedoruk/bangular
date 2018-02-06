@@ -3,18 +3,18 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {APP_BOOTSTRAP_LISTENER, APP_INITIALIZER, Compiler, CompilerFactory, Component, NgModule, NgZone, PlatformRef, TemplateRef, Type, ViewChild, ViewContainerRef} from '@angular/core';
-import {ApplicationRef} from '@angular/core/src/application_ref';
-import {ErrorHandler} from '@angular/core/src/error_handler';
-import {ComponentRef} from '@angular/core/src/linker/component_factory';
-import {BrowserModule} from '@angular/platform-browser';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {DOCUMENT} from '@angular/platform-browser/src/dom/dom_tokens';
-import {dispatchEvent} from '@angular/platform-browser/testing/src/browser_util';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {APP_BOOTSTRAP_LISTENER, APP_INITIALIZER, Compiler, CompilerFactory, Component, NgModule, NgZone, PlatformRef, TemplateRef, Type, ViewChild, ViewContainerRef} from '@bangular/core';
+import {ApplicationRef} from '@bangular/core/src/application_ref';
+import {ErrorHandler} from '@bangular/core/src/error_handler';
+import {ComponentRef} from '@bangular/core/src/linker/component_factory';
+import {BrowserModule} from '@bangular/platform-browser';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {DOCUMENT} from '@bangular/platform-browser/src/dom/dom_tokens';
+import {dispatchEvent} from '@bangular/platform-browser/testing/src/browser_util';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 import {NoopNgZone} from '../src/zone/ng_zone';
 import {ComponentFixtureNoNgZone, TestBed, async, inject, withModule} from '../testing';
 
@@ -55,7 +55,7 @@ class SomeComponent {
 
       const platformModule = getDOM().supportsDOMEvents() ?
           BrowserModule :
-          require('@angular/platform-server').ServerModule;
+          require('@bangular/platform-server').ServerModule;
 
       @NgModule({
         providers: [{provide: ErrorHandler, useValue: errorHandler}, options.providers || []],
@@ -585,13 +585,13 @@ class SomeComponent {
 class MockConsole {
   res: any[][] = [];
   log(...args: any[]): void {
-    // Logging from ErrorHandler should run outside of the Angular Zone.
-    NgZone.assertNotInAngularZone();
+    // Logging from ErrorHandler should run outside of the Bangular Zone.
+    NgZone.assertNotInBangularZone();
     this.res.push(args);
   }
   error(...args: any[]): void {
-    // Logging from ErrorHandler should run outside of the Angular Zone.
-    NgZone.assertNotInAngularZone();
+    // Logging from ErrorHandler should run outside of the Bangular Zone.
+    NgZone.assertNotInBangularZone();
     this.res.push(args);
   }
 }

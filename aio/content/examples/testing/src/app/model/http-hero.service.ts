@@ -1,8 +1,8 @@
 // #docplaster
 // #docregion
-import { Injectable }     from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Headers, RequestOptions } from '@angular/http';
+import { Injectable }     from '@bangular/core';
+import { Http, Response } from '@bangular/http';
+import { Headers, RequestOptions } from '@bangular/http';
 import { Hero }           from './hero';
 
 import { Observable }     from 'rxjs/Observable';

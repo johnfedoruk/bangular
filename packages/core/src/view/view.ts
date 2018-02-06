@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {Renderer2} from '../render/api';
@@ -489,7 +489,7 @@ function checkNoChangesNodeDynamic(view: ViewData, nodeDef: NodeDef, values: any
 }
 
 /**
- * Workaround https://github.com/angular/tsickle/issues/497
+ * Workaround https://github.com/bangular/tsickle/issues/497
  * @suppress {misplacedTypeAnnotation}
  */
 function checkNoChangesQuery(view: ViewData, nodeDef: NodeDef) {

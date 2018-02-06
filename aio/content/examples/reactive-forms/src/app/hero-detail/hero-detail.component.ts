@@ -1,7 +1,7 @@
 // #docplaster
 // #docregion
-import { Component, Input, OnChanges }       from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { Component, Input, OnChanges }       from '@bangular/core';
+import { FormArray, FormBuilder, FormGroup } from '@bangular/forms';
 
 import { Address, Hero, states } from '../data-model';
 // #docregion import-service

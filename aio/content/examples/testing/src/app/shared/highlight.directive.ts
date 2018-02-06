@@ -1,5 +1,5 @@
 // #docregion
-import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges } from '@bangular/core';
 
 @Directive({ selector: '[highlight]' })
 /** Set backgroundColor for the attached element to highlight color

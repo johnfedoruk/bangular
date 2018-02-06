@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 (function () {
@@ -12,7 +12,7 @@
 
   // keep a reference to compileProvider so we can register new component-directives
   // on-the-fly based on $routeProvider configuration
-  // TODO: remove this– right now you can only bootstrap one Angular app with this hack
+  // TODO: remove this– right now you can only bootstrap one Bangular app with this hack
   var $compileProvider, $q, $injector;
 
   /**
@@ -22,7 +22,7 @@
    * This module is intended to be used as a stop-gap solution for projects upgrading from ngRoute.
    * It intentionally does not implement all features of ngRoute.
    */
-  angular.module('ngRouteShim', [])
+  bangular.module('ngRouteShim', [])
     .provider('$route', $RouteProvider)
     .config(['$compileProvider', function (compileProvider) {
       $compileProvider = compileProvider;
@@ -33,7 +33,7 @@
     // Connects the legacy $routeProvider config shim to Component Router's config.
     .run(['$route', '$rootRouter', function ($route, $rootRouter) {
       $route.$$subscribe(function (routeDefinition) {
-        if (!angular.isArray(routeDefinition)) {
+        if (!bangular.isArray(routeDefinition)) {
           routeDefinition = [routeDefinition];
         }
         $rootRouter.config(routeDefinition);
@@ -76,14 +76,14 @@
      */
     this.when = function(path, route) {
       //copy original route object to preserve params inherited from proto chain
-      var routeCopy = angular.copy(route);
+      var routeCopy = bangular.copy(route);
 
       allCount++;
 
-      if (angular.isDefined(routeCopy.reloadOnSearch)) {
+      if (bangular.isDefined(routeCopy.reloadOnSearch)) {
         console.warn('Route for "' + path + '" uses "reloadOnSearch" which is not implemented.');
       }
-      if (angular.isDefined(routeCopy.caseInsensitiveMatch)) {
+      if (bangular.isDefined(routeCopy.caseInsensitiveMatch)) {
         console.warn('Route for "' + path + '" uses "caseInsensitiveMatch" which is not implemented.');
       }
 
@@ -149,7 +149,7 @@
           var resolvedLocals = {};
 
           componentDefinition.controller = ['$injector', '$scope', function ($injector, $scope) {
-            var locals = angular.extend({
+            var locals = bangular.extend({
               $scope: $scope
             }, resolvedLocals);
 
@@ -158,10 +158,10 @@
 
           // we resolve the locals in a canActivate block
           componentDefinition.controller.$canActivate = function() {
-            var locals = angular.extend({}, routeCopy.resolve);
+            var locals = bangular.extend({}, routeCopy.resolve);
 
-            angular.forEach(locals, function(value, key) {
-              locals[key] = angular.isString(value) ?
+            bangular.forEach(locals, function(value, key) {
+              locals[key] = bangular.isString(value) ?
                 $injector.get(value) : $injector.invoke(value, null, null, key);
             });
 
@@ -255,10 +255,10 @@
     $rootScope.$on('$routeChangeSuccess', function () {
       var newParams = $rootRouter.currentInstruction && $rootRouter.currentInstruction.component.params;
 
-      angular.forEach(paramsObj, function (val, name) {
+      bangular.forEach(paramsObj, function (val, name) {
         delete paramsObj[name];
       });
-      angular.forEach(newParams, function (val, name) {
+      bangular.forEach(newParams, function (val, name) {
         paramsObj[name] = val;
       });
     });
@@ -312,7 +312,7 @@
 
     var controller = route.controller;
     if (!name && controller) {
-      if (angular.isArray(controller)) {
+      if (bangular.isArray(controller)) {
         controller = controller[controller.length - 1];
       }
       name = controller.name;

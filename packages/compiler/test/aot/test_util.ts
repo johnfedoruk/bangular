@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AotCompilerHost, AotCompilerOptions, GeneratedFile, createAotCompiler, toTypeScript} from '@angular/compiler';
-import {MetadataBundlerHost} from '@angular/compiler-cli/src/metadata/bundler';
-import {MetadataCollector} from '@angular/compiler-cli/src/metadata/collector';
-import {ModuleMetadata} from '@angular/compiler-cli/src/metadata/index';
+import {AotCompilerHost, AotCompilerOptions, GeneratedFile, createAotCompiler, toTypeScript} from '@bangular/compiler';
+import {MetadataBundlerHost} from '@bangular/compiler-cli/src/metadata/bundler';
+import {MetadataCollector} from '@bangular/compiler-cli/src/metadata/collector';
+import {ModuleMetadata} from '@bangular/compiler-cli/src/metadata/index';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as ts from 'typescript';
@@ -17,7 +17,7 @@ import * as ts from 'typescript';
 export interface MetadataProvider { getMetadata(source: ts.SourceFile): ModuleMetadata|undefined; }
 
 let nodeModulesPath: string;
-let angularSourcePath: string;
+let bangularSourcePath: string;
 let rootPath: string;
 
 calcPathsOnDisc();
@@ -34,7 +34,7 @@ export function isDirectory(data: MockFileOrDirectory | undefined): data is Mock
 
 const NODE_MODULES = '/node_modules/';
 const IS_GENERATED = /\.(ngfactory|ngstyle)$/;
-const angularts = /@angular\/(\w|\/|-)+\.tsx?$/;
+const bangularts = /@bangular\/(\w|\/|-)+\.tsx?$/;
 const rxjs = /\/rxjs\//;
 const tsxfile = /\.tsx$/;
 export const settings: ts.CompilerOptions = {
@@ -63,7 +63,7 @@ function calcPathsOnDisc() {
   if (distIndex >= 0) {
     rootPath = moduleFilename.substr(0, distIndex);
     nodeModulesPath = path.join(rootPath, 'node_modules');
-    angularSourcePath = path.join(rootPath, 'packages');
+    bangularSourcePath = path.join(rootPath, 'packages');
   }
 }
 
@@ -76,15 +76,15 @@ export class EmittingCompilerHost implements ts.CompilerHost {
   private collector = new MetadataCollector();
 
   constructor(scriptNames: string[], private options: EmitterOptions) {
-    // Rewrite references to scripts with '@angular' to its corresponding location in
+    // Rewrite references to scripts with '@bangular' to its corresponding location in
     // the source tree.
     this.scriptNames = scriptNames.map(f => this.effectiveName(f));
     this.root = rootPath;
   }
 
-  public writtenAngularFiles(target = new Map<string, string>()): Map<string, string> {
+  public writtenBangularFiles(target = new Map<string, string>()): Map<string, string> {
     this.written.forEach((value, key) => {
-      const path = `/node_modules/@angular${key.substring(angularSourcePath.length)}`;
+      const path = `/node_modules/@bangular${key.substring(bangularSourcePath.length)}`;
       target.set(path, value);
     });
     return target;
@@ -114,9 +114,9 @@ export class EmittingCompilerHost implements ts.CompilerHost {
   public get written(): Map<string, string> { return this.writtenFiles; }
 
   public effectiveName(fileName: string): string {
-    const prefix = '@angular/';
-    return fileName.startsWith('@angular/') ?
-        path.join(angularSourcePath, fileName.substr(prefix.length)) :
+    const prefix = '@bangular/';
+    return fileName.startsWith('@bangular/') ?
+        path.join(bangularSourcePath, fileName.substr(prefix.length)) :
         fileName;
   }
 
@@ -539,38 +539,38 @@ const minCoreIndex = `
 `;
 
 export function setup(
-    options: {compileAngular: boolean, compileAnimations: boolean, compileCommon?: boolean} = {
-      compileAngular: true,
+    options: {compileBangular: boolean, compileAnimations: boolean, compileCommon?: boolean} = {
+      compileBangular: true,
       compileAnimations: true,
       compileCommon: false,
     }) {
-  let angularFiles = new Map<string, string>();
+  let bangularFiles = new Map<string, string>();
 
   beforeAll(() => {
-    if (options.compileAngular) {
+    if (options.compileBangular) {
       const emittingHost = new EmittingCompilerHost([], {emitMetadata: true});
-      emittingHost.addScript('@angular/core/index.ts', minCoreIndex);
+      emittingHost.addScript('@bangular/core/index.ts', minCoreIndex);
       const emittingProgram = ts.createProgram(emittingHost.scripts, settings, emittingHost);
       emittingProgram.emit();
-      emittingHost.writtenAngularFiles(angularFiles);
+      emittingHost.writtenBangularFiles(bangularFiles);
     }
     if (options.compileCommon) {
       const emittingHost =
-          new EmittingCompilerHost(['@angular/common/index.ts'], {emitMetadata: true});
+          new EmittingCompilerHost(['@bangular/common/index.ts'], {emitMetadata: true});
       const emittingProgram = ts.createProgram(emittingHost.scripts, settings, emittingHost);
       emittingProgram.emit();
-      emittingHost.writtenAngularFiles(angularFiles);
+      emittingHost.writtenBangularFiles(bangularFiles);
     }
     if (options.compileAnimations) {
       const emittingHost =
-          new EmittingCompilerHost(['@angular/animations/index.ts'], {emitMetadata: true});
+          new EmittingCompilerHost(['@bangular/animations/index.ts'], {emitMetadata: true});
       const emittingProgram = ts.createProgram(emittingHost.scripts, settings, emittingHost);
       emittingProgram.emit();
-      emittingHost.writtenAngularFiles(angularFiles);
+      emittingHost.writtenBangularFiles(bangularFiles);
     }
   });
 
-  return angularFiles;
+  return bangularFiles;
 }
 
 export function expectNoDiagnostics(program: ts.Program) {

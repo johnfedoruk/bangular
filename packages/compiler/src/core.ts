@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 // Attention:
-// This file duplicates types and values from @angular/core
-// so that we are able to make @angular/compiler independent of @angular/core.
-// This is important to prevent a build cycle, as @angular/core needs to
+// This file duplicates types and values from @bangular/core
+// so that we are able to make @bangular/compiler independent of @bangular/core.
+// This is important to prevent a build cycle, as @bangular/core needs to
 // be compiled with the compiler.
 
 export interface Inject { token: any; }

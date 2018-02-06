@@ -21,15 +21,15 @@
     },
     map: {
       app: 'app',
-      '@angular/core': 'npm:@angular/core/bundles/core.umd.min.js',
-      '@angular/common': 'npm:@angular/common/bundles/common.umd.min.js',
-      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.min.js',
-      '@angular/platform-browser':
-         'npm:@angular/platform-browser/bundles/platform-browser.umd.min.js',
-      '@angular/platform-browser-dynamic':
-         'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js',
+      '@bangular/core': 'npm:@bangular/core/bundles/core.umd.min.js',
+      '@bangular/common': 'npm:@bangular/common/bundles/common.umd.min.js',
+      '@bangular/compiler': 'npm:@bangular/compiler/bundles/compiler.umd.min.js',
+      '@bangular/platform-browser':
+         'npm:@bangular/platform-browser/bundles/platform-browser.umd.min.js',
+      '@bangular/platform-browser-dynamic':
+         'npm:@bangular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js',
       'rxjs': 'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'bangular-in-memory-web-api': 'npm:bangular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'ts': 'npm:plugin-typescript/lib/plugin.js',
       'typescript': 'npm:typescript/lib/typescript.js',
     },

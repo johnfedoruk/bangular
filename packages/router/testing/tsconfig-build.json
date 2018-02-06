@@ -5,11 +5,11 @@
     "baseUrl": ".",
     "rootDir": "../",
     "paths": {
-      "@angular/core": ["../../../dist/packages/core"],
-      "@angular/common": ["../../../dist/packages/common"],
-      "@angular/common/testing": ["../../../dist/packages/common/testing"],
-      "@angular/platform-browser": ["../../../dist/packages/platform-browser"],
-      "@angular/router": ["../../../dist/packages/router"]
+      "@bangular/core": ["../../../dist/packages/core"],
+      "@bangular/common": ["../../../dist/packages/common"],
+      "@bangular/common/testing": ["../../../dist/packages/common/testing"],
+      "@bangular/platform-browser": ["../../../dist/packages/platform-browser"],
+      "@bangular/router": ["../../../dist/packages/router"]
     },
     "outDir": "../../../dist/packages/router"
   },
@@ -18,11 +18,11 @@
     "public_api.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "testing.js",
-    "flatModuleId": "@angular/router/testing"
+    "flatModuleId": "@bangular/router/testing"
   }
 }

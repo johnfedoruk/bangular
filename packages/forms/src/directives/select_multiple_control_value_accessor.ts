@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Directive, ElementRef, Host, Input, OnDestroy, Optional, Renderer2, StaticProvider, forwardRef, ɵlooseIdentical as looseIdentical} from '@angular/core';
+import {Directive, ElementRef, Host, Input, OnDestroy, Optional, Renderer2, StaticProvider, forwardRef, ɵlooseIdentical as looseIdentical} from '@bangular/core';
 
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from './control_value_accessor';
 
@@ -44,14 +44,14 @@ abstract class HTMLCollection {
  *
  *  ### Caveat: Options selection
  *
- * Angular uses object identity to select options. It's possible for the identities of items
+ * Bangular uses object identity to select options. It's possible for the identities of items
  * to change while the data does not. This can happen, for example, if the items are produced
  * from an RPC to the server, and that RPC is re-run. Even if the data hasn't changed, the
  * second response will produce objects with different identities.
  *
  * To customize the default option comparison algorithm, `<select multiple>` supports `compareWith`
  * input. `compareWith` takes a **function** which has two arguments: `option1` and `option2`.
- * If `compareWith` is given, Angular selects options by the return value of the function.
+ * If `compareWith` is given, Bangular selects options by the return value of the function.
  *
  * #### Syntax
  *
@@ -165,7 +165,7 @@ export class SelectMultipleControlValueAccessor implements ControlValueAccessor 
 }
 
 /**
- * Marks `<option>` as dynamic, so Angular can be notified when options change.
+ * Marks `<option>` as dynamic, so Bangular can be notified when options change.
  *
  * ### Example
  *

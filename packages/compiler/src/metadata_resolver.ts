@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {StaticSymbol, StaticSymbolCache} from './aot/static_symbol';
@@ -918,7 +918,7 @@ export class CompileMetadataResolver {
       if (throwOnUnknownDeps || this._config.strictInjectionParameters) {
         this._reportError(syntaxError(message), typeOrFunc);
       } else {
-        this._console.warn(`Warning: ${message} This will become an error in Angular v6.x`);
+        this._console.warn(`Warning: ${message} This will become an error in Bangular v6.x`);
       }
     }
 

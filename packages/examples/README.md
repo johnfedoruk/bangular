@@ -1,8 +1,8 @@
 # API Examples
 
 This folder contains small example apps that get in-lined into our API docs.
-Each example contains tests for application behavior (as opposed to testing Angular's
-behavior) just like an Angular application developer would write.
+Each example contains tests for application behavior (as opposed to testing Bangular's
+behavior) just like an Bangular application developer would write.
 
 # Running the examples
 

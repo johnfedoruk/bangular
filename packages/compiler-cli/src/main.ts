@@ -4,10 +4,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-// Must be imported first, because Angular decorators throw on load.
+// Must be imported first, because Bangular decorators throw on load.
 import 'reflect-metadata';
 
 import * as ts from 'typescript';
@@ -46,7 +46,7 @@ function createEmitCallback(options: api.CompilerOptions): api.TsEmitCallback|un
     return undefined;
   }
   if (transformDecorators) {
-    // This is needed as a workaround for https://github.com/angular/tsickle/issues/635
+    // This is needed as a workaround for https://github.com/bangular/tsickle/issues/635
     // Otherwise tsickle might emit references to non imported values
     // as TypeScript elided the import.
     options.emitDecoratorMetadata = true;

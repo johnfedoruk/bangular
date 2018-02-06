@@ -17,7 +17,7 @@ When you’re done, users will be able to navigate the app like this:
 
 ## Add the _AppRoutingModule_
 
-An Angular best practice is to load and configure the router in a separate, top-level module
+An Bangular best practice is to load and configure the router in a separate, top-level module
 that is dedicated to routing and imported by the root `AppModule`.
 
 By convention, the module class name is `AppRoutingModule` and it belongs in the `app-routing.module.ts` in the `src/app` folder.
@@ -44,7 +44,7 @@ You generally don't declare components in a routing module so you can delete the
 `@NgModule.declarations` array and delete `CommonModule` references too.
 
 You'll configure the router with `Routes` in the `RouterModule`
-so import those two symbols from the `@angular/router` library.
+so import those two symbols from the `@bangular/router` library.
 
 Add an `@NgModule.exports` array with `RouterModule` in it.
 Exporting `RouterModule` makes router directives available for use
@@ -62,7 +62,7 @@ in the `AppModule` components that will need them.
 *Routes* tell the router which view to display when a user clicks a link or
 pastes a URL into the browser address bar.
 
-A typical Angular `Route` has two properties:
+A typical Bangular `Route` has two properties:
 
 1. `path`: a string that matches the URL in the browser address bar.
 1. `component`: the component that the router should create when navigating to this route.
@@ -210,7 +210,7 @@ The  _template_ presents a grid of hero name links.
 
 The _class_ is similar to the `HeroesComponent` class.
 * It defines a `heroes` array property.
-* The constructor expects Angular to inject the `HeroService` into a private `heroService` property.
+* The constructor expects Bangular to inject the `HeroService` into a private `heroService` property.
 * The `ngOnInit()` lifecycle hook calls `getHeroes`.
 
 This `getHeroes` reduces the number of heroes displayed to four
@@ -338,7 +338,7 @@ fix the dashboard hero links to navigate via the _parameterized_ dashboard route
   title="src/app/dashboard/dashboard.component.html (hero links)">
 </code-example>
 
-You're using Angular [interpolation binding](guide/template-syntax#interpolation) within the `*ngFor` repeater 
+You're using Bangular [interpolation binding](guide/template-syntax#interpolation) within the `*ngFor` repeater 
 to insert the current interation's `hero.id` into each 
 [`routerLink`](#routerlink).
 
@@ -421,7 +421,7 @@ The _"id"_ parameter is the `id` of the hero to display.
 The [`HeroService`](tutorial/toh-pt4) gets hero data from the remote server
 and this component will use it to get the _hero-to-display_.
 
-The [`location`](api/common/Location) is an Angular service for interacting with the browser.
+The [`location`](api/common/Location) is an Bangular service for interacting with the browser.
 You'll use it [later](#goback) to navigate back to the view that navigated here.
 
 ### Extract the _id_ route parameter
@@ -600,7 +600,7 @@ Here are the code files discussed on this page and your app should look like thi
 
 ## Summary
 
-* You added the Angular router to navigate among different components.
+* You added the Bangular router to navigate among different components.
 * You turned the `AppComponent` into a navigation shell with `<a>` links and a `<router-outlet>`.
 * You configured the router in an `AppRoutingModule` 
 * You defined simple routes, a redirect route, and a parameterized route.

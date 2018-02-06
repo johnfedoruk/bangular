@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {C, E, P, T, V, cR, cr, detectChanges, e, m, pD, r, v} from '../../src/render3/index';
@@ -466,12 +466,12 @@ describe('content projection', () => {
   });
 
   /**
-   * Warning: this test is _not_ in-line with what Angular does atm.
+   * Warning: this test is _not_ in-line with what Bangular does atm.
    * Moreover the current implementation logic will result in DOM nodes
    * being re-assigned from one parent to another. Proposal: have compiler
    * to remove all but the latest occurrence of <ng-content> so we generate
    * only one P(n, m, 0) instruction. It would make it consistent with the
-   * current Angular behaviour:
+   * current Bangular behaviour:
    * http://plnkr.co/edit/OAYkNawTDPkYBFTqovTP?p=preview
    */
   it('should project nodes into the last available ng-content', () => {

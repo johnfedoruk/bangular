@@ -1,6 +1,6 @@
 // #docregion
 import 'rxjs/add/observable/of';
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 import { Observable } from 'rxjs/Observable';
 
 /**

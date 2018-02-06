@@ -1,6 +1,6 @@
-import { Injectable, Inject, Optional } from '@angular/core';
-import { APP_BASE_HREF } from '@angular/common';
-import { HttpClient, HttpHeaders }from '@angular/common/http';
+import { Injectable, Inject, Optional } from '@bangular/core';
+import { APP_BASE_HREF } from '@bangular/common';
+import { HttpClient, HttpHeaders }from '@bangular/common/http';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';

@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {LocationChangeEvent, LocationChangeListener, PlatformLocation} from '@angular/common';
-import {Inject, Injectable, Optional} from '@angular/core';
-import {DOCUMENT, ɵgetDOM as getDOM} from '@angular/platform-browser';
+import {LocationChangeEvent, LocationChangeListener, PlatformLocation} from '@bangular/common';
+import {Inject, Injectable, Optional} from '@bangular/core';
+import {DOCUMENT, ɵgetDOM as getDOM} from '@bangular/platform-browser';
 import {Subject} from 'rxjs/Subject';
 import * as url from 'url';
 import {INITIAL_CONFIG, PlatformConfig} from './tokens';

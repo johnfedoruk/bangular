@@ -1,8 +1,8 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@bangular/common/http/testing';
 
 // Other imports
-import { TestBed } from '@angular/core/testing';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { TestBed } from '@bangular/core/testing';
+import { HttpClient, HttpResponse } from '@bangular/common/http';
 
 import { Hero } from './hero';
 import { HeroesService } from './heroes.service';

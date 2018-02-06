@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as fs from 'fs';
@@ -45,8 +45,8 @@ const sourceFilePathBlacklist = [
 
 // Import package name whitelist. These will be ignored.
 const importsWhitelist = [
-  '@angular/compiler-cli',                        // Not used in a browser.
-  '@angular/compiler-cli/src/language_services',  // Deep import from language-service.
+  '@bangular/compiler-cli',                        // Not used in a browser.
+  '@bangular/compiler-cli/src/language_services',  // Deep import from language-service.
   'chokidar',  // Not part of compiler-cli/browser, but still imported.
   'reflect-metadata',
   'tsickle',
@@ -55,7 +55,7 @@ const importsWhitelist = [
 ];
 
 const packageScopedImportWhitelist: [RegExp, string[]][] = [
-  [/service-worker[/\\]cli/, ['@angular/service-worker']],
+  [/service-worker[/\\]cli/, ['@bangular/service-worker']],
 ];
 
 

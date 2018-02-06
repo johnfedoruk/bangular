@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import * as ng from '@angular/compiler-cli';
+import * as ng from '@bangular/compiler-cli';
 import {BazelOptions, CachedFileLoader, CompilerHost, FileCache, FileLoader, UncachedFileLoader, constructManifest, debug, fixUmdModuleDeclarations, parseTsconfig, runAsWorker, runWorkerLoop} from '@bazel/typescript';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -52,7 +52,7 @@ export function runOneBuild(args: string[], inputs?: {[path: string]: string}): 
     return false;
   }
   const {options: tsOptions, bazelOpts, files, config} = parsedOptions;
-  const expectedOuts = config['angularCompilerOptions']['expectedOut'];
+  const expectedOuts = config['bangularCompilerOptions']['expectedOut'];
 
   const {basePath} = ng.calcProjectFileAndBasePath(project);
   const compilerOpts = ng.createNgCompilerOptions(basePath, config, tsOptions);
@@ -275,7 +275,7 @@ function gatherDiagnosticsForInputsOnly(
     diagnostics.push(...tsProgram.getSemanticDiagnostics(sf));
   }
   if (!diagnostics.length) {
-    // only gather the angular diagnostics if we have no diagnostics
+    // only gather the bangular diagnostics if we have no diagnostics
     // in any other files.
     diagnostics.push(...ngProgram.getNgStructuralDiagnostics());
     diagnostics.push(...ngProgram.getNgSemanticDiagnostics());

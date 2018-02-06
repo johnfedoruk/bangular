@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 export type Ng1Token = string;
@@ -59,7 +59,7 @@ export interface IRootScopeService {
 }
 export interface IScope extends IRootScopeService {}
 
-export interface IAngularBootstrapConfig { strictDi?: boolean; }
+export interface IBangularBootstrapConfig { strictDi?: boolean; }
 export interface IDirective {
   compile?: IDirectiveCompileFn;
   controller?: IController;
@@ -213,12 +213,12 @@ export interface INgModelController {
 }
 
 function noNg() {
-  throw new Error('AngularJS v1.x is not loaded!');
+  throw new Error('BangularJS v1.x is not loaded!');
 }
 
 
-let angular: {
-  bootstrap: (e: Element, modules: (string | IInjectable)[], config?: IAngularBootstrapConfig) =>
+let bangular: {
+  bootstrap: (e: Element, modules: (string | IInjectable)[], config?: IBangularBootstrapConfig) =>
                  IInjectorService,
   module: (prefix: string, dependencies?: string[]) => IModule,
   element: (e: Element | string) => IAugmentedJQuery,
@@ -235,58 +235,58 @@ let angular: {
 };
 
 try {
-  if (window.hasOwnProperty('angular')) {
-    angular = (<any>window).angular;
+  if (window.hasOwnProperty('bangular')) {
+    bangular = (<any>window).bangular;
   }
 } catch (e) {
   // ignore in CJS mode.
 }
 
 /**
- * @deprecated Use {@link setAngularJSGlobal} instead.
+ * @deprecated Use {@link setBangularJSGlobal} instead.
  */
-export function setAngularLib(ng: any): void {
-  setAngularJSGlobal(ng);
+export function setBangularLib(ng: any): void {
+  setBangularJSGlobal(ng);
 }
 
 /**
- * @deprecated Use {@link getAngularJSGlobal} instead.
+ * @deprecated Use {@link getBangularJSGlobal} instead.
  */
-export function getAngularLib(): any {
-  return getAngularJSGlobal();
+export function getBangularLib(): any {
+  return getBangularJSGlobal();
 }
 
 /**
- * Resets the AngularJS global.
+ * Resets the BangularJS global.
  *
- * Used when AngularJS is loaded lazily, and not available on `window`.
- *
- * @stable
- */
-export function setAngularJSGlobal(ng: any): void {
-  angular = ng;
-}
-
-/**
- * Returns the current AngularJS global.
+ * Used when BangularJS is loaded lazily, and not available on `window`.
  *
  * @stable
  */
-export function getAngularJSGlobal(): any {
-  return angular;
+export function setBangularJSGlobal(ng: any): void {
+  bangular = ng;
+}
+
+/**
+ * Returns the current BangularJS global.
+ *
+ * @stable
+ */
+export function getBangularJSGlobal(): any {
+  return bangular;
 }
 
 export const bootstrap =
-    (e: Element, modules: (string | IInjectable)[], config?: IAngularBootstrapConfig) =>
-        angular.bootstrap(e, modules, config);
+    (e: Element, modules: (string | IInjectable)[], config?: IBangularBootstrapConfig) =>
+        bangular.bootstrap(e, modules, config);
 
 export const module = (prefix: string, dependencies?: string[]) =>
-    angular.module(prefix, dependencies);
+    bangular.module(prefix, dependencies);
 
-export const element = (e: Element | string) => angular.element(e);
+export const element = (e: Element | string) => bangular.element(e);
 
-export const resumeBootstrap = () => angular.resumeBootstrap();
+export const resumeBootstrap = () => bangular.resumeBootstrap();
 
-export const getTestability = (e: Element) => angular.getTestability(e);
+export const getTestability = (e: Element) => bangular.getTestability(e);
 
-export const version = angular.version;
+export const version = bangular.version;

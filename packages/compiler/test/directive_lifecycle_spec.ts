@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {LifecycleHooks as Hooks, hasLifecycleHook as hasLifecycleHookImpl} from '@angular/compiler/src/lifecycle_reflector';
-import {SimpleChanges} from '@angular/core';
-import {JitReflector} from '@angular/platform-browser-dynamic/src/compiler_reflector';
+import {LifecycleHooks as Hooks, hasLifecycleHook as hasLifecycleHookImpl} from '@bangular/compiler/src/lifecycle_reflector';
+import {SimpleChanges} from '@bangular/core';
+import {JitReflector} from '@bangular/platform-browser-dynamic/src/compiler_reflector';
 
 function hasLifecycleHook(hook: Hooks, directive: any): boolean {
   return hasLifecycleHookImpl(new JitReflector(), hook, directive);

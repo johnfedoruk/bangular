@@ -1,9 +1,9 @@
 // #docregion
 /* avoid */
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component, OnInit } from '@angular/core';
+import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
+import { BrowserModule } from '@bangular/platform-browser';
+import { NgModule, Component, OnInit } from '@bangular/core';
 
 class Hero {
   id: number;

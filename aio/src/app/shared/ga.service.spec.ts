@@ -1,4 +1,4 @@
-import { ReflectiveInjector } from '@angular/core';
+import { ReflectiveInjector } from '@bangular/core';
 
 import { GaService } from 'app/shared/ga.service';
 import { WindowToken } from 'app/shared/window';

@@ -1,10 +1,10 @@
-# Angular Language Service
+# Bangular Language Service
 
-The Angular Language Service is a way to get completions, errors, 
-hints, and navigation inside your Angular templates whether they 
+The Bangular Language Service is a way to get completions, errors, 
+hints, and navigation inside your Bangular templates whether they 
 are external in an HTML file or embedded in annotations/decorators 
-in a string. The Angular Language Service autodetects that you are 
-opening an Angular file, reads your `tsconfig.json` file, finds all the 
+in a string. The Bangular Language Service autodetects that you are 
+opening an Bangular file, reads your `tsconfig.json` file, finds all the 
 templates you have in your application, and then provides language 
 services for any templates that you open.
 
@@ -26,8 +26,8 @@ show up in the completion list.
 
 ## Error checking
 
-The Angular Language Service can also forewarn you of mistakes in your code. 
-In this example, Angular doesn't know what `orders` is or where it comes from. 
+The Bangular Language Service can also forewarn you of mistakes in your code. 
+In this example, Bangular doesn't know what `orders` is or where it comes from. 
 
 <figure>
   <img src="generated/images/guide/language-service/language-error.gif" alt="error checking">
@@ -44,14 +44,14 @@ click and press F12 to go directly to its definition.
 </figure>
 
 
-## Angular Language Service in your editor
+## Bangular Language Service in your editor
 
-Angular Language Service is currently available for [Visual Studio Code](https://code.visualstudio.com/) and 
+Bangular Language Service is currently available for [Visual Studio Code](https://code.visualstudio.com/) and 
 [WebStorm](https://www.jetbrains.com/webstorm). 
 
 ### Visual Studio Code
 
-In Visual Studio Code, install Angular Language Service from the store, 
+In Visual Studio Code, install Bangular Language Service from the store, 
 which is accessible from the bottom icon on the left menu pane. 
 You can also use the VS Quick Open (⌘+P) to search for the extension. When you've opened it, 
 enter the following command: 
@@ -60,15 +60,15 @@ enter the following command:
 ext install ng-template
 ```
 
-Then click the install button to install the Angular Language Service. 
+Then click the install button to install the Bangular Language Service. 
 
 
 ### WebStorm
 
 In webstorm, you have to install the language service as a dev dependency. 
-When Angular sees this dev dependency, it provides the 
+When Bangular sees this dev dependency, it provides the 
 language service inside of WebStorm. Webstorm then gives you 
-colorization inside the template and autocomplete in addition to the Angular Language Service.
+colorization inside the template and autocomplete in addition to the Bangular Language Service.
 
 Here's the dev dependency 
 you need to have in `package.json`:
@@ -76,7 +76,7 @@ you need to have in `package.json`:
 ```json
 
 devDependencies {
-	"@angular/language-service": "^4.0.0"
+	"@bangular/language-service": "^4.0.0"
 }
 ```
 
@@ -108,9 +108,9 @@ Install the latest version of typescript in a local `node_modules` directory:
 npm install --save-dev typescript
 ```
 
-Then install the Angular Language Service in the same location:
+Then install the Bangular Language Service in the same location:
 ```sh
-npm install --save-dev @angular/language-service
+npm install --save-dev @bangular/language-service
 ```
 
 Starting with TypeScript 2.3, TypeScript has a language service plugin model that the language service can use. 
@@ -124,18 +124,18 @@ Next, in your user preferences (`Cmd+,` or `Ctrl+,`), add:
 
 ## Installing in your project
 
-You can also install Angular Language Service in your project with the 
+You can also install Bangular Language Service in your project with the 
 following `npm` command:
 
 ```sh
-npm install --save-dev @angular/language-service
+npm install --save-dev @bangular/language-service
 ```
 Additionally, add the following to the `"compilerOptions"` section of 
 your project's `tsconfig.json`.
 
 ```json
   "plugins": [
-      {"name": "@angular/language-service"}
+      {"name": "@bangular/language-service"}
   ]
 ```
 Note that this only provides diagnostics and completions in `.ts` 
@@ -149,15 +149,15 @@ When you use an editor with a language service, there's an
 editor process which starts a separate language process/service 
 to which it speaks through an [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call). 
 Any time you type inside of the editor, it sends information to the other process to 
-track the state of your project. When you trigger a completion list within a template, the editor process first parses the template into an HTML AST, or [abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree). Then the Angular compiler interprets 
+track the state of your project. When you trigger a completion list within a template, the editor process first parses the template into an HTML AST, or [abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree). Then the Bangular compiler interprets 
 what module the template is part of, the scope you're in, and the component selector. Then it figures out where in the template AST your cursor is. When it determines the 
 context, it can then determine what the children can be.
 
-It's a little more involved if you are in an interpolation. If you have an interpolation of `{{data.---}}` inside a `div` and need the completion list after `data.---`, the compiler can't use the HTML AST to find the answer. The HTML AST can only tell the compiler that there is some text with the characters "`{{data.---}}`". That's when the template parser produces an expression AST, which resides within the template AST. The Angular Language Services then looks at `data.---` within its context and asks the TypeScript Language Service what the members of data are. TypeScript then returns the list of possibilities.
+It's a little more involved if you are in an interpolation. If you have an interpolation of `{{data.---}}` inside a `div` and need the completion list after `data.---`, the compiler can't use the HTML AST to find the answer. The HTML AST can only tell the compiler that there is some text with the characters "`{{data.---}}`". That's when the template parser produces an expression AST, which resides within the template AST. The Bangular Language Services then looks at `data.---` within its context and asks the TypeScript Language Service what the members of data are. TypeScript then returns the list of possibilities.
 
 
 For more in-depth information, see the 
-[Angular Language Service API](https://github.com/angular/angular/blob/master/packages/language-service/src/types.ts)
+[Bangular Language Service API](https://github.com/bangular/bangular/blob/master/packages/language-service/src/types.ts)
 
 
 
@@ -170,7 +170,7 @@ For more in-depth information, see the
 
 ## More on Information
 
-For more information, see [Chuck Jazdzewski's presentation](https://www.youtube.com/watch?v=ez3R0Gi4z5A&t=368s) on the Angular Language 
+For more information, see [Chuck Jazdzewski's presentation](https://www.youtube.com/watch?v=ez3R0Gi4z5A&t=368s) on the Bangular Language 
 Service from [ng-conf](https://www.ng-conf.org/) 2017.
 
 

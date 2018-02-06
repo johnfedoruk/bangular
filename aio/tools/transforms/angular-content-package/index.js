@@ -3,19 +3,19 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 const Package = require('dgeni').Package;
 const glob = require('glob');
 const ignore = require('ignore');
 const fs = require('fs');
 const path = require('canonical-path');
-const basePackage = require('../angular-base-package');
+const basePackage = require('../bangular-base-package');
 const contentPackage = require('../content-package');
 
 const { CONTENTS_PATH, GUIDE_EXAMPLES_PATH } = require('../config');
 
-module.exports = new Package('angular-content', [basePackage, contentPackage])
+module.exports = new Package('bangular-content', [basePackage, contentPackage])
 
   // Where do we get the source files?
   .config(function(readFilesProcessor, collectExamples, renderExamples) {

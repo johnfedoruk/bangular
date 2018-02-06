@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Position, isSyntaxError, syntaxError} from '@angular/compiler';
+import {Position, isSyntaxError, syntaxError} from '@bangular/compiler';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as ts from 'typescript';
@@ -120,7 +120,7 @@ export function calcProjectFileAndBasePath(project: string):
 
 export function createNgCompilerOptions(
     basePath: string, config: any, tsOptions: ts.CompilerOptions): api.CompilerOptions {
-  return {...tsOptions, ...config.angularCompilerOptions, genDir: basePath, basePath};
+  return {...tsOptions, ...config.bangularCompilerOptions, genDir: basePath, basePath};
 }
 
 export function readConfiguration(
@@ -182,7 +182,7 @@ export function exitCodeFromResult(diags: Diagnostics | undefined): number {
   }
 
   // Return 2 if any of the errors were unknown.
-  return diags.some(d => d.source === 'angular' && d.code === api.UNKNOWN_ERROR_CODE) ? 2 : 1;
+  return diags.some(d => d.source === 'bangular' && d.code === api.UNKNOWN_ERROR_CODE) ? 2 : 1;
 }
 
 export function performCompilation({rootNames, options, host, oldProgram, emitCallback,
@@ -259,13 +259,13 @@ function defaultGatherDiagnostics(program: api.Program): Diagnostics {
   checkOtherDiagnostics =
       checkOtherDiagnostics && checkDiagnostics(program.getTsSyntacticDiagnostics() as Diagnostics);
 
-  // Check TypeScript semantic and Angular structure diagnostics
+  // Check TypeScript semantic and Bangular structure diagnostics
   checkOtherDiagnostics =
       checkOtherDiagnostics &&
       checkDiagnostics(
           [...program.getTsSemanticDiagnostics(), ...program.getNgStructuralDiagnostics()]);
 
-  // Check Angular semantic diagnostics
+  // Check Bangular semantic diagnostics
   checkOtherDiagnostics =
       checkOtherDiagnostics && checkDiagnostics(program.getNgSemanticDiagnostics() as Diagnostics);
 

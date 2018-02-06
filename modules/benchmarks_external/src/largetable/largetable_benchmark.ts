@@ -3,21 +3,21 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {getIntParameter, getStringParameter, bindAction} from '@angular/testing/src/benchmark_util';
-declare var angular: any;
+import {getIntParameter, getStringParameter, bindAction} from '@bangular/testing/src/benchmark_util';
+declare var bangular: any;
 
 const totalRows = getIntParameter('rows');
 const totalColumns = getIntParameter('columns');
 const benchmarkType = getStringParameter('benchmarkType');
 
 export function main() {
-  angular.bootstrap(document.querySelector('largetable'), ['app']);
+  bangular.bootstrap(document.querySelector('largetable'), ['app']);
 }
 
-angular.module('app', [])
+bangular.module('app', [])
     .config(function($compileProvider) {
       if ($compileProvider.debugInfoEnabled) {
         $compileProvider.debugInfoEnabled(false);

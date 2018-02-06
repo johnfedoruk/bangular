@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 import './init';
 import * as fs from 'fs';
@@ -27,7 +27,7 @@ describe('template codegen output', () => {
     expect(fs.existsSync(metadataOutput)).toBeTruthy();
     const output = fs.readFileSync(metadataOutput, {encoding: 'utf-8'});
     expect(output).toContain('"decorators":');
-    expect(output).toContain('"module":"@angular/core","name":"Component"');
+    expect(output).toContain('"module":"@bangular/core","name":"Component"');
   });
 
   it('should write .d.ts files', () => {
@@ -37,7 +37,7 @@ describe('template codegen output', () => {
   });
 
   it('should write .ngfactory.js for .d.ts inputs', () => {
-    const factoryOutput = path.join('node_modules', '@angular', 'common', 'common.ngfactory.js');
+    const factoryOutput = path.join('node_modules', '@bangular', 'common', 'common.ngfactory.js');
     expect(fs.existsSync(factoryOutput)).toBeTruthy();
   });
 

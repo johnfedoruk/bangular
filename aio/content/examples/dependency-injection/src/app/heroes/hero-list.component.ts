@@ -1,6 +1,6 @@
 /* tslint:disable:one-line */
 // #docregion
-import { Component }   from '@angular/core';
+import { Component }   from '@bangular/core';
 import { Hero }        from './hero';
 import { HeroService } from './hero.service';
 

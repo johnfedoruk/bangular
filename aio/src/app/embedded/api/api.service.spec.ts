@@ -1,6 +1,6 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { Injector } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@bangular/common/http/testing';
+import { Injector } from '@bangular/core';
+import { TestBed } from '@bangular/core/testing';
 
 import { Logger } from 'app/shared/logger.service';
 

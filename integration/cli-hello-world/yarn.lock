@@ -2,46 +2,46 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/build-optimizer@~0.0.42":
+"@bangular-devkit/build-optimizer@~0.0.42":
   version "0.0.42"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.0.42.tgz#402b0dda4883db91e2381c3ddc55888408a7894e"
+  resolved "https://registry.yarnpkg.com/@bangular-devkit/build-optimizer/-/build-optimizer-0.0.42.tgz#402b0dda4883db91e2381c3ddc55888408a7894e"
   dependencies:
     loader-utils "^1.1.0"
     source-map "^0.5.6"
     typescript "~2.6.2"
     webpack-sources "^1.0.1"
 
-"@angular-devkit/core@~0.0.29":
+"@bangular-devkit/core@~0.0.29":
   version "0.0.29"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.0.29.tgz#6fb319b45a62eff172318cbe256fdb24ef20af2b"
+  resolved "https://registry.yarnpkg.com/@bangular-devkit/core/-/core-0.0.29.tgz#6fb319b45a62eff172318cbe256fdb24ef20af2b"
   dependencies:
     ajv "~5.5.1"
     chokidar "^1.7.0"
     rxjs "^5.5.6"
     source-map "^0.5.6"
 
-"@angular-devkit/schematics@~0.0.52":
+"@bangular-devkit/schematics@~0.0.52":
   version "0.0.52"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.0.52.tgz#cbd2f42778b50d6422a254ffaec05ad4ef3cb6c0"
+  resolved "https://registry.yarnpkg.com/@bangular-devkit/schematics/-/schematics-0.0.52.tgz#cbd2f42778b50d6422a254ffaec05ad4ef3cb6c0"
   dependencies:
     "@ngtools/json-schema" "^1.1.0"
     rxjs "^5.5.6"
 
-"@angular/animations@file:../../dist/packages-dist/animations":
+"@bangular/animations@file:../../dist/packages-dist/animations":
   version "6.0.0-beta.1-b36cc7db7"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/cli@1.6.6":
+"@bangular/cli@1.6.6":
   version "1.6.6"
-  resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.6.6.tgz#002119ab2ed804bbdc86075e0095eadda2a0baa0"
+  resolved "https://registry.yarnpkg.com/@bangular/cli/-/cli-1.6.6.tgz#002119ab2ed804bbdc86075e0095eadda2a0baa0"
   dependencies:
-    "@angular-devkit/build-optimizer" "~0.0.42"
-    "@angular-devkit/core" "~0.0.29"
-    "@angular-devkit/schematics" "~0.0.52"
+    "@bangular-devkit/build-optimizer" "~0.0.42"
+    "@bangular-devkit/core" "~0.0.29"
+    "@bangular-devkit/schematics" "~0.0.52"
     "@ngtools/json-schema" "1.1.0"
     "@ngtools/webpack" "1.9.6"
-    "@schematics/angular" "~0.1.17"
+    "@schematics/bangular" "~0.1.17"
     autoprefixer "^7.2.3"
     chalk "~2.2.0"
     circular-dependency-plugin "^4.2.1"
@@ -96,12 +96,12 @@
   optionalDependencies:
     node-sass "^4.7.2"
 
-"@angular/common@file:../../dist/packages-dist/common":
+"@bangular/common@file:../../dist/packages-dist/common":
   version "6.0.0-beta.1-b36cc7db7"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/compiler-cli@file:../../dist/packages-dist/compiler-cli":
+"@bangular/compiler-cli@file:../../dist/packages-dist/compiler-cli":
   version "6.0.0-beta.1-b36cc7db7"
   dependencies:
     chokidar "^1.4.2"
@@ -109,40 +109,40 @@
     reflect-metadata "^0.1.2"
     tsickle "^0.26.0"
 
-"@angular/compiler@file:../../dist/packages-dist/compiler":
+"@bangular/compiler@file:../../dist/packages-dist/compiler":
   version "6.0.0-beta.1-b36cc7db7"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@file:../../dist/packages-dist/core":
+"@bangular/core@file:../../dist/packages-dist/core":
   version "6.0.0-beta.1-b36cc7db7"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/forms@file:../../dist/packages-dist/forms":
+"@bangular/forms@file:../../dist/packages-dist/forms":
   version "6.0.0-beta.1-b36cc7db7"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/http@file:../../dist/packages-dist/http":
+"@bangular/http@file:../../dist/packages-dist/http":
   version "6.0.0-beta.1-b36cc7db7"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/language-service@file:../../dist/packages-dist/language-service":
+"@bangular/language-service@file:../../dist/packages-dist/language-service":
   version "6.0.0-beta.1-b36cc7db7"
 
-"@angular/platform-browser-dynamic@file:../../dist/packages-dist/platform-browser-dynamic":
-  version "6.0.0-beta.1-b36cc7db7"
-  dependencies:
-    tslib "^1.7.1"
-
-"@angular/platform-browser@file:../../dist/packages-dist/platform-browser":
+"@bangular/platform-browser-dynamic@file:../../dist/packages-dist/platform-browser-dynamic":
   version "6.0.0-beta.1-b36cc7db7"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/router@file:../../dist/packages-dist/router":
+"@bangular/platform-browser@file:../../dist/packages-dist/platform-browser":
+  version "6.0.0-beta.1-b36cc7db7"
+  dependencies:
+    tslib "^1.7.1"
+
+"@bangular/router@file:../../dist/packages-dist/router":
   version "6.0.0-beta.1-b36cc7db7"
   dependencies:
     tslib "^1.7.1"
@@ -164,9 +164,9 @@
     tree-kill "^1.0.0"
     webpack-sources "^1.1.0"
 
-"@schematics/angular@~0.1.17":
+"@schematics/bangular@~0.1.17":
   version "0.1.17"
-  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-0.1.17.tgz#084a7cbe2de6f94a856bd08d95c9d35ef8905e2b"
+  resolved "https://registry.yarnpkg.com/@schematics/bangular/-/bangular-0.1.17.tgz#084a7cbe2de6f94a856bd08d95c9d35ef8905e2b"
   dependencies:
     typescript "~2.6.2"
 

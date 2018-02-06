@@ -1,5 +1,5 @@
-import { NgModule }               from '@angular/core';
-import { RouterModule, Routes }   from '@angular/router';
+import { NgModule }               from '@bangular/core';
+import { RouterModule, Routes }   from '@bangular/router';
 
 import { SharedModule }           from '../shared/shared.module';
 

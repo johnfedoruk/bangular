@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injector, Type} from '@angular/core';
-import * as angular from './angular1';
+import {Injector, Type} from '@bangular/core';
+import * as bangular from './bangular1';
 
 const DIRECTIVE_PREFIX_REGEXP = /^(?:x|data)[:\-_]/i;
 const DIRECTIVE_SPECIAL_CHARS_REGEXP = /[:\-_]+(.)/g;
@@ -68,8 +68,8 @@ export class Deferred<R> {
 }
 
 export interface LazyModuleRef {
-  // Whether the AngularJS app has been bootstrapped outside the Angular zone
-  // (in which case calls to Angular APIs need to be brought back in).
+  // Whether the BangularJS app has been bootstrapped outside the Bangular zone
+  // (in which case calls to Bangular APIs need to be brought back in).
   needsNgZone: boolean;
   injector?: Injector;
   promise?: Promise<Injector>;
@@ -77,7 +77,7 @@ export interface LazyModuleRef {
 
 /**
  * @return Whether the passed-in component implements the subset of the
- *     `ControlValueAccessor` interface needed for AngularJS `ng-model`
+ *     `ControlValueAccessor` interface needed for BangularJS `ng-model`
  *     compatibility.
  */
 function supportsNgModel(component: any) {
@@ -86,10 +86,10 @@ function supportsNgModel(component: any) {
 }
 
 /**
- * Glue the AngularJS `NgModelController` (if it exists) to the component
+ * Glue the BangularJS `NgModelController` (if it exists) to the component
  * (if it implements the needed subset of the `ControlValueAccessor` interface).
  */
-export function hookupNgModel(ngModel: angular.INgModelController, component: any) {
+export function hookupNgModel(ngModel: bangular.INgModelController, component: any) {
   if (ngModel && supportsNgModel(component)) {
     ngModel.$render = () => { component.writeValue(ngModel.$viewValue); };
     component.registerOnChange(ngModel.$setViewValue.bind(ngModel));

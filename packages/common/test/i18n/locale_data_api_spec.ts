@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import localeCaESVALENCIA from '@angular/common/locales/ca-ES-VALENCIA';
-import localeEn from '@angular/common/locales/en';
-import localeFr from '@angular/common/locales/fr';
-import localeZh from '@angular/common/locales/zh';
-import localeFrCA from '@angular/common/locales/fr-CA';
+import localeCaESVALENCIA from '@bangular/common/locales/ca-ES-VALENCIA';
+import localeEn from '@bangular/common/locales/en';
+import localeFr from '@bangular/common/locales/fr';
+import localeZh from '@bangular/common/locales/zh';
+import localeFrCA from '@bangular/common/locales/fr-CA';
 import {registerLocaleData} from '../../src/i18n/locale_data';
 import {findLocaleData, getCurrencySymbol, getLocaleDateFormat, FormatWidth} from '../../src/i18n/locale_data_api';
 

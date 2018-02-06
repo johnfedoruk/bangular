@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "rootDir": "../",
     "paths": {
-      "@angular/core": ["../../../dist/packages/core"]
+      "@bangular/core": ["../../../dist/packages/core"]
     },
     "outDir": "../../../dist/packages/service-worker"
   },
@@ -14,11 +14,11 @@
     "public_api.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "flatModuleOutFile": "config.js",
-    "flatModuleId": "@angular/service-worker/config",
+    "flatModuleId": "@bangular/service-worker/config",
     "skipTemplateCodegen": true
   }
 }

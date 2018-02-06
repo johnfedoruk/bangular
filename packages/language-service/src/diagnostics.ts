@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgAnalyzedModules, StaticSymbol} from '@angular/compiler';
-import {DiagnosticTemplateInfo, getTemplateExpressionDiagnostics} from '@angular/compiler-cli/src/language_services';
+import {NgAnalyzedModules, StaticSymbol} from '@bangular/compiler';
+import {DiagnosticTemplateInfo, getTemplateExpressionDiagnostics} from '@bangular/compiler-cli/src/language_services';
 
 import {AstResult} from './common';
 import {Declarations, Diagnostic, DiagnosticKind, DiagnosticMessageChain, Diagnostics, Span, TemplateSource} from './types';

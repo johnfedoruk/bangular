@@ -641,11 +641,11 @@ export declare class NgZone {
     });
     run<T>(fn: (...args: any[]) => T, applyThis?: any, applyArgs?: any[]): T;
     runGuarded<T>(fn: (...args: any[]) => T, applyThis?: any, applyArgs?: any[]): T;
-    runOutsideAngular<T>(fn: (...args: any[]) => T): T;
+    runOutsideBangular<T>(fn: (...args: any[]) => T): T;
     runTask<T>(fn: (...args: any[]) => T, applyThis?: any, applyArgs?: any[], name?: string): T;
-    static assertInAngularZone(): void;
-    static assertNotInAngularZone(): void;
-    static isInAngularZone(): boolean;
+    static assertInBangularZone(): void;
+    static assertNotInBangularZone(): void;
+    static isInBangularZone(): boolean;
 }
 
 /** @experimental */

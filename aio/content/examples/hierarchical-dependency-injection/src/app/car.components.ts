@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 
 import {
   CarService, CarService2, CarService3,

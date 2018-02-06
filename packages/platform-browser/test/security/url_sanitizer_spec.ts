@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import * as t from '@angular/core/testing/src/testing_internal';
+import * as t from '@bangular/core/testing/src/testing_internal';
 
 import {getDOM} from '../../src/dom/dom_adapter';
 import {sanitizeSrcset, sanitizeUrl} from '../../src/security/url_sanitizer';
@@ -80,24 +80,24 @@ import {sanitizeSrcset, sanitizeUrl} from '../../src/security/url_sanitizer';
     t.describe('valid srcsets', () => {
       const validSrcsets = [
         '',
-        'http://angular.io/images/test.png',
-        'http://angular.io/images/test.png, http://angular.io/images/test.png',
-        'http://angular.io/images/test.png, http://angular.io/images/test.png, http://angular.io/images/test.png',
-        'http://angular.io/images/test.png 2x',
-        'http://angular.io/images/test.png 2x, http://angular.io/images/test.png 3x',
-        'http://angular.io/images/test.png 1.5x',
-        'http://angular.io/images/test.png 1.25x',
-        'http://angular.io/images/test.png 200w, http://angular.io/images/test.png 300w',
-        'https://angular.io/images/test.png, http://angular.io/images/test.png',
-        'http://angular.io:80/images/test.png, http://angular.io:8080/images/test.png',
-        'http://www.angular.io:80/images/test.png, http://www.angular.io:8080/images/test.png',
-        'https://angular.io/images/test.png, https://angular.io/images/test.png',
-        '//angular.io/images/test.png, //angular.io/images/test.png',
+        'http://bangular.io/images/test.png',
+        'http://bangular.io/images/test.png, http://bangular.io/images/test.png',
+        'http://bangular.io/images/test.png, http://bangular.io/images/test.png, http://bangular.io/images/test.png',
+        'http://bangular.io/images/test.png 2x',
+        'http://bangular.io/images/test.png 2x, http://bangular.io/images/test.png 3x',
+        'http://bangular.io/images/test.png 1.5x',
+        'http://bangular.io/images/test.png 1.25x',
+        'http://bangular.io/images/test.png 200w, http://bangular.io/images/test.png 300w',
+        'https://bangular.io/images/test.png, http://bangular.io/images/test.png',
+        'http://bangular.io:80/images/test.png, http://bangular.io:8080/images/test.png',
+        'http://www.bangular.io:80/images/test.png, http://www.bangular.io:8080/images/test.png',
+        'https://bangular.io/images/test.png, https://bangular.io/images/test.png',
+        '//bangular.io/images/test.png, //bangular.io/images/test.png',
         '/images/test.png, /images/test.png',
         'images/test.png, images/test.png',
-        'http://angular.io/images/test.png?12345, http://angular.io/images/test.png?12345',
-        'http://angular.io/images/test.png?maxage, http://angular.io/images/test.png?maxage',
-        'http://angular.io/images/test.png?maxage=234, http://angular.io/images/test.png?maxage=234',
+        'http://bangular.io/images/test.png?12345, http://bangular.io/images/test.png?12345',
+        'http://bangular.io/images/test.png?maxage, http://bangular.io/images/test.png?maxage',
+        'http://bangular.io/images/test.png?maxage=234, http://bangular.io/images/test.png?maxage=234',
       ];
       for (const srcset of validSrcsets) {
         t.it(`valid ${srcset}`, () => t.expect(sanitizeSrcset(srcset)).toEqual(srcset));
@@ -106,8 +106,8 @@ import {sanitizeSrcset, sanitizeUrl} from '../../src/security/url_sanitizer';
 
     t.describe('invalid srcsets', () => {
       const invalidSrcsets = [
-        'ht:tp://angular.io/images/test.png',
-        'http://angular.io/images/test.png, ht:tp://angular.io/images/test.png',
+        'ht:tp://bangular.io/images/test.png',
+        'http://bangular.io/images/test.png, ht:tp://bangular.io/images/test.png',
       ];
       for (const srcset of invalidSrcsets) {
         t.it(`valid ${srcset}`, () => t.expect(sanitizeSrcset(srcset)).toMatch(/unsafe:/));

@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {runClickBenchmark, verifyNoBrowserErrors} from '@angular/testing/src/perf_util';
+import {runClickBenchmark, verifyNoBrowserErrors} from '@bangular/testing/src/perf_util';
 
 describe('polymer tree benchmark', function() {
 
@@ -20,7 +20,7 @@ describe('polymer tree benchmark', function() {
       buttons: ['#destroyDom', '#createDom'],
       id: 'polymer.tree.create',
       params: [{name: 'depth', value: 9, scale: 'log2'}],
-      waitForAngular2: false
+      waitForBangular2: false
     }).then(done, done.fail);
   });
 
@@ -30,7 +30,7 @@ describe('polymer tree benchmark', function() {
       buttons: ['#createDom'],
       id: 'polymer.tree.update',
       params: [{name: 'depth', value: 9, scale: 'log2'}],
-      waitForAngular2: false
+      waitForBangular2: false
     }).then(done, done.fail);
   });
 

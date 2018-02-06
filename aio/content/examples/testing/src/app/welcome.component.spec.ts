@@ -1,7 +1,7 @@
 // #docplaster
-import { ComponentFixture, inject, TestBed } from '@angular/core/testing';
-import { By }                                from '@angular/platform-browser';
-import { DebugElement }                      from '@angular/core';
+import { ComponentFixture, inject, TestBed } from '@bangular/core/testing';
+import { By }                                from '@bangular/platform-browser';
+import { DebugElement }                      from '@bangular/core';
 
 import { UserService }      from './model';
 import { WelcomeComponent } from './welcome.component';

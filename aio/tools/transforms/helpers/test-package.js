@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 const path = require('canonical-path');
@@ -17,7 +17,7 @@ module.exports = function testPackage(packageName, mockTemplateEngine) {
   // provide a mock log service
   pkg.factory('log', function() { return require('dgeni/lib/mocks/log')(false); });
 
-  // overrides base packageInfo and returns the one for the 'angular/angular' repo.
+  // overrides base packageInfo and returns the one for the 'bangular/bangular' repo.
   const PROJECT_ROOT = path.resolve(__dirname, '../../../..');
   pkg.factory('packageInfo', function() { return require(path.resolve(PROJECT_ROOT, 'package.json')); });
 

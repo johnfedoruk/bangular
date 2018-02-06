@@ -1,5 +1,5 @@
-import {NgModule} from "@angular/core";
-import {Component} from '@angular/core';
+import {NgModule} from "@bangular/core";
+import {Component} from '@bangular/core';
 
 @Component({
   selector: 'lazy-component',

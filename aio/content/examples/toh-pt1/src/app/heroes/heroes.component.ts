@@ -1,6 +1,6 @@
 // #docplaster
 // #docregion, v1
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@bangular/core';
 // #enddocregion v1
 import { Hero } from '../hero';
 // #docregion v1

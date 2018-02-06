@@ -33,7 +33,7 @@ This cookbook uses [reactive forms](guide/reactive-forms).
 
 Reactive forms belongs to a different `NgModule` called `ReactiveFormsModule`,
 so in order to access any reactive forms directives, you have to import
-`ReactiveFormsModule` from the `@angular/forms` library.
+`ReactiveFormsModule` from the `@bangular/forms` library.
 
 Bootstrap the `AppModule` in `main.ts`.
 
@@ -148,7 +148,7 @@ Notice this component can present any type of question in your model.
 You only have two types of questions at this point but you can imagine many more.
 The `ngSwitch` determines which type of question to display.
 
-In both components  you're relying on Angular's **formGroup** to connect the template HTML to the
+In both components  you're relying on Bangular's **formGroup** to connect the template HTML to the
 underlying control objects, populated from the question model with display and validation rules.
 
 `formControlName` and `formGroup` are directives defined in

@@ -1,6 +1,6 @@
 # Deployment
 
-This page describes techniques for deploying your Angular application to a remote server.
+This page describes techniques for deploying your Bangular application to a remote server.
 
 {@a dev-deploy}
 {@a copy-files}
@@ -56,7 +56,7 @@ starting with `--prod`.
 
 The `--prod` _meta-flag_ engages the following optimization features.
 
-* [Ahead-of-Time (AOT) Compilation](guide/aot-compiler): pre-compiles Angular component templates.
+* [Ahead-of-Time (AOT) Compilation](guide/aot-compiler): pre-compiles Bangular component templates.
 * [Production mode](#enable-prod-mode): deploys the production environment which enables _production mode_.
 * Bundling: concatenates your many application and library files into a few bundles.
 * Minification: removes excess whitespace, comments, and optional tokens.
@@ -71,18 +71,18 @@ You may further reduce bundle sizes by adding the `build-optimizer` flag.
   ng build --prod --build-optimizer
 </code-example>
 
-See the [CLI Documentation](https://github.com/angular/angular-cli/wiki/build) 
+See the [CLI Documentation](https://github.com/bangular/bangular-cli/wiki/build) 
 for details about available build options and what they do.
 
 {@a enable-prod-mode}
 
 ### Enable production mode
 
-Angular apps run in development mode by default, as you can see by the following message on the browser
+Bangular apps run in development mode by default, as you can see by the following message on the browser
 console:
 
 <code-example format="nocode">
-  Angular is running in the development mode. Call enableProdMode() to enable the production mode.
+  Bangular is running in the development mode. Call enableProdMode() to enable the production mode.
 </code-example>
 
 Switching to _production mode_ can make it run faster by disabling development specific checks such as the dual change detection cycles.
@@ -97,7 +97,7 @@ Look at the CLI-generated `main.ts` to see how this works.
 You can dramatically reduce launch time by only loading the application modules that
 absolutely must be present when the app starts.
 
-Configure the Angular Router to defer loading of all other modules (and their associated code), either by
+Configure the Bangular Router to defer loading of all other modules (and their associated code), either by
 [waiting until the app has launched](guide/router#preloading  "Preloading")
 or by [_lazy loading_](guide/router#asynchronous-routing "Lazy loading")
 them on demand.
@@ -116,7 +116,7 @@ Bundlers don't know about the router configuration and won't create separate bun
 You have to create these bundles manually.
 
 The CLI runs the
-[Angular Ahead-of-Time Webpack Plugin](https://github.com/angular/angular-cli/tree/master/packages/%40ngtools/webpack)
+[Bangular Ahead-of-Time Webpack Plugin](https://github.com/bangular/bangular-cli/tree/master/packages/%40ngtools/webpack)
 which automatically recognizes lazy loaded `NgModules` and creates separate bundles for them.
 
 {@a measure}
@@ -185,7 +185,7 @@ The HTML [_&lt;base href="..."/&gt;_](/guide/router)
 specifies a base path for resolving relative URLs to assets such as images, scripts, and style sheets.
 For example, given the `<base href="/my/app/">`, the browser resolves a URL such as `some/place/foo.jpg`
 into a server request for `my/app/some/place/foo.jpg`.
-During navigation, the Angular router uses the _base href_ as the base path to component, template, and module files.
+During navigation, the Bangular router uses the _base href_ as the base path to component, template, and module files.
 
 <div class="l-sub-section">
 
@@ -218,7 +218,7 @@ It serves build artifacts from memory instead for a faster development experienc
 <div class="l-sub-section">
 
 The output folder is  `dist/` by default.
-To output to a different folder, change the `outDir` in `.angular-cli.json`.
+To output to a different folder, change the `outDir` in `.bangular-cli.json`.
 
 </div>
 
@@ -230,7 +230,7 @@ This `--watch` flag is useful if you're building during development and
 are automatically re-deploying changes to another server.
 
 
-See the [CLI `build` topic](https://github.com/angular/angular-cli/wiki/build) for more details and options.
+See the [CLI `build` topic](https://github.com/bangular/bangular-cli/wiki/build) for more details and options.
 
 <hr>
 
@@ -244,11 +244,11 @@ This section covers changes you may have make to the server or to files deployed
 
 ### Routed apps must fallback to `index.html`
 
-Angular apps are perfect candidates for serving with a simple static HTML server.
+Bangular apps are perfect candidates for serving with a simple static HTML server.
 You don't need a server-side engine to dynamically compose application pages because
-Angular does that on the client-side.
+Bangular does that on the client-side.
 
-If the app uses the Angular router, you must configure the server
+If the app uses the Bangular router, you must configure the server
 to return the application's host page (`index.html`) when asked for a file that it does not have.
 
 {@a deep-link}
@@ -260,7 +260,7 @@ For example, `http://www.mysite.com/heroes/42` is a _deep link_ to the hero deta
 that displays the hero with `id: 42`.
 
 There is no issue when the user navigates to that URL from within a running client.
-The Angular router interprets the URL and routes to that page and hero.
+The Bangular router interprets the URL and routes to that page and hero.
 
 But clicking a link in an email, entering it in the browser address bar,
 or merely refreshing the browser while on the hero detail page &mdash;
@@ -280,7 +280,7 @@ The list is by no means exhaustive, but should provide you with a good starting 
 #### Development servers
 
 * [Lite-Server](https://github.com/johnpapa/lite-server): the default dev server installed with the
-[Quickstart repo](https://github.com/angular/quickstart) is pre-configured to fallback to `index.html`.
+[Quickstart repo](https://github.com/bangular/quickstart) is pre-configured to fallback to `index.html`.
 
 
 * [Webpack-Dev-Server](https://github.com/webpack/webpack-dev-server):  setup the
@@ -298,7 +298,7 @@ The list is by no means exhaustive, but should provide you with a good starting 
 
 * [Apache](https://httpd.apache.org/): add a
 [rewrite rule](http://httpd.apache.org/docs/current/mod/mod_rewrite.html) to the `.htaccess` file as shown
-  (https://ngmilk.rocks/2015/03/09/angularjs-html5-mode-or-pretty-urls-on-apache-using-htaccess/):
+  (https://ngmilk.rocks/2015/03/09/bangularjs-html5-mode-or-pretty-urls-on-apache-using-htaccess/):
 
   <code-example format=".">
     RewriteEngine On
@@ -328,7 +328,7 @@ modified to serve `index.html`:
     &lt;system.webServer&gt;
       &lt;rewrite&gt;
         &lt;rules&gt;
-          &lt;rule name="Angular Routes" stopProcessing="true"&gt;
+          &lt;rule name="Bangular Routes" stopProcessing="true"&gt;
             &lt;match url=".*" /&gt;
             &lt;conditions logicalGrouping="MatchAll"&gt;
               &lt;add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" /&gt;
@@ -369,7 +369,7 @@ and to
 
 ### Requesting services from a different server (CORS)
 
-Angular developers may encounter a
+Bangular developers may encounter a
 <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" title="Cross-origin resource sharing">
 <i>cross-origin resource sharing</i></a> error when making a service request (typically a data service request)
 to a server other than the application's own host server.

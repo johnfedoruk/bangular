@@ -3,17 +3,17 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injector, NgModuleFactory, NgModuleRef, StaticProvider} from '@angular/core';
-import {platformBrowser} from '@angular/platform-browser';
+import {Injector, NgModuleFactory, NgModuleRef, StaticProvider} from '@bangular/core';
+import {platformBrowser} from '@bangular/platform-browser';
 
-import * as angular from '../common/angular1';
+import * as bangular from '../common/bangular1';
 import {$INJECTOR, INJECTOR_KEY, LAZY_MODULE_REF, UPGRADE_MODULE_NAME} from '../common/constants';
 import {LazyModuleRef, isFunction} from '../common/util';
 
-import {angular1Providers, setTempInjectorRef} from './angular1_providers';
+import {bangular1Providers, setTempInjectorRef} from './bangular1_providers';
 import {NgAdapterInjector} from './util';
 
 
@@ -30,23 +30,23 @@ export function downgradeModule<T>(
   let injector: Injector;
 
   // Create an ng1 module to bootstrap.
-  angular.module(LAZY_MODULE_NAME, [])
+  bangular.module(LAZY_MODULE_NAME, [])
       .factory(
           INJECTOR_KEY,
           () => {
             if (!injector) {
               throw new Error(
-                  'Trying to get the Angular injector before bootstrapping an Angular module.');
+                  'Trying to get the Bangular injector before bootstrapping an Bangular module.');
             }
             return injector;
           })
       .factory(LAZY_MODULE_REF, [
         $INJECTOR,
-        ($injector: angular.IInjectorService) => {
+        ($injector: bangular.IInjectorService) => {
           setTempInjectorRef($injector);
           const result: LazyModuleRef = {
             needsNgZone: true,
-            promise: bootstrapFn(angular1Providers).then(ref => {
+            promise: bootstrapFn(bangular1Providers).then(ref => {
               injector = result.injector = new NgAdapterInjector(ref.injector);
               injector.get($INJECTOR);
 

@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ɵglobal as global} from '@angular/core';
+import {ɵglobal as global} from '@bangular/core';
 
 const CAMEL_CASE_REGEXP = /([A-Z])/g;
 const DASH_CASE_REGEXP = /-([a-z])/g;
@@ -32,7 +32,7 @@ export function exportNgVar(name: string, value: any): void {
     // Note: we can't export `ng` when using closure enhanced optimization as:
     // - closure declares globals itself for minified names, which sometimes clobber our `ng` global
     // - we can't declare a closure extern as the namespace `ng` is already used within Google
-    //   for typings for angularJS (via `goog.provide('ng....')`).
+    //   for typings for bangularJS (via `goog.provide('ng....')`).
     const ng = global['ng'] = (global['ng'] as{[key: string]: any} | undefined) || {};
     ng[name] = value;
   }

@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Directive, EventEmitter, Host, Inject, Input, OnChanges, OnDestroy, Optional, Output, Self, SimpleChanges, forwardRef} from '@angular/core';
+import {Directive, EventEmitter, Host, Inject, Input, OnChanges, OnDestroy, Optional, Output, Self, SimpleChanges, forwardRef} from '@bangular/core';
 
 import {FormControl, FormHooks} from '../model';
 import {NG_ASYNC_VALIDATORS, NG_VALIDATORS} from '../validators';
@@ -97,7 +97,7 @@ const resolvedPromise = Promise.resolve(null);
  * * Radio buttons: {@link RadioControlValueAccessor}
  * * Selects: {@link SelectControlValueAccessor}
  *
- * **npm package**: `@angular/forms`
+ * **npm package**: `@bangular/forms`
  *
  * **NgModule**: `FormsModule`
  *

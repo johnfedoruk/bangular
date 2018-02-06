@@ -1,5 +1,5 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { NgServiceWorker } from '@angular/service-worker';
+import { Injectable, OnDestroy } from '@bangular/core';
+import { NgServiceWorker } from '@bangular/service-worker';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/observable/of';
@@ -58,7 +58,7 @@ export class SwUpdatesService implements OnDestroy {
   private checkForUpdate() {
     this.log('Checking for update...');
     this.sw.checkForUpdate()
-        // Temp workaround for https://github.com/angular/mobile-toolkit/pull/137.
+        // Temp workaround for https://github.com/bangular/mobile-toolkit/pull/137.
         // TODO (gkalpak): Remove once #137 is fixed.
         .concat(Observable.of(false)).take(1)
         .do(v => this.log(`Update available: ${v}`))

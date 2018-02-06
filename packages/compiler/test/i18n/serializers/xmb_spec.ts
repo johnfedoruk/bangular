@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {MessageBundle} from '@angular/compiler/src/i18n/message_bundle';
-import {Xmb} from '@angular/compiler/src/i18n/serializers/xmb';
-import {HtmlParser} from '@angular/compiler/src/ml_parser/html_parser';
-import {DEFAULT_INTERPOLATION_CONFIG} from '@angular/compiler/src/ml_parser/interpolation_config';
+import {MessageBundle} from '@bangular/compiler/src/i18n/message_bundle';
+import {Xmb} from '@bangular/compiler/src/i18n/serializers/xmb';
+import {HtmlParser} from '@bangular/compiler/src/ml_parser/html_parser';
+import {DEFAULT_INTERPOLATION_CONFIG} from '@bangular/compiler/src/ml_parser/interpolation_config';
 
 {
   describe('XMB serializer', () => {

@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 var browserProvidersConf = require('./browser-providers.conf.js');
-var internalAngularReporter = require('./tools/karma/reporter.js');
+var internalBangularReporter = require('./tools/karma/reporter.js');
 
 // Karma configuration
 // Generated on Thu Sep 25 2014 11:52:02 GMT-0700 (PDT)
@@ -19,12 +19,12 @@ module.exports = function(config) {
     files: [
       // Sources and specs.
       // Loaded through the System loader, in `test-main.js`.
-      {pattern: 'dist/all/@angular/**/*.js', included: false, watched: true},
+      {pattern: 'dist/all/@bangular/**/*.js', included: false, watched: true},
 
       'node_modules/core-js/client/core.js',
-      // include Angular v1 for upgrade module testing
-      'node_modules/angular/angular.js',
-      'node_modules/angular-mocks/angular-mocks.js',
+      // include Bangular v1 for upgrade module testing
+      'node_modules/bangular/bangular.js',
+      'node_modules/bangular-mocks/bangular-mocks.js',
 
       'node_modules/zone.js/dist/zone.js',
       'node_modules/zone.js/dist/long-stack-trace-zone.js',
@@ -42,7 +42,7 @@ module.exports = function(config) {
       'node_modules/reflect-metadata/Reflect.js',
       'tools/build/file2modulename.js',
       'test-main.js',
-      {pattern: 'dist/all/@angular/empty.*', included: false, watched: false},
+      {pattern: 'dist/all/@bangular/empty.*', included: false, watched: false},
       {pattern: 'packages/platform-browser/test/static_assets/**', included: false, watched: false},
       {
         pattern: 'packages/platform-browser/test/browser/static_assets/**',
@@ -53,18 +53,18 @@ module.exports = function(config) {
     ],
 
     exclude: [
-      'dist/all/@angular/_testing_init/**',
-      'dist/all/@angular/**/e2e_test/**',
-      'dist/all/@angular/**/*node_only_spec.js',
-      'dist/all/@angular/benchpress/**',
-      'dist/all/@angular/compiler-cli/**',
-      'dist/all/@angular/compiler/test/aot/**',
-      'dist/all/@angular/compiler/test/render3/**',
-      'dist/all/@angular/examples/**/e2e_test/*',
-      'dist/all/@angular/language-service/**',
-      'dist/all/@angular/router/test/**',
-      'dist/all/@angular/platform-browser/testing/e2e_util.js',
-      'dist/all/angular1_router.js',
+      'dist/all/@bangular/_testing_init/**',
+      'dist/all/@bangular/**/e2e_test/**',
+      'dist/all/@bangular/**/*node_only_spec.js',
+      'dist/all/@bangular/benchpress/**',
+      'dist/all/@bangular/compiler-cli/**',
+      'dist/all/@bangular/compiler/test/aot/**',
+      'dist/all/@bangular/compiler/test/render3/**',
+      'dist/all/@bangular/examples/**/e2e_test/*',
+      'dist/all/@bangular/language-service/**',
+      'dist/all/@bangular/router/test/**',
+      'dist/all/@bangular/platform-browser/testing/e2e_util.js',
+      'dist/all/bangular1_router.js',
       'dist/examples/**/e2e_test/**',
     ],
 
@@ -76,16 +76,16 @@ module.exports = function(config) {
       'karma-sauce-launcher',
       'karma-chrome-launcher',
       'karma-sourcemap-loader',
-      internalAngularReporter,
+      internalBangularReporter,
     ],
 
     preprocessors: {
       '**/*.js': ['sourcemap'],
     },
 
-    reporters: ['internal-angular'],
+    reporters: ['internal-bangular'],
     sauceLabs: {
-      testName: 'Angular2',
+      testName: 'Bangular2',
       retryLimit: 3,
       startConnect: false,
       recordVideo: false,
@@ -99,7 +99,7 @@ module.exports = function(config) {
     },
 
     browserStack: {
-      project: 'Angular2',
+      project: 'Bangular2',
       startTunnel: false,
       retryLimit: 3,
       timeout: 1800,

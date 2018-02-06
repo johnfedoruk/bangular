@@ -1,5 +1,5 @@
-import { enableProdMode, ApplicationRef } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode, ApplicationRef } from '@bangular/core';
+import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';

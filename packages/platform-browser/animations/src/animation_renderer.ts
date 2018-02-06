@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {AnimationTriggerMetadata} from '@angular/animations';
-import {ɵAnimationEngine as AnimationEngine} from '@angular/animations/browser';
-import {Injectable, NgZone, Renderer2, RendererFactory2, RendererStyleFlags2, RendererType2} from '@angular/core';
+import {AnimationTriggerMetadata} from '@bangular/animations';
+import {ɵAnimationEngine as AnimationEngine} from '@bangular/animations/browser';
+import {Injectable, NgZone, Renderer2, RendererFactory2, RendererStyleFlags2, RendererType2} from '@bangular/core';
 
 const ANIMATION_PREFIX = '@';
 const DISABLE_ANIMATIONS_FLAG = '@.disabled';
@@ -102,7 +102,7 @@ export class AnimationRendererFactory implements RendererFactory2 {
     // this is to prevent animations from running twice when an inner
     // component does CD when a parent component insted has inserted it
     if (this._cdRecurDepth == 0) {
-      this._zone.runOutsideAngular(() => {
+      this._zone.runOutsideBangular(() => {
         this._scheduleCountTask();
         this.engine.flush(this._microtaskId);
       });

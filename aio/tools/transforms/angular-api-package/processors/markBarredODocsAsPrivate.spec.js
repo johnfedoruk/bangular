@@ -5,7 +5,7 @@ const Dgeni = require('dgeni');
 describe('markBarredODocsAsPrivate processor', () => {
 
   it('should be available on the injector', () => {
-    const dgeni = new Dgeni([testPackage('angular-api-package')]);
+    const dgeni = new Dgeni([testPackage('bangular-api-package')]);
     const injector = dgeni.configureInjector();
     const processor = injector.get('markBarredODocsAsPrivate');
     expect(processor.$process).toBeDefined();

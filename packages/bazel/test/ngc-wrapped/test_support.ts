@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {runOneBuild} from '@angular/bazel';
+import {runOneBuild} from '@bangular/bazel';
 import * as fs from 'fs';
 import * as os from 'os';
 import * as path from 'path';
@@ -17,7 +17,7 @@ import {createTsConfig} from './tsconfig_template';
 export interface TestSupport {
   basePath: string;
   runfilesPath: string;
-  angularCorePath: string;
+  bangularCorePath: string;
   writeConfig({
       srcTargetPath, depPaths, pathMapping,
   }: {
@@ -47,15 +47,15 @@ export function setup(
   const bazelBinPath = path.resolve(basePath, bazelBin);
   fs.mkdirSync(bazelBinPath);
 
-  const angularCorePath = path.resolve(runfilesPath, 'angular', 'packages', 'core');
-  const ngFiles = listFilesRecursive(angularCorePath);
+  const bangularCorePath = path.resolve(runfilesPath, 'bangular', 'packages', 'core');
+  const ngFiles = listFilesRecursive(bangularCorePath);
 
   const tsConfigJsonPath = path.resolve(basePath, tsconfig);
 
   return {
     basePath,
     runfilesPath,
-    angularCorePath,
+    bangularCorePath,
     write,
     read,
     writeFiles,
@@ -98,8 +98,8 @@ export function setup(
     const target = '//' + path.relative(basePath, srcTargetPath);
     const files = [...compilationTargetSrc];
 
-    depPaths = depPaths.concat([angularCorePath]);
-    pathMapping = pathMapping.concat([{moduleName: '@angular/core', path: angularCorePath}]);
+    depPaths = depPaths.concat([bangularCorePath]);
+    pathMapping = pathMapping.concat([{moduleName: '@bangular/core', path: bangularCorePath}]);
 
     for (const depPath of depPaths) {
       files.push(...listFilesRecursive(depPath).filter(f => f.endsWith('.d.ts')));
@@ -113,7 +113,7 @@ export function setup(
 
     const emptyTsConfig = ts.readConfigFile(
         path.resolve(
-            runfilesPath, 'angular', 'packages', 'bazel', 'test', 'ngc-wrapped', 'empty',
+            runfilesPath, 'bangular', 'packages', 'bazel', 'test', 'ngc-wrapped', 'empty',
             'empty_tsconfig.json'),
         read);
 

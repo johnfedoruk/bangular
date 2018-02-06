@@ -1,5 +1,5 @@
 
-import {Component, NgModule} from '@angular/core';
+import {Component, NgModule} from '@bangular/core';
 
 @Component({
   selector: 'hello-world-app',

@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {StaticSymbol, StaticSymbolCache, StaticSymbolResolver, StaticSymbolResolverHost, Summary, SummaryResolver} from '@angular/compiler';
-import {CollectorOptions, METADATA_VERSION} from '@angular/compiler-cli';
-import {MetadataCollector} from '@angular/compiler-cli/src/metadata/collector';
+import {StaticSymbol, StaticSymbolCache, StaticSymbolResolver, StaticSymbolResolverHost, Summary, SummaryResolver} from '@bangular/compiler';
+import {CollectorOptions, METADATA_VERSION} from '@bangular/compiler-cli';
+import {MetadataCollector} from '@bangular/compiler-cli/src/metadata/collector';
 import * as ts from 'typescript';
 
 
@@ -57,7 +57,7 @@ describe('StaticSymbolResolver', () => {
   });
 
   it('should be able to produce a symbol for a module with no file', () => {
-    expect(symbolResolver.getStaticSymbol('angularjs', 'SomeAngularSymbol')).toBeDefined();
+    expect(symbolResolver.getStaticSymbol('bangularjs', 'SomeBangularSymbol')).toBeDefined();
   });
 
   it('should be able to split the metadata per symbol', () => {

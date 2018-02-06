@@ -1,6 +1,6 @@
-import {Compiler, COMPILER_OPTIONS, CompilerFactory, NgModule} from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import {JitCompilerFactory} from '@angular/platform-browser-dynamic';
+import {Compiler, COMPILER_OPTIONS, CompilerFactory, NgModule} from '@bangular/core';
+import { BrowserModule } from '@bangular/platform-browser';
+import {JitCompilerFactory} from '@bangular/platform-browser-dynamic';
 
 import { AppComponent } from './app.component';
 

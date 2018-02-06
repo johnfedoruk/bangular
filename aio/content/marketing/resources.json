@@ -5,17 +5,17 @@
       "Community Curations": {
         "order": 1,
         "resources": {
-          "awesome-angular-components": {
+          "awesome-bangular-components": {
             "desc": "A community index of components and libraries maintained on GitHub",
             "rev": true,
-            "title": "Catalog of Angular Components & Libraries",
-            "url": "https://github.com/brillout/awesome-angular-components"
+            "title": "Catalog of Bangular Components & Libraries",
+            "url": "https://github.com/brillout/awesome-bangular-components"
           },
-          "angular-ru": {
-            "desc": "Angular-RU Community on GitHub is a single entry point for all resources, chats, podcasts and meetups for Angular in Russia.",
+          "bangular-ru": {
+            "desc": "Bangular-RU Community on GitHub is a single entry point for all resources, chats, podcasts and meetups for Bangular in Russia.",
             "rev": true,
-            "title": "Angular Conferences and Angular Camps in Moscow, Russia.",
-            "url": "https://angular-ru.github.io/"
+            "title": "Bangular Conferences and Bangular Camps in Moscow, Russia.",
+            "url": "https://bangular-ru.github.io/"
           }
         }
       },
@@ -25,14 +25,14 @@
           "sldkjfslkjfslkjdsklj": {
             "desc": "Meetup in Barcelona, Spain. Express your motivations, share your ideas and play together creating awesome things in team.",
             "rev": true,
-            "title": "Angular Beers",
-            "url": "http://www.meetup.com/AngularJS-Beers/"
+            "title": "Bangular Beers",
+            "url": "http://www.meetup.com/BangularJS-Beers/"
           },
           "sldkjfslkjfslkjdskzzzlj": {
-            "desc": "Angular Conferences and Angular Camps in Barcelona, Spain.",
+            "desc": "Bangular Conferences and Bangular Camps in Barcelona, Spain.",
             "rev": true,
-            "title": "Angular Camp",
-            "url": "http://angularcamp.org/"
+            "title": "Bangular Camp",
+            "url": "http://bangularcamp.org/"
           }
         }
       },
@@ -40,18 +40,18 @@
         "order": 3,
         "resources": {
           "sdfjkdkfj": {
-            "desc": "Adventures in Angular is a weekly podcast dedicated to the Angular platform and related technologies, tools, languages, and practices.",
+            "desc": "Adventures in Bangular is a weekly podcast dedicated to the Bangular platform and related technologies, tools, languages, and practices.",
             "logo": "",
             "rev": true,
-            "title": "Adventures in Angular",
-            "url": "https://devchat.tv/adventures-in-angular"
+            "title": "Adventures in Bangular",
+            "url": "https://devchat.tv/adventures-in-bangular"
           },
           "sdlkfjsldfkj": {
-            "desc": "Weekly video podcast hosted by Jeff Whelpley with all the latest and greatest happenings in the wild world of Angular.",
+            "desc": "Weekly video podcast hosted by Jeff Whelpley with all the latest and greatest happenings in the wild world of Bangular.",
             "logo": "",
             "rev": true,
-            "title": "AngularAir",
-            "url": "https://angularair.com/"
+            "title": "BangularAir",
+            "url": "https://bangularair.com/"
           },
           "sldkfjsldjf": {
             "desc": "The live broadcast podcast all about JavaScript",
@@ -71,11 +71,11 @@
         "order": 5,
         "resources": {
           "a2b": {
-            "desc": "Angular and React Native to build applications for Android and iOS",
+            "desc": "Bangular and React Native to build applications for Android and iOS",
             "logo": "",
             "rev": true,
             "title": "ReactNative",
-            "url": "http://angular.github.io/react-native-renderer/"
+            "url": "http://bangular.github.io/react-native-renderer/"
           },
           "a3b": {
             "desc": "Ionic offers a library of mobile-optimized HTML, CSS and JS components and tools for building highly interactive native and progressive web apps.",
@@ -85,25 +85,25 @@
             "url": "http://ionicframework.com/docs/v2/"
           },
           "a4b": {
-            "desc": "Electron Platform for Angular.",
+            "desc": "Electron Platform for Bangular.",
             "logo": "",
             "rev": true,
             "title": "Electron",
-            "url": "http://github.com/angular/angular-electron"
+            "url": "http://github.com/bangular/bangular-electron"
           },
           "ab": {
-            "desc": "NativeScript is how you build cross-platform, native iOS and Android apps with Angular and TypeScript. Get 100% access to native APIs via JavaScript and reuse of packages from NPM, CocoaPods and Gradle. Open source and backed by Telerik.​​​",
+            "desc": "NativeScript is how you build cross-platform, native iOS and Android apps with Bangular and TypeScript. Get 100% access to native APIs via JavaScript and reuse of packages from NPM, CocoaPods and Gradle. Open source and backed by Telerik.​​​",
             "logo": "",
             "rev": true,
             "title": "NativeScript",
-            "url": "https://github.com/NativeScript/nativescript-angular"
+            "url": "https://github.com/NativeScript/nativescript-bangular"
           },
           "ab5": {
-            "desc": "An Universal Windows App (uwp) powered by Angular",
+            "desc": "An Universal Windows App (uwp) powered by Bangular",
             "logo": "",
             "rev": true,
             "title": "Windows (UWP)",
-            "url": "http://github.com/preboot/angular2-universal-windows-app"
+            "url": "http://github.com/preboot/bangular2-universal-windows-app"
           }
         }
       },
@@ -111,38 +111,38 @@
         "order": 3,
         "resources": {
           "-KLIzHDRfiB3d7W7vk-e": {
-            "desc": "Reactive Extensions for Angular",
+            "desc": "Reactive Extensions for Bangular",
             "rev": true,
             "title": "ngrx",
             "url": "http://github.com/ngrx"
           },
           "ab": {
-            "desc": "The official library for Firebase and Angular",
+            "desc": "The official library for Firebase and Bangular",
             "logo": "",
             "rev": true,
-            "title": "Angular Fire",
-            "url": "https://github.com/angular/angularfire2"
+            "title": "Bangular Fire",
+            "url": "https://github.com/bangular/bangularfire2"
           },
           "ab2": {
-            "desc": "Use Angular and Meteor to build full-stack JavaScript apps  for Mobile and Desktop.",
-            "logo": "http://www.angular-meteor.com/images/logo.png",
+            "desc": "Use Bangular and Meteor to build full-stack JavaScript apps  for Mobile and Desktop.",
+            "logo": "http://www.bangular-meteor.com/images/logo.png",
             "rev": true,
             "title": "Meteor",
-            "url": "http://www.angular-meteor.com/angular2"
+            "url": "http://www.bangular-meteor.com/bangular2"
           },
           "ab3": {
             "desc": "Apollo is a data stack for modern apps, built with GraphQL.",
             "logo": "http://docs.apollostack.com/logo/large.png",
             "rev": true,
             "title": "Apollo",
-            "url": "http://docs.apollostack.com/apollo-client/angular2.html"
+            "url": "http://docs.apollostack.com/apollo-client/bangular2.html"
           },
           "ab4": {
-            "desc": "Angular Commerce is a solution for building modern e-commerce applications with power of Google Firebase. Set of components is design agnostic and allows to easily extend functionality.",
+            "desc": "Bangular Commerce is a solution for building modern e-commerce applications with power of Google Firebase. Set of components is design agnostic and allows to easily extend functionality.",
             "logo": "",
             "rev": true,
-            "title": "AngularCommerce",
-            "url": "https://github.com/NodeArt/angular-commerce"
+            "title": "BangularCommerce",
+            "url": "https://github.com/NodeArt/bangular-commerce"
           }
         }
       },
@@ -170,11 +170,11 @@
             "title": "IntelliJ IDEA",
             "url": "https://www.jetbrains.com/idea/"
           },
-          "angular-ide": {
-            "desc": "Built first and foremost for Angular. Turnkey setup for beginners; powerful for experts.",
+          "bangular-ide": {
+            "desc": "Built first and foremost for Bangular. Turnkey setup for beginners; powerful for experts.",
             "rev": true,
-            "title": "Angular IDE by Webclipse",
-            "url": "https://www.genuitec.com/products/angular-ide"
+            "title": "Bangular IDE by Webclipse",
+            "url": "https://www.genuitec.com/products/bangular-ide"
           }
         }
       },
@@ -182,24 +182,24 @@
         "order": 2,
         "resources": {
           "-KLIzHfBEr1qMMUDxfq3": {
-            "desc": "Generate an Angular CRUD application from an existing database schema",
+            "desc": "Generate an Bangular CRUD application from an existing database schema",
             "rev": true,
-            "title": "Celerio Angular Quickstart",
-            "url": "https://github.com/jaxio/celerio-angular-quickstart"
+            "title": "Celerio Bangular Quickstart",
+            "url": "https://github.com/jaxio/celerio-bangular-quickstart"
           },
           "a1": {
-            "desc": "A Google Chrome Dev Tools extension for debugging Angular applications.",
-            "logo": "https://augury.angular.io/images/augury-logo.svg",
+            "desc": "A Google Chrome Dev Tools extension for debugging Bangular applications.",
+            "logo": "https://augury.bangular.io/images/augury-logo.svg",
             "rev": true,
             "title": "Augury",
-            "url": "http://augury.angular.io/"
+            "url": "http://augury.bangular.io/"
           },
           "b1": {
-            "desc": "Server-side Rendering for Angular apps.",
+            "desc": "Server-side Rendering for Bangular apps.",
             "logo": "https://cloud.githubusercontent.com/assets/1016365/10639063/138338bc-7806-11e5-8057-d34c75f3cafc.png",
             "rev": true,
-            "title": "Angular Universal",
-            "url": "https://github.com/angular/universal"
+            "title": "Bangular Universal",
+            "url": "https://github.com/bangular/universal"
           },
           "c1": {
             "desc": "Lightweight development only node server",
@@ -209,37 +209,37 @@
             "url": "https://github.com/johnpapa/lite-server"
           },
           "cli": {
-            "desc": "The official Angular CLI makes it easy to create and develop applications from initial commit to production deployment. It already follows our best practices right out of the box!",
+            "desc": "The official Bangular CLI makes it easy to create and develop applications from initial commit to production deployment. It already follows our best practices right out of the box!",
             "rev": true,
-            "title": "Angular CLI",
-            "url": "https://cli.angular.io"
+            "title": "Bangular CLI",
+            "url": "https://cli.bangular.io"
           },
           "d1": {
-            "desc": "Static analysis for Angular projects.",
+            "desc": "Static analysis for Bangular projects.",
             "logo": "",
             "rev": true,
             "title": "Codelyzer",
             "url": "https://github.com/mgechev/codelyzer"
           },
           "e1": {
-            "desc": "This package provides facilities for developers building Angular applications on ASP.NET.",
+            "desc": "This package provides facilities for developers building Bangular applications on ASP.NET.",
             "logo": "",
             "rev": true,
             "title": "Universal for ASP.NET",
             "url": "https://github.com/aspnet/nodeservices"
           },
           "f1": {
-            "desc": "This tool generates dedicated documentation for Angular applications.",
+            "desc": "This tool generates dedicated documentation for Bangular applications.",
             "logo": "",
             "rev": true,
             "title": "Compodoc",
             "url": "https://github.com/compodoc/compodoc"
           },
           "ncg": {
-            "desc": "Generate several types of CRUD apps complete with e2e testing using template-sets for Angular, Material Design, Bootstrap, Kendo UI, Ionic, ...",
+            "desc": "Generate several types of CRUD apps complete with e2e testing using template-sets for Bangular, Material Design, Bootstrap, Kendo UI, Ionic, ...",
             "logo": "https://avatars3.githubusercontent.com/u/27976684",
             "rev": true,
-            "title": "NinjaCodeGen - Angular CRUD Generator",
+            "title": "NinjaCodeGen - Bangular CRUD Generator",
             "url": "https://ninjaCodeGen.com"
           }
         }
@@ -247,65 +247,65 @@
       "UI Components": {
         "order": 4,
         "resources": {
-          "IgniteUIforAngular": {
-            "desc": "Ignite UI for Angular is a dependency-free Angular toolkit for building modern web apps.",
+          "IgniteUIforBangular": {
+            "desc": "Ignite UI for Bangular is a dependency-free Bangular toolkit for building modern web apps.",
             "rev": true,
-            "title": "Ignite UI for Angular",
-            "url": "https://www.infragistics.com/products/ignite-ui-angular"
+            "title": "Ignite UI for Bangular",
+            "url": "https://www.infragistics.com/products/ignite-ui-bangular"
           },
           "DevExtreme": {
             "desc": "50+ UI components including data grid, pivot grid, scheduler, charts, editors, maps and other multi-purpose controls for creating highly responsive web applications for touch devices and traditional desktops.",
             "rev": true,
             "title": "DevExtreme",
-            "url": "https://js.devexpress.com/Overview/Angular/"
+            "url": "https://js.devexpress.com/Overview/Bangular/"
           },
           "234237": {
-            "desc": "UX guidelines, HTML/CSS framework, and Angular components working together to craft exceptional experiences",
+            "desc": "UX guidelines, HTML/CSS framework, and Bangular components working together to craft exceptional experiences",
             "rev": true,
             "title": "Clarity Design System",
             "url": "https://vmware.github.io/clarity/"
           },
           "-KLIzI9BTvvP_hUwutXk": {
-            "desc": "UI components for Angular using Semantic UI",
+            "desc": "UI components for Bangular using Semantic UI",
             "rev": true,
             "title": "Semantic UI",
             "url": "https://github.com/vladotesanovic/ngSemantic"
           },
           "-KMVB8P4TDfht8c0L1AE": {
-            "desc": "The Angular version of the Angular UI Bootstrap library. This library is being built from scratch in Typescript using the Bootstrap 4 CSS framework.",
+            "desc": "The Bangular version of the Bangular UI Bootstrap library. This library is being built from scratch in Typescript using the Bootstrap 4 CSS framework.",
             "rev": true,
             "title": "ng-bootstrap",
             "url": "https://ng-bootstrap.github.io/"
           },
           "4ab": {
-            "desc": "Native Angular components & directives for Lightning Design System",
+            "desc": "Native Bangular components & directives for Lightning Design System",
             "logo": "http://ng-lightning.github.io/ng-lightning/img/shield.svg",
             "rev": true,
             "title": "ng-lightning",
             "url": "http://ng-lightning.github.io/ng-lightning/"
           },
           "7ab": {
-            "desc": "UI components for hybrid mobile apps with bindings for both Angular & AngularJS.",
+            "desc": "UI components for hybrid mobile apps with bindings for both Bangular & BangularJS.",
             "rev": true,
             "title": "Onsen UI",
             "url": "https://onsen.io/v2/"
           },
           "a2b": {
-            "desc": "PrimeNG is a collection of rich UI components for Angular",
+            "desc": "PrimeNG is a collection of rich UI components for Bangular",
             "logo": "http://www.primefaces.org/primeng/showcase/resources/images/primeng.svg",
             "rev": true,
             "title": "Prime Faces",
             "url": "http://www.primefaces.org/primeng/"
           },
           "a3b": {
-            "desc": "One of the first major UI frameworks to support Angular",
+            "desc": "One of the first major UI frameworks to support Bangular",
             "logo": "",
             "rev": true,
             "title": "Kendo UI",
-            "url": "http://www.telerik.com/kendo-angular-ui/"
+            "url": "http://www.telerik.com/kendo-bangular-ui/"
           },
           "a5b": {
-            "desc": "High-performance UI controls with the most complete Angular support available. Wijmo’s controls are all written in TypeScript and have zero dependencies. FlexGrid control includes full declarative markup, including cell templates.",
+            "desc": "High-performance UI controls with the most complete Bangular support available. Wijmo’s controls are all written in TypeScript and have zero dependencies. FlexGrid control includes full declarative markup, including cell templates.",
             "logo": "http://wijmocdn.azureedge.net/wijmositeblob/wijmo-theme/logos/wijmo-55.png",
             "rev": true,
             "title": "Wijmo",
@@ -319,35 +319,35 @@
             "url": "https://vaadin.com/elements"
           },
           "a7b": {
-            "desc": "Native Angular directives for Bootstrap",
+            "desc": "Native Bangular directives for Bootstrap",
             "logo": "",
             "rev": true,
             "title": "ngx-bootstrap",
             "url": "http://valor-software.com/ngx-bootstrap/#/"
           },
           "ab": {
-            "desc": "Material Design components for Angular",
+            "desc": "Material Design components for Bangular",
             "logo": "",
             "rev": true,
-            "title": "Angular Material",
-            "url": "https://github.com/angular/material2"
+            "title": "Bangular Material",
+            "url": "https://github.com/bangular/material2"
           },
           "aggrid": {
-            "desc": "A datagrid for Angular with enterprise style features such as sorting, filtering, custom rendering, editing, grouping, aggregation and pivoting.",
+            "desc": "A datagrid for Bangular with enterprise style features such as sorting, filtering, custom rendering, editing, grouping, aggregation and pivoting.",
             "rev": true,
             "title": "ag-Grid",
-            "url": "https://www.ag-grid.com/best-angular-2-data-grid/"
+            "url": "https://www.ag-grid.com/best-bangular-2-data-grid/"
           },
           "jqwidgets": {
-            "desc": "Angular UI Components including data grid, tree grid, pivot grid, scheduler, charts, editors and other multi-purpose components",
+            "desc": "Bangular UI Components including data grid, tree grid, pivot grid, scheduler, charts, editors and other multi-purpose components",
             "rev": true,
             "title": "jQWidgets",
-            "url": "https://www.jqwidgets.com/angular/"
+            "url": "https://www.jqwidgets.com/bangular/"
           },
           "amexio": {
-            "desc": "Amexio (Angular MetaMagic EXtensions for Inputs and Outputs)  is a rich set of Angular components powered by Bootstrap for Responsive Design. UI Components include Standard Form Components, Data Grids, Tree Grids, Tabs etc. Open Source (Apache 2 License) & Free and backed by MetaMagic Global Inc",
+            "desc": "Amexio (Bangular MetaMagic EXtensions for Inputs and Outputs)  is a rich set of Bangular components powered by Bootstrap for Responsive Design. UI Components include Standard Form Components, Data Grids, Tree Grids, Tabs etc. Open Source (Apache 2 License) & Free and backed by MetaMagic Global Inc",
             "rev": true,
-            "title": "Amexio - Angular Extensions",
+            "title": "Amexio - Bangular Extensions",
             "url": "http://www.amexio.tech/",
             "logo": "http://www.amexio.org/amexio-logo.png"
           }
@@ -362,64 +362,64 @@
         "order": 1,
         "resources": {
           "-KLI8vJ0ZkvWhqPembZ7": {
-            "desc": "A guide that helps developers get up to speed quickly on Angular and its accompanying technologies.",
+            "desc": "A guide that helps developers get up to speed quickly on Bangular and its accompanying technologies.",
             "rev": true,
-            "title": "How to Get Started and Productive in Angular Fast",
-            "url": "http://www.amazon.com/How-Started-Productive-Angular-Fast-ebook/dp/B01D3B0ET4/ref=sr_1_1_twi_kin_2?ie=UTF8&qid=1462381159&sr=8-1"
+            "title": "How to Get Started and Productive in Bangular Fast",
+            "url": "http://www.amazon.com/How-Started-Productive-Bangular-Fast-ebook/dp/B01D3B0ET4/ref=sr_1_1_twi_kin_2?ie=UTF8&qid=1462381159&sr=8-1"
           },
           "-KLIzGEp8Mh5W-FkiQnL": {
-            "desc": "Your quick, no-nonsense guide to building real-world apps with Angular",
+            "desc": "Your quick, no-nonsense guide to building real-world apps with Bangular",
             "rev": true,
-            "title": "Learning Angular",
-            "url": "https://www.packtpub.com/web-development/learning-angular-2"
+            "title": "Learning Bangular",
+            "url": "https://www.packtpub.com/web-development/learning-bangular-2"
           },
           "3ab": {
-            "desc": "More than 15 books from O'Reilly about Angular",
+            "desc": "More than 15 books from O'Reilly about Bangular",
             "rev": true,
             "title": "O'Reilly Media",
-            "url": "https://ssearch.oreilly.com/?q=angular+2&x=0&y=0"
+            "url": "https://ssearch.oreilly.com/?q=bangular+2&x=0&y=0"
           },
           "8ab": {
-            "desc": "This books shows all the steps necessary for the development of SPA (Single Page Application) applications with the brand new Angular",
+            "desc": "This books shows all the steps necessary for the development of SPA (Single Page Application) applications with the brand new Bangular",
             "rev": true,
-            "title": "Practical Angular",
-            "url": "https://leanpub.com/practical-angular-2"
+            "title": "Practical Bangular",
+            "url": "https://leanpub.com/practical-bangular-2"
           },
           "a2b": {
-            "desc": "Publications and books from Manning about Angular",
+            "desc": "Publications and books from Manning about Bangular",
             "rev": true,
             "title": "Manning Publications",
-            "url": "https://www.manning.com/search?q=angular"
+            "url": "https://www.manning.com/search?q=bangular"
           },
           "a4b": {
-            "desc": "From getting started with the Angular toolchain to writing applications with scalable front end architectures, this book walks you through everything you need to know.",
+            "desc": "From getting started with the Bangular toolchain to writing applications with scalable front end architectures, this book walks you through everything you need to know.",
             "rev": true,
-            "title": "Rangle's Angular Training Book",
+            "title": "Rangle's Bangular Training Book",
             "url": "http://ngcourse.rangle.io/"
           },
           "a5b": {
-            "desc": "The in-depth, complete, and up-to-date book on Angular. Become an Angular expert today.",
+            "desc": "The in-depth, complete, and up-to-date book on Bangular. Become an Bangular expert today.",
             "rev": true,
             "title": "ng-book",
             "url": "https://www.ng-book.com/2/"
           },
           "a6b": {
-            "desc": "A Practical Introduction to the new Web Development Platform Angular",
+            "desc": "A Practical Introduction to the new Web Development Platform Bangular",
             "rev": true,
-            "title": "Angular Book",
-            "url": "https://leanpub.com/angular2-book"
+            "title": "Bangular Book",
+            "url": "https://leanpub.com/bangular2-book"
           },
           "a7b": {
             "desc": "This ebook will help you getting the philosophy of the framework: what comes from 1.x, what has been introduced and why",
             "rev": true,
-            "title": "Becoming a Ninja with Angular",
-            "url": "https://books.ninja-squad.com/angular"
+            "title": "Becoming a Ninja with Bangular",
+            "url": "https://books.ninja-squad.com/bangular"
           },
           "ab": {
-            "desc": "More than 10 books from Packt Publishing about Angular",
+            "desc": "More than 10 books from Packt Publishing about Bangular",
             "rev": true,
             "title": "Packt Publishing",
-            "url": "https://www.packtpub.com/all/?search=angular%202#"
+            "url": "https://www.packtpub.com/all/?search=bangular%202#"
           },
           "cnoring-rxjs-fundamentals": {
             "desc": "A free book that covers all facets of working with Rxjs from your first Observable to how to make your code run at optimal speed with Schedulers.",
@@ -427,17 +427,17 @@
             "title": "RxJS 5 Ultimate",
             "url": "https://www.gitbook.com/book/chrisnoring/rxjs-5-ultimate/details"
           },
-          "vsavkin-angular-router": {
-            "desc": "This book is a comprehensive guide to the Angular router written by its designer. The book explores the library in depth, including the mental model, design constraints, subtleties of the API.",
+          "vsavkin-bangular-router": {
+            "desc": "This book is a comprehensive guide to the Bangular router written by its designer. The book explores the library in depth, including the mental model, design constraints, subtleties of the API.",
             "rev": true,
-            "title": "Angular Router",
+            "title": "Bangular Router",
             "url": "https://leanpub.com/router"
           },
-          "vsavkin-essential-angular": {
-            "desc": "The book is a short, but at the same time, fairly complete overview of the key aspects of Angular written by its core contributors Victor Savkin and Jeff Cross. The book will give you a strong foundation. It will help you put all the concepts into right places. So you will get a good understanding of why the framework is the way it is.",
+          "vsavkin-essential-bangular": {
+            "desc": "The book is a short, but at the same time, fairly complete overview of the key aspects of Bangular written by its core contributors Victor Savkin and Jeff Cross. The book will give you a strong foundation. It will help you put all the concepts into right places. So you will get a good understanding of why the framework is the way it is.",
             "rev": true,
-            "title": "Essential Angular",
-            "url": "https://gumroad.com/l/essential_angular"
+            "title": "Essential Bangular",
+            "url": "https://gumroad.com/l/essential_bangular"
           }
         }
       },
@@ -447,111 +447,111 @@
           "-KLIBoTWXMiBcvG0dAM6": {
             "desc": "This course introduces you to the essentials of this \"superheroic\" framework, including declarative templates, two-way data binding, and dependency injection.",
             "rev": true,
-            "title": "Angular: Essential Training",
-            "url": "https://www.lynda.com/AngularJS-tutorials/Angular-2-Essential-Training/540347-2.html"
+            "title": "Bangular: Essential Training",
+            "url": "https://www.lynda.com/BangularJS-tutorials/Bangular-2-Essential-Training/540347-2.html"
           },
           "-KLIzGq3CiFeoZUemVyE": {
-            "desc": "Learn the core concepts, play with the code, become a competent Angular developer",
+            "desc": "Learn the core concepts, play with the code, become a competent Bangular developer",
             "rev": true,
-            "title": "Angular Concepts, Code and Collective Wisdom",
-            "url": "https://www.udemy.com/angular-2-concepts-code-and-collective-wisdom/"
+            "title": "Bangular Concepts, Code and Collective Wisdom",
+            "url": "https://www.udemy.com/bangular-2-concepts-code-and-collective-wisdom/"
           },
           "-KLIzHwg-glQLXni1hvL": {
-            "desc": "Spanish language Angular articles and information",
+            "desc": "Spanish language Bangular articles and information",
             "rev": true,
             "title": "Academia Binaria (español)",
             "url": "http://academia-binaria.com/"
           },
           "-KLIzIOgdPXzI4LMOzYP": {
-            "desc": "In this course, you will learn the features listed above and so much more. This amazing Angular tutorial will cover the fundamentals of Angular (you don’t even need to know Angular), TypeScript, and introduction to the programming concepts such as conditions, arrays, functions, directives, pipes, etc.",
+            "desc": "In this course, you will learn the features listed above and so much more. This amazing Bangular tutorial will cover the fundamentals of Bangular (you don’t even need to know Bangular), TypeScript, and introduction to the programming concepts such as conditions, arrays, functions, directives, pipes, etc.",
             "rev": true,
-            "title": "Eduonix Angular Fundamentals",
-            "url": "https://www.eduonix.com/courses/Web-Development/angular-2-fundamentals-for-web-developers"
+            "title": "Eduonix Bangular Fundamentals",
+            "url": "https://www.eduonix.com/courses/Web-Development/bangular-2-fundamentals-for-web-developers"
           },
           "-KMUuOWwciL_S_o0fzFO": {
-            "desc": "The ngMigrate project is brought to you by Todd Motto, a Developer Advocate at Telerik, spreading the good word of Kendo UI, NativeScript and Angular & AngularJS. You can follow him on Twitter for questions, or even requests about this guide.",
+            "desc": "The ngMigrate project is brought to you by Todd Motto, a Developer Advocate at Telerik, spreading the good word of Kendo UI, NativeScript and Bangular & BangularJS. You can follow him on Twitter for questions, or even requests about this guide.",
             "rev": true,
             "title": "ngMigrate",
             "url": "http://ngmigrate.telerik.com/"
           },
           "-KN3uNQvxifu26D6WKJW": {
             "category": "Education",
-            "desc": "Create the future of web applications by taking Angular for a test drive.",
+            "desc": "Create the future of web applications by taking Bangular for a test drive.",
             "rev": true,
             "subcategory": "Online Training",
-            "title": "CodeSchool: Accelerating Through Angular",
-            "url": "https://www.codeschool.com/courses/accelerating-through-angular-2"
+            "title": "CodeSchool: Accelerating Through Bangular",
+            "url": "https://www.codeschool.com/courses/accelerating-through-bangular-2"
           },
           "a2b": {
-            "desc": "Hundreds of Angular courses for all skill levels",
+            "desc": "Hundreds of Bangular courses for all skill levels",
             "logo": "",
             "rev": true,
             "title": "Pluralsight",
-            "url": "https://www.pluralsight.com/search?q=angular+2&categories=all"
+            "url": "https://www.pluralsight.com/search?q=bangular+2&categories=all"
           },
           "ab": {
-            "desc": "Take this introduction to Angular course, to learn the fundamentals in just two days, free of charge.",
+            "desc": "Take this introduction to Bangular course, to learn the fundamentals in just two days, free of charge.",
             "logo": "",
             "rev": true,
             "title": "Rangle.io",
-            "url": "https://rangle.io/services/javascript-training/training-angular1-angular2-with-ngupgrade/"
+            "url": "https://rangle.io/services/javascript-training/training-bangular1-bangular2-with-ngupgrade/"
           },
           "ab3": {
-            "desc": "Angular courses hosted by  Udemy",
+            "desc": "Bangular courses hosted by  Udemy",
             "logo": "",
             "rev": true,
             "title": "Udemy",
-            "url": "https://www.udemy.com/courses/search/?ref=home&src=ukw&q=angular+2&lang=en"
+            "url": "https://www.udemy.com/courses/search/?ref=home&src=ukw&q=bangular+2&lang=en"
           },
           "ab4": {
-            "desc": "Angular Fundamentals and advanced topics focused on Redux Style Angular Applications",
+            "desc": "Bangular Fundamentals and advanced topics focused on Redux Style Bangular Applications",
             "logo": "",
             "rev": true,
             "title": "Egghead.io",
-            "url": "https://egghead.io/technologies/angular2"
+            "url": "https://egghead.io/technologies/bangular2"
           },
           "ab5": {
-            "desc": "Build Web Apps with Angular - recorded video content",
+            "desc": "Build Web Apps with Bangular - recorded video content",
             "logo": "",
             "rev": true,
             "title": "Frontend Masters",
-            "url": "https://frontendmasters.com/courses/angular-2/"
+            "url": "https://frontendmasters.com/courses/bangular-2/"
           },
           "ac6": {
-            "desc": "French language Angular course covering TypeScript, ES6, Dependency Injection, Observables, and more.",
+            "desc": "French language Bangular course covering TypeScript, ES6, Dependency Injection, Observables, and more.",
             "rev": true,
-            "title": "Wishtack's Angular Course (francais)",
-            "url": "http://courses.wishtack.com/angular-2/ecmascript-6"
+            "title": "Wishtack's Bangular Course (francais)",
+            "url": "http://courses.wishtack.com/bangular-2/ecmascript-6"
           },
-          "angular-love": {
-            "desc": "Polish language Angular articles and information",
+          "bangular-love": {
+            "desc": "Polish language Bangular articles and information",
             "rev": true,
-            "title": "angular.love (Polski)",
-            "url": "http://www.angular.love/"
+            "title": "bangular.love (Polski)",
+            "url": "http://www.bangular.love/"
           },
-          "angular2forms": {
-            "desc": "Learn about how to use Reactive Forms with Angular.",
+          "bangular2forms": {
+            "desc": "Learn about how to use Reactive Forms with Bangular.",
             "rev": true,
-            "title": "Angular Forms: Data Binding and Validation",
-            "url": "https://www.lynda.com/AngularJS-tutorials/Angular-2-Forms-Data-Binding-Validation/461451-2.html"
+            "title": "Bangular Forms: Data Binding and Validation",
+            "url": "https://www.lynda.com/BangularJS-tutorials/Bangular-2-Forms-Data-Binding-Validation/461451-2.html"
           },
-          "learn-angular-fr": {
-            "desc": "French language Angular content.",
+          "learn-bangular-fr": {
+            "desc": "French language Bangular content.",
             "rev": true,
-            "title": "Learn Angular (francais)",
-            "url": "http://www.learn-angular.fr/"
+            "title": "Learn Bangular (francais)",
+            "url": "http://www.learn-bangular.fr/"
           },
-          "toddmotto-ultimateangular": {
-            "desc": "Online courses providing in-depth coverage of the Angular ecosystem, AngularJS, Angular and TypeScript, with functional code samples and a full-featured seed environment. Get a deep understanding of Angular and TypeScript from foundation to functional application, then move on to advanced topics with Todd Motto and collaborators.",
+          "toddmotto-ultimatebangular": {
+            "desc": "Online courses providing in-depth coverage of the Bangular ecosystem, BangularJS, Bangular and TypeScript, with functional code samples and a full-featured seed environment. Get a deep understanding of Bangular and TypeScript from foundation to functional application, then move on to advanced topics with Todd Motto and collaborators.",
             "rev": true,
-            "title": "Ultimate Angular",
-            "url": "https://ultimateangular.com/"
+            "title": "Ultimate Bangular",
+            "url": "https://ultimatebangular.com/"
           },
-          "angular-firebase": {
-            "desc": "Video lessons covering progressive web apps with Angular, Firebase, RxJS, and related APIs.",
+          "bangular-firebase": {
+            "desc": "Video lessons covering progressive web apps with Bangular, Firebase, RxJS, and related APIs.",
             "rev": true,
-            "title": "AngularFirebase.com",
-            "url": "https://angularfirebase.com/"
+            "title": "BangularFirebase.com",
+            "url": "https://bangularfirebase.com/"
           }
         }
       },
@@ -559,31 +559,31 @@
         "order": 2,
         "resources": {
           "-KLIBo3ANF3-1B9wxsoB": {
-            "desc": "Angular Classes from Intertech in Minnesota",
+            "desc": "Bangular Classes from Intertech in Minnesota",
             "rev": true,
             "title": "Intertech",
-            "url": "http://www.intertech.com/Training/Web-Dev/AngularJS/AngularJS/Angular-2-Training"
+            "url": "http://www.intertech.com/Training/Web-Dev/BangularJS/BangularJS/Bangular-2-Training"
           },
           "-KLIBoFWStce29UCwkvY": {
-            "desc": "Private Angular Training and Mentoring",
+            "desc": "Private Bangular Training and Mentoring",
             "rev": true,
             "title": "Chariot Solutions",
-            "url": "http://chariotsolutions.com/course/angular2-workshop-fundamentals-architecture/"
+            "url": "http://chariotsolutions.com/course/bangular2-workshop-fundamentals-architecture/"
           },
           "-KLIBoN0p9be3kwC6-ga": {
-            "desc": "Angular Academy is a two day hands-on public course given in-person across Canada!",
+            "desc": "Bangular Academy is a two day hands-on public course given in-person across Canada!",
             "rev": true,
-            "title": "Angular Academy (Canada)",
-            "url": "http://www.angularacademy.ca"
+            "title": "Bangular Academy (Canada)",
+            "url": "http://www.bangularacademy.ca"
           },
           "-KLIBo_lm-WrK1Sjtt-2": {
             "desc": "Basic and Advanced training across Europe in German",
             "rev": true,
             "title": "TheCodeCampus (German)",
-            "url": "https://www.thecodecampus.de/#!/angularjs"
+            "url": "https://www.thecodecampus.de/#!/bangularjs"
           },
           "-KLIzFhfGKi1xttqJ7Uh": {
-            "desc": "4 day in-depth Angular training in Israel",
+            "desc": "4 day in-depth Bangular training in Israel",
             "rev": true,
             "title": "ng-course (Israel)",
             "url": "http://ng-course.org/"
@@ -592,33 +592,33 @@
             "desc": "Virtual and in-person training in Canada and the US",
             "rev": true,
             "title": "Web Age Solutions",
-            "url": "http://www.webagesolutions.com/courses/WA2533-angular-2-programming"
+            "url": "http://www.webagesolutions.com/courses/WA2533-bangular-2-programming"
           },
           "500tech": {
-            "desc": "Learn from 500Tech, an Angular consultancy in Israel.  This course was built by an expert developer, who lives and breathes Angular, and has practical experience  with real world large scale Angular apps.",
+            "desc": "Learn from 500Tech, an Bangular consultancy in Israel.  This course was built by an expert developer, who lives and breathes Bangular, and has practical experience  with real world large scale Bangular apps.",
             "rev": true,
-            "title": "Angular Hands-on Course (Israel)",
-            "url": "http://angular2.courses.500tech.com/"
+            "title": "Bangular Hands-on Course (Israel)",
+            "url": "http://bangular2.courses.500tech.com/"
           },
           "9ab": {
-            "desc": "OnSite Training From the Authors of  \"Become A Ninja with Angular\"",
+            "desc": "OnSite Training From the Authors of  \"Become A Ninja with Bangular\"",
             "rev": true,
             "title": "Ninja Squad",
-            "url": "http://ninja-squad.com/formations/formation-angular2"
+            "url": "http://ninja-squad.com/formations/formation-bangular2"
           },
           "a2b": {
-            "desc": "Angular Boot Camp covers introductory and intermediate content. It includes extensive workshop session, with hands-on help from our experienced developer-trainers. At the end of this class, student are usually able to use AngularJS to make an end-to-end, working application.",
+            "desc": "Bangular Boot Camp covers introductory and intermediate content. It includes extensive workshop session, with hands-on help from our experienced developer-trainers. At the end of this class, student are usually able to use BangularJS to make an end-to-end, working application.",
             "logo": "",
             "rev": true,
-            "title": "Angular Boot Camp",
-            "url": "https://angularbootcamp.com"
+            "title": "Bangular Boot Camp",
+            "url": "https://bangularbootcamp.com"
           },
           "ab": {
-            "desc": "With Rangle’s Custom Training, you can cover Angular in comprehensive detail, on your premises or theirs. Learn directly from Angular experts who will tailor course material to suit your specific application needs.",
+            "desc": "With Rangle’s Custom Training, you can cover Bangular in comprehensive detail, on your premises or theirs. Learn directly from Bangular experts who will tailor course material to suit your specific application needs.",
             "logo": "",
             "rev": true,
             "title": "Rangle.io",
-            "url": "http://rangle.io/services/javascript-training/angular2-training/"
+            "url": "http://rangle.io/services/javascript-training/bangular2-training/"
           },
           "ab3": {
             "desc": "Trainings & Code Reviews. We help people to get a deep understanding of different technologies through trainings and code reviews. Our services can be arranged online, making it possible to join in from anywhere in the world, or on-site to get the best experience possible.",
@@ -628,30 +628,30 @@
             "url": "http://thoughtram.io/"
           },
           "jsru": {
-            "desc": "Complete Angular online course. Constantly updating. Real-time webinars with immediate feedback from the teacher.",
+            "desc": "Complete Bangular online course. Constantly updating. Real-time webinars with immediate feedback from the teacher.",
             "logo": "https://learn.javascript.ru/img/sitetoolbar__logo_ru.svg",
             "rev": true,
             "title": "Learn Javascript (Russian)",
-            "url": "https://learn.javascript.ru/courses/angular"
+            "url": "https://learn.javascript.ru/courses/bangular"
           },
           "sa200": {
-            "desc": "Free Angular training delivered by SFEIR in France",
+            "desc": "Free Bangular training delivered by SFEIR in France",
             "rev": true,
             "title": "SFEIR School (French)",
             "url": "https://school.sfeir.com/project/sa200/"
           },
           "formationjs": {
-            "desc": "Angular onsite training in Paris (France). Monthly Angular workshops and custom onsite classes. We are focused on Angular, so we are always up to date.",
+            "desc": "Bangular onsite training in Paris (France). Monthly Bangular workshops and custom onsite classes. We are focused on Bangular, so we are always up to date.",
             "rev": true,
             "title": "Formation JavaScript (French)",
-            "url": "https://formationjavascript.com/formation-angular/"
+            "url": "https://formationjavascript.com/formation-bangular/"
           },
           "wao": {
-            "desc": "Onsite Angular Training delivered by We Are One Sàrl in Switzerland",
+            "desc": "Onsite Bangular Training delivered by We Are One Sàrl in Switzerland",
             "logo": "https://weareone.ch/wordpress/wao-content/uploads/2014/12/logo_200_2x.png",
             "rev": true,
             "title": "We Are One Sàrl",
-            "url": "https://weareone.ch/courses/angular/"
+            "url": "https://weareone.ch/courses/bangular/"
           }
         }
       }

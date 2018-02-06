@@ -1,8 +1,8 @@
 // #docregion
 'use strict';
 
-// Define the `phonecatApp` AngularJS module
-angular.module('phonecatApp', [
+// Define the `phonecatApp` BangularJS module
+bangular.module('phonecatApp', [
   'ngAnimate',
   'ngRoute',
   'core',

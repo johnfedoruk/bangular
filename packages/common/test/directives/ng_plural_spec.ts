@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CommonModule, NgLocalization} from '@angular/common';
-import {Component, Injectable} from '@angular/core';
-import {ComponentFixture, TestBed, async} from '@angular/core/testing';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {CommonModule, NgLocalization} from '@bangular/common';
+import {Component, Injectable} from '@bangular/core';
+import {ComponentFixture, TestBed, async} from '@bangular/core/testing';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 {
   describe('ngPlural', () => {
@@ -63,8 +63,8 @@ import {expect} from '@angular/platform-browser/testing/src/matchers';
          detectChangesAndExpectText('you have one message.');
        }));
 
-    // https://github.com/angular/angular/issues/9868
-    // https://github.com/angular/angular/issues/9882
+    // https://github.com/bangular/bangular/issues/9868
+    // https://github.com/bangular/bangular/issues/9882
     it('should not throw when ngPluralCase contains expressions', async(() => {
          const template = '<ul [ngPlural]="switchValue">' +
              '<ng-template ngPluralCase="=0"><li>{{ switchValue }}</li></ng-template>' +

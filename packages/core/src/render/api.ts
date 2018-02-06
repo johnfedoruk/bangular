@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {InjectionToken, Injector} from '../di';
@@ -97,7 +97,7 @@ export const Renderer2Interceptor = new InjectionToken<Renderer2[]>('Renderer2In
 /**
  * Injectable service that provides a low-level interface for modifying the UI.
  *
- * Use this service to bypass Angular's templating and make custom UI changes that can't be
+ * Use this service to bypass Bangular's templating and make custom UI changes that can't be
  * expressed declaratively. For example if you need to set a property or an attribute whose name is
  * not statically known, use {@link Renderer#setElementProperty setElementProperty} or
  * {@link Renderer#setElementAttribute setElementAttribute} respectively.

@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {StaticSymbolResolverHost} from '@angular/compiler';
-import {CompilerOptions, MetadataCollector, MetadataReaderCache, MetadataReaderHost, createMetadataReaderCache, readMetadata} from '@angular/compiler-cli/src/language_services';
+import {StaticSymbolResolverHost} from '@bangular/compiler';
+import {CompilerOptions, MetadataCollector, MetadataReaderCache, MetadataReaderHost, createMetadataReaderCache, readMetadata} from '@bangular/compiler-cli/src/language_services';
 import * as path from 'path';
 import * as ts from 'typescript';
 

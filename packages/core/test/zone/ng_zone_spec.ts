@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {EventEmitter, NgZone} from '@angular/core';
-import {async, fakeAsync, flushMicrotasks} from '@angular/core/testing';
-import {AsyncTestCompleter, Log, beforeEach, describe, expect, inject, it, xit} from '@angular/core/testing/src/testing_internal';
-import {browserDetection} from '@angular/platform-browser/testing/src/browser_util';
+import {EventEmitter, NgZone} from '@bangular/core';
+import {async, fakeAsync, flushMicrotasks} from '@bangular/core/testing';
+import {AsyncTestCompleter, Log, beforeEach, describe, expect, inject, it, xit} from '@bangular/core/testing/src/testing_internal';
+import {browserDetection} from '@bangular/platform-browser/testing/src/browser_util';
 import {scheduleMicroTask} from '../../src/util';
 import {NoopNgZone} from '../../src/zone/ng_zone';
 
@@ -32,8 +32,8 @@ const resolvedPromise = Promise.resolve(null);
 function logOnError() {
   _zone.onError.subscribe({
     next: (error: any) => {
-      // Error handler should run outside of the Angular zone.
-      NgZone.assertNotInAngularZone();
+      // Error handler should run outside of the Bangular zone.
+      NgZone.assertNotInBangularZone();
       _errors.push(error);
       _traces.push(error.stack);
     }
@@ -177,7 +177,7 @@ function runNgZoneNoLog(fn: () => any) {
     it('should run', () => {
       let runs = false;
       ngZone.run(() => {
-        ngZone.runGuarded(() => { ngZone.runOutsideAngular(() => { runs = true; }); });
+        ngZone.runGuarded(() => { ngZone.runOutsideBangular(() => { runs = true; }); });
       });
       expect(runs).toBe(true);
     });
@@ -226,8 +226,8 @@ function commonTests() {
 
   describe('isInInnerZone', () => {
     it('should return whether the code executes in the inner zone', () => {
-      expect(NgZone.isInAngularZone()).toEqual(false);
-      runNgZoneNoLog(() => { expect(NgZone.isInAngularZone()).toEqual(true); });
+      expect(NgZone.isInBangularZone()).toEqual(false);
+      runNgZoneNoLog(() => { expect(NgZone.isInBangularZone()).toEqual(true); });
     }, testTimeout);
   });
 
@@ -295,7 +295,7 @@ function commonTests() {
 
     xit('should run subscriber listeners in the subscription zone (outside)',
         inject([AsyncTestCompleter], (async: AsyncTestCompleter) => {
-          // Each subscriber fires a microtask outside the Angular zone. The test
+          // Each subscriber fires a microtask outside the Bangular zone. The test
           // then verifies that those microtasks do not cause additional digests.
 
           let turnStart = false;
@@ -361,13 +361,13 @@ function commonTests() {
          }, resultTimer);
        }), testTimeout);
 
-    it('should run async tasks scheduled inside onStable outside Angular zone',
+    it('should run async tasks scheduled inside onStable outside Bangular zone',
        inject([AsyncTestCompleter], (async: AsyncTestCompleter) => {
          runNgZoneNoLog(() => macroTask(_log.fn('run')));
 
          _zone.onStable.subscribe({
            next: () => {
-             NgZone.assertNotInAngularZone();
+             NgZone.assertNotInBangularZone();
              _log.add('onMyTaskDone');
            }
          });
@@ -484,9 +484,9 @@ function commonTests() {
          }, resultTimer);
        }), testTimeout);
 
-    it('should run a function outside of the angular zone',
+    it('should run a function outside of the bangular zone',
        inject([AsyncTestCompleter], (async: AsyncTestCompleter) => {
-         macroTask(() => { _zone.runOutsideAngular(_log.fn('run')); });
+         macroTask(() => { _zone.runOutsideBangular(_log.fn('run')); });
 
          macroTask(() => {
            expect(_log.result()).toEqual('run');
@@ -494,25 +494,25 @@ function commonTests() {
          });
        }), testTimeout);
 
-    it('should call onUnstable and onMicrotaskEmpty when an inner microtask is scheduled from outside angular',
+    it('should call onUnstable and onMicrotaskEmpty when an inner microtask is scheduled from outside bangular',
        inject([AsyncTestCompleter], (async: AsyncTestCompleter) => {
          let resolve: (result: string | null) => void;
          let promise: Promise<string|null>;
 
          macroTask(() => {
-           NgZone.assertNotInAngularZone();
+           NgZone.assertNotInBangularZone();
            promise = new Promise<string|null>(res => { resolve = res; });
          });
 
          runNgZoneNoLog(() => {
            macroTask(() => {
-             NgZone.assertInAngularZone();
+             NgZone.assertInBangularZone();
              promise.then(_log.fn('executedMicrotask'));
            });
          });
 
          macroTask(() => {
-           NgZone.assertNotInAngularZone();
+           NgZone.assertNotInBangularZone();
            _log.add('scheduling a microtask');
            resolve(null);
          });
@@ -522,9 +522,9 @@ function commonTests() {
                .toEqual(
                    // First VM turn => setup Promise then
                    'onUnstable; onMicrotaskEmpty; onStable; ' +
-                   // Second VM turn (outside of angular)
+                   // Second VM turn (outside of bangular)
                    'scheduling a microtask; onUnstable; ' +
-                   // Third VM Turn => execute the microtask (inside angular)
+                   // Third VM Turn => execute the microtask (inside bangular)
                    // No onUnstable;  because we don't own the task which started the turn.
                    'executedMicrotask; onMicrotaskEmpty; onStable');
            async.done();
@@ -724,7 +724,7 @@ function commonTests() {
 
          runNgZoneNoLog(() => {
            macroTask(() => {
-             _zone.runOutsideAngular(
+             _zone.runOutsideBangular(
                  () => { promise = Promise.resolve(4).then((x) => Promise.resolve(x)); });
 
              promise.then(_log.fn('promise then'));

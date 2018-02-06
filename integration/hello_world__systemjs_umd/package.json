@@ -1,5 +1,5 @@
 {
-  "name": "angular-integration",
+  "name": "bangular-integration",
   "description": "Ensure SystemJS ^0.22 UMD compatibility via __esModule flag.",
   "version": "0.0.0",
   "license": "MIT",
@@ -11,11 +11,11 @@
     "protractor": "protractor protractor.config.js"
   },
   "dependencies": {
-    "@angular/common": "file:../../dist/packages-dist/common",
-    "@angular/core": "file:../../dist/packages-dist/core",
-    "@angular/compiler": "file:../../dist/packages-dist/compiler",
-    "@angular/platform-browser": "file:../../dist/packages-dist/platform-browser",
-    "@angular/platform-browser-dynamic": "file:../../dist/packages-dist/platform-browser-dynamic",
+    "@bangular/common": "file:../../dist/packages-dist/common",
+    "@bangular/core": "file:../../dist/packages-dist/core",
+    "@bangular/compiler": "file:../../dist/packages-dist/compiler",
+    "@bangular/platform-browser": "file:../../dist/packages-dist/platform-browser",
+    "@bangular/platform-browser-dynamic": "file:../../dist/packages-dist/platform-browser-dynamic",
     "core-js": "2.4.1",
     "plugin-typescript": "8.0.0",
     "rxjs": "file:../../node_modules/rxjs",

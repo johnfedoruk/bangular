@@ -1,16 +1,16 @@
 # Architecture Overview
 
-Angular is a framework for building client applications in HTML and
+Bangular is a framework for building client applications in HTML and
 either JavaScript or a language like TypeScript that compiles to JavaScript.
 
 The framework consists of several libraries, some of them core and some optional.
 
-You write Angular applications by composing HTML *templates* with Angularized markup,
+You write Bangular applications by composing HTML *templates* with Bangularized markup,
 writing *component* classes to manage those templates, adding application logic in *services*,
 and boxing components and services in *modules*.
 
 Then you launch the app by *bootstrapping* the _root module_.
-Angular takes over, presenting your application content in a browser and
+Bangular takes over, presenting your application content in a browser and
 responding to user interactions according to the instructions you've provided.
 
 Of course, there is more to it than this.
@@ -31,7 +31,7 @@ You'll learn the details in the pages that follow. For now, focus on the big pic
 <img src="generated/images/guide/architecture/module.png" alt="Component" class="left">
 
 
-Angular apps are modular and Angular has its own modularity system called _NgModules_.
+Bangular apps are modular and Bangular has its own modularity system called _NgModules_.
 
 NgModules are a big deal.
 This page introduces modules; the [NgModules](guide/ngmodules) pages 
@@ -39,7 +39,7 @@ relating to NgModules covers them in detail.
 
 <br class="clear">
 
-Every Angular app has at least one NgModule class, [the _root module_](guide/bootstrapping "Bootstrapping"),
+Every Bangular app has at least one NgModule class, [the _root module_](guide/bootstrapping "Bootstrapping"),
 conventionally named `AppModule`.
 
 While the _root module_ may be the only module in a small application, most apps have many more
@@ -51,7 +51,7 @@ An NgModule, whether a _root_ or _feature_, is a class with an `@NgModule` decor
 <div class="l-sub-section">
 
   Decorators are functions that modify JavaScript classes.
-  Angular has many decorators that attach metadata to classes so that it knows
+  Bangular has many decorators that attach metadata to classes so that it knows
   what those classes mean and how they should work.
   <a href="https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841#.x5c2ndtx0">
   Learn more</a> about decorators on the web.
@@ -61,7 +61,7 @@ An NgModule, whether a _root_ or _feature_, is a class with an `@NgModule` decor
 `NgModule` is a decorator function that takes a single metadata object whose properties describe the module.
 The most important properties are:
 * `declarations` - the _view classes_ that belong to this module.
-Angular has three kinds of view classes: [components](guide/architecture#components), [directives](guide/architecture#directives), and [pipes](guide/pipes).
+Bangular has three kinds of view classes: [components](guide/architecture#components), [directives](guide/architecture#directives), and [pipes](guide/pipes).
 
 * `exports` - the subset of declarations that should be visible and usable in the component [templates](guide/architecture#templates) of other modules.
 
@@ -90,7 +90,7 @@ During development you're likely to bootstrap the `AppModule` in a `main.ts` fil
 
 ### NgModules vs. JavaScript modules
 
-The NgModule &mdash; a class decorated with `@NgModule` &mdash; is a fundamental feature of Angular.
+The NgModule &mdash; a class decorated with `@NgModule` &mdash; is a fundamental feature of Bangular.
 
 JavaScript also has its own module system for managing collections of JavaScript objects.
 It's completely different and unrelated to the NgModule system.
@@ -109,23 +109,23 @@ Other JavaScript modules use *import statements* to access public objects from o
 
 These are two different and _complementary_ module systems. Use them both to write your apps.
 
-### Angular libraries
+### Bangular libraries
 
 <img src="generated/images/guide/architecture/library-module.png" alt="Component" class="left">
 
-Angular ships as a collection of JavaScript modules. You can think of them as library modules.
+Bangular ships as a collection of JavaScript modules. You can think of them as library modules.
 
-Each Angular library name begins with the `@angular` prefix.
+Each Bangular library name begins with the `@bangular` prefix.
 
 You install them with the **npm** package manager and import parts of them with JavaScript `import` statements.
 
 <br class="clear">
 
-For example, import Angular's `Component` decorator from the `@angular/core` library like this:
+For example, import Bangular's `Component` decorator from the `@bangular/core` library like this:
 
 <code-example path="architecture/src/app/app.component.ts" region="import" linenums="false"></code-example>
 
-You also import NgModules from Angular _libraries_ using JavaScript import statements:
+You also import NgModules from Bangular _libraries_ using JavaScript import statements:
 
 <code-example path="architecture/src/app/mini-app.ts" region="import-browser-module" linenums="false"></code-example>
 
@@ -133,7 +133,7 @@ In the example of the simple root module above, the application module needs mat
 
 <code-example path="architecture/src/app/mini-app.ts" region="ngmodule-imports" linenums="false"></code-example>
 
-In this way you're using both the Angular and JavaScript module systems _together_.
+In this way you're using both the Bangular and JavaScript module systems _together_.
 
 It's easy to confuse the two systems because they share the common vocabulary of "imports" and "exports".
 Hang in there. The confusion yields to clarity with time and experience.
@@ -169,7 +169,7 @@ that it acquires from a service.
 
 <code-example path="architecture/src/app/hero-list.component.ts" linenums="false" title="src/app/hero-list.component.ts (class)" region="class"></code-example>
 
-Angular creates, updates, and destroys components as the user moves through the application.
+Bangular creates, updates, and destroys components as the user moves through the application.
 Your app can take action at each moment in this lifecycle through optional [lifecycle hooks](guide/lifecycle-hooks), like `ngOnInit()` declared above.
 
 <hr/>
@@ -179,14 +179,14 @@ Your app can take action at each moment in this lifecycle through optional [life
 <img src="generated/images/guide/architecture/template.png" alt="Template" class="left">
 
 You define a component's view with its companion **template**. A template is a form of HTML
-that tells Angular how to render the component.
+that tells Bangular how to render the component.
 
 A template looks like regular HTML, except for a few differences. Here is a
 template for our `HeroListComponent`:
 
 <code-example path="architecture/src/app/hero-list.component.html" title="src/app/hero-list.component.html"></code-example>
 
-Although this template uses typical HTML elements like `<h2>` and  `<p>`, it also has some differences. Code like `*ngFor`, `{{hero.name}}`, `(click)`, `[hero]`, and `<app-hero-detail>` uses Angular's [template syntax](guide/template-syntax).
+Although this template uses typical HTML elements like `<h2>` and  `<p>`, it also has some differences. Code like `*ngFor`, `{{hero.name}}`, `(click)`, `[hero]`, and `<app-hero-detail>` uses Bangular's [template syntax](guide/template-syntax).
 
 In the last line of the template, the `<app-hero-detail>` tag is a custom element that represents a new component, `HeroDetailComponent`.
 
@@ -205,16 +205,16 @@ Notice how `<app-hero-detail>` rests comfortably among native HTML elements. Cus
 
 <img src="generated/images/guide/architecture/metadata.png" alt="Metadata" class="left">
 
-Metadata tells Angular how to process a class.
+Metadata tells Bangular how to process a class.
 
 <br class="clear">
 
 [Looking back at the code](guide/architecture#component-code) for `HeroListComponent`, you can see that it's just a class.
-There is no evidence of a framework, no "Angular" in it at all.
+There is no evidence of a framework, no "Bangular" in it at all.
 
-In fact, `HeroListComponent` really is *just a class*. It's not a component until you *tell Angular about it*.
+In fact, `HeroListComponent` really is *just a class*. It's not a component until you *tell Bangular about it*.
 
-To tell Angular that `HeroListComponent` is a component, attach **metadata** to the class.
+To tell Bangular that `HeroListComponent` is a component, attach **metadata** to the class.
 
 In TypeScript, you attach metadata by using a **decorator**.
 Here's some metadata for `HeroListComponent`:
@@ -225,34 +225,34 @@ Here is the `@Component` decorator, which identifies the class
 immediately below it as a component class.
 
 The `@Component` decorator takes a required configuration object with the
-information Angular needs to create and present the component and its view.
+information Bangular needs to create and present the component and its view.
 
 Here are a few of the most useful `@Component` configuration options:
 
-* `selector`: CSS selector that tells Angular to create and insert an instance of this component
+* `selector`: CSS selector that tells Bangular to create and insert an instance of this component
 where it finds a `<app-hero-list>` tag in *parent* HTML.
 For example, if an app's  HTML contains `<app-hero-list></app-hero-list>`, then
-Angular inserts an instance of the `HeroListComponent` view between those tags.
+Bangular inserts an instance of the `HeroListComponent` view between those tags.
 
 * `templateUrl`: module-relative address of this component's HTML template, shown [above](guide/architecture#templates).
 
 * `providers`: array of **dependency injection providers** for services that the component requires.
-This is one way to tell Angular that the component's constructor requires a `HeroService`
+This is one way to tell Bangular that the component's constructor requires a `HeroService`
 so it can get the list of heroes to display.
 
 <img src="generated/images/guide/architecture/template-metadata-component.png" alt="Metadata" class="left">
 
-The metadata in the `@Component` tells Angular where to get the major building blocks you specify for the component.
+The metadata in the `@Component` tells Bangular where to get the major building blocks you specify for the component.
 
 The template, metadata, and component together describe a view.
 
-Apply other metadata decorators in a similar fashion to guide Angular behavior.
+Apply other metadata decorators in a similar fashion to guide Bangular behavior.
 `@Injectable`, `@Input`, and `@Output` are a few of the more popular decorators.
 
 <br class="clear">
 
 The architectural takeaway is that you must add metadata to your code
-so that Angular knows what to do.
+so that Bangular knows what to do.
 
 <hr/>
 
@@ -264,9 +264,9 @@ read as any experienced jQuery programmer can attest.
 
 <img src="generated/images/guide/architecture/databinding.png" alt="Data Binding" class="left">
 
-Angular supports **data binding**,
+Bangular supports **data binding**,
 a mechanism for coordinating parts of a template with parts of a component.
-Add binding markup to the template HTML to tell Angular how to connect both sides.
+Add binding markup to the template HTML to tell Bangular how to connect both sides.
 
 As the diagram shows, there are four forms of data binding syntax. Each form has a direction &mdash; to the DOM, from the DOM, or in both directions.
 
@@ -294,7 +294,7 @@ In two-way binding, a data property value flows to the input box from the compon
 The user's changes also flow back to the component, resetting the property to the latest value,
 as with event binding.
 
-Angular processes *all* data bindings once per JavaScript event cycle,
+Bangular processes *all* data bindings once per JavaScript event cycle,
 from the root of the application component tree through all child components.
 
 <figure>
@@ -315,7 +315,7 @@ Data binding is also important for communication between parent and child compon
 
 <img src="generated/images/guide/architecture/directive.png" alt="Parent child" class="left">
 
-Angular templates are *dynamic*. When Angular renders them, it transforms the DOM
+Bangular templates are *dynamic*. When Bangular renders them, it transforms the DOM
 according to the instructions given by **directives**.
 
 A directive is a class with a `@Directive` decorator.
@@ -325,7 +325,7 @@ a `@Component` decorator is actually a `@Directive` decorator extended with temp
 <div class="l-sub-section">
 
   While **a component is technically a directive**,
-  components are so distinctive and central to Angular applications that this architectural overview separates components from directives.
+  components are so distinctive and central to Bangular applications that this architectural overview separates components from directives.
 
 </div>
 
@@ -340,7 +340,7 @@ The [example template](guide/architecture#templates) uses two built-in structura
 
 <code-example path="architecture/src/app/hero-list.component.1.html" linenums="false" title="src/app/hero-list.component.html (structural)" region="structural"></code-example>
 
-* [`*ngFor`](guide/displaying-data#ngFor) tells Angular to stamp out one `<li>` per hero in the `heroes` list.
+* [`*ngFor`](guide/displaying-data#ngFor) tells Bangular to stamp out one `<li>` per hero in the `heroes` list.
 * [`*ngIf`](guide/displaying-data#ngIf) includes the `HeroDetail` component only if a selected hero exists.
 
 **Attribute** directives alter the appearance or behavior of an existing element.
@@ -353,7 +353,7 @@ by setting its display value property and responding to change events.
 
 <code-example path="architecture/src/app/hero-detail.component.html" linenums="false" title="src/app/hero-detail.component.html (ngModel)" region="ngModel"></code-example>
 
-Angular has a few more directives that either alter the layout structure
+Bangular has a few more directives that either alter the layout structure
 (for example, [ngSwitch](guide/template-syntax#ngSwitch))
 or modify aspects of DOM elements and components
 (for example, [ngStyle](guide/template-syntax#ngStyle) and [ngClass](guide/template-syntax#ngClass)).
@@ -383,10 +383,10 @@ Examples include:
 * tax calculator
 * application configuration
 
-There is nothing specifically _Angular_ about services. Angular has no definition of a service.
+There is nothing specifically _Bangular_ about services. Bangular has no definition of a service.
 There is no service base class, and no place to register a service.
 
-Yet services are fundamental to any Angular application. Components are big consumers of services.
+Yet services are fundamental to any Bangular application. Components are big consumers of services.
 
 Here's an example of a service class that logs to the browser console:
 
@@ -408,10 +408,10 @@ and the application logic (which often includes some notion of a _model_).
 A good component presents properties and methods for data binding.
 It delegates everything nontrivial to services.
 
-Angular doesn't *enforce* these principles.
+Bangular doesn't *enforce* these principles.
 It won't complain if you write a "kitchen sink" component with 3000 lines.
 
-Angular does help you *follow* these principles by making it easy to factor your
+Bangular does help you *follow* these principles by making it easy to factor your
 application logic into services and make those services available to components through *dependency injection*.
 
 <hr/>
@@ -422,24 +422,24 @@ application logic into services and make those services available to components 
 
 _Dependency injection_ is a way to supply a new instance of a class
 with the fully-formed dependencies it requires. Most dependencies are services.
-Angular uses dependency injection to provide new components with the services they need.
+Bangular uses dependency injection to provide new components with the services they need.
 
 <br class="clear">
 
-Angular can tell which services a component needs by looking at the types of its constructor parameters.
+Bangular can tell which services a component needs by looking at the types of its constructor parameters.
 For example, the constructor of your `HeroListComponent` needs a `HeroService`:
 
 
 <code-example path="architecture/src/app/hero-list.component.ts" linenums="false" title="src/app/hero-list.component.ts (constructor)" region="ctor"></code-example>
 
-When Angular creates a component, it first asks an **injector** for
+When Bangular creates a component, it first asks an **injector** for
 the services that the component requires.
 
 An injector maintains a container of service instances that it has previously created.
 If a requested service instance is not in the container, the injector makes one and adds it to the container
-before returning the service to Angular.
+before returning the service to Bangular.
 When all requested services have been resolved and returned,
-Angular can call the component's constructor with those services as arguments.
+Bangular can call the component's constructor with those services as arguments.
 This is *dependency injection*.
 
 The process of `HeroService` injection looks a bit like this:
@@ -472,7 +472,7 @@ The full story is in the [dependency injection](guide/dependency-injection) page
 
 Points to remember about dependency injection:
 
-* Dependency injection is wired into the Angular framework and used everywhere.
+* Dependency injection is wired into the Bangular framework and used everywhere.
 
 * The *injector* is the main mechanism.
   * An injector maintains a *container* of service instances that it created.
@@ -486,7 +486,7 @@ Points to remember about dependency injection:
 
 ## Wrap up
 
-You've learned the basics about the eight main building blocks of an Angular application:
+You've learned the basics about the eight main building blocks of an Bangular application:
 
 * [Modules](guide/architecture#modules)
 * [Components](guide/architecture#components)
@@ -497,17 +497,17 @@ You've learned the basics about the eight main building blocks of an Angular app
 * [Services](guide/architecture#services)
 * [Dependency injection](guide/architecture#dependency-injection)
 
-That's a foundation for everything else in an Angular application,
+That's a foundation for everything else in an Bangular application,
 and it's more than enough to get going.
 But it doesn't include everything you need to know.
 
-Here is a brief, alphabetical list of other important Angular features and services.
+Here is a brief, alphabetical list of other important Bangular features and services.
 Most of them are covered in this documentation (or soon will be).
 
 > [**Animations**](guide/animations): Animate component behavior
-without deep knowledge of animation techniques or CSS with Angular's animation library.
+without deep knowledge of animation techniques or CSS with Bangular's animation library.
 
-> **Change detection**: The change detection documentation will cover how Angular decides that a component property value has changed,
+> **Change detection**: The change detection documentation will cover how Bangular decides that a component property value has changed,
 when to update the screen, and how it uses **zones** to intercept asynchronous activity and run its change detection strategies.
 
 > **Events**: The events documentation will cover how to use components and services to raise events with mechanisms for
@@ -529,5 +529,5 @@ by implementing the lifecycle hook interfaces.
 > [**Router**](guide/router): Navigate from page to page within the client
   application and never leave the browser.
 
-> [**Testing**](guide/testing): Run unit tests on your application parts as they interact with the Angular framework
-using the _Angular Testing Platform_.
+> [**Testing**](guide/testing): Run unit tests on your application parts as they interact with the Bangular framework
+using the _Bangular Testing Platform_.

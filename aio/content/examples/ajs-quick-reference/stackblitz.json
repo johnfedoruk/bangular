@@ -1,9 +1,9 @@
 {
-  "description": "AngularJS to Angular Quick Reference",
+  "description": "BangularJS to Bangular Quick Reference",
   "files":[
     "!**/*.d.ts",
     "!**/*.js",
     "!**/*.[1].*"
   ],
-  "tags":["cookbook", "angularjs"]
+  "tags":["cookbook", "bangularjs"]
 }

@@ -7,7 +7,7 @@ import { logging, promise } from 'selenium-webdriver';
  * The tests here basically just checking that the end styles
  * of each animation are in effect.
  *
- * Relies on the Angular testability only becoming stable once
+ * Relies on the Bangular testability only becoming stable once
  * animation(s) have finished.
  *
  * Ideally we'd use https://developer.mozilla.org/en-US/docs/Web/API/Document/getAnimations

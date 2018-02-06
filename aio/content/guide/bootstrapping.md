@@ -8,7 +8,7 @@ A basic understanding of the following:
 <hr />
 
 An NgModule describes how the application parts fit together.
-Every application has at least one Angular module, the _root_ module
+Every application has at least one Bangular module, the _root_ module
 that you bootstrap to launch the application.
 By convention, it is usually called `AppModule`.
 
@@ -16,10 +16,10 @@ If you use the CLI to generate an app, the default `AppModule` is as follows:
 
 ```typescript
 /* JavaScript imports */
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@bangular/platform-browser';
+import { NgModule } from '@bangular/core';
+import { FormsModule } from '@bangular/forms';
+import { HttpModule } from '@bangular/http';
 
 import { AppComponent } from './app.component';
 
@@ -44,12 +44,12 @@ After the import statements is a class with the
 **`@NgModule`** [decorator](guide/glossary#decorator '"Decorator" explained').
 
 The `@NgModule` decorator identifies `AppModule` as an `NgModule` class.
-`@NgModule` takes a metadata object that tells Angular how to compile and launch the application.
+`@NgModule` takes a metadata object that tells Bangular how to compile and launch the application.
 
 * **_declarations_**&mdash;this application's lone component.
 * **_imports_**&mdash;import `BrowserModule` to have browser specific services such as DOM rendering, sanitization, and location.
 * **_providers_**&mdash;the service providers.
-* **_bootstrap_**&mdash;the _root_ component that Angular creates and inserts
+* **_bootstrap_**&mdash;the _root_ component that Bangular creates and inserts
 into the `index.html` host web page.
 
 The default CLI application only has one component, `AppComponent`, so it
@@ -59,11 +59,11 @@ is in both the `declarations` and the `bootstrap` arrays.
 
 ## The `declarations` array
 
-The module's `declarations` array tells Angular which components belong to that module.
+The module's `declarations` array tells Bangular which components belong to that module.
 As you create more components, add them to `declarations`.
 
 You must declare every component in exactly one `NgModule` class.
-If you use a component without declaring it, Angular returns an
+If you use a component without declaring it, Bangular returns an
 error message.
 
 The `declarations` array only takes declarables. Declarables
@@ -133,7 +133,7 @@ Remember, components, directives, and pipes belong to one module only. You only 
 ## The `imports` array
 
 The module's `imports` array appears exclusively in the `@NgModule` metadata object.
-It tells Angular about other NgModules that this particular module needs to function properly.
+It tells Bangular about other NgModules that this particular module needs to function properly.
 
 This list of modules are those that export components, directives, or pipes
 that the component templates in this module reference. In this case, the component is
@@ -174,7 +174,7 @@ root module's `bootstrap` array.
 
 
 
-## More about Angular Modules
+## More about Bangular Modules
 
 For more on NgModules you're likely to see frequently in apps,
 see [Frequently Used Modules](#).

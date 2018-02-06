@@ -2,7 +2,7 @@
 // #docregion directive
 
 
-import { Directive } from '@angular/core';
+import { Directive } from '@bangular/core';
 
 @Directive({
   selector: '[appItem]'

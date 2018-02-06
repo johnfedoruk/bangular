@@ -1,10 +1,10 @@
 /* tslint:disable */
 // #docregion
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { NO_ERRORS_SCHEMA } from '@bangular/core';
+import { ActivatedRoute } from '@bangular/router';
 import { Observable } from 'rxjs/Observable';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { SpyLocation } from '@angular/common/testing';
+import { async, ComponentFixture, TestBed } from '@bangular/core/testing';
+import { SpyLocation } from '@bangular/common/testing';
 
 import { PhoneListComponent } from './phone-list.component';
 import { Phone, PhoneData } from '../core/phone/phone.service';

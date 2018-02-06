@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as path from 'path';
@@ -32,7 +32,7 @@ export function createTsConfig(options: TsConfigOptions) {
   const result = options.defaultTsConfig;
 
   return {
-    'extends': '../angular/packages/bazel/test/ngc-wrapped/empty/tsconfig',
+    'extends': '../bangular/packages/bazel/test/ngc-wrapped/empty/tsconfig',
     'compilerOptions': {
       ...result.compilerOptions,
       'outDir': options.outDir,
@@ -58,7 +58,7 @@ export function createTsConfig(options: TsConfigOptions) {
     },
     'bazelOptions': {
       ...result.bazelOptions,
-      'workspaceName': 'angular',
+      'workspaceName': 'bangular',
       'target': options.target,
       // we have to set this as the default tsconfig is made of es6 mode
       'es5Mode': true,
@@ -70,11 +70,11 @@ export function createTsConfig(options: TsConfigOptions) {
       'tsickleExternsPath': '',
       // we don't copy the node_modules into our tmp dir, so we should look in
       // the original workspace directory for it
-      'nodeModulesPrefix': '../angular/node_modules',
+      'nodeModulesPrefix': '../bangular/node_modules',
     },
     'files': options.files,
-    'angularCompilerOptions': {
-      ...result.angularCompilerOptions,
+    'bangularCompilerOptions': {
+      ...result.bangularCompilerOptions,
       'expectedOut': [
         ...options.compilationTargetSrc.map(src => srcToExpectedOut(src, 'js', options)),
         ...options.compilationTargetSrc.map(src => srcToExpectedOut(src, 'd.ts', options)),

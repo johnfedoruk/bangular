@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@bangular/core';
 
 import { Hero } from '../model/hero';
 import { HeroService } from '../model/hero.service';

@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable} from '@angular/core';
+import {Injectable} from '@bangular/core';
 import {Observable} from 'rxjs/Observable';
 
 import {BaseRequestOptions, RequestOptions} from './base_request_options';
@@ -50,7 +50,7 @@ function mergeOptions(
  * ### Example
  *
  * ```typescript
- * import {Http, HTTP_PROVIDERS} from '@angular/http';
+ * import {Http, HTTP_PROVIDERS} from '@bangular/http';
  * import 'rxjs/add/operator/map'
  * @Component({
  *   selector: 'http-app',
@@ -83,8 +83,8 @@ function mergeOptions(
  * ### Example
  *
  * ```typescript
- * import {BaseRequestOptions, Http} from '@angular/http';
- * import {MockBackend} from '@angular/http/testing';
+ * import {BaseRequestOptions, Http} from '@bangular/http';
+ * import {MockBackend} from '@bangular/http/testing';
  * var injector = Injector.resolveAndCreate([
  *   BaseRequestOptions,
  *   MockBackend,
@@ -98,7 +98,7 @@ function mergeOptions(
  * http.get('request-from-mock-backend.json').subscribe((res:Response) => doSomething(res));
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 @Injectable()
 export class Http {
@@ -186,7 +186,7 @@ export class Http {
 
 
 /**
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 @Injectable()
 export class Jsonp extends Http {

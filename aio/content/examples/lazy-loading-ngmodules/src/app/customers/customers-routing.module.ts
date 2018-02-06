@@ -1,7 +1,7 @@
 // #docplaster
 // #docregion customers-routing-module
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@bangular/core';
+import { Routes, RouterModule } from '@bangular/router';
 
 import { CustomerListComponent } from './customer-list/customer-list.component';
 

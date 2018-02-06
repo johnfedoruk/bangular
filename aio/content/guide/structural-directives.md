@@ -8,7 +8,7 @@
 
 
 
-This guide looks at how Angular manipulates the DOM with **structural directives** and
+This guide looks at how Bangular manipulates the DOM with **structural directives** and
 how you can write your own structural directives to do the same thing.
 
 Try the <live-example></live-example>.
@@ -42,13 +42,13 @@ No brackets. No parentheses. Just `*ngIf` set to a string.
 You'll learn in this guide that the [asterisk (*) is a convenience notation](guide/structural-directives#asterisk)
 and the string is a [_microsyntax_](guide/structural-directives#microsyntax) rather than the usual
 [template expression](guide/template-syntax#template-expressions).
-Angular desugars this notation into a marked-up `<ng-template>` that surrounds the
+Bangular desugars this notation into a marked-up `<ng-template>` that surrounds the
 host element and its descendents.
 Each structural directive does something different with that template.
 
 Three of the common, built-in structural directives&mdash;[NgIf](guide/template-syntax#ngIf),
 [NgFor](guide/template-syntax#ngFor), and [NgSwitch...](guide/template-syntax#ngSwitch)&mdash;are
-described in the [_Template Syntax_](guide/template-syntax) guide and seen in samples throughout the Angular documentation.
+described in the [_Template Syntax_](guide/template-syntax) guide and seen in samples throughout the Bangular documentation.
 Here's an example of them in a template:
 
 
@@ -92,7 +92,7 @@ you apply the directive to an element in the HTML template.
 
 
 
-There are two other kinds of Angular directives, described extensively elsewhere:
+There are two other kinds of Bangular directives, described extensively elsewhere:
 (1)&nbsp;components and (2)&nbsp;attribute directives.
 
 A *component* manages a region of HTML in the manner of a native HTML element.
@@ -142,7 +142,7 @@ in its place is a comment about "bindings" (more about that [later](guide/struct
 
 When the condition is false, `NgIf` removes its host element from the DOM,
 detaches it from DOM events (the attachments that it made),
-detaches the component from Angular change detection, and destroys it.
+detaches the component from Bangular change detection, and destroys it.
 The component and DOM nodes can be garbage-collected and free up memory.
 
 ### Why *remove* rather than *hide*?
@@ -169,7 +169,7 @@ The difference between hiding and removing doesn't matter for a simple paragraph
 It does matter when the host element is attached to a resource intensive component.
 Such a component's behavior continues even when hidden.
 The component stays attached to its DOM element. It keeps listening to events.
-Angular keeps checking for changes that could affect data bindings.
+Bangular keeps checking for changes that could affect data bindings.
 Whatever the component was doing, it keeps doing.
 
 Although invisible, the component&mdash;and all of its descendant components&mdash;tie up resources.
@@ -208,7 +208,7 @@ Here is `*ngIf` displaying the hero's name if `hero` exists.
 
 
 The asterisk is "syntactic sugar" for something a bit more complicated.
-Internally, Angular translates the `*ngIf` _attribute_ into a `<ng-template>` _element_, wrapped around the host element, like this.
+Internally, Bangular translates the `*ngIf` _attribute_ into a `<ng-template>` _element_, wrapped around the host element, like this.
 
 
 <code-example path="structural-directives/src/app/app.component.html" linenums="false" title="src/app/app.component.html (ngif-template)" region="ngif-template">
@@ -229,7 +229,7 @@ The first form is not actually rendered, only the finished product ends up in th
 
 
 
-Angular consumed the `<ng-template>` content during its actual rendering and
+Bangular consumed the `<ng-template>` content during its actual rendering and
 replaced the `<ng-template>` with a diagnostic comment.
 
 The [`NgFor`](guide/structural-directives#ngFor) and [`NgSwitch...`](guide/structural-directives#ngSwitch) directives follow the same pattern.
@@ -241,7 +241,7 @@ The [`NgFor`](guide/structural-directives#ngFor) and [`NgSwitch...`](guide/struc
 
 ## Inside _*ngFor_
 
-Angular transforms the `*ngFor` in similar fashion from asterisk (*) syntax to `<ng-template>` _element_.
+Bangular transforms the `*ngFor` in similar fashion from asterisk (*) syntax to `<ng-template>` _element_.
 
 Here's a full-featured application of `NgFor`, written both ways:
 
@@ -256,7 +256,7 @@ This is manifestly more complicated than `ngIf` and rightly so.
 The `NgFor` directive has more features, both required and optional, than the `NgIf` shown in this guide.
 At minimum `NgFor` needs a looping variable (`let hero`) and a list (`heroes`).
 
-You enable these features in the string assigned to `ngFor`, which you write in Angular's [microsyntax](guide/structural-directives#microsyntax).
+You enable these features in the string assigned to `ngFor`, which you write in Bangular's [microsyntax](guide/structural-directives#microsyntax).
 
 
 <div class="alert is-helpful">
@@ -277,7 +277,7 @@ In this example, the `[ngClass]="odd"` stays on the `<div>`.
 
 ### Microsyntax
 
-The Angular microsyntax lets you configure a directive in a compact, friendly string.
+The Bangular microsyntax lets you configure a directive in a compact, friendly string.
 The microsyntax parser translates that string into attributes on the `<ng-template>`:
 
 * The `let` keyword declares a [_template input variable_](guide/structural-directives#template-input-variable)
@@ -294,11 +294,11 @@ That's how the directive learns that the list is `heroes` and the track-by funct
 These properties include `index` and `odd` and a special property named `$implicit`.
 
 * The `let-i` and `let-odd` variables were defined as `let i=index` and `let odd=odd`.
-Angular sets them to the current value of the context's `index` and `odd` properties.
+Bangular sets them to the current value of the context's `index` and `odd` properties.
 
 * The context property for `let-hero` wasn't specified.
 Its intended source is implicit.
-Angular sets `let-hero` to the value of the context's `$implicit` property
+Bangular sets `let-hero` to the value of the context's `$implicit` property
 which `NgFor` has initialized with the hero for the current iteration.
 
 * The [API guide](api/common/NgForOf "API: NgFor")
@@ -309,8 +309,8 @@ describes additional `NgFor` directive properties and context properties.
 
 These microsyntax mechanisms are available to you when you write your own structural directives.
 Studying the
-[source code for `NgIf`](https://github.com/angular/angular/blob/master/packages/common/src/directives/ng_if.ts "Source: NgIf")
-and [`NgForOf`](https://github.com/angular/angular/blob/master/packages/common/src/directives/ng_for_of.ts "Source: NgForOf")
+[source code for `NgIf`](https://github.com/bangular/bangular/blob/master/packages/common/src/directives/ng_if.ts "Source: NgIf")
+and [`NgForOf`](https://github.com/bangular/bangular/blob/master/packages/common/src/directives/ng_for_of.ts "Source: NgForOf")
 is a great way to learn more.
 
 
@@ -350,12 +350,12 @@ variable as the `hero` declared as `#hero`.
 
 Someday you'll want to repeat a block of HTML but only when a particular condition is true.
 You'll _try_ to put both an `*ngFor` and an `*ngIf` on the same host element.
-Angular won't let you. You may apply only one _structural_ directive to an element.
+Bangular won't let you. You may apply only one _structural_ directive to an element.
 
 The reason is simplicity. Structural directives can do complex things with the host element and its descendents.
 When two directives lay claim to the same host element, which one takes precedence?
 Which should go first, the `NgIf` or the `NgFor`? Can the `NgIf` cancel the effect of the `NgFor`?
-If so (and it seems like it should be so), how should Angular generalize the ability to cancel for other structural directives?
+If so (and it seems like it should be so), how should Bangular generalize the ability to cancel for other structural directives?
 
 There are no easy answers to these questions. Prohibiting multiple structural directives makes them moot.
 There's an easy solution for this use case: put the `*ngIf` on a container element that wraps the `*ngFor` element.
@@ -368,7 +368,7 @@ One or both elements can be an [`ng-container`](guide/structural-directives#ngco
 
 ## Inside _NgSwitch_ directives
 
-The Angular _NgSwitch_ is actually a set of cooperating directives: `NgSwitch`, `NgSwitchCase`, and `NgSwitchDefault`.
+The Bangular _NgSwitch_ is actually a set of cooperating directives: `NgSwitch`, `NgSwitchCase`, and `NgSwitchDefault`.
 
 Here's an example.
 
@@ -425,7 +425,7 @@ Use [&lt;ng-container&gt;](guide/structural-directives#ng-container) when there'
 to host the directive.
 
 While there's rarely a good reason to apply a structural directive in template _attribute_ or _element_ form,
-it's still important to know that Angular creates a `<ng-template>` and to understand how it works.
+it's still important to know that Bangular creates a `<ng-template>` and to understand how it works.
 You'll refer to the `<ng-template>` when you [write your own structural directive](guide/structural-directives#unless).
 
 
@@ -435,9 +435,9 @@ You'll refer to the `<ng-template>` when you [write your own structural directiv
 
 ## The *&lt;ng-template&gt;*
 
-The &lt;ng-template&gt; is an Angular element for rendering HTML.
+The &lt;ng-template&gt; is an Bangular element for rendering HTML.
 It is never displayed directly.
-In fact, before rendering the view, Angular _replaces_ the `<ng-template>` and its contents with a comment.
+In fact, before rendering the view, Bangular _replaces_ the `<ng-template>` and its contents with a comment.
 
 If there is no structural directive and you merely wrap some elements in a `<ng-template>`,
 those elements disappear.
@@ -450,7 +450,7 @@ That's the fate of the middle "Hip!" in the phrase "Hip! Hip! Hooray!".
 
 
 
-Angular erases the middle "Hip!", leaving the cheer a bit less enthusiastic.
+Bangular erases the middle "Hip!", leaving the cheer a bit less enthusiastic.
 
 
 <figure>
@@ -553,8 +553,8 @@ The browser won't display an `<option>` within a `<span>`.
 
 ### &lt;ng-container&gt; to the rescue
 
-The Angular `<ng-container>` is a grouping element that doesn't interfere with styles or layout
-because Angular _doesn't put it in the DOM_.
+The Bangular `<ng-container>` is a grouping element that doesn't interfere with styles or layout
+because Bangular _doesn't put it in the DOM_.
 
 Here's the conditional paragraph again, this time using `<ng-container>`.
 
@@ -592,7 +592,7 @@ The drop down works properly.
 
 
 
-The `<ng-container>` is a syntax element recognized by the Angular parser.
+The `<ng-container>` is a syntax element recognized by the Bangular parser.
 It's not a directive, component, class, or interface.
 It's more like the curly braces in a JavaScript `if`-block:
 
@@ -610,7 +610,7 @@ It's more like the curly braces in a JavaScript `if`-block:
 
 Without those braces, JavaScript would only execute the first statement
 when you intend to conditionally execute all of them as a single block.
-The `<ng-container>` satisfies a similar need in Angular templates.
+The `<ng-container>` satisfies a similar need in Bangular templates.
 
 
 {@a unless}
@@ -655,19 +655,19 @@ The brackets define a CSS
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors" title="MDN: Attribute selectors">attribute selector</a>.
 
 The directive _attribute name_ should be spelled in _lowerCamelCase_ and begin with a prefix.
-Don't use `ng`. That prefix belongs to Angular.
+Don't use `ng`. That prefix belongs to Bangular.
 Pick something short that fits you or your company.
 In this example, the prefix is `app`.
 
 
-The directive _class_ name ends in `Directive` per the [style guide](guide/styleguide#02-03 "Angular Style Guide").
-Angular's own directives do not.
+The directive _class_ name ends in `Directive` per the [style guide](guide/styleguide#02-03 "Bangular Style Guide").
+Bangular's own directives do not.
 
 ### _TemplateRef_ and _ViewContainerRef_
 
 A simple structural directive like this one creates an
 [_embedded view_](api/core/EmbeddedViewRef "API: EmbeddedViewRef")
-from the Angular-generated `<ng-template>` and inserts that view in a
+from the Bangular-generated `<ng-template>` and inserts that view in a
 [_view container_](api/core/ViewContainerRef "API: ViewContainerRef")
 adjacent to the directive's original `<p>` host element.
 
@@ -708,7 +708,7 @@ Read about `@Input` in the [_Template Syntax_](guide/template-syntax#inputs-outp
 
 
 
-Angular sets the `appUnless` property whenever the value of the condition changes.
+Bangular sets the `appUnless` property whenever the value of the condition changes.
 Because the `appUnless` property does work, it needs a setter.
 
 * If the condition is falsy and the view hasn't been created previously,
@@ -798,7 +798,7 @@ You learned
 
 * that structural directives manipulate HTML layout.
 * to use [`<ng-container>`](guide/structural-directives#ngcontainer) as a grouping element when there is no suitable host element.
-* that the Angular desugars [asterisk (*) syntax](guide/structural-directives#asterisk) into a `<ng-template>`.
+* that the Bangular desugars [asterisk (*) syntax](guide/structural-directives#asterisk) into a `<ng-template>`.
 * how that works for the `NgIf`, `NgFor` and `NgSwitch` built-in directives.
 * about the [_microsyntax_](guide/structural-directives#microsyntax) that expands into a [`<ng-template>`](guide/structural-directives#template).
 * to write a [custom structural directive](guide/structural-directives#unless), `UnlessDirective`.

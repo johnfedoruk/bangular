@@ -1,5 +1,5 @@
 // Exact copy except import UserService from core
-import { Component, OnInit }      from '@angular/core';
+import { Component, OnInit }      from '@bangular/core';
 
 import { Contact, ContactService } from './contact.service';
 import { UserService }             from '../core/user.service';

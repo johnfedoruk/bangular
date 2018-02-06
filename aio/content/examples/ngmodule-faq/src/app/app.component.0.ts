@@ -1,10 +1,10 @@
 // #docregion
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 
 @Component({
   selector: 'app-root',
   template: '<h1>{{title}}</h1>',
 })
 export class AppComponent {
-  title = 'Angular Modules';
+  title = 'Bangular Modules';
 }

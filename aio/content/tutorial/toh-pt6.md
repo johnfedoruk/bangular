@@ -1,7 +1,7 @@
 # HTTP
 
 In this tutorial, you'll add the following data persistence features with help from
-Angular's `HttpClient`.
+Bangular's `HttpClient`.
 
 * The `HeroService` gets hero data with HTTP requests.
 * Users can add, edit, and delete heroes and save these changes over HTTP.
@@ -11,18 +11,18 @@ When you're done with this page, the app should look like this <live-example></l
 
 ## Enable HTTP services
 
-`HttpClient` is Angular's mechanism for communicating with a remote server over HTTP. 
+`HttpClient` is Bangular's mechanism for communicating with a remote server over HTTP. 
 
 To make `HttpClient` available everywhere in the app,
 
 * open the root `AppModule`, 
-* import the `HttpClientModule` symbol from `@angular/common/http`,
+* import the `HttpClientModule` symbol from `@bangular/common/http`,
 * add it to the `@NgModule.imports` array.
 
 ## Simulate a data server
 
 This tutorial sample _mimics_ communication with a remote data server by using the
-[_In-memory Web API_](https://github.com/angular/in-memory-web-api "In-memory Web API") module.
+[_In-memory Web API_](https://github.com/bangular/in-memory-web-api "In-memory Web API") module.
 
 After installing the module, the app will make requests to and receive responses from the `HttpClient`
 without knowing that the *In-memory Web API* is intercepting those requests,
@@ -36,7 +36,7 @@ the server's web api is ill-defined or not yet implemented.
 
 <div class="alert is-important">
 
-**Important:** the *In-memory Web API* module has nothing to do with HTTP in Angular.
+**Important:** the *In-memory Web API* module has nothing to do with HTTP in Bangular.
 
 If you're just _reading_ this tutorial to learn about `HttpClient`, you can [skip over](#import-heroes) this step.
 If you're _coding along_ with this tutorial, stay here and add the *In-memory Web API* now.
@@ -46,7 +46,7 @@ If you're _coding along_ with this tutorial, stay here and add the *In-memory We
 Install the *In-memory Web API* package from _npm_
 
 <code-example language="sh" class="code-shell">
-  npm install angular-in-memory-web-api --save
+  npm install bangular-in-memory-web-api --save
 </code-example>
 
 Import the `InMemoryWebApiModule` and the `InMemoryDataService` class, 
@@ -428,7 +428,7 @@ Add the hero search element, `<app-hero-search>`, to the bottom of the `Dashboar
 This template looks a lot like the `*ngFor` repeater in the `HeroesComponent` template.
 
 Unfortunately, adding this element breaks the app.
-Angular can't find a component with a selector that matches `<app-hero-search>`.
+Bangular can't find a component with a selector that matches `<app-hero-search>`.
 
 The `HeroSearchComponent` doesn't exist yet. Fix that.
 
@@ -466,7 +466,7 @@ The `$` is a convention that indicates `heroes$` is an `Observable`, not an arra
 
 The `*ngFor` can't do anything with an `Observable`.
 But there's also a pipe character (`|`) followed by `async`,
-which identifies Angular's `AsyncPipe`.
+which identifies Bangular's `AsyncPipe`.
 
 The `AsyncPipe` subscribes to an `Observable` automatically so you won't have to
 do so in the component class.
@@ -651,5 +651,5 @@ You're at the end of your journey, and you've accomplished a lot.
 * You learned how to use Observables.
 
 This concludes the "Tour of Heroes" tutorial.
-You're ready to learn more about Angular development in the fundamentals section,
+You're ready to learn more about Bangular development in the fundamentals section,
 starting with the [Architecture](guide/architecture "Architecture") guide.

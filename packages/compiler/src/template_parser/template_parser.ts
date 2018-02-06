@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {CompileDirectiveMetadata, CompileDirectiveSummary, CompilePipeSummary, CompileTokenMetadata, CompileTypeMetadata, identifierName} from '../compile_metadata';
@@ -190,7 +190,7 @@ export class TemplateParser {
     const errors: ParseError[] = htmlAstWithErrors.errors;
 
     if (errors.length == 0 || forced) {
-      // Transform ICU messages to angular directives
+      // Transform ICU messages to bangular directives
       const expandedHtmlAst = expandNodes(htmlAstWithErrors.rootNodes);
       errors.push(...expandedHtmlAst.errors);
       htmlAstWithErrors = new ParseTreeResult(expandedHtmlAst.nodes, errors);
@@ -669,9 +669,9 @@ class TemplateParseVisitor implements html.Visitor {
   }
 
   /**
-   * Make sure that non-angular tags conform to the schemas.
+   * Make sure that non-bangular tags conform to the schemas.
    *
-   * Note: An element is considered an angular tag when at least one directive selector matches the
+   * Note: An element is considered an bangular tag when at least one directive selector matches the
    * tag name.
    *
    * @param matchElement Whether any directive has matched on the tag name
@@ -683,7 +683,7 @@ class TemplateParseVisitor implements html.Visitor {
     if (!matchElement && !this._schemaRegistry.hasElement(elName, this._schemas)) {
       let errorMsg = `'${elName}' is not a known element:\n`;
       errorMsg +=
-          `1. If '${elName}' is an Angular component, then verify that it is part of this module.\n`;
+          `1. If '${elName}' is an Bangular component, then verify that it is part of this module.\n`;
       if (elName.indexOf('-') > -1) {
         errorMsg +=
             `2. If '${elName}' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.`;
@@ -741,11 +741,11 @@ class TemplateParseVisitor implements html.Visitor {
             `Can't bind to '${boundProp.name}' since it isn't a known property of '${elementName}'.`;
         if (elementName.startsWith('ng-')) {
           errorMsg +=
-              `\n1. If '${boundProp.name}' is an Angular directive, then add 'CommonModule' to the '@NgModule.imports' of this component.` +
+              `\n1. If '${boundProp.name}' is an Bangular directive, then add 'CommonModule' to the '@NgModule.imports' of this component.` +
               `\n2. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.`;
         } else if (elementName.indexOf('-') > -1) {
           errorMsg +=
-              `\n1. If '${elementName}' is an Angular component and it has '${boundProp.name}' input, then verify that it is part of this module.` +
+              `\n1. If '${elementName}' is an Bangular component and it has '${boundProp.name}' input, then verify that it is part of this module.` +
               `\n2. If '${elementName}' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.` +
               `\n3. To allow any property add 'NO_ERRORS_SCHEMA' to the '@NgModule.schemas' of this component.`;
         }

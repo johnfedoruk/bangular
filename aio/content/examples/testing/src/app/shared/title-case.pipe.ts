@@ -1,5 +1,5 @@
 // #docregion
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@bangular/core';
 
 @Pipe({name: 'titlecase', pure: false})
 /** Transform to Title Case: uppercase the first letter of the words in a string.*/

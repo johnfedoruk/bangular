@@ -1,6 +1,6 @@
 /* tslint:disable:component-class-suffix */
-import { Component }                          from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component }                          from '@bangular/core';
+import { FormBuilder, FormGroup, Validators } from '@bangular/forms';
 
 import { states } from '../data-model';
 

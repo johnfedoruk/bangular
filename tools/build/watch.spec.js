@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 var rewire = require('rewire');
@@ -137,7 +137,7 @@ describe('watch()', function() {
 });
 
 
-// setTimeout/clearTimeout mocking, mostly stolen from angular-mocks.js
+// setTimeout/clearTimeout mocking, mostly stolen from bangular-mocks.js
 function mockTimeout() {
   var events = [];
   var id = 0;

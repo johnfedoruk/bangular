@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {EventEmitter, NgZone} from '@angular/core';
+import {EventEmitter, NgZone} from '@bangular/core';
 
 
 
@@ -16,13 +16,13 @@ import {EventEmitter, NgZone} from '@angular/core';
  * given channel to one MessageBusSink are received on the same channel
  * by the corresponding MessageBusSource.
  *
- * @experimental WebWorker support in Angular is currenlty experimental.
+ * @experimental WebWorker support in Bangular is currenlty experimental.
  */
 export abstract class MessageBus implements MessageBusSource, MessageBusSink {
   /**
    * Sets up a new channel on the MessageBus.
    * MUST be called before calling from or to on the channel.
-   * If runInZone is true then the source will emit events inside the angular zone
+   * If runInZone is true then the source will emit events inside the bangular zone
    * and the sink will buffer messages and send only once the zone exits.
    * if runInZone is false then the source will emit events inside the global zone
    * and the sink will send messages immediately.
@@ -51,13 +51,13 @@ export abstract class MessageBus implements MessageBusSource, MessageBusSink {
 }
 
 /**
- * @experimental WebWorker support in Angular is currenlty experimental.
+ * @experimental WebWorker support in Bangular is currenlty experimental.
  */
 export interface MessageBusSource {
   /**
    * Sets up a new channel on the MessageBusSource.
    * MUST be called before calling from on the channel.
-   * If runInZone is true then the source will emit events inside the angular zone.
+   * If runInZone is true then the source will emit events inside the bangular zone.
    * if runInZone is false then the source will emit events inside the global zone.
    */
   initChannel(channel: string, runInZone: boolean): void;
@@ -77,7 +77,7 @@ export interface MessageBusSource {
 }
 
 /**
- * @experimental WebWorker support in Angular is currenlty experimental.
+ * @experimental WebWorker support in Bangular is currenlty experimental.
  */
 export interface MessageBusSink {
   /**

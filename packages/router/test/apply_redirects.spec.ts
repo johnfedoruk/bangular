@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgModuleRef} from '@angular/core';
-import {TestBed} from '@angular/core/testing';
+import {NgModuleRef} from '@bangular/core';
+import {TestBed} from '@bangular/core/testing';
 import {Observable} from 'rxjs/Observable';
 import {of } from 'rxjs/observable/of';
 

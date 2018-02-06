@@ -3,17 +3,17 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-// static tree benchmark in AngularJS 1.x
-import {getIntParameter, bindAction} from '@angular/testing/src/benchmark_util';
-declare var angular: any;
+// static tree benchmark in BangularJS 1.x
+import {getIntParameter, bindAction} from '@bangular/testing/src/benchmark_util';
+declare var bangular: any;
 
 const MAX_DEPTH = 10;
 
 export function main() {
-  angular.bootstrap(document.querySelector('.app'), ['app']);
+  bangular.bootstrap(document.querySelector('.app'), ['app']);
 }
 
 function addTreeDirective(module, level: number) {
@@ -26,7 +26,7 @@ function addTreeDirective(module, level: number) {
   module.directive(`tree${level}`, function() { return {scope: {data: '='}, template: template}; });
 }
 
-const module = angular.module('app', []);
+const module = bangular.module('app', []);
 for (let depth = 0; depth < MAX_DEPTH; depth++) {
   addTreeDirective(module, depth);
 }

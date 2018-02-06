@@ -1,12 +1,12 @@
 // #docregion
-import { inject, TestBed } from '@angular/core/testing';
+import { inject, TestBed } from '@bangular/core/testing';
 import {
   Http,
   BaseRequestOptions,
   ResponseOptions,
   Response
-} from '@angular/http';
-import { MockBackend, MockConnection } from '@angular/http/testing';
+} from '@bangular/http';
+import { MockBackend, MockConnection } from '@bangular/http/testing';
 import { Phone, PhoneData } from './phone.service';
 
 describe('Phone', function() {

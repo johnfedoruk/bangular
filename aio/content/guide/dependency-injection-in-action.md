@@ -2,7 +2,7 @@
 
 
 Dependency Injection is a powerful pattern for managing code dependencies.
-This cookbook explores many of the features of Dependency Injection (DI) in Angular.
+This cookbook explores many of the features of Dependency Injection (DI) in Bangular.
 {@a toc}
 
 See the <live-example name="dependency-injection-in-action"></live-example>
@@ -33,7 +33,7 @@ is all the registration you need.
 
 
 A *provider* is something that can create or deliver a service.
-Angular creates a service instance from a class provider by using `new`.
+Bangular creates a service instance from a class provider by using `new`.
 Read more about providers in the [Dependency Injection](guide/dependency-injection#register-providers-ngmodule)
 guide.
 
@@ -42,7 +42,7 @@ guide.
 
 
 Now that you've registered these services,
-Angular can inject them into the constructor of *any* component or service, *anywhere* in the application.
+Bangular can inject them into the constructor of *any* component or service, *anywhere* in the application.
 
 <code-example path="dependency-injection-in-action/src/app/hero-bios.component.ts" region="ctor" title="src/app/hero-bios.component.ts (component constructor injection)" linenums="false">
 
@@ -109,7 +109,7 @@ a `UserService` that gathers information about a particular user.
 
 
 
-When Angular creates the `AppComponent`, the dependency injection framework creates an instance of the `LoggerService` and
+When Bangular creates the `AppComponent`, the dependency injection framework creates an instance of the `LoggerService` and
 starts to create the `UserContextService`.
 The `UserContextService` needs the `LoggerService`, which the framework already has, and the `UserService`, which it has yet to create.
 The `UserService` has no dependencies so the dependency injection framework can just
@@ -140,7 +140,7 @@ Notice the `@Injectable()`decorator on the `UserContextService` class.
 
 
 
-That decorator makes it possible for Angular to identify the types of its two dependencies, `LoggerService` and `UserService`.
+That decorator makes it possible for Bangular to identify the types of its two dependencies, `LoggerService` and `UserService`.
 
 Technically, the `@Injectable()`decorator is only required for a service class that has _its own dependencies_.
 The `LoggerService` doesn't depend on anything. The logger would work if you omitted `@Injectable()`
@@ -169,7 +169,7 @@ Some developers prefer to add it only where needed and that's a reasonable polic
 
 The `AppComponent` class had two dependencies as well but no `@Injectable()`.
 It didn't need `@Injectable()` because that component class has the `@Component` decorator.
-In Angular with TypeScript, a *single* decorator&mdash;*any* decorator&mdash;is sufficient to identify dependency types.
+In Bangular with TypeScript, a *single* decorator&mdash;*any* decorator&mdash;is sufficient to identify dependency types.
 
 
 
@@ -183,12 +183,12 @@ In Angular with TypeScript, a *single* decorator&mdash;*any* decorator&mdash;is 
 All injected service dependencies are singletons meaning that,
 for a given dependency injector, there is only one instance of service.
 
-But an Angular application has multiple dependency injectors, arranged in a tree hierarchy that parallels the component tree.
+But an Bangular application has multiple dependency injectors, arranged in a tree hierarchy that parallels the component tree.
 So a particular service can be *provided* and created at any component level and multiple times
 if provided in multiple components.
 
 By default, a service dependency provided in one component is visible to all of its child components and
-Angular injects the same service instance into all child components that ask for that service.
+Bangular injects the same service instance into all child components that ask for that service.
 
 Accordingly, dependencies provided in the root `AppComponent` can be injected into *any* component *anywhere* in the application.
 
@@ -207,7 +207,7 @@ Here, the `HeroService` is available to the `HeroesBaseComponent` because it is 
 
 
 
-When Angular creates the `HeroesBaseComponent`, it also creates a new instance of `HeroService`
+When Bangular creates the `HeroesBaseComponent`, it also creates a new instance of `HeroService`
 that is visible only to the component and its children, if any.
 
 You could also provide the `HeroService` to a *different* component elsewhere in the application.
@@ -232,7 +232,7 @@ Each of these components has its own `HeroService` instance managing its own ind
 
 
 ### Take a break!
-This much Dependency Injection knowledge may be all that many Angular developers
+This much Dependency Injection knowledge may be all that many Bangular developers
 ever need to build their applications. It doesn't always have to be more complicated.
 
 
@@ -304,16 +304,16 @@ and confirm that the three `HeroBioComponent` instances have their own cached he
 ## Qualify dependency lookup with _@Optional()_ and `@Host()`
 As you now know, dependencies can be registered at any level in the component hierarchy.
 
-When a component requests a dependency, Angular starts with that component's injector and walks up the injector tree
-until it finds the first suitable provider.  Angular throws an error if it can't find the dependency during that walk.
+When a component requests a dependency, Bangular starts with that component's injector and walks up the injector tree
+until it finds the first suitable provider.  Bangular throws an error if it can't find the dependency during that walk.
 
 You *want* this behavior most of the time.
 But sometimes you need to limit the search and/or accommodate a missing dependency.
-You can modify Angular's search behavior with the `@Host` and `@Optional` qualifying decorators,
+You can modify Bangular's search behavior with the `@Host` and `@Optional` qualifying decorators,
 used individually or together.
 
-The `@Optional` decorator tells Angular to continue when it can't find the dependency.
-Angular sets the injection parameter to `null` instead.
+The `@Optional` decorator tells Bangular to continue when it can't find the dependency.
+Bangular sets the injection parameter to `null` instead.
 
 The `@Host` decorator stops the upward search at the *host component*.
 
@@ -343,7 +343,7 @@ Focus on the template:
 
 
 Now there is a new `<hero-contact>` element between the `<hero-bio>` tags.
-Angular *projects*, or *transcludes*, the corresponding `HeroContactComponent` into the `HeroBioComponent` view,
+Bangular *projects*, or *transcludes*, the corresponding `HeroContactComponent` into the `HeroBioComponent` view,
 placing it in the `<ng-content>` slot of the `HeroBioComponent` template:
 
 <code-example path="dependency-injection-in-action/src/app/hero-bio.component.ts" region="template" title="src/app/hero-bio.component.ts (template)" linenums="false">
@@ -378,15 +378,15 @@ Focus on the constructor parameters:
 
 The `@Host()` function decorating the  `heroCache` property ensures that
 you get a reference to the cache service from the parent `HeroBioComponent`.
-Angular throws an error if the parent lacks that service, even if a component higher
+Bangular throws an error if the parent lacks that service, even if a component higher
 in the component tree happens to have it.
 
 A second `@Host()` function decorates the `loggerService` property.
 The only `LoggerService` instance in the app is provided at the `AppComponent` level.
 The host `HeroBioComponent` doesn't have its own `LoggerService` provider.
 
-Angular would throw an error if you hadn't also decorated the property with the `@Optional()` function.
-Thanks to `@Optional()`, Angular sets the `loggerService` to null and the rest of the component adapts.
+Bangular would throw an error if you hadn't also decorated the property with the `@Optional()` function.
+Thanks to `@Optional()`, Bangular sets the `loggerService` to null and the rest of the component adapts.
 
 
 Here's the `HeroBiosAndContactsComponent` in action.
@@ -397,7 +397,7 @@ Here's the `HeroBiosAndContactsComponent` in action.
 
 
 
-If you comment out the `@Host()` decorator, Angular now walks up the injector ancestor tree
+If you comment out the `@Host()` decorator, Bangular now walks up the injector ancestor tree
 until it finds the logger at the `AppComponent` level. The logger logic kicks in and the hero display updates
 with the gratuitous "!!!", indicating that the logger was found.
 
@@ -431,7 +431,7 @@ the [Attribute Directives](guide/attribute-directives) page.
 The directive sets the background to a highlight color when the user mouses over the
 DOM element to which it is applied.
 
-Angular sets the constructor's `el` parameter to the injected `ElementRef`, which is
+Bangular sets the constructor's `el` parameter to the injected `ElementRef`, which is
 a wrapper around that DOM element.
 Its `nativeElement` property exposes the DOM element for the directive to manipulate.
 
@@ -459,9 +459,9 @@ This section demonstrates how to write providers that deliver dependent services
 
 Get a service from a dependency injector by giving it a ***token***.
 
-You usually let Angular handle this transaction by specifying a constructor parameter and its type.
+You usually let Bangular handle this transaction by specifying a constructor parameter and its type.
 The parameter type serves as the injector lookup *token*.
-Angular passes this token to the injector and assigns the result to the parameter.
+Bangular passes this token to the injector and assigns the result to the parameter.
 Here's a typical example:
 
 
@@ -471,7 +471,7 @@ Here's a typical example:
 
 
 
-Angular asks the injector for the service associated with the `LoggerService`
+Bangular asks the injector for the service associated with the `LoggerService`
 and assigns the returned value to the `logger` parameter.
 
 Where did the injector get that value?
@@ -493,7 +493,7 @@ If the search is futile, the injector throws an error&mdash;unless the request w
 
 
 A new injector has no providers.
-Angular initializes the injectors it creates with some providers it cares about.
+Bangular initializes the injectors it creates with some providers it cares about.
 You have to register your _own_ application providers manually,
 usually in the `providers` array of the `Component` or `Directive` metadata:
 
@@ -685,7 +685,7 @@ The `HeroOfTheMonthComponent` constructor's `logger` parameter is typed as `Mini
 
 
 
-Behind the scenes, Angular actually sets the `logger` parameter to the full service registered under the `LoggingService` token which happens to be the `DateLoggerService` that was [provided above](guide/dependency-injection-in-action#useclass).
+Behind the scenes, Bangular actually sets the `logger` parameter to the full service registered under the `LoggingService` token which happens to be the `DateLoggerService` that was [provided above](guide/dependency-injection-in-action#useclass).
 
 
 <div class="l-sub-section">
@@ -741,13 +741,13 @@ The true provider factory function is the function that `runnersUpFactory` retur
 
 That returned function takes a winning `Hero` and a `HeroService` as arguments.
 
-Angular supplies these arguments from injected values identified by
+Bangular supplies these arguments from injected values identified by
 the two *tokens* in the `deps` array.
 The two `deps` values are *tokens* that the injector uses
 to provide these factory function dependencies.
 
 After some undisclosed work, the function returns the string of names
-and Angular injects it into the `runnersUp` parameter of the `HeroOfTheMonthComponent`.
+and Bangular injects it into the `runnersUp` parameter of the `HeroOfTheMonthComponent`.
 
 
 <div class="l-sub-section">
@@ -770,7 +770,7 @@ for the full source code.
 
 ## Provider token alternatives: the *class-interface* and *InjectionToken*
 
-Angular dependency injection is easiest when the provider *token* is a class
+Bangular dependency injection is easiest when the provider *token* is a class
 that is also the type of the returned dependency object, or what you usually call the *service*.
 
 But the token doesn't have to be a class and even when it is a class,
@@ -927,7 +927,7 @@ Rather than modify the original component, sub-class it and create a
 `SortedHeroesComponent` that sorts the heroes before presenting them.
 The `SortedHeroesComponent` lets the base class fetch the heroes.
 
-Unfortunately, Angular cannot inject the `HeroService` directly into the base class.
+Unfortunately, Bangular cannot inject the `HeroService` directly into the base class.
 You must provide the `HeroService` again for *this* component,
 then pass it down to the base class inside the constructor.
 
@@ -940,7 +940,7 @@ then pass it down to the base class inside the constructor.
 
 Now take note of the `afterGetHeroes()` method.
 Your first instinct might have been to create an `ngOnInit` method in `SortedHeroesComponent` and do the sorting there.
-But Angular calls the *derived* class's `ngOnInit` *before* calling the base class's `ngOnInit`
+But Bangular calls the *derived* class's `ngOnInit` *before* calling the base class's `ngOnInit`
 so you'd be sorting the heroes array *before they arrived*. That produces a nasty error.
 
 Overriding the base class's `afterGetHeroes()` method solves the problem.
@@ -960,8 +960,8 @@ are preferable. But sometimes it makes sense for one component
 to have a direct reference to another component
 perhaps to access values or call methods on that component.
 
-Obtaining a component reference is a bit tricky in Angular.
-Although an Angular application is a tree of components,
+Obtaining a component reference is a bit tricky in Bangular.
+Although an Bangular application is a tree of components,
 there is no public API for inspecting and traversing that tree.
 
 There is an API for acquiring a child reference.
@@ -970,7 +970,7 @@ in the [API Reference](api/).
 
 There is no public API for acquiring a parent reference.
 But because every component instance is added to an injector's container,
-you can use Angular dependency injection to reach a parent component.
+you can use Bangular dependency injection to reach a parent component.
 
 This section describes some techniques for doing that.
 
@@ -1075,7 +1075,7 @@ You can find a parent component with a [class-interface](guide/dependency-inject
 
 The parent must cooperate by providing an *alias* to itself in the name of a *class-interface* token.
 
-Recall that Angular always adds a component instance to its own injector;
+Recall that Bangular always adds a component instance to its own injector;
 that's why you could inject *Alex* into *Cathy* [earlier](guide/dependency-injection-in-action#known-parent).
 
 Write an [*alias provider*](guide/dependency-injection-in-action#useexisting)&mdash;a `provide` object literal with a `useExisting`
@@ -1159,7 +1159,7 @@ It's identical to *Carol*'s constructor except for the additional `@SkipSelf` de
 1. It tells the injector to start its search for a `Parent` dependency in a component *above* itself,
 which *is* what parent means.
 
-2. Angular throws a cyclic dependency error if you omit the `@SkipSelf` decorator.
+2. Bangular throws a cyclic dependency error if you omit the `@SkipSelf` decorator.
 
   `Cannot instantiate cyclic dependency! (BethComponent -> Parent -> BethComponent)`
 
@@ -1283,7 +1283,7 @@ But sometimes circular references are unavoidable.
 You're in a bind when class 'A' refers to class 'B' and 'B' refers to 'A'.
 One of them has to be defined first.
 
-The Angular `forwardRef()` function creates an *indirect* reference that Angular can resolve later.
+The Bangular `forwardRef()` function creates an *indirect* reference that Bangular can resolve later.
 
 The *Parent Finder* sample is full of circular class references that are impossible to break.
 

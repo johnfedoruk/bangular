@@ -6,7 +6,7 @@ ts_library(
     name = "testing",
     testonly = 1,
     srcs = glob(["**/*.ts"]),
-    module_name = "@angular/router/testing",
+    module_name = "@bangular/router/testing",
     deps = [
         "//packages/common",
         "//packages/common/testing",

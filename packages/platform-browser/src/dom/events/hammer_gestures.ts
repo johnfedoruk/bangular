@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Inject, Injectable, InjectionToken} from '@angular/core';
+import {Inject, Injectable, InjectionToken} from '@bangular/core';
 
 import {DOCUMENT} from '../dom_tokens';
 
@@ -51,7 +51,7 @@ const EVENT_NAMES = {
 };
 
 /**
- * A DI token that you can use to provide{@link HammerGestureConfig} to Angular. Use it to configure
+ * A DI token that you can use to provide{@link HammerGestureConfig} to Bangular. Use it to configure
  * Hammer gestures.
  *
  * @experimental
@@ -110,8 +110,8 @@ export class HammerGesturesPlugin extends EventManagerPlugin {
     const zone = this.manager.getZone();
     eventName = eventName.toLowerCase();
 
-    return zone.runOutsideAngular(() => {
-      // Creating the manager bind events, must be done outside of angular
+    return zone.runOutsideBangular(() => {
+      // Creating the manager bind events, must be done outside of bangular
       const mc = this._config.buildHammer(element);
       const callback = function(eventObj: HammerInput) {
         zone.runGuarded(function() { handler(eventObj); });

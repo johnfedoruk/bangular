@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 
@@ -165,7 +165,7 @@ export function assertTokens(tokens: CssToken[], valuesArr: string[]) {
       const styles = `
         @import url('remote.css');
         @charset "UTF-8";
-        @namespace ng url(http://angular.io/namespace/ng);
+        @namespace ng url(http://bangular.io/namespace/ng);
       `;
 
       const ast = makeAst(styles);
@@ -181,7 +181,7 @@ export function assertTokens(tokens: CssToken[], valuesArr: string[]) {
       const namespaceRule = <CssInlineRuleAst>ast.rules[2];
       expect(namespaceRule.type).toEqual(BlockType.Namespace);
       assertTokens(
-          namespaceRule.value.tokens, ['ng', 'url', '(', 'http://angular.io/namespace/ng', ')']);
+          namespaceRule.value.tokens, ['ng', 'url', '(', 'http://bangular.io/namespace/ng', ')']);
     });
 
     it('should parse CSS values that contain functions and leave the inner function data untokenized',
@@ -700,7 +700,7 @@ export function assertTokens(tokens: CssToken[], valuesArr: string[]) {
     });
 
     it('should parse minified CSS content properly', () => {
-      // this code was taken from the angular.io webpage's CSS code
+      // this code was taken from the bangular.io webpage's CSS code
       const styles = `
 .is-hidden{display:none!important}
 .is-visible{display:block!important}
@@ -721,7 +721,7 @@ export function assertTokens(tokens: CssToken[], valuesArr: string[]) {
     });
 
     it('should parse a snippet of keyframe code from animate.css properly', () => {
-      // this code was taken from the angular.io webpage's CSS code
+      // this code was taken from the bangular.io webpage's CSS code
       const styles = `
 @charset "UTF-8";
 

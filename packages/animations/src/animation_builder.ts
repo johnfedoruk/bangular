@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 import {AnimationMetadata, AnimationOptions} from './animation_metadata';
 import {AnimationPlayer} from './players/animation_player';
@@ -14,14 +14,14 @@ import {AnimationPlayer} from './players/animation_player';
  * NoopAnimationsModule} modules are used within an application.
  *
  * The purpose if this service is to produce an animation sequence programmatically within an
- * angular component or directive.
+ * bangular component or directive.
  *
  * Programmatic animations are first built and then a player is created when the build animation is
  * attached to an element.
  *
  * ```ts
  * // remember to include the BrowserAnimationsModule module for this to work...
- * import {AnimationBuilder} from '@angular/animations';
+ * import {AnimationBuilder} from '@bangular/animations';
  *
  * class MyCmp {
  *   constructor(private _builder: AnimationBuilder) {}

@@ -1,9 +1,9 @@
 // #docplaster
 // #docregion
 // #docregion v4
-/* Angular Imports */
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
+/* Bangular Imports */
+import { NgModule }       from '@bangular/core';
+import { BrowserModule }  from '@bangular/platform-browser';
 
 /* App Imports */
 import { AppComponent }   from './app.component';

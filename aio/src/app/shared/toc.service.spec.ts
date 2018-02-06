@@ -1,5 +1,5 @@
-import { ReflectiveInjector } from '@angular/core';
-import { DOCUMENT, DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ReflectiveInjector } from '@bangular/core';
+import { DOCUMENT, DomSanitizer, SafeHtml } from '@bangular/platform-browser';
 import { Subject } from 'rxjs/Subject';
 
 import { ScrollItem, ScrollSpyInfo, ScrollSpyService } from 'app/shared/scroll-spy.service';

@@ -3,17 +3,17 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injector} from '@angular/core';
-import {AsyncTestCompleter, beforeEach, describe, inject, it, xit} from '@angular/core/testing/src/testing_internal';
-import {BaseRequestOptions, RequestOptions} from '@angular/http/src/base_request_options';
-import {BaseResponseOptions, ResponseOptions} from '@angular/http/src/base_response_options';
-import {Request} from '@angular/http/src/static_request';
-import {Response} from '@angular/http/src/static_response';
-import {MockBackend, MockConnection} from '@angular/http/testing/src/mock_backend';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {Injector} from '@bangular/core';
+import {AsyncTestCompleter, beforeEach, describe, inject, it, xit} from '@bangular/core/testing/src/testing_internal';
+import {BaseRequestOptions, RequestOptions} from '@bangular/http/src/base_request_options';
+import {BaseResponseOptions, ResponseOptions} from '@bangular/http/src/base_response_options';
+import {Request} from '@bangular/http/src/static_request';
+import {Response} from '@bangular/http/src/static_response';
+import {MockBackend, MockConnection} from '@bangular/http/testing/src/mock_backend';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
 
 {

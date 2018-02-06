@@ -1,6 +1,6 @@
 // #docregion
-import { MissingTranslationStrategy } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { MissingTranslationStrategy } from '@bangular/core';
+import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 
 // ...

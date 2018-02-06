@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {discardPeriodicTasks, fakeAsync, flush, flushMicrotasks, tick} from '@angular/core/testing';
-import {Log, beforeEach, describe, inject, it} from '@angular/core/testing/src/testing_internal';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {discardPeriodicTasks, fakeAsync, flush, flushMicrotasks, tick} from '@bangular/core/testing';
+import {Log, beforeEach, describe, inject, it} from '@bangular/core/testing/src/testing_internal';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 import {Parser} from '../../compiler/src/expression_parser/parser';
 

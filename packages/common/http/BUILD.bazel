@@ -10,7 +10,7 @@ ts_library(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/common/http",
+    module_name = "@bangular/common/http",
     deps = [
         "//packages/common",
         "//packages/core",

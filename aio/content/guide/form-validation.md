@@ -21,9 +21,9 @@ If you're new to forms, start by reviewing the [Forms](guide/forms) and
 
 To add validation to a template-driven form, you add the same validation attributes as you 
 would with [native HTML form validation](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation). 
-Angular uses directives to match these attributes with validator functions in the framework.
+Bangular uses directives to match these attributes with validator functions in the framework.
 
-Every time the value of a form control changes, Angular runs validation and generates 
+Every time the value of a form control changes, Bangular runs validation and generates 
 either a list of validation errors, which results in an INVALID status, or null, which results in a VALID status.
 
 You can then inspect the control's state by exporting `ngModel` to a local template variable.
@@ -66,7 +66,7 @@ turning the control dirty; or blurs the form control element, setting the contro
 
 ## Reactive form validation
 
-In a reactive form, the source of truth is the component class. Instead of adding validators through attributes in the template, you add validator functions directly to the form control model in the component class. Angular then calls these functions whenever the value of the control changes.
+In a reactive form, the source of truth is the component class. Instead of adding validators through attributes in the template, you add validator functions directly to the form control model in the component class. Bangular then calls these functions whenever the value of the control changes.
 
 ### Validator functions
 
@@ -78,12 +78,12 @@ There are two types of validator functions: sync validators and async validators
 or Observable that later emits a set of validation errors or `null`. You can 
 pass these in as the third argument when you instantiate a `FormControl`. 
 
-Note: for performance reasons, Angular only runs async validators if all sync validators pass. Each must complete before errors are set.
+Note: for performance reasons, Bangular only runs async validators if all sync validators pass. Each must complete before errors are set.
 
 ### Built-in validators
 
 You can choose to [write your own validator functions](guide/form-validation#custom-validators), or you can use some of 
-Angular's built-in validators. 
+Bangular's built-in validators. 
 
 The same built-in validators that are available as attributes in template-driven forms, such as `required` and `minlength`, are all available to use as functions from the `Validators` class. For a full list of built-in validators, see the [Validators](api/forms/Validators) API reference.
 
@@ -134,7 +134,7 @@ In this sample, the forbidden name is "bob", so the validator will reject any he
 Elsewhere it could reject "alice" or any name that the configuring regular expression matches.
 
 The `forbiddenNameValidator` factory returns the configured validator function.
-That function takes an Angular control object and returns _either_
+That function takes an Bangular control object and returns _either_
 null if the control value is valid _or_ a validation error object.
 The validation error object typically has a property whose name is the validation key, `'forbiddenName'`,
 and whose value is an arbitrary dictionary of values that you could insert into an error message, `{name}`.
@@ -158,14 +158,14 @@ validator in like you can for reactive forms. Instead, you need to add a directi
 
 The corresponding `ForbiddenValidatorDirective` serves as a wrapper around the `forbiddenNameValidator`.
 
-Angular recognizes the directive's role in the validation process because the directive registers itself
+Bangular recognizes the directive's role in the validation process because the directive registers itself
 with the `NG_VALIDATORS` provider, a provider with an extensible collection of validators.
 
 <code-example path="form-validation/src/app/shared/forbidden-name.directive.ts" region="directive-providers" title="shared/forbidden-name.directive.ts (providers)" linenums="false">
 </code-example>
 
 The directive class then implements the `Validator` interface, so that it can easily integrate 
-with Angular forms. Here is the rest of the directive to help you get an idea of how it all 
+with Bangular forms. Here is the rest of the directive to help you get an idea of how it all 
 comes together:
 
 <code-example path="form-validation/src/app/shared/forbidden-name.directive.ts" region="directive" title="shared/forbidden-name.directive.ts (directive)">
@@ -191,7 +191,7 @@ doesn’t have a `forbiddenName`.
 
 ## Control status CSS classes
 
-Like in AngularJS, Angular automatically mirrors many control properties onto the form control element as CSS classes. You can use these classes to style form control elements according to the state of the form. The following classes are currently supported:
+Like in BangularJS, Bangular automatically mirrors many control properties onto the form control element as CSS classes. You can use these classes to style form control elements according to the state of the form. The following classes are currently supported:
 
 * `.ng-valid`
 * `.ng-invalid`

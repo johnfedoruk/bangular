@@ -1,6 +1,6 @@
-# Angular Language Service Test
+# Bangular Language Service Test
 
-This directory is an integration test for `@angular/language-service` to ensure
+This directory is an integration test for `@bangular/language-service` to ensure
 that various versions of the server can be loaded in the supported versions of 
 TypeScript's language service.
 

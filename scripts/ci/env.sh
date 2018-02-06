@@ -36,7 +36,7 @@ fi
 
 setEnvVar NODE_VERSION 8.9.1
 setEnvVar YARN_VERSION 1.3.2
-# Pin to a Chromium version that does not cause the aio e2e tests to flake. (See https://github.com/angular/angular/pull/20403.)
+# Pin to a Chromium version that does not cause the aio e2e tests to flake. (See https://github.com/bangular/bangular/pull/20403.)
 # Revision 494239 (which was part of Chrome 62.0.3186.0) is the last version that does not cause flakes. (Latest revision checked: 508578)
 setEnvVar CHROMIUM_VERSION 494239 # Chrome 62 linux stable, see https://www.chromium.org/developers/calendar
 setEnvVar CHROMEDRIVER_VERSION_ARG "--versions.chrome 2.33"
@@ -51,21 +51,21 @@ if [[ ${TRAVIS:-} ]]; then
       setEnvVar KARMA_JS_BROWSERS ChromeNoSandbox
       ;;
     saucelabs_required)
-      setEnvVar KARMA_JS_BROWSERS `node -e "console.log(require('/home/travis/build/angular/angular/browser-providers.conf').sauceAliases.CI_REQUIRED.join(','))"`
+      setEnvVar KARMA_JS_BROWSERS `node -e "console.log(require('/home/travis/build/bangular/bangular/browser-providers.conf').sauceAliases.CI_REQUIRED.join(','))"`
       ;;
     browserstack_required)
-      setEnvVar KARMA_JS_BROWSERS `node -e "console.log(require('/home/travis/build/angular/angular/browser-providers.conf').browserstackAliases.CI_REQUIRED.join(','))"`
+      setEnvVar KARMA_JS_BROWSERS `node -e "console.log(require('/home/travis/build/bangular/bangular/browser-providers.conf').browserstackAliases.CI_REQUIRED.join(','))"`
       ;;
     saucelabs_optional)
-      setEnvVar KARMA_JS_BROWSERS `node -e "console.log(require('/home/travis/build/angular/angular/browser-providers.conf').sauceAliases.CI_OPTIONAL.join(','))"`
+      setEnvVar KARMA_JS_BROWSERS `node -e "console.log(require('/home/travis/build/bangular/bangular/browser-providers.conf').sauceAliases.CI_OPTIONAL.join(','))"`
       ;;
     browserstack_optional)
-      setEnvVar KARMA_JS_BROWSERS `node -e "console.log(require('/home/travis/build/angular/angular/browser-providers.conf').browserstackAliases.CI_OPTIONAL.join(','))"`
+      setEnvVar KARMA_JS_BROWSERS `node -e "console.log(require('/home/travis/build/bangular/bangular/browser-providers.conf').browserstackAliases.CI_OPTIONAL.join(','))"`
       ;;
     aio)
       # Determine the current stable branch.
       readonly versionRe="^\s*([0-9]+\.[0-9]+)\.[0-9]+.*$"
-      setEnvVar STABLE_BRANCH `npm info @angular/core dist-tags.latest | sed -r "s/$versionRe/\1.x/"`
+      setEnvVar STABLE_BRANCH `npm info @bangular/core dist-tags.latest | sed -r "s/$versionRe/\1.x/"`
 
       setEnvVar MIN_PWA_SCORE 95
       ;;
@@ -90,25 +90,25 @@ if [[ ${TRAVIS:-} ]]; then
 
   # Used by karma and karma-chrome-launcher
   # In order to have a meaningful SauceLabs badge on the repo page,
-  # the angular2-ci account is used only when pushing commits to master;
-  # in all other cases, the regular angular-ci account is used.
+  # the bangular2-ci account is used only when pushing commits to master;
+  # in all other cases, the regular bangular-ci account is used.
   if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ]; then
-    setEnvVar SAUCE_USERNAME angular2-ci
+    setEnvVar SAUCE_USERNAME bangular2-ci
     # - not using use setEnvVar so that we don't print the key
     # - we overwrite the value set by Travis JWT addon here to work around travis-ci/travis-ci#7223 for NGBUILDS_IO_KEY
     export SAUCE_ACCESS_KEY=693ebc16208a-0b5b-1614-8d66-a2662f4e
   else
-    setEnvVar SAUCE_USERNAME angular-ci
+    setEnvVar SAUCE_USERNAME bangular-ci
     # - not using use setEnvVar so that we don't print the key
     # - we overwrite the value set by Travis JWT addon here to work around travis-ci/travis-ci#7223 for NGBUILDS_IO_KEY
     export SAUCE_ACCESS_KEY=9b988f434ff8-fbca-8aa4-4ae3-35442987
   fi
 
-  setEnvVar BROWSER_STACK_USERNAME angularteam1
+  setEnvVar BROWSER_STACK_USERNAME bangularteam1
   # not using use setEnvVar so that we don't print the key
   export BROWSER_STACK_ACCESS_KEY=BWCd4SynLzdDcv8xtzsB
   setEnvVar CHROME_BIN ${HOME}/.chrome/chromium/chrome-linux/chrome
-  setEnvVar BROWSER_PROVIDER_READY_FILE /tmp/angular-build/browser-provider-tunnel-init.lock
+  setEnvVar BROWSER_PROVIDER_READY_FILE /tmp/bangular-build/browser-provider-tunnel-init.lock
 fi
 
 
@@ -121,11 +121,11 @@ fi
 setEnvVar PATH $HOME/.yarn/bin:$PATH
 
 # Append dist/all to the NODE_PATH so that cjs module resolver finds find the packages that use
-# absolute module ids (e.g. @angular/core)
+# absolute module ids (e.g. @bangular/core)
 setEnvVar NODE_PATH ${NODE_PATH:-}:${PROJECT_ROOT}/dist/all:${PROJECT_ROOT}/dist/tools
-setEnvVar LOGS_DIR /tmp/angular-build/logs
+setEnvVar LOGS_DIR /tmp/bangular-build/logs
 
-# strip leading "/home/travis/build/angular/angular/" or "./" path. Could this be done in one shot?
+# strip leading "/home/travis/build/bangular/bangular/" or "./" path. Could this be done in one shot?
 CURRENT_SHELL_SOURCE_FILE=${BASH_SOURCE#${PROJECT_ROOT}/}
 export CURRENT_SHELL_SOURCE_FILE=${CURRENT_SHELL_SOURCE_FILE#./}
 # Prefix xtrace output with file name/line and optionally function name

@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /**
  * @module
  * @description
  * Entry point for all public APIs of this package. allowing
- * Angular 1 and Angular 2+ to run side by side in the same application.
+ * Bangular 1 and Bangular 2+ to run side by side in the same application.
  */
-export {getAngularJSGlobal, getAngularLib, setAngularJSGlobal, setAngularLib} from './src/common/angular1';
+export {getBangularJSGlobal, getBangularLib, setBangularJSGlobal, setBangularLib} from './src/common/bangular1';
 export {downgradeComponent} from './src/common/downgrade_component';
 export {downgradeInjectable} from './src/common/downgrade_injectable';
 export {VERSION} from './src/common/version';

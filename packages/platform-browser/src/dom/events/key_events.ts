@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Inject, Injectable, NgZone} from '@angular/core';
+import {Inject, Injectable, NgZone} from '@bangular/core';
 
 import {getDOM} from '../dom_adapter';
 import {DOCUMENT} from '../dom_tokens';
@@ -36,7 +36,7 @@ export class KeyEventsPlugin extends EventManagerPlugin {
     const outsideHandler =
         KeyEventsPlugin.eventCallback(parsedEvent['fullKey'], handler, this.manager.getZone());
 
-    return this.manager.getZone().runOutsideAngular(() => {
+    return this.manager.getZone().runOutsideBangular(() => {
       return getDOM().onAndCancel(element, parsedEvent['domEventName'], outsideHandler);
     });
   }

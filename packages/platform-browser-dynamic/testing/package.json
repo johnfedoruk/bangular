@@ -1,5 +1,5 @@
 {
-  "name": "@angular/platform-browser-dynamic/testing",
+  "name": "@bangular/platform-browser-dynamic/testing",
   "typings": "./testing.d.ts",
   "main": "../bundles/platform-browser-dynamic-testing.umd.js",
   "module": "../esm5/testing.js",

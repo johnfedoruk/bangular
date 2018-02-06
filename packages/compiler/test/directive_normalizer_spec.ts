@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {CompileStylesheetMetadata, CompileTemplateMetadata} from '@angular/compiler/src/compile_metadata';
-import {CompilerConfig, preserveWhitespacesDefault} from '@angular/compiler/src/config';
-import {DirectiveNormalizer} from '@angular/compiler/src/directive_normalizer';
-import {ResourceLoader} from '@angular/compiler/src/resource_loader';
-import {ViewEncapsulation} from '@angular/core/src/metadata/view';
-import {TestBed, inject} from '@angular/core/testing';
+import {CompileStylesheetMetadata, CompileTemplateMetadata} from '@bangular/compiler/src/compile_metadata';
+import {CompilerConfig, preserveWhitespacesDefault} from '@bangular/compiler/src/config';
+import {DirectiveNormalizer} from '@bangular/compiler/src/directive_normalizer';
+import {ResourceLoader} from '@bangular/compiler/src/resource_loader';
+import {ViewEncapsulation} from '@bangular/core/src/metadata/view';
+import {TestBed, inject} from '@bangular/core/testing';
 
 import {noUndefined} from '../src/util';
 

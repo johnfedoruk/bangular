@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable} from '@angular/core';
+import {Injectable} from '@bangular/core';
 
 import {RequestMethod, ResponseContentType} from './enums';
 import {Headers} from './headers';
@@ -26,7 +26,7 @@ import {URLSearchParams} from './url_search_params';
  * class, which sub-classes `RequestOptions`.
  *
  * ```typescript
- * import {RequestOptions, Request, RequestMethod} from '@angular/http';
+ * import {RequestOptions, Request, RequestMethod} from '@bangular/http';
  *
  * const options = new RequestOptions({
  *   method: RequestMethod.Post,
@@ -37,7 +37,7 @@ import {URLSearchParams} from './url_search_params';
  * console.log('options.url:', options.url); // https://google.com
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 export class RequestOptions {
   /**
@@ -100,7 +100,7 @@ export class RequestOptions {
    * `merge` on the `RequestOptions` instance.
    *
    * ```typescript
-   * import {RequestOptions, Request, RequestMethod} from '@angular/http';
+   * import {RequestOptions, Request, RequestMethod} from '@bangular/http';
    *
    * const options = new RequestOptions({
    *   method: RequestMethod.Post
@@ -175,7 +175,7 @@ export class RequestOptions {
  * used by {@link Http} to create and send {@link Request Requests}.
  *
  * ```typescript
- * import {BaseRequestOptions, RequestOptions} from '@angular/http';
+ * import {BaseRequestOptions, RequestOptions} from '@bangular/http';
  *
  * class MyOptions extends BaseRequestOptions {
  *   search: string = 'coreTeam=true';
@@ -188,7 +188,7 @@ export class RequestOptions {
  * object.
  *
  * ```
- * import {BaseRequestOptions, Request, RequestMethod} from '@angular/http';
+ * import {BaseRequestOptions, Request, RequestMethod} from '@bangular/http';
  *
  * const options = new BaseRequestOptions();
  * const req = new Request(options.merge({
@@ -200,7 +200,7 @@ export class RequestOptions {
  * console.log('req.url:', req.url); // https://google.com
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 @Injectable()
 export class BaseRequestOptions extends RequestOptions {

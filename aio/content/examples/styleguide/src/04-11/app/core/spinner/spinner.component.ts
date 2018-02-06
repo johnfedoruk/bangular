@@ -1,5 +1,5 @@
 // #docregion
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@bangular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { LoggerService } from '../logger.service';

@@ -1,9 +1,9 @@
 # Image metadata and config
 FROM debian:jessie
 
-LABEL name="angular.io PR preview" \
-      description="This image implements the PR preview functionality for angular.io." \
-      vendor="Angular" \
+LABEL name="bangular.io PR preview" \
+      description="This image implements the PR preview functionality for bangular.io." \
+      vendor="Bangular" \
       version="1.0"
 
 VOLUME /aio-secrets
@@ -17,17 +17,17 @@ ARG      AIO_BUILDS_DIR=/var/www/aio-builds
 ARG TEST_AIO_BUILDS_DIR=/tmp/aio-builds
 ARG      AIO_DOMAIN_NAME=ngbuilds.io
 ARG TEST_AIO_DOMAIN_NAME=$AIO_DOMAIN_NAME.localhost
-ARG      AIO_GITHUB_ORGANIZATION=angular
-ARG TEST_AIO_GITHUB_ORGANIZATION=angular
-ARG      AIO_GITHUB_TEAM_SLUGS=angular-core,aio-contributors
-ARG TEST_AIO_GITHUB_TEAM_SLUGS=angular-core,aio-contributors
+ARG      AIO_GITHUB_ORGANIZATION=bangular
+ARG TEST_AIO_GITHUB_ORGANIZATION=bangular
+ARG      AIO_GITHUB_TEAM_SLUGS=bangular-core,aio-contributors
+ARG TEST_AIO_GITHUB_TEAM_SLUGS=bangular-core,aio-contributors
 ARG      AIO_NGINX_HOSTNAME=$AIO_DOMAIN_NAME
 ARG TEST_AIO_NGINX_HOSTNAME=$TEST_AIO_DOMAIN_NAME
 ARG      AIO_NGINX_PORT_HTTP=80
 ARG TEST_AIO_NGINX_PORT_HTTP=8080
 ARG      AIO_NGINX_PORT_HTTPS=443
 ARG TEST_AIO_NGINX_PORT_HTTPS=4433
-ARG      AIO_REPO_SLUG=angular/angular
+ARG      AIO_REPO_SLUG=bangular/bangular
 ARG TEST_AIO_REPO_SLUG=test-repo/test-slug
 ARG      AIO_TRUSTED_PR_LABEL="aio: preview"
 ARG TEST_AIO_TRUSTED_PR_LABEL="aio: preview"

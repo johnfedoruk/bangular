@@ -1,24 +1,24 @@
 # The Ahead-of-Time (AOT) Compiler
 
-The Angular Ahead-of-Time (AOT) compiler converts your Angular HTML and TypeScript code into efficient JavaScript code during the build phase _before_ the browser downloads and runs that code.
+The Bangular Ahead-of-Time (AOT) compiler converts your Bangular HTML and TypeScript code into efficient JavaScript code during the build phase _before_ the browser downloads and runs that code.
 
-This guide explains how to build with the AOT compiler using different compiler options and how to write Angular metadata that AOT can compile.
+This guide explains how to build with the AOT compiler using different compiler options and how to write Bangular metadata that AOT can compile.
 
 <div class="l-sub-section">
 
-  <a href="https://www.youtube.com/watch?v=kW9cJsvcsGo">Watch compiler author Tobias Bosch explain the Angular Compiler</a> at AngularConnect 2016.
+  <a href="https://www.youtube.com/watch?v=kW9cJsvcsGo">Watch compiler author Tobias Bosch explain the Bangular Compiler</a> at BangularConnect 2016.
 
 </div>
 
 {@a overview}
 
-## Angular compilation
+## Bangular compilation
 
-An Angular application consists largely of components and their HTML templates.
+An Bangular application consists largely of components and their HTML templates.
 Before the browser can render the application,
-the components and templates must be converted to executable JavaScript by an _Angular compiler_.
+the components and templates must be converted to executable JavaScript by an _Bangular compiler_.
 
-Angular offers two ways to compile your application:
+Bangular offers two ways to compile your application:
 
 1. **_Just-in-Time_ (JIT)**, which compiles your app in the browser at runtime
 1. **_Ahead-of-Time_ (AOT)**, which compiles your app at build time.
@@ -43,7 +43,7 @@ For AOT compilation, append the `--aot` flags to the _build-only_ or the _build-
 
 The `--prod` meta-flag compiles with AOT by default.
 
-See the [CLI documentation](https://github.com/angular/angular-cli/wiki) for details, especially the [`build` topic](https://github.com/angular/angular-cli/wiki/build).
+See the [CLI documentation](https://github.com/bangular/bangular-cli/wiki) for details, especially the [`build` topic](https://github.com/bangular/bangular-cli/wiki/build).
 
 </div>
 
@@ -61,10 +61,10 @@ The browser loads executable code so it can render the application immediately, 
 The compiler _inlines_ external HTML templates and CSS style sheets within the application JavaScript,
 eliminating separate ajax requests for those source files.
 
-*Smaller Angular framework download size*
+*Smaller Bangular framework download size*
 
-There's no need to download the Angular compiler if the app is already compiled.
-The compiler is roughly half of Angular itself, so omitting it dramatically reduces the application payload.
+There's no need to download the Bangular compiler if the app is already compiled.
+The compiler is roughly half of Bangular itself, so omitting it dramatically reduces the application payload.
 
 *Detect template errors earlier*
 
@@ -79,10 +79,10 @@ there are fewer opportunities for injection attacks.
 
 {@a compiler-options}
 
-## Angular Compiler Options
+## Bangular Compiler Options
 
 You can control your app compilation by providing template compiler options in the `tsconfig.json` file along with the options supplied to the TypeScript compiler. The template compiler options are specified as members of
-`"angularCompilerOptions"` object as shown below:
+`"bangularCompilerOptions"` object as shown below:
 
 ```json
 {
@@ -90,7 +90,7 @@ You can control your app compilation by providing template compiler options in t
     "experimentalDecorators": true,
     ...
   },
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "preserveWhiteSpaces": false,
     ...
@@ -110,7 +110,7 @@ emits to the `.js` file but not to the `.d.ts` file.
 
 This option should be set to `true` if using TypeScript's `--outFile` option, as the metadata files
 are not valid for this style of TypeScript output. It is not recommeded to use `--outFile` with
-Angular. Use a bundler, such as [webpack](https://webpack.js.org/), instead.
+Bangular. Use a bundler, such as [webpack](https://webpack.js.org/), instead.
 
 This option can also be set to `true` when using factory summaries as the factory summaries
 include a copy of the information that is in the `.metadata.json` file.
@@ -128,7 +128,7 @@ collector cannot predict the symbols that are designed to use in an annotation, 
 include error nodes in the metadata for the exported symbols. The template compiler can then use the error
 nodes to report an error if these symbols are used. If the client of a library intends to use a symbol in an annotation, the template compiler will not normally report
 this until the client uses the symbol. This option allows detecting these errors during the build phase of
-the library and is used, for example, in producing Angular libraries themselves.
+the library and is used, for example, in producing Bangular libraries themselves.
 
 ### *skipTemplateCodegen*
 
@@ -151,7 +151,7 @@ produce a warning.
 
 When set to `true`, this option tells the template compiler to generate a flat module
 index of the given file name and the corresponding flat module metadata. Use this option when creating
-flat modules that are packaged similarly to `@angular/core` and `@angular/common`. When this option
+flat modules that are packaged similarly to `@bangular/core` and `@bangular/common`. When this option
 is used, the `package.json` for the library should refer
 to the generated flat module index instead of the library index file. With this
 option only one `.metadata.json` file is produced that contains all the metadata necessary
@@ -197,13 +197,13 @@ This option is `false` by default.
 
 ### *annotateForClosureCompiler*
 
-This option tells the compiler to use [Tsickle](https://github.com/angular/tsickle) to annotate the emitted
+This option tells the compiler to use [Tsickle](https://github.com/bangular/tsickle) to annotate the emitted
 JavaScript with [JsDoc](http://usejsdoc.org/) comments needed by the
 [Closure Compiler](https://github.com/google/closure-compiler). This option defaults to `false`.
 
 ### *annotationsAs*
 
-Use this option to modify how the Angular specific annotations are emitted to improve tree-shaking. Non-Angular
+Use this option to modify how the Bangular specific annotations are emitted to improve tree-shaking. Non-Bangular
 annotations and decorators are unnaffected. Default is `static fields`.
 
 value           | description
@@ -217,14 +217,14 @@ This tells the compiler to print extra information while compiling templates.
 
 ### *enableLegacyTemplate*
 
-The use of `<template>` element was deprecated starting in Angular 4.0 in favor of using
+The use of `<template>` element was deprecated starting in Bangular 4.0 in favor of using
 `<ng-template>` to avoid colliding with the DOM's element of the same name. Setting this option to
 `true` enables the use of the deprecated `<template>` element . This option
-is `false` by default. This option might be required by some third-party Angular libraries.
+is `false` by default. This option might be required by some third-party Bangular libraries.
 
 ### *disableExpressionLowering*
 
-The Angular template compiler transforms code that is used, or could be used, in an annotation
+The Bangular template compiler transforms code that is used, or could be used, in an annotation
 to allow it to be imported from template factory modules. See
 [metadata rewriting](#metadata-rewriting) for more information.
 
@@ -255,16 +255,16 @@ rules.
   *Note*: Is it not recommended to use this option as it is not yet feature complete with the Render2 code generation.
 
 
-## Angular Metadata and AOT
+## Bangular Metadata and AOT
 
-The Angular **AOT compiler** extracts and interprets **metadata** about the parts of the application that Angular is supposed to manage.
+The Bangular **AOT compiler** extracts and interprets **metadata** about the parts of the application that Bangular is supposed to manage.
 
-Angular metadata tells Angular how to construct instances of your application classes and interact with them at runtime.
+Bangular metadata tells Bangular how to construct instances of your application classes and interact with them at runtime.
 
 You specify the metadata with **decorators** such as `@Component()` and `@Input()`.
 You also specify metadata implicitly in the constructor declarations of these decorated classes.
 
-In the following example, the `@Component()` metadata object and the class constructor tell Angular how to create and display an instance of `TypicalComponent`.
+In the following example, the `@Component()` metadata object and the class constructor tell Bangular how to create and display an instance of `TypicalComponent`.
 
 ```typescript
 @Component({
@@ -277,8 +277,8 @@ export class TypicalComponent {
 }
 ```
 
-The Angular compiler extracts the metadata _once_ and generates a _factory_ for `TypicalComponent`.
-When it needs to create a `TypicalComponent` instance, Angular calls the factory, which produces a new visual element, bound to a new instance of the component class with its injected dependency.
+The Bangular compiler extracts the metadata _once_ and generates a _factory_ for `TypicalComponent`.
+When it needs to create a `TypicalComponent` instance, Bangular calls the factory, which produces a new visual element, bound to a new instance of the component class with its injected dependency.
 
 ## Metadata restrictions
 
@@ -299,13 +299,13 @@ It helps to think of the AOT compiler as having two phases: a code analysis phas
 
 The TypeScript compiler does some of the analytic work of the first phase. It emits the `.d.ts` _type definition files_ with type information that the AOT compiler needs to generate application code.
 
-At the same time, the AOT **_collector_** analyzes the metadata recorded in the Angular decorators and outputs metadata information in **`.metadata.json`** files, one per `.d.ts` file.
+At the same time, the AOT **_collector_** analyzes the metadata recorded in the Bangular decorators and outputs metadata information in **`.metadata.json`** files, one per `.d.ts` file.
 
 You can think of `.metadata.json` as a diagram of the overall structure of a decorator's metadata, represented as an [abstract syntax tree (AST)](https://en.wikipedia.org/wiki/Abstract_syntax_tree).
 
 <div class="l-sub-section">
 
-Angular's [schema.ts](https://github.com/angular/angular/blob/master/packages/compiler-cli/src/metadata/schema.ts)
+Bangular's [schema.ts](https://github.com/bangular/bangular/blob/master/packages/compiler-cli/src/metadata/schema.ts)
 describes the JSON format as a collection of TypeScript interfaces.
 
 </div>
@@ -344,13 +344,13 @@ piece of metadata to generate the application code.
  If you want `ngc` to report syntax errors immediately rather than produce a `.metadata.json` file with errors, set the `strictMetadataEmit` option in `tsconfig`.
 
 ```
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
    ...
    "strictMetadataEmit" : true
  }
  ```
 
-Angular libraries have this option to ensure that all Angular `.metadata.json` files are clean and it is a best practice to do the same when building your own libraries.
+Bangular libraries have this option to ensure that all Bangular `.metadata.json` files are clean and it is a best practice to do the same when building your own libraries.
 
 </div>
 
@@ -522,32 +522,32 @@ Most importantly, the compiler only generates code to create instances of certai
 
 ### New instances
 
-The compiler only allows metadata that create instances of the class `InjectionToken` from `@angular/core`.
+The compiler only allows metadata that create instances of the class `InjectionToken` from `@bangular/core`.
 
 ### Annotations/Decorators
 
-The compiler only supports metadata for these Angular decorators.
+The compiler only supports metadata for these Bangular decorators.
 
 Decorator         | Module
 ------------------|--------------
-`Attribute`       | `@angular/core`
-`Component`       | `@angular/core`
-`ContentChild`    | `@angular/core`
-`ContentChildren` | `@angular/core`
-`Directive`       | `@angular/core`
-`Host`            | `@angular/core`
-`HostBinding`     | `@angular/core`
-`HostListener`    | `@angular/core`
-`Inject`          | `@angular/core`
-`Injectable`      | `@angular/core`
-`Input`           | `@angular/core`
-`NgModule`        | `@angular/core`
-`Optional`        | `@angular/core`
-`Output`          | `@angular/core`
-`Pipe`            | `@angular/core`
-`Self`            | `@angular/core`
-`SkipSelf`        | `@angular/core`
-`ViewChild`       | `@angular/core`
+`Attribute`       | `@bangular/core`
+`Component`       | `@bangular/core`
+`ContentChild`    | `@bangular/core`
+`ContentChildren` | `@bangular/core`
+`Directive`       | `@bangular/core`
+`Host`            | `@bangular/core`
+`HostBinding`     | `@bangular/core`
+`HostListener`    | `@bangular/core`
+`Inject`          | `@bangular/core`
+`Injectable`      | `@bangular/core`
+`Input`           | `@bangular/core`
+`NgModule`        | `@bangular/core`
+`Optional`        | `@bangular/core`
+`Output`          | `@bangular/core`
+`Pipe`            | `@bangular/core`
+`Self`            | `@bangular/core`
+`SkipSelf`        | `@bangular/core`
+`ViewChild`       | `@bangular/core`
 
 
 ### Macro-functions and macro-static methods
@@ -586,8 +586,8 @@ export class TypicalModule {}
 The collector is simplistic in its determination of what qualifies as a macro
 function; it can only contain a single `return` statement.
 
-The Angular [`RouterModule`](api/router/RouterModule) exports two macro static methods, `forRoot` and `forChild`, to help declare root and child routes.
-Review the [source code](https://github.com/angular/angular/blob/master/packages/router/src/router_module.ts#L139 "RouterModule.forRoot source code")
+The Bangular [`RouterModule`](api/router/RouterModule) exports two macro static methods, `forRoot` and `forChild`, to help declare root and child routes.
+Review the [source code](https://github.com/bangular/bangular/blob/master/packages/router/src/router_module.ts#L139 "RouterModule.forRoot source code")
 for these methods to see how macros can simplify configuration of complex [NgModules](guide/ngmodules).
 
 {@a metadata-rewriting}
@@ -656,7 +656,7 @@ The following are metadata errors you may encounter, with explanations and sugge
 
 <h3 class="no-toc">Expression form not supported</h3>
 
-The compiler encountered an expression it didn't understand while evalutating Angular metadata.
+The compiler encountered an expression it didn't understand while evalutating Bangular metadata.
 
 Language features outside of the compiler's [restricted expression syntax](#expression-syntax)
 can produce this error, as seen in the following example:
@@ -673,10 +673,10 @@ const prop = typeof Fooish; // typeof is not valid in metadata
 ```
 
 You can use `typeof` and bracket notation in normal application code.
-You just can't use those features within expressions that define Angular metadata.
+You just can't use those features within expressions that define Bangular metadata.
 
 Avoid this error by sticking to the compiler's [restricted expression syntax](#expression-syntax)
-when writing Angular metadata
+when writing Bangular metadata
 and be wary of new or unusual TypeScript features.
 
 <hr>
@@ -810,7 +810,7 @@ To correct this error, provide the initial value of the variable in an initializ
 
 ```
 // CORRECTED
-export let someTemplate = '<h1>Greetings from Angular</h1>';
+export let someTemplate = '<h1>Greetings from Bangular</h1>';
 
 @Component({
   selector: 'my-component',
@@ -845,7 +845,7 @@ abstract class MyStrategy { }
   ...
 ```
 
-Angular generates a class factory in a separate module and that
+Bangular generates a class factory in a separate module and that
 factory [can only access exported classes](#exported-symbols).
 To correct this error, export the referenced class.
 
@@ -878,7 +878,7 @@ function myStrategy() { ... }
   ...
 ```
 
-Angular generates a class factory in a separate module and that
+Bangular generates a class factory in a separate module and that
 factory [can only access exported functions](#exported-symbols).
 To correct this error, export the function.
 
@@ -1009,7 +1009,7 @@ export class MyComponent {
 }
 ```
 TypeScript understands ambiant types so you don't import them.
-The Angular compiler does not understand a type that you neglect to export or import.
+The Bangular compiler does not understand a type that you neglect to export or import.
 
 In this case, the compiler doesn't understand how to inject something with the `Window` token.
 
@@ -1027,7 +1027,7 @@ Here's an illustrative example.
 
 <code-example linenums="false">
 // CORRECTED
-import { Inject } from '@angular/core';
+import { Inject } from '@bangular/core';
 
 export const WINDOW = new InjectionToken('Window');
 export function _window() { return window; }
@@ -1046,11 +1046,11 @@ export class MyComponent {
 The `Window` type in the constructor is no longer a problem for the compiler because it
 uses the `@Inject(WINDOW)` to generate the injection code.
 
-Angular does something similar with the `DOCUMENT` token so you can inject the browser's `document` object (or an abstraction of it, depending upon the platform in which the application runs).
+Bangular does something similar with the `DOCUMENT` token so you can inject the browser's `document` object (or an abstraction of it, depending upon the platform in which the application runs).
 
 <code-example linenums="false">
-import { Inject }   from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import { Inject }   from '@bangular/core';
+import { DOCUMENT } from '@bangular/platform-browser';
 
 @Component({ ... })
 export class MyComponent {
@@ -1080,7 +1080,7 @@ provider: [{ provide: Foo, useValue: { '0': 'test' } }]
 
 <h3 class="no-toc">Unsupported enum member name</h3>
 
-Angular couldn't determine the value of the [enum member](https://www.typescriptlang.org/docs/handbook/enums.html)
+Bangular couldn't determine the value of the [enum member](https://www.typescriptlang.org/docs/handbook/enums.html)
 that you referenced in metadata.
 
 The compiler can understand simple enum values but not complex values such as those derived from computed properties.
@@ -1139,17 +1139,17 @@ This error can occur if you use an expression in the `extends` clause of a class
 
 <!--
 
-Chuck: After reviewing your PR comment I'm still at a loss. See [comment there](https://github.com/angular/angular/pull/17712#discussion_r132025495).
+Chuck: After reviewing your PR comment I'm still at a loss. See [comment there](https://github.com/bangular/bangular/pull/17712#discussion_r132025495).
 
 -->
 {@a binding-expresion-validation}
 
   ## Phase 3: binding expression validation
 
-  In the validation phase, the Angular template compiler uses the TypeScript compiler to validate the
+  In the validation phase, the Bangular template compiler uses the TypeScript compiler to validate the
   binding expressions in templates. Enable this phase explicity by adding the compiler
-  option `"fullTemplateTypeCheck"` in the `"angularCompilerOptions"` of the project's `tsconfig.json` (see
-  [Angular Compiler Options](#compiler-options)).
+  option `"fullTemplateTypeCheck"` in the `"bangularCompilerOptions"` of the project's `tsconfig.json` (see
+  [Bangular Compiler Options](#compiler-options)).
 
   Template validation produces error messages when a type error is detected in a template binding
   expression, similar to how type errors are reported by the TypeScript compiler against code in a `.ts`
@@ -1189,7 +1189,7 @@ Chuck: After reviewing your PR comment I'm still at a loss. See [comment there](
 
   ### Type narrowing
 
-  The expression used in an `ngIf` directive is used to narrow type unions in the Angular
+  The expression used in an `ngIf` directive is used to narrow type unions in the Bangular
   template compiler, the same way the `if` expression does in TypeScript. For example, to avoid
   `Object is possibly 'undefined'` error in the template above, modify it to only emit the
   interpolation if the value of `person` is initialized as shown below:

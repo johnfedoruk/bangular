@@ -1,5 +1,5 @@
 // #docregion
-angular.
+bangular.
   module('core').
   filter('checkmark', function() {
     return function(input: boolean) {

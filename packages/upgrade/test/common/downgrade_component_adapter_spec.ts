@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {ApplicationRef, Compiler, Component, ComponentFactory, ComponentRef, Injector, NgModule, Testability, TestabilityRegistry} from '@angular/core';
-import {TestBed, getTestBed, inject} from '@angular/core/testing';
-import * as angular from '@angular/upgrade/src/common/angular1';
-import {DowngradeComponentAdapter, groupNodesBySelector} from '@angular/upgrade/src/common/downgrade_component_adapter';
+import {ApplicationRef, Compiler, Component, ComponentFactory, ComponentRef, Injector, NgModule, Testability, TestabilityRegistry} from '@bangular/core';
+import {TestBed, getTestBed, inject} from '@bangular/core/testing';
+import * as bangular from '@bangular/upgrade/src/common/bangular1';
+import {DowngradeComponentAdapter, groupNodesBySelector} from '@bangular/upgrade/src/common/downgrade_component_adapter';
 
 import {nodes} from './test_helpers';
 
@@ -82,11 +82,11 @@ import {nodes} from './test_helpers';
       let adapter: DowngradeComponentAdapter;
       let content: string;
       let compiler: Compiler;
-      let element: angular.IAugmentedJQuery;
+      let element: bangular.IAugmentedJQuery;
 
-      class mockScope implements angular.IScope {
+      class mockScope implements bangular.IScope {
         $new() { return this; }
-        $watch(exp: angular.Ng1Expression, fn?: (a1?: any, a2?: any) => void) {
+        $watch(exp: bangular.Ng1Expression, fn?: (a1?: any, a2?: any) => void) {
           return () => {};
         }
         $on(event: string, fn?: (event?: any, ...args: any[]) => void) {
@@ -95,27 +95,27 @@ import {nodes} from './test_helpers';
         $destroy() {
           return () => {};
         }
-        $apply(exp?: angular.Ng1Expression) {
+        $apply(exp?: bangular.Ng1Expression) {
           return () => {};
         }
         $digest() {
           return () => {};
         }
-        $evalAsync(exp: angular.Ng1Expression, locals?: any) {
+        $evalAsync(exp: bangular.Ng1Expression, locals?: any) {
           return () => {};
         }
-        $$childTail: angular.IScope;
-        $$childHead: angular.IScope;
-        $$nextSibling: angular.IScope;
+        $$childTail: bangular.IScope;
+        $$childHead: bangular.IScope;
+        $$nextSibling: bangular.IScope;
         [key: string]: any;
         $id = 'mockScope';
-        $parent: angular.IScope;
-        $root: angular.IScope;
+        $parent: bangular.IScope;
+        $root: bangular.IScope;
       }
 
       function getAdaptor(): DowngradeComponentAdapter {
         let attrs = undefined as any;
-        let scope: angular.IScope;  // mock
+        let scope: bangular.IScope;  // mock
         let ngModel = undefined as any;
         let parentInjector: Injector;  // testbed
         let $injector = undefined as any;
@@ -129,7 +129,7 @@ import {nodes} from './test_helpers';
           <div> a great component </div>
           <comp></comp>
         `;
-        element = angular.element(content);
+        element = bangular.element(content);
         scope = new mockScope();
 
         @Component({

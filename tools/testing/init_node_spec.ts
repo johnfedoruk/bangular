@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import 'zone.js/dist/zone-node.js';
@@ -36,9 +36,9 @@ import 'zone.js/dist/jasmine-patch.js';
 (global as any).isBrowser = false;
 
 // Init TestBed
-import {TestBed} from '@angular/core/testing';
-import {ServerTestingModule, platformServerTesting} from '@angular/platform-server/testing/src/server';
-import {DominoAdapter} from '@angular/platform-server/src/domino_adapter';
+import {TestBed} from '@bangular/core/testing';
+import {ServerTestingModule, platformServerTesting} from '@bangular/platform-server/testing/src/server';
+import {DominoAdapter} from '@bangular/platform-server/src/domino_adapter';
 
 TestBed.initTestEnvironment(ServerTestingModule, platformServerTesting());
 DominoAdapter.makeCurrent();

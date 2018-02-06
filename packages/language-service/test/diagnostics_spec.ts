@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as ts from 'typescript';
@@ -178,7 +178,7 @@ describe('diagnostics', () => {
     // Issue #19406
     it('should allow empty template', () => {
       const appComponent = `
-        import { Component } from '@angular/core';
+        import { Component } from '@bangular/core';
 
         @Component({
           template : '',
@@ -194,8 +194,8 @@ describe('diagnostics', () => {
     // Issue #15460
     it('should be able to find members defined on an ancestor type', () => {
       const app_component = `
-        import { Component } from '@angular/core';
-        import { NgForm } from '@angular/common';
+        import { Component } from '@bangular/core';
+        import { NgForm } from '@bangular/common';
 
         @Component({
           selector: 'example-app',
@@ -303,8 +303,8 @@ describe('diagnostics', () => {
 
     it('should be able to resolve modules using baseUrl', () => {
       const app_component = `
-        import { Component } from '@angular/core';
-        import { NgForm } from '@angular/common';
+        import { Component } from '@bangular/core';
+        import { NgForm } from '@bangular/common';
         import { Server } from 'app/server';
 
         @Component({
@@ -332,8 +332,8 @@ describe('diagnostics', () => {
 
     it('should not report errors for using the now removed OpaqueToken (support for v4)', () => {
       const app_component = `
-        import { Component, Inject, OpaqueToken } from '@angular/core';
-        import { NgForm } from '@angular/common';
+        import { Component, Inject, OpaqueToken } from '@bangular/core';
+        import { NgForm } from '@bangular/common';
 
         export const token = new OpaqueToken();
 

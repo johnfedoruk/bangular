@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-// compiler benchmark in AngularJS 1.x
-import {getIntParameter, bindAction} from '@angular/testing/src/benchmark_util';
-declare var angular: any;
+// compiler benchmark in BangularJS 1.x
+import {getIntParameter, bindAction} from '@bangular/testing/src/benchmark_util';
+declare var bangular: any;
 
 export function main() {
   const ngEl = document.createElement('div');
-  angular.bootstrap(ngEl, ['app']);
+  bangular.bootstrap(ngEl, ['app']);
 }
 
 function loadTemplate(templateId, repeatCount) {
@@ -25,13 +25,13 @@ function loadTemplate(templateId, repeatCount) {
   // replace [] binding syntax
   result = result.replace(/[\[\]]/g, '');
 
-  // Use a DIV as container as Angular 1.3 does not know <template> elements...
+  // Use a DIV as container as Bangular 1.3 does not know <template> elements...
   const div = document.createElement('div');
   div.innerHTML = result;
   return div;
 }
 
-angular.module('app', [])
+bangular.module('app', [])
     .directive('dir0',
                [
                  '$parse',
@@ -39,7 +39,7 @@ angular.module('app', [])
                    return {
                      compile: function($element, $attrs) {
                        const expr = $parse($attrs.attr0);
-                       return ($scope) => $scope.$watch(expr, angular.noop);
+                       return ($scope) => $scope.$watch(expr, bangular.noop);
                      }
                    };
                  }
@@ -51,7 +51,7 @@ angular.module('app', [])
                    return {
                      compile: function($element, $attrs) {
                        const expr = $parse($attrs.attr1);
-                       return ($scope) => $scope.$watch(expr, angular.noop);
+                       return ($scope) => $scope.$watch(expr, bangular.noop);
                      }
                    };
                  }
@@ -63,7 +63,7 @@ angular.module('app', [])
                    return {
                      compile: function($element, $attrs) {
                        const expr = $parse($attrs.attr2);
-                       return ($scope) => $scope.$watch(expr, angular.noop);
+                       return ($scope) => $scope.$watch(expr, bangular.noop);
                      }
                    };
                  }
@@ -75,7 +75,7 @@ angular.module('app', [])
                    return {
                      compile: function($element, $attrs) {
                        const expr = $parse($attrs.attr3);
-                       return ($scope) => $scope.$watch(expr, angular.noop);
+                       return ($scope) => $scope.$watch(expr, bangular.noop);
                      }
                    };
                  }
@@ -87,7 +87,7 @@ angular.module('app', [])
                    return {
                      compile: function($element, $attrs) {
                        const expr = $parse($attrs.attr4);
-                       return ($scope) => $scope.$watch(expr, angular.noop);
+                       return ($scope) => $scope.$watch(expr, bangular.noop);
                      }
                    };
                  }

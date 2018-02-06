@@ -1,8 +1,8 @@
-declare var angular: angular.IAngularStatic;
+declare var bangular: bangular.IBangularStatic;
 // #docregion ngmodule
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { UpgradeModule } from '@angular/upgrade/static';
+import { NgModule } from '@bangular/core';
+import { BrowserModule } from '@bangular/platform-browser';
+import { UpgradeModule } from '@bangular/upgrade/static';
 
 @NgModule({
   imports: [
@@ -17,13 +17,13 @@ export class AppModule {
   }
 }
 // #enddocregion ngmodule
-angular.module('heroApp', [])
+bangular.module('heroApp', [])
   .controller('MainCtrl', function() {
     this.message = 'Hello world';
   });
 
 // #docregion bootstrap
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
 
 platformBrowserDynamic().bootstrapModule(AppModule);
 // #enddocregion bootstrap

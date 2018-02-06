@@ -1,5 +1,5 @@
 // #docregion
-import { Directive, HostListener } from '@angular/core';
+import { Directive, HostListener } from '@bangular/core';
 
 // #docregion example
 @Directive({

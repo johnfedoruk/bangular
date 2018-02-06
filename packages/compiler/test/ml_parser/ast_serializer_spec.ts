@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import * as html from '@angular/compiler/src/ml_parser/ast';
-import {HtmlParser} from '@angular/compiler/src/ml_parser/html_parser';
-import {getHtmlTagDefinition} from '@angular/compiler/src/ml_parser/html_tags';
+import * as html from '@bangular/compiler/src/ml_parser/ast';
+import {HtmlParser} from '@bangular/compiler/src/ml_parser/html_parser';
+import {getHtmlTagDefinition} from '@bangular/compiler/src/ml_parser/html_tags';
 
 {
   describe('Node serializer', () => {

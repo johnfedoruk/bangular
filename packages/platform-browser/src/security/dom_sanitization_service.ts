@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Inject, Injectable, Sanitizer, SecurityContext} from '@angular/core';
+import {Inject, Injectable, Sanitizer, SecurityContext} from '@bangular/core';
 
 import {DOCUMENT} from '../dom/dom_tokens';
 
@@ -84,7 +84,7 @@ export interface SafeResourceUrl extends SafeValue {}
  * does not start with a suspicious protocol, or an HTML snippet that does not contain dangerous
  * code. The sanitizer leaves safe values intact.
  *
- * @security Calling any of the `bypassSecurityTrust...` APIs disables Angular's built-in
+ * @security Calling any of the `bypassSecurityTrust...` APIs disables Bangular's built-in
  * sanitization for the value passed in. Carefully check and audit all values and code paths going
  * into this call. Make sure any user data is appropriately escaped for this security context.
  * For more detail, see the [Security Guide](http://g.co/ng/security).

@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {browser, by, element} from 'protractor';
@@ -12,7 +12,7 @@ import {verifyNoBrowserErrors} from './util';
 
 describe('Hello world E2E Tests', function() {
   it('should display: Hello world!', function() {
-    // Load the page without waiting for Angular since it is not boostrapped automatically.
+    // Load the page without waiting for Bangular since it is not boostrapped automatically.
     browser.driver.get(browser.baseUrl + 'helloworld');
 
     const style = browser.driver.findElement(by.css('style[ng-transition="hlw"]'));

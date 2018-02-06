@@ -1,8 +1,8 @@
 // #docplaster
 // #docregion
-import { NgModule }       from '@angular/core';
-import { CommonModule }   from '@angular/common';
-import { FormsModule }    from '@angular/forms';
+import { NgModule }       from '@bangular/core';
+import { CommonModule }   from '@bangular/common';
+import { FormsModule }    from '@bangular/forms';
 
 import { AppComponent }            from './app.component';
 import { AppRoutingModule }        from './app-routing.module';

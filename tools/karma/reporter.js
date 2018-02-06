@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 var SourceMapConsumer = require('source-map').SourceMapConsumer;
@@ -55,13 +55,13 @@ var createErrorFormatter = function(basePath, emitter, SourceMapConsumer) {
 };
 
 
-var InternalAngularReporter = function(config, emitter) {
+var InternalBangularReporter = function(config, emitter) {
   var formatter = createErrorFormatter(config.basePath, emitter, SourceMapConsumer);
   DotsReporter.call(this, formatter, false, config.colors);
 };
 
-InternalAngularReporter.$inject = ['config', 'emitter'];
+InternalBangularReporter.$inject = ['config', 'emitter'];
 
 module.exports = {
-  'reporter:internal-angular': ['type', InternalAngularReporter]
+  'reporter:internal-bangular': ['type', InternalBangularReporter]
 };

@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 const resolve = require('rollup-plugin-node-resolve');
@@ -23,7 +23,7 @@ module.exports = {
   dest: '../../dist/packages-dist/core/bundles/core.umd.js',
   format: 'umd',
   exports: 'named',
-  amd: {id: '@angular/core'},
+  amd: {id: '@bangular/core'},
   moduleName: 'ng.core',
   plugins: [resolve(), sourcemaps()],
   external: Object.keys(globals),

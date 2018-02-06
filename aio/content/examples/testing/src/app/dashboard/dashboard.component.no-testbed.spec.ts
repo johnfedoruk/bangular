@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router } from '@bangular/router';
 
 import { DashboardComponent } from './dashboard.component';
 import { Hero }               from '../model';
@@ -10,7 +10,7 @@ class FakeRouter {
   navigateByUrl(url: string) { return url;  }
 }
 
-describe('DashboardComponent: w/o Angular TestBed', () => {
+describe('DashboardComponent: w/o Bangular TestBed', () => {
   let comp: DashboardComponent;
   let heroService: FakeHeroService;
   let router: Router;

@@ -1,5 +1,5 @@
 /* tslint:disable component-selector */
-import { Component } from '@angular/core';
+import { Component } from '@bangular/core';
 import { LocationService } from 'app/shared/location.service';
 
 /**

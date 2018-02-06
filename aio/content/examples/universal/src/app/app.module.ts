@@ -1,10 +1,10 @@
 // #docplaster
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { NgModule }       from '@bangular/core';
+import { BrowserModule }  from '@bangular/platform-browser';
+import { FormsModule }    from '@bangular/forms';
+import { HttpClientModule }    from '@bangular/common/http';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientInMemoryWebApiModule } from 'bangular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppRoutingModule }     from './app-routing.module';
@@ -19,8 +19,8 @@ import { MessageService }       from './message.service';
 import { MessagesComponent }    from './messages/messages.component';
 
 // #docregion platform-detection
-import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID, APP_ID, Inject } from '@bangular/core';
+import { isPlatformBrowser } from '@bangular/common';
 
 // #enddocregion platform-detection
 

@@ -1,5 +1,5 @@
 // #docregion
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@bangular/core';
 // #docregion import-message-service
 import { MessageService } from '../message.service';
 // #enddocregion import-message-service

@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgModuleResolver} from '@angular/compiler/src/ng_module_resolver';
-import {ɵstringify as stringify} from '@angular/core';
-import {NgModule} from '@angular/core/src/metadata';
-import {JitReflector} from '@angular/platform-browser-dynamic/src/compiler_reflector';
+import {NgModuleResolver} from '@bangular/compiler/src/ng_module_resolver';
+import {ɵstringify as stringify} from '@bangular/core';
+import {NgModule} from '@bangular/core/src/metadata';
+import {JitReflector} from '@bangular/platform-browser-dynamic/src/compiler_reflector';
 
 class SomeClass1 {}
 class SomeClass2 {}

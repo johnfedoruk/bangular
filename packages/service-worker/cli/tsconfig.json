@@ -6,12 +6,12 @@
     "module": "es2015",
     "moduleResolution": "node",
     "strictNullChecks": true,
-    "outDir": "../../../dist/all/@angular/service-worker/cli-custom",
+    "outDir": "../../../dist/all/@bangular/service-worker/cli-custom",
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
     "rootDir": ".",
     "paths": {
-      "@angular/service-worker/config": ["../../../dist/packages/service-worker/config"]
+      "@bangular/service-worker/config": ["../../../dist/packages/service-worker/config"]
     },
     "inlineSourceMap": true,
     "lib": ["es2015"],

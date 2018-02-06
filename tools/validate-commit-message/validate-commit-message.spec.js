@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 describe('validate-commit-message.js', function() {
@@ -73,7 +73,7 @@ describe('validate-commit-message.js', function() {
       ].forEach((expectedErrorMessage, index) => {
         expect(expectedErrorMessage).toEqual(errors[index]);
       });
-      expect(validateMessage('release(angular): something')).toBe(INVALID);
+      expect(validateMessage('release(bangular): something')).toBe(INVALID);
     });
 
 

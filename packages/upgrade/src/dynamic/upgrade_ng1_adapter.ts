@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Directive, DoCheck, ElementRef, EventEmitter, Inject, Injector, OnChanges, OnInit, SimpleChange, SimpleChanges, Type} from '@angular/core';
+import {Directive, DoCheck, ElementRef, EventEmitter, Inject, Injector, OnChanges, OnInit, SimpleChange, SimpleChanges, Type} from '@bangular/core';
 
-import * as angular from '../common/angular1';
+import * as bangular from '../common/bangular1';
 import {$SCOPE} from '../common/constants';
 import {IBindingDestination, IControllerInstance, UpgradeHelper} from '../common/upgrade_helper';
 import {isFunction, strictEquals} from '../common/util';
@@ -30,7 +30,7 @@ export class UpgradeNg1ComponentAdapterBuilder {
   propertyOutputs: string[] = [];
   checkProperties: string[] = [];
   propertyMap: {[name: string]: string} = {};
-  directive: angular.IDirective|null = null;
+  directive: bangular.IDirective|null = null;
   template: string;
 
   constructor(public name: string) {
@@ -45,9 +45,9 @@ export class UpgradeNg1ComponentAdapterBuilder {
 
     @Directive(directive)
     class MyClass {
-      directive: angular.IDirective;
+      directive: bangular.IDirective;
       constructor(
-          @Inject($SCOPE) scope: angular.IScope, injector: Injector, elementRef: ElementRef) {
+          @Inject($SCOPE) scope: bangular.IScope, injector: Injector, elementRef: ElementRef) {
         const helper = new UpgradeHelper(injector, name, elementRef, this.directive);
         return new UpgradeNg1ComponentAdapter(
             helper, scope, self.template, self.inputs, self.outputs, self.propertyOutputs,
@@ -123,11 +123,11 @@ export class UpgradeNg1ComponentAdapterBuilder {
   }
 
   /**
-   * Upgrade ng1 components into Angular.
+   * Upgrade ng1 components into Bangular.
    */
   static resolve(
       exportedComponents: {[name: string]: UpgradeNg1ComponentAdapterBuilder},
-      $injector: angular.IInjectorService): Promise<string[]> {
+      $injector: bangular.IInjectorService): Promise<string[]> {
     const promises = Object.keys(exportedComponents).map(name => {
       const exportedComponent = exportedComponents[name];
       exportedComponent.directive = UpgradeHelper.getDirective($injector, name);
@@ -146,13 +146,13 @@ class UpgradeNg1ComponentAdapter implements OnInit, OnChanges, DoCheck {
   private controllerInstance: IControllerInstance|null = null;
   destinationObj: IBindingDestination|null = null;
   checkLastValues: any[] = [];
-  private directive: angular.IDirective;
+  private directive: bangular.IDirective;
   element: Element;
   $element: any = null;
-  componentScope: angular.IScope;
+  componentScope: bangular.IScope;
 
   constructor(
-      private helper: UpgradeHelper, scope: angular.IScope, private template: string,
+      private helper: UpgradeHelper, scope: bangular.IScope, private template: string,
       private inputs: string[], private outputs: string[], private propOuts: string[],
       private checkProperties: string[], private propertyMap: {[key: string]: string}) {
     this.directive = helper.directive;
@@ -184,7 +184,7 @@ class UpgradeNg1ComponentAdapter implements OnInit, OnChanges, DoCheck {
 
   ngOnInit() {
     // Collect contents, insert and compile template
-    const attachChildNodes: angular.ILinkFn|undefined = this.helper.prepareTransclusion();
+    const attachChildNodes: bangular.ILinkFn|undefined = this.helper.prepareTransclusion();
     const linkFn = this.helper.compileTemplate(this.template);
 
     // Instantiate controller (if not already done so)
@@ -205,10 +205,10 @@ class UpgradeNg1ComponentAdapter implements OnInit, OnChanges, DoCheck {
 
     // Linking
     const link = this.directive.link;
-    const preLink = (typeof link == 'object') && (link as angular.IDirectivePrePost).pre;
-    const postLink = (typeof link == 'object') ? (link as angular.IDirectivePrePost).post : link;
-    const attrs: angular.IAttributes = NOT_SUPPORTED;
-    const transcludeFn: angular.ITranscludeFunction = NOT_SUPPORTED;
+    const preLink = (typeof link == 'object') && (link as bangular.IDirectivePrePost).pre;
+    const postLink = (typeof link == 'object') ? (link as bangular.IDirectivePrePost).post : link;
+    const attrs: bangular.IAttributes = NOT_SUPPORTED;
+    const transcludeFn: bangular.ITranscludeFunction = NOT_SUPPORTED;
     if (preLink) {
       preLink(this.componentScope, this.$element, attrs, requiredControllers, transcludeFn);
     }

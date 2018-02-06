@@ -3,17 +3,17 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {APP_BOOTSTRAP_LISTENER, ComponentRef, InjectionToken} from '@angular/core';
-import {Router} from '@angular/router';
-import {UpgradeModule} from '@angular/upgrade/static';
+import {APP_BOOTSTRAP_LISTENER, ComponentRef, InjectionToken} from '@bangular/core';
+import {Router} from '@bangular/router';
+import {UpgradeModule} from '@bangular/upgrade/static';
 
 
 
 /**
- * @whatItDoes Creates an initializer that in addition to setting up the Angular
+ * @whatItDoes Creates an initializer that in addition to setting up the Bangular
  * router sets up the ngRoute integration.
  *
  * @howToUse
@@ -52,7 +52,7 @@ export function locationSyncBootstrapListener(ngUpgrade: UpgradeModule) {
 /**
  * @whatItDoes Sets up a location synchronization.
  *
- * History.pushState does not fire onPopState, so the Angular location
+ * History.pushState does not fire onPopState, so the Bangular location
  * doesn't detect it. The workaround is to attach a location change listener
  *
  * @experimental

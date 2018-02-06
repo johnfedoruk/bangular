@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as ts from 'typescript';
@@ -33,20 +33,20 @@ describe('metadata reader', () => {
 
 
   it('should be able to read a metadata file', () => {
-    expect(readMetadata('node_modules/@angular/core.d.ts', host)).toEqual([
+    expect(readMetadata('node_modules/@bangular/core.d.ts', host)).toEqual([
       {__symbolic: 'module', version: METADATA_VERSION, metadata: {foo: {__symbolic: 'class'}}}
     ]);
   });
 
   it('should be able to read metadata from an otherwise unused .d.ts file ', () => {
-    expect(readMetadata('node_modules/@angular/unused.d.ts', host)).toEqual([dummyMetadata]);
+    expect(readMetadata('node_modules/@bangular/unused.d.ts', host)).toEqual([dummyMetadata]);
   });
 
   it('should be able to read empty metadata ',
-     () => { expect(readMetadata('node_modules/@angular/empty.d.ts', host)).toEqual([]); });
+     () => { expect(readMetadata('node_modules/@bangular/empty.d.ts', host)).toEqual([]); });
 
   it('should return undefined for missing modules',
-     () => { expect(readMetadata('node_modules/@angular/missing.d.ts', host)).toBeUndefined(); });
+     () => { expect(readMetadata('node_modules/@bangular/missing.d.ts', host)).toBeUndefined(); });
 
   it(`should add missing v${METADATA_VERSION} metadata from v1 metadata and .d.ts files`, () => {
     expect(readMetadata('metadata_versions/v1.d.ts', host)).toEqual([
@@ -103,8 +103,8 @@ const FILES: Entry = {
   'tmp': {
     'src': {
       'main.ts': `
-        import * as c from '@angular/core';
-        import * as r from '@angular/router';
+        import * as c from '@bangular/core';
+        import * as r from '@bangular/router';
         import * as u from './lib/utils';
         import * as cs from './lib/collections';
         import * as u2 from './lib2/utils2';
@@ -115,7 +115,7 @@ const FILES: Entry = {
       },
       'lib2': {'utils2.ts': dummyModule},
       'node_modules': {
-        '@angular': {
+        '@bangular': {
           'core.d.ts': dummyModule,
           'core.metadata.json':
               `{"__symbolic":"module", "version": ${METADATA_VERSION}, "metadata": {"foo": {"__symbolic": "class"}}}`,

@@ -1,11 +1,11 @@
 # Authors Style Guide
 
-This page presents design and layout guidelines for Angular documentation pages.  These guidelines should be followed by all guide page authors. Deviations must be approved by the documentation editor.
+This page presents design and layout guidelines for Bangular documentation pages.  These guidelines should be followed by all guide page authors. Deviations must be approved by the documentation editor.
 
 Most guide pages should have [accompanying sample code](#from-code-samples) with
 [special markup](#source-code-markup) for the code snippets on the page.
 Code samples should adhere to the
-[style guide for Angular applications](guide/styleguide "Application Code Style Guide")
+[style guide for Bangular applications](guide/styleguide "Application Code Style Guide")
 because readers expect consistency.
 
 For clarity and precision, every guideline on _this_ page is illustrated with a working example,
@@ -17,9 +17,9 @@ followed by the page markup for that example ... as shown here.
 
 ## Doc generation and tooling
 
-To make changes to the documentation pages and sample code, clone the [Angular github repository](https://github.com/angular/angular "Angular repo") and go to the `aio/` folder.
+To make changes to the documentation pages and sample code, clone the [Bangular github repository](https://github.com/bangular/bangular "Bangular repo") and go to the `aio/` folder.
 
-The [aio/README.md](https://github.com/angular/angular/blob/master/aio/README.md "AIO ReadMe") explains how to install and use the tools to edit and test your changes.
+The [aio/README.md](https://github.com/bangular/bangular/blob/master/aio/README.md "AIO ReadMe") explains how to install and use the tools to edit and test your changes.
 
 Here are a few essential commands for guide page authors.
 
@@ -49,7 +49,7 @@ Page URLs mirror the `content` file structure. The URL for the page of a guide i
 
 _Tutorial_ pages are exactly like guide pages. The only difference is that they reside in `content/tutorial` instead of `content/guide` and have URLs like `tutorial/{page-name}`.
 
-_API_ pages are generated from Angular source code into the `src/generated/docs/api` directory.
+_API_ pages are generated from Bangular source code into the `src/generated/docs/api` directory.
 The doc viewer translates URLs that begin `api/` into requests for document JSON files in that directory. This style guide does not discuss creation or maintenance of API pages.
 
 _Marketing_ pages are similar to guide pages. They're located in the `content/marketing` directory. While they can be markdown files, they may be static HTML pages or dynamic HTML pages that render with JSON data.
@@ -66,7 +66,7 @@ Markdown is easier to read and to edit than HTML. Many editors (including Visual
 
 From time to time you'll have to step away from markdown and write a portion of the document in HTML. Markdown allows you to mix HTML and markdown in the same document.
 
-Standard markdown processors don't allow you to put markdown _within_ HTML tags. But the Angular documentation markdown processor **supports markdown within HTML**, as long as you follow one rule:
+Standard markdown processors don't allow you to put markdown _within_ HTML tags. But the Bangular documentation markdown processor **supports markdown within HTML**, as long as you follow one rule:
 
 <div class="alert is-critical">
 
@@ -219,12 +219,12 @@ But for a new guide page, you should suggest a navigation title and position in 
 
 Look for the `SideNav` node in `navigation.json`. The `SideNav` node is an array of navigation nodes. Each node is either an _item_ node for a single document or a _header_ node with child nodes.
 
-Find the header for your page. For example, a guide page that describes an Angular feature is probably a child of the `Fundamentals` header.
+Find the header for your page. For example, a guide page that describes an Bangular feature is probably a child of the `Fundamentals` header.
 
 ```html
 {
   "title": "Fundamentals",
-  "tooltip": "The fundamentals of Angular",
+  "tooltip": "The fundamentals of Bangular",
   "children": [ ... ]
 }
 ```
@@ -237,7 +237,7 @@ Add an _item_ node for your guide page as a child of the appropriate _header_ no
 {
   "url": "guide/architecture",
   "title": "Architecture",
-  "tooltip": "The basic building blocks of Angular applications."
+  "tooltip": "The basic building blocks of Bangular applications."
 }
 ```
 
@@ -270,7 +270,7 @@ The current guidelines allow for a three-level navigation structure with two hea
 
 ## Code snippets
 
-Guides are rich in examples of working Angular code. Example code can be commands entered in a terminal window, a fragment of TypeScript or HTML, or an entire code file.
+Guides are rich in examples of working Bangular code. Example code can be commands entered in a terminal window, a fragment of TypeScript or HTML, or an entire code file.
 
 Whatever the source, the doc viewer renders them as "code snippets", either individually with the [_code-example_](#code-example "code-example") component or as a tabbed collection with the [_code-tabs_](#code-tabs "code-tabs") component.
 
@@ -280,7 +280,7 @@ Whatever the source, the doc viewer renders them as "code snippets", either indi
 ### Code example
 
 You can display a simple, inline code snippet with the markdown backtick syntax.
-We generally prefer to display a code snippet with the Angular documentation _code-example_ component
+We generally prefer to display a code snippet with the Bangular documentation _code-example_ component
 represented by the `<code-example>` tag.
 
 <h3 class="no-toc">Inline code-snippets</h3>
@@ -318,7 +318,7 @@ We meet this goal by displaying code snippets that are derived directly from sta
 The author of a guide page is responsible for the code sample that supports that page.
 The author must also write end-to-end tests for the sample.
 
-Code samples are located in sub-folders of the `content/examples` directory of the `angular/angular` repository. An example folder name should be the same as the guide page it supports.
+Code samples are located in sub-folders of the `content/examples` directory of the `bangular/bangular` repository. An example folder name should be the same as the guide page it supports.
 
 <div class="l-sub-section">
 
@@ -326,9 +326,9 @@ A guide page might not have its own sample code. It might refer instead to a sam
 
 </div>
 
-The Angular CI process runs all end-to-end tests for every Angular PR. Angular re-tests the samples after every new version of a sample and every new version of Angular itself.
+The Bangular CI process runs all end-to-end tests for every Bangular PR. Bangular re-tests the samples after every new version of a sample and every new version of Bangular itself.
 
-When possible, every snippet of code on a guide page should be derived from a code sample file. You tell the Angular documentation engine which code file - or fragment of a code file - to display by configuring `<code-example>` attributes.
+When possible, every snippet of code on a guide page should be derived from a code sample file. You tell the Bangular documentation engine which code file - or fragment of a code file - to display by configuring `<code-example>` attributes.
 
 #### Code snippet from a file
 
@@ -435,7 +435,7 @@ You should be careful. Readers don't always read carefully and are likely to cop
 When you do, set the `class` to `avoid`. The code snippet will be framed in bright red to grab the reader's attention.
 
 Here's the markup for an "avoid" example in the
-[_Angular Style Guide_](guide/styleguide#style-05-03 "Style 05-03: components as elements").
+[_Bangular Style Guide_](guide/styleguide#style-05-03 "Style 05-03: components as elements").
 
 ```html
 <code-example
@@ -709,7 +709,7 @@ app.component.1.ts
 app.component.2.ts
 ```
 
-You'll find many such files among the samples in the Angular documentation.
+You'll find many such files among the samples in the Bangular documentation.
 
 Remember to exclude these files from stackblitz by listing them in the `stackblitz.json` as illustrated here.
 
@@ -1080,12 +1080,12 @@ Use HTML tables to present tabular data.
     <th>Speed</th>
   </tr>
   <tr>
-    <td><code>AngularJS</code></td>
+    <td><code>BangularJS</code></td>
     <td>Routing</td>
     <td>Fast</td>
   </tr>
   <tr>
-    <td><code>Angular v2</code></td>
+    <td><code>Bangular v2</code></td>
     <td>Routing</td>
     <!-- can use markdown too; remember blank lines -->
     <td>
@@ -1095,7 +1095,7 @@ Use HTML tables to present tabular data.
     </td>
   </tr>
   <tr>
-    <td><code>Angular v4</code></td>
+    <td><code>Bangular v4</code></td>
     <td>Routing</td>
     <td>
 
@@ -1119,12 +1119,12 @@ Here is the markup for this table.
     <th>Speed</th>
   </tr>
   <tr>
-    <td><code>AngularJS</code></td>
+    <td><code>BangularJS</code></td>
     <td>Routing</td>
     <td>Fast</td>
   </tr>
   <tr>
-    <td><code>Angular v2</code></td>
+    <td><code>Bangular v2</code></td>
     <td>Routing</td>
     <!-- can use markdown too; remember blank lines -->
     <td>
@@ -1134,7 +1134,7 @@ Here is the markup for this table.
     </td>
   </tr>
   <tr>
-    <td><code>Angular v4</code></td>
+    <td><code>Bangular v4</code></td>
     <td>Routing</td>
     <td>
 
@@ -1152,7 +1152,7 @@ Here is the markup for this table.
 Store images in the `content/images` directory in a folder with the same URL as the guide page.
 Images for this "Authors Style Guide" page belong in the `content/images/guide/docs-style-guide` folder.
 
-Angular doc generation copies these image folders to the _runtime_ location, `generated/images`.
+Bangular doc generation copies these image folders to the _runtime_ location, `generated/images`.
 Set the image `src` attribute to begin in _that_ directory.
 
 Here's the `src` attribute for the "flying hero" image belonging to this page.
@@ -1192,14 +1192,14 @@ The doc generator reads the image dimensions from the file and adds width and he
 Here's the "flying hero" at a more reasonable scale.
 
 <figure>
- <img src="generated/images/guide/docs-style-guide/flying-hero.png" alt="flying Angular hero" width="200">
+ <img src="generated/images/guide/docs-style-guide/flying-hero.png" alt="flying Bangular hero" width="200">
 </figure>
 
 ```html
 
 <figure>
  <img src="generated/images/guide/docs-style-guide/flying-hero.png"
-   alt="flying Angular hero"
+   alt="flying Bangular hero"
    width="200">
 </figure>
 ```
@@ -1224,7 +1224,7 @@ Consider using an image compression web site such as [tinypng](https://tinypng.c
 You can float the image to the left or right of text by applying the class="left" or class="right" attributes respectively.
 
 <img src="generated/images/guide/docs-style-guide/flying-hero.png"
-   alt="flying Angular hero"
+   alt="flying Bangular hero"
    width="200"
    class="left">
 
@@ -1238,7 +1238,7 @@ The markup for the above example is:
 
 ```html
 <img src="generated/images/guide/docs-style-guide/flying-hero.png"
-   alt="flying Angular hero"
+   alt="flying Bangular hero"
    width="200"
    class="left">
 
@@ -1258,7 +1258,7 @@ If you have a floating image inside an alert, callout, or a subsection, it is a 
 <div class="l-sub-section clear-fix">
 
   <img src="generated/images/guide/docs-style-guide/flying-hero.png"
-    alt="flying Angular hero"
+    alt="flying Bangular hero"
     width="100"
     class="right">
 
@@ -1270,7 +1270,7 @@ If you have a floating image inside an alert, callout, or a subsection, it is a 
 <div class="l-sub-section clear-fix">
 
   <img src="generated/images/guide/docs-style-guide/flying-hero.png"
-    alt="flying Angular hero"
+    alt="flying Bangular hero"
     width="100"
     class="right">
 

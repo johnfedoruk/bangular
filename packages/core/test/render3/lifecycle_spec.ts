@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {C, ComponentTemplate, E, L, P, T, V, b, cR, cr, defineComponent, defineDirective, e, m, p, pD, r, v} from '../../src/render3/index';
@@ -1524,7 +1524,7 @@ describe('lifecycles', () => {
       renderToHtml(Template, {condition: false});
 
       /**
-       * Current angular will process in this same order (root is the top-level removed view):
+       * Current bangular will process in this same order (root is the top-level removed view):
        *
        * root.child (comp1 view) onDestroy: null
        * root.child.next (container) -> embeddedView
@@ -1597,7 +1597,7 @@ describe('lifecycles', () => {
       }
 
       /**
-       * Current angular will process in this same order (root is the top-level removed view):
+       * Current bangular will process in this same order (root is the top-level removed view):
        *
        * root.child (comp1 view) onDestroy: null
        * root.child.next (container) -> embeddedView (children[0].data)

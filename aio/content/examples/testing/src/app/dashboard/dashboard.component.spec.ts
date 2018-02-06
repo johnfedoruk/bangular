@@ -1,13 +1,13 @@
 // #docplaster
 import { async, inject, ComponentFixture, TestBed
-} from '@angular/core/testing';
+} from '@bangular/core/testing';
 
 import { addMatchers, click } from '../../testing';
 import { HeroService }        from '../model';
 import { FakeHeroService }    from '../model/testing';
 
-import { By }     from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { By }     from '@bangular/platform-browser';
+import { Router } from '@bangular/router';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardModule }    from './dashboard.module';
@@ -45,7 +45,7 @@ describe('DashboardComponent (deep)', () => {
 
 ////////  Shallow ////////////////
 
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@bangular/core';
 
 describe('DashboardComponent (shallow)', () => {
   beforeEach(() => {

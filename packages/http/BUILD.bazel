@@ -10,7 +10,7 @@ ts_library(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/http",
+    module_name = "@bangular/http",
     deps = [
         "//packages/core",
         "//packages/platform-browser",

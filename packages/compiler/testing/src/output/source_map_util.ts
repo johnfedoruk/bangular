@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {SourceMap} from '@angular/compiler';
+import {SourceMap} from '@bangular/compiler';
 const b64 = require('base64-js');
 const SourceMapConsumer = require('source-map').SourceMapConsumer;
 

@@ -3,9 +3,9 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {fakeAsync} from '@angular/core/testing';
+import {fakeAsync} from '@bangular/core/testing';
 import {flushMicrotasks} from '../../core/testing/src/fake_async';
 import {NoopAnimationPlayer} from '../src/players/animation_player';
 import {scheduleMicroTask} from '../src/util';

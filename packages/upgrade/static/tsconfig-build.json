@@ -5,10 +5,10 @@
     "baseUrl": ".",
     "rootDir": "../",
     "paths": {
-      "@angular/core": ["../../../dist/packages/core"],
-      "@angular/common": ["../../../dist/packages/common"],
-      "@angular/platform-browser": ["../../../dist/packages/platform-browser"],
-      "@angular/platform-browser-dynamic": ["../../../dist/packages/platform-browser-dynamic"]
+      "@bangular/core": ["../../../dist/packages/core"],
+      "@bangular/common": ["../../../dist/packages/common"],
+      "@bangular/platform-browser": ["../../../dist/packages/platform-browser"],
+      "@bangular/platform-browser-dynamic": ["../../../dist/packages/platform-browser-dynamic"]
     },
     "outDir": "../../../dist/packages/upgrade"
   },
@@ -18,10 +18,10 @@
     "../../../node_modules/zone.js/dist/zone.js.d.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "static.js",
-    "flatModuleId": "@angular/upgrade/static"
+    "flatModuleId": "@bangular/upgrade/static"
   }
 }

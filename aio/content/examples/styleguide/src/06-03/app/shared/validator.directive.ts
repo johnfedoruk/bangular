@@ -1,5 +1,5 @@
 // #docregion
-import { Directive, HostBinding, HostListener } from '@angular/core';
+import { Directive, HostBinding, HostListener } from '@bangular/core';
 
 @Directive({
   selector: '[tohValidator]'

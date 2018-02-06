@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input } from '@bangular/core';
 import { NavigationNode } from 'app/navigation/navigation.service';
 
 @Component({

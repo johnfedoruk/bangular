@@ -1,7 +1,7 @@
 /* tslint:disable:component-class-suffix */
 // #docregion imports
-import { Component }                          from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component }                          from '@bangular/core';
+import { FormBuilder, FormGroup, Validators } from '@bangular/forms';
 // #enddocregion imports
 
 @Component({

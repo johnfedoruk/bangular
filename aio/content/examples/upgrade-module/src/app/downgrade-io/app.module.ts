@@ -1,8 +1,8 @@
-declare var angular: angular.IAngularStatic;
-import { NgModule } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { BrowserModule } from '@angular/platform-browser';
-import { UpgradeModule, downgradeComponent } from '@angular/upgrade/static';
+declare var bangular: bangular.IBangularStatic;
+import { NgModule } from '@bangular/core';
+import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
+import { BrowserModule } from '@bangular/platform-browser';
+import { UpgradeModule, downgradeComponent } from '@bangular/upgrade/static';
 
 import { MainController } from './main.controller';
 
@@ -30,9 +30,9 @@ export class AppModule {
 }
 // #docregion downgradecomponent
 
-angular.module('heroApp', [])
+bangular.module('heroApp', [])
   .controller('MainController', MainController)
-  .directive('heroDetail', downgradeComponent({component: HeroDetailComponent}) as angular.IDirectiveFactory);
+  .directive('heroDetail', downgradeComponent({component: HeroDetailComponent}) as bangular.IDirectiveFactory);
 
 // #enddocregion downgradecomponent
 

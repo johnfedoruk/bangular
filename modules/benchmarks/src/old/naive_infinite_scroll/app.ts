@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgFor, NgIf} from '@angular/common';
-import {Component, Directive} from '@angular/core';
-import {TimerWrapper} from '@angular/facade/src/async';
-import {document} from '@angular/facade/src/browser';
-import {isPresent} from '@angular/facade/src/lang';
-import {DOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {bindAction, getIntParameter} from '@angular/testing/src/benchmark_util';
+import {NgFor, NgIf} from '@bangular/common';
+import {Component, Directive} from '@bangular/core';
+import {TimerWrapper} from '@bangular/facade/src/async';
+import {document} from '@bangular/facade/src/browser';
+import {isPresent} from '@bangular/facade/src/lang';
+import {DOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {bindAction, getIntParameter} from '@bangular/testing/src/benchmark_util';
 
 import {ScrollAreaComponent} from './scroll_area';
 

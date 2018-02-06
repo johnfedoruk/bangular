@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Directive, EmbeddedViewRef, Input, OnChanges, SimpleChange, SimpleChanges, TemplateRef, ViewContainerRef} from '@angular/core';
+import {Directive, EmbeddedViewRef, Input, OnChanges, SimpleChange, SimpleChanges, TemplateRef, ViewContainerRef} from '@bangular/core';
 
 /**
  * @ngModule CommonModule
@@ -69,7 +69,7 @@ export class NgTemplateOutlet implements OnChanges {
    * We mark context object as changed when the corresponding object
    * shape changes (new properties are added or existing properties are removed).
    * In other words we consider context with the same properties as "the same" even
-   * if object reference changes (see https://github.com/angular/angular/issues/13407).
+   * if object reference changes (see https://github.com/bangular/bangular/issues/13407).
    */
   private _shouldRecreateView(changes: SimpleChanges): boolean {
     const ctxChange = changes['ngTemplateOutletContext'];

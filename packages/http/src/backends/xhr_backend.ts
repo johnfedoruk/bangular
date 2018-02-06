@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable} from '@angular/core';
-import {ɵgetDOM as getDOM} from '@angular/platform-browser';
+import {Injectable} from '@bangular/core';
+import {ɵgetDOM as getDOM} from '@bangular/platform-browser';
 import {Observable} from 'rxjs/Observable';
 import {Observer} from 'rxjs/Observer';
 import {ResponseOptions} from '../base_response_options';
@@ -29,7 +29,7 @@ const XSSI_PREFIX = /^\)\]\}',?\n/;
  * This class would typically not be created or interacted with directly inside applications, though
  * the {@link MockConnection} may be interacted with in tests.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 export class XHRConnection implements Connection {
   request: Request;
@@ -188,7 +188,7 @@ export class XHRConnection implements Connection {
  * with different `cookieName` and `headerName` values. See the main HTTP documentation for more
  * details.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 export class CookieXSRFStrategy implements XSRFStrategy {
   constructor(
@@ -212,7 +212,7 @@ export class CookieXSRFStrategy implements XSRFStrategy {
  * ### Example
  *
  * ```
- * import {Http, MyNodeBackend, HTTP_PROVIDERS, BaseRequestOptions} from '@angular/http';
+ * import {Http, MyNodeBackend, HTTP_PROVIDERS, BaseRequestOptions} from '@bangular/http';
  * @Component({
  *   viewProviders: [
  *     HTTP_PROVIDERS,
@@ -226,7 +226,7 @@ export class CookieXSRFStrategy implements XSRFStrategy {
  *   }
  * }
  * ```
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 @Injectable()
 export class XHRBackend implements ConnectionBackend {

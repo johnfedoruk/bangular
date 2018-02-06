@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {SourceMapGenerator, toBase64String} from '@angular/compiler/src/output/source_map';
+import {SourceMapGenerator, toBase64String} from '@bangular/compiler/src/output/source_map';
 
 {
   describe('source map generation', () => {

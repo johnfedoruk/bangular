@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { NgModule } from '@bangular/core';
+import { ServiceWorkerModule } from '@bangular/service-worker';
 
 import { SwUpdatesService } from './sw-updates.service';
 

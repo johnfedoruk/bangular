@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 const Package = require('dgeni').Package;
-const contentPackage = require('../angular-content-package');
+const contentPackage = require('../bangular-content-package');
 const { readFileSync } = require('fs');
 const { resolve } = require('canonical-path');
 const { CONTENTS_PATH } = require('../config');

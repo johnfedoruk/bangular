@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {UrlResolver, createOfflineCompileUrlResolver} from '@angular/compiler/src/url_resolver';
-import {beforeEach, describe, expect, inject, it} from '@angular/core/testing/src/testing_internal';
+import {UrlResolver, createOfflineCompileUrlResolver} from '@bangular/compiler/src/url_resolver';
+import {beforeEach, describe, expect, inject, it} from '@bangular/core/testing/src/testing_internal';
 
 {
   describe('UrlResolver', () => {

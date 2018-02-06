@@ -3,17 +3,17 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgForOfContext} from '@angular/common';
+import {NgForOfContext} from '@bangular/common';
 
 import {C, E, T, b, cR, cr, defineComponent, e, p, r, t} from '../../src/render3/index';
 
 import {NgForOf} from './common_with_def';
 import {renderComponent, toHtml} from './render_util';
 
-describe('@angular/common integration', () => {
+describe('@bangular/common integration', () => {
   describe('NgForOf', () => {
     it('should update a loop', () => {
       class MyApp {

@@ -1,32 +1,32 @@
 {
-  "name": "@angular/router",
+  "name": "@bangular/router",
   "version": "0.0.0-PLACEHOLDER",
-  "description": "Angular - the routing library",
+  "description": "Bangular - the routing library",
   "main": "./bundles/router.umd.js",
   "module": "./esm5/router.js",
   "es2015": "./esm2015/router.js",
   "typings": "./router.d.ts",
   "keywords": [
-    "angular",
+    "bangular",
     "router"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/angular/angular.git"
+    "url": "git+https://github.com/bangular/bangular.git"
   },
-  "author": "angular",
+  "author": "bangular",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/angular/angular/issues"
+    "url": "https://github.com/bangular/bangular/issues"
   },
-  "homepage": "https://github.com/angular/angular/tree/master/packages/router",
+  "homepage": "https://github.com/bangular/bangular/tree/master/packages/router",
   "dependencies": {
     "tslib": "^1.7.1"
   },
   "peerDependencies": {
-    "@angular/core": "0.0.0-PLACEHOLDER",
-    "@angular/common": "0.0.0-PLACEHOLDER",
-    "@angular/platform-browser": "0.0.0-PLACEHOLDER",
+    "@bangular/core": "0.0.0-PLACEHOLDER",
+    "@bangular/common": "0.0.0-PLACEHOLDER",
+    "@bangular/platform-browser": "0.0.0-PLACEHOLDER",
     "rxjs": "^5.5.0"
   }
 }

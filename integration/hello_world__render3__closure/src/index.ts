@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {defineComponent, renderComponent, detectChanges, T, t, E, e, L, p, b, b1} from '../built/packages/core/src/render3';

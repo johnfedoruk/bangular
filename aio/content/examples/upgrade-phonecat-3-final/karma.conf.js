@@ -2,7 +2,7 @@
 module.exports = function(config) {
 
   var appBase    = 'src/';       // transpiled app JS and map files
-  var appAssets  = '/base/app/'; // component assets fetched by Angular's compiler
+  var appAssets  = '/base/app/'; // component assets fetched by Bangular's compiler
 
   // Testing helpers (optional) are conventionally in a folder called `testing`
   var testingBase    = 'src/testing/'; // transpiled test JS and map files
@@ -53,9 +53,9 @@ module.exports = function(config) {
       { pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
 
       // Paths loaded via module imports:
-      // Angular itself
-      { pattern: 'node_modules/@angular/**/*.js', included: false, watched: false },
-      { pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false },
+      // Bangular itself
+      { pattern: 'node_modules/@bangular/**/*.js', included: false, watched: false },
+      { pattern: 'node_modules/@bangular/**/*.js.map', included: false, watched: false },
 
       { pattern: appBase + '/systemjs.config.js', included: false, watched: false },
       { pattern: appBase + '/systemjs.config.extras.js', included: false, watched: false },
@@ -66,7 +66,7 @@ module.exports = function(config) {
       { pattern: testingBase + '**/*.js', included: false, watched: true },
 
 
-      // Asset (HTML & CSS) paths loaded via Angular's component compiler
+      // Asset (HTML & CSS) paths loaded via Bangular's component compiler
       // (these paths need to be rewritten, see proxies section)
       { pattern: appBase + '**/*.html', included: false, watched: true },
       { pattern: appBase + '**/*.css', included: false, watched: true },

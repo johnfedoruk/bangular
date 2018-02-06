@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {isPlatformBrowser} from '@angular/common';
-import {APP_INITIALIZER, ApplicationRef, Inject, InjectionToken, Injector, ModuleWithProviders, NgModule, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser} from '@bangular/common';
+import {APP_INITIALIZER, ApplicationRef, Inject, InjectionToken, Injector, ModuleWithProviders, NgModule, PLATFORM_ID} from '@bangular/core';
 import {Observable} from 'rxjs/Observable';
 import {filter as op_filter} from 'rxjs/operator/filter';
 import {take as op_take} from 'rxjs/operator/take';
@@ -68,7 +68,7 @@ export function ngswCommChannelFactory(
 })
 export class ServiceWorkerModule {
   /**
-   * Register the given Angular Service Worker script.
+   * Register the given Bangular Service Worker script.
    *
    * If `enabled` is set to `false` in the given options, the module will behave as if service
    * workers are not supported by the browser, and the service worker will not be registered.

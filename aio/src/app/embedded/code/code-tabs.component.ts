@@ -1,5 +1,5 @@
 /* tslint:disable component-selector */
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@bangular/core';
 
 export interface TabInfo {
   class: string|null;

@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {InjectionToken} from './di';
@@ -11,7 +11,7 @@ import {ComponentRef} from './linker/component_factory';
 
 
 /**
- * A DI Token representing a unique string id assigned to the application by Angular and used
+ * A DI Token representing a unique string id assigned to the application by Bangular and used
  * primarily for prefixing application attributes and CSS styles when
  * {@link ViewEncapsulation#Emulated ViewEncapsulation.Emulated} is being used.
  *

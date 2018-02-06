@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ElementRef, Injector, SimpleChanges} from '@angular/core';
+import {ElementRef, Injector, SimpleChanges} from '@bangular/core';
 
-import * as angular from './angular1';
+import * as bangular from './bangular1';
 import {$COMPILE, $CONTROLLER, $HTTP_BACKEND, $INJECTOR, $TEMPLATE_CACHE} from './constants';
 import {controllerKey, directiveNormalize, isFunction} from './util';
 
@@ -31,36 +31,36 @@ export interface IControllerInstance extends IBindingDestination {
 
 // Classes
 export class UpgradeHelper {
-  public readonly $injector: angular.IInjectorService;
+  public readonly $injector: bangular.IInjectorService;
   public readonly element: Element;
-  public readonly $element: angular.IAugmentedJQuery;
-  public readonly directive: angular.IDirective;
+  public readonly $element: bangular.IAugmentedJQuery;
+  public readonly directive: bangular.IDirective;
 
-  private readonly $compile: angular.ICompileService;
-  private readonly $controller: angular.IControllerService;
+  private readonly $compile: bangular.ICompileService;
+  private readonly $controller: bangular.IControllerService;
 
   constructor(
       private injector: Injector, private name: string, elementRef: ElementRef,
-      directive?: angular.IDirective) {
+      directive?: bangular.IDirective) {
     this.$injector = injector.get($INJECTOR);
     this.$compile = this.$injector.get($COMPILE);
     this.$controller = this.$injector.get($CONTROLLER);
 
     this.element = elementRef.nativeElement;
-    this.$element = angular.element(this.element);
+    this.$element = bangular.element(this.element);
 
     this.directive = directive || UpgradeHelper.getDirective(this.$injector, name);
   }
 
-  static getDirective($injector: angular.IInjectorService, name: string): angular.IDirective {
-    const directives: angular.IDirective[] = $injector.get(name + 'Directive');
+  static getDirective($injector: bangular.IInjectorService, name: string): bangular.IDirective {
+    const directives: bangular.IDirective[] = $injector.get(name + 'Directive');
     if (directives.length > 1) {
       throw new Error(`Only support single directive definition for: ${name}`);
     }
 
     const directive = directives[0];
 
-    // AngularJS will transform `link: xyz` to `compile: () => xyz`. So we can only tell there was a
+    // BangularJS will transform `link: xyz` to `compile: () => xyz`. So we can only tell there was a
     // user-defined `compile` if there is no `link`. In other cases, we will just ignore `compile`.
     if (directive.compile && !directive.link) notSupported(name, 'compile');
     if (directive.replace) notSupported(name, 'replace');
@@ -70,12 +70,12 @@ export class UpgradeHelper {
   }
 
   static getTemplate(
-      $injector: angular.IInjectorService, directive: angular.IDirective,
+      $injector: bangular.IInjectorService, directive: bangular.IDirective,
       fetchRemoteTemplate = false): string|Promise<string> {
     if (directive.template !== undefined) {
       return getOrCall<string>(directive.template);
     } else if (directive.templateUrl) {
-      const $templateCache = $injector.get($TEMPLATE_CACHE) as angular.ITemplateCacheService;
+      const $templateCache = $injector.get($TEMPLATE_CACHE) as bangular.ITemplateCacheService;
       const url = getOrCall<string>(directive.templateUrl);
       const template = $templateCache.get(url);
 
@@ -86,7 +86,7 @@ export class UpgradeHelper {
       }
 
       return new Promise((resolve, reject) => {
-        const $httpBackend = $injector.get($HTTP_BACKEND) as angular.IHttpBackendService;
+        const $httpBackend = $injector.get($HTTP_BACKEND) as bangular.IHttpBackendService;
         $httpBackend('GET', url, null, (status: number, response: string) => {
           if (status === 200) {
             resolve($templateCache.put(url, response));
@@ -100,7 +100,7 @@ export class UpgradeHelper {
     }
   }
 
-  buildController(controllerType: angular.IController, $scope: angular.IScope) {
+  buildController(controllerType: bangular.IController, $scope: bangular.IScope) {
     // TODO: Document that we do not pre-assign bindings on the controller instance.
     // Quoted properties below so that this code can be optimized with Closure Compiler.
     const locals = {'$scope': $scope, '$element': this.$element};
@@ -111,7 +111,7 @@ export class UpgradeHelper {
     return controller;
   }
 
-  compileTemplate(template?: string): angular.ILinkFn {
+  compileTemplate(template?: string): bangular.ILinkFn {
     if (template === undefined) {
       template = UpgradeHelper.getTemplate(this.$injector, this.directive) as string;
     }
@@ -119,11 +119,11 @@ export class UpgradeHelper {
     return this.compileHtml(template);
   }
 
-  prepareTransclusion(): angular.ILinkFn|undefined {
+  prepareTransclusion(): bangular.ILinkFn|undefined {
     const transclude = this.directive.transclude;
     const contentChildNodes = this.extractChildNodes();
     let $template = contentChildNodes;
-    let attachChildrenFn: angular.ILinkFn|undefined = (scope, cloneAttach) =>
+    let attachChildrenFn: bangular.ILinkFn|undefined = (scope, cloneAttach) =>
         cloneAttach !($template, scope);
 
     if (transclude) {
@@ -167,7 +167,7 @@ export class UpgradeHelper {
 
         Object.keys(slots).filter(slotName => slots[slotName]).forEach(slotName => {
           const nodes = slots[slotName];
-          slots[slotName] = (scope: angular.IScope, cloneAttach: angular.ICloneAttachFunction) =>
+          slots[slotName] = (scope: bangular.IScope, cloneAttach: bangular.ICloneAttachFunction) =>
               cloneAttach !(nodes, scope);
         });
       }
@@ -175,16 +175,16 @@ export class UpgradeHelper {
       // Attach `$$slots` to default slot transclude fn.
       attachChildrenFn.$$slots = slots;
 
-      // AngularJS v1.6+ ignores empty or whitespace-only transcluded text nodes. But Angular
+      // BangularJS v1.6+ ignores empty or whitespace-only transcluded text nodes. But Bangular
       // removes all text content after the first interpolation and updates it later, after
-      // evaluating the expressions. This would result in AngularJS failing to recognize text
+      // evaluating the expressions. This would result in BangularJS failing to recognize text
       // nodes that start with an interpolation as transcluded content and use the fallback
       // content instead.
       // To avoid this issue, we add a
       // [zero-width non-joiner character](https://en.wikipedia.org/wiki/Zero-width_non-joiner)
-      // to empty text nodes (which can only be a result of Angular removing their initial content).
+      // to empty text nodes (which can only be a result of Bangular removing their initial content).
       // NOTE: Transcluded text content that starts with whitespace followed by an interpolation
-      //       will still fail to be detected by AngularJS v1.6+
+      //       will still fail to be detected by BangularJS v1.6+
       $template.forEach(node => {
         if (node.nodeType === Node.TEXT_NODE && !node.nodeValue) {
           node.nodeValue = '\u200C';
@@ -209,7 +209,7 @@ export class UpgradeHelper {
     return requiredControllers;
   }
 
-  private compileHtml(html: string): angular.ILinkFn {
+  private compileHtml(html: string): bangular.ILinkFn {
     this.element.innerHTML = html;
     return this.$compile(this.element.childNodes);
   }
@@ -226,7 +226,7 @@ export class UpgradeHelper {
     return childNodes;
   }
 
-  private getDirectiveRequire(): angular.DirectiveRequireProperty {
+  private getDirectiveRequire(): bangular.DirectiveRequireProperty {
     const require = this.directive.require || (this.directive.controller && this.directive.name) !;
 
     if (isMap(require)) {
@@ -244,8 +244,8 @@ export class UpgradeHelper {
     return require;
   }
 
-  private resolveRequire(require: angular.DirectiveRequireProperty, controllerInstance?: any):
-      angular.SingleOrListOrMap<IControllerInstance>|null {
+  private resolveRequire(require: bangular.DirectiveRequireProperty, controllerInstance?: any):
+      bangular.SingleOrListOrMap<IControllerInstance>|null {
     if (!require) {
       return null;
     } else if (Array.isArray(require)) {
@@ -285,7 +285,7 @@ function getOrCall<T>(property: T | Function): T {
 }
 
 // NOTE: Only works for `typeof T !== 'object'`.
-function isMap<T>(value: angular.SingleOrListOrMap<T>): value is {[key: string]: T} {
+function isMap<T>(value: bangular.SingleOrListOrMap<T>): value is {[key: string]: T} {
   return value && !Array.isArray(value) && typeof value === 'object';
 }
 

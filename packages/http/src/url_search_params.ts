@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 function paramParser(rawParams: string = ''): Map<string, string[]> {
@@ -22,7 +22,7 @@ function paramParser(rawParams: string = ''): Map<string, string[]> {
   return map;
 }
 /**
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  **/
 export class QueryEncoder {
   encodeKey(k: string): string { return standardEncoding(k); }
@@ -63,7 +63,7 @@ function standardEncoding(v: string): string {
  * `QueryEncoder` can be subclassed and provided as the 2nd argument to URLSearchParams.
  *
  * ```
- * import {URLSearchParams, QueryEncoder} from '@angular/http';
+ * import {URLSearchParams, QueryEncoder} from '@bangular/http';
  * class MyQueryEncoder extends QueryEncoder {
  *   encodeKey(k: string): string {
  *     return myEncodingFunction(k);
@@ -76,7 +76,7 @@ function standardEncoding(v: string): string {
  *
  * let params = new URLSearchParams('', new MyQueryEncoder());
  * ```
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 export class URLSearchParams {
   paramsMap: Map<string, string[]>;

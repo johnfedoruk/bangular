@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {verifyNoBrowserErrors} from '@angular/testing/src/e2e_util';
-import {runClickBenchmark} from '@angular/testing/src/perf_util';
+import {verifyNoBrowserErrors} from '@bangular/testing/src/e2e_util';
+import {runClickBenchmark} from '@bangular/testing/src/perf_util';
 
 describe('ng2 selector benchmark', function() {
 
@@ -21,7 +21,7 @@ describe('ng2 selector benchmark', function() {
       buttons: ['#parse'],
       id: 'ng2.selector.parse',
       params: [{name: 'selectors', value: 10000, scale: 'linear'}],
-      waitForAngular2: false
+      waitForBangular2: false
     }).then(done, done.fail);
   });
 
@@ -31,7 +31,7 @@ describe('ng2 selector benchmark', function() {
       buttons: ['#addSelectable'],
       id: 'ng2.selector.addSelectable',
       params: [{name: 'selectors', value: 10000, scale: 'linear'}],
-      waitForAngular2: false
+      waitForBangular2: false
     }).then(done, done.fail);
   });
 
@@ -41,7 +41,7 @@ describe('ng2 selector benchmark', function() {
       buttons: ['#match'],
       id: 'ng2.selector.match',
       params: [{name: 'selectors', value: 10000, scale: 'linear'}],
-      waitForAngular2: false
+      waitForBangular2: false
     }).then(done, done.fail);
   });
 

@@ -1,7 +1,7 @@
 'use strict'; // necessary for es6 output in node
 
 import { browser, element, by } from 'protractor';
-const { version: angularVersion } = require('@angular/core/package.json');
+const { version: bangularVersion } = require('@bangular/core/package.json');
 
 describe('Pipes', function () {
 
@@ -29,7 +29,7 @@ describe('Pipes', function () {
 
   it('should be able to toggle birthday formats', function () {
     let birthDayEle = element(by.css('app-hero-birthday2 > p'));
-    if (angularVersion.indexOf('4.') === 0) { // Breaking change between v4 and v5 (https://github.com/angular/angular/commit/079d884)
+    if (bangularVersion.indexOf('4.') === 0) { // Breaking change between v4 and v5 (https://github.com/bangular/bangular/commit/079d884)
       expect(birthDayEle.getText()).toEqual(`The hero's birthday is 4/15/1988`);
     } else {
       expect(birthDayEle.getText()).toEqual(`The hero's birthday is 4/15/88`);

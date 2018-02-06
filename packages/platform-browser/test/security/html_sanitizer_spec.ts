@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {browserDetection} from '@angular/platform-browser/testing/src/browser_util';
+import {browserDetection} from '@bangular/platform-browser/testing/src/browser_util';
 
 import {getDOM} from '../../src/dom/dom_adapter';
 import {sanitizeHtml} from '../../src/security/html_sanitizer';

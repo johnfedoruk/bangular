@@ -1,8 +1,8 @@
 // #docregion
-import { NgModule }             from '@angular/core';
-import { BrowserModule }        from '@angular/platform-browser';
-import { FormsModule }          from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule }             from '@bangular/core';
+import { BrowserModule }        from '@bangular/platform-browser';
+import { FormsModule }          from '@bangular/forms';
+import { Routes, RouterModule } from '@bangular/router';
 
 import { AppComponent }          from './app.component';
 import { PageNotFoundComponent } from './not-found.component';

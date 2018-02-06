@@ -1,20 +1,20 @@
-# Integration tests for Angular
+# Integration tests for Bangular
 
-This directory contains end-to-end tests for Angular. Each directory is a self-contained application that exactly mimics how a user might expect Angular
+This directory contains end-to-end tests for Bangular. Each directory is a self-contained application that exactly mimics how a user might expect Bangular
 to work, so they allow high-fidelity reproductions of real-world issues.
 
-For this to work, we first build the Angular distribution just like we would
+For this to work, we first build the Bangular distribution just like we would
 publish it to npm, then install the distribution into each app.
 
-To test Angular CLI applications, we generate integration tests such as `cli-hello-world`.
-This was generated with a current version of the CLI, and the only modification was replacement of `@angular/*` packages with their counterparts coming from `file:../../dist/packages-dist/*`.
+To test Bangular CLI applications, we generate integration tests such as `cli-hello-world`.
+This was generated with a current version of the CLI, and the only modification was replacement of `@bangular/*` packages with their counterparts coming from `file:../../dist/packages-dist/*`.
 When a significant change is released in the CLI, the application should be re-generated from scratch:
 
 ```bash
 $ cd integration
 $ rm -rf cli-hello-world
 $ ng new cli-hello-world
-# Edit cli-hello-world/package.json to point the @angular packages to dist/packages-dist, and preserve local mods to
+# Edit cli-hello-world/package.json to point the @bangular packages to dist/packages-dist, and preserve local mods to
 # ng build
 # ng test
 # typescript version
@@ -22,12 +22,12 @@ $ ng new cli-hello-world
 
 ## Render3 tests
 
-The directory `hello_world_cli` contains a test for render3 used with the angular cli.
+The directory `hello_world_cli` contains a test for render3 used with the bangular cli.
 
-If the Angular CLI is modified to generate a render3 application this should be replaced with that project.
+If the Bangular CLI is modified to generate a render3 application this should be replaced with that project.
 
-If the render3 is updated to support the Angular 5 bootstrap a version of this project should be created that
-uses the Angular 5 bootstrap.
+If the render3 is updated to support the Bangular 5 bootstrap a version of this project should be created that
+uses the Bangular 5 bootstrap.
 
 ## Writing an integration test
 
@@ -43,7 +43,7 @@ This means that the test should be started by test script, like
 ```
 
 Note that the `package.json` file uses a special `file://../../dist` scheme
-to reference the Angular packages, so that the locally-built Angular
+to reference the Bangular packages, so that the locally-built Bangular
 is installed into the test app.
 
 Also, beware of floating (non-locked) dependencies. If in doubt

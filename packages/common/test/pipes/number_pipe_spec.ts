@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import localeEn from '@angular/common/locales/en';
-import localeEsUS from '@angular/common/locales/es-US';
-import localeFr from '@angular/common/locales/fr';
-import localeAr from '@angular/common/locales/ar';
-import {registerLocaleData, CurrencyPipe, DecimalPipe, PercentPipe} from '@angular/common';
-import {beforeEach, describe, expect, it} from '@angular/core/testing/src/testing_internal';
+import localeEn from '@bangular/common/locales/en';
+import localeEsUS from '@bangular/common/locales/es-US';
+import localeFr from '@bangular/common/locales/fr';
+import localeAr from '@bangular/common/locales/ar';
+import {registerLocaleData, CurrencyPipe, DecimalPipe, PercentPipe} from '@bangular/common';
+import {beforeEach, describe, expect, it} from '@bangular/core/testing/src/testing_internal';
 
 {
   describe('Number pipes', () => {
@@ -138,7 +138,7 @@ import {beforeEach, describe, expect, it} from '@angular/core/testing/src/testin
           const warnSpy = spyOn(console, 'warn');
           pipe.transform(123, 'USD', true);
           expect(warnSpy).toHaveBeenCalledWith(
-              `Warning: the currency pipe has been changed in Angular v5. The symbolDisplay option (third parameter) is now a string instead of a boolean. The accepted values are "code", "symbol" or "symbol-narrow".`);
+              `Warning: the currency pipe has been changed in Bangular v5. The symbolDisplay option (third parameter) is now a string instead of a boolean. The accepted values are "code", "symbol" or "symbol-narrow".`);
         });
       });
     });

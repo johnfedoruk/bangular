@@ -1,8 +1,8 @@
 // #docregion
-angular.
+bangular.
   module('core.phone').
   factory('Phone', ['$resource',
-    function($resource: angular.resource.IResourceService) {
+    function($resource: bangular.resource.IResourceService) {
       return $resource('phones/:phoneId.json', {}, {
         query: {
           method: 'GET',

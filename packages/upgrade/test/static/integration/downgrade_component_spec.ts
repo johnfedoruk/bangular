@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ChangeDetectorRef, Compiler, Component, ComponentFactoryResolver, EventEmitter, Injector, Input, NgModule, NgModuleRef, OnChanges, OnDestroy, SimpleChanges, destroyPlatform} from '@angular/core';
-import {async, fakeAsync, tick} from '@angular/core/testing';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import * as angular from '@angular/upgrade/src/common/angular1';
-import {UpgradeModule, downgradeComponent} from '@angular/upgrade/static';
+import {ChangeDetectorRef, Compiler, Component, ComponentFactoryResolver, EventEmitter, Injector, Input, NgModule, NgModuleRef, OnChanges, OnDestroy, SimpleChanges, destroyPlatform} from '@bangular/core';
+import {async, fakeAsync, tick} from '@bangular/core/testing';
+import {BrowserModule} from '@bangular/platform-browser';
+import {platformBrowserDynamic} from '@bangular/platform-browser-dynamic';
+import * as bangular from '@bangular/upgrade/src/common/bangular1';
+import {UpgradeModule, downgradeComponent} from '@bangular/upgrade/static';
 
 import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
 
@@ -23,9 +23,9 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
 
     it('should bind properties, events', async(() => {
          const ng1Module =
-             angular.module('ng1', []).value('$exceptionHandler', (err: any) => {
+             bangular.module('ng1', []).value('$exceptionHandler', (err: any) => {
                                         throw err;
-                                      }).run(($rootScope: angular.IScope) => {
+                                      }).run(($rootScope: bangular.IScope) => {
                $rootScope['name'] = 'world';
                $rootScope['dataA'] = 'A';
                $rootScope['dataB'] = 'B';
@@ -168,9 +168,9 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
            ngDoBootstrap() {}
          }
 
-         const ng1Module = angular.module('ng1', [])
+         const ng1Module = bangular.module('ng1', [])
                                .directive('ng2', downgradeComponent({component: Ng2Component}))
-                               .run(($rootScope: angular.IRootScopeService) => {
+                               .run(($rootScope: bangular.IRootScopeService) => {
                                  $rootScope.value1 = 0;
                                  $rootScope.value2 = 0;
                                });
@@ -178,7 +178,7 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
          const element = html('<ng2 [value1]="value1" value2="{{ value2 }}"></ng2>');
 
          bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(upgrade => {
-           const $rootScope = upgrade.$injector.get('$rootScope') as angular.IRootScopeService;
+           const $rootScope = upgrade.$injector.get('$rootScope') as bangular.IRootScopeService;
 
            expect(element.textContent).toBe('0 | 0');
 
@@ -232,10 +232,10 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
          }
 
          const ng1Module =
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive(
                      'ng2', downgradeComponent({component: Ng2Component, propagateDigest: false}))
-                 .run(($rootScope: angular.IRootScopeService) => {
+                 .run(($rootScope: bangular.IRootScopeService) => {
                    $rootScope.value1 = 0;
                    $rootScope.value2 = 0;
                  });
@@ -243,7 +243,7 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
          const element = html('<ng2 [value1]="value1" value2="{{ value2 }}"></ng2>');
 
          bootstrap(platformBrowserDynamic(), Ng2Module, element, ng1Module).then(upgrade => {
-           const $rootScope = upgrade.$injector.get('$rootScope') as angular.IRootScopeService;
+           const $rootScope = upgrade.$injector.get('$rootScope') as bangular.IRootScopeService;
 
            expect(element.textContent).toBe('0 | 0');
 
@@ -274,7 +274,7 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
          });
        }));
 
-    it('should still run normal Angular change-detection regardless of `propagateDigest`',
+    it('should still run normal Bangular change-detection regardless of `propagateDigest`',
        fakeAsync(() => {
          let ng2Component: Ng2Component;
 
@@ -294,7 +294,7 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
          }
 
          const ng1Module =
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive(
                      'ng2A', downgradeComponent({component: Ng2Component, propagateDigest: true}))
                  .directive(
@@ -346,7 +346,7 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
            ngDoBootstrap() {}
          }
 
-         const ng1Module = angular.module('ng1', []).directive(
+         const ng1Module = bangular.module('ng1', []).directive(
              'ng2', downgradeComponent({component: Ng2Component}));
 
          const element = html(`
@@ -369,8 +369,8 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
        }));
 
     it('should bind to ng-model', async(() => {
-         const ng1Module = angular.module('ng1', []).run(
-             ($rootScope: angular.IScope) => { $rootScope['modelA'] = 'A'; });
+         const ng1Module = bangular.module('ng1', []).run(
+             ($rootScope: bangular.IScope) => { $rootScope['modelA'] = 'A'; });
 
          let ng2Instance: Ng2;
          @Component({selector: 'ng2', template: '<span>{{_value}}</span>'})
@@ -441,7 +441,7 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
          }
 
          const ng1Module =
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive(
                      'ng1',
                      () => { return {template: '<div ng-if="!destroyIt"><ng2></ng2></div>'}; })
@@ -478,16 +478,16 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
          }
 
          const ng1Module =
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive(
                      'ng1',
                      [
                        '$compile',
-                       ($compile: angular.ICompileService) => {
+                       ($compile: bangular.ICompileService) => {
                          return {
                            link: function(
-                               $scope: angular.IScope, $element: angular.IAugmentedJQuery,
-                               $attrs: angular.IAttributes) {
+                               $scope: bangular.IScope, $element: bangular.IAugmentedJQuery,
+                               $attrs: bangular.IAttributes) {
                              // here we compile some HTML that contains a downgraded component
                              // since it is not currently in the DOM it is not able to "require"
                              // an ng2 injector so it should use the `moduleInjector` instead.
@@ -523,7 +523,7 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
            ngDoBootstrap() {}
          }
 
-         const ng1Module = angular.module('ng1', []).directive(
+         const ng1Module = bangular.module('ng1', []).directive(
              'worksComponent', downgradeComponent({component: WorksComponent}));
 
          const element = html('<works-component></works-component>');
@@ -551,7 +551,7 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
            ngDoBootstrap() {}
          }
 
-         const ng1Module = angular.module('ng1', []).directive(
+         const ng1Module = bangular.module('ng1', []).directive(
              'rootComponent', downgradeComponent({component: RootComponent}));
 
          const element = html('<root-component></root-component>');
@@ -581,7 +581,7 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
          }
 
          const ng1Module =
-             angular.module('ng1', [])
+             bangular.module('ng1', [])
                  .directive('parent', downgradeComponent({component: ParentComponent}))
                  .directive('child', downgradeComponent({component: ChildComponent}));
 
@@ -622,7 +622,7 @@ import {$apply, bootstrap, html, multiTrim} from '../test_helpers';
          class LazyLoadedModule {
          }
 
-         const ng1Module = angular.module('ng1', []).directive(
+         const ng1Module = bangular.module('ng1', []).directive(
              'ng2', downgradeComponent({component: Ng2Component}));
 
          const element = html('<ng2></ng2>');

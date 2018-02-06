@@ -4,7 +4,7 @@
 // If it didn't, a new instance of UserService would be created
 // after each lazy load and the userName would double up.
 
-import { Injectable, Optional } from '@angular/core';
+import { Injectable, Optional } from '@bangular/core';
 
 let nextId = 1;
 

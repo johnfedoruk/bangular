@@ -8,7 +8,7 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@angular/compiler": ["../../dist/packages/compiler"]
+      "@bangular/compiler": ["../../dist/packages/compiler"]
     },
     "outDir": "../../dist/packages/compiler-cli"
   },

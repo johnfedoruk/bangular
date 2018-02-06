@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Inject, InjectionToken, Injector, Optional, ReflectiveKey, Self, SkipSelf, forwardRef} from '@angular/core';
-import {getOriginalError} from '@angular/core/src/errors';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {Inject, InjectionToken, Injector, Optional, ReflectiveKey, Self, SkipSelf, forwardRef} from '@bangular/core';
+import {getOriginalError} from '@bangular/core/src/errors';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 import {stringify} from '../../src/util';
 

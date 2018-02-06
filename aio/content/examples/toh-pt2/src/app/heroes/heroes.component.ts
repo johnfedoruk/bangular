@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@bangular/core';
 import { Hero } from '../hero';
 // #docregion import-heroes
 import { HEROES } from '../mock-heroes';

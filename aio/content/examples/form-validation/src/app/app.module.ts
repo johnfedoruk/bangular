@@ -1,7 +1,7 @@
 // #docregion
-import { NgModule }      from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule }      from '@bangular/core';
+import { FormsModule, ReactiveFormsModule } from '@bangular/forms';
+import { BrowserModule } from '@bangular/platform-browser';
 
 import { AppComponent }           from './app.component';
 import { HeroFormTemplateComponent } from './template/hero-form-template.component';

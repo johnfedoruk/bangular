@@ -1,9 +1,9 @@
 // #docplaster
 // #docregion
 // #docregion hero-import
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
+import { NgModule }       from '@bangular/core';
+import { BrowserModule }  from '@bangular/platform-browser';
+import { FormsModule }    from '@bangular/forms';
 
 import { AppComponent }     from './app.component';
 import { AppRoutingModule } from './app-routing.module';

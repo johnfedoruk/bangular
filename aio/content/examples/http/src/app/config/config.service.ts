@@ -1,9 +1,9 @@
 // #docplaster
 // #docregion , proto
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@bangular/core';
+import { HttpClient } from '@bangular/common/http';
 // #enddocregion proto
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { HttpErrorResponse, HttpResponse } from '@bangular/common/http';
 
 // #docregion rxjs-imports
 import { Observable } from 'rxjs/Observable';

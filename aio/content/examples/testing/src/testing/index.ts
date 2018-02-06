@@ -1,5 +1,5 @@
-import { DebugElement }           from '@angular/core';
-import { tick, ComponentFixture } from '@angular/core/testing';
+import { DebugElement }           from '@bangular/core';
+import { tick, ComponentFixture } from '@bangular/core/testing';
 
 export * from './jasmine-matchers';
 export * from './router-stubs';

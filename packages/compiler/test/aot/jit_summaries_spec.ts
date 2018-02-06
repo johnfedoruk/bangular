@@ -3,32 +3,32 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AotCompiler, AotCompilerHost, AotCompilerOptions, CompileSummaryKind, GeneratedFile, toTypeScript} from '@angular/compiler';
+import {AotCompiler, AotCompilerHost, AotCompilerOptions, CompileSummaryKind, GeneratedFile, toTypeScript} from '@bangular/compiler';
 
 import {MockDirectory, compile, setup} from './test_util';
 
 describe('aot summaries for jit', () => {
-  let angularFiles = setup();
-  let angularSummaryFiles: MockDirectory;
+  let bangularFiles = setup();
+  let bangularSummaryFiles: MockDirectory;
 
   beforeEach(() => {
-    angularSummaryFiles = compile(angularFiles, {useSummaries: false, emit: true}).outDir;
+    bangularSummaryFiles = compile(bangularFiles, {useSummaries: false, emit: true}).outDir;
   });
 
   function compileApp(rootDir: MockDirectory, options: {useSummaries?: boolean} = {}):
       {genFiles: GeneratedFile[], outDir: MockDirectory} {
     return compile(
-        [rootDir, options.useSummaries ? angularSummaryFiles : angularFiles],
+        [rootDir, options.useSummaries ? bangularSummaryFiles : bangularFiles],
         {...options, enableSummariesForJit: true});
   }
 
   it('should create @Injectable summaries', () => {
     const appDir = {
       'app.module.ts': `
-        import { Injectable } from '@angular/core';
+        import { Injectable } from '@bangular/core';
 
         export class Dep {}
 
@@ -54,7 +54,7 @@ describe('aot summaries for jit', () => {
   it('should create @Pipe summaries', () => {
     const appDir = {
       'app.module.ts': `
-        import { Pipe, NgModule } from '@angular/core';
+        import { Pipe, NgModule } from '@bangular/core';
 
         export class Dep {}
 
@@ -83,7 +83,7 @@ describe('aot summaries for jit', () => {
   it('should create @Directive summaries', () => {
     const appDir = {
       'app.module.ts': `
-        import { Directive, NgModule } from '@angular/core';
+        import { Directive, NgModule } from '@bangular/core';
 
         export class Dep {}
 
@@ -112,7 +112,7 @@ describe('aot summaries for jit', () => {
   it('should create @NgModule summaries', () => {
     const appDir = {
       'app.module.ts': `
-        import { NgModule } from '@angular/core';
+        import { NgModule } from '@bangular/core';
 
         export class Dep {}
 
@@ -138,7 +138,7 @@ describe('aot summaries for jit', () => {
   it('should embed useClass provider summaries in @Directive summaries', () => {
     const appDir = {
       'app.service.ts': `
-        import { Injectable } from '@angular/core';
+        import { Injectable } from '@bangular/core';
 
         export class Dep {}
 
@@ -148,7 +148,7 @@ describe('aot summaries for jit', () => {
         }
       `,
       'app.module.ts': `
-        import { Directive, NgModule } from '@angular/core';
+        import { Directive, NgModule } from '@bangular/core';
         import { MyService } from './app.service';
 
         @Directive({
@@ -176,7 +176,7 @@ describe('aot summaries for jit', () => {
   it('should embed useClass provider summaries into @NgModule summaries', () => {
     const appDir = {
       'app.service.ts': `
-        import { Injectable } from '@angular/core';
+        import { Injectable } from '@bangular/core';
 
         export class Dep {}
 
@@ -186,7 +186,7 @@ describe('aot summaries for jit', () => {
         }
       `,
       'app.module.ts': `
-        import { NgModule } from '@angular/core';
+        import { NgModule } from '@bangular/core';
         import { MyService } from './app.service';
 
         @NgModule({
@@ -210,7 +210,7 @@ describe('aot summaries for jit', () => {
   it('should reference declared @Directive and @Pipe summaries in @NgModule summaries', () => {
     const appDir = {
       'app.module.ts': `
-        import { Directive, Pipe, NgModule } from '@angular/core';
+        import { Directive, Pipe, NgModule } from '@bangular/core';
 
         @Directive({selector: '[myDir]'})
         export class MyDirective {}
@@ -235,7 +235,7 @@ describe('aot summaries for jit', () => {
   it('should reference imported @NgModule summaries in @NgModule summaries', () => {
     const appDir = {
       'app.module.ts': `
-        import { NgModule } from '@angular/core';
+        import { NgModule } from '@bangular/core';
 
         @NgModule()
         export class MyImportedModule {}
@@ -260,13 +260,13 @@ describe('aot summaries for jit', () => {
        const lib1In = {
          'lib1': {
            'module.ts': `
-          import { NgModule } from '@angular/core';
+          import { NgModule } from '@bangular/core';
 
           @NgModule()
           export class Lib1Module {}
         `,
            'reexport.ts': `
-          import { NgModule } from '@angular/core';
+          import { NgModule } from '@bangular/core';
 
           @NgModule()
           export class ReexportModule {}
@@ -279,7 +279,7 @@ describe('aot summaries for jit', () => {
 
        lib2In['lib2'] = {
          'module.ts': `
-          import { NgModule } from '@angular/core';
+          import { NgModule } from '@bangular/core';
           import { Lib1Module } from '../lib1/module';
 
           @NgModule({
@@ -309,7 +309,7 @@ describe('aot summaries for jit', () => {
 
        lib3In['lib3'] = {
          'module.ts': `
-          import { NgModule } from '@angular/core';
+          import { NgModule } from '@bangular/core';
           import { Lib2Module } from '../lib2/module';
           import { reexports } from '../lib2/reexport';
 

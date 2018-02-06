@@ -5,13 +5,13 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@angular/core": ["../../dist/packages/core"],
-      "@angular/core/testing": ["../../dist/packages/core/testing"],
-      "@angular/common": ["../../dist/packages/common"],
-      "@angular/common/testing": ["../../dist/packages/common/testing"],
-      "@angular/compiler": ["../../dist/packages/compiler"],
-      "@angular/compiler/testing": ["../../dist/packages/compiler/testing"],
-      "@angular/platform-browser": ["../../dist/packages/platform-browser"]
+      "@bangular/core": ["../../dist/packages/core"],
+      "@bangular/core/testing": ["../../dist/packages/core/testing"],
+      "@bangular/common": ["../../dist/packages/common"],
+      "@bangular/common/testing": ["../../dist/packages/common/testing"],
+      "@bangular/compiler": ["../../dist/packages/compiler"],
+      "@bangular/compiler/testing": ["../../dist/packages/compiler/testing"],
+      "@bangular/platform-browser": ["../../dist/packages/platform-browser"]
     },
     "outDir": "../../dist/packages/forms"
   },
@@ -21,11 +21,11 @@
     "../../node_modules/zone.js/dist/zone.js.d.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "forms.js",
-    "flatModuleId": "@angular/forms"
+    "flatModuleId": "@bangular/forms"
   }
 }

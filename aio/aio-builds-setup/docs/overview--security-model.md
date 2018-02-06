@@ -1,7 +1,7 @@
 # Overview - Security model
 
 
-Whenever a PR job is run on Travis, we want to build `angular.io` and upload the build artifacts to
+Whenever a PR job is run on Travis, we want to build `bangular.io` and upload the build artifacts to
 a publicly accessible server so that collaborators (developers, designers, authors, etc) can preview
 the changes without having to checkout and build the app locally.
 
@@ -127,7 +127,7 @@ This section describes how each of the aforementioned sub-tasks is accomplished:
   either closed (one way of another) or the access is revoked.
 
 - If anyone gets access to the `PREVIEW_DEPLOYMENT_TOKEN` (a.k.a. `NGBUILDS_IO_KEY` on
-  angular/angular) variable generated for each Travis job, they will be able to impersonate the
+  bangular/bangular) variable generated for each Travis job, they will be able to impersonate the
   corresponding PR's author on the preview server for as long as the token is valid (currently 90
   mins). Because of this, the value of the `PREVIEW_DEPLOYMENT_TOKEN` should not be made publicly
   accessible (e.g. by printing it on the Travis job log).

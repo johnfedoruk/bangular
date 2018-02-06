@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@bangular/core/testing';
 
 import { CustomerDashboardComponent } from './customer-dashboard.component';
 

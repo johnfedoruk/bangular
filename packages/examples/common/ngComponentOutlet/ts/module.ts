@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CommonModule} from '@angular/common';
-import {Compiler, Component, Injectable, Injector, NgModule, NgModuleFactory, ReflectiveInjector} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {CommonModule} from '@bangular/common';
+import {Compiler, Component, Injectable, Injector, NgModule, NgModuleFactory, ReflectiveInjector} from '@bangular/core';
+import {BrowserModule} from '@bangular/platform-browser';
 
 
 

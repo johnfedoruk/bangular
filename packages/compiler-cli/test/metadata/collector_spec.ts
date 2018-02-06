@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as ts from 'typescript';
@@ -104,7 +104,7 @@ describe('Collector', () => {
             __symbolic: 'call',
             expression: {
               __symbolic: 'reference',
-              module: 'angular2/core',
+              module: 'bangular2/core',
               name: 'Component',
               line: 4,
               character: 7
@@ -130,7 +130,7 @@ describe('Collector', () => {
                 __symbolic: 'call',
                 expression: {
                   __symbolic: 'reference',
-                  module: 'angular2/core',
+                  module: 'bangular2/core',
                   name: 'Input',
                   line: 18,
                   character: 9
@@ -156,7 +156,7 @@ describe('Collector', () => {
             __symbolic: 'call',
             expression: {
               __symbolic: 'reference',
-              module: 'angular2/core',
+              module: 'bangular2/core',
               name: 'Component',
               line: 9,
               character: 7
@@ -184,7 +184,7 @@ describe('Collector', () => {
                 },
                 {
                   __symbolic: 'reference',
-                  module: 'angular2/common',
+                  module: 'bangular2/common',
                   name: 'NgFor',
                   line: 22,
                   character: 42
@@ -200,14 +200,14 @@ describe('Collector', () => {
               pipes: [
                 {
                   __symbolic: 'reference',
-                  module: 'angular2/common',
+                  module: 'bangular2/common',
                   name: 'LowerCasePipe',
                   line: 24,
                   character: 16
                 },
                 {
                   __symbolic: 'reference',
-                  module: 'angular2/common',
+                  module: 'bangular2/common',
                   name: 'UpperCasePipe',
                   line: 24,
                   character: 38
@@ -281,7 +281,7 @@ describe('Collector', () => {
         decorators: [{
           __symbolic: 'call',
           expression:
-              {__symbolic: 'reference', module: 'angular2/core', name: 'Input', line, character: 9},
+              {__symbolic: 'reference', module: 'bangular2/core', name: 'Input', line, character: 9},
           arguments: ['firstName']
         }]
       }]
@@ -302,7 +302,7 @@ describe('Collector', () => {
         __symbolic: 'call',
         expression: {
           __symbolic: 'reference',
-          module: 'angular2/core',
+          module: 'bangular2/core',
           name: 'Injectable',
           line: 40,
           character: 7
@@ -359,7 +359,7 @@ describe('Collector', () => {
     const ctor = <ConstructorMetadata>someClass.members !['__ctor__'][0];
     const parameters = ctor.parameters;
     expect(parameters).toEqual([
-      {__symbolic: 'reference', module: 'angular2/common', name: 'NgFor', line: 6, character: 29}
+      {__symbolic: 'reference', module: 'bangular2/common', name: 'NgFor', line: 6, character: 29}
     ]);
   });
 
@@ -444,7 +444,7 @@ describe('Collector', () => {
     const ctor = <ConstructorMetadata>someClass.members !['__ctor__'][0];
     const parameters = ctor.parameters;
     expect(parameters).toEqual([
-      {__symbolic: 'reference', module: 'angular2/common', name: 'NgFor', line: 6, character: 29}
+      {__symbolic: 'reference', module: 'bangular2/common', name: 'NgFor', line: 6, character: 29}
     ]);
   });
 
@@ -511,7 +511,7 @@ describe('Collector', () => {
       __symbolic: 'call',
       expression: {
         __symbolic: 'reference',
-        module: 'angular2/core',
+        module: 'bangular2/core',
         name: 'Component',
         line: 4,
         character: 5
@@ -555,7 +555,7 @@ describe('Collector', () => {
       __symbolic: 'call',
       expression: {
         __symbolic: 'reference',
-        module: 'angular2/core',
+        module: 'bangular2/core',
         name: 'Component',
         line: 4,
         character: 5
@@ -639,7 +639,7 @@ describe('Collector', () => {
     expect(metadata.exports).toEqual([
       {from: './static-field', export: ['MyModule']},
       {from: './static-field-reference', export: [{name: 'Foo', as: 'OtherModule'}]},
-      {from: 'angular2/core'}
+      {from: 'bangular2/core'}
     ]);
   });
 
@@ -688,7 +688,7 @@ describe('Collector', () => {
           __symbolic: 'call',
           expression: {
             __symbolic: 'reference',
-            module: 'angular2/core',
+            module: 'bangular2/core',
             name: 'Component',
             line: 11,
             character: 5
@@ -716,7 +716,7 @@ describe('Collector', () => {
           __symbolic: 'call',
           expression: {
             __symbolic: 'reference',
-            module: 'angular2/core',
+            module: 'bangular2/core',
             name: 'Component',
             line: 11,
             character: 5
@@ -755,7 +755,7 @@ describe('Collector', () => {
           __symbolic: 'call',
           expression: {
             __symbolic: 'reference',
-            module: 'angular2/core',
+            module: 'bangular2/core',
             name: 'Inject',
             line: 6,
             character: 19
@@ -1023,7 +1023,7 @@ describe('Collector', () => {
 
     it('should collect type guards', () => {
       const metadata = collectSource(`
-        import {Directive, Input, TemplateRef} from '@angular/core';
+        import {Directive, Input, TemplateRef} from '@bangular/core';
 
         @Directive({selector: '[myIf]'})
         export class MyIf {
@@ -1042,7 +1042,7 @@ describe('Collector', () => {
 
     it('should be able to collect an invalid access expression', () => {
       const source = createSource(`
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
 
         const value = [];
         @Component({
@@ -1057,7 +1057,7 @@ describe('Collector', () => {
           __symbolic: 'call',
           expression: {
             __symbolic: 'reference',
-            module: '@angular/core',
+            module: '@bangular/core',
             name: 'Component',
             line: 4,
             character: 9
@@ -1170,13 +1170,13 @@ describe('Collector', () => {
 const FILES: Directory = {
   'app': {
     'app.component.ts': `
-      import {Component as MyComponent, OnInit} from 'angular2/core';
-      import * as common from 'angular2/common';
+      import {Component as MyComponent, OnInit} from 'bangular2/core';
+      import * as common from 'bangular2/common';
       import {Hero} from './hero';
       import {HeroDetailComponent} from './hero-detail.component';
       import HeroService from './hero.service';
       // thrown away
-      import 'angular2/core';
+      import 'bangular2/core';
 
       @MyComponent({
         selector: 'my-app',
@@ -1223,7 +1223,7 @@ const FILES: Directory = {
       }`,
     'empty.ts': ``,
     'hero-detail.component.ts': `
-      import {Component, Input} from 'angular2/core';
+      import {Component, Input} from 'bangular2/core';
       import {Hero} from './hero';
 
       @Component({
@@ -1266,7 +1266,7 @@ const FILES: Directory = {
       export default a;
     `,
     'hero.service.ts': `
-      import {Injectable} from 'angular2/core';
+      import {Injectable} from 'bangular2/core';
       import {HEROES} from './mock-heroes';
       import {Hero} from './hero';
 
@@ -1283,7 +1283,7 @@ const FILES: Directory = {
       }
       export default HeroService;`,
     'cases-data.ts': `
-      import {Injectable, Input} from 'angular2/core';
+      import {Injectable, Input} from 'bangular2/core';
 
       @Injectable()
       export class CaseAny {
@@ -1372,7 +1372,7 @@ const FILES: Directory = {
     export let e;
   `,
   'unsupported-2.ts': `
-    import {Injectable} from 'angular2/core';
+    import {Injectable} from 'bangular2/core';
 
     class Foo {}
 
@@ -1391,7 +1391,7 @@ const FILES: Directory = {
     }
   `,
   'interface-reference.ts': `
-    import {Injectable, Inject} from 'angular2/core';
+    import {Injectable, Inject} from 'bangular2/core';
     export interface Test {}
 
     @Injectable()
@@ -1400,8 +1400,8 @@ const FILES: Directory = {
     }
   `,
   'import-star.ts': `
-    import {Injectable} from 'angular2/core';
-    import * as common from 'angular2/common';
+    import {Injectable} from 'bangular2/core';
+    import * as common from 'bangular2/common';
 
     @Injectable()
     export class SomeClass {
@@ -1488,7 +1488,7 @@ const FILES: Directory = {
     }
   `,
   'static-method-call.ts': `
-    import {Component} from 'angular2/core';
+    import {Component} from 'bangular2/core';
     import {MyModule} from './static-method';
 
     @Component({
@@ -1502,7 +1502,7 @@ const FILES: Directory = {
     }
   `,
   'static-field-reference.ts': `
-    import {Component} from 'angular2/core';
+    import {Component} from 'bangular2/core';
     import {MyModule} from './static-field';
 
     @Component({
@@ -1523,7 +1523,7 @@ const FILES: Directory = {
   're-exports.ts': `
     export {MyModule} from './static-field';
     export {Foo as OtherModule} from './static-field-reference';
-    export * from 'angular2/core';
+    export * from 'bangular2/core';
   `,
   're-exports-2.ts': `
     import {MyModule} from './static-field';
@@ -1540,7 +1540,7 @@ const FILES: Directory = {
     export type SomeType = 'a';
   `,
   'local-symbol-ref.ts': `
-    import {Component, Validators} from 'angular2/core';
+    import {Component, Validators} from 'bangular2/core';
 
     var REQUIRED;
 
@@ -1560,7 +1560,7 @@ const FILES: Directory = {
     enum PrivateEnum { e, f, g }
   `,
   'local-function-ref.ts': `
-    import {Component, Validators} from 'angular2/core';
+    import {Component, Validators} from 'bangular2/core';
 
     function required() {}
 
@@ -1583,7 +1583,7 @@ const FILES: Directory = {
     }
   `,
   'node_modules': {
-    'angular2': {
+    'bangular2': {
       'core.d.ts': `
           export interface Type extends Function { }
           export interface TypeDecorator {

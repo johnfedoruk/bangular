@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ApplicationRef, NgModule, forwardRef} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {MATERIAL_SANITY_CHECKS, MdButtonModule} from '@angular/material';
-import {ServerModule} from '@angular/platform-server';
+import {ApplicationRef, NgModule, forwardRef} from '@bangular/core';
+import {FormsModule} from '@bangular/forms';
+import {MATERIAL_SANITY_CHECKS, MdButtonModule} from '@bangular/material';
+import {ServerModule} from '@bangular/platform-server';
 import {FlatModule} from 'flat_module';
 // Note: don't refer to third_party_src as we want to test that
 // we can compile components from node_modules!
@@ -70,7 +70,7 @@ export {SomeModule as JitSummariesSomeModule} from './jit_summaries';
     SomeService,
     {provide: CUSTOM, useValue: forwardRef(() => ({name: 'some name'}))},
     // disable sanity check for material because it throws an error when used server-side
-    // see https://github.com/angular/material2/issues/6292
+    // see https://github.com/bangular/material2/issues/6292
     {provide: MATERIAL_SANITY_CHECKS, useValue: false},
   ],
   entryComponents: [

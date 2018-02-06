@@ -26,4 +26,4 @@ Options for protractor with `protractor-perf.conf.js`:
 ## Compile *_aot.ts files
 
 These files are compiled as part of the compiler_cli integration tests.
-See `@angular/compile_cli/integrationtest/tsconfig.json`
+See `@bangular/compile_cli/integrationtest/tsconfig.json`

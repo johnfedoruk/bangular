@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Ng1Token} from '@angular/upgrade/src/common/angular1';
-import {compileFactory, injectorFactory, parseFactory, rootScopeFactory, setTempInjectorRef} from '@angular/upgrade/src/static/angular1_providers';
+import {Ng1Token} from '@bangular/upgrade/src/common/bangular1';
+import {compileFactory, injectorFactory, parseFactory, rootScopeFactory, setTempInjectorRef} from '@bangular/upgrade/src/static/bangular1_providers';
 
 {
-  describe('upgrade angular1_providers', () => {
+  describe('upgrade bangular1_providers', () => {
     describe('compileFactory', () => {
       it('should retrieve and return `$compile`', () => {
         const services: {[key: string]: any} = {$compile: 'foo'};

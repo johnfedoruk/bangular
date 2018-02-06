@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as fs from 'fs';
@@ -141,8 +141,8 @@ describe('extract_i18n command line', () => {
     const nodeModulesPath = path.resolve(basePath, 'node_modules');
     fs.mkdirSync(nodeModulesPath);
     fs.symlinkSync(
-        path.resolve(ngRootDir, 'dist', 'all', '@angular'),
-        path.resolve(nodeModulesPath, '@angular'));
+        path.resolve(ngRootDir, 'dist', 'all', '@bangular'),
+        path.resolve(nodeModulesPath, '@bangular'));
     fs.symlinkSync(
         path.resolve(ngRootDir, 'node_modules', 'rxjs'), path.resolve(nodeModulesPath, 'rxjs'));
   });
@@ -153,7 +153,7 @@ describe('extract_i18n command line', () => {
       `<p id="welcomeMessage"><!--i18n-->Welcome<!--/i18n--></p>`,
     ].join('\n'));
     write('src/module.ts', `
-    import {Component, NgModule} from '@angular/core';
+    import {Component, NgModule} from '@bangular/core';
 
     @Component({
       selector: 'basic',

@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Inject, Injectable, InjectionToken, LOCALE_ID, Optional} from '@angular/core';
+import {Inject, Injectable, InjectionToken, LOCALE_ID, Optional} from '@bangular/core';
 import {Plural, getLocalePluralCase} from './locale_data_api';
 
 

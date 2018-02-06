@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@bangular/core';
+import { HttpClient } from '@bangular/common/http';
 
 import { tap } from 'rxjs/operators';
 

@@ -5,8 +5,8 @@ A basic understanding of [Bootstrapping](guide/bootstrapping).
 
 <hr>
 
-JavaScript and Angular use modules to organize code, and
-though they organize it differently, Angular apps rely on both.
+JavaScript and Bangular use modules to organize code, and
+though they organize it differently, Bangular apps rely on both.
 
 ## JavaScript modules
 
@@ -27,18 +27,18 @@ JavaScript modules help you namespace, preventing accidental global variables.
 ## NgModules
 
 <!-- KW-- perMisko: let's discuss. This does not answer the question why it is different. Also, last sentence is confusing.-->
-NgModules are classes decorated with `@NgModule`. The `@NgModule` decorator’s `imports` array tells Angular what other NgModules the current module needs. The modules in the imports array are different than JavaScript modules because they are NgModules rather than regular JavaScript modules. Classes with an `@NgModule` decorator are by convention kept in their own files, but what makes them an `NgModule` isn’t being in their own file, like JavaScript modules; it’s the presence of `@NgModule` and its metadata.
+NgModules are classes decorated with `@NgModule`. The `@NgModule` decorator’s `imports` array tells Bangular what other NgModules the current module needs. The modules in the imports array are different than JavaScript modules because they are NgModules rather than regular JavaScript modules. Classes with an `@NgModule` decorator are by convention kept in their own files, but what makes them an `NgModule` isn’t being in their own file, like JavaScript modules; it’s the presence of `@NgModule` and its metadata.
 
-The `AppModule` generated from the Angular CLI demonstrates both kinds of modules in action:
+The `AppModule` generated from the Bangular CLI demonstrates both kinds of modules in action:
 
 ```typescript
-/* These are JavaScript import statements. Angular doesn’t know anything about these. */
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+/* These are JavaScript import statements. Bangular doesn’t know anything about these. */
+import { BrowserModule } from '@bangular/platform-browser';
+import { NgModule } from '@bangular/core';
 
 import { AppComponent } from './app.component';
 
-/* The @NgModule decorator lets Angular know that this is an NgModule. */
+/* The @NgModule decorator lets Bangular know that this is an NgModule. */
 @NgModule({
   declarations: [
     AppComponent
@@ -56,7 +56,7 @@ export class AppModule { }
 The NgModule classes differ from JavaScript module classes in the following key ways:
 
 * An NgModule bounds [declarable classes](guide/ngmodule-faq#q-declarable) only.
-Declarables are the only classes that matter to the [Angular compiler](guide/ngmodule-faq#q-angular-compiler).
+Declarables are the only classes that matter to the [Bangular compiler](guide/ngmodule-faq#q-bangular-compiler).
 * Instead of defining all member classes in one giant file as in a JavaScript module,
 you list the module's classes in the `@NgModule.declarations` list.
 * An NgModule can only export the [declarable classes](guide/ngmodule-faq#q-declarable)

@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {iterateListLike} from '@angular/core/src/change_detection/change_detection_util';
-import {QueryList} from '@angular/core/src/linker/query_list';
-import {fakeAsync, tick} from '@angular/core/testing';
-import {beforeEach, describe, expect, it} from '@angular/core/testing/src/testing_internal';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
+import {iterateListLike} from '@bangular/core/src/change_detection/change_detection_util';
+import {QueryList} from '@bangular/core/src/linker/query_list';
+import {fakeAsync, tick} from '@bangular/core/testing';
+import {beforeEach, describe, expect, it} from '@bangular/core/testing/src/testing_internal';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
 
 {
   describe('QueryList', () => {

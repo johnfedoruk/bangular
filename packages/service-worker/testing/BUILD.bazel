@@ -6,7 +6,7 @@ ts_library(
     name = "testing",
     testonly = 1,
     srcs = glob(["**/*.ts"]),
-    module_name = "@angular/service-worker/testing",
+    module_name = "@bangular/service-worker/testing",
     deps = [
         "@rxjs",
     ],

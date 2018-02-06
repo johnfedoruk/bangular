@@ -1,5 +1,5 @@
 // #docregion
-declare var angular: angular.IAngularStatic;
+declare var bangular: bangular.IBangularStatic;
 import { Phone, PhoneData } from '../core/phone/phone.service';
 
 class PhoneDetailController {
@@ -7,7 +7,7 @@ class PhoneDetailController {
   mainImageUrl: string;
 
   static $inject = ['$routeParams', 'phone'];
-  constructor($routeParams: angular.route.IRouteParamsService, phone: Phone) {
+  constructor($routeParams: bangular.route.IRouteParamsService, phone: Phone) {
     let phoneId = $routeParams['phoneId'];
     phone.get(phoneId).subscribe(data => {
       this.phone = data;
@@ -20,7 +20,7 @@ class PhoneDetailController {
   }
 }
 
-angular.
+bangular.
   module('phoneDetail').
   component('phoneDetail', {
     templateUrl: 'phone-detail/phone-detail.template.html',

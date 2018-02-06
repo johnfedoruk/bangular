@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Type} from '@angular/core';
-import {NgZone} from '@angular/core/src/zone/ng_zone';
-import {ClientMessageBroker, ClientMessageBrokerFactory, UiArguments} from '@angular/platform-webworker/src/web_workers/shared/client_message_broker';
-import {MessageBus, MessageBusSink, MessageBusSource} from '@angular/platform-webworker/src/web_workers/shared/message_bus';
+import {Type} from '@bangular/core';
+import {NgZone} from '@bangular/core/src/zone/ng_zone';
+import {ClientMessageBroker, ClientMessageBrokerFactory, UiArguments} from '@bangular/platform-webworker/src/web_workers/shared/client_message_broker';
+import {MessageBus, MessageBusSink, MessageBusSource} from '@bangular/platform-webworker/src/web_workers/shared/message_bus';
 import {SpyMessageBroker} from '../worker/spies';
 
 import {MockEventEmitter} from './mock_event_emitter';

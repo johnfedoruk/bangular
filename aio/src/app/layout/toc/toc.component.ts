@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, QueryList, ViewChildren } from '@bangular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { asap } from 'rxjs/scheduler/asap';
@@ -55,7 +55,7 @@ export class TocComponent implements OnInit, AfterViewInit, OnDestroy {
     if (!this.isEmbedded) {
       // We use the `asap` scheduler because updates to `activeItemIndex` are triggered by DOM changes,
       // which, in turn, are caused by the rendering that happened due to a ChangeDetection.
-      // Without asap, we would be updating the model while still in a ChangeDetection handler, which is disallowed by Angular.
+      // Without asap, we would be updating the model while still in a ChangeDetection handler, which is disallowed by Bangular.
       Observable.combineLatest(this.tocService.activeItemIndex.subscribeOn(asap), this.items.changes.startWith(this.items))
           .takeUntil(this.onDestroy)
           .subscribe(([index, items]) => {

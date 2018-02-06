@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {DOCUMENT} from '@angular/common';
-import {Injector, NgZone, PLATFORM_INITIALIZER, StaticProvider} from '@angular/core';
-import {ɵBrowserPlatformLocation as BrowserPlatformLocation} from '@angular/platform-browser';
+import {DOCUMENT} from '@bangular/common';
+import {Injector, NgZone, PLATFORM_INITIALIZER, StaticProvider} from '@bangular/core';
+import {ɵBrowserPlatformLocation as BrowserPlatformLocation} from '@bangular/platform-browser';
 
 import {MessageBus} from '../shared/message_bus';
 import {Serializer} from '../shared/serializer';

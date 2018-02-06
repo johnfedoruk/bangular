@@ -1,5 +1,5 @@
 // #docregion
-import { Component, Input, AfterViewInit, ViewChild, ComponentFactoryResolver, OnDestroy } from '@angular/core';
+import { Component, Input, AfterViewInit, ViewChild, ComponentFactoryResolver, OnDestroy } from '@bangular/core';
 
 import { AdDirective } from './ad.directive';
 import { AdItem }      from './ad-item';

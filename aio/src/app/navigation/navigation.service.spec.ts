@@ -1,6 +1,6 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { Injector } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@bangular/common/http/testing';
+import { Injector } from '@bangular/core';
+import { TestBed } from '@bangular/core/testing';
 
 import { CurrentNodes, NavigationService, NavigationViews, NavigationNode, VersionInfo } from 'app/navigation/navigation.service';
 import { LocationService } from 'app/shared/location.service';
@@ -246,7 +246,7 @@ describe('NavigationService', () => {
       actualDocVersions = [];
       docVersions = [
         { title: 'v4.0.0' },
-        { title: 'v2', url: 'https://v2.angular.io' }
+        { title: 'v2', url: 'https://v2.bangular.io' }
       ];
 
       expectedDocVersions = docVersions.map(v => (

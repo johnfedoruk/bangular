@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 const resolve = require('rollup-plugin-node-resolve');
 const sourcemaps = require('rollup-plugin-sourcemaps');
 
 const globals = {
-  '@angular/core': 'ng.core',
-  '@angular/compiler': 'ng.compiler',
-  '@angular/platform-browser': 'ng.platformBrowser',
+  '@bangular/core': 'ng.core',
+  '@bangular/compiler': 'ng.compiler',
+  '@bangular/platform-browser': 'ng.platformBrowser',
   'rxjs/Observable': 'Rx',
   'rxjs/Observer': 'Rx',
   'rxjs/Subject': 'Rx'
@@ -23,7 +23,7 @@ module.exports = {
   dest: '../../dist/packages-dist/http/bundles/http.umd.js',
   format: 'umd',
   exports: 'named',
-  amd: {id: '@angular/http'},
+  amd: {id: '@bangular/http'},
   moduleName: 'ng.http',
   plugins: [resolve(), sourcemaps()],
   external: Object.keys(globals),

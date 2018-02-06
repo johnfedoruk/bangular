@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injectable, ReflectiveInjector, ReflectiveKey} from '@angular/core';
-import {reflector} from '@angular/core/src/reflection/reflection';
-import {ReflectionCapabilities} from '@angular/core/src/reflection/reflection_capabilities';
-import {BrowserDomAdapter} from '@angular/platform-browser/src/browser/browser_adapter';
-import {bindAction, getIntParameter, microBenchmark} from '@angular/testing/src/benchmark_util';
+import {Injectable, ReflectiveInjector, ReflectiveKey} from '@bangular/core';
+import {reflector} from '@bangular/core/src/reflection/reflection';
+import {ReflectionCapabilities} from '@bangular/core/src/reflection/reflection_capabilities';
+import {BrowserDomAdapter} from '@bangular/platform-browser/src/browser/browser_adapter';
+import {bindAction, getIntParameter, microBenchmark} from '@bangular/testing/src/benchmark_util';
 
 let count = 0;
 

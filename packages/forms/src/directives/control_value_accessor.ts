@@ -3,17 +3,17 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {InjectionToken} from '@angular/core';
+import {InjectionToken} from '@bangular/core';
 
 /**
- * A `ControlValueAccessor` acts as a bridge between the Angular forms API and a
+ * A `ControlValueAccessor` acts as a bridge between the Bangular forms API and a
  * native element in the DOM.
  *
  * Implement this interface if you want to create a custom form control directive
- * that integrates with Angular forms.
+ * that integrates with Bangular forms.
  *
  * @stable
  */

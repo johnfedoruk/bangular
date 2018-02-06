@@ -10,7 +10,7 @@ filegroup(
         "**",
         ext,
     ]) for pkg in [
-        "@angular",
+        "@bangular",
         "@types",
         "bytebuffer",
         "protobufjs",

@@ -3,19 +3,19 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injector} from '@angular/core';
-import {AsyncTestCompleter, SpyObject, afterEach, beforeEach, describe, inject, it} from '@angular/core/testing/src/testing_internal';
-import {BrowserJsonp} from '@angular/http/src/backends/browser_jsonp';
-import {JSONPBackend, JSONPConnection} from '@angular/http/src/backends/jsonp_backend';
-import {BaseRequestOptions, RequestOptions} from '@angular/http/src/base_request_options';
-import {BaseResponseOptions, ResponseOptions} from '@angular/http/src/base_response_options';
-import {ReadyState, RequestMethod, ResponseType} from '@angular/http/src/enums';
-import {Request} from '@angular/http/src/static_request';
-import {Response} from '@angular/http/src/static_response';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {Injector} from '@bangular/core';
+import {AsyncTestCompleter, SpyObject, afterEach, beforeEach, describe, inject, it} from '@bangular/core/testing/src/testing_internal';
+import {BrowserJsonp} from '@bangular/http/src/backends/browser_jsonp';
+import {JSONPBackend, JSONPConnection} from '@bangular/http/src/backends/jsonp_backend';
+import {BaseRequestOptions, RequestOptions} from '@bangular/http/src/base_request_options';
+import {BaseResponseOptions, ResponseOptions} from '@bangular/http/src/base_response_options';
+import {ReadyState, RequestMethod, ResponseType} from '@bangular/http/src/enums';
+import {Request} from '@bangular/http/src/static_request';
+import {Response} from '@bangular/http/src/static_response';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 let existingScripts: MockBrowserJsonp[] = [];
 

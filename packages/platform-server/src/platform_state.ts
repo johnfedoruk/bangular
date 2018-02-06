@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Inject, Injectable} from '@angular/core';
-import {DOCUMENT, ɵgetDOM as getDOM} from '@angular/platform-browser';
+import {Inject, Injectable} from '@bangular/core';
+import {DOCUMENT, ɵgetDOM as getDOM} from '@bangular/platform-browser';
 
 import {serializeDocument} from './domino_adapter';
 

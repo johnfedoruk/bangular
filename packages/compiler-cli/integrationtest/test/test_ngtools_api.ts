@@ -4,16 +4,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-// Must be imported first, because Angular decorators throw on load.
+// Must be imported first, because Bangular decorators throw on load.
 import 'reflect-metadata';
 
 import * as path from 'path';
 import * as ts from 'typescript';
 import * as assert from 'assert';
-import {__NGTOOLS_PRIVATE_API_2, readConfiguration} from '@angular/compiler-cli';
+import {__NGTOOLS_PRIVATE_API_2, readConfiguration} from '@bangular/compiler-cli';
 
 /* tslint:disable:no-console  */
 /**
@@ -48,7 +48,7 @@ function lazyRoutesTest() {
   config.options.basePath = basePath;
 
   const lazyRoutes = __NGTOOLS_PRIVATE_API_2.listLazyRoutes(
-      {program, host, angularCompilerOptions: config.options, entryModule: 'app.module#AppModule'});
+      {program, host, bangularCompilerOptions: config.options, entryModule: 'app.module#AppModule'});
 
   const expectations: {[route: string]: string} = {
     './lazy.module#LazyModule': 'lazy.module.ts',

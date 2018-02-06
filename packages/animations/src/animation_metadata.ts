@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 export interface ɵStyleData { [key: string]: string|number; }
 
 /**
  * Metadata representing the entry of animations. Instances of this interface are created internally
- * within the Angular animation DSL.
+ * within the Bangular animation DSL.
  *
  * @experimental Animation support is experimental.
  */
@@ -46,7 +46,7 @@ export declare interface AnimationOptions {
 
 /**
  * Metadata representing the entry of animations. Instances of this interface are created internally
- * within the Angular animation DSL when {@link animateChild animateChild()} is used.
+ * within the Bangular animation DSL when {@link animateChild animateChild()} is used.
  *
  * @experimental Animation support is experimental.
  */
@@ -242,10 +242,10 @@ export interface AnimationStaggerMetadata extends AnimationMetadata {
 }
 
 /**
- * `trigger` is an animation-specific function that is designed to be used inside of Angular's
+ * `trigger` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language. If this information is new, please navigate to the
  * {@link Component#animations component animations metadata page} to gain a better
- * understanding of how animations in Angular are used.
+ * understanding of how animations in Bangular are used.
  *
  * `trigger` Creates an animation trigger which will a list of {@link state state} and
  * {@link transition transition} entries that will be evaluated when the expression
@@ -330,12 +330,12 @@ export interface AnimationStaggerMetadata extends AnimationMetadata {
  *
  * ### Disabling Animations Application-wide
  * When an area of the template is set to have animations disabled, **all** inner components will
- also have their animations disabled as well. This means that all animations for an angular
- application can be disabled by placing a host binding set on `@.disabled` on the topmost Angular
+ also have their animations disabled as well. This means that all animations for an bangular
+ application can be disabled by placing a host binding set on `@.disabled` on the topmost Bangular
  component.
  *
  * ```ts
- * import {Component, HostBinding} from '@angular/core';
+ * import {Component, HostBinding} from '@bangular/core';
  *
  * @Component({
  *   selector: 'app-component',
@@ -360,10 +360,10 @@ export function trigger(name: string, definitions: AnimationMetadata[]): Animati
 }
 
 /**
- * `animate` is an animation-specific function that is designed to be used inside of Angular's
+ * `animate` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language. If this information is new, please navigate to the {@link
  * Component#animations component animations metadata page} to gain a better understanding of
- * how animations in Angular are used.
+ * how animations in Bangular are used.
  *
  * `animate` specifies an animation step that will apply the provided `styles` data for a given
  * amount of time based on the provided `timing` expression value. Calls to `animate` are expected
@@ -411,10 +411,10 @@ export function animate(
 }
 
 /**
- * `group` is an animation-specific function that is designed to be used inside of Angular's
+ * `group` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language. If this information is new, please navigate to the {@link
  * Component#animations component animations metadata page} to gain a better understanding of
- * how animations in Angular are used.
+ * how animations in Bangular are used.
  *
  * `group` specifies a list of animation steps that are all run in parallel. Grouped animations are
  * useful when a series of styles must be animated/closed off at different starting/ending times.
@@ -447,10 +447,10 @@ export function group(
 }
 
 /**
- * `sequence` is an animation-specific function that is designed to be used inside of Angular's
+ * `sequence` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language. If this information is new, please navigate to the {@link
  * Component#animations component animations metadata page} to gain a better understanding of
- * how animations in Angular are used.
+ * how animations in Bangular are used.
  *
  * `sequence` Specifies a list of animation steps that are run one by one. (`sequence` is used by
  * default when an array is passed as animation data into {@link transition transition}.)
@@ -486,10 +486,10 @@ export function sequence(steps: AnimationMetadata[], options: AnimationOptions |
 }
 
 /**
- * `style` is an animation-specific function that is designed to be used inside of Angular's
+ * `style` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language. If this information is new, please navigate to the {@link
  * Component#animations component animations metadata page} to gain a better understanding of
- * how animations in Angular are used.
+ * how animations in Bangular are used.
  *
  * `style` declares a key/value object containing CSS properties/styles that can then be used for
  * {@link state animation states}, within an {@link sequence animation sequence}, or as styling data
@@ -534,10 +534,10 @@ export function style(
 }
 
 /**
- * `state` is an animation-specific function that is designed to be used inside of Angular's
+ * `state` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language. If this information is new, please navigate to the {@link
  * Component#animations component animations metadata page} to gain a better understanding of
- * how animations in Angular are used.
+ * how animations in Bangular are used.
  *
  * `state` declares an animation state within the given trigger. When a state is active within a
  * component then its associated styles will persist on the element that the trigger is attached to
@@ -549,7 +549,7 @@ export function style(
  *
  * #### The `void` state
  *
- * The `void` state value is a reserved word that angular uses to determine when the element is not
+ * The `void` state value is a reserved word that bangular uses to determine when the element is not
  * apart of the application anymore (e.g. when an `ngIf` evaluates to false then the state of the
  * associated element is void).
  *
@@ -588,10 +588,10 @@ export function state(
 }
 
 /**
- * `keyframes` is an animation-specific function that is designed to be used inside of Angular's
+ * `keyframes` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language. If this information is new, please navigate to the {@link
  * Component#animations component animations metadata page} to gain a better understanding of
- * how animations in Angular are used.
+ * how animations in Bangular are used.
  *
  * `keyframes` specifies a collection of {@link style style} entries each optionally characterized
  * by an `offset` value.
@@ -637,10 +637,10 @@ export function keyframes(steps: AnimationStyleMetadata[]): AnimationKeyframesSe
 }
 
 /**
- * `transition` is an animation-specific function that is designed to be used inside of Angular's
+ * `transition` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language. If this information is new, please navigate to the {@link
  * Component#animations component animations metadata page} to gain a better understanding of
- * how animations in Angular are used.
+ * how animations in Bangular are used.
  *
  * `transition` declares the {@link sequence sequence of animation steps} that will be run when the
  * provided `stateChangeExpr` value is satisfied. The `stateChangeExpr` consists of a `state1 =>
@@ -760,8 +760,8 @@ export function keyframes(steps: AnimationStyleMetadata[]): AnimationKeyframesSe
  * can be used to kick off a transition when a numeric value has increased or decreased in value.
  *
  * ```
- * import {group, animate, query, transition, style, trigger} from '@angular/animations';
- * import {Component} from '@angular/core';
+ * import {group, animate, query, transition, style, trigger} from '@bangular/animations';
+ * import {Component} from '@bangular/core';
  *
  * @Component({
  *   selector: 'banner-carousel-component',
@@ -843,7 +843,7 @@ export function transition(
 }
 
 /**
- * `animation` is an animation-specific function that is designed to be used inside of Angular's
+ * `animation` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language.
  *
  * `var myAnimation = animation(...)` is designed to produce a reusable animation that can be later
@@ -884,11 +884,11 @@ export function animation(
 }
 
 /**
- * `animateChild` is an animation-specific function that is designed to be used inside of Angular's
+ * `animateChild` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language. It works by allowing a queried element to execute its own
  * animation within the animation sequence.
  *
- * Each time an animation is triggered in angular, the parent animation
+ * Each time an animation is triggered in bangular, the parent animation
  * will always get priority and any child animations will be blocked. In order
  * for a child animation to run, the parent animation must query each of the elements
  * containing child animations and then allow the animations to run using `animateChild`.
@@ -921,7 +921,7 @@ export function animation(
  *
  * ```ts
  * // parent-child.component.ts
- * import {trigger, transition, animate, style, query, animateChild} from '@angular/animations';
+ * import {trigger, transition, animate, style, query, animateChild} from '@bangular/animations';
  * @Component({
  *   selector: 'parent-child-component',
  *   animations: [
@@ -975,7 +975,7 @@ export function animation(
  * with `animateChild` will it then animate to its destination of `opacity: 1`.
  *
  * Note that this feature designed to be used alongside {@link query query()} and it will only work
- * with animations that are assigned using the Angular animation DSL (this means that CSS keyframes
+ * with animations that are assigned using the Bangular animation DSL (this means that CSS keyframes
  * and transitions are not handled by this API).
  *
  * @experimental Animation support is experimental.
@@ -986,7 +986,7 @@ export function animateChild(options: AnimateChildOptions | null = null):
 }
 
 /**
- * `useAnimation` is an animation-specific function that is designed to be used inside of Angular's
+ * `useAnimation` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language. It is used to kick off a reusable animation that is created using {@link
  * animation animation()}.
  *
@@ -999,7 +999,7 @@ export function useAnimation(
 }
 
 /**
- * `query` is an animation-specific function that is designed to be used inside of Angular's
+ * `query` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language.
  *
  * query() is used to find one or more inner elements within the current element that is
@@ -1032,7 +1032,7 @@ export function useAnimation(
  *
  * ### Special Selector Values
  *
- * The selector value within a query can collect elements that contain angular-specific
+ * The selector value within a query can collect elements that contain bangular-specific
  * characteristics
  * using special pseudo-selectors tokens.
  *
@@ -1097,7 +1097,7 @@ export function query(
 }
 
 /**
- * `stagger` is an animation-specific function that is designed to be used inside of Angular's
+ * `stagger` is an animation-specific function that is designed to be used inside of Bangular's
  * animation DSL language. It is designed to be used inside of an animation {@link query query()}
  * and works by issuing a timing gap between after each queried item is animated.
  *
@@ -1121,7 +1121,7 @@ export function query(
  * The component code for this looks as such:
  *
  * ```ts
- * import {trigger, transition, style, animate, query, stagger} from '@angular/animations';
+ * import {trigger, transition, style, animate, query, stagger} from '@bangular/animations';
  * @Component({
  *   templateUrl: 'list.component.html',
  *   animations: [

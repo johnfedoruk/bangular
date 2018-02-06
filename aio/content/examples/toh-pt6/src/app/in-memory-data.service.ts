@@ -1,5 +1,5 @@
 // #docregion , init
-import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { InMemoryDbService } from 'bangular-in-memory-web-api';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {

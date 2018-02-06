@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Headers} from '@angular/http/src/headers';
+import {Headers} from '@bangular/http/src/headers';
 
 {
   describe('Headers', () => {
@@ -31,7 +31,7 @@ import {Headers} from '@angular/http/src/headers';
 
       it('should not alter the values of a provided header template', () => {
         // Spec at https://fetch.spec.whatwg.org/#concept-headers-fill
-        // test for https://github.com/angular/angular/issues/6845
+        // test for https://github.com/bangular/bangular/issues/6845
         const firstHeaders = new Headers();
         const secondHeaders = new Headers(firstHeaders);
         secondHeaders.append('Content-Type', 'image/jpeg');

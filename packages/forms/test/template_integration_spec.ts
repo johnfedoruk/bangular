@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Component, Directive, Type, ViewChild, forwardRef} from '@angular/core';
-import {ComponentFixture, TestBed, async, fakeAsync, tick} from '@angular/core/testing';
-import {AbstractControl, AsyncValidator, COMPOSITION_BUFFER_MODE, FormControl, FormsModule, NG_ASYNC_VALIDATORS, NgForm, NgModel} from '@angular/forms';
-import {By} from '@angular/platform-browser/src/dom/debug/by';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {dispatchEvent} from '@angular/platform-browser/testing/src/browser_util';
+import {Component, Directive, Type, ViewChild, forwardRef} from '@bangular/core';
+import {ComponentFixture, TestBed, async, fakeAsync, tick} from '@bangular/core/testing';
+import {AbstractControl, AsyncValidator, COMPOSITION_BUFFER_MODE, FormControl, FormsModule, NG_ASYNC_VALIDATORS, NgForm, NgModel} from '@bangular/forms';
+import {By} from '@bangular/platform-browser/src/dom/debug/by';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {dispatchEvent} from '@bangular/platform-browser/testing/src/browser_util';
 import {merge} from 'rxjs/observable/merge';
 
 import {NgModelCustomComp, NgModelCustomWrapper} from './value_accessor_integration_spec';
@@ -67,7 +67,7 @@ import {NgModelCustomComp, NgModelCustomWrapper} from './value_accessor_integrat
            expect(form.nativeElement.getAttribute('novalidate')).toEqual('');
          }));
 
-      it('should be possible to use native validation and angular forms', fakeAsync(() => {
+      it('should be possible to use native validation and bangular forms', fakeAsync(() => {
            const fixture = initTest(NgModelNativeValidateForm);
 
            fixture.detectChanges();

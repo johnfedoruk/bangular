@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {StaticSymbol} from '@angular/compiler';
-import {CompilerHost} from '@angular/compiler-cli';
-import {ReflectorHost} from '@angular/language-service/src/reflector_host';
+import {StaticSymbol} from '@bangular/compiler';
+import {CompilerHost} from '@bangular/compiler-cli';
+import {ReflectorHost} from '@bangular/language-service/src/reflector_host';
 import * as ts from 'typescript';
 
 import {getExpressionDiagnostics, getTemplateExpressionDiagnostics} from '../../src/diagnostics/expression_diagnostics';
@@ -191,9 +191,9 @@ const FILES: Directory = {
   'src': {
     'app': {
       'app.component.ts': `
-        import { Component, NgModule } from '@angular/core';
-        import { CommonModule } from '@angular/common';
-        import { FormsModule } from '@angular/forms';
+        import { Component, NgModule } from '@bangular/core';
+        import { CommonModule } from '@bangular/common';
+        import { FormsModule } from '@bangular/forms';
 
         export interface Person {
           name: Name;

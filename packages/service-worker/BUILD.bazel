@@ -10,7 +10,7 @@ ts_library(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/service-worker",
+    module_name = "@bangular/service-worker",
     deps = [
         "//packages/common",
         "//packages/core",

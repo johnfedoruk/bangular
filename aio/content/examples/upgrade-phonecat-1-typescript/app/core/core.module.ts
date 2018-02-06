@@ -1,4 +1,4 @@
 'use strict';
 
 // Define the `core` module
-angular.module('core', ['core.phone']);
+bangular.module('core', ['core.phone']);

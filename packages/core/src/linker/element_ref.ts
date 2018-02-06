@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /**
@@ -30,7 +30,7 @@ export class ElementRef<T = any> {
    *   <header>Use with caution</header>
    *   <p>
    *    Use this API as the last resort when direct access to DOM is needed. Use templating and
-   *    data-binding provided by Angular instead. Alternatively you can take a look at {@link
+   *    data-binding provided by Bangular instead. Alternatively you can take a look at {@link
    * Renderer2}
    *    which provides API that can safely be used even when direct access to native elements is not
    *    supported.

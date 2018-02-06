@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {isDevMode} from '@angular/core';
+import {isDevMode} from '@bangular/core';
 
 import {DomAdapter, getDOM} from '../dom/dom_adapter';
 
@@ -123,7 +123,7 @@ class SanitizingHtmlSerializer {
   private buf: string[] = [];
 
   sanitizeChildren(el: Element): string {
-    // This cannot use a TreeWalker, as it has to run on Angular's various DOM adapters.
+    // This cannot use a TreeWalker, as it has to run on Bangular's various DOM adapters.
     // However this code never accesses properties off of `document` before deleting its contents
     // again, so it shouldn't be vulnerable to DOM clobbering.
     let current: Node = el.firstChild !;

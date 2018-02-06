@@ -3,26 +3,26 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {CommonModule} from '@angular/common';
-import {CompilerConfig} from '@angular/compiler';
-import {Compiler, ComponentFactory, ComponentRef, ErrorHandler, EventEmitter, Host, Inject, Injectable, InjectionToken, Injector, NO_ERRORS_SCHEMA, NgModule, NgModuleRef, OnDestroy, SkipSelf, ViewRef} from '@angular/core';
-import {ChangeDetectionStrategy, ChangeDetectorRef, PipeTransform} from '@angular/core/src/change_detection/change_detection';
-import {getDebugContext} from '@angular/core/src/errors';
-import {ComponentFactoryResolver} from '@angular/core/src/linker/component_factory_resolver';
-import {ElementRef} from '@angular/core/src/linker/element_ref';
-import {QueryList} from '@angular/core/src/linker/query_list';
-import {TemplateRef} from '@angular/core/src/linker/template_ref';
-import {ViewContainerRef} from '@angular/core/src/linker/view_container_ref';
-import {EmbeddedViewRef} from '@angular/core/src/linker/view_ref';
-import {Attribute, Component, ContentChildren, Directive, HostBinding, HostListener, Input, Output, Pipe} from '@angular/core/src/metadata';
-import {TestBed, async, fakeAsync, getTestBed, tick} from '@angular/core/testing';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {DOCUMENT} from '@angular/platform-browser/src/dom/dom_tokens';
-import {dispatchEvent, el} from '@angular/platform-browser/testing/src/browser_util';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {CommonModule} from '@bangular/common';
+import {CompilerConfig} from '@bangular/compiler';
+import {Compiler, ComponentFactory, ComponentRef, ErrorHandler, EventEmitter, Host, Inject, Injectable, InjectionToken, Injector, NO_ERRORS_SCHEMA, NgModule, NgModuleRef, OnDestroy, SkipSelf, ViewRef} from '@bangular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, PipeTransform} from '@bangular/core/src/change_detection/change_detection';
+import {getDebugContext} from '@bangular/core/src/errors';
+import {ComponentFactoryResolver} from '@bangular/core/src/linker/component_factory_resolver';
+import {ElementRef} from '@bangular/core/src/linker/element_ref';
+import {QueryList} from '@bangular/core/src/linker/query_list';
+import {TemplateRef} from '@bangular/core/src/linker/template_ref';
+import {ViewContainerRef} from '@bangular/core/src/linker/view_container_ref';
+import {EmbeddedViewRef} from '@bangular/core/src/linker/view_ref';
+import {Attribute, Component, ContentChildren, Directive, HostBinding, HostListener, Input, Output, Pipe} from '@bangular/core/src/metadata';
+import {TestBed, async, fakeAsync, getTestBed, tick} from '@bangular/core/testing';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {DOCUMENT} from '@bangular/platform-browser/src/dom/dom_tokens';
+import {dispatchEvent, el} from '@bangular/platform-browser/testing/src/browser_util';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 import {stringify} from '../../src/util';
 
@@ -293,7 +293,7 @@ function declareTests({useJit}: {useJit: boolean}) {
         expect(fixture.nativeElement).toHaveText('hello');
       });
 
-      // GH issue 328 - https://github.com/angular/angular/issues/328
+      // GH issue 328 - https://github.com/bangular/bangular/issues/328
       it('should support different directive types on a single node', () => {
         TestBed.configureTestingModule({declarations: [MyComp, ChildComp, MyDir]});
         const template = '<child-cmp my-dir [elprop]="ctxProp"></child-cmp>';

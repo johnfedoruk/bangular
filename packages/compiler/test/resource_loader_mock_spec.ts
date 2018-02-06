@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {MockResourceLoader} from '@angular/compiler/testing/src/resource_loader_mock';
-import {AsyncTestCompleter, beforeEach, describe, expect, inject, it} from '@angular/core/testing/src/testing_internal';
+import {MockResourceLoader} from '@bangular/compiler/testing/src/resource_loader_mock';
+import {AsyncTestCompleter, beforeEach, describe, expect, inject, it} from '@bangular/core/testing/src/testing_internal';
 
 {
   describe('MockResourceLoader', () => {

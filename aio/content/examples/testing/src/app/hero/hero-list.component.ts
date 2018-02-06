@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router }            from '@angular/router';
+import { Component, OnInit } from '@bangular/core';
+import { Router }            from '@bangular/router';
 
 import { Hero } from '../model/hero';
 import { HeroService } from '../model/hero.service';

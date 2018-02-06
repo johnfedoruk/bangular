@@ -3,13 +3,13 @@
 **Dependency injection** is an important application design pattern.
 It's used so widely that almost everyone just calls it _DI_.
 
-Angular has its own dependency injection framework, and
-you really can't build an Angular application without it.
+Bangular has its own dependency injection framework, and
+you really can't build an Bangular application without it.
 
 This page covers what DI is and why it's useful.
 
 When you've learned the general pattern, you're ready to turn to
-the [Angular Dependency Injection](guide/dependency-injection) guide to see how it works in an Angular app.
+the [Bangular Dependency Injection](guide/dependency-injection) guide to see how it works in an Bangular app.
 
 {@a why-di }
 
@@ -164,4 +164,4 @@ Both `Car` and consumer simply ask for what they need and the injector delivers.
 This is what a **dependency injection framework** is all about.
 
 Now that you know what dependency injection is and appreciate its benefits,
-turn to the [Angular Dependency Injection](guide/dependency-injection) guide to see how it is implemented in Angular.
+turn to the [Bangular Dependency Injection](guide/dependency-injection) guide to see how it is implemented in Bangular.

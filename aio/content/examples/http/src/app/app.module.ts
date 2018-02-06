@@ -1,15 +1,15 @@
 // #docplaster
 // #docregion sketch
-import { NgModule }         from '@angular/core';
-import { BrowserModule }    from '@angular/platform-browser';
+import { NgModule }         from '@bangular/core';
+import { BrowserModule }    from '@bangular/platform-browser';
 // #enddocregion sketch
-import { FormsModule }      from '@angular/forms';
+import { FormsModule }      from '@bangular/forms';
 // #docregion sketch
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@bangular/common/http';
 // #enddocregion sketch
-import { HttpClientXsrfModule } from '@angular/common/http';
+import { HttpClientXsrfModule } from '@bangular/common/http';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientInMemoryWebApiModule } from 'bangular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
 import { RequestCache, RequestCacheWithMap } from './request-cache.service';

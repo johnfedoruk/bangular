@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {SecurityContext} from '@angular/core';
-import * as t from '@angular/core/testing/src/testing_internal';
+import {SecurityContext} from '@bangular/core';
+import * as t from '@bangular/core/testing/src/testing_internal';
 
 import {DomSanitizerImpl} from '../../src/security/dom_sanitization_service';
 

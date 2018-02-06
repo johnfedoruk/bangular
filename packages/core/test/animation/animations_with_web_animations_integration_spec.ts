@@ -3,21 +3,21 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {animate, group, query, state, style, transition, trigger} from '@angular/animations';
-import {AnimationDriver, ɵAnimationEngine, ɵWebAnimationsDriver, ɵWebAnimationsPlayer, ɵsupportsWebAnimations} from '@angular/animations/browser';
-import {TransitionAnimationPlayer} from '@angular/animations/browser/src/render/transition_animation_engine';
-import {AnimationGroupPlayer} from '@angular/animations/src/players/animation_group_player';
-import {Component} from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {browserDetection} from '@angular/platform-browser/testing/src/browser_util';
+import {animate, group, query, state, style, transition, trigger} from '@bangular/animations';
+import {AnimationDriver, ɵAnimationEngine, ɵWebAnimationsDriver, ɵWebAnimationsPlayer, ɵsupportsWebAnimations} from '@bangular/animations/browser';
+import {TransitionAnimationPlayer} from '@bangular/animations/browser/src/render/transition_animation_engine';
+import {AnimationGroupPlayer} from '@bangular/animations/src/players/animation_group_player';
+import {Component} from '@bangular/core';
+import {BrowserAnimationsModule} from '@bangular/platform-browser/animations';
+import {browserDetection} from '@bangular/platform-browser/testing/src/browser_util';
 
 import {TestBed} from '../../testing';
 
 (function() {
   // these tests are only mean't to be run within the DOM (for now)
-  // Buggy in Chromium 39, see https://github.com/angular/angular/issues/15793
+  // Buggy in Chromium 39, see https://github.com/bangular/bangular/issues/15793
   if (typeof Element == 'undefined' || !ɵsupportsWebAnimations()) return;
 
   describe('animation integration tests using web animations', function() {

@@ -1,5 +1,5 @@
 /**
- * Decorators in the Angular code base are made up from three code items:
+ * Decorators in the Bangular code base are made up from three code items:
  *
  * 1) An interface that represents the call signature of the decorator. E.g.
  *

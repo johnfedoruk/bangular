@@ -8,5 +8,5 @@ ts_library(
         ["**/*.ts"],
         exclude = ["closure-locale.ts"],
     ),
-    module_name = "@angular/common/locales",
+    module_name = "@bangular/common/locales",
 )

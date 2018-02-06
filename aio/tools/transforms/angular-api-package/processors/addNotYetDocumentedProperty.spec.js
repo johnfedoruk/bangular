@@ -5,7 +5,7 @@ describe('addNotYetDocumentedProperty', function() {
   var dgeni, injector, processor;
 
   beforeEach(function() {
-    dgeni = new Dgeni([testPackage('angular-api-package')]);
+    dgeni = new Dgeni([testPackage('bangular-api-package')]);
     injector = dgeni.configureInjector();
     processor = injector.get('addNotYetDocumentedProperty');
   });

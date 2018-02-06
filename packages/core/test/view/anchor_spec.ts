@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {getDebugNode} from '@angular/core';
-import {NodeFlags, anchorDef, asElementData, elementDef} from '@angular/core/src/view/index';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
+import {getDebugNode} from '@bangular/core';
+import {NodeFlags, anchorDef, asElementData, elementDef} from '@bangular/core/src/view/index';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
 
 import {compViewDef, createAndGetRootNodes} from './helper';
 

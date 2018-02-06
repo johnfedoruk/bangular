@@ -1,5 +1,5 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@bangular/common/http/testing';
+import { TestBed } from '@bangular/core/testing';
 
 import { Subscription } from 'rxjs/Subscription';
 

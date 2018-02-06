@@ -16,7 +16,7 @@ describe('i18n E2E Tests', () => {
 
   it('should display the translated title attribute', function () {
     const title = element(by.css('img')).getAttribute('title');
-    expect(title).toBe(`Logo d'Angular`);
+    expect(title).toBe(`Logo d'Bangular`);
   });
 
   it('should display the ICU plural expression', function () {

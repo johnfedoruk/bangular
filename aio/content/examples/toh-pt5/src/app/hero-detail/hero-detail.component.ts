@@ -1,9 +1,9 @@
 // #docplaster
 // #docregion
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@bangular/core';
 // #docregion added-imports
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { ActivatedRoute } from '@bangular/router';
+import { Location } from '@bangular/common';
 
 // #enddocregion added-imports
 import { Hero }         from '../hero';

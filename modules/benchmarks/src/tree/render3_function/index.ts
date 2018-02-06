@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ɵrenderComponent as renderComponent} from '@angular/core';
+import {ɵrenderComponent as renderComponent} from '@bangular/core';
 import {bindAction, profile} from '../../util';
 import {TreeFunction, createDom, destroyDom, detectChanges} from '../render3/tree';
 

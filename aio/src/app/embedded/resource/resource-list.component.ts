@@ -1,5 +1,5 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { PlatformLocation } from '@angular/common';
+import { Component, HostListener, OnInit } from '@bangular/core';
+import { PlatformLocation } from '@bangular/common';
 
 import { Category } from './resource.model';
 import { ResourceService } from './resource.service';

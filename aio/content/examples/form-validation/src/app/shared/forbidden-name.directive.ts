@@ -1,6 +1,6 @@
 // #docregion
-import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { AbstractControl, NG_VALIDATORS, Validator, ValidatorFn, Validators } from '@angular/forms';
+import { Directive, Input, OnChanges, SimpleChanges } from '@bangular/core';
+import { AbstractControl, NG_VALIDATORS, Validator, ValidatorFn, Validators } from '@bangular/forms';
 
 // #docregion custom-validator
 /** A hero's name can't match the given regular expression */

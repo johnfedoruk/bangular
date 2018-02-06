@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import * as ng from '@angular/compiler-cli';
+import * as ng from '@bangular/compiler-cli';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as ts from 'typescript';
@@ -30,7 +30,7 @@ describe('ng program', () => {
     const templateEntry =
         template.endsWith('.html') ? `templateUrl: '${template}'` : `template: \`${template}\``;
     return `
-      import {Component, NgModule} from '@angular/core';
+      import {Component, NgModule} from '@bangular/core';
 
       @Component({selector: '${prefix}', ${templateEntry}})
       export class ${prefix}Comp {}
@@ -313,7 +313,7 @@ describe('ng program', () => {
       const p1 = compile().program;
       const p2 = compile(p1).program;
       testSupport.writeFiles(
-          {'src/util.ts': `import {Injectable} from '@angular/core'; export const x = 1;`});
+          {'src/util.ts': `import {Injectable} from '@bangular/core'; export const x = 1;`});
       compile(p2);
       expect(tsStructureIsReused(p2.getTsProgram())).toBe(StructureIsReused.SafeModules);
     });
@@ -323,7 +323,7 @@ describe('ng program', () => {
      () => {
        testSupport.writeFiles({
          'src/main.ts': `
-        import {NgModule} from '@angular/core';
+        import {NgModule} from '@bangular/core';
 
         @NgModule((() => {if (1==1) return null as any;}) as any)
         export class SomeClassWithInvalidMetadata {}
@@ -378,7 +378,7 @@ describe('ng program', () => {
   });
 
   it('should work with noResolve', () => {
-    // create a temporary ts program to get the list of all files from angular...
+    // create a temporary ts program to get the list of all files from bangular...
     testSupport.writeFiles({
       'src/main.ts': createModuleAndCompSource('main'),
     });
@@ -392,7 +392,7 @@ describe('ng program', () => {
   });
 
   it('should work with tsx files', () => {
-    // create a temporary ts program to get the list of all files from angular...
+    // create a temporary ts program to get the list of all files from bangular...
     testSupport.writeFiles({
       'src/main.tsx': createModuleAndCompSource('main'),
     });
@@ -410,7 +410,7 @@ describe('ng program', () => {
   it('should emit also empty generated files depending on the options', () => {
     testSupport.writeFiles({
       'src/main.ts': `
-        import {Component, NgModule} from '@angular/core';
+        import {Component, NgModule} from '@bangular/core';
 
         @Component({selector: 'main', template: '', styleUrls: ['main.css']})
         export class MainComp {}
@@ -574,8 +574,8 @@ describe('ng program', () => {
     function writeSomeRoutes() {
       testSupport.writeFiles({
         'src/main.ts': `
-          import {NgModule} from '@angular/core';
-          import {RouterModule} from '@angular/router';
+          import {NgModule} from '@bangular/core';
+          import {RouterModule} from '@bangular/router';
 
           @NgModule({
             imports: [RouterModule.forRoot([{loadChildren: './child#ChildModule'}])]
@@ -583,8 +583,8 @@ describe('ng program', () => {
           export class MainModule {}
         `,
         'src/child.ts': `
-          import {NgModule} from '@angular/core';
-          import {RouterModule} from '@angular/router';
+          import {NgModule} from '@bangular/core';
+          import {RouterModule} from '@bangular/router';
 
           @NgModule({
             imports: [RouterModule.forChild([{loadChildren: './child2#ChildModule2'}])]
@@ -592,7 +592,7 @@ describe('ng program', () => {
           export class ChildModule {}
         `,
         'src/child2.ts': `
-          import {NgModule} from '@angular/core';
+          import {NgModule} from '@bangular/core';
 
           @NgModule()
           export class ChildModule2 {}
@@ -642,8 +642,8 @@ describe('ng program', () => {
     it('should emit correctly after listing lazyRoutes', () => {
       testSupport.writeFiles({
         'src/main.ts': `
-          import {NgModule} from '@angular/core';
-          import {RouterModule} from '@angular/router';
+          import {NgModule} from '@bangular/core';
+          import {RouterModule} from '@bangular/router';
 
           @NgModule({
             imports: [RouterModule.forRoot([{loadChildren: './lazy/lazy#LazyModule'}])]
@@ -651,7 +651,7 @@ describe('ng program', () => {
           export class MainModule {}
         `,
         'src/lazy/lazy.ts': `
-          import {NgModule} from '@angular/core';
+          import {NgModule} from '@bangular/core';
 
           @NgModule()
           export class ChildModule {}
@@ -701,8 +701,8 @@ describe('ng program', () => {
     it('should list lazyRoutes pointing to a default export', () => {
       testSupport.writeFiles({
         'src/main.ts': `
-          import {NgModule} from '@angular/core';
-          import {RouterModule} from '@angular/router';
+          import {NgModule} from '@bangular/core';
+          import {RouterModule} from '@bangular/router';
 
           @NgModule({
             imports: [RouterModule.forRoot([{loadChildren: './child'}])]
@@ -710,7 +710,7 @@ describe('ng program', () => {
           export class MainModule {}
         `,
         'src/child.ts': `
-          import {NgModule} from '@angular/core';
+          import {NgModule} from '@bangular/core';
 
           @NgModule()
           export default class ChildModule {}
@@ -730,8 +730,8 @@ describe('ng program', () => {
     it('should list lazyRoutes from imported modules', () => {
       testSupport.writeFiles({
         'src/main.ts': `
-          import {NgModule} from '@angular/core';
-          import {RouterModule} from '@angular/router';
+          import {NgModule} from '@bangular/core';
+          import {RouterModule} from '@bangular/router';
           import {NestedMainModule} from './nested/main';
 
           @NgModule({
@@ -743,14 +743,14 @@ describe('ng program', () => {
           export class MainModule {}
         `,
         'src/child.ts': `
-          import {NgModule} from '@angular/core';
+          import {NgModule} from '@bangular/core';
 
           @NgModule()
           export class ChildModule {}
         `,
         'src/nested/main.ts': `
-          import {NgModule} from '@angular/core';
-          import {RouterModule} from '@angular/router';
+          import {NgModule} from '@bangular/core';
+          import {RouterModule} from '@bangular/router';
 
           @NgModule({
             imports: [RouterModule.forChild([{loadChildren: './child#NestedChildModule'}])]
@@ -758,7 +758,7 @@ describe('ng program', () => {
           export class NestedMainModule {}
         `,
         'src/nested/child.ts': `
-          import {NgModule} from '@angular/core';
+          import {NgModule} from '@bangular/core';
 
           @NgModule()
           export class NestedChildModule {}
@@ -790,8 +790,8 @@ describe('ng program', () => {
       writeSomeRoutes();
       testSupport.writeFiles({
         'src/index.ts': `
-          import {NgModule} from '@angular/core';
-          import {RouterModule} from '@angular/router';
+          import {NgModule} from '@bangular/core';
+          import {RouterModule} from '@bangular/router';
 
           @NgModule({
             imports: [
@@ -824,8 +824,8 @@ describe('ng program', () => {
     it('should list lazyRoutes given an entryRoute even with static errors', () => {
       testSupport.writeFiles({
         'src/main.ts': `
-          import {NgModule, Component} from '@angular/core';
-          import {RouterModule} from '@angular/router';
+          import {NgModule, Component} from '@bangular/core';
+          import {RouterModule} from '@bangular/router';
 
           @Component({
             selector: 'url-comp',
@@ -865,7 +865,7 @@ describe('ng program', () => {
           export class Mod2 {}
         `,
         'src/child.ts': `
-          import {NgModule} from '@angular/core';
+          import {NgModule} from '@bangular/core';
 
           @NgModule()
           export class ChildModule {}
@@ -884,7 +884,7 @@ describe('ng program', () => {
   it('should report errors for ts and ng errors on emit with noEmitOnError=true', () => {
     testSupport.writeFiles({
       'src/main.ts': `
-        import {Component, NgModule} from '@angular/core';
+        import {Component, NgModule} from '@bangular/core';
 
         // Ts error
         let x: string = 1;
@@ -926,13 +926,13 @@ describe('ng program', () => {
 
   describe('errors', () => {
     const fileWithStructuralError = `
-      import {NgModule} from '@angular/core';
+      import {NgModule} from '@bangular/core';
 
       @NgModule(() => (1===1 ? null as any : null as any))
       export class MyModule {}
     `;
     const fileWithGoodContent = `
-      import {NgModule} from '@angular/core';
+      import {NgModule} from '@bangular/core';
 
       @NgModule()
       export class MyModule {}
@@ -968,7 +968,7 @@ describe('ng program', () => {
 
     it('should include non-formatted errors (e.g. invalid templateUrl)', () => {
       testSupport.write('src/index.ts', `
-        import {Component, NgModule} from '@angular/core';
+        import {Component, NgModule} from '@bangular/core';
 
         @Component({
           selector: 'my-component',
@@ -1000,7 +1000,7 @@ describe('ng program', () => {
        () => {
          testSupport.write('src/index.ts', fileWithGoodContent);
 
-         // compile angular and produce .ngsummary.json / ngfactory.d.ts files
+         // compile bangular and produce .ngsummary.json / ngfactory.d.ts files
          compile();
 
          testSupport.write('src/ok.ts', fileWithGoodContent);

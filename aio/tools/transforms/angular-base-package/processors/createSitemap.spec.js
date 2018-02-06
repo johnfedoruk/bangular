@@ -5,7 +5,7 @@ describe('createSitemap processor', () => {
   var injector, processor;
 
   beforeEach(() => {
-    const dgeni = new Dgeni([testPackage('angular-base-package')]);
+    const dgeni = new Dgeni([testPackage('bangular-base-package')]);
 
     injector = dgeni.configureInjector();
     processor = injector.get('createSitemap');

@@ -7,13 +7,13 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "strictNullChecks": true,
-    "outDir": "../dist/all/@angular",
+    "outDir": "../dist/all/@bangular",
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "selenium-webdriver": ["../node_modules/@types/selenium-webdriver/index.d.ts"],
       "rxjs/*": ["../node_modules/rxjs/*"],
-      "@angular/*": ["./*"],
+      "@bangular/*": ["./*"],
       "e2e_util/*": ["../modules/e2e_util/*"]
     },
     "rootDir": ".",
@@ -22,7 +22,7 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "target": "es5",
-    "types": ["angularjs"]
+    "types": ["bangularjs"]
   },
   "exclude": [
     "bazel",

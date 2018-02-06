@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /* tslint:disable:no-console  */
@@ -18,13 +18,13 @@ declare var expect: any;
 
 export function readCommandLine(extraOptions?: {[key: string]: any}) {
   const options: {[key: string]: any} = {
-    'bundles': {describe: 'Whether to use the angular bundles or not.', default: false}
+    'bundles': {describe: 'Whether to use the bangular bundles or not.', default: false}
   };
   for (const key in extraOptions) {
     options[key] = extraOptions[key];
   }
 
-  cmdArgs = yargs.usage('Angular e2e test options.').options(options).help('ng-help').wrap(40).argv;
+  cmdArgs = yargs.usage('Bangular e2e test options.').options(options).help('ng-help').wrap(40).argv;
   return cmdArgs;
 }
 

@@ -10,7 +10,7 @@ ts_library(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/common",
+    module_name = "@bangular/common",
     deps = [
         "//packages/core",
         "@rxjs",

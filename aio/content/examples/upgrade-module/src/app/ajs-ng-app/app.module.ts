@@ -1,4 +1,4 @@
-angular.module('heroApp', [])
+bangular.module('heroApp', [])
   .controller('MainCtrl', function() {
     this.message = 'Hello world';
   });

@@ -15,7 +15,7 @@ class ExampleZipper {
   constructor(sourceDirName, outputDirName) {
     this.examplesPackageJson = path.join(__dirname, '../examples/shared/package.json');
     this.examplesSystemjsConfig = path.join(__dirname, '../examples/shared/boilerplate/systemjs/src/systemjs.config.js');
-    this.examplesSystemjsLoaderConfig = path.join(__dirname, '../examples/shared/boilerplate/systemjs/src/systemjs-angular-loader.js');
+    this.examplesSystemjsLoaderConfig = path.join(__dirname, '../examples/shared/boilerplate/systemjs/src/systemjs-bangular-loader.js');
     this.exampleTsconfig = path.join(__dirname, '../examples/shared/boilerplate/systemjs/src/tsconfig.json');
     this.customizer = new PackageJsonCustomizer();
 
@@ -86,7 +86,7 @@ class ExampleZipper {
     let alwaysIncludes = [
       'bs-config.json',
       'protractor.conf.js',
-      '.angular-cli.json',
+      '.bangular-cli.json',
       '.editorconfig',
       '.gitignore',
       'tslint.json',
@@ -171,7 +171,7 @@ class ExampleZipper {
     // also a systemjs config
     if (exampleType === 'systemjs') {
       zip.append(fs.readFileSync(this.examplesSystemjsConfig, 'utf8'), { name: 'src/systemjs.config.js' });
-      zip.append(fs.readFileSync(this.examplesSystemjsLoaderConfig, 'utf8'), { name: 'src/systemjs-angular-loader.js' });
+      zip.append(fs.readFileSync(this.examplesSystemjsLoaderConfig, 'utf8'), { name: 'src/systemjs-bangular-loader.js' });
       // a modified tsconfig
       let tsconfig = fs.readFileSync(this.exampleTsconfig, 'utf8');
       zip.append(this._changeTypeRoots(tsconfig), {name: 'src/tsconfig.json'});

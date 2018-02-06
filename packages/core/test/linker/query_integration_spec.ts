@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, ContentChildren, Directive, QueryList, TemplateRef, Type, ViewChild, ViewChildren, ViewContainerRef, asNativeElements} from '@angular/core';
-import {ComponentFixture, TestBed, async} from '@angular/core/testing';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ContentChild, ContentChildren, Directive, QueryList, TemplateRef, Type, ViewChild, ViewChildren, ViewContainerRef, asNativeElements} from '@bangular/core';
+import {ComponentFixture, TestBed, async} from '@bangular/core/testing';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 import {Subject} from 'rxjs/Subject';
 
@@ -628,7 +628,7 @@ import {stringify} from '../../src/util';
 
            const q = view.debugElement.children[0].references !['q'];
            // This should be 1, but due to
-           // https://github.com/angular/angular/issues/15117 this is 0.
+           // https://github.com/bangular/bangular/issues/15117 this is 0.
            expect(q.query.length).toBe(0);
          });
 

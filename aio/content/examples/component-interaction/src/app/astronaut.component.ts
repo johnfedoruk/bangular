@@ -1,5 +1,5 @@
 // #docregion
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy } from '@bangular/core';
 
 import { MissionService } from './mission.service';
 import { Subscription }   from 'rxjs/Subscription';

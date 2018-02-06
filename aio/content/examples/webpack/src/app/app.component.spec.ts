@@ -1,5 +1,5 @@
 // #docregion
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@bangular/core/testing';
 
 import { AppComponent } from './app.component';
 

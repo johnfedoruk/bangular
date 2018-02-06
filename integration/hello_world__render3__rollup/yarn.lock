@@ -2,26 +2,26 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/build-optimizer@^0.0.32":
+"@bangular-devkit/build-optimizer@^0.0.32":
   version "0.0.32"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-optimizer/-/build-optimizer-0.0.32.tgz#1bf32332d8a7c84043059e3d265a52f9d11726fd"
+  resolved "https://registry.yarnpkg.com/@bangular-devkit/build-optimizer/-/build-optimizer-0.0.32.tgz#1bf32332d8a7c84043059e3d265a52f9d11726fd"
   dependencies:
     loader-utils "^1.1.0"
     source-map "^0.5.6"
     typescript "^2.3.3"
     webpack-sources "^1.0.1"
 
-"@angular/animations@file:../../dist/packages-dist/animations":
+"@bangular/animations@file:../../dist/packages-dist/animations":
   version "6.0.0-beta.1-5bd93b1f0f"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/common@file:../../dist/packages-dist/common":
+"@bangular/common@file:../../dist/packages-dist/common":
   version "6.0.0-beta.1-5bd93b1f0f"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/compiler-cli@file:../../dist/packages-dist/compiler-cli":
+"@bangular/compiler-cli@file:../../dist/packages-dist/compiler-cli":
   version "6.0.0-beta.1-5bd93b1f0f"
   dependencies:
     chokidar "^1.4.2"
@@ -29,22 +29,22 @@
     reflect-metadata "^0.1.2"
     tsickle "^0.26.0"
 
-"@angular/compiler@file:../../dist/packages-dist/compiler":
+"@bangular/compiler@file:../../dist/packages-dist/compiler":
   version "6.0.0-beta.1-5bd93b1f0f"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@file:../../dist/packages-dist/core":
+"@bangular/core@file:../../dist/packages-dist/core":
   version "6.0.0-beta.1-5bd93b1f0f"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser@file:../../dist/packages-dist/platform-browser":
+"@bangular/platform-browser@file:../../dist/packages-dist/platform-browser":
   version "6.0.0-beta.1-5bd93b1f0f"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-server@file:../../dist/packages-dist/platform-server":
+"@bangular/platform-server@file:../../dist/packages-dist/platform-server":
   version "6.0.0-beta.1-5bd93b1f0f"
   dependencies:
     domino "^1.0.29"
@@ -1855,11 +1855,11 @@ rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.
   dependencies:
     glob "^7.0.5"
 
-rollup-plugin-angular-optimizer@0.2.0:
+rollup-plugin-bangular-optimizer@0.2.0:
   version "0.2.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-angular-optimizer/-/rollup-plugin-angular-optimizer-0.2.0.tgz#f417ae0d8ab8fe09f90b0d152034d252fa1d231f"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-bangular-optimizer/-/rollup-plugin-bangular-optimizer-0.2.0.tgz#f417ae0d8ab8fe09f90b0d152034d252fa1d231f"
   dependencies:
-    "@angular-devkit/build-optimizer" "^0.0.32"
+    "@bangular-devkit/build-optimizer" "^0.0.32"
 
 rollup-plugin-commonjs@8.2.6:
   version "8.2.6"

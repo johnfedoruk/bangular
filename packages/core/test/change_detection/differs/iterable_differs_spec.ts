@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injector} from '@angular/core';
-import {IterableDiffers} from '@angular/core/src/change_detection/differs/iterable_differs';
+import {Injector} from '@bangular/core';
+import {IterableDiffers} from '@bangular/core/src/change_detection/differs/iterable_differs';
 
 import {SpyIterableDifferFactory} from '../../spies';
 

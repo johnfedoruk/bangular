@@ -13,8 +13,8 @@ export const heroDetail = {
 };
 // #enddocregion
 
-import { Directive, ElementRef, Injector, Input } from '@angular/core';
-import { UpgradeComponent } from '@angular/upgrade/static';
+import { Directive, ElementRef, Injector, Input } from '@bangular/core';
+import { UpgradeComponent } from '@bangular/upgrade/static';
 import { Hero } from '../hero';
 
 @Directive({

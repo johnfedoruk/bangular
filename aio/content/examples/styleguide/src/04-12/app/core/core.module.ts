@@ -1,6 +1,6 @@
 // #docregion
-import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule, Optional, SkipSelf } from '@bangular/core';
+import { CommonModule } from '@bangular/common';
 
 import { LoggerService } from './logger.service';
 import { NavComponent } from './nav/nav.component';

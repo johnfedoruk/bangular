@@ -1,5 +1,5 @@
 /**
- * This file includes polyfills needed by Angular and is loaded before the app.
+ * This file includes polyfills needed by Bangular and is loaded before the app.
  * You can add your own extra polyfills to this file.
  *
  * This file is divided into 2 sections:
@@ -11,7 +11,7 @@
  * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
  * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
  *
- * Learn more in https://angular.io/docs/ts/latest/guide/browser-support.html
+ * Learn more in https://bangular.io/docs/ts/latest/guide/browser-support.html
  */
 
 /***************************************************************************************************
@@ -31,15 +31,15 @@
 import './environments/environment';
 
 
-/** ALL Firefox browsers require the following to support `@angular/animation`. **/
+/** ALL Firefox browsers require the following to support `@bangular/animation`. **/
 // import 'web-animations-js';  // Run `npm install --save web-animations-js`.
 
 
 
 /***************************************************************************************************
- * Zone JS is required by Angular itself.
+ * Zone JS is required by Bangular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
+import 'zone.js/dist/zone';  // Included with Bangular CLI.
 
 
 

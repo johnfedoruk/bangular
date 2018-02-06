@@ -1,8 +1,8 @@
 // #docplaster
 // When AppComponent learns to present quote with intervalTimer
-import { async, discardPeriodicTasks, fakeAsync, ComponentFixture, TestBed, tick } from '@angular/core/testing';
-import { By }                        from '@angular/platform-browser';
-import { DebugElement }              from '@angular/core';
+import { async, discardPeriodicTasks, fakeAsync, ComponentFixture, TestBed, tick } from '@bangular/core/testing';
+import { By }                        from '@bangular/platform-browser';
+import { DebugElement }              from '@bangular/core';
 
 import { TwainService }   from './model';
 import { TwainComponent } from './twain.component';
@@ -64,7 +64,7 @@ xdescribe('TwainComponent', () => {
 
   // WIP
   // If go this way, add jasmine.clock().uninstall(); to afterEach
-  // it('should show quote after Angular "settles"', async(() => {
+  // it('should show quote after Bangular "settles"', async(() => {
   //   //jasmine.clock().install();
   //   fixture.detectChanges(); // trigger data binding
   //  fixture.whenStable().then(() => {

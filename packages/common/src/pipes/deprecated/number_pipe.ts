@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Inject, LOCALE_ID, Pipe, PipeTransform, Type} from '@angular/core';
+import {Inject, LOCALE_ID, Pipe, PipeTransform, Type} from '@bangular/core';
 import {NUMBER_FORMAT_REGEXP, parseIntAutoRadix} from '../../i18n/format_number';
 import {NumberFormatStyle} from '../../i18n/locale_data_api';
 import {invalidPipeArgumentError} from '../invalid_pipe_argument_error';

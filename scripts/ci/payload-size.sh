@@ -2,7 +2,7 @@
 
 set -eu -o pipefail
 
-readonly PROJECT_NAME="angular-payload-size"
+readonly PROJECT_NAME="bangular-payload-size"
 
 # Calculate the size of target file uncompressed size, gzip7 size, gzip9 size
 # Write to global variable $payloadData, $filename

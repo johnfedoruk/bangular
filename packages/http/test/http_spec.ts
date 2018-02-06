@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injector} from '@angular/core';
-import {TestBed, getTestBed} from '@angular/core/testing';
-import {AsyncTestCompleter, afterEach, beforeEach, describe, inject, it} from '@angular/core/testing/src/testing_internal';
-import {stringToArrayBuffer} from '@angular/http/src/http_utils';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {Injector} from '@bangular/core';
+import {TestBed, getTestBed} from '@bangular/core/testing';
+import {AsyncTestCompleter, afterEach, beforeEach, describe, inject, it} from '@bangular/core/testing/src/testing_internal';
+import {stringToArrayBuffer} from '@bangular/http/src/http_utils';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 import {Observable} from 'rxjs/Observable';
 import {zip} from 'rxjs/observable/zip';
 
@@ -367,11 +367,11 @@ import {MockBackend, MockConnection} from '../testing/src/mock_backend';
         it('should produce valid url when url already contains a query',
            inject([AsyncTestCompleter], (async: AsyncTestCompleter) => {
              backend.connections.subscribe((c: MockConnection) => {
-               expect(c.request.url).toEqual('https://www.google.com?q=angular&as_eq=1.x');
+               expect(c.request.url).toEqual('https://www.google.com?q=bangular&as_eq=1.x');
                backend.resolveAllConnections();
                async.done();
              });
-             http.get('https://www.google.com?q=angular', new RequestOptions({search: 'as_eq=1.x'}))
+             http.get('https://www.google.com?q=bangular', new RequestOptions({search: 'as_eq=1.x'}))
                  .subscribe((res: Response) => {});
            }));
       });

@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as ts from 'typescript';
@@ -21,9 +21,9 @@ export function getExternalFiles(project: any): string[]|undefined {
   }
 }
 
-const angularOnlyResults = process.argv.indexOf('--angularOnlyResults') >= 0;
+const bangularOnlyResults = process.argv.indexOf('--bangularOnlyResults') >= 0;
 
-function angularOnlyFilter(ls: ts.LanguageService): ts.LanguageService {
+function bangularOnlyFilter(ls: ts.LanguageService): ts.LanguageService {
   return {
     cleanupSemanticCache: () => ls.cleanupSemanticCache(),
     getSyntacticDiagnostics: fileName => <ts.Diagnostic[]>[],
@@ -81,8 +81,8 @@ export function create(info: any /* ts.server.PluginCreateInfo */): ts.LanguageS
   const proxy: ts.LanguageService = Object.create(null);
   let oldLS: ts.LanguageService = info.languageService;
 
-  if (angularOnlyResults) {
-    oldLS = angularOnlyFilter(oldLS);
+  if (bangularOnlyResults) {
+    oldLS = bangularOnlyFilter(oldLS);
   }
 
   function tryCall<T>(fileName: string | undefined, callback: () => T): T {
@@ -273,13 +273,13 @@ export function create(info: any /* ts.server.PluginCreateInfo */): ts.LanguageS
       if (ours) {
         const displayParts: ts.SymbolDisplayPart[] = [];
         for (const part of ours.text) {
-          displayParts.push({kind: part.language || 'angular', text: part.text});
+          displayParts.push({kind: part.language || 'bangular', text: part.text});
         }
         const tags = base && (<any>base).tags;
         base = <any>{
           displayParts,
           documentation: [],
-          kind: 'angular',
+          kind: 'bangular',
           kindModifiers: 'what does this do?',
           textSpan: {start: ours.span.start, length: ours.span.end - ours.span.start},
         };
@@ -296,7 +296,7 @@ export function create(info: any /* ts.server.PluginCreateInfo */): ts.LanguageS
     let result = oldLS.getSemanticDiagnostics(fileName);
     const base = result || [];
     tryOperation('get diagnostics', () => {
-      info.project.projectService.logger.info(`Computing Angular semantic diagnostics...`);
+      info.project.projectService.logger.info(`Computing Bangular semantic diagnostics...`);
       const ours = ls.getDiagnostics(fileName);
       if (ours && ours.length) {
         const file = oldLS.getProgram().getSourceFile(fileName);

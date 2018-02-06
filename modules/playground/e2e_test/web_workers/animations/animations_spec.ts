@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {verifyNoBrowserErrors} from 'e2e_util/e2e_util';
@@ -20,7 +20,7 @@ xdescribe('WebWorkers Animations', function() {
   const URL = 'all/playground/src/web_workers/animations/index.html';
 
   it('should bootstrap', () => {
-    // This test can't wait for Angular as Testability is not available when using WebWorker
+    // This test can't wait for Bangular as Testability is not available when using WebWorker
     browser.ignoreSynchronization = true;
     browser.get(URL);
 
@@ -30,7 +30,7 @@ xdescribe('WebWorkers Animations', function() {
   });
 
   it('should animate to open', () => {
-    // This test can't wait for Angular as Testability is not available when using WebWorker
+    // This test can't wait for Bangular as Testability is not available when using WebWorker
     browser.ignoreSynchronization = true;
     browser.get(URL);
 

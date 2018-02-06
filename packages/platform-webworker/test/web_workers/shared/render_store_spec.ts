@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {RenderStore} from '@angular/platform-webworker/src/web_workers/shared/render_store';
+import {RenderStore} from '@bangular/platform-webworker/src/web_workers/shared/render_store';
 
 {
   describe('RenderStoreSpec', () => {

@@ -5,11 +5,11 @@ module.exports = function(config) {
     basePath: './app',
 
     files: [
-      'https://code.angularjs.org/1.5.5/angular.js',
-      'https://code.angularjs.org/1.5.5/angular-animate.js',
-      'https://code.angularjs.org/1.5.5/angular-resource.js',
-      'https://code.angularjs.org/1.5.5/angular-route.js',
-      'https://code.angularjs.org/1.5.5/angular-mocks.js',
+      'https://code.bangularjs.org/1.5.5/bangular.js',
+      'https://code.bangularjs.org/1.5.5/bangular-animate.js',
+      'https://code.bangularjs.org/1.5.5/bangular-resource.js',
+      'https://code.bangularjs.org/1.5.5/bangular-route.js',
+      'https://code.bangularjs.org/1.5.5/bangular-mocks.js',
       '**/*.module.js',
       '*!(.module|.spec).js',
       '!(bower_components)/**/*!(.module|.spec).js',

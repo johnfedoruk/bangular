@@ -31,13 +31,13 @@
       {"type": 301, "source": "/docs/styleguide", "destination": "/guide/styleguide"},
 
       // news is now blog
-      {"type": 301, "source": "/news*", "destination": "https://blog.angular.io/"},
+      {"type": 301, "source": "/news*", "destination": "https://blog.bangular.io/"},
 
       // cookbook guides were moved (and sometime renamed or removed)
       {"type": 301, "source": "/docs/*/latest/cookbook", "destination": "/docs"},
       {"type": 301, "source": "/docs/*/latest/cookbook/", "destination": "/docs"},
       {"type": 301, "source": "/docs/*/latest/cookbook/index.html", "destination": "/docs"},
-      {"type": 301, "source": "/**/cookbook/ts-to-js*", "destination": "https://github.com/angular/angular/blob/master/aio/content/guide/change-log.md#es6--described-in-typescript-to-javascript-2016-11-14"},
+      {"type": 301, "source": "/**/cookbook/ts-to-js*", "destination": "https://github.com/bangular/bangular/blob/master/aio/content/guide/change-log.md#es6--described-in-typescript-to-javascript-2016-11-14"},
       {"type": 301, "source": "/docs/*/latest/cookbook/a1-a2-quick-reference.html", "destination": "/guide/ajs-quick-reference"},
       {"type": 301, "source": "/docs/*/latest/cookbook/component-communication.html", "destination": "/guide/component-interaction"},
       {"type": 301, "source": "/docs/*/latest/cookbook/dependency-injection.html", "destination": "/guide/dependency-injection-in-action"},
@@ -81,7 +81,7 @@
       {"type": 301, "source": "/api/upgrade/:package/index/:api-*", "destination": "/api/upgrade/:package/:api"},
       {"type": 301, "source": "/api/upgrade/:package/:api-*", "destination": "/api/upgrade/:package/:api"},
 
-      // URLs that use the old scheme before we moved the docs to the angular/angular repo
+      // URLs that use the old scheme before we moved the docs to the bangular/bangular repo
       {"type": 301, "source": "/docs/*/latest", "destination": "/docs"},
       {"type": 301, "source": "/docs/*/latest/api/", "destination": "/api"},
       {"type": 301, "source": "/docs/*/latest/api/:package", "destination": "/api/:package"},
@@ -101,7 +101,7 @@
       {"type": 301, "source": "/docs/styleguide*", "destination": "/guide/styleguide"},
       {"type": 301, "source": "/guide/metadata", "destination": "/guide/aot-compiler"},
       {"type": 301, "source": "/guide/ngmodule", "destination": "/guide/ngmodules"},
-      {"type": 301, "source": "/guide/learning-angular*", "destination": "/guide/quickstart"},
+      {"type": 301, "source": "/guide/learning-bangular*", "destination": "/guide/quickstart"},
       {"type": 301, "source": "/testing", "destination": "/guide/testing"},
       {"type": 301, "source": "/testing/**", "destination": "/guide/testing"}
     ],

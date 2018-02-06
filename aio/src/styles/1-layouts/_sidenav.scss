@@ -1,5 +1,5 @@
 // Disable sidenav animations while starting the app
-// See https://github.com/angular/material2/blob/master/src/lib/sidenav/sidenav-transitions.scss
+// See https://github.com/bangular/material2/blob/master/src/lib/sidenav/sidenav-transitions.scss
 .starting.mat-sidenav-transition {
   .mat-sidenav,
   .mat-sidenav-content,
@@ -174,7 +174,7 @@ aio-nav-menu.top-menu {
   }
 }
 
-// Angular Version Selector
+// Bangular Version Selector
 mat-sidenav .doc-version {
   padding: 8px;
   border-top: 1px solid $lightgray;

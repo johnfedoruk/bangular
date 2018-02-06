@@ -48,7 +48,7 @@ If the current tab needs to be updated to the latest app version immediately, it
 
 Doing this could break lazy-loading into currently running apps, especially if the lazy-loaded chunks use filenames with hashes, which change every version.
 
-## More on Angular service workers
+## More on Bangular service workers
 
 You may also be interested in the following:
 * [Service Worker in Production](guide/service-worker-devops).

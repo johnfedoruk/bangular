@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  *
  * @externs
  */
@@ -11,15 +11,15 @@
 /**
  * @suppress {duplicate}
  */
-var getAngularTestability;
+var getBangularTestability;
 /**
  * @suppress {duplicate}
  */
-var getAllAngularTestabilities;
+var getAllBangularTestabilities;
 /**
  * @suppress {duplicate}
  */
-var getAllAngularRootElements;
+var getAllBangularRootElements;
 /**
  * @suppress {duplicate}
  */

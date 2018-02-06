@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AotCompilerHost, EmitterVisitorContext, ExternalReference, GeneratedFile, ParseSourceSpan, TypeScriptEmitter, collectExternalReferences, syntaxError} from '@angular/compiler';
+import {AotCompilerHost, EmitterVisitorContext, ExternalReference, GeneratedFile, ParseSourceSpan, TypeScriptEmitter, collectExternalReferences, syntaxError} from '@bangular/compiler';
 import * as path from 'path';
 import * as ts from 'typescript';
 
@@ -51,7 +51,7 @@ function assert<T>(condition: T | null | undefined) {
 /**
  * Implements the following hosts based on an api.CompilerHost:
  * - ts.CompilerHost to be consumed by a ts.Program
- * - AotCompilerHost for @angular/compiler
+ * - AotCompilerHost for @bangular/compiler
  * - TypeCheckHost for mapping ts errors to ng errors (via translateDiagnostics)
  */
 export class TsCompilerAotCompilerTypeCheckHostAdapter implements ts.CompilerHost, AotCompilerHost,
@@ -141,7 +141,7 @@ export class TsCompilerAotCompilerTypeCheckHostAdapter implements ts.CompilerHos
     return rm;
   }
 
-  // Note: We implement this method so that TypeScript and Angular share the same
+  // Note: We implement this method so that TypeScript and Bangular share the same
   // ts.ModuleResolutionCache
   // and that we can tell ts.Program about our different opinion about
   // ResolvedModule.isExternalLibraryImport
@@ -318,7 +318,7 @@ export class TsCompilerAotCompilerTypeCheckHostAdapter implements ts.CompilerHos
 
   shouldGenerateFile(fileName: string): {generate: boolean, baseFileName?: string} {
     // TODO(tbosch): allow generating files that are not in the rootDir
-    // See https://github.com/angular/angular/issues/19337
+    // See https://github.com/bangular/bangular/issues/19337
     if (!isInRootDir(fileName, this.options)) {
       return {generate: false};
     }
@@ -351,7 +351,7 @@ export class TsCompilerAotCompilerTypeCheckHostAdapter implements ts.CompilerHos
 
   shouldGenerateFilesFor(fileName: string) {
     // TODO(tbosch): allow generating files that are not in the rootDir
-    // See https://github.com/angular/angular/issues/19337
+    // See https://github.com/bangular/bangular/issues/19337
     return !GENERATED_FILES.test(fileName) && this.isSourceFile(fileName) &&
         isInRootDir(fileName, this.options);
   }

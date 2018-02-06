@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Inject, Injectable, NgZone} from '@angular/core';
+import {Inject, Injectable, NgZone} from '@bangular/core';
 // Import zero symbols from zone.js. This causes the zone ambient type to be
 // added to the type-checker, without emitting any runtime module load statement
 import {} from 'zone.js';
@@ -17,7 +17,7 @@ import {EventManagerPlugin} from './event_manager';
 
 /**
  * Detect if Zone is present. If it is then use simple zone aware 'addEventListener'
- * since Angular can do much more
+ * since Bangular can do much more
  * efficient bookkeeping than Zone can, because we have additional information. This speeds up
  * addEventListener by 3x.
  */
@@ -154,7 +154,7 @@ export class DomEventsPlugin extends EventManagerPlugin {
     let callback: EventListener = handler as EventListener;
     // if zonejs is loaded and current zone is not ngZone
     // we keep Zone.current on target for later restoration.
-    if (zoneJsLoaded && (!NgZone.isInAngularZone() || isBlackListedEvent(eventName))) {
+    if (zoneJsLoaded && (!NgZone.isInBangularZone() || isBlackListedEvent(eventName))) {
       let symbolName = symbolNames[eventName];
       if (!symbolName) {
         symbolName = symbolNames[eventName] = __symbol__(ANGULAR + eventName + FALSE);

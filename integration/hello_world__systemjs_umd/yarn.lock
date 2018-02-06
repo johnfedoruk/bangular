@@ -2,27 +2,27 @@
 # yarn lockfile v1
 
 
-"@angular/common@file:../../dist/packages-dist/common":
+"@bangular/common@file:../../dist/packages-dist/common":
   version "5.2.0-e94fb16a2"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/compiler@file:../../dist/packages-dist/compiler":
+"@bangular/compiler@file:../../dist/packages-dist/compiler":
   version "5.2.0-e94fb16a2"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@file:../../dist/packages-dist/core":
+"@bangular/core@file:../../dist/packages-dist/core":
   version "5.2.0-e94fb16a2"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser-dynamic@file:../../dist/packages-dist/platform-browser-dynamic":
+"@bangular/platform-browser-dynamic@file:../../dist/packages-dist/platform-browser-dynamic":
   version "5.2.0-e94fb16a2"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser@file:../../dist/packages-dist/platform-browser":
+"@bangular/platform-browser@file:../../dist/packages-dist/platform-browser":
   version "5.2.0-e94fb16a2"
   dependencies:
     tslib "^1.7.1"

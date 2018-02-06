@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 
@@ -24,25 +24,25 @@
       System.config({
         map: {
           'index': 'index.js',
-          '@angular/common': '/packages-dist/common/bundles/common.umd.js',
-          '@angular/animations': '/packages-dist/animation/bundles/animations.umd.js',
-          '@angular/platform-browser/animations':
+          '@bangular/common': '/packages-dist/common/bundles/common.umd.js',
+          '@bangular/animations': '/packages-dist/animation/bundles/animations.umd.js',
+          '@bangular/platform-browser/animations':
               '/packages-dist/platform-browser/animations/bundles/platform-browser-animations.umd.js',
-          '@angular/compiler': '/packages-dist/compiler/bundles/compiler.umd.js',
-          '@angular/core': '/packages-dist/core/bundles/core.umd.js',
-          '@angular/forms': '/packages-dist/forms/bundles/forms.umd.js',
-          '@angular/http': '/packages-dist/http/bundles/http.umd.js',
-          '@angular/platform-browser':
+          '@bangular/compiler': '/packages-dist/compiler/bundles/compiler.umd.js',
+          '@bangular/core': '/packages-dist/core/bundles/core.umd.js',
+          '@bangular/forms': '/packages-dist/forms/bundles/forms.umd.js',
+          '@bangular/http': '/packages-dist/http/bundles/http.umd.js',
+          '@bangular/platform-browser':
               '/packages-dist/platform-browser/bundles/platform-browser.umd.js',
-          '@angular/platform-browser-dynamic':
+          '@bangular/platform-browser-dynamic':
               '/packages-dist/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-          '@angular/platform-webworker':
+          '@bangular/platform-webworker':
               '/packages-dist/platform-webworker/bundles/platform-webworker.umd.js',
-          '@angular/platform-webworker-dynamic':
+          '@bangular/platform-webworker-dynamic':
               '/packages-dist/platform-webworker-dynamic/bundles/platform-webworker-dynamic.umd.js',
-          '@angular/router': '/packages-dist/router/bundles/router.umd.js',
-          '@angular/upgrade': '/packages-dist/upgrade/bundles/upgrade.umd.js',
-          '@angular/upgrade/static': '/packages-dist/upgrade/bundles/upgrade-static.umd.js',
+          '@bangular/router': '/packages-dist/router/bundles/router.umd.js',
+          '@bangular/upgrade': '/packages-dist/upgrade/bundles/upgrade.umd.js',
+          '@bangular/upgrade/static': '/packages-dist/upgrade/bundles/upgrade-static.umd.js',
           'rxjs': '/all/playground/vendor/rxjs',
         },
         packages: {
@@ -52,28 +52,28 @@
       });
     } else {
       console.warn(
-          'Not using the Angular bundles. Don\'t use this configuration for e2e/performance tests!');
+          'Not using the Bangular bundles. Don\'t use this configuration for e2e/performance tests!');
 
       System.config({
         map: {
           'index': 'index.js',
-          '@angular': '/all/@angular',
+          '@bangular': '/all/@bangular',
           'rxjs': '/all/playground/vendor/rxjs'
         },
         packages: {
           'app': {defaultExtension: 'js'},
-          '@angular/common': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/animations': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/compiler': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/core': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/forms': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/http': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/platform-browser': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/platform-browser-dynamic': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/platform-webworker': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/platform-webworker-dynamic': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/router': {main: 'index.js', defaultExtension: 'js'},
-          '@angular/upgrade': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/common': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/animations': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/compiler': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/core': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/forms': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/http': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/platform-browser': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/platform-browser-dynamic': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/platform-webworker': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/platform-webworker-dynamic': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/router': {main: 'index.js', defaultExtension: 'js'},
+          '@bangular/upgrade': {main: 'index.js', defaultExtension: 'js'},
           'rxjs': {defaultExtension: 'js'}
         }
       });

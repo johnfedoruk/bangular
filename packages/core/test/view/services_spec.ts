@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {DebugContext, NodeFlags, QueryValueType, Services, asElementData, asTextData, directiveDef, elementDef, textDef} from '@angular/core/src/view/index';
+import {DebugContext, NodeFlags, QueryValueType, Services, asElementData, asTextData, directiveDef, elementDef, textDef} from '@bangular/core/src/view/index';
 
 import {compViewDef, createAndGetRootNodes} from './helper';
 

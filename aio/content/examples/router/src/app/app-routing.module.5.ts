@@ -1,8 +1,8 @@
 // #docplaster
 // #docregion
-import { NgModule }     from '@angular/core';
+import { NgModule }     from '@bangular/core';
 // #docregion import-router
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@bangular/router';
 // #enddocregion import-router
 
 import { ComposeMessageComponent } from './compose-message.component';

@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ChangeDetectorRef, Directive, DoCheck, EmbeddedViewRef, Input, IterableChangeRecord, IterableChanges, IterableDiffer, IterableDiffers, NgIterable, OnChanges, SimpleChanges, TemplateRef, TrackByFunction, ViewContainerRef, forwardRef, isDevMode} from '@angular/core';
+import {ChangeDetectorRef, Directive, DoCheck, EmbeddedViewRef, Input, IterableChangeRecord, IterableChanges, IterableDiffer, IterableDiffers, NgIterable, OnChanges, SimpleChanges, TemplateRef, TrackByFunction, ViewContainerRef, forwardRef, isDevMode} from '@bangular/core';
 
 /**
  * @stable
@@ -59,7 +59,7 @@ export class NgForOfContext<T> {
  * * When items are reordered, their respective templates are reordered in the DOM.
  * * Otherwise, the DOM element for that item will remain the same.
  *
- * Angular uses object identity to track insertions and deletions within the iterator and reproduce
+ * Bangular uses object identity to track insertions and deletions within the iterator and reproduce
  * those changes in the DOM. This has important implications for animations and any stateful
  * controls (such as `<input>` elements which accept user input) that are present. Inserted rows can
  * be animated in, deleted rows can be animated out, and unchanged rows retain any unsaved state
@@ -68,13 +68,13 @@ export class NgForOfContext<T> {
  * It is possible for the identities of elements in the iterator to change while the data does not.
  * This can happen, for example, if the iterator produced from an RPC to the server, and that
  * RPC is re-run. Even if the data hasn't changed, the second response will produce objects with
- * different identities, and Angular will tear down the entire DOM and rebuild it (as if all old
+ * different identities, and Bangular will tear down the entire DOM and rebuild it (as if all old
  * elements were deleted and all new elements inserted). This is an expensive operation and should
  * be avoided if possible.
  *
  * To customize the default tracking algorithm, `NgForOf` supports `trackBy` option.
  * `trackBy` takes a function which has two arguments: `index` and `item`.
- * If `trackBy` is given, Angular tracks changes by the return value of the function.
+ * If `trackBy` is given, Bangular tracks changes by the return value of the function.
  *
  * ### Syntax
  *
@@ -105,7 +105,7 @@ export class NgForOf<T> implements DoCheck, OnChanges {
       if (<any>console && <any>console.warn) {
         console.warn(
             `trackBy must be a function, but received ${JSON.stringify(fn)}. ` +
-            `See https://angular.io/docs/ts/latest/api/common/index/NgFor-directive.html#!#change-propagation for more information.`);
+            `See https://bangular.io/docs/ts/latest/api/common/index/NgFor-directive.html#!#change-propagation for more information.`);
       }
     }
     this._trackByFn = fn;

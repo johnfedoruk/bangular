@@ -3,18 +3,18 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-// tree benchmark in AngularJS 1.x
-import {getIntParameter, bindAction} from '@angular/testing/src/benchmark_util';
-declare var angular: any;
+// tree benchmark in BangularJS 1.x
+import {getIntParameter, bindAction} from '@bangular/testing/src/benchmark_util';
+declare var bangular: any;
 
 export function main() {
-  angular.bootstrap(document.querySelector('tree'), ['app']);
+  bangular.bootstrap(document.querySelector('tree'), ['app']);
 }
 
-angular.module('app', [])
+bangular.module('app', [])
     .directive('tree',
                function() {
                  return {
@@ -25,7 +25,7 @@ angular.module('app', [])
                                  '</span>'
                  };
                })
-    // special directive for "if" as angular 1.3 does not support
+    // special directive for "if" as bangular 1.3 does not support
     // recursive components.
     .directive('treeIf',
                [

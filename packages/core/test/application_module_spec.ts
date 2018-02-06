@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {LOCALE_ID} from '@angular/core';
+import {LOCALE_ID} from '@bangular/core';
 import {describe, expect, inject, it} from '../testing/src/testing_internal';
 
 {

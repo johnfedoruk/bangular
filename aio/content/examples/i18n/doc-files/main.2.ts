@@ -1,6 +1,6 @@
 // #docregion
-import { enableProdMode, TRANSLATIONS, TRANSLATIONS_FORMAT } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode, TRANSLATIONS, TRANSLATIONS_FORMAT } from '@bangular/core';
+import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';

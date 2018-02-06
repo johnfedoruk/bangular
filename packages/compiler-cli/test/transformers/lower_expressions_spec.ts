@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as ts from 'typescript';
@@ -21,7 +21,7 @@ describe('Expression lowering', () => {
 
     it('should be able to lower an expression in a decorator', () => {
       expect(convert(`
-          import {Component} from '@angular/core';
+          import {Component} from '@bangular/core';
 
           @Component({
             provider: [{provide: 'someToken', useFactory:◊l: () => null◊}]
@@ -39,7 +39,7 @@ describe('Expression lowering', () => {
   describe('collector', () => {
     it('should request a lowering for useValue', () => {
       const collected = collect(`
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
 
         enum SomeEnum {
           OK,
@@ -57,7 +57,7 @@ describe('Expression lowering', () => {
 
     it('should not request a lowering for useValue with a reference to a static property', () => {
       const collected = collect(`
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
 
         @Component({
           provider: [{provide: 'someToken', useValue:◊value: MyClass.someMethod◊}]
@@ -71,7 +71,7 @@ describe('Expression lowering', () => {
 
     it('should request a lowering for useFactory', () => {
       const collected = collect(`
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
 
         @Component({
           provider: [{provide: 'someToken', useFactory:◊lambda: () => null◊}]
@@ -84,7 +84,7 @@ describe('Expression lowering', () => {
 
     it('should request a lowering for data', () => {
       const collected = collect(`
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
 
         enum SomeEnum {
           OK,
@@ -115,7 +115,7 @@ describe('Expression lowering', () => {
           new MetadataCollector({}), /* strict */ true, [new LowerMetadataTransform()]);
       const sourceFile = ts.createSourceFile(
           'foo.ts', `
-        import {Injectable} from '@angular/core';
+        import {Injectable} from '@bangular/core';
 
         class SomeLocalClass {}
         @Injectable()
@@ -132,7 +132,7 @@ describe('Expression lowering', () => {
           new MetadataCollector({}), /* strict */ true, [new LowerMetadataTransform()]);
       const dtsFile = ts.createSourceFile(
           'foo.d.ts', `
-        import {Injectable} from '@angular/core';
+        import {Injectable} from '@bangular/core';
 
         class SomeLocalClass {}
         @Injectable()

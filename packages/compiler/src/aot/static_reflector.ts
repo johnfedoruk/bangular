@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {CompileSummaryKind} from '../compile_metadata';
@@ -17,8 +17,8 @@ import {FormattedMessageChain, formattedError} from './formatted_error';
 import {StaticSymbol} from './static_symbol';
 import {StaticSymbolResolver} from './static_symbol_resolver';
 
-const ANGULAR_CORE = '@angular/core';
-const ANGULAR_ROUTER = '@angular/router';
+const ANGULAR_CORE = '@bangular/core';
+const ANGULAR_ROUTER = '@bangular/router';
 
 const HIDDEN_KEY = /^\$.*\$$/;
 
@@ -502,7 +502,7 @@ export class StaticReflector implements CompileReflector {
         if (depth === 0) {
           // If depth is 0 we are evaluating the top level expression that is describing element
           // decorator. In this case, it is a decorator we don't understand, such as a custom
-          // non-angular decorator, and we should just ignore it.
+          // non-bangular decorator, and we should just ignore it.
           return IGNORE;
         }
         let position: Position|undefined = undefined;
@@ -701,7 +701,7 @@ export class StaticReflector implements CompileReflector {
                     // but rather return the symbol to which the InjectionToken is assigned to.
 
                     // OpaqueToken is supported too as it is required by the language service to
-                    // support v4 and prior versions of Angular.
+                    // support v4 and prior versions of Bangular.
                     return context;
                   }
                   const argExpressions: any[] = expression['arguments'] || [];

@@ -1,11 +1,11 @@
 // #docplaster
 // #docregion
 // #docregion first-config
-import { NgModule }             from '@angular/core';
-import { BrowserModule }        from '@angular/platform-browser';
-import { FormsModule }          from '@angular/forms';
+import { NgModule }             from '@bangular/core';
+import { BrowserModule }        from '@bangular/platform-browser';
+import { FormsModule }          from '@bangular/forms';
 // #docregion import-router
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@bangular/router';
 // #enddocregion import-router
 
 import { AppComponent }          from './app.component';

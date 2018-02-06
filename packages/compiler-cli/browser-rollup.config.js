@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 const commonjs = require('rollup-plugin-commonjs');
@@ -11,7 +11,7 @@ const path = require('path');
 
 require('reflect-metadata');
 
-var m = /^\@angular\/((\w|\-)+)(\/(\w|\d|\/|\-)+)?$/;
+var m = /^\@bangular\/((\w|\-)+)(\/(\w|\d|\/|\-)+)?$/;
 var location = normalize('../../dist/packages-dist') + '/';
 var rxjsLocation = normalize('../../node_modules/rxjs');
 var tslibLocation = normalize('../../node_modules/tslib');
@@ -33,7 +33,7 @@ function resolve(id, from) {
     var esm_suffix = esm_suffixes[packageName] || '';
     var loc = locations[packageName] || location;
     var r = loc !== location && (loc + esm_suffix + packageName + (match[3] || '/index') + '.js') ||
-        loc + packageName + '/@angular/' + packageName + '.es5.js';
+        loc + packageName + '/@bangular/' + packageName + '.es5.js';
     // console.log('** ANGULAR MAPPED **: ', r);
     return r;
   }
@@ -53,7 +53,7 @@ module.exports = {
   entry: '../../dist/packages-dist/compiler-cli/src/ngc.js',
   dest: './browser-bundle.umd.js',
   format: 'umd',
-  amd: {id: '@angular/compiler-cli-browser'},
+  amd: {id: '@bangular/compiler-cli-browser'},
   moduleName: 'ng.compiler_cli_browser',
   exports: 'named',
   external: [

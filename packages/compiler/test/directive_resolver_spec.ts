@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {core} from '@angular/compiler';
-import {DirectiveResolver} from '@angular/compiler/src/directive_resolver';
-import {Component, ContentChild, ContentChildren, Directive, HostBinding, HostListener, Input, Output, ViewChild, ViewChildren} from '@angular/core/src/metadata';
-import {JitReflector} from '@angular/platform-browser-dynamic/src/compiler_reflector';
+import {core} from '@bangular/compiler';
+import {DirectiveResolver} from '@bangular/compiler/src/directive_resolver';
+import {Component, ContentChild, ContentChildren, Directive, HostBinding, HostListener, Input, Output, ViewChild, ViewChildren} from '@bangular/core/src/metadata';
+import {JitReflector} from '@bangular/platform-browser-dynamic/src/compiler_reflector';
 
 @Directive({selector: 'someDirective'})
 class SomeDirective {

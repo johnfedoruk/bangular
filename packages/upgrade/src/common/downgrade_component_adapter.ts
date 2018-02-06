@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ApplicationRef, ChangeDetectorRef, ComponentFactory, ComponentRef, EventEmitter, Injector, OnChanges, SimpleChange, SimpleChanges, StaticProvider, Testability, TestabilityRegistry, Type} from '@angular/core';
+import {ApplicationRef, ChangeDetectorRef, ComponentFactory, ComponentRef, EventEmitter, Injector, OnChanges, SimpleChange, SimpleChanges, StaticProvider, Testability, TestabilityRegistry, Type} from '@bangular/core';
 
-import * as angular from './angular1';
+import * as bangular from './bangular1';
 import {PropertyBinding} from './component_info';
 import {$SCOPE} from './constants';
 import {getAttributesAsArray, getComponentName, hookupNgModel, strictEquals} from './util';
@@ -21,16 +21,16 @@ export class DowngradeComponentAdapter {
   private implementsOnChanges = false;
   private inputChangeCount: number = 0;
   private inputChanges: SimpleChanges = {};
-  private componentScope: angular.IScope;
+  private componentScope: bangular.IScope;
   private componentRef: ComponentRef<any>;
   private component: any;
   private changeDetector: ChangeDetectorRef;
 
   constructor(
-      private element: angular.IAugmentedJQuery, private attrs: angular.IAttributes,
-      private scope: angular.IScope, private ngModel: angular.INgModelController,
-      private parentInjector: Injector, private $injector: angular.IInjectorService,
-      private $compile: angular.ICompileService, private $parse: angular.IParseService,
+      private element: bangular.IAugmentedJQuery, private attrs: bangular.IAttributes,
+      private scope: bangular.IScope, private ngModel: bangular.INgModelController,
+      private parentInjector: Injector, private $injector: bangular.IInjectorService,
+      private $compile: bangular.ICompileService, private $parse: bangular.IParseService,
       private componentFactory: ComponentFactory<any>,
       private wrapCallback: <T>(cb: () => T) => () => T) {
     this.componentScope = scope.$new();

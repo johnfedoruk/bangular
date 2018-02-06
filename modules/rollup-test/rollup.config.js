@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 // import typescript from 'rollup-plugin-typescript';
@@ -17,8 +17,8 @@ class RollupNG2 {
     }
     resolveId(id, from){
         //console.log(id, from);
-        // if(id.startsWith('angular2/')){
-        //     return `${__dirname}/vendor/angular2/${id.split('angular2/').pop()}.js`;
+        // if(id.startsWith('bangular2/')){
+        //     return `${__dirname}/vendor/bangular2/${id.split('bangular2/').pop()}.js`;
         // }
         if(id.startsWith('rxjs/')){
             return `${__dirname}/node_modules/rxjs-es/${id.replace('rxjs/', '')}.js`;

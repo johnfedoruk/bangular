@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {beforeEach, describe, it} from '@angular/core/testing/src/testing_internal';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {DomSharedStylesHost} from '@angular/platform-browser/src/dom/shared_styles_host';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {beforeEach, describe, it} from '@bangular/core/testing/src/testing_internal';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {DomSharedStylesHost} from '@bangular/platform-browser/src/dom/shared_styles_host';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 {
   describe('DomSharedStylesHost', () => {

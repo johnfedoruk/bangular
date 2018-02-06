@@ -4,7 +4,7 @@ Many of the documentation pages contain snippets of code examples. We extract th
 real working example applications, which are stored in subfolders of the `/aio/content/examples`
 folder. Each example can be built and run independently. Each example also provides e2e specs, which
 are run as part of our Travis build tasks, to verify that the examples continue to work as expected,
-as changes are made to the core Angular libraries.
+as changes are made to the core Bangular libraries.
 
 In order to build, run and test these examples independently we need to install dependencies into
 their sub-folder. Also there are a number of common boilerplate files that are needed to configure
@@ -23,15 +23,15 @@ generic boilerplate that works in all the examples.
 ### Boilerplate files
 
 Inside `/aio/tools/examples/shared/boilerplate` you will see all the common boilerplate you can find
-in any Angular application using System.js. This is the boilerplate that will be carried to each example.
+in any Bangular application using System.js. This is the boilerplate that will be carried to each example.
 
 Among these files, there are a few special ones:
 
 * **src/systemjs.config.js** - This is the configuration of System.js used to run the example locally.
 * **src/systemjs.config.web.js** - This configuration replaces the previous one on Stackblitz.
-* **src/systemjs.config.web.build.js** - Same as the previous one but for using angular's `-builds`
+* **src/systemjs.config.web.build.js** - Same as the previous one but for using bangular's `-builds`
   versions.
-* **src/systemjs-angular-loader.js** - It is a System.js plugin that removes the need of `moduleId`.
+* **src/systemjs-bangular-loader.js** - It is a System.js plugin that removes the need of `moduleId`.
 * **package.json** - This package.json only contains scripts, no dependencies. It contains the
   different tasks needed to run any example. Doesn't matter if CLI, System.js or Webpack.
 * **stackblitz.json** - This file is used by the Stackblitz tool to generate a stackblitz for an example. This

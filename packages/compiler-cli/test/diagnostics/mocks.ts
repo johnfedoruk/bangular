@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {AotCompilerHost, AotSummaryResolver, CompileMetadataResolver, CompilerConfig, DEFAULT_INTERPOLATION_CONFIG, DirectiveNormalizer, DirectiveResolver, DomElementSchemaRegistry, HtmlParser, I18NHtmlParser, InterpolationConfig, JitSummaryResolver, Lexer, NgAnalyzedModules, NgModuleResolver, ParseTreeResult, Parser, PipeResolver, ResourceLoader, StaticReflector, StaticSymbol, StaticSymbolCache, StaticSymbolResolver, StaticSymbolResolverHost, SummaryResolver, TemplateParser, analyzeNgModules, createOfflineCompileUrlResolver} from '@angular/compiler';
-import {ViewEncapsulation, ɵConsole as Console} from '@angular/core';
+import {AotCompilerHost, AotSummaryResolver, CompileMetadataResolver, CompilerConfig, DEFAULT_INTERPOLATION_CONFIG, DirectiveNormalizer, DirectiveResolver, DomElementSchemaRegistry, HtmlParser, I18NHtmlParser, InterpolationConfig, JitSummaryResolver, Lexer, NgAnalyzedModules, NgModuleResolver, ParseTreeResult, Parser, PipeResolver, ResourceLoader, StaticReflector, StaticSymbol, StaticSymbolCache, StaticSymbolResolver, StaticSymbolResolverHost, SummaryResolver, TemplateParser, analyzeNgModules, createOfflineCompileUrlResolver} from '@bangular/compiler';
+import {ViewEncapsulation, ɵConsole as Console} from '@bangular/core';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as ts from 'typescript';
@@ -43,7 +43,7 @@ export class MockLanguageServiceHost implements ts.LanguageServiceHost {
       strictNullChecks: true,
       baseUrl: currentDirectory,
       lib: ['lib.es2015.d.ts', 'lib.dom.d.ts'],
-      paths: {'@angular/*': [calcRootPath() + '/packages/*']}
+      paths: {'@bangular/*': [calcRootPath() + '/packages/*']}
     };
     this.context = new MockAotContext(currentDirectory, files);
   }

@@ -3,15 +3,15 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 const resolve = require('rollup-plugin-node-resolve');
 const sourcemaps = require('rollup-plugin-sourcemaps');
 
 const globals = {
-  '@angular/core': 'ng.core',
-  '@angular/common': 'ng.common',
+  '@bangular/core': 'ng.core',
+  '@bangular/common': 'ng.common',
 
   'rxjs/BehaviorSubject': 'Rx',
   'rxjs/ConnectableObservable': 'Rx',

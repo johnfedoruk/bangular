@@ -1,7 +1,7 @@
 // #docregion
 // #docregion example
-import { Injectable } from '@angular/core';
-import { Http }       from '@angular/http';
+import { Injectable } from '@bangular/core';
+import { Http }       from '@bangular/http';
 
 import { Hero } from './hero.model';
 import { ExceptionService, SpinnerService, ToastService } from '../../core';

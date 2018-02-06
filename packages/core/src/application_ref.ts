@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {Observable} from 'rxjs/Observable';
@@ -37,7 +37,7 @@ let _platform: PlatformRef;
 export const ALLOW_MULTIPLE_PLATFORMS = new InjectionToken<boolean>('AllowMultipleToken');
 
 /**
- * Disable Angular's development mode, which turns off assertions and other
+ * Disable Bangular's development mode, which turns off assertions and other
  * checks within the framework.
  *
  * One important assertion this disables verifies that a change detection pass
@@ -54,7 +54,7 @@ export function enableProdMode(): void {
 }
 
 /**
- * Returns whether Angular is in development mode. After called once,
+ * Returns whether Bangular is in development mode. After called once,
  * the value is locked and won't change any more.
  *
  * By default, this is true, unless a user calls `enableProdMode` before calling this.
@@ -177,9 +177,9 @@ export interface BootstrapOptions {
 }
 
 /**
- * The Angular platform is the entry point for Angular on a web page. Each page
+ * The Bangular platform is the entry point for Bangular on a web page. Each page
  * has exactly one platform, and services (such as reflection) which are common
- * to every Angular application running on the page are bound in its scope.
+ * to every Bangular application running on the page are bound in its scope.
  *
  * A page's platform is initialized implicitly when a platform is created via a platform factory
  * (e.g. {@link platformBrowser}), or explicitly by calling the {@link createPlatform} function.
@@ -211,7 +211,7 @@ export class PlatformRef {
    *
    * main.ts:
    * import {MyModuleNgFactory} from './my_module.ngfactory';
-   * import {platformBrowser} from '@angular/platform-browser';
+   * import {platformBrowser} from '@bangular/platform-browser';
    *
    * let moduleRef = platformBrowser().bootstrapModuleFactory(MyModuleNgFactory);
    * ```
@@ -238,7 +238,7 @@ export class PlatformRef {
         throw new Error('No ErrorHandler. Is platform module (BrowserModule) included?');
       }
       moduleRef.onDestroy(() => remove(this._modules, moduleRef));
-      ngZone !.runOutsideAngular(
+      ngZone !.runOutsideBangular(
           () => ngZone !.onError.subscribe(
               {next: (error: any) => { exceptionHandler.handleError(error); }}));
       return _callAndReportToErrorHandler(exceptionHandler, ngZone !, () => {
@@ -299,12 +299,12 @@ export class PlatformRef {
 
   /**
    * Retrieve the platform {@link Injector}, which is the parent injector for
-   * every Angular application on the page and provides singleton providers.
+   * every Bangular application on the page and provides singleton providers.
    */
   get injector(): Injector { return this._injector; }
 
   /**
-   * Destroy the Angular platform and all Angular applications on the page.
+   * Destroy the Bangular platform and all Bangular applications on the page.
    */
   destroy() {
     if (this._destroyed) {
@@ -336,7 +336,7 @@ function _callAndReportToErrorHandler(
     const result = callback();
     if (isPromise(result)) {
       return result.catch((e: any) => {
-        ngZone.runOutsideAngular(() => errorHandler.handleError(e));
+        ngZone.runOutsideBangular(() => errorHandler.handleError(e));
         // rethrow as the exception handler might not do it
         throw e;
       });
@@ -344,7 +344,7 @@ function _callAndReportToErrorHandler(
 
     return result;
   } catch (e) {
-    ngZone.runOutsideAngular(() => errorHandler.handleError(e));
+    ngZone.runOutsideBangular(() => errorHandler.handleError(e));
     // rethrow as the exception handler might not do it
     throw e;
   }
@@ -360,7 +360,7 @@ function optionsReducer<T extends Object>(dst: any, objs: T | T[]): T {
 }
 
 /**
- * A reference to an Angular application running on a page.
+ * A reference to an Bangular application running on a page.
  *
  * @stable
  */
@@ -404,19 +404,19 @@ export class ApplicationRef {
     const isCurrentlyStable = new Observable<boolean>((observer: Observer<boolean>) => {
       this._stable = this._zone.isStable && !this._zone.hasPendingMacrotasks &&
           !this._zone.hasPendingMicrotasks;
-      this._zone.runOutsideAngular(() => {
+      this._zone.runOutsideBangular(() => {
         observer.next(this._stable);
         observer.complete();
       });
     });
 
     const isStable = new Observable<boolean>((observer: Observer<boolean>) => {
-      // Create the subscription to onStable outside the Angular Zone so that
-      // the callback is run outside the Angular Zone.
+      // Create the subscription to onStable outside the Bangular Zone so that
+      // the callback is run outside the Bangular Zone.
       let stableSub: Subscription;
-      this._zone.runOutsideAngular(() => {
+      this._zone.runOutsideBangular(() => {
         stableSub = this._zone.onStable.subscribe(() => {
-          NgZone.assertNotInAngularZone();
+          NgZone.assertNotInBangularZone();
 
           // Check whether there are no pending macro/micro tasks in the next tick
           // to allow for NgZone to update the state.
@@ -431,10 +431,10 @@ export class ApplicationRef {
       });
 
       const unstableSub: Subscription = this._zone.onUnstable.subscribe(() => {
-        NgZone.assertInAngularZone();
+        NgZone.assertInBangularZone();
         if (this._stable) {
           this._stable = false;
-          this._zone.runOutsideAngular(() => { observer.next(false); });
+          this._zone.runOutsideBangular(() => { observer.next(false); });
         }
       });
 
@@ -453,7 +453,7 @@ export class ApplicationRef {
    *
    * ### Bootstrap process
    *
-   * When bootstrapping a new root component into an application, Angular mounts the
+   * When bootstrapping a new root component into an application, Bangular mounts the
    * specified application component onto DOM elements identified by the [componentType]'s
    * selector and kicks off automatic change detection to finish initializing the component.
    *
@@ -495,7 +495,7 @@ export class ApplicationRef {
     this._loadComponent(compRef);
     if (isDevMode()) {
       this._console.log(
-          `Angular is running in the development mode. Call enableProdMode() to enable the production mode.`);
+          `Bangular is running in the development mode. Call enableProdMode() to enable the production mode.`);
     }
     return compRef;
   }
@@ -507,7 +507,7 @@ export class ApplicationRef {
    * further changes are detected. If additional changes are picked up during this second cycle,
    * bindings in the app have side-effects that cannot be resolved in a single change detection
    * pass.
-   * In this case, Angular throws an error, since an Angular application can only have one change
+   * In this case, Bangular throws an error, since an Bangular application can only have one change
    * detection pass during which all change detection must complete.
    */
   tick(): void {
@@ -524,7 +524,7 @@ export class ApplicationRef {
       }
     } catch (e) {
       // Attention: Don't rethrow as it could cancel subscriptions to Observables!
-      this._zone.runOutsideAngular(() => this._exceptionHandler.handleError(e));
+      this._zone.runOutsideBangular(() => this._exceptionHandler.handleError(e));
     } finally {
       this._runningTick = false;
       wtfLeave(scope);

@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {fakeAsync} from '@angular/core/testing/src/fake_async';
+import {fakeAsync} from '@bangular/core/testing/src/fake_async';
 import {SyncAsync, escapeRegExp, splitAtColon, utf8Encode} from '../src/util';
 
 {

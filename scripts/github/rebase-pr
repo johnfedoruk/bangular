@@ -16,11 +16,11 @@ REBASE_ON="$1"
 PR_NO="$2"
 
 
-HEAD_LABEL=`curl -s https://api.github.com/repos/angular/angular/pulls/$PR_NO | node $BASEDIR/utils/json_extract.js head.label`
+HEAD_LABEL=`curl -s https://api.github.com/repos/bangular/bangular/pulls/$PR_NO | node $BASEDIR/utils/json_extract.js head.label`
 echo $HEAD_LABEL
 IFS=':' read -r -a array <<< "$HEAD_LABEL"
 USER="${array[0]}"
-USER_GIT_URL="git@github.com:$USER/angular.git"
+USER_GIT_URL="git@github.com:$USER/bangular.git"
 BRANCH="${array[1]}"
 OLD_BRANCH=`git branch | grep \* | cut -d ' ' -f2`
 

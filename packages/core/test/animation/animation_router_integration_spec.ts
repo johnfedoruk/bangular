@@ -3,16 +3,16 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {animate, animateChild, group, query, sequence, style, transition, trigger, ɵAnimationGroupPlayer as AnimationGroupPlayer} from '@angular/animations';
-import {AnimationDriver, ɵAnimationEngine} from '@angular/animations/browser';
-import {MockAnimationDriver, MockAnimationPlayer} from '@angular/animations/browser/testing';
-import {Component, HostBinding} from '@angular/core';
-import {TestBed, fakeAsync, flushMicrotasks, tick} from '@angular/core/testing';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ActivatedRoute, Router, RouterOutlet} from '@angular/router';
-import {RouterTestingModule} from '@angular/router/testing';
+import {animate, animateChild, group, query, sequence, style, transition, trigger, ɵAnimationGroupPlayer as AnimationGroupPlayer} from '@bangular/animations';
+import {AnimationDriver, ɵAnimationEngine} from '@bangular/animations/browser';
+import {MockAnimationDriver, MockAnimationPlayer} from '@bangular/animations/browser/testing';
+import {Component, HostBinding} from '@bangular/core';
+import {TestBed, fakeAsync, flushMicrotasks, tick} from '@bangular/core/testing';
+import {BrowserAnimationsModule} from '@bangular/platform-browser/animations';
+import {ActivatedRoute, Router, RouterOutlet} from '@bangular/router';
+import {RouterTestingModule} from '@bangular/router/testing';
 
 (function() {
   // these tests are only mean't to be run within the DOM (for now)

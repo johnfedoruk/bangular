@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {InjectionToken} from '../di/injection_token';
@@ -18,8 +18,8 @@ import {InjectionToken} from '../di/injection_token';
  * ### Example
  *
  * ```typescript
- * import { LOCALE_ID } from '@angular/core';
- * import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+ * import { LOCALE_ID } from '@bangular/core';
+ * import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
  * import { AppModule } from './app/app.module';
  *
  * platformBrowserDynamic().bootstrapModule(AppModule, {
@@ -40,8 +40,8 @@ export const LOCALE_ID = new InjectionToken<string>('LocaleId');
  * ### Example
  *
  * ```typescript
- * import { TRANSLATIONS } from '@angular/core';
- * import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+ * import { TRANSLATIONS } from '@bangular/core';
+ * import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
  * import { AppModule } from './app/app.module';
  *
  * // content of your translation file
@@ -65,8 +65,8 @@ export const TRANSLATIONS = new InjectionToken<string>('Translations');
  * ### Example
  *
  * ```typescript
- * import { TRANSLATIONS_FORMAT } from '@angular/core';
- * import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+ * import { TRANSLATIONS_FORMAT } from '@bangular/core';
+ * import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
  * import { AppModule } from './app/app.module';
  *
  * platformBrowserDynamic().bootstrapModule(AppModule, {
@@ -89,8 +89,8 @@ export const TRANSLATIONS_FORMAT = new InjectionToken<string>('TranslationsForma
  *
  * ### Example
  * ```typescript
- * import { MissingTranslationStrategy } from '@angular/core';
- * import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+ * import { MissingTranslationStrategy } from '@bangular/core';
+ * import { platformBrowserDynamic } from '@bangular/platform-browser-dynamic';
  * import { AppModule } from './app/app.module';
  *
  * platformBrowserDynamic().bootstrapModule(AppModule, {

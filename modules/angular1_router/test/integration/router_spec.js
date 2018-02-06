@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 'use strict';
@@ -12,7 +12,7 @@ describe('router', function () {
 
   var elt, testMod;
   beforeEach(function () {
-    testMod = angular.module('testMod', ['ngComponentRouter'])
+    testMod = bangular.module('testMod', ['ngComponentRouter'])
       .value('$routerRootComponent', 'app');
   });
 
@@ -190,7 +190,7 @@ describe('router', function () {
     if (options.templateUrl) definition.templateUrl = options.templateUrl;
 
     applyStaticProperties(definition.controller, options);
-    angular.module('testMod').component(name, definition);
+    bangular.module('testMod').component(name, definition);
   }
 
   function compileApp() {

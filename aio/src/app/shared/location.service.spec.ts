@@ -1,6 +1,6 @@
-import { ReflectiveInjector } from '@angular/core';
-import { Location, LocationStrategy, PlatformLocation } from '@angular/common';
-import { MockLocationStrategy } from '@angular/common/testing';
+import { ReflectiveInjector } from '@bangular/core';
+import { Location, LocationStrategy, PlatformLocation } from '@bangular/common';
+import { MockLocationStrategy } from '@bangular/common/testing';
 import { Subject } from 'rxjs/Subject';
 
 import { GaService } from 'app/shared/ga.service';

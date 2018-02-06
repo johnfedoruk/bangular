@@ -5,9 +5,9 @@
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 // #enddocregion rxjs-imports
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@bangular/core';
 // #docregion import-router
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@bangular/router';
 // #enddocregion import-router
 
 import { Hero, HeroService }  from './hero.service';

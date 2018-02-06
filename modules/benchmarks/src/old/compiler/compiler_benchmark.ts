@@ -3,22 +3,22 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {PromiseWrapper} from '@angular/facade/src/async';
-import {Type, print} from '@angular/facade/src/lang';
-import {bootstrap} from '@angular/platform-browser';
-import {BrowserDomAdapter} from '@angular/platform-browser/src/browser/browser_adapter';
-import {DOM} from '@angular/platform-browser/src/dom/dom_adapter';
+import {PromiseWrapper} from '@bangular/facade/src/async';
+import {Type, print} from '@bangular/facade/src/lang';
+import {bootstrap} from '@bangular/platform-browser';
+import {BrowserDomAdapter} from '@bangular/platform-browser/src/browser/browser_adapter';
+import {DOM} from '@bangular/platform-browser/src/dom/dom_adapter';
 
-import {ComponentResolver, Component, Directive, ViewContainerRef,} from '@angular/core';
+import {ComponentResolver, Component, Directive, ViewContainerRef,} from '@bangular/core';
 
-import {ViewMetadata} from '@angular/core/src/metadata/view';
+import {ViewMetadata} from '@bangular/core/src/metadata/view';
 
-import {CompilerConfig, DirectiveResolver} from '@angular/compiler';
+import {CompilerConfig, DirectiveResolver} from '@bangular/compiler';
 
-import {getIntParameter, bindAction} from '@angular/testing/src/benchmark_util';
+import {getIntParameter, bindAction} from '@bangular/testing/src/benchmark_util';
 
 function _createBindings(): any[] {
   const multiplyTemplatesBy = getIntParameter('elements');

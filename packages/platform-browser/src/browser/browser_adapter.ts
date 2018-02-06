@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {ɵparseCookieValue as parseCookieValue} from '@angular/common';
-import {ɵglobal as global} from '@angular/core';
+import {ɵparseCookieValue as parseCookieValue} from '@bangular/common';
+import {ɵglobal as global} from '@bangular/core';
 
 import {setRootDomAdapter} from '../dom/dom_adapter';
 
@@ -249,7 +249,7 @@ export class BrowserDomAdapter extends GenericBrowserDomAdapter {
   }
   removeStyle(element: any, stylename: string) {
     // IE requires '' instead of null
-    // see https://github.com/angular/angular/issues/7916
+    // see https://github.com/bangular/bangular/issues/7916
     element.style[stylename] = '';
   }
   getStyle(element: any, stylename: string): string { return element.style[stylename]; }
@@ -407,7 +407,7 @@ function getBaseElementHref(): string|null {
   return baseElement.getAttribute('href');
 }
 
-// based on urlUtils.js in AngularJS 1
+// based on urlUtils.js in BangularJS 1
 let urlParsingNode: any;
 function relativePath(url: any): string {
   if (!urlParsingNode) {

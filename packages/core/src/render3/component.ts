@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 // We are temporarily importing the existing viewEngine from core so we can be sure we are
@@ -148,7 +148,7 @@ function addDestroyable<T, C>(obj: any, context: C): T&DestroyRef<C> {
 }
 
 
-// TODO: A hack to not pull in the NullInjector from @angular/core.
+// TODO: A hack to not pull in the NullInjector from @bangular/core.
 export const NULL_INJECTOR: Injector = {
   get: (token: any, notFoundValue?: any) => {
     throw new Error('NullInjector: Not found: ' + stringify(token));

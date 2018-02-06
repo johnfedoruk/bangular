@@ -1,10 +1,10 @@
-# Building Angular with Bazel
+# Building Bangular with Bazel
 
-Note: this doc is for developing Angular, it is _not_ public
-documentation for building an Angular application with Bazel.
+Note: this doc is for developing Bangular, it is _not_ public
+documentation for building an Bangular application with Bazel.
 
 The Bazel build tool (http://bazel.build) provides fast, reliable
-incremental builds. We plan to migrate Angular's build scripts to
+incremental builds. We plan to migrate Bangular's build scripts to
 Bazel.
 
 ## Installation
@@ -40,7 +40,7 @@ want Bazel to create several symlinks in your project directory
 [GitHub]: https://github.com/bazelbuild/rules_typescript
 [bazelrc doc]: https://bazel.build/versions/master/docs/bazel-user-manual.html#bazelrc
 
-## Building Angular
+## Building Bangular
 
 - Build a package: `bazel build packages/core`
 - Build all packages: `bazel build packages/...`
@@ -51,7 +51,7 @@ new as of May 2017 and not very stable yet.
 
 [ibazel]: https://github.com/bazelbuild/bazel-watcher
 
-## Testing Angular
+## Testing Bangular
 
 - Test package in node: `bazel test packages/core/test:test`
 - Test package in karma: `bazel test packages/core/test:test_web`

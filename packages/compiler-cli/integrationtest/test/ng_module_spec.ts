@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 import './init';
 
@@ -46,7 +46,7 @@ describe('NgModule', () => {
 
   describe('flat modules', () => {
     it('should support flat module entryComponents components', () => {
-      // https://github.com/angular/angular/issues/15221
+      // https://github.com/bangular/bangular/issues/15221
       const fixture = createComponent(ComponentUsingFlatModule);
       const bundleComp = fixture.nativeElement.children;
       expect(bundleComp[0].children[0].textContent).toEqual('flat module component');
@@ -54,7 +54,7 @@ describe('NgModule', () => {
   });
 
   describe('third-party modules', () => {
-    // https://github.com/angular/angular/issues/11889
+    // https://github.com/bangular/bangular/issues/11889
     it('should support third party entryComponents components', () => {
       const fixture = createComponent(ComponentUsingThirdParty);
       const thirdPComps = fixture.nativeElement.children;
@@ -63,7 +63,7 @@ describe('NgModule', () => {
 multi-lines`);
     });
 
-    // https://github.com/angular/angular/issues/12428
+    // https://github.com/bangular/bangular/issues/12428
     it('should support third party directives', () => {
       const fixture = createComponent(ComponentUsingThirdParty);
       const debugElement = fixture.debugElement;

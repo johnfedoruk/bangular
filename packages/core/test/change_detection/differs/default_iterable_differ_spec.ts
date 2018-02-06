@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {DefaultIterableDiffer, DefaultIterableDifferFactory} from '@angular/core/src/change_detection/differs/default_iterable_differ';
+import {DefaultIterableDiffer, DefaultIterableDifferFactory} from '@bangular/core/src/change_detection/differs/default_iterable_differ';
 
 import {TestIterable} from '../../change_detection/iterable';
 import {iterableChangesAsString, iterableDifferToString} from '../../change_detection/util';
@@ -281,7 +281,7 @@ class ComplexItem {
         }));
       });
 
-      // https://github.com/angular/angular/issues/17852
+      // https://github.com/bangular/bangular/issues/17852
       it('support re-insertion', () => {
         const l = ['a', '*', '*', 'd', '-', '-', '-', 'e'];
         differ.check(l);

@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /* tslint:disable:no-console  */
@@ -38,8 +38,8 @@ const BaseConfig = {
 
 if (platform == 'node') {
   const specFiles = [
-    '@angular/**/*_spec.js', '@angular/compiler-cli/test/**/*_spec.js',
-    '@angular/benchpress/test/**/*_spec.js'
+    '@bangular/**/*_spec.js', '@bangular/compiler-cli/test/**/*_spec.js',
+    '@bangular/benchpress/test/**/*_spec.js'
   ];
   tscWatch = new TscWatch(Object.assign(
       {

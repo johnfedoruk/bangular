@@ -1,7 +1,7 @@
 import {
   Component,
   Input
-} from '@angular/core';
+} from '@bangular/core';
 import {
   trigger,
   state,
@@ -9,7 +9,7 @@ import {
   animate,
   transition,
   group
-} from '@angular/animations';
+} from '@bangular/animations';
 
 import { Hero } from './hero.service';
 

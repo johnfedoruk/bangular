@@ -12,7 +12,7 @@ class PhoneListController {
 
 }
 
-angular.
+bangular.
   module('phoneList').
   component('phoneList', {
     templateUrl: 'phone-list/phone-list.template.html',

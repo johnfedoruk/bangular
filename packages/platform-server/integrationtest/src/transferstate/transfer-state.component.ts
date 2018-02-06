@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {isPlatformServer} from '@angular/common';
-import {Component, Inject, PLATFORM_ID} from '@angular/core';
-import {StateKey, TransferState, makeStateKey} from '@angular/platform-browser';
+import {isPlatformServer} from '@bangular/common';
+import {Component, Inject, PLATFORM_ID} from '@bangular/core';
+import {StateKey, TransferState, makeStateKey} from '@bangular/platform-browser';
 
 const COUNTER_KEY = makeStateKey<number>('counter');
 

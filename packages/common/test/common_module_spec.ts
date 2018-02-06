@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 
-import {TestBed, inject} from '@angular/core/testing';
+import {TestBed, inject} from '@bangular/core/testing';
 import {DeprecatedI18NPipesModule} from '../src/common_module';
 import {Plural} from '../src/i18n/locale_data_api';
 import {DEPRECATED_PLURAL_FN, getPluralCase} from '../src/i18n/localization';

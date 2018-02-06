@@ -3,13 +3,13 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-// Must be imported first, because Angular decorators throw on load.
+// Must be imported first, because Bangular decorators throw on load.
 import 'reflect-metadata';
 
-export {InjectionToken, Injector, Provider, ReflectiveInjector, StaticProvider} from '@angular/core';
+export {InjectionToken, Injector, Provider, ReflectiveInjector, StaticProvider} from '@bangular/core';
 export {Options} from './src/common_options';
 export {MeasureValues} from './src/measure_values';
 export {Metric} from './src/metric';

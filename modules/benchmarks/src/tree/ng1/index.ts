@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {bindAction, profile} from '../../util';
@@ -11,13 +11,13 @@ import {buildTree, emptyTree} from '../util';
 
 import {addTreeToModule} from './tree';
 
-declare var angular: any;
+declare var bangular: any;
 
 function init() {
   let detectChangesRuns = 0;
   const numberOfChecksEl = document.getElementById('numberOfChecks') !;
 
-  addTreeToModule(angular.module('app', [])).run([
+  addTreeToModule(bangular.module('app', [])).run([
     '$rootScope',
     ($rootScope: any) => {
       function detectChanges() {
@@ -47,7 +47,7 @@ function init() {
     }
   ]);
 
-  angular.bootstrap(document.querySelector('tree'), ['app']);
+  bangular.bootstrap(document.querySelector('tree'), ['app']);
 }
 
 init();

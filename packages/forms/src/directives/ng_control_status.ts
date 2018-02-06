@@ -3,10 +3,10 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Directive, Self} from '@angular/core';
+import {Directive, Self} from '@bangular/core';
 
 import {AbstractControlDirective} from './abstract_control_directive';
 import {ControlContainer} from './control_container';
@@ -37,7 +37,7 @@ export const ngControlStatusHost = {
 };
 
 /**
- * Directive automatically applied to Angular form controls that sets CSS classes
+ * Directive automatically applied to Bangular form controls that sets CSS classes
  * based on control status. The following classes are applied as the properties
  * become true:
  *
@@ -57,7 +57,7 @@ export class NgControlStatus extends AbstractControlStatus {
 }
 
 /**
- * Directive automatically applied to Angular form groups that sets CSS classes
+ * Directive automatically applied to Bangular form groups that sets CSS classes
  * based on control status (valid/invalid/dirty/etc).
  *
  * @stable

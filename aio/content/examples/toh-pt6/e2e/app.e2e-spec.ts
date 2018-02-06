@@ -108,7 +108,7 @@ describe('Tutorial part 6', () => {
 
     it(`cancels and shows ${targetHero.name} in Dashboard`, () => {
       element(by.buttonText('go back')).click();
-      browser.waitForAngular(); // seems necessary to gets tests to pass for toh-pt6
+      browser.waitForBangular(); // seems necessary to gets tests to pass for toh-pt6
 
       let targetHeroElt = getPageElts().topHeroes.get(targetHeroDashboardIndex);
       expect(targetHeroElt.getText()).toEqual(targetHero.name);
@@ -120,7 +120,7 @@ describe('Tutorial part 6', () => {
 
     it(`saves and shows ${newHeroName} in Dashboard`, () => {
       element(by.buttonText('save')).click();
-      browser.waitForAngular(); // seems necessary to gets tests to pass for toh-pt6
+      browser.waitForBangular(); // seems necessary to gets tests to pass for toh-pt6
 
       let targetHeroElt = getPageElts().topHeroes.get(targetHeroDashboardIndex);
       expect(targetHeroElt.getText()).toEqual(newHeroName);
@@ -153,7 +153,7 @@ describe('Tutorial part 6', () => {
 
     it(`shows ${newHeroName} in Heroes list`, () => {
       element(by.buttonText('save')).click();
-      browser.waitForAngular();
+      browser.waitForBangular();
       let expectedText = `${targetHero.id} ${newHeroName}`;
       expect(getHeroAEltById(targetHero.id).getText()).toEqual(expectedText);
     });
@@ -235,7 +235,7 @@ describe('Tutorial part 6', () => {
     let targetHeroElt = getPageElts().topHeroes.get(targetHeroDashboardIndex);
     expect(targetHeroElt.getText()).toEqual(targetHero.name);
     targetHeroElt.click();
-    browser.waitForAngular(); // seems necessary to gets tests to pass for toh-pt6
+    browser.waitForBangular(); // seems necessary to gets tests to pass for toh-pt6
 
     let page = getPageElts();
     expect(page.heroDetail.isPresent()).toBeTruthy('shows hero detail');

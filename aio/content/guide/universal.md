@@ -1,10 +1,10 @@
-# Angular Universal: server-side rendering
+# Bangular Universal: server-side rendering
 
-This guide describes **Angular Universal**, a technology that runs your Angular application on the server.
+This guide describes **Bangular Universal**, a technology that runs your Bangular application on the server.
 
-A normal Angular application executes in the _browser_, rendering pages in the DOM in response to user actions.
+A normal Bangular application executes in the _browser_, rendering pages in the DOM in response to user actions.
 
-**Angular Universal** generates _static_ application pages on the _server_
+**Bangular Universal** generates _static_ application pages on the _server_
 through a process called **server-side rendering (SSR)**.
 
 It can generate and serve those pages in response to requests from browsers.
@@ -36,9 +36,9 @@ There are three main reasons to create a Universal version of your app.
 
 Google, Bing, Facebook, Twitter and other social media sites rely on web crawlers to index your application content and make that content searchable on the web.
 
-These web crawlers may be unable to navigate and index your highly-interactive, Angular application as a human user could do.
+These web crawlers may be unable to navigate and index your highly-interactive, Bangular application as a human user could do.
 
-Angular Universal can generate a static version of your app that is easily searchable, linkable, and navigable without JavaScript.
+Bangular Universal can generate a static version of your app that is easily searchable, linkable, and navigable without JavaScript.
 It also makes a site preview available since each URL returns a fully-rendered page.
 
 Enabling web crawlers is often referred to as
@@ -62,12 +62,12 @@ Displaying the first page quickly can be critical for user engagement.
 [53% of mobile site visits are abandoned](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/) if pages take longer than 3 seconds to load.
 Your app may have to launch faster to engage these users before they decide to do something else.
 
-With Angular Universal, you can generate landing pages for the app that look like the complete app.
+With Bangular Universal, you can generate landing pages for the app that look like the complete app.
 The pages are pure HTML, and can display even if JavaScript is disabled.
 The pages do not handle browser events, but they _do_ support navigation through the site using [routerLink](guide/router.html#router-link).
 
 In practice, you'll serve a static version of the landing page to hold the user's attention.
-At the same time, you'll load the full Angular app behind it in the manner [explained below](#transition).
+At the same time, you'll load the full Bangular app behind it in the manner [explained below](#transition).
 The user perceives near-instant performance from the landing page
 and gets the full interactive experience after the full app loads.
 
@@ -84,7 +84,7 @@ The server (a [Node Express](https://expressjs.com/) server in _this_ guide's ex
 passes client requests for application pages to Universal's `renderModuleFactory` function.
 
 The `renderModuleFactory` function takes as inputs a *template* HTML page (usually `index.html`),
-an Angular *module* containing components,
+an Bangular *module* containing components,
 and a *route* that determines which components to display.
 
 The route comes from the client's request to the server.
@@ -101,9 +101,9 @@ Because a Universal `platform-server` app doesn't execute in the browser, you ma
 You won't be able reference browser-only native objects such as `window`, `document`, `navigator` or `location`.
 If you don't need them on the server-rendered page, side-step them with conditional logic.
 
-Alternatively, look for an injectable Angular abstraction over the object you need such as `Location` or `Document`;
+Alternatively, look for an injectable Bangular abstraction over the object you need such as `Location` or `Document`;
 it may substitute adequately for the specific API that you're calling.
-If Angular doesn't provide it, you may be able to write your own abstraction that delegates to the browser API while in the browser and to a satisfactory alternative implementation while on the server.
+If Bangular doesn't provide it, you may be able to write your own abstraction that delegates to the browser API while in the browser and to a satisfactory alternative implementation while on the server.
 
 Without mouse or keyboard events, a universal app can't rely on a user clicking a button to show a component.
 A universal app should determine what to render based solely on the incoming client request.
@@ -121,7 +121,7 @@ The _Tour of Heroes_ tutorial is the foundation for the Universal sample describ
 The core application files are mostly untouched, with a few exceptions described below.
 You'll add more files to support building and serving with Universal.
 
-In this example, the Angular CLI compiles and bundles the Universal version of the app with the
+In this example, the Bangular CLI compiles and bundles the Universal version of the app with the
 [AOT (Ahead-of-Time) compiler](guide/aot-compiler).
 A node/express web server turns client requests into the HTML pages rendered by Universal.
 
@@ -167,7 +167,7 @@ Download the [Tour of Heroes](generated/zips/toh-pt6/toh-pt6.zip) project and in
 
 To get started, install these packages.
 
- * `@angular/platform-server` - Universal server-side components.
+ * `@bangular/platform-server` - Universal server-side components.
  * `@nguniversal/module-map-ngfactory-loader` - For handling lazy-loading in the context of a server-render.
  * `@nguniversal/express-engine` - An express engine for Universal applications.
  * `ts-loader` - To transpile the server application
@@ -175,7 +175,7 @@ To get started, install these packages.
 Install them with the following commands:
 
 <code-example format="." language="bash">
-npm install --save @angular/platform-server @nguniversal/module-map-ngfactory-loader ts-loader @nguniversal/express-engine
+npm install --save @bangular/platform-server @nguniversal/module-map-ngfactory-loader ts-loader @nguniversal/express-engine
 </code-example>
 
 {@a transition}
@@ -186,7 +186,7 @@ A Universal app can act as a dynamic, content-rich "splash screen" that engages 
 It gives the appearance of a near-instant application.
 
 Meanwhile, the browser downloads the client app scripts in background.
-Once loaded, Angular transitions from the static server-rendered page to the dynamically rendered views of the interactive client app.
+Once loaded, Bangular transitions from the static server-rendered page to the dynamically rendered views of the interactive client app.
 
 You must make a few changes to your application code to support both server-side rendering and the transition to the client app.
 
@@ -198,7 +198,7 @@ Replace that import with this one:
 <code-example path="universal/src/app/app.module.ts" region="browsermodule" title="src/app/app.module.ts (withServerTransition)">
 </code-example>
 
-Angular adds the `appId` value (which can be _any_ string) to the style-names of the server-rendered pages,
+Bangular adds the `appId` value (which can be _any_ string) to the style-names of the server-rendered pages,
 so that they can be identified and removed when the client app starts.
 
 You can get runtime information about the current platform and the `appId` by injection.
@@ -210,7 +210,7 @@ You can get runtime information about the current platform and the `appId` by in
 
 #### Absolute HTTP URLs
 
-The tutorial's `HeroService` and `HeroSearchService` delegate to the Angular `Http` module to fetch application data.
+The tutorial's `HeroService` and `HeroSearchService` delegate to the Bangular `Http` module to fetch application data.
 These services send requests to _relative_ URLs such as `api/heroes`.
 
 In a Universal app, `Http` URLs must be _absolute_ (e.g., `https://my-server.com/api/heroes`)
@@ -219,7 +219,7 @@ even when the Universal web server is capable of handling those requests.
 You'll have to change the services to make requests with absolute URLs when running on the server
 and with relative URLs when running in the browser.
 
-One solution is to provide the server's runtime origin under the Angular [`APP_BASE_REF` token](api/common/APP_BASE_HREF),
+One solution is to provide the server's runtime origin under the Bangular [`APP_BASE_REF` token](api/common/APP_BASE_HREF),
 inject it into the service, and prepend the origin to the request URL.
 
 Start by changing the `HeroService` constructor to take a second `origin` parameter that is optionally injected via the `APP_BASE_HREF` token.
@@ -242,21 +242,21 @@ to satisfy the router's need for a base address, as the tutorial sample does.
 
 ## Server code
 
-To run an Angular Universal application, you'll need a server that accepts client requests and returns rendered pages.
+To run an Bangular Universal application, you'll need a server that accepts client requests and returns rendered pages.
 
 {@a app-server-module}
 
 ### App server module
 
-The app server module class (conventionally named `AppServerModule`) is an Angular module that wraps the application's root module (`AppModule`) so that Universal can mediate between your application and the server.
-`AppServerModule` also tells Angular how to bootstrap your application when running as a Universal app.
+The app server module class (conventionally named `AppServerModule`) is an Bangular module that wraps the application's root module (`AppModule`) so that Universal can mediate between your application and the server.
+`AppServerModule` also tells Bangular how to bootstrap your application when running as a Universal app.
 
 Create an `app.server.module.ts` file in the `src/app/` directory with the following `AppServerModule` code:
 
 <code-example path="universal/src/app/app.server.module.ts" title="src/app/app.server.module.ts">
 </code-example>
 
-Notice that it imports first the client app's `AppModule`, the Angular Universal's `ServerModule` and the `ModuleMapLoaderModule`.
+Notice that it imports first the client app's `AppModule`, the Bangular Universal's `ServerModule` and the `ModuleMapLoaderModule`.
 
 The `ModuleMapLoaderModule` is a server-side module that allows lazy-loading of routes.
 
@@ -290,7 +290,7 @@ Create a `server.ts` file in the root directory and add the following code:
 
   **This sample server is not secure!**
   Be sure to add middleware to authenticate and authorize users
-  just as you would for a normal Angular application server.
+  just as you would for a normal Bangular application server.
 
 </div>
 
@@ -308,7 +308,7 @@ You'll call that function within a _template engine_ that's appropriate for your
 The first parameter is the `AppServerModule` that you wrote [earlier](#app-server-module).
 It's the bridge between the Universal server-side renderer and your application.
 
-The second parameter is the `extraProviders`. It is an optional Angular dependency injection providers, applicable when running on this server.
+The second parameter is the `extraProviders`. It is an optional Bangular dependency injection providers, applicable when running on this server.
 
 {@a provide-origin}
 
@@ -325,7 +325,7 @@ which then forwards it to the client in the HTTP response.
 <div class="l-sub-section">
 
   This wrappers are very useful to hide the complexity of the `renderModuleFactory`. There are more wrappers for different backend technologies
-  at the [Universal repository](https://github.com/angular/universal).
+  at the [Universal repository](https://github.com/bangular/universal).
 
 </div>
 
@@ -376,7 +376,7 @@ HTTP requests issued from a browser app are not the same as when issued by the u
 When a browser makes an HTTP request, the server can make assumptions about cookies, XSRF headers, etc.
 
 For example, the browser automatically sends auth cookies for the current user.
-Angular Universal cannot forward these credentials to a separate data server.
+Bangular Universal cannot forward these credentials to a separate data server.
 If your server handles HTTP requests, you'll have to add your own security plumbing.
 
 </div>
@@ -418,7 +418,7 @@ This config extends from the root's `tsconfig.json` file. Certain settings are n
 
 * The `module` property must be **commonjs** which can be require()'d into our server application.
 
-* The `angularCompilerOptions` section guides the AOT compiler:
+* The `bangularCompilerOptions` section guides the AOT compiler:
   * `entryModule` - the root module of the server application, expressed as `path/to/file#ClassName`.
 
 ### Universal Webpack configuration
@@ -460,7 +460,7 @@ From the command prompt, type
 npm run build:universal
 </code-example>
 
-The Angular CLI compiles and bundles the universal app into two different folders, `browser` and `server`.
+The Bangular CLI compiles and bundles the universal app into two different folders, `browser` and `server`.
 Webpack transpiles the `server.ts` file into Javascript.
 
 {@a serve}
@@ -516,12 +516,12 @@ The server-rendered app still launches quickly but the full client app may take 
 {@a summary}
 ## Summary
 
-This guide showed you how to take an existing Angular application and make it into a Universal app that does server-side rendering.
+This guide showed you how to take an existing Bangular application and make it into a Universal app that does server-side rendering.
 It also explained some of the key reasons for doing so.
 
  - Facilitate web crawlers (SEO)
  - Support low-bandwidth or low-power devices
  - Fast first page load
 
-Angular Universal can greatly improve the perceived startup performance of your app.
+Bangular Universal can greatly improve the perceived startup performance of your app.
 The slower the network, the more advantageous it becomes to have Universal display the first page to the user.

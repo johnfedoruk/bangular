@@ -3,18 +3,18 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgLocalization} from '@angular/common';
-import {ResourceLoader} from '@angular/compiler';
-import {MessageBundle} from '@angular/compiler/src/i18n/message_bundle';
-import {Xliff2} from '@angular/compiler/src/i18n/serializers/xliff2';
-import {HtmlParser} from '@angular/compiler/src/ml_parser/html_parser';
-import {DEFAULT_INTERPOLATION_CONFIG} from '@angular/compiler/src/ml_parser/interpolation_config';
-import {DebugElement, TRANSLATIONS, TRANSLATIONS_FORMAT} from '@angular/core';
-import {ComponentFixture, TestBed, async} from '@angular/core/testing';
-import {expect} from '@angular/platform-browser/testing/src/matchers';
+import {NgLocalization} from '@bangular/common';
+import {ResourceLoader} from '@bangular/compiler';
+import {MessageBundle} from '@bangular/compiler/src/i18n/message_bundle';
+import {Xliff2} from '@bangular/compiler/src/i18n/serializers/xliff2';
+import {HtmlParser} from '@bangular/compiler/src/ml_parser/html_parser';
+import {DEFAULT_INTERPOLATION_CONFIG} from '@bangular/compiler/src/ml_parser/interpolation_config';
+import {DebugElement, TRANSLATIONS, TRANSLATIONS_FORMAT} from '@bangular/core';
+import {ComponentFixture, TestBed, async} from '@bangular/core/testing';
+import {expect} from '@bangular/platform-browser/testing/src/matchers';
 
 import {SpyResourceLoader} from '../spies';
 

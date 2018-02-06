@@ -1,7 +1,7 @@
 
-/// Dummy modules to satisfy Angular Language Service
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+/// Dummy modules to satisfy Bangular Language Service
+import { NgModule } from '@bangular/core';
+import { CommonModule } from '@bangular/common';
 import { AppModule } from './app.module';
 
 ////////

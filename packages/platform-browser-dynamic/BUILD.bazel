@@ -10,7 +10,7 @@ ts_library(
             "src/**/*.ts",
         ],
     ),
-    module_name = "@angular/platform-browser-dynamic",
+    module_name = "@bangular/platform-browser-dynamic",
     deps = [
         "//packages:types",
         "//packages/common",

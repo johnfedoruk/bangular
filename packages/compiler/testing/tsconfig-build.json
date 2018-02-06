@@ -5,8 +5,8 @@
     "baseUrl": ".",
     "rootDir": "../",
     "paths": {
-      "@angular/compiler": ["../../../dist/packages/compiler"],
-      "@angular/core": ["../../../dist/packages/core"]
+      "@bangular/compiler": ["../../../dist/packages/compiler"],
+      "@bangular/core": ["../../../dist/packages/core"]
     },
     "outDir": "../../../dist/packages/compiler"
   },
@@ -16,7 +16,7 @@
     "../../../node_modules/zone.js/dist/zone.js.d.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "skipMetadataEmit": true,
     "skipTemplateCodegen": true

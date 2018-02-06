@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import {Body} from './body';
@@ -29,8 +29,8 @@ import {URLSearchParams} from './url_search_params';
  * where it may be useful to generate a `Request` with arbitrary headers and search params.
  *
  * ```typescript
- * import {Injectable, Injector} from '@angular/core';
- * import {HTTP_PROVIDERS, Http, Request, RequestMethod} from '@angular/http';
+ * import {Injectable, Injector} from '@bangular/core';
+ * import {HTTP_PROVIDERS, Http, Request, RequestMethod} from '@bangular/http';
  *
  * @Injectable()
  * class AutoAuthenticator {
@@ -52,7 +52,7 @@ import {URLSearchParams} from './url_search_params';
  * });
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated use @bangular/common/http instead
  */
 export class Request extends Body {
   /**

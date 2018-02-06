@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 // Make sure that the command line is read as the first thing
@@ -28,7 +28,7 @@ exports.config = {
   allScriptsTimeout: 11000,
   specs: ['dist/all/**/e2e_test/**/*_spec.js'],
   exclude: [
-    'dist/all/@angular/examples/**',
+    'dist/all/@bangular/examples/**',
     '**/key_events/**',  // can't tell why this is failing
     '**/sourcemap/**'    // fails only on travis
   ],
@@ -38,5 +38,5 @@ exports.config = {
   framework: 'jasmine2',
   jasmineNodeOpts:
       {showColors: true, defaultTimeoutInterval: 60000, print: function(msg) { console.log(msg) }},
-  useAllAngular2AppRoots: true,
+  useAllBangular2AppRoots: true,
 };

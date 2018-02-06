@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /* tslint:disable:no-var-keyword */
@@ -55,30 +55,30 @@ var specFiles: any =
                      cwd: distAll,
                      ignore: [
                        // the following code and tests are not compatible with CJS/node environment
-                       '@angular/_testing_init/**',
-                       '@angular/examples/**',
-                       '@angular/platform-browser/**',
-                       '@angular/platform-browser-dynamic/**',
-                       '@angular/core/test/zone/**',
-                       '@angular/core/test/render3/**',
-                       '@angular/core/test/fake_async_spec.*',
-                       '@angular/forms/test/**',
-                       '@angular/router/test/route_config/route_config_spec.*',
-                       '@angular/router/test/integration/bootstrap_spec.*',
-                       '@angular/integration_test/symbol_inspector/**',
-                       '@angular/upgrade/**',
-                       '@angular/**/e2e_test/**',
-                       'angular1_router/**',
+                       '@bangular/_testing_init/**',
+                       '@bangular/examples/**',
+                       '@bangular/platform-browser/**',
+                       '@bangular/platform-browser-dynamic/**',
+                       '@bangular/core/test/zone/**',
+                       '@bangular/core/test/render3/**',
+                       '@bangular/core/test/fake_async_spec.*',
+                       '@bangular/forms/test/**',
+                       '@bangular/router/test/route_config/route_config_spec.*',
+                       '@bangular/router/test/integration/bootstrap_spec.*',
+                       '@bangular/integration_test/symbol_inspector/**',
+                       '@bangular/upgrade/**',
+                       '@bangular/**/e2e_test/**',
+                       'bangular1_router/**',
                        'payload_tests/**',
                      ]
                    });
                  })
         // Run relevant subset of browser tests for features reused on the server side.
         // Make sure the security spec works on the server side!
-        .concat(glob.sync('@angular/platform-browser/test/security/**/*_spec.js', {cwd: distAll}))
-        .concat(['/@angular/platform-browser/test/browser/meta_spec.js'])
-        .concat(['/@angular/platform-browser/test/browser/title_spec.js'])
-        .concat(['/@angular/platform-browser/test/browser/transfer_state_spec.js'])
+        .concat(glob.sync('@bangular/platform-browser/test/security/**/*_spec.js', {cwd: distAll}))
+        .concat(['/@bangular/platform-browser/test/browser/meta_spec.js'])
+        .concat(['/@bangular/platform-browser/test/browser/title_spec.js'])
+        .concat(['/@bangular/platform-browser/test/browser/transfer_state_spec.js'])
         .reduce((specFiles: string[], paths: string[]) => specFiles.concat(paths), <string[]>[]);
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 100;
@@ -89,7 +89,7 @@ jrunner.onComplete(function(passed: boolean) { process.exit(passed ? 0 : 1); });
 jrunner.projectBaseDir = path.resolve(__dirname, '../../');
 jrunner.specDir = '';
 require('./test-cjs-main.js');
-distAllRequire('@angular/platform-server/src/domino_adapter.js').DominoAdapter.makeCurrent();
+distAllRequire('@bangular/platform-server/src/domino_adapter.js').DominoAdapter.makeCurrent();
 specFiles.forEach((file: string) => {
   const r = distAllRequire(file);
   if (r.main) {

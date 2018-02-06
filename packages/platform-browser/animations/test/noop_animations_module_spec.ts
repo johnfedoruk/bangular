@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
-import {animate, style, transition, trigger} from '@angular/animations';
-import {ɵAnimationEngine} from '@angular/animations/browser';
-import {Component} from '@angular/core';
-import {TestBed} from '@angular/core/testing';
+import {animate, style, transition, trigger} from '@bangular/animations';
+import {ɵAnimationEngine} from '@bangular/animations/browser';
+import {Component} from '@bangular/core';
+import {TestBed} from '@bangular/core/testing';
 
 import {NoopAnimationsModule} from '../src/module';
 

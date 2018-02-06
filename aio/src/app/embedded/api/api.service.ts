@@ -1,5 +1,5 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable, OnDestroy } from '@bangular/core';
+import { HttpClient, HttpErrorResponse } from '@bangular/common/http';
 
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { Subject } from 'rxjs/Subject';
@@ -39,7 +39,7 @@ export class ApiService implements OnDestroy {
 
   /**
   * Return a cached observable of API sections from a JSON file.
-  * API sections is an array of Angular top modules and metadata about their API documents (items).
+  * API sections is an array of Bangular top modules and metadata about their API documents (items).
    */
   get sections() {
 
@@ -62,7 +62,7 @@ export class ApiService implements OnDestroy {
 
  /**
   * Fetch API sections from a JSON file.
-  * API sections is an array of Angular top modules and metadata about their API documents (items).
+  * API sections is an array of Bangular top modules and metadata about their API documents (items).
   * Updates `sections` observable
   *
   * @param {string} [src] - Name of the api list JSON file

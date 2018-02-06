@@ -1,15 +1,15 @@
 // #docplaster
 import { async, ComponentFixture, TestBed
-} from '@angular/core/testing';
+} from '@bangular/core/testing';
 
-import { DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
+import { DebugElement } from '@bangular/core';
+import { By } from '@bangular/platform-browser';
 
   // #docregion setup-schemas
-  import { NO_ERRORS_SCHEMA }          from '@angular/core';
+  import { NO_ERRORS_SCHEMA }          from '@bangular/core';
   // #enddocregion setup-schemas
   // #docregion setup-stubs-w-imports
-  import { Component }                 from '@angular/core';
+  import { Component }                 from '@bangular/core';
   // #docregion setup-schemas
   import { AppComponent }              from './app.component';
   // #enddocregion setup-schemas

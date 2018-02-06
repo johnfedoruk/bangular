@@ -1,72 +1,72 @@
-# Upgrading from AngularJS
+# Upgrading from BangularJS
 
-_Angular_ is the name for the Angular of today and tomorrow.
-_AngularJS_ is the name for all v1.x versions of Angular.
+_Bangular_ is the name for the Bangular of today and tomorrow.
+_BangularJS_ is the name for all v1.x versions of Bangular.
 
-AngularJS apps are great.
-Always consider the business case before moving to Angular.
+BangularJS apps are great.
+Always consider the business case before moving to Bangular.
 An important part of that case is the time and effort to get there.
-This guide describes the built-in tools for efficiently migrating AngularJS projects over to the
-Angular platform, a piece at a time.
+This guide describes the built-in tools for efficiently migrating BangularJS projects over to the
+Bangular platform, a piece at a time.
 
 Some applications will be easier to upgrade than others, and there are
 many ways to make it easier for yourself. It is possible to
-prepare and align AngularJS applications with Angular even before beginning
+prepare and align BangularJS applications with Bangular even before beginning
 the upgrade process. These preparation steps are all about making the code
 more decoupled, more maintainable, and better aligned with modern development
 tools. That means in addition to making the upgrade easier,
-you will also improve the existing AngularJS applications.
+you will also improve the existing BangularJS applications.
 
 One of the keys to a successful upgrade is to do it incrementally,
 by running the two frameworks side by side in the same application, and
-porting AngularJS components to Angular one by one. This makes it possible
+porting BangularJS components to Bangular one by one. This makes it possible
 to upgrade even large and complex applications without disrupting other
 business, because the work can be done collaboratively and spread over
-a period of time. The `upgrade` module in Angular has been designed to
+a period of time. The `upgrade` module in Bangular has been designed to
 make incremental upgrading seamless.
 
 ## Preparation
 
-There are many ways to structure AngularJS applications. When you begin
-to upgrade these applications to Angular, some will turn out to be
+There are many ways to structure BangularJS applications. When you begin
+to upgrade these applications to Bangular, some will turn out to be
 much more easy to work with than others. There are a few key techniques
 and patterns that you can apply to future proof apps even before you
 begin the migration.
 
-{@a follow-the-angular-styleguide}
+{@a follow-the-bangular-styleguide}
 
-### Follow the AngularJS Style Guide
+### Follow the BangularJS Style Guide
 
-The [AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
+The [BangularJS Style Guide](https://github.com/johnpapa/bangular-styleguide/blob/master/a1/README.md)
 collects patterns and practices that have been proven to result in
-cleaner and more maintainable AngularJS applications. It contains a wealth
-of information about how to write and organize AngularJS code - and equally
-importantly - how **not** to write and organize AngularJS code.
+cleaner and more maintainable BangularJS applications. It contains a wealth
+of information about how to write and organize BangularJS code - and equally
+importantly - how **not** to write and organize BangularJS code.
 
-Angular is a reimagined version of the best parts of AngularJS. In that
-sense, its goals are the same as the AngularJS Style Guide's: To preserve
-the good parts of AngularJS, and to avoid the bad parts. There's a lot
-more to Angular than just that of course, but this does mean that
-*following the style guide helps make your AngularJS app more closely
-aligned with Angular*.
+Bangular is a reimagined version of the best parts of BangularJS. In that
+sense, its goals are the same as the BangularJS Style Guide's: To preserve
+the good parts of BangularJS, and to avoid the bad parts. There's a lot
+more to Bangular than just that of course, but this does mean that
+*following the style guide helps make your BangularJS app more closely
+aligned with Bangular*.
 
 There are a few rules in particular that will make it much easier to do
-*an incremental upgrade* using the Angular `upgrade/static` module:
+*an incremental upgrade* using the Bangular `upgrade/static` module:
 
-* The [Rule of 1](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#single-responsibility)
+* The [Rule of 1](https://github.com/johnpapa/bangular-styleguide/blob/master/a1/README.md#single-responsibility)
   states that there should be one component per file. This not only makes
   components easy to navigate and find, but will also allow us to migrate
   them between languages and frameworks one at a time. In this example application,
   each controller, component, service, and filter is in its own source file.
 
-* The [Folders-by-Feature Structure](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#folders-by-feature-structure)
-  and [Modularity](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#modularity)
+* The [Folders-by-Feature Structure](https://github.com/johnpapa/bangular-styleguide/blob/master/a1/README.md#folders-by-feature-structure)
+  and [Modularity](https://github.com/johnpapa/bangular-styleguide/blob/master/a1/README.md#modularity)
   rules define similar principles on a higher level of abstraction: Different parts of the
   application should reside in different directories and NgModules.
 
 When an application is laid out feature per feature in this way, it can also be
 migrated one feature at a time. For applications that don't already look like
-this, applying the rules in the AngularJS style guide is a highly recommended
+this, applying the rules in the BangularJS style guide is a highly recommended
 preparation step. And this is not just for the sake of the upgrade - it is just
 solid advice in general!
 
@@ -93,10 +93,10 @@ to package them all up into production bundles with batteries included.
 
 ### Migrating to TypeScript
 
-If part of the Angular upgrade plan is to also take TypeScript into use, it makes
+If part of the Bangular upgrade plan is to also take TypeScript into use, it makes
 sense to bring in the TypeScript compiler even before the upgrade itself begins.
 This means there's one less thing to learn and think about during the actual upgrade.
-It also means you can start using TypeScript features in your AngularJS code.
+It also means you can start using TypeScript features in your BangularJS code.
 
 Since TypeScript is a superset of ECMAScript 2015, which in turn is a superset
 of ECMAScript 5, "switching" to TypeScript doesn't necessarily require anything
@@ -117,28 +117,28 @@ Additional steps like the following can give us much more bang for the buck:
   added to make the code more expressive.
 
 * Services and controllers can be turned into *classes*. That way they'll be a step
-  closer to becoming Angular service and component classes, which will make
+  closer to becoming Bangular service and component classes, which will make
   life easier after the upgrade.
 
 ### Using Component Directives
 
-In Angular, components are the main primitive from which user interfaces
+In Bangular, components are the main primitive from which user interfaces
 are built. You define the different portions of the UI as components and
 compose them into a full user experience.
 
-You can also do this in AngularJS, using *component directives*. These are
+You can also do this in BangularJS, using *component directives*. These are
 directives that define their own templates, controllers, and input/output bindings -
-the same things that Angular components define. Applications built with
-component directives are much easier to migrate to Angular than applications
+the same things that Bangular components define. Applications built with
+component directives are much easier to migrate to Bangular than applications
 built with lower-level features like `ng-controller`,  `ng-include`, and scope
 inheritance.
 
-To be Angular compatible, an AngularJS component directive should configure
+To be Bangular compatible, an BangularJS component directive should configure
 these attributes:
 
 * `restrict: 'E'`. Components are usually used as elements.
-* `scope: {}` - an isolate scope. In Angular, components are always isolated
-  from their surroundings, and you should do this in AngularJS too.
+* `scope: {}` - an isolate scope. In Bangular, components are always isolated
+  from their surroundings, and you should do this in BangularJS too.
 * `bindToController: {}`. Component inputs and outputs should be bound
   to the controller instead of using the `$scope`.
 * `controller` and `controllerAs`. Components have their own controllers.
@@ -152,20 +152,20 @@ Component directives may also use the following attributes:
 
 Component directives **should not** use the following attributes:
 
-* `compile`. This will not be supported in Angular.
-* `replace: true`. Angular never replaces a component element with the
-  component template. This attribute is also deprecated in AngularJS.
-* `priority` and `terminal`. While AngularJS components may use these,
-  they are not used in Angular and it is better not to write code
+* `compile`. This will not be supported in Bangular.
+* `replace: true`. Bangular never replaces a component element with the
+  component template. This attribute is also deprecated in BangularJS.
+* `priority` and `terminal`. While BangularJS components may use these,
+  they are not used in Bangular and it is better not to write code
   that relies on them.
 
-An AngularJS component directive that is fully aligned with the Angular
+An BangularJS component directive that is fully aligned with the Bangular
 architecture may look something like this:
 
 <code-example path="upgrade-module/src/app/hero-detail.directive.ts" title="hero-detail.directive.ts">
 </code-example>
 
-AngularJS 1.5 introduces the [component API](https://docs.angularjs.org/api/ng/type/angular.Module#component)
+BangularJS 1.5 introduces the [component API](https://docs.bangularjs.org/api/ng/type/bangular.Module#component)
 that makes it easier to define component directives like these. It is a good idea to use
 this API for component directives for several reasons:
 
@@ -180,15 +180,15 @@ using the component API:
 </code-example>
 
 Controller lifecycle hook methods `$onInit()`, `$onDestroy()`, and `$onChanges()`
-are another convenient feature that AngularJS 1.5 introduces. They all have nearly
-exact [equivalents in Angular](guide/lifecycle-hooks), so organizing component lifecycle
-logic around them will ease the eventual Angular upgrade process.
+are another convenient feature that BangularJS 1.5 introduces. They all have nearly
+exact [equivalents in Bangular](guide/lifecycle-hooks), so organizing component lifecycle
+logic around them will ease the eventual Bangular upgrade process.
 
 ## Upgrading with ngUpgrade
 
-The ngUpgrade library in Angular is a very useful tool for upgrading
+The ngUpgrade library in Bangular is a very useful tool for upgrading
 anything but the smallest of applications. With it you can mix and match
-AngularJS and Angular components in the same application and have them interoperate
+BangularJS and Bangular components in the same application and have them interoperate
 seamlessly. That means you don't have to do the upgrade work all at once,
 since there's a natural coexistence between the two frameworks during the
 transition period.
@@ -197,11 +197,11 @@ transition period.
 
 The primary tool provided by ngUpgrade is called the `UpgradeModule`.
 This is a module that contains utilities for bootstrapping and managing hybrid
-applications that support both Angular and AngularJS code.
+applications that support both Bangular and BangularJS code.
 
-When you use ngUpgrade, what you're really doing is *running both AngularJS and
-Angular at the same time*. All Angular code is running in the Angular
-framework, and AngularJS code in the AngularJS framework. Both of these are the
+When you use ngUpgrade, what you're really doing is *running both BangularJS and
+Bangular at the same time*. All Bangular code is running in the Bangular
+framework, and BangularJS code in the BangularJS framework. Both of these are the
 actual, fully featured versions of the frameworks. There is no emulation going on,
 so you can expect to have all the features and natural behavior of both frameworks.
 
@@ -211,17 +211,17 @@ in three main areas: Dependency injection, the DOM, and change detection.
 
 #### Dependency Injection
 
-Dependency injection is front and center in both AngularJS and
-Angular, but there are some key differences between the two
+Dependency injection is front and center in both BangularJS and
+Bangular, but there are some key differences between the two
 frameworks in how it actually works.
 
 <table>
   <tr>
     <th>
-      AngularJS
+      BangularJS
     </th>
     <th>
-      Angular
+      Bangular
     </th>
   </tr>
   <tr>
@@ -255,16 +255,16 @@ Even accounting for these differences you can still have dependency injection
 interoperability. The `UpgradeModule` resolves the differences and makes
 everything work seamlessly:
 
-* You can make AngularJS services available for injection to Angular code
+* You can make BangularJS services available for injection to Bangular code
   by *upgrading* them. The same singleton instance of each service is shared
-  between the frameworks. In Angular these services will always be in the
+  between the frameworks. In Bangular these services will always be in the
   *root injector* and available to all components.
 
-* You can also make Angular services available for injection to AngularJS code
-  by *downgrading* them. Only services from the Angular root injector can
+* You can also make Bangular services available for injection to BangularJS code
+  by *downgrading* them. Only services from the Bangular root injector can
   be downgraded. Again, the same singleton instances are shared between the frameworks.
   When you register a downgraded service, you must explicitly specify a *string token* that you want to
-  use in AngularJS.
+  use in BangularJS.
 
 <figure>
   <img src="generated/images/guide/upgrade/injectors.png" alt="The two injectors in a hybrid application">
@@ -273,33 +273,33 @@ everything work seamlessly:
 #### Components and the DOM
 
 In the DOM of a hybrid ngUpgrade application are components and
-directives from both AngularJS and Angular. These components
+directives from both BangularJS and Bangular. These components
 communicate with each other by using the input and output bindings
 of their respective frameworks, which ngUpgrade bridges together. They may also
 communicate through shared injected dependencies, as described above.
 
 The key thing to understand about a hybrid application is that every element in the DOM is owned by exactly one of the two frameworks.
 The other framework ignores it. If an element is
-owned by AngularJS, Angular treats it as if it didn't exist,
+owned by BangularJS, Bangular treats it as if it didn't exist,
 and vice versa.
 
-So normally a hybrid application begins life as an AngularJS application,
-and it is AngularJS that processes the root template, e.g. the index.html.
-Angular then steps into the picture when an Angular component is used somewhere
-in an AngularJS template. That component's template will then be managed
-by Angular, and it may contain any number of Angular components and
+So normally a hybrid application begins life as an BangularJS application,
+and it is BangularJS that processes the root template, e.g. the index.html.
+Bangular then steps into the picture when an Bangular component is used somewhere
+in an BangularJS template. That component's template will then be managed
+by Bangular, and it may contain any number of Bangular components and
 directives.
 
 Beyond that, you may interleave the two frameworks.
 You always cross the boundary between the two frameworks by one of two
 ways:
 
-1. By using a component from the other framework: An AngularJS template
-   using an Angular component, or an Angular template using an
-   AngularJS component.
+1. By using a component from the other framework: An BangularJS template
+   using an Bangular component, or an Bangular template using an
+   BangularJS component.
 
 2. By transcluding or projecting content from the other framework. ngUpgrade
-    bridges the related concepts of AngularJS transclusion and Angular content
+    bridges the related concepts of BangularJS transclusion and Bangular content
     projection together.
 
 <figure>
@@ -309,42 +309,42 @@ ways:
 Whenever you use a component that belongs to the other framework, a
 switch between framework boundaries occurs. However, that switch only
 happens to the elements in the template of that component. Consider a situation
-where you use an Angular component from AngularJS like this:
+where you use an Bangular component from BangularJS like this:
 
 <code-example language="html" escape="html">
   &lt;a-component&gt;&lt;/a-component&gt;
 </code-example>
 
-The DOM element `<a-component>` will remain to be an AngularJS managed
-element, because it's defined in an AngularJS template. That also
-means you can apply additional AngularJS directives to it, but *not*
-Angular directives. It is only in the template of the `<a-component>`
-where Angular steps in. This same rule also applies when you
-use AngularJS component directives from Angular.
+The DOM element `<a-component>` will remain to be an BangularJS managed
+element, because it's defined in an BangularJS template. That also
+means you can apply additional BangularJS directives to it, but *not*
+Bangular directives. It is only in the template of the `<a-component>`
+where Bangular steps in. This same rule also applies when you
+use BangularJS component directives from Bangular.
 
 #### Change Detection
 
-The `scope.$apply()` is how AngularJS detects changes and updates data bindings.
+The `scope.$apply()` is how BangularJS detects changes and updates data bindings.
 After every event that occurs, `scope.$apply()` gets called. This is done either
 automatically by the framework, or manually by you.
 
-In Angular things are different. While change detection still
+In Bangular things are different. While change detection still
 occurs after every event, no one needs to call `scope.$apply()` for
-that to happen. This is because all Angular code runs inside something
-called the [Angular zone](api/core/NgZone). Angular always
+that to happen. This is because all Bangular code runs inside something
+called the [Bangular zone](api/core/NgZone). Bangular always
 knows when the code finishes, so it also knows when it should kick off
 change detection. The code itself doesn't have to call `scope.$apply()`
 or anything like it.
 
 In the case of hybrid applications, the `UpgradeModule` bridges the
-AngularJS and Angular approaches. Here's what happens:
+BangularJS and Bangular approaches. Here's what happens:
 
-* Everything that happens in the application runs inside the Angular zone.
-  This is true whether the event originated in AngularJS or Angular code.
-  The zone triggers Angular change detection after every event.
+* Everything that happens in the application runs inside the Bangular zone.
+  This is true whether the event originated in BangularJS or Bangular code.
+  The zone triggers Bangular change detection after every event.
 
-* The `UpgradeModule` will invoke the AngularJS `$rootScope.$apply()` after
-  every turn of the Angular zone. This also triggers AngularJS change
+* The `UpgradeModule` will invoke the BangularJS `$rootScope.$apply()` after
+  every turn of the Bangular zone. This also triggers BangularJS change
   detection after every event.
 
 <figure>
@@ -352,38 +352,38 @@ AngularJS and Angular approaches. Here's what happens:
 </figure>
 
 In practice, you do not need to call `$apply()`,
-regardless of whether it is in AngularJS on Angular. The
+regardless of whether it is in BangularJS on Bangular. The
 `UpgradeModule` does it for us. You *can* still call `$apply()` so there
 is no need to remove such calls from existing code. Those calls just trigger
-additional AngularJS change detection checks in a hybrid application.
+additional BangularJS change detection checks in a hybrid application.
 
-When you downgrade an Angular component and then use it from AngularJS,
-the component's inputs will be watched using AngularJS change detection.
+When you downgrade an Bangular component and then use it from BangularJS,
+the component's inputs will be watched using BangularJS change detection.
 When those inputs change, the corresponding properties in the component
 are set. You can also hook into the changes by implementing the
 [OnChanges](api/core/OnChanges) interface in the component,
 just like you could if it hadn't been downgraded.
 
-Correspondingly, when you upgrade an AngularJS component and use it from Angular,
+Correspondingly, when you upgrade an BangularJS component and use it from Bangular,
 all the bindings defined for the component directive's `scope` (or `bindToController`)
-will be hooked into Angular change detection. They will be treated
-as regular Angular inputs. Their values will be written to the upgraded component's
+will be hooked into Bangular change detection. They will be treated
+as regular Bangular inputs. Their values will be written to the upgraded component's
 scope (or controller) when they change.
 
-### Using UpgradeModule with Angular _NgModules_
+### Using UpgradeModule with Bangular _NgModules_
 
-Both AngularJS and Angular have their own concept of modules
+Both BangularJS and Bangular have their own concept of modules
 to help organize an application into cohesive blocks of functionality.
 
 Their details are quite different in architecture and implementation.
-In AngularJS, you add Angular assets to the `angular.module` property.
-In Angular, you create one or more classes adorned with an `NgModule` decorator
-that describes Angular assets in metadata. The differences blossom from there.
+In BangularJS, you add Bangular assets to the `bangular.module` property.
+In Bangular, you create one or more classes adorned with an `NgModule` decorator
+that describes Bangular assets in metadata. The differences blossom from there.
 
-In a hybrid application you run both versions of Angular at the same time.
-That means that you need at least one module each from both AngularJS and Angular.
+In a hybrid application you run both versions of Bangular at the same time.
+That means that you need at least one module each from both BangularJS and Bangular.
 You will import `UpgradeModule` inside the NgModule, and then use it for
-bootstrapping the AngularJS module.
+bootstrapping the BangularJS module.
 
 <div class="l-sub-section">
 
@@ -393,20 +393,20 @@ For more information, see [NgModules](guide/ngmodules).
 
 ### Bootstrapping hybrid applications
 
-To bootstrap a hybrid application, you must bootstrap each of the Angular and
-AngularJS parts of the application. You must bootstrap the Angular bits first and
-then ask the `UpgradeModule` to bootstrap the AngularJS bits next.
+To bootstrap a hybrid application, you must bootstrap each of the Bangular and
+BangularJS parts of the application. You must bootstrap the Bangular bits first and
+then ask the `UpgradeModule` to bootstrap the BangularJS bits next.
 
-In an AngularJS application you have a root AngularJS module, which will also
-be used to bootstrap the AngularJS application.
+In an BangularJS application you have a root BangularJS module, which will also
+be used to bootstrap the BangularJS application.
 
 <code-example path="upgrade-module/src/app/ajs-bootstrap/app.module.ts" region="ng1module" title="app.module.ts">
 </code-example>
 
-Pure AngularJS applications can be automatically bootstrapped by using an `ng-app`
+Pure BangularJS applications can be automatically bootstrapped by using an `ng-app`
 directive somewhere on the HTML page. But for hybrid applications, you manually bootstrap via the
-`UpgradeModule`. Therefore, it is a good preliminary step to switch AngularJS applications to use the
-manual JavaScript [`angular.bootstrap`](https://docs.angularjs.org/api/ng/function/angular.bootstrap)
+`UpgradeModule`. Therefore, it is a good preliminary step to switch BangularJS applications to use the
+manual JavaScript [`bangular.bootstrap`](https://docs.bangularjs.org/api/ng/function/bangular.bootstrap)
 method even before switching them to hybrid mode.
 
 Say you have an `ng-app` driven bootstrap such as this one:
@@ -415,18 +415,18 @@ Say you have an `ng-app` driven bootstrap such as this one:
 </code-example>
 
 You can remove the `ng-app` and `ng-strict-di` directives from the HTML
-and instead switch to calling `angular.bootstrap` from JavaScript, which
+and instead switch to calling `bangular.bootstrap` from JavaScript, which
 will result in the same thing:
 
 <code-example path="upgrade-module/src/app/ajs-bootstrap/app.module.ts" region="bootstrap" title="app.module.ts">
 </code-example>
 
-To begin converting your AngularJS application to a hybrid, you need to load the Angular framework.
+To begin converting your BangularJS application to a hybrid, you need to load the Bangular framework.
 You can see how this can be done with SystemJS by following the instructions in [Setup](guide/setup),
-selectively copying code from the [QuickStart github repository](https://github.com/angular/quickstart).
+selectively copying code from the [QuickStart github repository](https://github.com/bangular/quickstart).
 
-You also need to install the `@angular/upgrade` package via `npm install @angular/upgrade --save`
-and add a mapping for the `@angular/upgrade/static` package:
+You also need to install the `@bangular/upgrade` package via `npm install @bangular/upgrade --save`
+and add a mapping for the `@bangular/upgrade/static` package:
 
 <code-example path="upgrade-module/src/systemjs.config.1.js" region="upgrade-static-umd" title="systemjs.config.js (map)">
 </code-example>
@@ -436,18 +436,18 @@ Next, create an `app.module.ts` file and add the following `NgModule` class:
 <code-example path="upgrade-module/src/app/ajs-a-hybrid-bootstrap/app.module.ts" region="ngmodule" title="app.module.ts">
 </code-example>
 
-This bare minimum `NgModule` imports `BrowserModule`, the module every Angular browser-based app must have.
-It also imports `UpgradeModule` from `@angular/upgrade/static`, which exports providers that will be used
+This bare minimum `NgModule` imports `BrowserModule`, the module every Bangular browser-based app must have.
+It also imports `UpgradeModule` from `@bangular/upgrade/static`, which exports providers that will be used
 for upgrading and downgrading services and components.
 
 In the constructor of the `AppModule`, use dependency injection to get a hold of the `UpgradeModule` instance,
-and use it to bootstrap the AngularJS app in the `AppModule.ngDoBootstrap` method.
-The `upgrade.bootstrap` method takes the exact same arguments as [angular.bootstrap](https://docs.angularjs.org/api/ng/function/angular.bootstrap):
+and use it to bootstrap the BangularJS app in the `AppModule.ngDoBootstrap` method.
+The `upgrade.bootstrap` method takes the exact same arguments as [bangular.bootstrap](https://docs.bangularjs.org/api/ng/function/bangular.bootstrap):
 
 <div class="l-sub-section">
 
 Note that you do not add a `bootstrap` declaration to the `@NgModule` decorator, since
-AngularJS will own the root template of the application.
+BangularJS will own the root template of the application.
 
 </div>
 
@@ -457,34 +457,34 @@ Now you can bootstrap `AppModule` using the `platformBrowserDynamic.bootstrapMod
 </code-example>
 
 Congratulations! You're running a hybrid application! The
-existing AngularJS code works as before _and_ you're ready to start adding Angular code.
+existing BangularJS code works as before _and_ you're ready to start adding Bangular code.
 
-### Using Angular Components from AngularJS Code
+### Using Bangular Components from BangularJS Code
 
-<img src="generated/images/guide/upgrade/ajs-to-a.png" alt="Using an Angular component from AngularJS code" class="left">
+<img src="generated/images/guide/upgrade/ajs-to-a.png" alt="Using an Bangular component from BangularJS code" class="left">
 
 Once you're running a hybrid app, you can start the gradual process of upgrading
-code. One of the more common patterns for doing that is to use an Angular component
-in an AngularJS context. This could be a completely new component or one that was
-previously AngularJS but has been rewritten for Angular.
+code. One of the more common patterns for doing that is to use an Bangular component
+in an BangularJS context. This could be a completely new component or one that was
+previously BangularJS but has been rewritten for Bangular.
 
-Say you have a simple Angular component that shows information about a hero:
+Say you have a simple Bangular component that shows information about a hero:
 
 <code-example path="upgrade-module/src/app/downgrade-static/hero-detail.component.ts" title="hero-detail.component.ts">
 </code-example>
 
-If you want to use this component from AngularJS, you need to *downgrade* it
-using the `downgradeComponent()` method. The result is an AngularJS
-*directive*, which you can then register in the AngularJS module:
+If you want to use this component from BangularJS, you need to *downgrade* it
+using the `downgradeComponent()` method. The result is an BangularJS
+*directive*, which you can then register in the BangularJS module:
 
 <code-example path="upgrade-module/src/app/downgrade-static/app.module.ts" region="downgradecomponent" title="app.module.ts">
 </code-example>
 
-Because `HeroDetailComponent` is an Angular component, you must also add it to the
+Because `HeroDetailComponent` is an Bangular component, you must also add it to the
 `declarations` in the `AppModule`.
 
-And because this component is being used from the AngularJS module, and is an entry point into
-the Angular application, you must add it to the `entryComponents` for the
+And because this component is being used from the BangularJS module, and is an entry point into
+the Bangular application, you must add it to the `entryComponents` for the
 NgModule.
 
 <code-example path="upgrade-module/src/app/downgrade-static/app.module.ts" region="ngmodule" title="app.module.ts">
@@ -492,41 +492,41 @@ NgModule.
 
 <div class="l-sub-section">
 
-All Angular components, directives and pipes must be declared in an NgModule.
+All Bangular components, directives and pipes must be declared in an NgModule.
 
 </div>
 
-The net result is an AngularJS directive called `heroDetail`, that you can
-use like any other directive in AngularJS templates.
+The net result is an BangularJS directive called `heroDetail`, that you can
+use like any other directive in BangularJS templates.
 
 <code-example path="upgrade-module/src/index-downgrade-static.html" region="usecomponent">
 </code-example>
 
 <div class="alert is-helpful">
 
-Note that this AngularJS is an element directive (`restrict: 'E'`) called `heroDetail`.
-An AngularJS element directive is matched based on its _name_.
-*The `selector` metadata of the downgraded Angular component is ignored.*
+Note that this BangularJS is an element directive (`restrict: 'E'`) called `heroDetail`.
+An BangularJS element directive is matched based on its _name_.
+*The `selector` metadata of the downgraded Bangular component is ignored.*
 
 </div>
 
 Most components are not quite this simple, of course. Many of them
 have *inputs and outputs* that connect them to the outside world. An
-Angular hero detail component with inputs and outputs might look
+Bangular hero detail component with inputs and outputs might look
 like this:
 
 <code-example path="upgrade-module/src/app/downgrade-io/hero-detail.component.ts" title="hero-detail.component.ts">
 </code-example>
 
-These inputs and outputs can be supplied from the AngularJS template, and the
+These inputs and outputs can be supplied from the BangularJS template, and the
 `downgradeComponent()` method takes care of wiring them up:
 
 <code-example path="upgrade-module/src/index-downgrade-io.html" region="usecomponent">
 </code-example>
 
-Note that even though you are in an AngularJS template, **you're using Angular
+Note that even though you are in an BangularJS template, **you're using Bangular
 attribute syntax to bind the inputs and outputs**. This is a requirement for downgraded
-components. The expressions themselves are still regular AngularJS expressions.
+components. The expressions themselves are still regular BangularJS expressions.
 
 <div class="callout is-important">
 
@@ -534,15 +534,15 @@ components. The expressions themselves are still regular AngularJS expressions.
   Use kebab-case for downgraded component attributes
 </header>
 
-There's one notable exception to the rule of using Angular attribute syntax
+There's one notable exception to the rule of using Bangular attribute syntax
 for downgraded components. It has to do with input or output names that consist
-of multiple words. In Angular, you would bind these attributes using camelCase:
+of multiple words. In Bangular, you would bind these attributes using camelCase:
 
 <code-example format="">
   [myHero]="hero"
 </code-example>
 
-But when using them from AngularJS templates, you must use kebab-case:
+But when using them from BangularJS templates, you must use kebab-case:
 
 <code-example format="">
   [my-hero]="hero"
@@ -554,31 +554,31 @@ The `$event` variable can be used in outputs to gain access to the
 object that was emitted. In this case it will be the `Hero` object, because
 that is what was passed to `this.deleted.emit()`.
 
-Since this is an AngularJS template, you can still use other AngularJS
-directives on the element, even though it has Angular binding attributes on it.
+Since this is an BangularJS template, you can still use other BangularJS
+directives on the element, even though it has Bangular binding attributes on it.
 For example, you can easily make multiple copies of the component using `ng-repeat`:
 
 <code-example path="upgrade-module/src/index-downgrade-io.html" region="userepeatedcomponent">
 </code-example>
 
-### Using AngularJS Component Directives from Angular Code
+### Using BangularJS Component Directives from Bangular Code
 
-<img src="generated/images/guide/upgrade/a-to-ajs.png" alt="Using an AngularJS component from Angular code" class="left">
+<img src="generated/images/guide/upgrade/a-to-ajs.png" alt="Using an BangularJS component from Bangular code" class="left">
 
-So, you can write an Angular component and then use it from AngularJS
+So, you can write an Bangular component and then use it from BangularJS
 code. This is useful when you start to migrate from lower-level
 components and work your way up. But in some cases it is more convenient
 to do things in the opposite order: To start with higher-level components
 and work your way down. This too can be done using the `UpgradeModule`.
-You can *upgrade* AngularJS component directives and then use them from
-Angular.
+You can *upgrade* BangularJS component directives and then use them from
+Bangular.
 
-Not all kinds of AngularJS directives can be upgraded. The directive
+Not all kinds of BangularJS directives can be upgraded. The directive
 really has to be a *component directive*, with the characteristics
 [described in the preparation guide above](guide/upgrade#using-component-directives).
 The safest bet for ensuring compatibility is using the
-[component API](https://docs.angularjs.org/api/ng/type/angular.Module)
-introduced in AngularJS 1.5.
+[component API](https://docs.bangularjs.org/api/ng/type/bangular.Module)
+introduced in BangularJS 1.5.
 
 A simple example of an upgradable component is one that just has a template
 and a controller:
@@ -586,9 +586,9 @@ and a controller:
 <code-example path="upgrade-module/src/app/upgrade-static/hero-detail.component.ts" region="hero-detail" title="hero-detail.component.ts">
 </code-example>
 
-You can *upgrade* this component to Angular using the `UpgradeComponent` class.
-By creating a new Angular **directive** that extends `UpgradeComponent` and doing a `super` call
-inside its constructor, you have a fully upgraded AngularJS component to be used inside Angular.
+You can *upgrade* this component to Bangular using the `UpgradeComponent` class.
+By creating a new Bangular **directive** that extends `UpgradeComponent` and doing a `super` call
+inside its constructor, you have a fully upgraded BangularJS component to be used inside Bangular.
 All that is left is to add it to `AppModule`'s `declarations` array.
 
 <code-example path="upgrade-module/src/app/upgrade-static/hero-detail.component.ts" region="hero-detail-upgrade" title="hero-detail.component.ts">
@@ -599,17 +599,17 @@ All that is left is to add it to `AppModule`'s `declarations` array.
 
 <div class="alert is-helpful">
 
-Upgraded components are Angular **directives**, instead of **components**, because Angular
-is unaware that AngularJS will create elements under it. As far as Angular knows, the upgraded
-component is just a directive - a tag - and Angular doesn't have to concern itself with
+Upgraded components are Bangular **directives**, instead of **components**, because Bangular
+is unaware that BangularJS will create elements under it. As far as Bangular knows, the upgraded
+component is just a directive - a tag - and Bangular doesn't have to concern itself with
 its children.
 
 </div>
 
 An upgraded component may also have inputs and outputs, as defined by
-the scope/controller bindings of the original AngularJS component
-directive. When you use the component from an Angular template,
-provide the inputs and outputs using **Angular template syntax**,
+the scope/controller bindings of the original BangularJS component
+directive. When you use the component from an Bangular template,
+provide the inputs and outputs using **Bangular template syntax**,
 observing the following rules:
 
 <table>
@@ -681,21 +681,21 @@ observing the following rules:
     <td>
 
       As a two-way binding: `<my-component [(myValue)]="anExpression">`.
-      Since most AngularJS two-way bindings actually only need a one-way binding
+      Since most BangularJS two-way bindings actually only need a one-way binding
       in practice, `<my-component [myValue]="anExpression">` is often enough.
 
     </td>
   </tr>
 </table>
 
-For example, imagine a hero detail AngularJS component directive
+For example, imagine a hero detail BangularJS component directive
 with one input and one output:
 
 <code-example path="upgrade-module/src/app/upgrade-io/hero-detail.component.ts" region="hero-detail-io" title="hero-detail.component.ts">
 </code-example>
 
-You can upgrade this component to Angular, annotate inputs and outputs in the upgrade directive,
-and then provide the input and output using Angular template syntax:
+You can upgrade this component to Bangular, annotate inputs and outputs in the upgrade directive,
+and then provide the input and output using Bangular template syntax:
 
 <code-example path="upgrade-module/src/app/upgrade-io/hero-detail.component.ts" region="hero-detail-io-upgrade" title="hero-detail.component.ts">
 </code-example>
@@ -703,73 +703,73 @@ and then provide the input and output using Angular template syntax:
 <code-example path="upgrade-module/src/app/upgrade-io/container.component.ts" title="container.component.ts">
 </code-example>
 
-### Projecting AngularJS Content into Angular Components
+### Projecting BangularJS Content into Bangular Components
 
-<img src="generated/images/guide/upgrade/ajs-to-a-with-projection.png" alt="Projecting AngularJS content into Angular" class="left">
+<img src="generated/images/guide/upgrade/ajs-to-a-with-projection.png" alt="Projecting BangularJS content into Bangular" class="left">
 
-When you are using a downgraded Angular component from an AngularJS
+When you are using a downgraded Bangular component from an BangularJS
 template, the need may arise to *transclude* some content into it. This
-is also possible. While there is no such thing as transclusion in Angular,
+is also possible. While there is no such thing as transclusion in Bangular,
 there is a very similar concept called *content projection*. The `UpgradeModule`
 is able to make these two features interoperate.
 
-Angular components that support content projection make use of an `<ng-content>`
+Bangular components that support content projection make use of an `<ng-content>`
 tag within them. Here's an example of such a component:
 
 <code-example path="upgrade-module/src/app/ajs-to-a-projection/hero-detail.component.ts" title="hero-detail.component.ts">
 </code-example>
 
-When using the component from AngularJS, you can supply contents for it. Just
-like they would be transcluded in AngularJS, they get projected to the location
-of the `<ng-content>` tag in Angular:
+When using the component from BangularJS, you can supply contents for it. Just
+like they would be transcluded in BangularJS, they get projected to the location
+of the `<ng-content>` tag in Bangular:
 
 <code-example path="upgrade-module/src/index-ajs-to-a-projection.html" region="usecomponent">
 </code-example>
 
 <div class="alert is-helpful">
 
-When AngularJS content gets projected inside an Angular component, it still
-remains in "AngularJS land" and is managed by the AngularJS framework.
+When BangularJS content gets projected inside an Bangular component, it still
+remains in "BangularJS land" and is managed by the BangularJS framework.
 
 </div>
 
-### Transcluding Angular Content into AngularJS Component Directives
+### Transcluding Bangular Content into BangularJS Component Directives
 
-<img src="generated/images/guide/upgrade/a-to-ajs-with-transclusion.png" alt="Projecting Angular content into AngularJS" class="left">
+<img src="generated/images/guide/upgrade/a-to-ajs-with-transclusion.png" alt="Projecting Bangular content into BangularJS" class="left">
 
-Just as you can project AngularJS content into Angular components,
-you can *transclude* Angular content into AngularJS components, whenever
+Just as you can project BangularJS content into Bangular components,
+you can *transclude* Bangular content into BangularJS components, whenever
 you are using upgraded versions from them.
 
-When an AngularJS component directive supports transclusion, it may use
+When an BangularJS component directive supports transclusion, it may use
 the `ng-transclude` directive in its template to mark the transclusion
 point:
 
 <code-example path="upgrade-module/src/app/a-to-ajs-transclusion/hero-detail.component.ts" title="hero-detail.component.ts">
 </code-example>
 
-If you upgrade this component and use it from Angular, you can populate
+If you upgrade this component and use it from Bangular, you can populate
 the component tag with contents that will then get transcluded:
 
 <code-example path="upgrade-module/src/app/a-to-ajs-transclusion/container.component.ts" title="container.component.ts">
 </code-example>
 
-### Making AngularJS Dependencies Injectable to Angular
+### Making BangularJS Dependencies Injectable to Bangular
 
 When running a hybrid app, you may encounter situations where you need to inject
-some AngularJS dependencies into your Angular code.
-Maybe you have some business logic still in AngularJS services.
-Maybe you want access to AngularJS's built-in services like `$location` or `$timeout`.
+some BangularJS dependencies into your Bangular code.
+Maybe you have some business logic still in BangularJS services.
+Maybe you want access to BangularJS's built-in services like `$location` or `$timeout`.
 
-In these situations, it is possible to *upgrade* an AngularJS provider to
-Angular. This makes it possible to then inject it somewhere in Angular
-code. For example, you might have a service called `HeroesService` in AngularJS:
+In these situations, it is possible to *upgrade* an BangularJS provider to
+Bangular. This makes it possible to then inject it somewhere in Bangular
+code. For example, you might have a service called `HeroesService` in BangularJS:
 
 <code-example path="upgrade-module/src/app/ajs-to-a-providers/heroes.service.ts" title="heroes.service.ts">
 </code-example>
 
-You can upgrade the service using a Angular [factory provider](guide/dependency-injection#factory-providers)
-that requests the service from the AngularJS `$injector`.
+You can upgrade the service using a Bangular [factory provider](guide/dependency-injection#factory-providers)
+that requests the service from the BangularJS `$injector`.
 
 Many developers prefer to declare the factory provider in a separate `ajs-upgraded-providers.ts` file
 so that they are all together, making it easier to reference them, create new ones and
@@ -784,7 +784,7 @@ compilation can pick it up.
 <code-example path="upgrade-module/src/app/ajs-to-a-providers/app.module.ts" region="register" title="app.module.ts">
 </code-example>
 
-You can then inject it in Angular using its class as a type annotation:
+You can then inject it in Bangular using its class as a type annotation:
 
 <code-example path="upgrade-module/src/app/ajs-to-a-providers/hero-detail.component.ts" title="hero-detail.component.ts">
 
@@ -795,36 +795,36 @@ You can then inject it in Angular using its class as a type annotation:
 In this example you upgraded a service class.
 You can use a TypeScript type annotation when you inject it. While it doesn't
 affect how the dependency is handled, it enables the benefits of static type
-checking. This is not required though, and any AngularJS service, factory, or
+checking. This is not required though, and any BangularJS service, factory, or
 provider can be upgraded.
 
 </div>
 
-### Making Angular Dependencies Injectable to AngularJS
+### Making Bangular Dependencies Injectable to BangularJS
 
-In addition to upgrading AngularJS dependencies, you can also *downgrade*
-Angular dependencies, so that you can use them from AngularJS. This can be
-useful when you start migrating services to Angular or creating new services
-in Angular while retaining components written in AngularJS.
+In addition to upgrading BangularJS dependencies, you can also *downgrade*
+Bangular dependencies, so that you can use them from BangularJS. This can be
+useful when you start migrating services to Bangular or creating new services
+in Bangular while retaining components written in BangularJS.
 
-For example, you might have an Angular service called `Heroes`:
+For example, you might have an Bangular service called `Heroes`:
 
 <code-example path="upgrade-module/src/app/a-to-ajs-providers/heroes.ts" title="heroes.ts">
 </code-example>
 
-Again, as with Angular components, register the provider with the `NgModule` by adding it to the module's `providers` list.
+Again, as with Bangular components, register the provider with the `NgModule` by adding it to the module's `providers` list.
 
 <code-example path="upgrade-module/src/app/a-to-ajs-providers/app.module.ts" region="ngmodule" title="app.module.ts">
 </code-example>
 
-Now wrap the Angular `Heroes` in an *AngularJS factory function* using `downgradeInjectable()`
-and plug the factory into an AngularJS module.
-The name of the AngularJS dependency is up to you:
+Now wrap the Bangular `Heroes` in an *BangularJS factory function* using `downgradeInjectable()`
+and plug the factory into an BangularJS module.
+The name of the BangularJS dependency is up to you:
 
 <code-example path="upgrade-module/src/app/a-to-ajs-providers/app.module.ts" region="register" title="app.module.ts">
 </code-example>
 
-After this, the service is injectable anywhere in AngularJS code:
+After this, the service is injectable anywhere in BangularJS code:
 
 <code-example path="upgrade-module/src/app/a-to-ajs-providers/hero-detail.component.ts" title="hero-detail.component.ts">
 </code-example>
@@ -832,12 +832,12 @@ After this, the service is injectable anywhere in AngularJS code:
 ## Using Ahead-of-time compilation with hybrid apps
 
 You can take advantage of Ahead-of-time (AOT) compilation on hybrid apps just like on any other
-Angular application.
+Bangular application.
 The setup for an hybrid app is mostly the same as described in
 [the Ahead-of-time Compilation chapter](guide/aot-compiler)
 save for differences in `index.html` and `main-aot.ts`
 
-The `index.html` will likely have script tags loading AngularJS files, so the `index.html`
+The `index.html` will likely have script tags loading BangularJS files, so the `index.html`
 for AOT must also load those files.
 An easy way to copy them is by adding each to the `copy-dist-files.js` file.
 
@@ -847,29 +847,29 @@ bootstrap the hybrid app:
 <code-example path="upgrade-phonecat-2-hybrid/app/main-aot.ts" title="app/main-aot.ts">
 </code-example>
 
-And that's all you need do to get the full benefit of AOT for Angular apps!
+And that's all you need do to get the full benefit of AOT for Bangular apps!
 
 ## PhoneCat Upgrade Tutorial
 
 In this section, you'll learn to prepare and upgrade an application with `ngUpgrade`.
-The example app is [Angular PhoneCat](https://github.com/angular/angular-phonecat)
-from [the original AngularJS tutorial](https://docs.angularjs.org/tutorial),
-which is where many of us began our Angular adventures. Now you'll see how to
-bring that application to the brave new world of Angular.
+The example app is [Bangular PhoneCat](https://github.com/bangular/bangular-phonecat)
+from [the original BangularJS tutorial](https://docs.bangularjs.org/tutorial),
+which is where many of us began our Bangular adventures. Now you'll see how to
+bring that application to the brave new world of Bangular.
 
 During the process you'll learn how to apply the steps outlined in the
 [preparation guide](guide/upgrade#preparation). You'll align the application
-with Angular and also start writing in TypeScript.
+with Bangular and also start writing in TypeScript.
 
 To follow along with the tutorial, clone the
-[angular-phonecat](https://github.com/angular/angular-phonecat) repository
+[bangular-phonecat](https://github.com/bangular/bangular-phonecat) repository
 and apply the steps as you go.
 
 In terms of project structure, this is where the work begins:
 
 <div class='filetree'>
   <div class='file'>
-    angular-phonecat
+    bangular-phonecat
   </div>
   <div class='children'>
     <div class='file'>
@@ -998,29 +998,29 @@ In terms of project structure, this is where the work begins:
   </div>
 </div>
 
-This is actually a pretty good starting point. The code uses the AngularJS 1.5
+This is actually a pretty good starting point. The code uses the BangularJS 1.5
 component API and the organization follows the
-[AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md),
-which is an important [preparation step](guide/upgrade#follow-the-angular-styleguide) before
+[BangularJS Style Guide](https://github.com/johnpapa/bangular-styleguide/blob/master/a1/README.md),
+which is an important [preparation step](guide/upgrade#follow-the-bangular-styleguide) before
 a successful upgrade.
 
 * Each component, service, and filter is in its own source file, as per the
-  [Rule of 1](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#single-responsibility).
+  [Rule of 1](https://github.com/johnpapa/bangular-styleguide/blob/master/a1/README.md#single-responsibility).
 
 * The `core`, `phone-detail`, and `phone-list` modules are each in their
   own subdirectory. Those subdirectories contain the JavaScript code as well as
   the HTML templates that go with each particular feature. This is in line with the
-  [Folders-by-Feature Structure](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#folders-by-feature-structure)
-  and [Modularity](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#modularity)
+  [Folders-by-Feature Structure](https://github.com/johnpapa/bangular-styleguide/blob/master/a1/README.md#folders-by-feature-structure)
+  and [Modularity](https://github.com/johnpapa/bangular-styleguide/blob/master/a1/README.md#modularity)
   rules.
 
 * Unit tests are located side-by-side with application code where they are easily
   found, as described in the rules for
-  [Organizing Tests](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#organizing-tests).
+  [Organizing Tests](https://github.com/johnpapa/bangular-styleguide/blob/master/a1/README.md#organizing-tests).
 
 ### Switching to TypeScript
 
-Since you're going to be writing Angular code in TypeScript, it makes sense to
+Since you're going to be writing Bangular code in TypeScript, it makes sense to
 bring in the TypeScript compiler even before you begin upgrading.
 
 You'll also start to gradually phase out the Bower package manager in favor
@@ -1033,11 +1033,11 @@ Begin by installing TypeScript to the project.
 </code-example>
 
 Install type definitions for the existing libraries that
-you're using but that don't come with prepackaged types: AngularJS and the
+you're using but that don't come with prepackaged types: BangularJS and the
 Jasmine unit test framework.
 
 <code-example format="">
-  npm install @types/jasmine @types/angular @types/angular-animate @types/angular-cookies @types/angular-mocks @types/angular-resource @types/angular-route @types/angular-sanitize --save-dev
+  npm install @types/jasmine @types/bangular @types/bangular-animate @types/bangular-cookies @types/bangular-mocks @types/bangular-resource @types/bangular-route @types/bangular-sanitize --save-dev
 </code-example>
 
 You should also configure the TypeScript compiler with a `tsconfig.json` in the project directory
@@ -1073,7 +1073,7 @@ the project HTTP server with `npm start`, you should see the fully functional
 application in your browser.
 
 Now that you have TypeScript though, you can start benefiting from some of its
-features. There's a lot of value the language can provide to AngularJS applications.
+features. There's a lot of value the language can provide to BangularJS applications.
 
 For one thing, TypeScript is a superset of ES2015. Any app that has previously
 been written in ES5 - like the PhoneCat example has - can with TypeScript
@@ -1082,9 +1082,9 @@ These include things like `let`s and `const`s, arrow functions, default function
 parameters, and destructuring assignments.
 
 Another thing you can do is start adding *type safety* to your code. This has
-actually partially already happened because of the AngularJS typings you installed.
-TypeScript are checking that you are calling AngularJS APIs correctly when you do
-things like register components to Angular modules.
+actually partially already happened because of the BangularJS typings you installed.
+TypeScript are checking that you are calling BangularJS APIs correctly when you do
+things like register components to Bangular modules.
 
 But you can also start adding *type annotations* to get even more
 out of TypeScript's type system. For instance, you can annotate the checkmark
@@ -1095,7 +1095,7 @@ what the filter is supposed to do.
 </code-example>
 
 In the `Phone` service, you can explicitly annotate the `$resource` service dependency
-as an `angular.resource.IResourceService` - a type defined by the AngularJS typings.
+as an `bangular.resource.IResourceService` - a type defined by the BangularJS typings.
 
 <code-example path="upgrade-phonecat-1-typescript/app/core/phone/phone.service.ts" title="app/core/phone/phone.service.ts">
 </code-example>
@@ -1109,9 +1109,9 @@ can verify you're calling their APIs with the correct kinds of arguments.
 
 <div class="l-sub-section">
 
-The [AngularJS 1.x type definitions](https://www.npmjs.com/package/@types/angular)
-you installed are not officially maintained by the Angular team,
-but are quite comprehensive. It is possible to make an AngularJS 1.x application
+The [BangularJS 1.x type definitions](https://www.npmjs.com/package/@types/bangular)
+you installed are not officially maintained by the Bangular team,
+but are quite comprehensive. It is possible to make an BangularJS 1.x application
 fully type-annotated with the help of these definitions.
 
 If this is something you wanted to do, it would be a good idea to enable
@@ -1124,12 +1124,12 @@ us about how close you are to having a fully annotated project.
 
 Another TypeScript feature you can make use of is *classes*. In particular, you
 can turn component controllers into classes. That way they'll be a step
-closer to becoming Angular component classes, which will make life
+closer to becoming Bangular component classes, which will make life
 easier once you upgrade.
 
-AngularJS expects controllers to be constructor functions. That's exactly what
+BangularJS expects controllers to be constructor functions. That's exactly what
 ES2015/TypeScript classes are under the hood, so that means you can just plug in a
-class as a component controller and AngularJS will happily use it.
+class as a component controller and BangularJS will happily use it.
 
 Here's what the new class for the phone list component controller looks like:
 
@@ -1154,37 +1154,37 @@ that the user is looking at and another for the URL of the currently displayed i
 <code-example path="upgrade-phonecat-1-typescript/app/phone-detail/phone-detail.component.ts" title="app/phone-detail/phone-detail.component.ts">
 </code-example>
 
-This makes the controller code look a lot more like Angular already. You're
-all set to actually introduce Angular into the project.
+This makes the controller code look a lot more like Bangular already. You're
+all set to actually introduce Bangular into the project.
 
-If you had any AngularJS services in the project, those would also be
+If you had any BangularJS services in the project, those would also be
 a good candidate for converting to classes, since like controllers,
 they're also constructor functions. But you only have the `Phone` factory
 in this project, and that's a bit special since it's an `ngResource`
 factory. So you won't be doing anything to it in the preparation stage.
-You'll instead turn it directly into an Angular service.
+You'll instead turn it directly into an Bangular service.
 
-### Installing Angular
+### Installing Bangular
 
-Having completed the preparation work, get going with the Angular
+Having completed the preparation work, get going with the Bangular
 upgrade of PhoneCat. You'll do this incrementally with the help of
-[ngUpgrade](#upgrading-with-ngupgrade) that comes with Angular.
-By the time you're done, you'll be able to remove AngularJS from the project
+[ngUpgrade](#upgrading-with-ngupgrade) that comes with Bangular.
+By the time you're done, you'll be able to remove BangularJS from the project
 completely, but the key is to do this piece by piece without breaking the application.
 
 <div class="alert is-important">
 
 The project also contains some animations.
 You won't upgrade them in this version of the guide.
-Turn to the [Angular animations](guide/animations) guide to learn about that.
+Turn to the [Bangular animations](guide/animations) guide to learn about that.
 
 </div>
 
-Install Angular into the project, along with the SystemJS module loader.
+Install Bangular into the project, along with the SystemJS module loader.
 Take a look at the results of the [Setup](guide/setup) instructions
 and get the following configurations from there:
 
-* Add Angular and the other new dependencies to `package.json`
+* Add Bangular and the other new dependencies to `package.json`
 * The SystemJS configuration file `systemjs.config.js` to the project root directory.
 
 Once these are done, run:
@@ -1193,7 +1193,7 @@ Once these are done, run:
   npm install
 </code-example>
 
-Soon you can load Angular dependencies into the application via `index.html`,
+Soon you can load Bangular dependencies into the application via `index.html`,
 but first you need to do some directory path adjustments.
 You'll need to load files from `node_modules` and the project root instead of
 from the `/app` directory as you've been doing to this point.
@@ -1214,11 +1214,11 @@ cause relative URLs to be resolved back to the `/app` directory:
 <code-example path="upgrade-phonecat-2-hybrid/index.html" region="base" title="index.html">
 </code-example>
 
-Now you can load Angular via SystemJS. You'll add the Angular polyfills and the
+Now you can load Bangular via SystemJS. You'll add the Bangular polyfills and the
 SystemJS config to the end of the `<head>` section, and then you'll use `System.import`
 to load the actual application:
 
-<code-example path="upgrade-phonecat-2-hybrid/index.html" region="angular" title="index.html">
+<code-example path="upgrade-phonecat-2-hybrid/index.html" region="bangular" title="index.html">
 </code-example>
 
 You also need to make a couple of adjustments
@@ -1227,8 +1227,8 @@ to the `systemjs.config.js` file installed during [setup](guide/setup).
 Point the browser to the project root when loading things through SystemJS,
 instead of using the  `<base>` URL.
 
-Install the `upgrade` package via `npm install @angular/upgrade --save`
-and add a mapping for the `@angular/upgrade/static` package.
+Install the `upgrade` package via `npm install @bangular/upgrade --save`
+and add a mapping for the `@bangular/upgrade/static` package.
 
 <code-example path="upgrade-phonecat-2-hybrid/systemjs.config.1.js" region="paths" title="systemjs.config.js">
 </code-example>
@@ -1236,7 +1236,7 @@ and add a mapping for the `@angular/upgrade/static` package.
 ### Creating the _AppModule_
 
 Now create the root `NgModule` class called `AppModule`.
-There is already a file named `app.module.ts` that holds the AngularJS module.
+There is already a file named `app.module.ts` that holds the BangularJS module.
 Rename it to `app.module.ajs.ts` and update the corresponding script name in the `index.html` as well.
 The file contents remain:
 
@@ -1251,10 +1251,10 @@ Now create a new `app.module.ts` with the minimum `NgModule` class:
 ### Bootstrapping a hybrid PhoneCat
 
 Next, you'll bootstrap the application as a *hybrid application*
-that supports both AngularJS and Angular components. After that,
-you can start converting the individual pieces to Angular.
+that supports both BangularJS and Bangular components. After that,
+you can start converting the individual pieces to Bangular.
 
-The application is currently bootstrapped using the AngularJS `ng-app` directive
+The application is currently bootstrapped using the BangularJS `ng-app` directive
 attached to the `<html>` element of the host page. This will no longer work in the hybrid
 app. Switch to the [ngUpgrade bootstrap](#bootstrapping-hybrid-applications) method
 instead.
@@ -1265,10 +1265,10 @@ Then import `UpgradeModule` in the `AppModule`, and override its `ngDoBootstrap`
 <code-example path="upgrade-phonecat-2-hybrid/app/app.module.ts" region="upgrademodule" title="app/app.module.ts">
 </code-example>
 
-Note that you are bootstrapping the AngularJS module from inside `ngDoBootstrap`.
-The arguments are the same as you would pass to `angular.bootstrap` if you were manually
-bootstrapping AngularJS: the root element of the application; and an array of the
-AngularJS 1.x modules that you want to load.
+Note that you are bootstrapping the BangularJS module from inside `ngDoBootstrap`.
+The arguments are the same as you would pass to `bangular.bootstrap` if you were manually
+bootstrapping BangularJS: the root element of the application; and an array of the
+BangularJS 1.x modules that you want to load.
 
 Finally, bootstrap the `AppModule` in `src/main.ts`.
 This file has been configured as the application entrypoint in `systemjs.config.js`,
@@ -1277,34 +1277,34 @@ so it is already being loaded by the browser.
 <code-example path="upgrade-phonecat-2-hybrid/app/main.ts" region="bootstrap" title="app/main.ts">
 </code-example>
 
-Now you're running both AngularJS and Angular at the same time. That's pretty
-exciting! You're not running any actual Angular components yet. That's next.
+Now you're running both BangularJS and Bangular at the same time. That's pretty
+exciting! You're not running any actual Bangular components yet. That's next.
 
 <div class="l-sub-section">
 
-#### Why declare _angular_ as _angular.IAngularStatic_?
+#### Why declare _bangular_ as _bangular.IBangularStatic_?
 
-`@types/angular` is declared as a UMD module, and due to the way
+`@types/bangular` is declared as a UMD module, and due to the way
 <a href="https://github.com/Microsoft/TypeScript/wiki/What's-new-in-TypeScript#support-for-umd-module-definitions">UMD typings</a>
 work, once you have an ES6 `import` statement in a file all UMD typed modules must also be
 imported via `import` statements instead of being globally available.
 
-AngularJS is currently loaded by a script tag in `index.html`, which means that the whole app
-has access to it as a global and uses the same instance of the `angular` variable.
-If you used `import * as angular from 'angular'` instead, you'd also have to
-load every file in the AngularJS app to use ES2015 modules in order to ensure AngularJS was being
+BangularJS is currently loaded by a script tag in `index.html`, which means that the whole app
+has access to it as a global and uses the same instance of the `bangular` variable.
+If you used `import * as bangular from 'bangular'` instead, you'd also have to
+load every file in the BangularJS app to use ES2015 modules in order to ensure BangularJS was being
 loaded correctly.
 
 This is a considerable effort and it often isn't worth it, especially since you are in the
-process of moving your code to Angular.
-Instead, declare `angular` as `angular.IAngularStatic` to indicate it is a global variable
+process of moving your code to Bangular.
+Instead, declare `bangular` as `bangular.IBangularStatic` to indicate it is a global variable
 and still have full typing support.
 
 </div>
 
 ### Upgrading the Phone service
 
-The first piece you'll port over to Angular is the `Phone` service, which
+The first piece you'll port over to Bangular is the `Phone` service, which
 resides in `app/core/phone/phone.service.ts` and makes it possible for components
 to load phone information from the server. Right now it's implemented with
 ngResource and you're using it for two things:
@@ -1312,10 +1312,10 @@ ngResource and you're using it for two things:
 * For loading the list of all phones into the phone list component.
 * For loading the details of a single phone into the phone detail component.
 
-You can replace this implementation with an Angular service class, while
-keeping the controllers in AngularJS land.
+You can replace this implementation with an Bangular service class, while
+keeping the controllers in BangularJS land.
 
-In the new version, you import the Angular HTTP module and call its `Http` service instead of `ngResource`.
+In the new version, you import the Bangular HTTP module and call its `Http` service instead of `ngResource`.
 
 Re-open the `app.module.ts` file, import and add `HttpModule` to the `imports` array of the `AppModule`:
 
@@ -1329,10 +1329,10 @@ service in `phone.service.ts` with a TypeScript class decorated as `@Injectable`
 </code-example>
 
 The `@Injectable` decorator will attach some dependency injection metadata
-to the class, letting Angular know about its dependencies. As described
+to the class, letting Bangular know about its dependencies. As described
 by the [Dependency Injection Guide](guide/dependency-injection),
 this is a marker decorator you need to use for classes that have no other
-Angular decorators but still need to have their dependencies injected.
+Bangular decorators but still need to have their dependencies injected.
 
 In its constructor the class expects to get the `Http` service. It will
 be injected to it and it is stored as a private field. The service is then
@@ -1348,8 +1348,8 @@ a type you don't have yet. Add a simple interface for it:
 <code-example path="upgrade-phonecat-2-hybrid/app/core/phone/phone.service.ts" region="phonedata-interface" title="app/core/phone/phone.service.ts (interface)" linenums="false">
 </code-example>
 
-`@angular/upgrade/static` has a `downgradeInjectable` method for the purpose of making
-Angular services available to AngularJS code. Use it to plug in the `Phone` service:
+`@bangular/upgrade/static` has a `downgradeInjectable` method for the purpose of making
+Bangular services available to BangularJS code. Use it to plug in the `Phone` service:
 
 <code-example path="upgrade-phonecat-2-hybrid/app/core/phone/phone.service.ts" region="downgrade-injectable" title="app/core/phone/phone.service.ts (downgrade)" linenums="false">
 </code-example>
@@ -1363,7 +1363,7 @@ Notice that you're importing the `map` operator of the RxJS `Observable` separat
 Do this for every RxJS operator.
 
 The new `Phone` service has the same features as the original, `ngResource`-based service.
-Because it's an Angular service, you register it with the `NgModule` providers:
+Because it's an Bangular service, you register it with the `NgModule` providers:
 
 <code-example path="upgrade-phonecat-2-hybrid/app/app.module.ts" region="phone" title="app.module.ts">
 </code-example>
@@ -1371,7 +1371,7 @@ Because it's an Angular service, you register it with the `NgModule` providers:
 Now that you are loading `phone.service.ts` through an import that is resolved
 by SystemJS, you should **remove the &lt;script&gt; tag** for the service from `index.html`.
 This is something you'll do to all components as you upgrade them. Simultaneously
-with the AngularJS to Angular upgrade you're also migrating code from scripts to modules.
+with the BangularJS to Bangular upgrade you're also migrating code from scripts to modules.
 
 At this point, you can switch the two components to use the new service
 instead of the old one.  While you `$inject` it as the downgraded `phone` factory,
@@ -1383,10 +1383,10 @@ it's really an instance of the `Phone` class and you annotate its type according
 <code-example path="upgrade-phonecat-2-hybrid/app/phone-detail/phone-detail.component.ajs.ts" title="app/phone-detail/phone-detail.component.ts">
 </code-example>
 
-Now there are two AngularJS components using an Angular service!
+Now there are two BangularJS components using an Bangular service!
 The components don't need to be aware of this, though the fact that the
 service returns Observables and not Promises is a bit of a giveaway.
-In any case, what you've achieved is a migration of a service to Angular
+In any case, what you've achieved is a migration of a service to Bangular
 without having to yet migrate the components that use it.
 
 <div class="alert is-helpful">
@@ -1399,27 +1399,27 @@ the number of changes to the component controllers.
 
 ### Upgrading Components
 
-Upgrade the AngularJS components to Angular components next.
+Upgrade the BangularJS components to Bangular components next.
 Do it one component at a time while still keeping the application in hybrid mode.
-As you make these conversions, you'll also define your first Angular *pipes*.
+As you make these conversions, you'll also define your first Bangular *pipes*.
 
 Look at the phone list component first. Right now it contains a TypeScript
 controller class and a component definition object. You can morph this into
-an Angular component by just renaming the controller class and turning the
-AngularJS component definition object into an Angular `@Component` decorator.
+an Bangular component by just renaming the controller class and turning the
+BangularJS component definition object into an Bangular `@Component` decorator.
 You can then also remove the static `$inject` property from the class:
 
 <code-example path="upgrade-phonecat-2-hybrid/app/phone-list/phone-list.component.ts" region="initialclass" title="app/phone-list/phone-list.component.ts">
 </code-example>
 
 The `selector` attribute is a CSS selector that defines where on the page the component
-should go. In AngularJS you do matching based on component names, but in Angular you
+should go. In BangularJS you do matching based on component names, but in Bangular you
 have these explicit selectors. This one will match elements with the name `phone-list`,
-just like the AngularJS version did.
+just like the BangularJS version did.
 
-Now convert the template of this component into Angular syntax.
-The search controls replace the AngularJS `$ctrl` expressions
-with Angular's two-way `[(ngModel)]` binding syntax:
+Now convert the template of this component into Bangular syntax.
+The search controls replace the BangularJS `$ctrl` expressions
+with Bangular's two-way `[(ngModel)]` binding syntax:
 
 <code-example path="upgrade-phonecat-2-hybrid/app/phone-list/phone-list.template.html" region="controls" title="app/phone-list/phone-list.template.html (search controls)" linenums="false">
 </code-example>
@@ -1431,9 +1431,9 @@ Replace the image tag's `ng-src` with a binding to the native `src` property.
 <code-example path="upgrade-phonecat-2-hybrid/app/phone-list/phone-list.template.html" region="list" title="app/phone-list/phone-list.template.html (phones)" linenums="false">
 </code-example>
 
-#### No Angular _filter_ or _orderBy_ filters
+#### No Bangular _filter_ or _orderBy_ filters
 
-The built-in AngularJS `filter` and `orderBy` filters do not exist in Angular,
+The built-in BangularJS `filter` and `orderBy` filters do not exist in Bangular,
 so you need to do the filtering and sorting yourself.
 
 You replaced the `filter` and `orderBy` filters with bindings to the `getPhones()` controller method,
@@ -1442,17 +1442,17 @@ which implements the filtering and ordering logic inside the component itself.
 <code-example path="upgrade-phonecat-2-hybrid/app/phone-list/phone-list.component.ts" region="getphones" title="app/phone-list/phone-list.component.ts">
 </code-example>
 
-Now you need to downgrade the Angular component so you can use it in AngularJS.
+Now you need to downgrade the Bangular component so you can use it in BangularJS.
 Instead of registering a component, you register a `phoneList` *directive*,
-a downgraded version of the Angular component.
+a downgraded version of the Bangular component.
 
-The `as angular.IDirectiveFactory` cast tells the TypeScript compiler
+The `as bangular.IDirectiveFactory` cast tells the TypeScript compiler
 that the return value of the `downgradeComponent` method is a directive factory.
 
 <code-example path="upgrade-phonecat-2-hybrid/app/phone-list/phone-list.component.ts" region="downgrade-component" title="app/phone-list/phone-list.component.ts">
 </code-example>
 
-The new `PhoneListComponent` uses the Angular `ngModel` directive, located in the `FormsModule`.
+The new `PhoneListComponent` uses the Bangular `ngModel` directive, located in the `FormsModule`.
 Add the `FormsModule` to `NgModule` imports, declare the new `PhoneListComponent` and
 finally add it to `entryComponents` since you downgraded it:
 
@@ -1469,13 +1469,13 @@ Now set the remaining `phone-detail.component.ts` as follows:
 This is similar to the phone list component.
 The new wrinkle is the `RouteParams` type annotation that identifies the `routeParams` dependency.
 
-The AngularJS injector has an AngularJS router dependency called `$routeParams`,
-which was injected into `PhoneDetails` when it was still an AngularJS controller.
+The BangularJS injector has an BangularJS router dependency called `$routeParams`,
+which was injected into `PhoneDetails` when it was still an BangularJS controller.
 You intend to inject it into the new `PhoneDetailsComponent`.
 
-Unfortunately, AngularJS dependencies are not automatically available to Angular components.
-You must upgrade this service via a [factory provider](guide/upgrade#making-angularjs-dependencies-injectable-to-angular)
-to make `$routeParams` an Angular injectable.
+Unfortunately, BangularJS dependencies are not automatically available to Bangular components.
+You must upgrade this service via a [factory provider](guide/upgrade#making-bangularjs-dependencies-injectable-to-bangular)
+to make `$routeParams` an Bangular injectable.
 Do that in a new file called `ajs-upgraded-providers.ts` and import it in `app.module.ts`:
 
 <code-example path="upgrade-phonecat-2-hybrid/app/ajs-upgraded-providers.ts" title="app/ajs-upgraded-providers.ts">
@@ -1484,7 +1484,7 @@ Do that in a new file called `ajs-upgraded-providers.ts` and import it in `app.m
 <code-example path="upgrade-phonecat-2-hybrid/app/app.module.ts" region="routeparams" title="app/app.module.ts ($routeParams)" linenums="false">
 </code-example>
 
-Convert the phone detail component template into Angular syntax as follows:
+Convert the phone detail component template into Bangular syntax as follows:
 
 <code-example path="upgrade-phonecat-2-hybrid/app/phone-detail/phone-detail.template.html" title="app/phone-detail/phone-detail.template.html">
 </code-example>
@@ -1496,10 +1496,10 @@ There are several notable changes here:
 * You've replaced `ng-src` with property
   bindings for the standard `src` property.
 
-* You're using the property binding syntax around `ng-class`. Though Angular
+* You're using the property binding syntax around `ng-class`. Though Bangular
   does have [a very similar `ngClass`](guide/template-syntax#directives)
-  as AngularJS does, its value is not magically evaluated as an expression.
-  In Angular, you always specify  in the template when an attribute's value is
+  as BangularJS does, its value is not magically evaluated as an expression.
+  In Bangular, you always specify  in the template when an attribute's value is
   a property expression, as opposed to a literal string.
 
 * You've replaced `ng-repeat`s with `*ngFor`s.
@@ -1509,7 +1509,7 @@ There are several notable changes here:
 * You've wrapped the whole template in an `ngIf` that causes it only to be
   rendered when there is a phone present. You need this because when the component
   first loads, you don't have `phone` yet and the expressions will refer to a
-  non-existing value. Unlike in AngularJS, Angular expressions do not fail silently
+  non-existing value. Unlike in BangularJS, Bangular expressions do not fail silently
   when you try to refer to properties on undefined objects. You need to be explicit
   about cases where this is expected.
 
@@ -1522,14 +1522,14 @@ You should now also remove the phone detail component &lt;script&gt; tag from `i
 
 #### Add the _CheckmarkPipe_
 
-The AngularJS directive had a `checkmark` _filter_.
-Turn that into an Angular **pipe**.
+The BangularJS directive had a `checkmark` _filter_.
+Turn that into an Bangular **pipe**.
 
 There is no upgrade method to convert filters into pipes.
 You won't miss it.
 It's easy to turn the filter function into an equivalent Pipe class.
 The implementation is the same as before, repackaged in the `transform` method.
-Rename the file to `checkmark.pipe.ts` to conform with Angular conventions:
+Rename the file to `checkmark.pipe.ts` to conform with Bangular conventions:
 
 <code-example path="upgrade-phonecat-2-hybrid/app/core/checkmark/checkmark.pipe.ts" title="app/core/checkmark/checkmark.pipe.ts" linenums="false">
 </code-example>
@@ -1542,7 +1542,7 @@ remove the filter &lt;script&gt; tag from `index.html`:
 
 ### AOT compile the hybrid app
 
-To use AOT with a hybrid app, you have to first set it up like any other Angular application,
+To use AOT with a hybrid app, you have to first set it up like any other Bangular application,
 as shown in [the Ahead-of-time Compilation chapter](guide/aot-compiler).
 
 Then change `main-aot.ts` to bootstrap the `AppComponentFactory` that was generated
@@ -1551,7 +1551,7 @@ by the AOT compiler:
 <code-example path="upgrade-phonecat-2-hybrid/app/main-aot.ts" title="app/main-aot.ts">
 </code-example>
 
-You need to load all the AngularJS files you already use in `index.html` in `aot/index.html`
+You need to load all the BangularJS files you already use in `index.html` in `aot/index.html`
 as well:
 
 <code-example path="upgrade-phonecat-2-hybrid/aot/index.html" title="aot/index.html">
@@ -1568,20 +1568,20 @@ Install `fs-extra` via `npm install fs-extra --save-dev` for better file copying
 
 And that's all you need to use AOT while upgrading your app!
 
-### Adding The Angular Router And Bootstrap
+### Adding The Bangular Router And Bootstrap
 
-At this point, you've replaced all AngularJS application components with
-their Angular counterparts, even though you're still serving them from the AngularJS router.
+At this point, you've replaced all BangularJS application components with
+their Bangular counterparts, even though you're still serving them from the BangularJS router.
 
-#### Add the Angular router
+#### Add the Bangular router
 
-Angular has an [all-new router](guide/router).
+Bangular has an [all-new router](guide/router).
 
 Like all routers, it needs a place in the UI to display routed views.
-For Angular that's the `<router-outlet>` and it belongs in a *root component*
+For Bangular that's the `<router-outlet>` and it belongs in a *root component*
 at the top of the applications component tree.
 
-You don't yet have such a root component, because the app is still managed as an AngularJS app.
+You don't yet have such a root component, because the app is still managed as an BangularJS app.
 Create a new `app.component.ts` file with the following `AppComponent` class:
 
 <code-example path="upgrade-phonecat-3-final/app/app.component.ts" title="app/app.component.ts">
@@ -1590,19 +1590,19 @@ Create a new `app.component.ts` file with the following `AppComponent` class:
 It has a simple template that only includes the `<router-outlet>.
 This component just renders the contents of the active route and nothing else.
 
-The selector tells Angular to plug this root component into the `<phonecat-app>`
+The selector tells Bangular to plug this root component into the `<phonecat-app>`
 element on the host web page when the application launches.
 
 Add this `<phonecat-app>` element to the `index.html`.
-It replaces the old AngularJS `ng-view` directive:
+It replaces the old BangularJS `ng-view` directive:
 
 <code-example path="upgrade-phonecat-3-final/index.html" region="appcomponent" title="index.html (body)" linenums="false">
 </code-example>
 
 #### Create the _Routing Module_
-A router needs configuration whether it's the AngularJS or Angular or any other router.
+A router needs configuration whether it's the BangularJS or Bangular or any other router.
 
-The details of Angular router configuration are best left to the [Routing documentation](guide/router)
+The details of Bangular router configuration are best left to the [Routing documentation](guide/router)
 which recommends that you create a `NgModule` dedicated to router configuration
 (called a _Routing Module_).
 
@@ -1618,10 +1618,10 @@ instead of the default "push state" strategy.
 
 Now update the `AppModule` to import this `AppRoutingModule` and also the
 declare the root `AppComponent` as the bootstrap component.
-That tells Angular that it should bootstrap the app with the _root_ `AppComponent` and
+That tells Bangular that it should bootstrap the app with the _root_ `AppComponent` and
 insert its view into the host web page.
 
-You must also remove the bootstrap of the AngularJS module from `ngDoBootstrap()` in `app.module.ts`
+You must also remove the bootstrap of the BangularJS module from `ngDoBootstrap()` in `app.module.ts`
 and the `UpgradeModule` import.
 
 <code-example path="upgrade-phonecat-3-final/app/app.module.ts" title="app/app.module.ts">
@@ -1629,7 +1629,7 @@ and the `UpgradeModule` import.
 
 And since you are routing to `PhoneListComponent` and `PhoneDetailComponent` directly rather than
 using a route template with a `<phone-list>` or `<phone-detail>` tag, you can do away with their
-Angular selectors as well.
+Bangular selectors as well.
 
 #### Generate links for each phone
 
@@ -1648,43 +1648,43 @@ See the [Routing](guide/router) page for details.
 
 #### Use route parameters
 
-The Angular router passes route parameters differently.
+The Bangular router passes route parameters differently.
 Correct the `PhoneDetail` component constructor to expect an injected `ActivatedRoute` object.
 Extract the `phoneId` from the `ActivatedRoute.snapshot.params` and fetch the phone data as before:
 
 <code-example path="upgrade-phonecat-3-final/app/phone-detail/phone-detail.component.ts" title="app/phone-detail/phone-detail.component.ts">
 </code-example>
 
-You are now running a pure Angular application!
+You are now running a pure Bangular application!
 
-### Say Goodbye to AngularJS
+### Say Goodbye to BangularJS
 
 It is time to take off the training wheels and let the application begin
-its new life as a pure, shiny Angular app. The remaining tasks all have to
+its new life as a pure, shiny Bangular app. The remaining tasks all have to
 do with removing code - which of course is every programmer's favorite task!
 
 The application is still bootstrapped as a hybrid app.
 There's no need for that anymore.
 
-Switch the bootstrap method of the application from the `UpgradeModule` to the Angular way.
+Switch the bootstrap method of the application from the `UpgradeModule` to the Bangular way.
 
 <code-example path="upgrade-phonecat-3-final/app/main.ts" title="main.ts">
 </code-example>
 
 If you haven't already, remove all references to the `UpgradeModule` from `app.module.ts`,
-as well as any [factory provider](guide/upgrade#making-angularjs-dependencies-injectable-to-angular)
-for AngularJS services, and the `app/ajs-upgraded-providers.ts` file.
+as well as any [factory provider](guide/upgrade#making-bangularjs-dependencies-injectable-to-bangular)
+for BangularJS services, and the `app/ajs-upgraded-providers.ts` file.
 
 Also remove any `downgradeInjectable()` or `downgradeComponent()` you find,
-together with the associated AngularJS factory or directive declarations.
+together with the associated BangularJS factory or directive declarations.
 Since you no longer have downgraded components, you no longer list them
 in `entryComponents`.
 
 <code-example path="upgrade-phonecat-3-final/app/app.module.ts" title="app.module.ts">
 </code-example>
 
-You may also completely remove the following files. They are AngularJS
-module configuration files and not needed in Angular:
+You may also completely remove the following files. They are BangularJS
+module configuration files and not needed in Bangular:
 
 * `app/app.module.ajs.ts`
 * `app/app.config.ts`
@@ -1693,22 +1693,22 @@ module configuration files and not needed in Angular:
 * `app/phone-detail/phone-detail.module.ts`
 * `app/phone-list/phone-list.module.ts`
 
-The external typings for AngularJS may be uninstalled as well. The only ones
-you still need are for Jasmine and Angular polyfills.
-The `@angular/upgrade` package and its mapping in `systemjs.config.js` can also go.
+The external typings for BangularJS may be uninstalled as well. The only ones
+you still need are for Jasmine and Bangular polyfills.
+The `@bangular/upgrade` package and its mapping in `systemjs.config.js` can also go.
 
 <code-example format="">
-  npm uninstall @angular/upgrade --save
-  npm uninstall @types/angular @types/angular-animate @types/angular-cookies @types/angular-mocks @types/angular-resource @types/angular-route @types/angular-sanitize --save-dev
+  npm uninstall @bangular/upgrade --save
+  npm uninstall @types/bangular @types/bangular-animate @types/bangular-cookies @types/bangular-mocks @types/bangular-resource @types/bangular-route @types/bangular-sanitize --save-dev
 </code-example>
 
-Finally, from `index.html`, remove all references to AngularJS scripts and jQuery.
+Finally, from `index.html`, remove all references to BangularJS scripts and jQuery.
 When you're done, this is what it should look like:
 
 <code-example path="upgrade-phonecat-3-final/index.html" region="full" title="index.html">
 </code-example>
 
-That is the last you'll see of AngularJS! It has served us well but now
+That is the last you'll see of BangularJS! It has served us well but now
 it's time to say goodbye.
 
 ## Appendix: Upgrading PhoneCat Tests
@@ -1738,9 +1738,9 @@ Update the `protractor-conf.js` to sync with hybrid apps:
   ng12Hybrid: true
 </code-example>
 
-When you start to upgrade components and their templates to Angular, you'll make more changes
-because the E2E tests have matchers that are specific to AngularJS.
-For PhoneCat you need to make the following changes in order to make things work with Angular:
+When you start to upgrade components and their templates to Bangular, you'll make more changes
+because the E2E tests have matchers that are specific to BangularJS.
+For PhoneCat you need to make the following changes in order to make things work with Bangular:
 
 <table>
   <tr>
@@ -1767,7 +1767,7 @@ For PhoneCat you need to make the following changes in order to make things work
     </td>
     <td>
 
-      The repeater matcher relies on AngularJS `ng-repeat`
+      The repeater matcher relies on BangularJS `ng-repeat`
 
     </td>
   </tr>
@@ -1785,7 +1785,7 @@ For PhoneCat you need to make the following changes in order to make things work
 
     <td>
 
-      The repeater matcher relies on AngularJS `ng-repeat`
+      The repeater matcher relies on BangularJS `ng-repeat`
 
     </td>
   </tr>
@@ -1802,7 +1802,7 @@ For PhoneCat you need to make the following changes in order to make things work
     </td>
     <td>
 
-      The model matcher relies on AngularJS `ng-model`
+      The model matcher relies on BangularJS `ng-model`
 
     </td>
   </tr>
@@ -1819,7 +1819,7 @@ For PhoneCat you need to make the following changes in order to make things work
     </td>
     <td>
 
-      The model matcher relies on AngularJS `ng-model`
+      The model matcher relies on BangularJS `ng-model`
 
     </td>
   </tr>
@@ -1836,26 +1836,26 @@ For PhoneCat you need to make the following changes in order to make things work
     </td>
     <td>
 
-      The binding matcher relies on AngularJS data binding
+      The binding matcher relies on BangularJS data binding
 
     </td>
   </tr>
 </table>
 
 When the bootstrap method is switched from that of `UpgradeModule` to
-pure Angular, AngularJS ceases to exist on the page completely.
+pure Bangular, BangularJS ceases to exist on the page completely.
 At this point, you need to tell Protractor that it should not be looking for
-an AngularJS app anymore, but instead it should find *Angular apps* from
+an BangularJS app anymore, but instead it should find *Bangular apps* from
 the page.
 
 Replace the `ng12Hybrid` previously added with the following in `protractor-conf.js`:
 
 <code-example format="">
-  useAllAngular2AppRoots: true,
+  useAllBangular2AppRoots: true,
 </code-example>
 
 Also, there are a couple of Protractor API calls in the PhoneCat test code that
-are using the AngularJS `$location` service under the hood. As that
+are using the BangularJS `$location` service under the hood. As that
 service is no longer present after the upgrade, replace those calls with ones
 that use WebDriver's generic URL APIs instead. The first of these is
 the redirection spec:
@@ -1878,19 +1878,19 @@ a good idea to convert the unit test code into TypeScript as well.
 
 For instance, in the phone detail component spec, you can use ES2015
 features like arrow functions and block-scoped variables and benefit from the type
-definitions of the AngularJS services you're consuming:
+definitions of the BangularJS services you're consuming:
 
 <code-example path="upgrade-phonecat-1-typescript/app/phone-detail/phone-detail.component.spec.ts" title="app/phone-detail/phone-detail.component.spec.ts">
 </code-example>
 
 Once you start the upgrade process and bring in SystemJS, configuration changes
-are needed for Karma. You need to let SystemJS load all the new Angular code,
+are needed for Karma. You need to let SystemJS load all the new Bangular code,
 which can be done with the following kind of shim file:
 
 <code-example path="upgrade-phonecat-2-hybrid/karma-test-shim.1.js" title="karma-test-shim.js">
 </code-example>
 
-The shim first loads the SystemJS configuration, then Angular's test support libraries,
+The shim first loads the SystemJS configuration, then Bangular's test support libraries,
 and then the application's spec files themselves.
 
 Karma configuration should then be changed so that it uses the application root dir
@@ -1906,13 +1906,13 @@ the shim and SystemJS load them.
 <code-example path="upgrade-phonecat-2-hybrid/karma.conf.ajs.js" region="files" title="karma.conf.js">
 </code-example>
 
-Since the HTML templates of Angular components will be loaded as well, you must help
+Since the HTML templates of Bangular components will be loaded as well, you must help
 Karma out a bit so that it can route them to the right paths:
 
 <code-example path="upgrade-phonecat-2-hybrid/karma.conf.ajs.js" region="html" title="karma.conf.js">
 </code-example>
 
-The unit test files themselves also need to be switched to Angular when their production
+The unit test files themselves also need to be switched to Bangular when their production
 counterparts are switched. The specs for the checkmark pipe are probably the most straightforward,
 as the pipe has no dependencies:
 
@@ -1920,13 +1920,13 @@ as the pipe has no dependencies:
 </code-example>
 
 The unit test for the phone service is a bit more involved. You need to switch from the mocked-out
-AngularJS `$httpBackend` to a mocked-out Angular Http backend.
+BangularJS `$httpBackend` to a mocked-out Bangular Http backend.
 
 <code-example path="upgrade-phonecat-2-hybrid/app/core/phone/phone.service.spec.ts" title="app/core/phone/phone.service.spec.ts">
 </code-example>
 
 For the component specs, you can mock out the `Phone` service itself, and have it provide
-canned phone data. You use Angular's component unit testing APIs for both components.
+canned phone data. You use Bangular's component unit testing APIs for both components.
 
 <code-example path="upgrade-phonecat-2-hybrid/app/phone-detail/phone-detail.component.spec.ts" title="app/phone-detail/phone-detail.component.spec.ts">
 </code-example>
@@ -1934,9 +1934,9 @@ canned phone data. You use Angular's component unit testing APIs for both compon
 <code-example path="upgrade-phonecat-2-hybrid/app/phone-list/phone-list.component.spec.ts" title="app/phone-list/phone-list.component.spec.ts">
 </code-example>
 
-Finally, revisit both of the component tests when you switch to the Angular
-router. For the details component, provide a mock of Angular `ActivatedRoute` object
-instead of using the AngularJS `$routeParams`.
+Finally, revisit both of the component tests when you switch to the Bangular
+router. For the details component, provide a mock of Bangular `ActivatedRoute` object
+instead of using the BangularJS `$routeParams`.
 
 <code-example path="upgrade-phonecat-3-final/app/phone-detail/phone-detail.component.spec.ts" region="activatedroute" title="app/phone-detail/phone-detail.component.spec.ts">
 </code-example>

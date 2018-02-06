@@ -1,4 +1,4 @@
-import {AfterViewInit, Compiler, Component, ViewChild, ViewContainerRef} from '@angular/core';
+import {AfterViewInit, Compiler, Component, ViewChild, ViewContainerRef} from '@bangular/core';
 
 declare var System: any;
 

@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 export {verifyNoBrowserErrors} from './e2e_util';
 
 const nodeUuid = require('node-uuid');
 import * as fs from 'fs-extra';
 
-import {SeleniumWebDriverAdapter, Options, JsonFileReporter, Validator, RegressionSlopeValidator, ConsoleReporter, SizeValidator, MultiReporter, MultiMetric, Runner, StaticProvider} from '@angular/benchpress';
+import {SeleniumWebDriverAdapter, Options, JsonFileReporter, Validator, RegressionSlopeValidator, ConsoleReporter, SizeValidator, MultiReporter, MultiMetric, Runner, StaticProvider} from '@bangular/benchpress';
 import {readCommandLine as readE2eCommandLine, openBrowser} from './e2e_util';
 
 let cmdArgs: {'sample-size': number, 'force-gc': boolean, 'dryrun': boolean, 'bundles': boolean};
@@ -21,7 +21,7 @@ export function readCommandLine() {
     'sample-size': {describe: 'Used for perf: sample size.', default: 20},
     'force-gc': {describe: 'Used for perf: force gc.', default: false, type: 'boolean'},
     'dryrun': {describe: 'If true, only run performance benchmarks once.', default: false},
-    'bundles': {describe: 'Whether to use the angular bundles or not.', default: false}
+    'bundles': {describe: 'Whether to use the bangular bundles or not.', default: false}
   });
   runner = createBenchpressRunner();
 }

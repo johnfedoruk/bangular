@@ -3,11 +3,11 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {StaticReflector, StaticSymbol, StaticSymbolCache, StaticSymbolResolver, StaticSymbolResolverHost, core as compilerCore} from '@angular/compiler';
-import {CollectorOptions, METADATA_VERSION} from '@angular/compiler-cli';
+import {StaticReflector, StaticSymbol, StaticSymbolCache, StaticSymbolResolver, StaticSymbolResolverHost, core as compilerCore} from '@bangular/compiler';
+import {CollectorOptions, METADATA_VERSION} from '@bangular/compiler-cli';
 
 import {MockStaticSymbolResolverHost, MockSummaryResolver} from './static_symbol_resolver_spec';
 
@@ -37,7 +37,7 @@ describe('StaticReflector', () => {
   }
 
   it('should get annotations for NgFor', () => {
-    const NgFor = reflector.findDeclaration('@angular/common/src/directives/ng_for', 'NgFor');
+    const NgFor = reflector.findDeclaration('@bangular/common/src/directives/ng_for', 'NgFor');
     const annotations = reflector.annotations(NgFor);
     expect(annotations.length).toEqual(1);
     const annotation = annotations[0];
@@ -46,11 +46,11 @@ describe('StaticReflector', () => {
   });
 
   it('should get constructor for NgFor', () => {
-    const NgFor = reflector.findDeclaration('@angular/common/src/directives/ng_for', 'NgFor');
-    const ViewContainerRef = reflector.findDeclaration('@angular/core', 'ViewContainerRef');
-    const TemplateRef = reflector.findDeclaration('@angular/core', 'TemplateRef');
-    const IterableDiffers = reflector.findDeclaration('@angular/core', 'IterableDiffers');
-    const ChangeDetectorRef = reflector.findDeclaration('@angular/core', 'ChangeDetectorRef');
+    const NgFor = reflector.findDeclaration('@bangular/common/src/directives/ng_for', 'NgFor');
+    const ViewContainerRef = reflector.findDeclaration('@bangular/core', 'ViewContainerRef');
+    const TemplateRef = reflector.findDeclaration('@bangular/core', 'TemplateRef');
+    const IterableDiffers = reflector.findDeclaration('@bangular/core', 'IterableDiffers');
+    const ChangeDetectorRef = reflector.findDeclaration('@bangular/core', 'ChangeDetectorRef');
 
     const parameters = reflector.parameters(NgFor);
     expect(parameters).toEqual([
@@ -483,7 +483,7 @@ describe('StaticReflector', () => {
     const data = Object.create(DEFAULT_TEST_DATA);
     const file = '/tmp/src/app.component.ts';
     data[file] = `
-      import { Component } from '@angular/core';
+      import { Component } from '@bangular/core';
 
       export const enum TypeEnum {
         type
@@ -502,7 +502,7 @@ describe('StaticReflector', () => {
         template: "<h1>Hello {{name}}</h1>",
       })
       export class AppComponent  {
-        name = 'Angular';
+        name = 'Bangular';
 
         @MyValidationDecorator( TypeEnum.type, ValidationFunction({option: 'value'}))
         myClassProp: number;
@@ -516,7 +516,7 @@ describe('StaticReflector', () => {
     const data = Object.create(DEFAULT_TEST_DATA);
     const file = '/tmp/src/invalid-component.ts';
     data[file] = `
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
 
         function InvalidParent() {
           return InvalidParent;
@@ -541,7 +541,7 @@ describe('StaticReflector', () => {
     const data = Object.create(DEFAULT_TEST_DATA);
     const file = '/tmp/src/invalid-component.ts';
     data[file] = `
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
 
         @Component({
           selector: 'tmp',
@@ -566,7 +566,7 @@ describe('StaticReflector', () => {
     const data = Object.create(DEFAULT_TEST_DATA);
     const file = '/tmp/src/invalid-component.ts';
     data[file] = `
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
         import {unknown} from 'unresolved';
 
         @Component({
@@ -591,7 +591,7 @@ describe('StaticReflector', () => {
     const data = Object.create(DEFAULT_TEST_DATA);
     const file = '/tmp/src/invalid-component.ts';
     data[file] = `
-        import {Injectable, Inject} from '@angular/core';
+        import {Injectable, Inject} from '@bangular/core';
 
         @Injectable()
         export class SomeClass {
@@ -609,7 +609,7 @@ describe('StaticReflector', () => {
     const data = Object.create(DEFAULT_TEST_DATA);
     const file = '/tmp/src/invalid-component.ts';
     data[file] = `
-        import {Injectable} from '@angular/core';
+        import {Injectable} from '@bangular/core';
 
         @Injectable()
         export class SomeClass {
@@ -839,7 +839,7 @@ describe('StaticReflector', () => {
       const data = Object.create(DEFAULT_TEST_DATA);
       const file = '/tmp/src/inject_interface.ts';
       data[file] = `
-        import {Injectable, Inject} from '@angular/core';
+        import {Injectable, Inject} from '@bangular/core';
         import {F} from './f';
 
         export interface InjectedInterface {
@@ -866,7 +866,7 @@ describe('StaticReflector', () => {
       const data = Object.create(DEFAULT_TEST_DATA);
       const file = '/tmp/src/my_component.ts';
       data[file] = `
-        import {Component, InjectionToken} from '@angular/core';
+        import {Component, InjectionToken} from '@bangular/core';
 
         export const myLambda = () => [1, 2, 3];
         export const NUMBERS = new InjectionToken<number[]>();
@@ -893,7 +893,7 @@ describe('StaticReflector', () => {
     const data = Object.create(DEFAULT_TEST_DATA);
     const file = '/tmp/src/my_component.ts';
     data[file] = `
-      import {Component} from '@angular/core';
+      import {Component} from '@bangular/core';
       import {intermediate} from './index';
 
       @Component({
@@ -929,7 +929,7 @@ describe('StaticReflector', () => {
     const data = Object.create(DEFAULT_TEST_DATA);
     const file = '/tmp/src/my_component.ts';
     data[file] = `
-      import {Component} from '@angular/core';
+      import {Component} from '@bangular/core';
       import {provideRoutes} from './macro';
       import {MyEnum, MyClass} from './consts';
 
@@ -945,7 +945,7 @@ describe('StaticReflector', () => {
       export class MyComponent { }
     `;
     data['/tmp/src/macro.ts'] = `
-      import {ANALYZE_FOR_ENTRY_COMPONENTS, ROUTES} from '@angular/core';
+      import {ANALYZE_FOR_ENTRY_COMPONENTS, ROUTES} from '@bangular/core';
 
       export interface Route {
         path?: string;
@@ -976,7 +976,7 @@ describe('StaticReflector', () => {
     const data = Object.create(DEFAULT_TEST_DATA);
     const file = '/tmp/src/my_component.ts';
     data[file] = `
-      import {Component} from '@angular/core';
+      import {Component} from '@bangular/core';
       import {provideRoutes} from './macro';
       import {E} from './indirect';
 
@@ -992,7 +992,7 @@ describe('StaticReflector', () => {
       export class MyComponent { }
     `;
     data['/tmp/src/macro.ts'] = `
-      import {ANALYZE_FOR_ENTRY_COMPONENTS, ROUTES} from '@angular/core';
+      import {ANALYZE_FOR_ENTRY_COMPONENTS, ROUTES} from '@bangular/core';
 
       export interface Route {
         path?: string;
@@ -1028,7 +1028,7 @@ describe('StaticReflector', () => {
     const data = Object.create(DEFAULT_TEST_DATA);
     const file = '/tmp/src/my_component.ts';
     data[file] = `
-      import {Component} from '@angular/core';
+      import {Component} from '@bangular/core';
       import {provideRoutes} from './macro';
       import {E} from './indirect';
 
@@ -1044,7 +1044,7 @@ describe('StaticReflector', () => {
       export class MyComponent { }
     `;
     data['/tmp/src/macro.ts'] = `
-      import {ANALYZE_FOR_ENTRY_COMPONENTS, ROUTES} from '@angular/core';
+      import {ANALYZE_FOR_ENTRY_COMPONENTS, ROUTES} from '@bangular/core';
 
       export interface Route {
         path?: string;
@@ -1110,7 +1110,7 @@ describe('StaticReflector', () => {
     `,
           '/tmp/src/invalid/components.ts': `
         import {functionToCall} from 'some-module';
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
         import {CALL_FUNCTION} from './function-call';
         import {INDIRECT_CALL_FUNCTION} from './indirect';
         import {TWO_LEVELS_INDIRECT_CALL_FUNCTION} from './two-levels-indirect';
@@ -1204,7 +1204,7 @@ describe('StaticReflector', () => {
         }
     `,
           '/tmp/src/invalid/components.ts': `
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
         import {functionToCall} from 'some-module';
         import {someMacro} from './macros';
         import {CALL_FUNCTION} from './function-call';
@@ -1277,7 +1277,7 @@ describe('StaticReflector', () => {
       function initWith(content: string) {
         init({
           ...DEFAULT_TEST_DATA,
-          [fileName]: `import {Component} from '@angular/core';\n${content}`
+          [fileName]: `import {Component} from '@bangular/core';\n${content}`
         });
       }
 
@@ -1313,18 +1313,18 @@ describe('StaticReflector', () => {
 });
 
 const DEFAULT_TEST_DATA: {[key: string]: any} = {
-  '/tmp/@angular/common/src/forms-deprecated/directives.d.ts': [{
+  '/tmp/@bangular/common/src/forms-deprecated/directives.d.ts': [{
     '__symbolic': 'module',
     'version': METADATA_VERSION,
     'metadata': {
       'FORM_DIRECTIVES': [{
         '__symbolic': 'reference',
         'name': 'NgFor',
-        'module': '@angular/common/src/directives/ng_for'
+        'module': '@bangular/common/src/directives/ng_for'
       }]
     }
   }],
-  '/tmp/@angular/common/src/directives/ng_for.d.ts': {
+  '/tmp/@bangular/common/src/directives/ng_for.d.ts': {
     '__symbolic': 'module',
     'version': METADATA_VERSION,
     'metadata': {
@@ -1332,7 +1332,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
         '__symbolic': 'class',
         'decorators': [{
           '__symbolic': 'call',
-          'expression': {'__symbolic': 'reference', 'name': 'Directive', 'module': '@angular/core'},
+          'expression': {'__symbolic': 'reference', 'name': 'Directive', 'module': '@bangular/core'},
           'arguments': [{
             'selector': '[ngFor][ngForOf]',
             'inputs': ['ngForTrackBy', 'ngForOf', 'ngForTemplate']
@@ -1342,11 +1342,11 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
           '__ctor__': [{
             '__symbolic': 'constructor',
             'parameters': [
-              {'__symbolic': 'reference', 'module': '@angular/core', 'name': 'ViewContainerRef'},
-              {'__symbolic': 'reference', 'module': '@angular/core', 'name': 'TemplateRef'},
-              {'__symbolic': 'reference', 'module': '@angular/core', 'name': 'IterableDiffers'}, {
+              {'__symbolic': 'reference', 'module': '@bangular/core', 'name': 'ViewContainerRef'},
+              {'__symbolic': 'reference', 'module': '@bangular/core', 'name': 'TemplateRef'},
+              {'__symbolic': 'reference', 'module': '@bangular/core', 'name': 'IterableDiffers'}, {
                 '__symbolic': 'reference',
-                'module': '@angular/core',
+                'module': '@bangular/core',
                 'name': 'ChangeDetectorRef'
               }
             ]
@@ -1355,16 +1355,16 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
       }
     }
   },
-  '/tmp/@angular/core/src/linker/view_container_ref.d.ts':
+  '/tmp/@bangular/core/src/linker/view_container_ref.d.ts':
       {version: METADATA_VERSION, 'metadata': {'ViewContainerRef': {'__symbolic': 'class'}}},
-  '/tmp/@angular/core/src/linker/template_ref.d.ts': {
+  '/tmp/@bangular/core/src/linker/template_ref.d.ts': {
     version: METADATA_VERSION,
     'module': './template_ref',
     'metadata': {'TemplateRef': {'__symbolic': 'class'}}
   },
-  '/tmp/@angular/core/src/change_detection/differs/iterable_differs.d.ts':
+  '/tmp/@bangular/core/src/change_detection/differs/iterable_differs.d.ts':
       {version: METADATA_VERSION, 'metadata': {'IterableDiffers': {'__symbolic': 'class'}}},
-  '/tmp/@angular/core/src/change_detection/change_detector_ref.d.ts':
+  '/tmp/@bangular/core/src/change_detection/change_detector_ref.d.ts':
       {version: METADATA_VERSION, 'metadata': {'ChangeDetectorRef': {'__symbolic': 'class'}}},
   '/tmp/src/app/hero-detail.component.d.ts': {
     '__symbolic': 'module',
@@ -1374,7 +1374,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
         '__symbolic': 'class',
         'decorators': [{
           '__symbolic': 'call',
-          'expression': {'__symbolic': 'reference', 'name': 'Component', 'module': '@angular/core'},
+          'expression': {'__symbolic': 'reference', 'name': 'Component', 'module': '@bangular/core'},
           'arguments': [{
             'selector': 'my-hero-detail',
             'template':
@@ -1387,7 +1387,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
             'decorators': [{
               '__symbolic': 'call',
               'expression':
-                  {'__symbolic': 'reference', 'name': 'Input', 'module': '@angular/core'}
+                  {'__symbolic': 'reference', 'name': 'Input', 'module': '@bangular/core'}
             }]
           }],
           'onMouseOver': [{
@@ -1395,7 +1395,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
             'decorators': [{
               '__symbolic': 'call',
               'expression':
-                  {'__symbolic': 'reference', 'module': '@angular/core', 'name': 'HostListener'},
+                  {'__symbolic': 'reference', 'module': '@bangular/core', 'name': 'HostListener'},
               'arguments': ['mouseover', ['$event']]
             }]
           }]
@@ -1412,7 +1412,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
         __symbolic: 'class',
         decorators: [{
           __symbolic: 'call',
-          expression: {__symbolic: 'reference', name: 'Component', module: '@angular/core'},
+          expression: {__symbolic: 'reference', name: 'Component', module: '@bangular/core'},
           arguments: [{
             entryComponents: [{
               __symbolic: 'reference',
@@ -1561,8 +1561,8 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
       `,
   '/tmp/src/invalid-calls.ts': `
         import {someFunction} from './nvalid-calll-definitions.ts';
-        import {Component} from '@angular/core';
-        import {NgIf} from '@angular/common';
+        import {Component} from '@bangular/core';
+        import {NgIf} from '@bangular/common';
 
         @Component({
           selector: 'my-component',
@@ -1578,7 +1578,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
         export class MyOtherComponent { }
       `,
   '/tmp/src/static-method.ts': `
-        import {Component} from '@angular/core/src/metadata';
+        import {Component} from '@bangular/core/src/metadata';
 
         @Component({
           selector: 'stub'
@@ -1605,7 +1605,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
         }
       `,
   '/tmp/src/static-method-call.ts': `
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
         import {MyModule} from './static-method';
 
         @Component({
@@ -1629,7 +1629,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
         export class MyFactoryComponent { }
       `,
   '/tmp/src/static-field.ts': `
-        import {Injectable} from '@angular/core';
+        import {Injectable} from '@bangular/core';
 
         @Injectable()
         export class MyModule {
@@ -1642,7 +1642,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
         }
       `,
   '/tmp/src/call-macro-function.ts': `
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
         import {v} from './macro-function';
 
         @Component({
@@ -1656,7 +1656,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
         export class MyComponentNested { }
       `,
   '/tmp/src/static-field-reference.ts': `
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
         import {MyModule} from './static-field';
 
         @Component({
@@ -1670,7 +1670,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
         }
       `,
   '/tmp/src/static-method-ref.ts': `
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
         import {ClassWithStatics} from './static-method-def';
 
         @Component({
@@ -1681,7 +1681,7 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
         }
       `,
   '/tmp/src/invalid-metadata.ts': `
-        import {Component} from '@angular/core';
+        import {Component} from '@bangular/core';
 
         @Component({
           providers: [ { provider: 'a', useValue: (() => 1)() }]
@@ -1689,9 +1689,9 @@ const DEFAULT_TEST_DATA: {[key: string]: any} = {
         export class InvalidMetadata {}
       `,
   '/tmp/src/forward-ref.ts': `
-        import {forwardRef} from '@angular/core';
-        import {Component} from '@angular/core';
-        import {Inject} from '@angular/core';
+        import {forwardRef} from '@bangular/core';
+        import {Component} from '@bangular/core';
+        import {Inject} from '@bangular/core';
         @Component({})
         export class Forward {
           constructor(@Inject(forwardRef(() => Dep)) d: Dep) {}

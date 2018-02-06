@@ -1,7 +1,7 @@
 /* tslint:disable:component-class-suffix */
 // #docregion imports
-import { Component }              from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component }              from '@bangular/core';
+import { FormControl, FormGroup } from '@bangular/forms';
 // #enddocregion imports
 
 @Component({

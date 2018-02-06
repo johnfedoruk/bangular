@@ -1,6 +1,6 @@
 // #docregion
-import { LOCALE_ID, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { LOCALE_ID, NgModule } from '@bangular/core';
+import { BrowserModule } from '@bangular/platform-browser';
 
 import { AppComponent } from '../src/app/app.component';
 

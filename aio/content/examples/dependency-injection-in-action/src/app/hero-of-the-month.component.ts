@@ -1,13 +1,13 @@
 /* tslint:disable:one-line*/
 // #docplaster
 // #docregion injection-token
-import { InjectionToken } from '@angular/core';
+import { InjectionToken } from '@bangular/core';
 
 export const TITLE = new InjectionToken<string>('title');
 // #enddocregion injection-token
 
 // #docregion hero-of-the-month
-import { Component, Inject } from '@angular/core';
+import { Component, Inject } from '@bangular/core';
 
 import { DateLoggerService } from './date-logger.service';
 import { Hero }              from './hero';

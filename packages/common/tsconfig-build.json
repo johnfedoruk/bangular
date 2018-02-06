@@ -5,7 +5,7 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@angular/core": ["../../dist/packages/core"]
+      "@bangular/core": ["../../dist/packages/core"]
     },
     "outDir": "../../dist/packages/common"
   },
@@ -15,11 +15,11 @@
     "../../node_modules/zone.js/dist/zone.js.d.ts"
   ],
 
-  "angularCompilerOptions": {
+  "bangularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": false,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "common.js",
-    "flatModuleId": "@angular/common"
+    "flatModuleId": "@bangular/common"
   }
 }

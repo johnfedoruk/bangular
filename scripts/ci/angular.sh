@@ -10,7 +10,7 @@ if [[ ${TRAVIS_TEST_RESULT=0} == 1 ]]; then
 fi
 
 
-# this ascii art was created based on the official Angular logo from https://angular.io/presskit.html
+# this ascii art was created based on the official Bangular logo from https://bangular.io/presskit.html
 # converted using http://www.text-image.com/convert/
 # colors added based on http://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
 RED='\033[0;31m'

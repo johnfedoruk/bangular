@@ -6,7 +6,7 @@ describe('h1Checker postprocessor', () => {
   let processor, createDocMessage;
 
   beforeEach(() => {
-    const dgeni = new Dgeni([testPackage('angular-base-package')]);
+    const dgeni = new Dgeni([testPackage('bangular-base-package')]);
     const injector = dgeni.configureInjector();
     createDocMessage = injector.get('createDocMessage');
     processor = injector.get('postProcessHtml');
@@ -60,14 +60,14 @@ describe('h1Checker postprocessor', () => {
     const doc = {
       docType: 'a',
       renderedContent:
-        '<h1 class="no-toc" id="what-is-angular">' +
-          '<a title="Link to this heading" class="header-link" aria-hidden="true" href="docs#what-is-angular">' +
+        '<h1 class="no-toc" id="what-is-bangular">' +
+          '<a title="Link to this heading" class="header-link" aria-hidden="true" href="docs#what-is-bangular">' +
             '<i class="material-icons">link</i>' +
-          '</a>What is Angular?' +
+          '</a>What is Bangular?' +
         '</h1>'
     };
     processor.$process([doc]);
-    expect(doc.vFile.title).toEqual('What is Angular?');
+    expect(doc.vFile.title).toEqual('What is Bangular?');
   });
 
   it('should not break if the h1 is empty (except for an aria-hidden anchor)', () => {

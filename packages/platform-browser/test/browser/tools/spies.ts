@@ -3,12 +3,12 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {Injector, ɵglobal as global} from '@angular/core';
-import {ApplicationRef} from '@angular/core/src/application_ref';
-import {SpyObject} from '@angular/core/testing/src/testing_internal';
+import {Injector, ɵglobal as global} from '@bangular/core';
+import {ApplicationRef} from '@bangular/core/src/application_ref';
+import {SpyObject} from '@bangular/core/testing/src/testing_internal';
 
 export class SpyApplicationRef extends SpyObject {
   constructor() { super(ApplicationRef); }

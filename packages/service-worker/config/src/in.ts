@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 /**
@@ -17,7 +17,7 @@ export type Glob = string;
 export type Duration = string;
 
 /**
- * A top-level Angular Service Worker configuration object.
+ * A top-level Bangular Service Worker configuration object.
  *
  * @experimental
  */

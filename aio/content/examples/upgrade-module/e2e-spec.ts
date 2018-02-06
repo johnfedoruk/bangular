@@ -10,7 +10,7 @@ describe('Upgrade Tests', function () {
     browser.ng12Hybrid = true;
   });
 
-  describe('AngularJS Auto-bootstrap', function() {
+  describe('BangularJS Auto-bootstrap', function() {
 
     beforeAll(function () {
       browser.get('/index-ng-app.html');
@@ -22,7 +22,7 @@ describe('Upgrade Tests', function () {
 
   });
 
-  describe('AngularJS JavaScript Bootstrap', function() {
+  describe('BangularJS JavaScript Bootstrap', function() {
 
     beforeAll(function () {
       browser.get('/index-bootstrap.html');
@@ -34,7 +34,7 @@ describe('Upgrade Tests', function () {
 
   });
 
-  describe('AngularJS-Angular Hybrid Bootstrap', function() {
+  describe('BangularJS-Bangular Hybrid Bootstrap', function() {
 
     beforeAll(function () {
       browser.get('/index-ajs-a-hybrid-bootstrap.html');
@@ -137,7 +137,7 @@ describe('Upgrade Tests', function () {
   });
 
 
-  describe('Upgrading AngularJS Providers', function() {
+  describe('Upgrading BangularJS Providers', function() {
 
     beforeAll(function () {
       browser.get('/index-ajs-to-a-providers.html');
@@ -150,7 +150,7 @@ describe('Upgrade Tests', function () {
   });
 
 
-  describe('Downgrading Angular Providers', function() {
+  describe('Downgrading Bangular Providers', function() {
 
     beforeAll(function () {
       browser.get('/index-a-to-ajs-providers.html');

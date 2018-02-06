@@ -1,8 +1,8 @@
 // #docregion
 /* avoid */
 
-import { OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { OnInit } from '@bangular/core';
+import { Http, Response } from '@bangular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 
 import { Hero } from '../shared/hero.model';
 
-const heroesUrl = 'http://angular.io';
+const heroesUrl = 'http://bangular.io';
 
 export class HeroListComponent implements OnInit {
   heroes: Hero[];

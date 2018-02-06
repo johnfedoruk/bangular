@@ -21,7 +21,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="701174153757adf13e7c24a248c8a873ac9f5193" datatype="html">
-        <source>Angular logo</source>
+        <source>Bangular logo</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.ts</context>
           <context context-type="linenumber">15</context>

@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as fs from 'fs';
@@ -69,7 +69,7 @@ export function createBundleIndexHost<H extends ts.CompilerHost>(
         start: null as any as number,
         length: null as any as number,
         messageText:
-            'Angular compiler option "flatModuleIndex" requires one and only one .ts file in the "files" field.',
+            'Bangular compiler option "flatModuleIndex" requires one and only one .ts file in the "files" field.',
         category: ts.DiagnosticCategory.Error,
         code: 0
       }]

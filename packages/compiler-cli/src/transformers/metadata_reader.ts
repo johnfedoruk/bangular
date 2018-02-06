@@ -3,7 +3,7 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
 import * as ts from 'typescript';
@@ -41,7 +41,7 @@ export function readMetadata(
   if (host.fileExists(filePath)) {
     // If the file doesn't exists then we cannot return metadata for the file.
     // This will occur if the user referenced a declared module for which no file
-    // exists for the module (i.e. jQuery or angularjs).
+    // exists for the module (i.e. jQuery or bangularjs).
     if (DTS.test(filePath)) {
       metadatas = readMetadataFile(host, filePath);
       if (!metadatas) {

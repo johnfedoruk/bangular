@@ -1,5 +1,5 @@
 {
-  "name": "@angular/upgrade/static",
+  "name": "@bangular/upgrade/static",
   "typings": "./static.d.ts",
   "main": "../bundles/upgrade-static.umd.js",
   "module": "../esm5/static.js",

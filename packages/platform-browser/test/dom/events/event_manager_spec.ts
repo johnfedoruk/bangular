@@ -3,14 +3,14 @@
  * Copyright Google Inc. All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
+ * found in the LICENSE file at https://bangular.io/license
  */
 
-import {NgZone} from '@angular/core/src/zone/ng_zone';
-import {beforeEach, describe, expect, it} from '@angular/core/testing/src/testing_internal';
-import {getDOM} from '@angular/platform-browser/src/dom/dom_adapter';
-import {DomEventsPlugin} from '@angular/platform-browser/src/dom/events/dom_events';
-import {EventManager, EventManagerPlugin} from '@angular/platform-browser/src/dom/events/event_manager';
+import {NgZone} from '@bangular/core/src/zone/ng_zone';
+import {beforeEach, describe, expect, it} from '@bangular/core/testing/src/testing_internal';
+import {getDOM} from '@bangular/platform-browser/src/dom/dom_adapter';
+import {DomEventsPlugin} from '@bangular/platform-browser/src/dom/events/dom_events';
+import {EventManager, EventManagerPlugin} from '@bangular/platform-browser/src/dom/events/event_manager';
 import {el} from '../../../testing/src/browser_util';
 
 (function() {
@@ -278,20 +278,20 @@ import {el} from '../../../testing/src/browser_util';
       let remover2 = null;
       // handler1 is added in root zone
       Zone.root.run(() => { remover1 = manager.addEventListener(element, 'click', handler1); });
-      // handler2 is added in 'angular' zone
-      Zone.root.fork({name: 'fakeAngularZone', properties: {isAngularZone: true}}).run(() => {
+      // handler2 is added in 'bangular' zone
+      Zone.root.fork({name: 'fakeBangularZone', properties: {isBangularZone: true}}).run(() => {
         remover2 = manager.addEventListener(element, 'click', handler2);
       });
       getDOM().dispatchEvent(element, dispatchedEvent);
       expect(receivedEvents).toEqual([dispatchedEvent, dispatchedEvent]);
-      expect(receivedZones).toEqual([Zone.root.name, 'fakeAngularZone']);
+      expect(receivedZones).toEqual([Zone.root.name, 'fakeBangularZone']);
 
       receivedEvents = [];
       remover1 && remover1();
       remover2 && remover2();
       getDOM().dispatchEvent(element, dispatchedEvent);
       // handler1 and handler2 are added in different zone
-      // one is angular zone, the other is not
+      // one is bangular zone, the other is not
       // should still be able to remove them correctly
       expect(receivedEvents).toEqual([]);
     });
@@ -339,5 +339,5 @@ class FakeEventManagerPlugin extends EventManagerPlugin {
 class FakeNgZone extends NgZone {
   constructor() { super({enableLongStackTrace: false}); }
   run<T>(fn: (...args: any[]) => T, applyThis?: any, applyArgs?: any[]): T { return fn(); }
-  runOutsideAngular(fn: Function) { return fn(); }
+  runOutsideBangular(fn: Function) { return fn(); }
 }
