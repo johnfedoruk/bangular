@@ -9,9 +9,9 @@
 
 *Safari (7+), iOS (7+) and IE mobile (11) are tested on [BrowserStack][browserstack].*
 
-# Angular
+# Bangular
 
-Angular is a development platform for building mobile and desktop web applications using Typescript/JavaScript and other languages.
+Bangular is a development platform for building mobile and desktop web applications using Typescript/JavaScript and other languages.
 
 ## Quickstart
 
